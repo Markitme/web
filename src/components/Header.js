@@ -58,7 +58,7 @@ export default function Header() {
           <button
             type="button"
             onClick={() => setMenuOpen(!menuOpen)}
-            className="flex items-center justify-center lg:hidden"
+            className="flex items-center text-white justify-center lg:hidden"
             aria-label="Toggle navigation menu"
           >
             {menuOpen ? <X size={26} /> : <Menu size={26} />}

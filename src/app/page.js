@@ -18,6 +18,8 @@ import { useState } from "react";
 import CaseStudies from "../components/CaseStudies";
 import ClientLogoSlider from "../components/ClientLogoSlider";
 import ServiceMarquee from "../components/ServiceMarquee";
+import TestimonialSlider from "../components/TestimonialSlider";
+import HowWeWork from "../components/HowWeWork";
 const services = [
   {
     number: "01",
@@ -242,6 +244,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+      {/* How We Work */}
+      <HowWeWork />
       {/* Stats */}
       <section className="bg-[#c8ff00] py-20 text-black">
         <div className="container-custom grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
@@ -304,6 +308,7 @@ export default function Home() {
       </section>
       {/* case study */}
       <CaseStudies />
+
       {/* CTA */}
       <section id="contact" className="container-custom pb-28">
         <div className="relative overflow-hidden rounded-[2.5rem] border border-white/10 bg-[#171717] px-7 py-20 text-center sm:px-12">
@@ -333,6 +338,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+      {/* Testimonials */}
+      <TestimonialSlider />
     </main>
   );
 }
