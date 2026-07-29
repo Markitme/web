@@ -25,13 +25,12 @@ export default function Header() {
       <header className="sticky top-0 z-50 border-b border-white/10 bg-[#0a0a0a]/90 backdrop-blur-xl">
         <div className="container-custom flex h-20 items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="text-2xl font-black tracking-[-0.08em]">
+          <Link href="/" className="text-2xl text-white font-bold tracking-[-0.08em]">
             MARK<span className="text-[#c8ff00]">IT</span>ME
           </Link>
 
           {/* Desktop Menu */}
           <nav className="hidden items-center gap-8 lg:flex">
-            
             {navLinks.map((link) => (
               <Link
                 key={link.name}
@@ -42,19 +41,19 @@ export default function Header() {
               </Link>
             ))}
           </nav>
-            
-          {/* Desktop CTA */}
-         <div className="hidden items-center gap-3 lg:flex">
-  <ThemeToggle />
 
-  <Link
-    href="/contact"
-    className="flex items-center gap-2 rounded-full bg-[#c8ff00] px-5 py-3 text-sm font-bold text-black transition duration-300 hover:scale-105"
-  >
-    Let&apos;s Talk
-    <ArrowRight size={16} />
-  </Link>
-</div>
+          {/* Desktop CTA */}
+          <div className="hidden items-center gap-3 lg:flex">
+            <ThemeToggle />
+
+            <Link
+              href="/contact"
+              className="flex items-center gap-2 rounded-full bg-[#c8ff00] px-5 py-3 text-sm font-bold text-black transition duration-300 hover:scale-105"
+            >
+              Let&apos;s Talk
+              <ArrowRight size={16} />
+            </Link>
+          </div>
           {/* Mobile Menu Button */}
           <button
             type="button"
@@ -81,9 +80,7 @@ export default function Header() {
                 </Link>
               ))}
               <div className="flex items-center justify-between border-t border-white/10 pt-5">
-                <span className="text-sm text-white/60">
-                  Appearance
-                </span>
+                <span className="text-sm text-white/60">Appearance</span>
 
                 <ThemeToggle />
               </div>
