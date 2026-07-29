@@ -19,7 +19,6 @@ import CaseStudies from "../components/CaseStudies";
 import ClientLogoSlider from "../components/ClientLogoSlider";
 import ServiceMarquee from "../components/ServiceMarquee";
 import TestimonialSlider from "../components/TestimonialSlider";
-import HowWeWork from "../components/HowWeWork";
 const services = [
   {
     number: "01",
@@ -245,7 +244,6 @@ export default function Home() {
         </div>
       </section>
       {/* How We Work */}
-      {/* <HowWeWork /> */}
       {/* Stats */}
       <section className="bg-[#c8ff00] py-20 text-black">
         <div className="container-custom grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
