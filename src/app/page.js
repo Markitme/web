@@ -245,7 +245,7 @@ export default function Home() {
         </div>
       </section>
       {/* How We Work */}
-      <HowWeWork />
+      {/* <HowWeWork /> */}
       {/* Stats */}
       <section className="bg-[#c8ff00] py-20 text-black">
         <div className="container-custom grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
