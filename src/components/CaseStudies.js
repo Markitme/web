@@ -52,7 +52,7 @@ return ( <section
 Selected work </p>
 
 
-        <h2 className="mt-5 text-4xl font-black leading-[0.95] tracking-[-0.06em] sm:text-6xl">
+        <h2 className="mt-5 text-4xl font-black leading-[0.95] tracking-[-0.06em] sm:text-5xl">
           Ideas turned into
           <span className="block text-[#c8ff00]">
             measurable impact.

@@ -272,7 +272,7 @@ function ProcessCard({
             />
           </div>
 
-          <span className="text-5xl font-black tracking-[-0.08em] text-black/5 dark:text-white/5 sm:text-6xl">
+          <span className="text-5xl font-black tracking-[-0.08em] text-black/5 dark:text-white/5 sm:text-5xl">
             {step.number}
           </span>
 

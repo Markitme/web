@@ -3,7 +3,7 @@ return ( <section className="bg-white px-5 py-24 text-black dark:bg-[#0a0a0a] da
 About MarkitMe </p>
 
 
-    <h1 className="mt-5 text-4xl font-black tracking-[-0.04em] sm:text-6xl">
+    <h1 className="mt-5 text-4xl font-black tracking-[-0.04em] sm:text-5xl">
       We turn ideas into meaningful growth.
     </h1>
 

@@ -73,7 +73,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7 }}
-              className="max-w-4xl text-5xl font-black leading-[0.94] tracking-[-0.07em] sm:text-6xl lg:text-8xl"
+              className="max-w-4xl text-5xl font-black leading-[0.94] tracking-[-0.07em] sm:text-5xl lg:text-6xl"
             >
               Build a brand
               <span className="text-gradient block">people choose.</span>
@@ -195,7 +195,7 @@ export default function Home() {
               What we do
             </p>
 
-            <h2 className="mt-5 text-4xl font-black leading-tight tracking-[-0.05em] sm:text-6xl">
+            <h2 className="mt-5 text-4xl font-black leading-tight tracking-[-0.05em] sm:text-5xl">
               Everything your brand needs to grow.
             </h2>
 
@@ -268,7 +268,7 @@ export default function Home() {
               Why MarkitMe
             </p>
 
-            <h2 className="mt-5 text-4xl font-black tracking-[-0.05em] sm:text-6xl">
+            <h2 className="mt-5 text-4xl font-black tracking-[-0.05em] sm:text-5xl">
               Less noise.
               <br />
               More meaningful growth.
@@ -317,7 +317,7 @@ export default function Home() {
               Ready when you are
             </p>
 
-            <h2 className="mt-5 text-4xl font-black tracking-[-0.06em] sm:text-6xl">
+            <h2 className="mt-5 text-4xl font-black tracking-[-0.06em] sm:text-5xl">
               Let&apos;s make your next move matter.
             </h2>
 
