@@ -7,6 +7,7 @@ return ( <NextThemesProvider
    attribute="class"
    defaultTheme="dark"
    enableSystem={false}
+   storageKey="markitme-theme"
  >
 {children} </NextThemesProvider>
 );

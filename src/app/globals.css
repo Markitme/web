@@ -1,43 +1,34 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
---background: #0a0a0a;
---foreground: #f5f5f0;
---muted: #a3a3a3;
---accent: #c8ff00;
---card: #151515;
---border: rgba(255, 255, 255, 0.12);
-}
-:root {
---background: #ffffff;
---foreground: #111111;
---surface: #f5f5f5;
---surface-secondary: #ebebeb;
---card: #ffffff;
---border: rgba(0, 0, 0, 0.12);
---muted: rgba(0, 0, 0, 0.58);
---accent: #c8ff00;
+  --background: #ffffff;
+  --foreground: #111111;
+  --surface: #f5f5f2;
+  --surface-secondary: #ebebe7;
+  --card: #ffffff;
+  --border: rgba(0, 0, 0, 0.12);
+  --muted: rgba(0, 0, 0, 0.62);
+  --accent: #8db800;
+  --accent-bright: #a7d503;
 }
 
 .dark {
---background: #0a0a0a;
---foreground: #ffffff;
---surface: #0d0d0d;
---surface-secondary: #151515;
---card: #151515;
---border: rgba(255, 255, 255, 0.1);
---muted: rgba(255, 255, 255, 0.58);
---accent: #c8ff00;
+  --background: #0a0a0a;
+  --foreground: #f5f5f0;
+  --surface: #101010;
+  --surface-secondary: #171717;
+  --card: #151515;
+  --border: rgba(255, 255, 255, 0.11);
+  --muted: rgba(255, 255, 255, 0.62);
+  --accent: #a7d503;
+  --accent-bright: #a7d503;
 }
 
-html,
-body {
-background-color: var(--background);
-color: var(--foreground);
-transition:
-background-color 0.3s ease,
-color 0.3s ease;
-}
+/* ========================================
+RESET + GLOBAL SETTINGS
+======================================== */
 
 * {
   box-sizing: border-box;
@@ -47,25 +38,120 @@ html {
 scroll-behavior: smooth;
 }
 
+html,
 body {
+min-height: 100%;
 margin: 0;
+padding: 0;
+
+background-color: var(--background);
+color: var(--foreground);
+
+font-family: Arial, Helvetica, sans-serif;
+
+overflow-x: hidden;
+
+transition:
+background-color 0.3s ease,
+color 0.3s ease;
+}
+
+body {
 background: var(--background);
 color: var(--foreground);
-font-family: Arial, Helvetica, sans-serif;
-overflow-x: hidden;
+}
+
+button,
+a,
+input,
+textarea,
+select {
+transition:
+background-color 0.25s ease,
+color 0.25s ease,
+border-color 0.25s ease;
+}
+
+img {
+display: block;
+max-width: 100%;
+}
+
+a {
+color: inherit;
+text-decoration: none;
+}
+
+button {
+font: inherit;
 }
 
 ::selection {
-background: #c8ff00;
+background: #a7d503;
 color: #090909;
 }
+
+/* ========================================
+MAIN CONTAINER
+======================================== */
 
 .container-custom {
 width: min(100% - 32px, 1280px);
 margin-inline: auto;
 }
 
+/* ========================================
+ABOUT PAGE GRID BACKGROUND
+======================================== */
+
+.about-grid {
+background-image:
+linear-gradient(
+rgba(0, 0, 0, 0.055) 1px,
+transparent 1px
+),
+linear-gradient(
+90deg,
+rgba(0, 0, 0, 0.055) 1px,
+transparent 1px
+);
+
+background-size: 58px 58px;
+}
+
+.dark .about-grid {
+background-image:
+linear-gradient(
+rgba(255, 255, 255, 0.055) 1px,
+transparent 1px
+),
+linear-gradient(
+90deg,
+rgba(255, 255, 255, 0.055) 1px,
+transparent 1px
+);
+}
+
+/* ========================================
+GENERAL GRID BACKGROUND
+======================================== */
+
 .grid-pattern {
+background-image:
+linear-gradient(
+rgba(0, 0, 0, 0.05) 1px,
+transparent 1px
+),
+linear-gradient(
+90deg,
+rgba(0, 0, 0, 0.05) 1px,
+transparent 1px
+);
+
+background-size: 52px 52px;
+}
+
+.dark .grid-pattern {
 background-image:
 linear-gradient(
 rgba(255, 255, 255, 0.05) 1px,
@@ -76,19 +162,29 @@ linear-gradient(
 rgba(255, 255, 255, 0.05) 1px,
 transparent 1px
 );
-background-size: 52px 52px;
 }
+
+/* ========================================
+TEXT GRADIENT
+======================================== */
 
 .text-gradient {
 background: linear-gradient(
 90deg,
-#ffffff 0%,
-#c8ff00 100%
+var(--foreground) 0%,
+#a7d503 100%
 );
+
 -webkit-background-clip: text;
 background-clip: text;
+
 color: transparent;
 }
+
+/* ========================================
+CASE STUDY SLIDER
+======================================== */
+
 .case-study-slider .swiper {
 overflow: visible;
 padding-bottom: 60px;
@@ -98,11 +194,27 @@ padding-bottom: 60px;
 .case-study-slider .swiper-button-prev {
 top: auto;
 bottom: 0;
+
 width: 46px;
 height: 46px;
-border: 1px solid rgba(255, 255, 255, 0.2);
+
+border: 1px solid var(--border);
 border-radius: 999px;
-color: #c8ff00;
+
+color: var(--accent-bright);
+background: var(--card);
+
+transition:
+background-color 0.25s ease,
+border-color 0.25s ease,
+transform 0.25s ease;
+}
+
+.case-study-slider .swiper-button-next:hover,
+.case-study-slider .swiper-button-prev:hover {
+border-color: #a7d503;
+background: rgba(200, 255, 0, 0.08);
+transform: scale(1.05);
 }
 
 .case-study-slider .swiper-button-next {
@@ -122,23 +234,34 @@ font-weight: 800;
 
 .case-study-slider .swiper-pagination {
 bottom: 15px !important;
+
 width: auto !important;
+
 left: 0 !important;
 }
 
 .case-study-slider .swiper-pagination-bullet {
 width: 8px;
 height: 8px;
-background: white;
-opacity: 0.25;
+
+background: var(--foreground);
+
+opacity: 0.2;
 }
 
 .case-study-slider .swiper-pagination-bullet-active {
 width: 26px;
+
 border-radius: 20px;
-background: #c8ff00;
+
+background: #a7d503;
+
 opacity: 1;
 }
+
+/* ========================================
+CASE STUDY — MOBILE
+======================================== */
 
 @media (max-width: 767px) {
 .case-study-slider .swiper {
@@ -153,9 +276,16 @@ right: 58px;
 bottom: 22px !important;
 }
 }
+
+/* ========================================
+CLIENT LOGO INFINITE MARQUEE
+======================================== */
+
 .client-logo-marquee {
 width: 100%;
+
 overflow: hidden;
+
 mask-image: linear-gradient(
 to right,
 transparent,
@@ -163,6 +293,7 @@ black 8%,
 black 92%,
 transparent
 );
+
 -webkit-mask-image: linear-gradient(
 to right,
 transparent,
@@ -174,39 +305,63 @@ transparent
 
 .client-logo-track {
 display: flex;
+
 width: max-content;
+
 align-items: center;
+
 animation: client-logo-scroll 28s linear infinite;
+
+will-change: transform;
 }
 
 .client-logo-item {
 display: flex;
+
 width: 220px;
 height: 100px;
+
 flex: 0 0 auto;
+
 align-items: center;
 justify-content: center;
+
 margin-right: 24px;
-border: 1px solid rgba(255, 255, 255, 0.08);
+
+border: 1px solid var(--border);
 border-radius: 20px;
-background: rgba(255, 255, 255, 0.03);
+
+background: var(--card);
+
 padding: 20px;
-transition: 0.3s ease;
+
+transition:
+border-color 0.3s ease,
+background-color 0.3s ease,
+transform 0.3s ease;
 }
 
 .client-logo-item:hover {
-border-color: rgba(200, 255, 0, 0.45);
+border-color: rgba(200, 255, 0, 0.55);
+
 background: rgba(200, 255, 0, 0.06);
+
+transform: translateY(-4px);
 }
 
 .client-logo-item img {
 filter: grayscale(100%);
+
 opacity: 0.65;
-transition: 0.3s ease;
+
+transition:
+filter 0.3s ease,
+opacity 0.3s ease;
 }
 
 .client-logo-item:hover img {
 filter: grayscale(0%);
+
 opacity: 1;
 }
 
@@ -220,6 +375,10 @@ transform: translateX(-50%);
 }
 }
 
+/* ========================================
+CLIENT LOGO — MOBILE
+======================================== */
+
 @media (max-width: 767px) {
 .client-logo-track {
 animation-duration: 20s;
@@ -228,8 +387,13 @@ animation-duration: 20s;
 .client-logo-item {
 width: 170px;
 height: 80px;
+
+
 margin-right: 16px;
+
 padding: 15px;
+
+
 }
 
 .client-logo-item img {
@@ -237,14 +401,15 @@ max-height: 38px;
 }
 }
 
-@media (prefers-reduced-motion: reduce) {
-.client-logo-track {
-animation: none;
-}
-}
+/* ========================================
+SERVICE INFINITE MARQUEE
+======================================== */
+
 .service-marquee {
 width: 100%;
+
 overflow: hidden;
+
 -webkit-mask-image: linear-gradient(
 to right,
 transparent,
@@ -252,6 +417,7 @@ black 6%,
 black 94%,
 transparent
 );
+
 mask-image: linear-gradient(
 to right,
 transparent,
@@ -263,37 +429,51 @@ transparent
 
 .service-marquee-track {
 display: flex;
+
 width: max-content;
+
 align-items: center;
+
 gap: 48px;
+
 animation: service-scroll-right 32s linear infinite;
+
 will-change: transform;
 }
 
 .service-marquee-item {
 display: flex;
+
 flex: 0 0 auto;
+
 align-items: center;
+
 gap: 12px;
-color: rgba(255, 255, 255, 0.55);
+
+color: var(--muted);
+
 font-size: 12px;
 font-weight: 700;
+
 letter-spacing: 0.18em;
+
 text-transform: uppercase;
+
 white-space: nowrap;
+
 transition: color 0.3s ease;
 }
 
 .service-marquee-item svg {
 flex: 0 0 auto;
-color: #c8ff00;
 }
 
 .service-marquee-item:hover {
-color: #ffffff;
+color: var(--foreground);
 }
 
-/* Left → Right infinite animation */
+/* Left → Right Infinite Animation */
+
 @keyframes service-scroll-right {
 from {
 transform: translateX(-50%);
@@ -304,53 +484,71 @@ transform: translateX(0);
 }
 }
 
+/* ========================================
+SERVICE MARQUEE — MOBILE
+======================================== */
+
 @media (max-width: 767px) {
 .service-marquee-track {
 gap: 30px;
+
+
 animation-duration: 24s;
+
+
 }
 
 .service-marquee-item {
 gap: 9px;
+
+
 font-size: 10px;
+
 letter-spacing: 0.13em;
+
+
 }
 }
 
-@media (prefers-reduced-motion: reduce) {
-.service-marquee-track {
-animation: none;
-}
-}
-
-/* =========================
+/* ========================================
 TESTIMONIAL SLIDER
-========================= */
+======================================== */
 
 .testimonial-swiper {
 overflow: visible !important;
+
 padding-bottom: 58px !important;
 }
 
 .testimonial-swiper .swiper-pagination {
 bottom: 0 !important;
+
 text-align: left;
 }
 
 .testimonial-swiper .swiper-pagination-bullet {
 width: 8px;
 height: 8px;
+
 margin: 0 5px !important;
-background: currentColor;
+
+background: var(--foreground);
+
 opacity: 0.2;
 }
 
 .testimonial-swiper .swiper-pagination-bullet-active {
 width: 28px;
+
 border-radius: 99px;
-background: #c8ff00;
+
+background: #a7d503;
+
 opacity: 1;
-transition: width 0.3s ease;
+
+transition:
+width 0.3s ease,
+background-color 0.3s ease;
 }
 
 .testimonial-swiper .swiper-slide {
@@ -361,6 +559,10 @@ height: auto;
 align-items: stretch;
 }
 
+/* ========================================
+TESTIMONIAL — MOBILE
+======================================== */
+
 @media (max-width: 767px) {
 .testimonial-swiper {
 padding-bottom: 50px !important;
@@ -368,7 +570,50 @@ padding-bottom: 50px !important;
 
 .testimonial-navigation {
 width: 100%;
+
+
 justify-content: flex-start;
+
+
 }
 }
 
+/* ========================================
+ACCESSIBILITY
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+*,
+*::before,
+*::after {
+scroll-behavior: auto !important;
+
+
+animation-duration: 0.01ms !important;
+
+animation-iteration-count: 1 !important;
+
+transition-duration: 0.01ms !important;
+
+
+}
+
+.client-logo-track,
+.service-marquee-track {
+animation: none !important;
+}
+}
+
+/* ========================================
+MOBILE GLOBAL FIXES
+======================================== */
+
+@media (max-width: 640px) {
+.container-custom {
+width: min(100% - 24px, 1280px);
+}
+
+.about-grid {
+background-size: 40px 40px;
+}
+}

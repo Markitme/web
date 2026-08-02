@@ -1,11 +1,11 @@
 "use client";
 
 import { Moon, Sun } from "lucide-react";
-import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
+import { useTheme } from "next-themes";
 
 export default function ThemeToggle() {
-const { theme, setTheme } = useTheme();
+const { resolvedTheme, setTheme } = useTheme();
 const [mounted, setMounted] = useState(false);
 
 useEffect(() => {
@@ -13,22 +13,38 @@ setMounted(true);
 }, []);
 
 if (!mounted) {
-return ( <div className="h-11 w-11 rounded-full border border-white/10" />
+return ( <button
+     type="button"
+     className="h-10 w-10 rounded-full border border-black/15 bg-black/[0.03] dark:border-white/15 dark:bg-white/5"
+     aria-label="Theme loading"
+   />
 );
 }
+
+const isDark = resolvedTheme === "dark";
+
+const toggleTheme = () => {
+setTheme(isDark ? "light" : "dark");
+};
 
 return (
 <button
 type="button"
-onClick={() =>
-setTheme(theme === "dark" ? "light" : "dark")
+onClick={toggleTheme}
+className="flex h-10 w-10 items-center justify-center rounded-full border border-black/15 bg-black/[0.03] text-black transition-all duration-300 hover:scale-105 hover:border-[#8db800] hover:text-[#8db800] dark:border-white/15 dark:bg-white/5 dark:text-white dark:hover:border-[#a7d503] dark:hover:text-[#a7d503]"
+aria-label={
+isDark
+? "Switch to light mode"
+: "Switch to dark mode"
 }
-className="flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white transition hover:border-[#c8ff00] hover:text-[#c8ff00]"
-aria-label="Toggle light and dark mode"
-title="Toggle theme"
+title={
+isDark
+? "Switch to light mode"
+: "Switch to dark mode"
+}
 >
-{theme === "dark" ? ( <Sun size={19} strokeWidth={2} />
-) : ( <Moon size={19} strokeWidth={2} />
+{isDark ? ( <Sun size={18} strokeWidth={2.2} />
+) : ( <Moon size={18} strokeWidth={2.2} />
 )} </button>
 );
 }

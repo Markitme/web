@@ -33,7 +33,7 @@ readTime: "7 min read",
 ];
 
 export default function BlogPage() {
-return ( <main className="bg-white text-black dark:bg-[#0a0a0a] dark:text-white"> <section className="border-b border-black/10 px-5 py-24 dark:border-white/10 sm:py-32"> <div className="container-custom"> <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#8db800] dark:text-[#c8ff00]">
+return ( <main className="bg-white text-black dark:bg-[#0a0a0a] dark:text-white"> <section className="border-b border-black/10 px-5 py-24 dark:border-white/10 sm:py-32"> <div className="container-custom"> <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#8db800] dark:text-[#a7d503]">
 Insights </p>
 
 
@@ -55,7 +55,7 @@ Insights </p>
           key={post.title}
           className="group rounded-3xl border border-black/10 bg-black/[0.03] p-7 transition duration-300 hover:-translate-y-1 dark:border-white/10 dark:bg-white/[0.03]"
         >
-          <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#8db800] dark:text-[#c8ff00]">
+          <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#8db800] dark:text-[#a7d503]">
             {post.category}
           </p>
 
@@ -75,7 +75,7 @@ Insights </p>
 
             <Link
               href="#"
-              className="flex items-center gap-2 text-sm font-bold transition hover:text-[#8db800] dark:hover:text-[#c8ff00]"
+              className="flex items-center gap-2 text-sm font-bold transition hover:text-[#8db800] dark:hover:text-[#a7d503]"
             >
               Read article
               <ArrowRight size={17} />

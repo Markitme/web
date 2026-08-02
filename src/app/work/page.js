@@ -29,7 +29,7 @@ description:
 ];
 
 export default function WorkPage() {
-return ( <main className="bg-white text-black dark:bg-[#0a0a0a] dark:text-white"> <section className="px-5 py-24 sm:py-32"> <div className="container-custom"> <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#8db800] dark:text-[#c8ff00]">
+return ( <main className="bg-white text-black dark:bg-[#0a0a0a] dark:text-white"> <section className="px-5 py-24 sm:py-32"> <div className="container-custom"> <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#8db800] dark:text-[#a7d503]">
 Selected Work </p>
 
 
@@ -51,7 +51,7 @@ Selected Work </p>
           key={project.title}
           className="group overflow-hidden rounded-3xl border border-black/10 bg-black/[0.03] dark:border-white/10 dark:bg-white/[0.03]"
         >
-          <div className="flex aspect-[16/10] items-end justify-between bg-gradient-to-br from-[#c8ff00]/30 via-black/5 to-black/15 p-7 dark:via-white/5 dark:to-white/10">
+          <div className="flex aspect-[16/10] items-end justify-between bg-gradient-to-br from-[#a7d503]/30 via-black/5 to-black/15 p-7 dark:via-white/5 dark:to-white/10">
             <span className="text-sm font-bold uppercase tracking-[0.18em]">
               0{index + 1}
             </span>
@@ -63,7 +63,7 @@ Selected Work </p>
           </div>
 
           <div className="p-7 sm:p-9">
-            <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#8db800] dark:text-[#c8ff00]">
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#8db800] dark:text-[#a7d503]">
               {project.category}
             </p>
 
@@ -82,7 +82,7 @@ Selected Work </p>
     <div className="mt-12 text-center">
       <Link
         href="/contact"
-        className="inline-flex items-center gap-2 rounded-full bg-[#c8ff00] px-7 py-4 font-bold text-black transition hover:scale-105"
+        className="inline-flex items-center gap-2 rounded-full bg-[#a7d503] px-7 py-4 font-bold text-black transition hover:scale-105"
       >
         Start a project
         <ArrowUpRight size={18} />

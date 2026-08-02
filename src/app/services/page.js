@@ -49,7 +49,7 @@ description:
 ];
 
 export default function ServicesPage() {
-return ( <main className="bg-white text-black dark:bg-[#0a0a0a] dark:text-white"> <section className="border-b border-black/10 px-5 py-24 dark:border-white/10 sm:py-32"> <div className="container-custom"> <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#8db800] dark:text-[#c8ff00]">
+return ( <main className="bg-white text-black dark:bg-[#0a0a0a] dark:text-white"> <section className="border-b border-black/10 px-5 py-24 dark:border-white/10 sm:py-32"> <div className="container-custom"> <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#8db800] dark:text-[#a7d503]">
 What We Do </p>
 
 
@@ -72,9 +72,9 @@ What We Do </p>
         return (
           <article
             key={service.title}
-            className="group rounded-3xl border border-black/10 bg-black/[0.03] p-7 transition duration-300 hover:-translate-y-1 hover:border-[#8db800] dark:border-white/10 dark:bg-white/[0.03] dark:hover:border-[#c8ff00]"
+            className="group rounded-3xl border border-black/10 bg-black/[0.03] p-7 transition duration-300 hover:-translate-y-1 hover:border-[#8db800] dark:border-white/10 dark:bg-white/[0.03] dark:hover:border-[#a7d503]"
           >
-            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#c8ff00] text-black">
+            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#a7d503] text-black">
               <Icon size={23} strokeWidth={1.8} />
             </div>
 

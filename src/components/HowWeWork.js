@@ -75,7 +75,7 @@ export default function HowWeWork() {
             TOP HEADING — SEPARATE FULL ROW
         ===================================== */}
         <div className="mb-12 max-w-3xl lg:mb-16">
-          <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#8db800] dark:text-[#c8ff00]">
+          <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#8db800] dark:text-[#a7d503]">
             Our Process
           </p>
 
@@ -110,7 +110,7 @@ export default function HowWeWork() {
                     onClick={() => setActiveStep(index)}
                     className={`group flex min-w-[190px] items-center gap-4 rounded-xl border px-4 py-3.5 text-left transition-all duration-500 lg:min-w-0 ${
                       isActive
-                        ? "border-[#8db800]/35 bg-[#c8ff00]/10"
+                        ? "border-[#8db800]/35 bg-[#a7d503]/10"
                         : "border-black/10 bg-transparent hover:border-black/20 hover:bg-black/[0.03] dark:border-white/10 dark:hover:border-white/20 dark:hover:bg-white/[0.03]"
                     }`}
                   >
@@ -118,7 +118,7 @@ export default function HowWeWork() {
                     <span
                       className={`text-xs font-black ${
                         isActive
-                          ? "text-[#8db800] dark:text-[#c8ff00]"
+                          ? "text-[#8db800] dark:text-[#a7d503]"
                           : "text-black/35 dark:text-white/35"
                       }`}
                     >
@@ -140,7 +140,7 @@ export default function HowWeWork() {
                     <span
                       className={`ml-auto h-2 w-2 rounded-full transition-all duration-300 ${
                         isActive
-                          ? "scale-100 bg-[#c8ff00]"
+                          ? "scale-100 bg-[#a7d503]"
                           : "scale-0"
                       }`}
                     />
@@ -155,7 +155,7 @@ export default function HowWeWork() {
 
               <div className="h-[2px] w-full overflow-hidden bg-black/10 dark:bg-white/10">
                 <div
-                  className="h-full bg-[#c8ff00] transition-all duration-500"
+                  className="h-full bg-[#a7d503] transition-all duration-500"
                   style={{
                     width: `${((activeStep + 1) / steps.length) * 100}%`,
                   }}
@@ -250,7 +250,7 @@ function ProcessCard({
       }}
     >
       {/* Lime Background Glow */}
-      <div className="absolute -right-16 -top-16 h-48 w-48 rounded-full bg-[#c8ff00]/20 blur-3xl" />
+      <div className="absolute -right-16 -top-16 h-48 w-48 rounded-full bg-[#a7d503]/20 blur-3xl" />
 
       <div className="relative z-10">
 
@@ -262,7 +262,7 @@ function ProcessCard({
           <div
             className={`flex h-12 w-12 items-center justify-center rounded-2xl text-black ${
               isActive
-                ? "bg-[#c8ff00]"
+                ? "bg-[#a7d503]"
                 : "bg-black/10 dark:bg-white/10"
             }`}
           >
@@ -283,7 +283,7 @@ function ProcessCard({
         ============================= */}
         <div className="mt-7">
 
-          <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#8db800] dark:text-[#c8ff00]">
+          <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#8db800] dark:text-[#a7d503]">
             {step.eyebrow}
           </p>
 

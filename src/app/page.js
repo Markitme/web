@@ -4,21 +4,20 @@ import {
   ArrowRight,
   BarChart3,
   Check,
-  ChevronRight,
   Globe,
-  Menu,
   MoveUpRight,
   Search,
   Sparkles,
   Target,
-  X,
 } from "lucide-react";
 import { motion } from "framer-motion";
-import { useState } from "react";
+
+import Button from "../components/ui/Button";
 import CaseStudies from "../components/CaseStudies";
 import ClientLogoSlider from "../components/ClientLogoSlider";
 import ServiceMarquee from "../components/ServiceMarquee";
 import TestimonialSlider from "../components/TestimonialSlider";
+
 const services = [
   {
     number: "01",
@@ -51,21 +50,22 @@ const stats = [
 ];
 
 export default function Home() {
-  const [menuOpen, setMenuOpen] = useState(false);
-
   return (
-    <main className="bg-[#0a0a0a] text-white">
-      {/* Hero */}
+    <main className="bg-white text-black transition-colors duration-300 dark:bg-[#0a0a0a] dark:text-white">
+      {/* Hero */}{" "}
       <section id="home" className="grid-pattern relative overflow-hidden">
+        {" "}
         <div className="container-custom relative grid min-h-[760px] items-center gap-16 py-24 lg:grid-cols-[1.1fr_0.9fr]">
+          {" "}
           <div>
             <motion.div
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="mb-7 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-xs uppercase tracking-[0.16em] text-white/70"
+              className="mb-7 inline-flex items-center gap-2 rounded-full border border-black/10 bg-black/[0.03] px-4 py-2 text-xs uppercase tracking-[0.16em] text-black/65 dark:border-white/15 dark:bg-white/5 dark:text-white/70"
             >
-              <span className="h-2 w-2 rounded-full bg-[#c8ff00]" />
+              {" "}
+              <span className="h-2 w-2 rounded-full bg-[#a7d503]" />
               Digital growth partner
             </motion.div>
 
@@ -73,7 +73,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7 }}
-              className="max-w-4xl text-5xl font-black leading-[0.94] tracking-[-0.07em] sm:text-5xl lg:text-6xl"
+              className="max-w-4xl text-4xl font-black leading-[0.94] tracking-[-0.07em] sm:text-5xl lg:text-6xl"
             >
               Build a brand
               <span className="text-gradient block">people choose.</span>
@@ -83,7 +83,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 25 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.15 }}
-              className="mt-8 max-w-xl text-lg leading-8 text-white/60"
+              className="mt-8 max-w-xl text-lg leading-8 text-black/60 dark:text-white/60"
             >
               MarkitMe combines strategy, creative thinking, technology, and
               performance marketing to help ambitious businesses grow.
@@ -95,27 +95,15 @@ export default function Home() {
               transition={{ duration: 0.7, delay: 0.25 }}
               className="mt-10 flex flex-col gap-4 sm:flex-row"
             >
-              <a
-                href="#contact"
-                className="group flex items-center justify-center gap-3 rounded-full bg-[#c8ff00] px-7 py-4 font-bold text-black transition hover:scale-[1.03]"
-              >
+              <Button href="#contact" variant="primary">
                 Start Your Project
-                <ArrowRight
-                  size={18}
-                  className="transition group-hover:translate-x-1"
-                />
-              </a>
+              </Button>
 
-              <a
-                href="#services"
-                className="flex items-center justify-center gap-3 rounded-full border border-white/20 px-7 py-4 font-semibold transition hover:border-white hover:bg-white/5"
-              >
+              <Button href="#services" variant="outline">
                 Explore Services
-                <ChevronRight size={18} />
-              </a>
+              </Button>
             </motion.div>
           </div>
-
           {/* Hero Visual */}
           <motion.div
             initial={{ opacity: 0, scale: 0.92 }}
@@ -123,28 +111,31 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="relative"
           >
-            <div className="absolute -inset-10 rounded-full bg-[#c8ff00]/10 blur-3xl" />
+            <div className="absolute -inset-10 rounded-full bg-[#a7d503]/10 blur-3xl" />
 
-            <div className="relative rounded-[2rem] border border-white/15 bg-[#151515] p-5 shadow-2xl">
-              <div className="rounded-[1.5rem] border border-white/10 bg-[#0d0d0d] p-6">
+            <div className="relative rounded-[2rem] border border-black/10 bg-[#f5f5f2] p-5 shadow-2xl dark:border-white/15 dark:bg-[#151515]">
+              <div className="rounded-[1.5rem] border border-black/10 bg-white p-6 dark:border-white/10 dark:bg-[#0d0d0d]">
                 <div className="flex items-center justify-between">
-                  <span className="text-sm text-white/50">
+                  <span className="text-sm text-black/50 dark:text-white/50">
                     Growth dashboard
                   </span>
-                  <span className="rounded-full bg-[#c8ff00]/15 px-3 py-1 text-xs text-[#c8ff00]">
+
+                  <span className="rounded-full bg-[#a7d503]/15 px-3 py-1 text-xs text-[#6f8f00] dark:text-[#a7d503]">
                     Live
                   </span>
                 </div>
 
                 <div className="mt-12">
-                  <p className="text-sm text-white/50">Monthly growth</p>
+                  <p className="text-sm text-black/50 dark:text-white/50">
+                    Monthly growth
+                  </p>
 
                   <div className="mt-2 flex items-end gap-3">
                     <span className="text-6xl font-black tracking-[-0.07em]">
                       247%
                     </span>
 
-                    <span className="mb-2 flex items-center gap-1 text-sm text-[#c8ff00]">
+                    <span className="mb-2 flex items-center gap-1 text-sm text-[#6f8f00] dark:text-[#a7d503]">
                       <MoveUpRight size={15} />
                       Up
                     </span>
@@ -157,23 +148,37 @@ export default function Home() {
                       key={index}
                       style={{ height: `${height}%` }}
                       className={`flex-1 rounded-t-xl ${
-                        index === 6 ? "bg-[#c8ff00]" : "bg-white/10"
+                        index === 6
+                          ? "bg-[#a7d503]"
+                          : "bg-black/10 dark:bg-white/10"
                       }`}
                     />
                   ))}
                 </div>
 
                 <div className="mt-8 grid grid-cols-2 gap-4">
-                  <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
-                    <Target className="text-[#c8ff00]" size={22} />
+                  <div className="rounded-2xl border border-black/10 bg-black/[0.03] p-4 dark:border-white/10 dark:bg-white/[0.03]">
+                    <Target
+                      className="text-[#6f8f00] dark:text-[#a7d503]"
+                      size={22}
+                    />
+
                     <p className="mt-4 text-2xl font-bold">4.2x</p>
-                    <p className="mt-1 text-xs text-white/45">Better ROI</p>
+
+                    <p className="mt-1 text-xs text-black/45 dark:text-white/45">
+                      Better ROI
+                    </p>
                   </div>
 
-                  <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
-                    <Search className="text-[#c8ff00]" size={22} />
+                  <div className="rounded-2xl border border-black/10 bg-black/[0.03] p-4 dark:border-white/10 dark:bg-white/[0.03]">
+                    <Search
+                      className="text-[#6f8f00] dark:text-[#a7d503]"
+                      size={22}
+                    />
+
                     <p className="mt-4 text-2xl font-bold">82%</p>
-                    <p className="mt-1 text-xs text-white/45">
+
+                    <p className="mt-1 text-xs text-black/45 dark:text-white/45">
                       More visibility
                     </p>
                   </div>
@@ -191,7 +196,7 @@ export default function Home() {
       <section id="services" className="py-28">
         <div className="container-custom">
           <div className="max-w-3xl">
-            <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#c8ff00]">
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#6f8f00] dark:text-[#a7d503]">
               What we do
             </p>
 
@@ -199,7 +204,7 @@ export default function Home() {
               Everything your brand needs to grow.
             </h2>
 
-            <p className="mt-6 text-lg leading-8 text-white/55">
+            <p className="mt-6 text-lg leading-8 text-black/55 dark:text-white/55">
               One strategic partner for your brand, website, marketing, and
               long-term digital growth.
             </p>
@@ -212,27 +217,27 @@ export default function Home() {
               return (
                 <article
                   key={service.title}
-                  className="group rounded-[2rem] border border-white/10 bg-[#141414] p-8 transition duration-300 hover:-translate-y-2 hover:border-[#c8ff00]/50"
+                  className="group rounded-[2rem] border border-black/10 bg-[#f7f7f5] p-8 transition duration-300 hover:-translate-y-2 hover:border-[#8db800]/50 dark:border-white/10 dark:bg-[#141414] dark:hover:border-[#a7d503]/50"
                 >
                   <div className="flex items-start justify-between">
-                    <span className="text-sm text-white/30">
+                    <span className="text-sm text-black/30 dark:text-white/30">
                       {service.number}
                     </span>
 
-                    <div className="rounded-2xl bg-[#c8ff00] p-3 text-black">
+                    <div className="rounded-2xl bg-[#a7d503] p-3 text-black">
                       <Icon size={24} />
                     </div>
                   </div>
 
                   <h3 className="mt-16 text-2xl font-bold">{service.title}</h3>
 
-                  <p className="mt-4 leading-7 text-white/50">
+                  <p className="mt-4 leading-7 text-black/50 dark:text-white/50">
                     {service.description}
                   </p>
 
                   <a
                     href="#contact"
-                    className="mt-8 inline-flex items-center gap-2 font-bold text-[#c8ff00]"
+                    className="mt-8 inline-flex items-center gap-2 font-bold text-[#6f8f00] transition hover:gap-3 dark:text-[#a7d503]"
                   >
                     Explore service
                     <ArrowRight size={17} />
@@ -243,28 +248,35 @@ export default function Home() {
           </div>
         </div>
       </section>
-      {/* How We Work */}
       {/* Stats */}
-      <section className="bg-[#c8ff00] py-20 text-black">
+
+      <section className="bg-[#a7d503] py-16 text-black transition-colors duration-300 sm:py-20">
         <div className="container-custom grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           {stats.map((stat) => (
-            <div key={stat.label}>
-              <p className="text-5xl font-black tracking-[-0.07em]">
+            <div
+              key={stat.label}
+              className="border-b border-black/10 pb-8 last:border-b-0 sm:border-b-0 sm:pb-0"
+            >
+              <p className="text-5xl font-black tracking-[-0.07em] sm:text-6xl">
                 {stat.value}
               </p>
 
-              <p className="mt-3 text-sm font-bold uppercase tracking-[0.12em]">
-                {stat.label}
-              </p>
-            </div>
-          ))}
+
+          <p className="mt-3 text-sm font-bold uppercase tracking-[0.12em] text-black/70">
+            {stat.label}
+          </p>
+        </div>
+      ))}
+
+
         </div>
       </section>
+
       {/* Why Us */}
       <section id="about" className="py-28">
         <div className="container-custom grid gap-14 lg:grid-cols-2">
           <div>
-            <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#c8ff00]">
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#6f8f00] dark:text-[#a7d503]">
               Why MarkitMe
             </p>
 
@@ -276,7 +288,7 @@ export default function Home() {
           </div>
 
           <div>
-            <p className="text-lg leading-8 text-white/60">
+            <p className="text-lg leading-8 text-black/60 dark:text-white/60">
               We do not chase vanity metrics or build campaigns without purpose.
               Every creative decision is connected to a clear business
               objective.
@@ -291,9 +303,9 @@ export default function Home() {
               ].map((item) => (
                 <div
                   key={item}
-                  className="flex items-center gap-4 border-b border-white/10 pb-5"
+                  className="flex items-center gap-4 border-b border-black/10 pb-5 dark:border-white/10"
                 >
-                  <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#c8ff00] text-black">
+                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#a7d503] text-black">
                     <Check size={16} strokeWidth={3} />
                   </span>
 
@@ -304,16 +316,15 @@ export default function Home() {
           </div>
         </div>
       </section>
-      {/* case study */}
+      {/* Case Study */}
       <CaseStudies />
-
       {/* CTA */}
-      <section id="contact" className="container-custom pb-28">
-        <div className="relative overflow-hidden rounded-[2.5rem] border border-white/10 bg-[#171717] px-7 py-20 text-center sm:px-12">
-          <div className="absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 rounded-full bg-[#c8ff00]/15 blur-3xl" />
+      <section id="contact" className="container-custom pb-28 mt-20">
+        <div className="relative overflow-hidden rounded-[2.5rem] border border-black/10 bg-[#f5f5f2] px-7 py-20 text-center sm:px-12 dark:border-white/10 dark:bg-[#171717]">
+          <div className="absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 rounded-full bg-[#a7d503]/15 blur-3xl" />
 
           <div className="relative mx-auto max-w-4xl">
-            <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#c8ff00]">
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#6f8f00] dark:text-[#a7d503]">
               Ready when you are
             </p>
 
@@ -321,18 +332,16 @@ export default function Home() {
               Let&apos;s make your next move matter.
             </h2>
 
-            <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-white/55">
+            <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-black/55 dark:text-white/55">
               Tell us where your business is today and where you want it to go.
               We will help build the path between them.
             </p>
 
-            <a
-              href="mailto:info@markitme.ca"
-              className="mt-9 inline-flex items-center gap-3 rounded-full bg-[#c8ff00] px-8 py-4 font-bold text-black transition hover:scale-105"
-            >
-              Book a Free Consultation
-              <ArrowRight size={18} />
-            </a>
+            <div className="mt-9">
+              <Button href="mailto:info@markitme.ca" variant="primary">
+                Book a Free Consultation
+              </Button>
+            </div>
           </div>
         </div>
       </section>
