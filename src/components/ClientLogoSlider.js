@@ -3,7 +3,7 @@ import Image from "next/image";
 const clientLogos = [
 {
 name: "Navira Settlements",
-logo: "/images/clients/navira.png",
+logo: "/images/clients/navira.webp",
 },
 {
 name: "Harmony Rehab",
@@ -14,16 +14,16 @@ name: "Medtrion",
 logo: "/images/clients/medtrion.png",
 },
 {
-name: "Excella Life Sciences",
-logo: "/images/clients/excella.png",
+name: "Joincrescendo",
+logo: "/images/clients/Joincrescendo.png",
 },
 {
-name: "King of Management",
-logo: "/images/clients/king-of-management.png",
+name: "infinite Real Estate",
+logo: "/images/clients/infinite.png",
 },
 {
-name: "Client Logo",
-logo: "/images/clients/client-6.png",
+name: "New Construction",
+logo: "/images/clients/new-const.webp",
 },
 ];
 
@@ -34,7 +34,7 @@ return ( <section className="overflow-hidden border-y border-black/10 bg-[#f7f7f
 Trusted by ambitious brands </p>
 
 
-    <h2 className="mt-4 text-2xl font-black tracking-[-0.04em] text-black sm:text-4xl dark:text-white">
+    <h2 className="mt-5 text-2xl font-black tracking-[-0.04em] text-black sm:text-4xl dark:text-white">
       Building growth together.
     </h2>
   </div>

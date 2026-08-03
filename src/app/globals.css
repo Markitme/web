@@ -281,6 +281,7 @@ CLIENT LOGO INFINITE MARQUEE
 
 .client-logo-marquee {
 width: 100%;
+padding-top: 10px;
 
 overflow: hidden;
 

@@ -1,96 +1,185 @@
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import Image from "next/image";
+import { ArrowRight, ExternalLink } from "lucide-react";
 
 const projects = [
-{
-category: "Brand Strategy",
-title: "Building a stronger market presence",
-description:
-"A strategic brand refresh focused on clarity, consistency, and audience connection.",
-},
-{
-category: "Website Design",
-title: "A modern digital experience",
-description:
-"A conversion-focused website designed to make the customer journey simpler and stronger.",
-},
-{
-category: "Digital Marketing",
-title: "Turning attention into action",
-description:
-"A performance-led campaign built around relevant messaging and measurable outcomes.",
-},
-{
-category: "SEO & Content",
-title: "Growing visibility organically",
-description:
-"A content and search strategy created to improve discoverability and long-term growth.",
-},
+  {
+    number: "01",
+    category: "Mortgage Broker",
+    title: "Amit Khurana",
+    location: "Mississauga, Ontario",
+    description:
+      "Whether you’re buying your first home, refinancing, or exploring private lending options, Amit Khurana provides professional mortgage guidance tailored to your goals.",
+    image: "/images/amit-khurana.jpg",
+    link: "https://amitkhurana.ca/",
+  },
+  {
+    number: "02",
+    category: "Brampton's Trusted Immigration Counsel",
+    title: "Law Office of Karan Mahal",
+    location: "Trusted Immigration Counsel",
+    description:
+      "With over 4 years of dedicated immigration law practice, Karan Mahal provides strategic and compassionate legal support.",
+    image: "/images/karan-mahal.webp",
+    link: "https://lawofficeofkaranmahal.com/",
+  },
+  {
+    number: "03",
+    category: "Real Estate Brokerage",
+    title: "Infinite Real Estate, Brokerage",
+    location: "Toronto, Ontario",
+    description:
+      "A growing network of high-performing real estate agents and industry professionals serving clients across the Greater Toronto Area.",
+    image: "/images/infinite.png",
+    link: "https://infinitereb.ca/",
+  },
+  {
+    number: "04",
+    category: "Newcomer Settlement Support",
+    title: "Navira Settlement Services",
+    location: "Brampton, Ontario",
+    description:
+      "Navira Settlement Services helps newcomers access information, support, and services as they begin their new journey in Canada.",
+    image: "/images/home2.jpg",
+    link: "https://navirasettlements.com/",
+  },
+  {
+    number: "05",
+    category: "Health & Wellness Clinic",
+    title: "Harmony Rehab",
+    location: "Brampton, Ontario",
+    description:
+      "Harmony Rehab is a wellness clinic offering massage therapy, physiotherapy, and personalized care.",
+    image: "/images/harmony.jpg",
+    link: "https://theharmonyrehab.com/",
+  },
 ];
 
 export default function WorkPage() {
-return ( <main className="bg-white text-black dark:bg-[#0a0a0a] dark:text-white"> <section className="px-5 py-24 sm:py-32"> <div className="container-custom"> <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#8db800] dark:text-[#a7d503]">
-Selected Work </p>
+  return (
+    <main className="bg-white text-black transition-colors duration-300 dark:bg-[#0a0a0a] dark:text-white">
+      {/* Hero */}
+      <section className="border-b border-black/10 px-5 py-24 dark:border-white/10 sm:py-32">
+        <div className="container-custom">
+          <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#8db800] dark:text-[#a7d503]">
+            Case Studies
+          </p>
 
-
-      <h1 className="mt-5 max-w-4xl text-5xl font-black tracking-[-0.05em] sm:text-7xl">
-        Work built to create meaningful results.
-      </h1>
-
-      <p className="mt-7 max-w-2xl text-lg leading-8 text-black/60 dark:text-white/60">
-        Explore a selection of projects shaped by strategy, creativity,
-        collaboration, and measurable goals.
-      </p>
-    </div>
-  </section>
-
-  <section className="border-t border-black/10 px-5 py-20 dark:border-white/10">
-    <div className="container-custom grid gap-6 md:grid-cols-2">
-      {projects.map((project, index) => (
-        <article
-          key={project.title}
-          className="group overflow-hidden rounded-3xl border border-black/10 bg-black/[0.03] dark:border-white/10 dark:bg-white/[0.03]"
-        >
-          <div className="flex aspect-[16/10] items-end justify-between bg-gradient-to-br from-[#a7d503]/30 via-black/5 to-black/15 p-7 dark:via-white/5 dark:to-white/10">
-            <span className="text-sm font-bold uppercase tracking-[0.18em]">
-              0{index + 1}
+          <h1 className="mt-5 max-w-4xl text-3xl font-black tracking-[-0.05em] sm:text-4xl lg:text-5xl xl:text-6xl">
+            Ideas turned into
+            <span className="block text-[#8db800] dark:text-[#a7d503]">
+              measurable impact.
             </span>
+          </h1>
 
-            <ArrowUpRight
-              size={30}
-              className="transition duration-300 group-hover:-translate-y-1 group-hover:translate-x-1"
-            />
+          <p className="mt-7 max-w-2xl text-lg leading-8 text-black/60 dark:text-white/60">
+            Explore selected projects created through strategy, design,
+            technology, and focused digital growth.
+          </p>
+        </div>
+      </section>
+
+      {/* Projects */}
+      <section className="px-5 py-20 sm:py-28">
+        <div className="container-custom">
+          <div className="mb-12 flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
+            <div>
+              <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#8db800] dark:text-[#a7d503]">
+                Our Latest Projects
+              </p>
+
+              <h2 className="mt-4 text-4xl font-black tracking-[-0.05em] sm:text-5xl">
+                Work built to move
+                <span className="block">businesses forward.</span>
+              </h2>
+               <p className="mt-7 max-w-2xl text-lg leading-8 text-black/60 dark:text-white/60">
+                Every project is shaped around the client’s goals, audience,
+                brand, and digital growth strategy.
+              </p>
+            </div>
+
+           
           </div>
 
-          <div className="p-7 sm:p-9">
-            <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#8db800] dark:text-[#a7d503]">
-              {project.category}
-            </p>
+          <div className="grid gap-6 md:grid-cols-2">
+            {projects.map((project) => (
+              <article
+                key={project.title}
+                className="group overflow-hidden rounded-[28px] border border-black/10 bg-black/[0.02] transition-all duration-300 hover:-translate-y-1 hover:border-[#8db800] hover:shadow-xl dark:border-white/10 dark:bg-white/[0.03] dark:hover:border-[#a7d503]"
+              >
+                {/* Project Image */}
+                <div className="relative aspect-[16/10] overflow-hidden bg-black/10 dark:bg-white/10">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
 
-            <h2 className="mt-4 text-2xl font-black sm:text-3xl">
-              {project.title}
-            </h2>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-transparent" />
 
-            <p className="mt-4 leading-7 text-black/60 dark:text-white/60">
-              {project.description}
-            </p>
+                  <span className="absolute left-6 top-6 rounded-full bg-white/90 px-4 py-2 text-xs font-black text-black backdrop-blur-md">
+                    {project.number}
+                  </span>
+
+                  <span className="absolute bottom-6 left-6 rounded-full bg-black/60 px-4 py-2 text-xs font-bold text-white backdrop-blur-md">
+                    MarkitMe Project
+                  </span>
+                </div>
+
+                {/* Project Content */}
+                <div className="p-7 sm:p-8">
+                  <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#8db800] dark:text-[#a7d503]">
+                    {project.category}
+                  </p>
+
+                  <h2 className="mt-4 text-3xl font-black tracking-[-0.04em]">
+                    {project.title}
+                  </h2>
+
+                  <p className="mt-3 text-sm font-semibold text-black/45 dark:text-white/45">
+                    {project.location}
+                  </p>
+
+                  <p className="mt-5 leading-7 text-black/60 dark:text-white/60">
+                    {project.description}
+                  </p>
+
+                  <Link
+                    href={project.link}
+                    target={
+                      project.link.startsWith("http")
+                        ? "_blank"
+                        : undefined
+                    }
+                    rel={
+                      project.link.startsWith("http")
+                        ? "noopener noreferrer"
+                        : undefined
+                    }
+                    className="group/link mt-7 inline-flex items-center gap-3 rounded-full bg-[#a7d503] px-6 py-3.5 text-sm font-bold text-black transition-all duration-300 hover:scale-[1.03] hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black"
+                  >
+                    View Project
+
+                    {project.link.startsWith("http") ? (
+                      <ExternalLink
+                        size={17}
+                        className="transition-transform duration-300 group-hover/link:translate-x-1 group-hover/link:-translate-y-1"
+                      />
+                    ) : (
+                      <ArrowRight
+                        size={17}
+                        className="transition-transform duration-300 group-hover/link:translate-x-1"
+                      />
+                    )}
+                  </Link>
+                </div>
+              </article>
+            ))}
           </div>
-        </article>
-      ))}
-    </div>
-
-    <div className="mt-12 text-center">
-      <Link
-        href="/contact"
-        className="inline-flex items-center gap-2 rounded-full bg-[#a7d503] px-7 py-4 font-bold text-black transition hover:scale-105"
-      >
-        Start a project
-        <ArrowUpRight size={18} />
-      </Link>
-    </div>
-  </section>
-</main>
-
-
-);
+        </div>
+      </section>
+    </main>
+  );
 }

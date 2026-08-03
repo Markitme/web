@@ -60,7 +60,7 @@ return ( <main className="overflow-hidden bg-[var(--background)] text-[var(--for
           </p>
         </div>
 
-        <h1 className="mt-7 max-w-5xl text-4xl font-black leading-[0.96] tracking-[-0.06em] sm:text-5xl md:text-6xl lg:text-7xl">
+        <h1 className="mt-7 max-w-5xl text-3xl font-black leading-[0.96] tracking-[-0.06em] sm:text-4xl md:text-5xl lg:text-6xl">
           We turn ideas into{" "}
           <span className="text-[#8db800] dark:text-[#a7d503]">
             meaningful growth.
@@ -187,7 +187,7 @@ return ( <main className="overflow-hidden bg-[var(--background)] text-[var(--for
           How We Think
         </p>
 
-        <h2 className="mt-5 text-4xl font-black tracking-[-0.05em] sm:text-5xl lg:text-6xl">
+        <h2 className="mt-5 text-3xl font-black tracking-[-0.05em] sm:text-4xl lg:text-5xl">
           Good work starts with the right approach.
         </h2>
       </div>
@@ -269,7 +269,7 @@ return ( <main className="overflow-hidden bg-[var(--background)] text-[var(--for
             Let&apos;s Work Together
           </p>
 
-          <h2 className="mt-5 text-4xl font-black leading-[0.98] tracking-[-0.055em] sm:text-5xl lg:text-7xl">
+          <h2 className="mt-5 text-3xl font-black leading-[0.98] tracking-[-0.055em] sm:text-4xl lg:text-5xl">
             Have an idea? Let&apos;s make it matter.
           </h2>
 
