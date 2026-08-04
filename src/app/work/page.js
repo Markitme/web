@@ -1,59 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, ExternalLink } from "lucide-react";
-
-const projects = [
-  {
-    number: "01",
-    category: "Mortgage Broker",
-    title: "Amit Khurana",
-    location: "Mississauga, Ontario",
-    description:
-      "Whether you’re buying your first home, refinancing, or exploring private lending options, Amit Khurana provides professional mortgage guidance tailored to your goals.",
-    image: "/images/amit-khurana.jpg",
-    link: "https://amitkhurana.ca/",
-  },
-  {
-    number: "02",
-    category: "Brampton's Trusted Immigration Counsel",
-    title: "Law Office of Karan Mahal",
-    location: "Trusted Immigration Counsel",
-    description:
-      "With over 4 years of dedicated immigration law practice, Karan Mahal provides strategic and compassionate legal support.",
-    image: "/images/karan-mahal.webp",
-    link: "https://lawofficeofkaranmahal.com/",
-  },
-  {
-    number: "03",
-    category: "Real Estate Brokerage",
-    title: "Infinite Real Estate, Brokerage",
-    location: "Toronto, Ontario",
-    description:
-      "A growing network of high-performing real estate agents and industry professionals serving clients across the Greater Toronto Area.",
-    image: "/images/infinite.png",
-    link: "https://infinitereb.ca/",
-  },
-  {
-    number: "04",
-    category: "Newcomer Settlement Support",
-    title: "Navira Settlement Services",
-    location: "Brampton, Ontario",
-    description:
-      "Navira Settlement Services helps newcomers access information, support, and services as they begin their new journey in Canada.",
-    image: "/images/home2.jpg",
-    link: "https://navirasettlements.com/",
-  },
-  {
-    number: "05",
-    category: "Health & Wellness Clinic",
-    title: "Harmony Rehab",
-    location: "Brampton, Ontario",
-    description:
-      "Harmony Rehab is a wellness clinic offering massage therapy, physiotherapy, and personalized care.",
-    image: "/images/harmony.jpg",
-    link: "https://theharmonyrehab.com/",
-  },
-];
+import { projects } from "@/data/projects";
 
 export default function WorkPage() {
   return (
@@ -147,33 +95,16 @@ export default function WorkPage() {
                   </p>
 
                   <Link
-                    href={project.link}
-                    target={
-                      project.link.startsWith("http")
-                        ? "_blank"
-                        : undefined
-                    }
-                    rel={
-                      project.link.startsWith("http")
-                        ? "noopener noreferrer"
-                        : undefined
-                    }
-                    className="group/link mt-7 inline-flex items-center gap-3 rounded-full bg-[#a7d503] px-6 py-3.5 text-sm font-bold text-black transition-all duration-300 hover:scale-[1.03] hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black"
-                  >
-                    View Project
+  href={`/work/${project.slug}`}
+  className="group/link mt-7 inline-flex items-center gap-3 rounded-full bg-[#a7d503] px-6 py-3.5 text-sm font-bold text-black transition-all duration-300 hover:scale-[1.03] hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black"
+>
+  View Case Study
 
-                    {project.link.startsWith("http") ? (
-                      <ExternalLink
-                        size={17}
-                        className="transition-transform duration-300 group-hover/link:translate-x-1 group-hover/link:-translate-y-1"
-                      />
-                    ) : (
-                      <ArrowRight
-                        size={17}
-                        className="transition-transform duration-300 group-hover/link:translate-x-1"
-                      />
-                    )}
-                  </Link>
+  <ArrowRight
+    size={17}
+    className="transition-transform duration-300 group-hover/link:translate-x-1"
+  />
+</Link>
                 </div>
               </article>
             ))}

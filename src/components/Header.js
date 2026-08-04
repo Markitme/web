@@ -3,24 +3,18 @@
 import Link from "next/link";
 import Image from "next/image";
 import {
-  ArrowRight,
   ChevronDown,
   Menu,
   X,
-  Target,
-  MonitorSmartphone,
-  Search,
-  Megaphone,
-  Palette,
-  BarChart3,
-  BriefcaseBusiness,
-  BadgeCheck,
 } from "lucide-react";
 
 import { useEffect, useState } from "react";
 
 import ThemeToggle from "../components/ThemeToggle";
 import Button from "../components/ui/Button";
+
+// New dynamic services data
+import { services } from "@/data/services";
 
 const navLinks = [
   {
@@ -39,72 +33,22 @@ const navLinks = [
     name: "Blog",
     href: "/blog",
   },
-];
-
-const services = [
   {
-    name: "Brand Strategy",
-    description:
-      "Clear positioning and practical strategies for sustainable growth.",
-    href: "/services#brand-strategy",
-    icon: Target,
-  },
-  {
-    name: "Website Design & Development",
-    description:
-      "Fast, responsive websites designed around your business goals.",
-    href: "/services#web-design",
-    icon: MonitorSmartphone,
-  },
-  {
-    name: "SEO & Content Strategy",
-    description:
-      "Search-focused content that helps the right audience find you.",
-    href: "/services#seo",
-    icon: Search,
-  },
-  {
-    name: "Digital Marketing",
-    description:
-      "Campaigns built to increase visibility, engagement, and leads.",
-    href: "/services#digital-marketing",
-    icon: Megaphone,
-  },
-  {
-    name: "Social Media Marketing",
-    description:
-      "Consistent social content that strengthens your brand presence.",
-    href: "/services#social-media",
-    icon: BriefcaseBusiness,
-  },
-  {
-    name: "Brand Identity & Design",
-    description:
-      "Distinct visual systems that make your business recognizable.",
-    href: "/services#brand-identity",
-    icon: Palette,
-  },
-  {
-    name: "Lead Generation",
-    description:
-      "Conversion-focused systems designed to create quality leads.",
-    href: "/services#lead-generation",
-    icon: BarChart3,
-  },
-  {
-    name: "Marketing Strategy",
-    description:
-      "Connected marketing plans focused on measurable business results.",
-    href: "/services#marketing-strategy",
-    icon: BadgeCheck,
+    name: "Contact",
+    href: "/contact",
   },
 ];
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [servicesOpen, setServicesOpen] = useState(false);
-  const [mobileServicesOpen, setMobileServicesOpen] =
+
+  const [servicesOpen, setServicesOpen] =
     useState(false);
+
+  const [
+    mobileServicesOpen,
+    setMobileServicesOpen,
+  ] = useState(false);
 
   const closeMenus = () => {
     setMenuOpen(false);
@@ -120,7 +64,10 @@ export default function Header() {
       }
     };
 
-    window.addEventListener("resize", handleResize);
+    window.addEventListener(
+      "resize",
+      handleResize
+    );
 
     return () => {
       window.removeEventListener(
@@ -156,20 +103,22 @@ export default function Header() {
       <div className="h-[104px] sm:h-28" />
 
       <div className="fixed inset-x-0 top-0 z-[100]">
+
         {/* Top announcement bar */}
         <div className="border-b border-black/10 bg-[#a7d503] py-2 text-center text-[10px] font-black uppercase tracking-[0.14em] text-black sm:text-xs sm:tracking-[0.18em]">
           Strategy. Creativity. Measurable Growth.
         </div>
 
-        {/* Header and mega menu wrapper */}
+        {/* Header */}
         <header
           className="relative border-b border-black/10 bg-white/95 backdrop-blur-xl transition-colors duration-300 dark:border-white/10 dark:bg-[#0a0a0a]/95"
           onMouseLeave={() =>
             setServicesOpen(false)
           }
         >
-          {/* Main header */}
+          {/* Main Header */}
           <div className="container-custom flex h-[72px] items-center justify-between sm:h-20">
+
             {/* Logo */}
             <Link
               href="/"
@@ -177,17 +126,17 @@ export default function Header() {
               className="flex shrink-0 items-center"
               aria-label="MarkitMe Home"
             >
-              {/* Light Mode: Light theme me show, Dark theme me hidden */}
+              {/* Dark theme logo */}
               <Image
                 src="/images/logo-light.png"
                 alt="MarkitMe"
                 width={190}
                 height={60}
                 priority
-                className=" h-auto w-[145px] object-contain hidden dark:block  sm:w-[170px]"
+                className="hidden h-auto w-[145px] object-contain dark:block sm:w-[170px]"
               />
 
-              {/* Dark Mode: Light theme me hidden, Dark theme me show */}
+              {/* Light theme logo */}
               <Image
                 src="/images/logo-dark.png"
                 alt="MarkitMe"
@@ -198,13 +147,15 @@ export default function Header() {
               />
             </Link>
 
-            {/* Desktop navigation */}
+            {/* Desktop Navigation */}
             <nav
-              className="hidden items-center gap-7 xl:gap-9 lg:flex"
+              className="hidden items-center gap-7 lg:flex xl:gap-9"
               aria-label="Main navigation"
             >
-              {navLinks.slice(0, 2).map(
-                (link) => (
+              {/* Home and About */}
+              {navLinks
+                .slice(0, 2)
+                .map((link) => (
                   <Link
                     key={link.name}
                     href={link.href}
@@ -213,10 +164,9 @@ export default function Header() {
                   >
                     {link.name}
                   </Link>
-                )
-              )}
+                ))}
 
-              {/* Services hover tab */}
+              {/* Services */}
               <button
                 type="button"
                 onMouseEnter={() =>
@@ -224,7 +174,8 @@ export default function Header() {
                 }
                 onClick={() =>
                   setServicesOpen(
-                    (previous) => !previous
+                    (previous) =>
+                      !previous
                   )
                 }
                 className={`group flex items-center gap-1.5 text-sm font-semibold transition-colors duration-300 ${
@@ -232,7 +183,9 @@ export default function Header() {
                     ? "text-[#8db800] dark:text-[#a7d503]"
                     : "text-black/65 hover:text-[#8db800] dark:text-white/65 dark:hover:text-[#a7d503]"
                 }`}
-                aria-expanded={servicesOpen}
+                aria-expanded={
+                  servicesOpen
+                }
                 aria-haspopup="true"
               >
                 Services
@@ -247,6 +200,7 @@ export default function Header() {
                 />
               </button>
 
+              {/* Work and Blog */}
               {navLinks
                 .slice(2)
                 .map((link) => (
@@ -261,7 +215,7 @@ export default function Header() {
                 ))}
             </nav>
 
-            {/* Desktop actions */}
+            {/* Desktop Actions */}
             <div className="hidden items-center gap-3 lg:flex">
               <ThemeToggle />
 
@@ -275,7 +229,7 @@ export default function Header() {
               </Button>
             </div>
 
-            {/* Mobile actions */}
+            {/* Mobile Actions */}
             <div className="flex items-center gap-3 lg:hidden">
               <ThemeToggle />
 
@@ -283,7 +237,8 @@ export default function Header() {
                 type="button"
                 onClick={() => {
                   setMenuOpen(
-                    (previous) => !previous
+                    (previous) =>
+                      !previous
                   );
 
                   setServicesOpen(false);
@@ -306,7 +261,10 @@ export default function Header() {
             </div>
           </div>
 
-          {/* Desktop mega menu */}
+          {/* =====================================
+              DESKTOP MEGA MENU
+          ====================================== */}
+
           <div
             onMouseEnter={() =>
               setServicesOpen(true)
@@ -314,13 +272,16 @@ export default function Header() {
             className={`absolute left-0 right-0 top-full border-b border-black/10 bg-white shadow-2xl transition-all duration-300 dark:border-white/10 dark:bg-[#101010] ${
               servicesOpen
                 ? "visible translate-y-0 opacity-100"
-                : "invisible -translate-y-2 opacity-0 pointer-events-none"
+                : "pointer-events-none invisible -translate-y-2 opacity-0"
             }`}
           >
             <div className="container-custom">
+
               <div className="grid max-h-[calc(100vh-105px)] grid-cols-[0.9fr_2.1fr] overflow-y-auto">
-                {/* Mega menu left section */}
+
+                {/* Left Content */}
                 <div className="border-r border-black/10 px-8 py-9 dark:border-white/10 xl:px-10">
+
                   <p className="text-xs font-black uppercase tracking-[0.2em] text-[#8db800] dark:text-[#a7d503]">
                     What we do
                   </p>
@@ -346,10 +307,12 @@ export default function Header() {
                   >
                     View All Services
                   </Button>
+
                 </div>
 
-                {/* Mega menu service grid */}
-                <div className="grid grid-cols-2 gap-3 px-7 py-7 xl:grid-cols-2 xl:px-10">
+                {/* Dynamic Service Links */}
+                <div className="grid grid-cols-2 gap-3 px-7 py-7 xl:px-10">
+
                   {services.map(
                     (service) => {
                       const Icon =
@@ -358,33 +321,29 @@ export default function Header() {
                       return (
                         <Link
                           key={
-                            service.name
+                            service.slug
                           }
-                          href={
-                            service.href
-                          }
+                          href={`/services/${service.slug}`}
                           onClick={
                             closeMenus
                           }
                           className="group flex min-h-[118px] gap-4 rounded-2xl border border-black/10 bg-black/[0.02] p-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-[#8db800]/40 hover:bg-[#a7d503]/10 dark:border-white/10 dark:bg-white/[0.03] dark:hover:border-[#a7d503]/40 dark:hover:bg-[#a7d503]/10"
                         >
+                          {/* Icon */}
                           <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#a7d503] text-black">
                             <Icon
                               size={20}
-                              strokeWidth={
-                                2
-                              }
+                              strokeWidth={2}
                             />
                           </div>
 
+                          {/* Text */}
                           <div>
                             <h3 className="text-sm font-black text-black transition-colors group-hover:text-[#6f8f00] dark:text-white dark:group-hover:text-[#a7d503]">
-                              {
-                                service.name
-                              }
+                              {service.title}
                             </h3>
 
-                            <p className="mt-2 text-xs leading-5 text-black/50 dark:text-white/50">
+                            <p className="mt-2 line-clamp-2 text-xs leading-5 text-black/50 dark:text-white/50">
                               {
                                 service.description
                               }
@@ -394,12 +353,18 @@ export default function Header() {
                       );
                     }
                   )}
+
                 </div>
+
               </div>
+
             </div>
           </div>
 
-          {/* Mobile navigation */}
+          {/* =====================================
+              MOBILE MENU
+          ====================================== */}
+
           <div
             id="mobile-navigation"
             className={`overflow-hidden border-t border-black/10 bg-white transition-all duration-300 lg:hidden dark:border-white/10 dark:bg-[#101010] ${
@@ -409,7 +374,10 @@ export default function Header() {
             }`}
           >
             <div className="container-custom px-0 py-5">
+
               <nav className="flex flex-col">
+
+                {/* Home */}
                 <Link
                   href="/"
                   onClick={closeMenus}
@@ -418,6 +386,7 @@ export default function Header() {
                   Home
                 </Link>
 
+                {/* About */}
                 <Link
                   href="/about"
                   onClick={closeMenus}
@@ -426,7 +395,7 @@ export default function Header() {
                   About
                 </Link>
 
-                {/* Mobile services accordion */}
+                {/* Services */}
                 <button
                   type="button"
                   onClick={() =>
@@ -452,14 +421,26 @@ export default function Header() {
                   />
                 </button>
 
+                {/* Mobile Dynamic Services */}
                 <div
                   className={`overflow-hidden transition-all duration-300 ${
                     mobileServicesOpen
-                      ? "max-h-[700px] opacity-100"
+                      ? "max-h-[2000px] opacity-100"
                       : "max-h-0 opacity-0"
                   }`}
                 >
                   <div className="border-b border-black/10 bg-black/[0.02] px-4 py-3 dark:border-white/10 dark:bg-white/[0.03]">
+
+                    {/* View All */}
+                    <Link
+                      href="/services"
+                      onClick={closeMenus}
+                      className="mb-2 flex rounded-xl bg-[#a7d503] px-4 py-3 text-sm font-black text-black"
+                    >
+                      View All Services
+                    </Link>
+
+                    {/* Services */}
                     {services.map(
                       (service) => {
                         const Icon =
@@ -468,11 +449,9 @@ export default function Header() {
                         return (
                           <Link
                             key={
-                              service.name
+                              service.slug
                             }
-                            href={
-                              service.href
-                            }
+                            href={`/services/${service.slug}`}
                             onClick={
                               closeMenus
                             }
@@ -483,16 +462,16 @@ export default function Header() {
                               className="text-[#8db800] dark:text-[#a7d503]"
                             />
 
-                            {
-                              service.name
-                            }
+                            {service.title}
                           </Link>
                         );
                       }
                     )}
+
                   </div>
                 </div>
 
+                {/* Work */}
                 <Link
                   href="/work"
                   onClick={closeMenus}
@@ -501,6 +480,7 @@ export default function Header() {
                   Work
                 </Link>
 
+                {/* Blog */}
                 <Link
                   href="/blog"
                   onClick={closeMenus}
@@ -509,6 +489,16 @@ export default function Header() {
                   Blog
                 </Link>
 
+                {/* Contact */}
+                <Link
+                  href="/contact"
+                  onClick={closeMenus}
+                  className="border-b border-black/10 py-4 text-lg font-bold text-black dark:border-white/10 dark:text-white"
+                >
+                  Contact
+                </Link>
+
+                {/* CTA */}
                 <Button
                   href="/contact"
                   variant="primary"
@@ -518,9 +508,11 @@ export default function Header() {
                 >
                   Let&apos;s Talk
                 </Button>
+
               </nav>
             </div>
           </div>
+
         </header>
       </div>
     </>
