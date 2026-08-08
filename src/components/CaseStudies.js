@@ -1,174 +1,401 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ExternalLink } from "lucide-react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import { Pagination, Autoplay } from "swiper/modules";
 
+import { projects } from "@/data/projects";
 import Button from "./ui/Button";
 
 import "swiper/css";
-import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-const caseStudies = [
-  {
-    number: "01",
-    category: "Branding • Website • Digital",
-    title: "Navira Settlement",
-    subtitle: "Navira prepares everything before your flight",
-    description:
-      "A clear, professional digital experience designed to communicate Navira's services, build trust, and make important information easier to access.",
-    image: "/images/home2.jpg",
-    link: "https://navirasettlements.com/",
-  },
-  {
-    number: "02",
-    category: "Website • SEO • Growth",
-    title: "Harmony Rehab",
-    subtitle: "Our Specialized Massage Therapy Services",
-    description:
-      "A welcoming and user-focused website experience created to highlight specialized services and help potential clients take the next step.",
-    image: "/images/harmony.jpg",
-    link: "#",
-  },
-  {
-    number: "03",
-    category: "Brand Strategy • Web Design",
-    title: "Infinite Real Estate",
-    subtitle: "Elevate Your Pre-Construction Experience",
-    description:
-      "Infinite Real Estate, Brokerage is a growing network of high-performing agents serving the Greater Toronto Area.",
-    image: "/images/infinite.png",
-    link: "#",
-  },
-];
-
 export default function CaseStudies() {
+  const [swiper, setSwiper] = useState(null);
+
   return (
-    <section
-      id="work"
-      className="overflow-hidden border-t border-black/10 bg-[#f7f7f5] py-24 text-black transition-colors duration-300 sm:py-32 dark:border-white/10 dark:bg-[#0d0d0d] dark:text-white"
-    >
-      {" "}
-      <div className="container-custom">
-        {/* Section Heading */}{" "}
-        <div className="flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
-          {" "}
-          <div className="max-w-3xl">
-            {" "}
-            <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#6f8f00] dark:text-[#a7d503]">
-              Selected work{" "}
+    <section className="overflow-hidden border-y border-black/10 bg-white py-16 text-black dark:border-white/10 dark:bg-[#0a0a0a] dark:text-white sm:py-20 lg:py-24">
+      {/* =====================================================
+          MAIN CONTAINER
+      ====================================================== */}
+
+      <div className="mx-auto w-full max-w-[1280px] px-5 sm:px-6 lg:px-8">
+        {/* =====================================================
+            HEADING
+        ====================================================== */}
+
+        <div className="mb-10 flex flex-col gap-6 sm:mb-12 lg:flex-row lg:items-end lg:justify-between">
+          <div className="max-w-[680px]">
+            <p className="text-[8px] font-black uppercase tracking-[0.22em] text-[#6f8f00] dark:text-[#a7d503] sm:text-[9px]">
+              Selected Work
             </p>
-            <h2 className="mt-5 text-4xl font-black leading-[0.95] tracking-[-0.06em] sm:text-5xl">
-              Ideas turned into
-              <span className="block text-[#6f8f00] dark:text-[#a7d503]">
+
+            <h2 className="mt-3 text-3xl font-black leading-[0.95] tracking-[-0.055em] sm:text-4xl md:text-5xl lg:text-6xl">
+              Ideas turned into{" "}
+              <span className="text-[#6f8f00] dark:text-[#a7d503]">
                 measurable impact.
               </span>
             </h2>
           </div>
-          <Button href="/work" variant="outline" className="w-fit">
-            View All Work
-          </Button>
+
+          <div className="shrink-0">
+            <Button href="/work" variant="outline">
+              View All Work
+            </Button>
+          </div>
         </div>
-        {/* Slider — same settings */}
-        <div className="case-study-slider mt-14">
-          <Swiper
-            modules={[Navigation, Pagination, Autoplay]}
-            spaceBetween={20}
-            slidesPerView={1}
-            centeredSlides={false}
-            slidesOffsetBefore={0}
-            slidesOffsetAfter={0}
-            watchOverflow={true}
-            navigation
-            pagination={{ clickable: true }}
-            autoplay={{
-              delay: 4500,
-              disableOnInteraction: false,
-            }}
-            loop={true}
-            breakpoints={{
-              768: {
-                slidesPerView: 1.25,
-                spaceBetween: 24,
-              },
-              1024: {
-                slidesPerView: 1.45,
-                spaceBetween: 28,
-              },
-            }}
-          >
-            {caseStudies.map((study) => (
-              <SwiperSlide key={study.title}>
-                <article className="group overflow-hidden rounded-[2rem] border border-black/10 bg-white transition-colors duration-300 dark:border-white/10 dark:bg-[#151515]">
-                  <div className="grid min-h-[560px] lg:grid-cols-[1.05fr_0.95fr]">
-                    {/* Content */}
-                    <div className="flex flex-col p-7 sm:p-10 lg:p-12">
-                      <div className="flex items-center justify-between">
-                        <span className="text-sm font-semibold text-black/35 dark:text-white/35">
-                          {study.number}
-                        </span>
 
-                        <span className="rounded-full border border-black/10 px-4 py-2 text-xs font-medium text-black/50 dark:border-white/10 dark:text-white/50">
-                          {study.category}
-                        </span>
-                      </div>
+        {/* =====================================================
+            SLIDER FIXED WIDTH
+        ====================================================== */}
 
-                      <div className="my-auto py-12">
-                        <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#6f8f00] dark:text-[#a7d503]">
-                          Case Study
-                        </p>
+        <div className="mx-auto w-full max-w-[1200px]">
+          <div className="relative w-full">
+            <Swiper
+              modules={[Pagination, Autoplay]}
+              onSwiper={setSwiper}
+              slidesPerView={1}
+              spaceBetween={16}
+              centeredSlides={false}
+              watchOverflow={true}
+              observer={true}
+              observeParents={true}
+              resizeObserver={true}
+              autoplay={{
+                delay: 4500,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true,
+              }}
+              pagination={{
+                clickable: true,
+                dynamicBullets: false,
+              }}
+              loop={projects.length > 3}
+              breakpoints={{
+                /* Mobile */
+                0: {
+                  slidesPerView: 1,
+                  spaceBetween: 16,
+                },
 
-                        <h3 className="mt-5 text-4xl font-black tracking-[-0.05em] sm:text-5xl">
-                          {study.title}
-                        </h3>
+                /* Large Mobile */
+                640: {
+                  slidesPerView: 1,
+                  spaceBetween: 18,
+                },
 
-                        <p className="mt-4 text-xl font-medium text-black/75 dark:text-white/75">
-                          {study.subtitle}
-                        </p>
+                /* Tablet */
+                768: {
+                  slidesPerView: 2,
+                  spaceBetween: 20,
+                },
 
-                        <p className="mt-6 max-w-xl leading-8 text-black/50 dark:text-white/50">
-                          {study.description}
-                        </p>
+                /* Laptop */
+                1024: {
+                  slidesPerView: 2,
+                  spaceBetween: 22,
+                },
 
-                        <div className="mt-9">
-                          <Button href={study.link} variant="primary">
-                            View Project
-                          </Button>
-                        </div>
-                      </div>
-                    </div>
+                /* Desktop */
+                1280: {
+                  slidesPerView: 3,
+                  spaceBetween: 24,
+                },
 
-                    {/* Image */}
-                    <div className="relative min-h-[320px] overflow-hidden bg-black/10 dark:bg-[#202020] lg:min-h-full">
+                /* Extra Large */
+                1536: {
+                  slidesPerView: 3,
+                  spaceBetween: 24,
+                },
+
+                /* 2XL / Large Monitors */
+                1920: {
+                  slidesPerView: 3,
+                  spaceBetween: 24,
+                },
+
+                2560: {
+                  slidesPerView: 3,
+                  spaceBetween: 24,
+                },
+              }}
+              className="case-studies-swiper"
+            >
+              {projects.map((study) => (
+                <SwiperSlide
+                  key={study.slug}
+                  className="case-study-slide"
+                >
+                  {/* =================================================
+                      CARD
+                  ================================================== */}
+
+                  <article className="group flex h-full min-h-[570px] w-full flex-col overflow-hidden rounded-[22px] border border-black/10 bg-white transition-all duration-500 hover:-translate-y-1 hover:border-black/20 hover:shadow-xl dark:border-white/10 dark:bg-[#111] dark:hover:border-white/20">
+                    {/* =================================================
+                        IMAGE
+                    ================================================== */}
+
+                    <div className="relative h-[250px] w-full shrink-0 overflow-hidden bg-black/10 dark:bg-[#202020] sm:h-[270px] lg:h-[285px]">
                       <Image
                         src={study.image}
                         alt={`${study.title} case study`}
                         fill
-                        sizes="(max-width: 1024px) 100vw, 50vw"
-                        className="object-cover transition duration-700 group-hover:scale-105"
+                        sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 33vw"
+                        className="object-cover transition-transform duration-700 group-hover:scale-105"
                       />
 
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
 
-                      <div className="absolute bottom-6 left-6 right-6 flex items-center justify-between">
-                        <span className="rounded-full bg-black/50 px-4 py-2 text-xs font-semibold text-white backdrop-blur-md">
-                          MarkitMe Project
-                        </span>
+                      {/* Number */}
 
-                        <span className="flex h-12 w-12 items-center justify-center rounded-full bg-[#a7d503] text-black">
-                          <ArrowRight size={20} />
-                        </span>
+                      <div className="absolute left-4 top-4 rounded-full border border-white/20 bg-black/30 px-3 py-1.5 text-[9px] font-bold text-white backdrop-blur-md">
+                        {study.number}
+                      </div>
+
+                      {/* Category */}
+
+                      <div className="absolute right-4 top-4 max-w-[72%] truncate rounded-full border border-white/20 bg-black/30 px-3 py-1.5 text-[8px] font-medium text-white backdrop-blur-md">
+                        {study.category}
+                      </div>
+
+                      {/* Image Bottom */}
+
+                      <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between gap-3">
+                        <div className="min-w-0">
+                          <p className="text-[8px] font-black uppercase tracking-[0.18em] text-[#a7d503]">
+                            Case Study
+                          </p>
+
+                          <p className="mt-1.5 truncate text-lg font-black text-white">
+                            {study.title}
+                          </p>
+                        </div>
+
+                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#a7d503] text-black transition-transform duration-300 group-hover:rotate-[-45deg]">
+                          <ArrowRight size={17} />
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </article>
-              </SwiperSlide>
-            ))}
-          </Swiper>
+
+                    {/* =================================================
+                        CONTENT
+                    ================================================== */}
+
+                    <div className="flex flex-1 flex-col p-5 sm:p-6">
+                      <p className="text-[8px] font-black uppercase tracking-[0.18em] text-[#6f8f00] dark:text-[#a7d503] sm:text-[9px]">
+                        {study.category}
+                      </p>
+
+                      <h3 className="mt-3 text-2xl font-black leading-[0.95] tracking-[-0.045em] sm:text-[27px]">
+                        {study.title}
+                      </h3>
+
+                      <p className="mt-4 line-clamp-4 text-sm leading-6 text-black/55 dark:text-white/55">
+                        {study.shortDescription}
+                      </p>
+
+                      {/* Services */}
+
+                      {study.services?.length > 0 && (
+                        <div className="mt-5 flex flex-wrap gap-2">
+                          {study.services.slice(0, 3).map((service) => (
+                            <span
+                              key={service.title}
+                              className="rounded-full border border-black/10 px-3 py-1.5 text-[8px] font-semibold text-black/50 dark:border-white/10 dark:text-white/50"
+                            >
+                              {service.title}
+                            </span>
+                          ))}
+                        </div>
+                      )}
+
+                      {/* Results */}
+
+                      {study.results?.length > 0 && (
+                        <div className="mt-5 grid grid-cols-2 gap-2">
+                          {study.results.slice(0, 2).map((result) => (
+                            <div
+                              key={result.label}
+                              className="rounded-xl bg-black/[0.035] px-3 py-3 dark:bg-white/[0.04]"
+                            >
+                              <p className="text-lg font-black tracking-[-0.04em] text-[#6f8f00] dark:text-[#a7d503]">
+                                {result.value}
+                              </p>
+
+                              <p className="mt-0.5 line-clamp-1 text-[8px] font-semibold text-black/40 dark:text-white/40">
+                                {result.label}
+                              </p>
+                            </div>
+                          ))}
+                        </div>
+                      )}
+
+                      {/* Buttons */}
+
+                      <div className="mt-auto flex flex-wrap gap-2 pt-6">
+                        <Button
+                          href={`/work/${study.slug}`}
+                          variant="primary"
+                        >
+                          View Case Study
+                        </Button>
+
+                        {study.website && (
+                          <a
+                            href={study.website}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center justify-center gap-2 rounded-full border border-black/10 px-4 py-3 text-xs font-bold text-black transition-all duration-300 hover:bg-black hover:text-white dark:border-white/10 dark:text-white dark:hover:bg-white dark:hover:text-black"
+                          >
+                            Website
+                            <ExternalLink size={13} />
+                          </a>
+                        )}
+                      </div>
+                    </div>
+                  </article>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+
+            {/* =====================================================
+                CUSTOM ARROWS
+            ====================================================== */}
+
+            <div className="pointer-events-none absolute inset-x-0 top-[45%] z-20 hidden -translate-y-1/2 items-center justify-between lg:flex">
+              <button
+                type="button"
+                onClick={() => swiper?.slidePrev()}
+                className="pointer-events-auto -ml-5 flex h-11 w-11 items-center justify-center rounded-full border border-black/10 bg-white text-black shadow-lg transition-all duration-300 hover:scale-105 hover:bg-black hover:text-white dark:border-white/10 dark:bg-[#151515] dark:text-white dark:hover:bg-white dark:hover:text-black"
+                aria-label="Previous project"
+              >
+                <ArrowRight
+                  size={18}
+                  className="rotate-180"
+                />
+              </button>
+
+              <button
+                type="button"
+                onClick={() => swiper?.slideNext()}
+                className="pointer-events-auto -mr-5 flex h-11 w-11 items-center justify-center rounded-full border border-black/10 bg-white text-black shadow-lg transition-all duration-300 hover:scale-105 hover:bg-black hover:text-white dark:border-white/10 dark:bg-[#151515] dark:text-white dark:hover:bg-white dark:hover:text-black"
+                aria-label="Next project"
+              >
+                <ArrowRight size={18} />
+              </button>
+            </div>
+          </div>
         </div>
       </div>
+
+      {/* =====================================================
+          SWIPER CSS
+      ====================================================== */}
+
+      <style jsx global>{`
+        .case-studies-swiper {
+          width: 100%;
+          overflow: hidden !important;
+          padding-bottom: 45px !important;
+        }
+
+        .case-studies-swiper .swiper-wrapper {
+          align-items: stretch;
+        }
+
+        .case-studies-swiper .swiper-slide {
+          height: auto !important;
+          display: flex;
+        }
+
+        /* =====================================================
+           IMPORTANT XL FIX
+           EXACTLY 3 CARDS ON LARGE SCREENS
+        ====================================================== */
+
+        @media (min-width: 1280px) {
+          .case-studies-swiper .swiper-slide {
+            width: calc((100% - 48px) / 3) !important;
+          }
+        }
+
+        @media (min-width: 1536px) {
+          .case-studies-swiper .swiper-slide {
+            width: calc((100% - 48px) / 3) !important;
+          }
+        }
+
+        @media (min-width: 1920px) {
+          .case-studies-swiper .swiper-slide {
+            width: calc((100% - 48px) / 3) !important;
+          }
+        }
+
+        /* =====================================================
+           PAGINATION
+        ====================================================== */
+
+        .case-studies-swiper .swiper-pagination {
+          bottom: 0 !important;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 5px;
+        }
+
+        .case-studies-swiper .swiper-pagination-bullet {
+          width: 6px;
+          height: 6px;
+          margin: 0 !important;
+          border-radius: 999px;
+          opacity: 0.25;
+          background: #111;
+          transition: all 0.3s ease;
+        }
+
+        .dark .case-studies-swiper .swiper-pagination-bullet {
+          background: #fff;
+        }
+
+        .case-studies-swiper
+          .swiper-pagination-bullet.swiper-pagination-bullet-active {
+          width: 22px;
+          opacity: 1;
+          background: #a7d503;
+        }
+
+        /* =====================================================
+           MOBILE
+        ====================================================== */
+
+        @media (max-width: 639px) {
+          .case-studies-swiper {
+            padding-bottom: 38px !important;
+          }
+
+          .case-studies-swiper .swiper-pagination-bullet {
+            width: 5px;
+            height: 5px;
+          }
+
+          .case-studies-swiper
+            .swiper-pagination-bullet.swiper-pagination-bullet-active {
+            width: 18px;
+          }
+        }
+
+        /* =====================================================
+           TABLET
+        ====================================================== */
+
+        @media (min-width: 640px) and (max-width: 1023px) {
+          .case-studies-swiper {
+            padding-bottom: 42px !important;
+          }
+        }
+      `}</style>
     </section>
   );
 }

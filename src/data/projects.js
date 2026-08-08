@@ -473,4 +473,91 @@ export const projects = [
     conclusion:
       "Harmony Rehab went from a clinic people discovered by accident to a brand people actively search for and trust.",
   },
+  {
+  number: "06",
+  slug: "medtrion",
+
+  title: "Medtrion",
+  category: "Mobility Solutions • E-commerce • Digital",
+  location: "Canada",
+
+  image: "/images/medtrion.png",
+
+  website: "https://medtrion.ca/",
+
+  shortDescription:
+    "A modern digital experience for Medtrion, designed to showcase mobility solutions and make stair-lift products easier to discover, understand, and explore.",
+
+  aboutTitle: "Project Overview",
+
+  overview: [
+    "Medtrion provides mobility solutions designed to improve accessibility, safety, and independence at home.",
+
+    "The website brings together product discovery, detailed product information, configuration options, and customer-focused content in one digital experience.",
+  ],
+
+  challenge: [
+    "Medtrion needed a clearer and more engaging digital experience to present its mobility solutions and make product discovery easier for customers.",
+
+    "The website needed to communicate product information clearly while creating a professional and trustworthy experience for people exploring accessibility and mobility solutions.",
+  ],
+
+  challenges: [
+    "Present a wide range of mobility products in a clear and structured way.",
+    "Make product information easier for customers to understand.",
+    "Create a trustworthy and professional digital experience.",
+    "Improve the overall product discovery and browsing experience.",
+  ],
+
+  services: [
+    {
+      title: "Website Design",
+      description:
+        "Designed a clean and professional interface focused on product discovery and usability.",
+    },
+
+    {
+      title: "E-commerce",
+      description:
+        "Structured the product experience to make mobility products easier to browse and explore.",
+    },
+
+    {
+      title: "UI/UX Design",
+      description:
+        "Focused on clear navigation, readable product information, and a user-friendly experience.",
+    },
+
+    {
+      title: "Responsive Development",
+      description:
+        "Created an experience that works smoothly across desktop, tablet, and mobile devices.",
+    },
+  ],
+
+  results: [
+    {
+      value: "Modern",
+      label: "Digital Experience",
+    },
+
+    {
+      value: "Clear",
+      label: "Product Discovery",
+    },
+  ],
+
+  changed: [
+    "The website provides a more modern and professional digital experience for Medtrion.",
+
+    "Mobility products are easier for customers to discover and explore.",
+
+    "Product information is presented in a clearer and more structured way.",
+
+    "The responsive experience provides a smoother journey across desktop, tablet, and mobile devices.",
+  ],
+
+  conclusion:
+    "Medtrion combines a professional digital presence with a product-focused experience built around accessibility, clarity, and customer confidence.",
+},
 ];
