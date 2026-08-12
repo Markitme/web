@@ -11,6 +11,7 @@ import {
 
 import { services, getServiceBySlug } from "@/data/services";
 import AnimatedCounter from "@/components/AnimatedCounter";
+import ProcessSection from "@/components/ProcessSection";
 
 /* =====================================================
    SERVICE IMAGES
@@ -167,7 +168,7 @@ function AnimatedServiceVisual({
         <div className="absolute inset-0 bg-gradient-to-br from-black/10 via-black/30 to-black/85" />
 
         {/* Lime glow */}
-        <div className="absolute -right-16 top-10 h-40 w-40 rounded-full bg-[#a7d503]/20 blur-3xl transition-all duration-700 group-hover:scale-125" />
+        <div className="absolute -right-16 top-10 h-40 w-40 rounded-full bg-[var(--accent-bright)]/20 blur-3xl transition-all duration-700 group-hover:scale-125" />
 
         {/* Brand label */}
         <div className="absolute left-4 top-4 sm:left-6 sm:top-6">
@@ -180,14 +181,14 @@ function AnimatedServiceVisual({
         <div className="absolute bottom-4 left-4 right-4 sm:bottom-7 sm:left-7 sm:right-7">
           <div className="rounded-[18px] border border-white/15 bg-black/45 p-4 backdrop-blur-xl transition-transform duration-500 group-hover:-translate-y-1 sm:rounded-[22px] sm:p-5">
             <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#a7d503] text-black shadow-[0_0_30px_rgba(167,213,3,0.25)] sm:h-12 sm:w-12 sm:rounded-2xl">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[var(--accent-bright)] text-black shadow-[0_0_30px_rgba(167,213,3,0.25)] sm:h-12 sm:w-12 sm:rounded-2xl">
                 {ServiceIcon && (
                   <ServiceIcon size={22} strokeWidth={1.8} />
                 )}
               </div>
 
               <div className="min-w-0">
-                <p className="text-[8px] font-black uppercase tracking-[0.15em] text-[#a7d503] sm:text-[9px]">
+                <p className="text-[8px] font-black uppercase tracking-[0.15em] text-[var(--accent-bright)] sm:text-[9px]">
                   Digital Service
                 </p>
 
@@ -202,9 +203,9 @@ function AnimatedServiceVisual({
         {/* Animated dots */}
         <div className="absolute right-6 top-1/2 hidden -translate-y-1/2 sm:block">
           <div className="flex gap-2">
-            <span className="h-2 w-2 animate-pulse rounded-full bg-[#a7d503]" />
-            <span className="h-2 w-2 animate-pulse rounded-full bg-[#a7d503]/60 [animation-delay:200ms]" />
-            <span className="h-2 w-2 animate-pulse rounded-full bg-[#a7d503]/30 [animation-delay:400ms]" />
+            <span className="h-2 w-2 animate-pulse rounded-full bg-[var(--accent-bright)]" />
+            <span className="h-2 w-2 animate-pulse rounded-full bg-[var(--accent-bright)]/60 [animation-delay:200ms]" />
+            <span className="h-2 w-2 animate-pulse rounded-full bg-[var(--accent-bright)]/30 [animation-delay:400ms]" />
           </div>
         </div>
       </div>
@@ -236,13 +237,13 @@ function AnimatedServiceVisual({
         {/* Content */}
         <div className="absolute bottom-5 left-5 right-5 sm:bottom-7 sm:left-7 sm:right-7">
           <div className="max-w-md">
-            <div className="mb-3 flex h-11 w-11 items-center justify-center rounded-xl bg-[#a7d503] text-black shadow-[0_0_35px_rgba(167,213,3,0.25)] transition-transform duration-500 group-hover:scale-110 sm:h-14 sm:w-14 sm:rounded-2xl">
+            <div className="mb-3 flex h-11 w-11 items-center justify-center rounded-xl bg-[var(--accent-bright)] text-black shadow-[0_0_35px_rgba(167,213,3,0.25)] transition-transform duration-500 group-hover:scale-110 sm:h-14 sm:w-14 sm:rounded-2xl">
               {ServiceIcon && (
                 <ServiceIcon size={24} strokeWidth={1.8} />
               )}
             </div>
 
-            <p className="text-[9px] font-black uppercase tracking-[0.18em] text-[#a7d503] sm:text-[10px]">
+            <p className="text-[9px] font-black uppercase tracking-[0.18em] text-[var(--accent-bright)] sm:text-[10px]">
               Why It Matters
             </p>
 
@@ -253,7 +254,7 @@ function AnimatedServiceVisual({
         </div>
 
         {/* Decorative animated line */}
-        <div className="absolute bottom-0 left-0 h-1 w-0 bg-[#a7d503] transition-all duration-700 group-hover:w-full" />
+        <div className="absolute bottom-0 left-0 h-1 w-0 bg-[var(--accent-bright)] transition-all duration-700 group-hover:w-full" />
       </div>
     );
   }
@@ -275,17 +276,17 @@ function AnimatedServiceVisual({
       <div className="absolute inset-0 bg-gradient-to-br from-black/90 via-black/60 to-black/20" />
 
       {/* Glow */}
-      <div className="absolute -left-20 bottom-10 h-48 w-48 rounded-full bg-[#a7d503]/10 blur-3xl transition-transform duration-700 group-hover:scale-125" />
+      <div className="absolute -left-20 bottom-10 h-48 w-48 rounded-full bg-[var(--accent-bright)]/10 blur-3xl transition-transform duration-700 group-hover:scale-125" />
 
       <div className="relative flex h-full min-h-[350px] flex-col justify-between p-5 sm:min-h-[410px] sm:p-8 lg:min-h-[460px]">
         <div>
-          <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-xl border border-[#a7d503]/30 bg-[#a7d503]/10 text-[#a7d503] sm:h-14 sm:w-14 sm:rounded-2xl">
+          <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-xl border border-[var(--accent-bright)]/30 bg-[var(--accent-bright)]/10 text-[var(--accent-bright)] sm:h-14 sm:w-14 sm:rounded-2xl">
             {ServiceIcon && (
               <ServiceIcon size={24} strokeWidth={1.7} />
             )}
           </div>
 
-          <p className="text-[8px] font-black uppercase tracking-[0.16em] text-[#a7d503] sm:text-[9px]">
+          <p className="text-[8px] font-black uppercase tracking-[0.16em] text-[var(--accent-bright)] sm:text-[9px]">
             From challenge to growth
           </p>
 
@@ -300,12 +301,12 @@ function AnimatedServiceVisual({
               Service
             </p>
 
-            <p className="mt-1 text-sm font-black text-[#a7d503] sm:text-base">
+            <p className="mt-1 text-sm font-black text-[var(--accent-bright)] sm:text-base">
               {serviceTitle}
             </p>
           </div>
 
-          <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-[#a7d503] text-black shadow-[0_0_40px_rgba(167,213,3,0.3)] transition-transform duration-500 group-hover:rotate-6 group-hover:scale-110 sm:h-20 sm:w-20">
+          <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-[var(--accent-bright)] text-black shadow-[0_0_40px_rgba(167,213,3,0.3)] transition-transform duration-500 group-hover:rotate-6 group-hover:scale-110 sm:h-20 sm:w-20">
             {ServiceIcon && (
               <ServiceIcon size={30} strokeWidth={1.7} />
             )}
@@ -353,7 +354,7 @@ export default async function ServiceDetailsPage({ params }) {
 
           <Link
             href="/services"
-            className="group mb-8 inline-flex items-center gap-2 text-sm font-bold text-black/60 transition-colors hover:text-[#8db800] dark:text-white/60 dark:hover:text-[#a7d503] sm:mb-10"
+            className="group mb-8 inline-flex items-center gap-2 text-sm font-bold text-black/60 transition-colors hover:text-[var(--accent)] dark:text-white/60 dark:hover:text-[var(--accent-bright)] sm:mb-10"
           >
             <ArrowLeft
               size={17}
@@ -371,7 +372,7 @@ export default async function ServiceDetailsPage({ params }) {
 
               <div className="flex items-center gap-3 sm:gap-4">
 
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#a7d503] text-black shadow-lg shadow-[#a7d503]/20 sm:h-14 sm:w-14 sm:rounded-2xl">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[var(--accent-bright)] text-black shadow-lg shadow-[var(--accent-bright)]/20 sm:h-14 sm:w-14 sm:rounded-2xl">
 
                   <ServiceIcon
                     size={23}
@@ -387,16 +388,14 @@ export default async function ServiceDetailsPage({ params }) {
 
                 </div>
 
-                <p className="min-w-0 break-words text-[10px] font-black uppercase tracking-[0.15em] text-[#8db800] dark:text-[#a7d503] sm:text-xs sm:tracking-[0.2em]">
+                <p className="min-w-0 break-words text-[10px] font-black uppercase tracking-[0.15em] text-[var(--accent)] dark:text-[var(--accent-bright)] sm:text-xs sm:tracking-[0.2em]">
                   {service.category}
                 </p>
 
               </div>
-
-              <h1 className="mt-7 break-words text-[38px] font-black leading-[1.04] tracking-[-0.055em] sm:text-5xl lg:text-6xl xl:text-[68px]">
-                {service.heroTitle}
-              </h1>
-
+               <h1 className="mt-5 text-5xl font-black tracking-[-0.05em] sm:text-4xl lg:text-5xl xl:text-6xl bg-gradient-to-r from-black via-[var(--accent)] to-[var(--accent-bright)] bg-clip-text text-transparent dark:from-white dark:via-[var(--accent-bright)] dark:to-[var(--accent)]">
+               {service.heroTitle}
+            </h1>
               <p className="mt-6 max-w-2xl text-base leading-7 text-black/60 dark:text-white/60 sm:text-lg sm:leading-8">
                 {service.heroDescription}
               </p>
@@ -405,7 +404,7 @@ export default async function ServiceDetailsPage({ params }) {
 
                 <Link
                   href="/contact"
-                  className="group inline-flex w-full items-center justify-center gap-3 rounded-full bg-[#a7d503] px-6 py-4 text-sm font-black text-black transition-all duration-300 hover:scale-[1.02] hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black sm:w-auto sm:px-7"
+                  className="group inline-flex w-full items-center justify-center gap-3 rounded-full bg-[var(--accent-bright)] px-6 py-4 text-sm font-black text-black transition-all duration-300 hover:scale-[1.02] hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black sm:w-auto sm:px-7"
                 >
                   Start Your Project
 
@@ -417,7 +416,7 @@ export default async function ServiceDetailsPage({ params }) {
 
                 <a
                   href="#services"
-                  className="inline-flex w-full items-center justify-center gap-3 rounded-full border border-black/15 px-6 py-4 text-sm font-bold transition-all duration-300 hover:border-[#8db800] hover:text-[#8db800] dark:border-white/15 dark:hover:border-[#a7d503] dark:hover:text-[#a7d503] sm:w-auto sm:px-7"
+                  className="inline-flex w-full items-center justify-center gap-3 rounded-full border border-black/15 px-6 py-4 text-sm font-bold transition-all duration-300 hover:border-[var(--accent)] hover:text-[var(--accent)] dark:border-white/15 dark:hover:border-[var(--accent-bright)] dark:hover:text-[var(--accent-bright)] sm:w-auto sm:px-7"
                 >
                   Explore Services
                 </a>
@@ -448,7 +447,7 @@ export default async function ServiceDetailsPage({ params }) {
           ACCENT
       ===================================================== */}
 
-      <section className="bg-[#a7d503] px-4 py-7 text-black sm:px-5 sm:py-8">
+      <section className="bg-[var(--accent-bright)] px-4 py-7 text-black sm:px-5 sm:py-8">
         <div className="container-custom">
           <p className="text-center text-lg font-black leading-7 tracking-[-0.03em] sm:text-2xl sm:leading-normal">
             {service.accentText}
@@ -467,7 +466,7 @@ export default async function ServiceDetailsPage({ params }) {
 
           <div className="order-1">
 
-            <p className="text-xs font-black uppercase tracking-[0.2em] text-[#8db800] dark:text-[#a7d503] sm:text-sm">
+            <p className="text-xs font-black uppercase tracking-[0.2em] text-[var(--accent)] dark:text-[var(--accent-bright)] sm:text-sm">
               Why It Matters
             </p>
 
@@ -481,7 +480,7 @@ export default async function ServiceDetailsPage({ params }) {
 
             <Link
               href="/contact"
-              className="group mt-7 inline-flex items-center gap-3 text-sm font-black transition-colors hover:text-[#8db800] dark:hover:text-[#a7d503] sm:mt-8"
+              className="group mt-7 inline-flex items-center gap-3 text-sm font-black transition-colors hover:text-[var(--accent)] dark:hover:text-[var(--accent-bright)] sm:mt-8"
             >
               Let&apos;s Talk
 
@@ -571,7 +570,7 @@ export default async function ServiceDetailsPage({ params }) {
 
           <div className="order-1 min-w-0 lg:order-2">
 
-            <p className="text-xs font-black uppercase tracking-[0.18em] text-[#8db800] dark:text-[#a7d503] sm:text-sm sm:tracking-[0.2em]">
+            <p className="text-xs font-black uppercase tracking-[0.18em] text-[var(--accent)] dark:text-[var(--accent-bright)] sm:text-sm sm:tracking-[0.2em]">
               The Challenge
             </p>
 
@@ -588,12 +587,12 @@ export default async function ServiceDetailsPage({ params }) {
               {service.problemPoints.map((point) => (
                 <div
                   key={point}
-                  className="flex items-start gap-3 rounded-2xl border border-black/10 bg-black/[0.02] p-4 transition-all duration-300 hover:-translate-y-1 hover:border-[#8db800] hover:shadow-lg dark:border-white/10 dark:bg-white/[0.03] dark:hover:border-[#a7d503]"
+                  className="flex items-start gap-3 rounded-2xl border border-black/10 bg-black/[0.02] p-4 transition-all duration-300 hover:-translate-y-1 hover:border-[var(--accent)] hover:shadow-lg dark:border-white/10 dark:bg-white/[0.03] dark:hover:border-[var(--accent-bright)]"
                 >
 
                   <CheckCircle2
                     size={18}
-                    className="mt-0.5 shrink-0 text-[#8db800] dark:text-[#a7d503]"
+                    className="mt-0.5 shrink-0 text-[var(--accent)] dark:text-[var(--accent-bright)]"
                   />
 
                   <p className="min-w-0 text-sm font-semibold leading-6 text-black/65 dark:text-white/65">
@@ -622,7 +621,7 @@ export default async function ServiceDetailsPage({ params }) {
 
           <div className="max-w-3xl">
 
-            <p className="text-xs font-black uppercase tracking-[0.18em] text-[#8db800] dark:text-[#a7d503] sm:text-sm">
+            <p className="text-xs font-black uppercase tracking-[0.18em] text-[var(--accent)] dark:text-[var(--accent-bright)] sm:text-sm">
               What We Offer
             </p>
 
@@ -641,10 +640,10 @@ export default async function ServiceDetailsPage({ params }) {
               return (
                 <article
                   key={feature.title}
-                  className="group rounded-[24px] border border-black/10 bg-white p-6 transition-all duration-300 hover:-translate-y-2 hover:border-[#8db800] hover:shadow-2xl dark:border-white/10 dark:bg-white/[0.03] dark:hover:border-[#a7d503] sm:rounded-[28px] sm:p-8"
+                  className="group rounded-[24px] border border-black/10 bg-white p-6 transition-all duration-300 hover:-translate-y-2 hover:border-[var(--accent)] hover:shadow-2xl dark:border-white/10 dark:bg-white/[0.03] dark:hover:border-[var(--accent-bright)] sm:rounded-[28px] sm:p-8"
                 >
 
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#a7d503] text-black transition-all duration-300 group-hover:rotate-6 group-hover:scale-110 sm:h-14 sm:w-14 sm:rounded-2xl">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[var(--accent-bright)] text-black transition-all duration-300 group-hover:rotate-6 group-hover:scale-110 sm:h-14 sm:w-14 sm:rounded-2xl">
                     <FeatureIcon
                       size={22}
                       strokeWidth={1.8}
@@ -673,67 +672,12 @@ export default async function ServiceDetailsPage({ params }) {
           PROCESS
       ===================================================== */}
 
-      <section className="px-4 py-16 sm:px-5 sm:py-28">
-        <div className="container-custom">
-
-          <div className="max-w-3xl">
-
-            <p className="text-xs font-black uppercase tracking-[0.18em] text-[#8db800] dark:text-[#a7d503] sm:text-sm">
-              Our Process
-            </p>
-
-            <h2 className="mt-5 text-3xl font-black leading-[1.08] tracking-[-0.05em] sm:text-5xl">
-              {service.processTitle}
-            </h2>
-
-            <p className="mt-5 max-w-2xl text-sm leading-7 text-black/60 dark:text-white/60 sm:text-base">
-              A simple and structured process designed to keep every stage
-              clear, organized, and moving forward.
-            </p>
-
-          </div>
-
-          <div className="mt-12 grid gap-8 sm:mt-16 md:grid-cols-2 lg:grid-cols-4 lg:gap-6">
-
-            {service.process.map((step, index) => (
-
-              <article
-                key={step.number}
-                className="group relative"
-              >
-
-                {index !== service.process.length - 1 && (
-                  <div className="absolute left-9 right-[-24px] top-9 hidden h-px bg-black/20 lg:block dark:bg-white/20" />
-                )}
-
-                <div className="relative z-10 flex h-16 w-16 items-center justify-center rounded-full border-[6px] border-white bg-[#a7d503] text-base font-black text-black shadow-md transition-transform duration-300 group-hover:scale-110 dark:border-[#0a0a0a] sm:h-[72px] sm:w-[72px] sm:border-8 sm:text-lg">
-                  {step.number}
-                </div>
-
-                <div className="mt-6 min-h-[220px] rounded-[24px] border border-black/10 bg-black/[0.025] p-6 transition-all duration-300 group-hover:-translate-y-1 group-hover:border-[#8db800] group-hover:shadow-xl dark:border-white/10 dark:bg-white/[0.03] dark:group-hover:border-[#a7d503] sm:mt-7 sm:min-h-[250px] sm:rounded-[28px] sm:p-7">
-
-                  <p className="text-[10px] font-black uppercase tracking-[0.16em] text-[#8db800] dark:text-[#a7d503] sm:text-xs">
-                    Step {String(index + 1).padStart(2, "0")}
-                  </p>
-
-                  <h3 className="mt-4 text-xl font-black tracking-[-0.035em] sm:mt-5 sm:text-2xl">
-                    {step.title}
-                  </h3>
-
-                  <p className="mt-4 text-sm leading-7 text-black/60 dark:text-white/60 sm:text-base">
-                    {step.description}
-                  </p>
-
-                </div>
-
-              </article>
-
-            ))}
-
-          </div>
-
-        </div>
-      </section>
+      <ProcessSection
+        label="Our Process"
+        title={service.processTitle}
+        description="A simple and structured process designed to keep every stage clear, organized, and moving forward."
+        steps={service.process}
+      />
 
       {/* =====================================================
           DELIVERABLES
@@ -745,7 +689,7 @@ export default async function ServiceDetailsPage({ params }) {
 
           <div>
 
-            <p className="text-xs font-black uppercase tracking-[0.18em] text-[#a7d503] sm:text-sm">
+            <p className="text-xs font-black uppercase tracking-[0.18em] text-[var(--accent-bright)] sm:text-sm">
               What&apos;s Included
             </p>
 
@@ -766,10 +710,10 @@ export default async function ServiceDetailsPage({ params }) {
 
               <div
                 key={item}
-                className="group flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.05] p-4 transition-all duration-300 hover:-translate-y-1 hover:border-[#a7d503]/40 hover:bg-white/[0.08] sm:gap-4 sm:p-5"
+                className="group flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.05] p-4 transition-all duration-300 hover:-translate-y-1 hover:border-[var(--accent-bright)]/40 hover:bg-white/[0.08] sm:gap-4 sm:p-5"
               >
 
-                <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#a7d503] text-black transition-transform duration-300 group-hover:scale-110 sm:h-9 sm:w-9">
+                <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[var(--accent-bright)] text-black transition-transform duration-300 group-hover:scale-110 sm:h-9 sm:w-9">
 
                   <Check
                     size={16}
@@ -796,7 +740,7 @@ export default async function ServiceDetailsPage({ params }) {
           FINAL CTA
       ===================================================== */}
 
-      <section className="bg-[#a7d503] px-4 py-16 text-black sm:px-5 sm:py-28">
+      <section className="bg-[var(--accent-bright)] px-4 py-16 text-black sm:px-5 sm:py-28">
 
         <div className="container-custom text-center">
 

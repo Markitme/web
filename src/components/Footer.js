@@ -42,35 +42,35 @@ return ( <footer className="border-t border-black/10 bg-white py-10 text-black t
       <nav className="flex flex-wrap gap-x-6 gap-y-3">
         <Link
           href="/about"
-          className="text-sm text-black/55 transition-colors duration-300 hover:text-[#8db800] dark:text-white/50 dark:hover:text-[#a7d503]"
+          className="text-sm text-black/55 transition-colors duration-300 hover:text-[var(--accent)] dark:text-white/50 dark:hover:text-[var(--accent-bright)]"
         >
           About
         </Link>
 
         <Link
           href="/services"
-          className="text-sm text-black/55 transition-colors duration-300 hover:text-[#8db800] dark:text-white/50 dark:hover:text-[#a7d503]"
+          className="text-sm text-black/55 transition-colors duration-300 hover:text-[var(--accent)] dark:text-white/50 dark:hover:text-[var(--accent-bright)]"
         >
           Services
         </Link>
 
         <Link
           href="/work"
-          className="text-sm text-black/55 transition-colors duration-300 hover:text-[#8db800] dark:text-white/50 dark:hover:text-[#a7d503]"
+          className="text-sm text-black/55 transition-colors duration-300 hover:text-[var(--accent)] dark:text-white/50 dark:hover:text-[var(--accent-bright)]"
         >
           Work
         </Link>
 
         <Link
           href="/blog"
-          className="text-sm text-black/55 transition-colors duration-300 hover:text-[#8db800] dark:text-white/50 dark:hover:text-[#a7d503]"
+          className="text-sm text-black/55 transition-colors duration-300 hover:text-[var(--accent)] dark:text-white/50 dark:hover:text-[var(--accent-bright)]"
         >
           Blog
         </Link>
 
         <Link
           href="/contact"
-          className="text-sm text-black/55 transition-colors duration-300 hover:text-[#8db800] dark:text-white/50 dark:hover:text-[#a7d503]"
+          className="text-sm text-black/55 transition-colors duration-300 hover:text-[var(--accent)] dark:text-white/50 dark:hover:text-[var(--accent-bright)]"
         >
           Contact
         </Link>

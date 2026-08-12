@@ -21,17 +21,13 @@ export default function ServicesPage() {
       {/* Hero Section */}
       <section className="border-b border-black/10 px-5 py-24 dark:border-white/10 sm:py-32">
         <div className="container-custom">
-          <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#8db800] dark:text-[#a7d503]">
+          <p className="text-sm font-bold uppercase tracking-[0.2em] text-[var(--accent)] dark:text-[var(--accent-bright)]">
             What We Do
           </p>
-
-          <h1 className="mt-5 max-w-5xl text-3xl font-black tracking-[-0.05em] sm:text-4xl lg:text-5xl xl:text-6xl">
-            Strategy, creativity, and growth —
-            <span className="text-[#8db800] dark:text-[#a7d503]">
-              {" "}
-              working together.
-            </span>
-          </h1>
+          
+         <h1 className="mt-5 text-5xl font-black tracking-[-0.05em] sm:text-4xl lg:text-5xl xl:text-6xl bg-gradient-to-r from-black via-[var(--accent)] to-[var(--accent-bright)] bg-clip-text text-transparent dark:from-white dark:via-[var(--accent-bright)] dark:to-[var(--accent)]">
+               Strategy, creativity, <br/> and growth — working together.
+            </h1>
 
           <p className="mt-7 max-w-2xl text-lg leading-8 text-black/60 dark:text-white/60">
             We combine strategy, design, technology, content, and marketing
@@ -54,7 +50,7 @@ export default function ServicesPage() {
             <div className="container-custom">
               {/* Category Heading */}
               <div className="mb-12 max-w-3xl">
-                <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#8db800] dark:text-[#a7d503]">
+                <p className="text-sm font-bold uppercase tracking-[0.2em] text-[var(--accent)] dark:text-[var(--accent-bright)]">
                   {String(categoryIndex + 1).padStart(2, "0")}
                 </p>
 
@@ -76,15 +72,15 @@ export default function ServicesPage() {
                   return (
                     <article
                       key={service.slug}
-                      className="group flex min-h-[360px] flex-col rounded-[28px] border border-black/10 bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:border-[#8db800] hover:shadow-xl dark:border-white/10 dark:bg-white/[0.03] dark:hover:border-[#a7d503] sm:p-8"
+                      className="group flex min-h-[360px] flex-col rounded-[28px] border border-black/10 bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:border-[var(--accent)] hover:shadow-xl dark:border-white/10 dark:bg-white/[0.03] dark:hover:border-[var(--accent-bright)] sm:p-8"
                     >
                       {/* Icon */}
-                      <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#a7d503] text-black transition-transform duration-300 group-hover:scale-110">
+                      <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[var(--accent-bright)] text-black transition-transform duration-300 group-hover:scale-110">
                         <Icon size={25} strokeWidth={1.8} />
                       </div>
 
                       {/* Category */}
-                      <p className="mt-7 text-xs font-bold uppercase tracking-[0.16em] text-[#8db800] dark:text-[#a7d503]">
+                      <p className="mt-7 text-xs font-bold uppercase tracking-[0.16em] text-[var(--accent)] dark:text-[var(--accent-bright)]">
                         {service.category}
                       </p>
 
@@ -101,7 +97,7 @@ export default function ServicesPage() {
                       {/* Button */}
                       <Link
                         href={`/services/${service.slug}`}
-                        className="group/link mt-auto inline-flex w-fit items-center gap-3 pt-8 text-sm font-bold text-black transition-colors duration-300 hover:text-[#8db800] dark:text-white dark:hover:text-[#a7d503]"
+                        className="group/link mt-auto inline-flex w-fit items-center gap-3 pt-8 text-sm font-bold text-black transition-colors duration-300 hover:text-[var(--accent)] dark:text-white dark:hover:text-[var(--accent-bright)]"
                       >
                         Explore Service
 
@@ -120,7 +116,7 @@ export default function ServicesPage() {
       )}
 
       {/* Bottom CTA */}
-      <section className="border-t border-black/10 bg-[#a7d503] px-5 py-20 text-black dark:border-white/10 sm:py-24">
+      <section className="border-t border-black/10 bg-[var(--accent-bright)] px-5 py-20 text-black dark:border-white/10 sm:py-24">
         <div className="container-custom flex flex-col justify-between gap-8 lg:flex-row lg:items-center">
           <div className="max-w-3xl">
             <p className="text-sm font-black uppercase tracking-[0.2em]">

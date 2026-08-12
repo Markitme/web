@@ -36,7 +36,7 @@ export default async function ProjectDetailsPage({ params }) {
 
           <Link
             href="/work"
-            className="inline-flex items-center gap-2 text-sm font-bold text-black/60 transition hover:text-[#8db800] dark:text-white/60 dark:hover:text-[#a7d503]"
+            className="inline-flex items-center gap-2 text-sm font-bold text-black/60 transition hover:text-[var(--accent)] dark:text-white/60 dark:hover:text-[var(--accent-bright)]"
           >
             <ArrowLeft size={17} />
             Back to Work
@@ -45,7 +45,7 @@ export default async function ProjectDetailsPage({ params }) {
           <div className="mt-10 grid gap-12 lg:grid-cols-[1fr_0.95fr] lg:items-center">
 
             <div>
-              <p className="text-sm font-black uppercase tracking-[0.22em] text-[#8db800] dark:text-[#a7d503]">
+              <p className="text-sm font-black uppercase tracking-[0.22em] text-[var(--accent)] dark:text-[var(--accent-bright)]">
                 Case Study — {project.number}
               </p>
 
@@ -54,7 +54,7 @@ export default async function ProjectDetailsPage({ params }) {
               </h1>
 
               <div className="mt-6 flex flex-wrap gap-3">
-                <span className="rounded-full bg-[#a7d503]/15 px-4 py-2 text-sm font-bold text-[#607c00] dark:text-[#a7d503]">
+                <span className="rounded-full bg-[var(--accent-bright)]/15 px-4 py-2 text-sm font-bold text-[var(--accent)]">
                   {project.category}
                 </span>
 
@@ -74,7 +74,7 @@ export default async function ProjectDetailsPage({ params }) {
                   href={project.website}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-3 rounded-full bg-[#a7d503] px-6 py-3.5 text-sm font-black text-black transition hover:scale-[1.03] hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black"
+                  className="inline-flex items-center gap-3 rounded-full bg-[var(--accent-bright)] px-6 py-3.5 text-sm font-black text-black transition hover:scale-[1.03] hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black"
                 >
                   Visit Live Website
                   <ExternalLink size={17} />
@@ -82,7 +82,7 @@ export default async function ProjectDetailsPage({ params }) {
 
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-3 rounded-full border border-black/15 px-6 py-3.5 text-sm font-black transition hover:border-[#8db800] hover:text-[#8db800] dark:border-white/15 dark:hover:border-[#a7d503] dark:hover:text-[#a7d503]"
+                  className="inline-flex items-center gap-3 rounded-full border border-black/15 px-6 py-3.5 text-sm font-black transition hover:border-[var(--accent)] hover:text-[var(--accent)] dark:border-white/15 dark:hover:border-[var(--accent-bright)] dark:hover:text-[var(--accent-bright)]"
                 >
                   Start a Project
                   <ArrowRight size={17} />
@@ -120,13 +120,13 @@ export default async function ProjectDetailsPage({ params }) {
         <div className="container-custom grid gap-12 lg:grid-cols-[0.7fr_1.3fr]">
 
           <div>
-            <p className="text-sm font-black uppercase tracking-[0.2em] text-[#8db800] dark:text-[#a7d503]">
+            <p className="text-sm font-black uppercase tracking-[0.2em] text-[var(--accent)] dark:text-[var(--accent-bright)]">
               {project.aboutTitle}
             </p>
 
             <h2 className="mt-4 text-4xl font-black leading-none tracking-[-0.05em] sm:text-5xl">
               The story
-              <span className="block text-[#8db800] dark:text-[#a7d503]">
+              <span className="block text-[var(--accent)] dark:text-[var(--accent-bright)]">
                 behind the work.
               </span>
             </h2>
@@ -155,7 +155,7 @@ export default async function ProjectDetailsPage({ params }) {
 
           <div>
 
-            <p className="text-sm font-black uppercase tracking-[0.2em] text-[#8db800] dark:text-[#a7d503]">
+            <p className="text-sm font-black uppercase tracking-[0.2em] text-[var(--accent)] dark:text-[var(--accent-bright)]">
               The Challenge
             </p>
 
@@ -188,7 +188,7 @@ export default async function ProjectDetailsPage({ params }) {
                 className="rounded-3xl border border-black/10 bg-white p-6 dark:border-white/10 dark:bg-[#0a0a0a]"
               >
 
-                <span className="text-4xl font-black text-[#8db800] dark:text-[#a7d503]">
+                <span className="text-4xl font-black text-[var(--accent)] dark:text-[var(--accent-bright)]">
                   0{index + 1}
                 </span>
 
@@ -212,7 +212,7 @@ export default async function ProjectDetailsPage({ params }) {
 
           <div className="max-w-3xl">
 
-            <p className="text-sm font-black uppercase tracking-[0.2em] text-[#8db800] dark:text-[#a7d503]">
+            <p className="text-sm font-black uppercase tracking-[0.2em] text-[var(--accent)] dark:text-[var(--accent-bright)]">
               What Markit Me Did
             </p>
 
@@ -229,18 +229,18 @@ export default async function ProjectDetailsPage({ params }) {
 
               <article
                 key={service.title}
-                className="group rounded-[28px] border border-black/10 p-7 transition hover:border-[#8db800] hover:shadow-xl dark:border-white/10 dark:hover:border-[#a7d503] sm:p-9"
+                className="group rounded-[28px] border border-black/10 p-7 transition hover:border-[var(--accent)] hover:shadow-xl dark:border-white/10 dark:hover:border-[var(--accent-bright)] sm:p-9"
               >
 
                 <div className="flex items-start justify-between gap-5">
 
-                  <span className="flex h-11 w-11 items-center justify-center rounded-full bg-[#a7d503] font-black text-black">
+                  <span className="flex h-11 w-11 items-center justify-center rounded-full bg-[var(--accent-bright)] font-black text-black">
                     0{index + 1}
                   </span>
 
                   <Check
                     size={22}
-                    className="text-[#8db800] dark:text-[#a7d503]"
+                    className="text-[var(--accent)] dark:text-[var(--accent-bright)]"
                   />
 
                 </div>
@@ -267,13 +267,13 @@ export default async function ProjectDetailsPage({ params }) {
 
         <div className="container-custom">
 
-          <p className="text-sm font-black uppercase tracking-[0.2em] text-[#a7d503] dark:text-[#6f8d00]">
+          <p className="text-sm font-black uppercase tracking-[0.2em] text-[var(--accent-bright)] dark:text-[var(--accent)]">
             The Outcome
           </p>
 
           <h2 className="mt-4 max-w-3xl text-4xl font-black leading-none tracking-[-0.05em] sm:text-6xl">
             Results that
-            <span className="block text-[#a7d503] dark:text-[#6f8d00]">
+              <span className="block text-[var(--accent-bright)] dark:text-[var(--accent)]">
               moved the business.
             </span>
           </h2>
@@ -287,7 +287,7 @@ export default async function ProjectDetailsPage({ params }) {
                 className="rounded-[28px] border border-white/15 bg-white/5 p-7 dark:border-black/10 dark:bg-black/[0.03]"
               >
 
-                <p className="text-5xl font-black tracking-[-0.05em] text-[#a7d503] dark:text-[#6f8d00]">
+                <p className="text-5xl font-black tracking-[-0.05em] text-[var(--accent-bright)] dark:text-[var(--accent)]">
                   {result.value}
                 </p>
 
@@ -311,7 +311,7 @@ export default async function ProjectDetailsPage({ params }) {
 
           <div>
 
-            <p className="text-sm font-black uppercase tracking-[0.2em] text-[#8db800] dark:text-[#a7d503]">
+            <p className="text-sm font-black uppercase tracking-[0.2em] text-[var(--accent)] dark:text-[var(--accent-bright)]">
               What Changed
             </p>
 
@@ -333,7 +333,7 @@ export default async function ProjectDetailsPage({ params }) {
                   className="flex gap-4 rounded-2xl border border-black/10 p-5 dark:border-white/10"
                 >
 
-                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#a7d503] text-black">
+                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[var(--accent-bright)] text-black">
                     <Check size={17} />
                   </span>
 
@@ -361,7 +361,7 @@ export default async function ProjectDetailsPage({ params }) {
 
         <div className="container-custom">
 
-          <div className="rounded-[35px] bg-[#a7d503] p-8 text-black sm:p-14">
+          <div className="rounded-[35px] bg-[var(--accent-bright)] p-8 text-black sm:p-14">
 
             <div className="flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
 

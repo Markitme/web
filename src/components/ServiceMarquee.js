@@ -48,7 +48,7 @@ export default function ServiceMarquee() {
 // Duplicate services for a seamless infinite loop
 const marqueeServices = [...services, ...services];
 
-return ( <section className="service-marquee-section border-y border-black/10 bg-[#a7d503] py-7 transition-colors duration-300"> <div className="service-marquee"> <div className="service-marquee-track">
+return ( <section className="service-marquee-section border-y border-black/10 bg-[var(--accent-bright)] py-7 transition-colors duration-300"> <div className="service-marquee"> <div className="service-marquee-track">
 {marqueeServices.map((service, index) => {
 const Icon = service.icon;
 
@@ -62,10 +62,10 @@ const Icon = service.icon;
               size={21}
               strokeWidth={1.8}
               aria-hidden="true"
-              className="text-black transition-colors duration-300 dark:text-white"
+              className="text-black transition-colors duration-300 dark:text-black"
             />
 
-            <span>{service.name}</span>
+            <span className="dark:text-black">{service.name}</span>
           </div>
         );
       })}

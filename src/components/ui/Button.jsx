@@ -14,7 +14,7 @@ export default function Button({
   disabled = false,
 }) {
   const baseClasses =
-    "group inline-flex items-center justify-center gap-2 rounded-full font-bold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#a7d503] focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-[#0a0a0a] disabled:cursor-not-allowed disabled:opacity-50";
+    "group inline-flex items-center justify-center gap-2 rounded-full font-bold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[var(--accent-bright)] focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-[#0a0a0a] disabled:cursor-not-allowed disabled:opacity-50";
 
   const variants = {
     // Light:
@@ -25,7 +25,7 @@ export default function Button({
     // Normal = Lime background + Black text
     // Hover = White background + Black text
     primary:
-      "bg-[#a7d503] text-black hover:scale-[1.03] hover:bg-black hover:text-[#a7d503] dark:bg-[#a7d503] dark:text-black dark:hover:bg-white dark:hover:text-black",
+      "bg-[var(--accent-bright)] text-black hover:scale-[1.03] hover:bg-black hover:text-[var(--accent-bright)] dark:bg-[var(--accent-bright)] dark:text-black dark:hover:bg-white dark:hover:text-black",
 
     // Light:
     // Normal = Transparent + Black text
@@ -35,7 +35,7 @@ export default function Button({
     // Normal = Transparent + White text
     // Hover = Lime background + Black text
     outline:
-      "border border-black/20 bg-transparent text-black hover:scale-[1.03] hover:border-black hover:bg-black hover:text-white dark:border-white/25 dark:text-white dark:hover:border-[#a7d503] dark:hover:bg-[#a7d503] dark:hover:text-black",
+      "border border-black/20 bg-transparent text-black hover:scale-[1.03] hover:border-black hover:bg-black hover:text-white dark:border-white/25 dark:text-white dark:hover:border-[var(--accent-bright)] dark:hover:bg-[var(--accent-bright)] dark:hover:text-black",
   };
 
   const sizes = {

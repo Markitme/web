@@ -38,7 +38,7 @@ export default function ClientLogoSlider() {
       <div className="mx-auto w-full max-w-[1600px] overflow-hidden">
         {/* Heading */}
         <div className="px-5 text-center sm:px-8">
-          <p className="text-[8px] font-black uppercase tracking-[0.22em] text-[#8db800] dark:text-[#a7d503] sm:text-[9px]">
+          <p className="text-[8px] font-black uppercase tracking-[0.22em] text-[var(--accent)] dark:text-[var(--accent-bright)] sm:text-[9px]">
             Trusted by ambitious brands
           </p>
 

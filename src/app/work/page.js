@@ -9,16 +9,12 @@ export default function WorkPage() {
       {/* Hero */}
       <section className="border-b border-black/10 px-5 py-24 dark:border-white/10 sm:py-32">
         <div className="container-custom">
-          <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#8db800] dark:text-[#a7d503]">
+          <p className="text-sm font-bold uppercase tracking-[0.2em] text-[var(--accent)] dark:text-[var(--accent-bright)]">
             Case Studies
           </p>
-
-          <h1 className="mt-5 max-w-4xl text-3xl font-black tracking-[-0.05em] sm:text-4xl lg:text-5xl xl:text-6xl">
-            Ideas turned into
-            <span className="block text-[#8db800] dark:text-[#a7d503]">
-              measurable impact.
-            </span>
-          </h1>
+          <h1 className="mt-5 text-5xl font-black tracking-[-0.05em] sm:text-4xl lg:text-5xl xl:text-6xl bg-gradient-to-r from-black via-[var(--accent)] to-[var(--accent-bright)] bg-clip-text text-transparent dark:from-white dark:via-[var(--accent-bright)] dark:to-[var(--accent)]">
+              Ideas turned <br/> intomeasurable impact.
+            </h1>
 
           <p className="mt-7 max-w-2xl text-lg leading-8 text-black/60 dark:text-white/60">
             Explore selected projects created through strategy, design,
@@ -32,7 +28,7 @@ export default function WorkPage() {
         <div className="container-custom">
           <div className="mb-12 flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
             <div>
-              <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#8db800] dark:text-[#a7d503]">
+              <p className="text-sm font-bold uppercase tracking-[0.2em] text-[var(--accent)] dark:text-[var(--accent-bright)]">
                 Our Latest Projects
               </p>
 
@@ -53,7 +49,7 @@ export default function WorkPage() {
             {projects.map((project) => (
               <article
                 key={project.title}
-                className="group overflow-hidden rounded-[28px] border border-black/10 bg-black/[0.02] transition-all duration-300 hover:-translate-y-1 hover:border-[#8db800] hover:shadow-xl dark:border-white/10 dark:bg-white/[0.03] dark:hover:border-[#a7d503]"
+                className="group overflow-hidden rounded-[28px] border border-black/10 bg-black/[0.02] transition-all duration-300 hover:-translate-y-1 hover:border-[var(--accent)] hover:shadow-xl dark:border-white/10 dark:bg-white/[0.03] dark:hover:border-[var(--accent-bright)]"
               >
                 {/* Project Image */}
                 <div className="relative aspect-[16/10] overflow-hidden bg-black/10 dark:bg-white/10">
@@ -78,7 +74,7 @@ export default function WorkPage() {
 
                 {/* Project Content */}
                 <div className="p-7 sm:p-8">
-                  <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#8db800] dark:text-[#a7d503]">
+                  <p className="text-xs font-bold uppercase tracking-[0.16em] text-[var(--accent)] dark:text-[var(--accent-bright)]">
                     {project.category}
                   </p>
 
@@ -96,7 +92,7 @@ export default function WorkPage() {
 
                   <Link
   href={`/work/${project.slug}`}
-  className="group/link mt-7 inline-flex items-center gap-3 rounded-full bg-[#a7d503] px-6 py-3.5 text-sm font-bold text-black transition-all duration-300 hover:scale-[1.03] hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black"
+  className="group/link mt-7 inline-flex items-center gap-3 rounded-full bg-[var(--accent-bright)] px-6 py-3.5 text-sm font-bold text-black transition-all duration-300 hover:scale-[1.03] hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black"
 >
   View Case Study
 

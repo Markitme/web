@@ -79,7 +79,7 @@ export default function Home() {
               className="mb-7 inline-flex items-center gap-2 rounded-full border border-black/10 bg-black/[0.03] px-4 py-2 text-xs uppercase tracking-[0.16em] text-black/65 dark:border-white/15 dark:bg-white/5 dark:text-white/70"
             >
               {" "}
-              <span className="h-2 w-2 rounded-full bg-[#a7d503]" />
+              <span className="h-2 w-2 rounded-full bg-[var(--accent)]" />
               Digital growth partner
             </motion.div>
 
@@ -125,7 +125,7 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="relative"
           >
-            <div className="absolute -inset-10 rounded-full bg-[#a7d503]/10 blur-3xl" />
+            <div className="absolute -inset-10 rounded-full bg-[var(--accent-bright)]/20 blur-3xl" />
 
             <div className="relative rounded-[2rem] border border-black/10 bg-[#f5f5f2] p-5 shadow-2xl dark:border-white/15 dark:bg-[#151515]">
               <div className="rounded-[1.5rem] border border-black/10 bg-white p-6 dark:border-white/10 dark:bg-[#0d0d0d]">
@@ -134,7 +134,7 @@ export default function Home() {
                     Growth dashboard
                   </span>
 
-                  <span className="rounded-full bg-[#a7d503]/15 px-3 py-1 text-xs text-[#6f8f00] dark:text-[#a7d503]">
+                  <span className="rounded-full bg-[var(--accent-bright)]/25 px-3 py-1 text-xs text-[var(--accent)] dark:text-[var(--accent-bright)]">
                     Live
                   </span>
                 </div>
@@ -149,7 +149,7 @@ export default function Home() {
                       247%
                     </span>
 
-                    <span className="mb-2 flex items-center gap-1 text-sm text-[#6f8f00] dark:text-[#a7d503]">
+                    <span className="mb-2 flex items-center gap-1 text-sm text-[var(--accent)] dark:text-[var(--accent-bright)]">
                       <MoveUpRight size={15} />
                       Up
                     </span>
@@ -163,7 +163,7 @@ export default function Home() {
                       style={{ height: `${height}%` }}
                       className={`flex-1 rounded-t-xl ${
                         index === 6
-                          ? "bg-[#a7d503]"
+                          ? "bg-[var(--accent)]"
                           : "bg-black/10 dark:bg-white/10"
                       }`}
                     />
@@ -173,7 +173,7 @@ export default function Home() {
                 <div className="mt-8 grid grid-cols-2 gap-4">
                   <div className="rounded-2xl border border-black/10 bg-black/[0.03] p-4 dark:border-white/10 dark:bg-white/[0.03]">
                     <Target
-                      className="text-[#6f8f00] dark:text-[#a7d503]"
+                      className="text-[var(--accent)] dark:text-[var(--accent-bright)]"
                       size={22}
                     />
 
@@ -186,7 +186,7 @@ export default function Home() {
 
                   <div className="rounded-2xl border border-black/10 bg-black/[0.03] p-4 dark:border-white/10 dark:bg-white/[0.03]">
                     <Search
-                      className="text-[#6f8f00] dark:text-[#a7d503]"
+                      className="text-[var(--accent)] dark:text-[var(--accent-bright)]"
                       size={22}
                     />
 
@@ -230,7 +230,7 @@ export default function Home() {
             viewport={{ once: false, margin: "-100px" }}
             className="max-w-3xl"
           >
-            <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#6f8f00] dark:text-[#a7d503]">
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-[var(--accent)] dark:text-[var(--accent-bright)]">
               What we do
             </p>
 
@@ -257,7 +257,7 @@ export default function Home() {
               return (
                 <article
                   key={service.title}
-                  className="group rounded-[2rem] border border-black/10 bg-[#f7f7f5] p-8 transition duration-300 hover:-translate-y-2 hover:border-[#8db800]/50 dark:border-white/10 dark:bg-[#141414] dark:hover:border-[#a7d503]/50"
+                  className="group rounded-[2rem] border border-black/10 bg-[var(--surface)] p-8 transition duration-300 hover:-translate-y-2 hover:border-[var(--accent)]/50 dark:border-white/10 dark:bg-[#141414] dark:hover:border-[var(--accent-bright)]/50"
                 >
                   <motion.div
                     initial={{ opacity: 0, y: 40 }}
@@ -270,7 +270,7 @@ export default function Home() {
                         {service.number}
                       </span>
 
-                      <div className="rounded-2xl bg-[#a7d503] p-3 text-black">
+                      <div className="rounded-2xl bg-[var(--accent)] p-3 text-white">
                         <Icon size={24} />
                       </div>
                     </div>
@@ -283,7 +283,7 @@ export default function Home() {
 
                     <a
                       href="#contact"
-                      className="mt-8 inline-flex items-center gap-2 font-bold text-[#6f8f00] transition hover:gap-3 dark:text-[#a7d503]"
+                      className="mt-8 inline-flex items-center gap-2 font-bold text-[var(--accent)] transition hover:gap-3 dark:text-[var(--accent-bright)]"
                     >
                       Explore service
                       <ArrowRight size={17} />
@@ -335,7 +335,7 @@ export default function Home() {
           {/* Left - Heading & Navigation */}
           <div className="max-w-md flex flex-col justify-between">
             <div>
-              <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#6f8f00] dark:text-[#a7d503]">
+              <p className="text-sm font-bold uppercase tracking-[0.2em] text-[var(--accent)] dark:text-[var(--accent-bright)]">
                 Why MarkitMe
               </p>
 
@@ -349,24 +349,6 @@ export default function Home() {
                 We don't chase vanity metrics. Every decision is connected to your business goals.
               </p>
             </div>
-
-            {/* Navigation Buttons - REMOVED */}
-            {/* <div className="mt-12 flex gap-3">
-              <button
-                ref={prevRef}
-                className="group flex items-center gap-2 rounded-xl border-2 border-[#8db800] bg-transparent px-5 py-3 font-bold text-[#8db800] transition duration-300 hover:bg-[#8db800] hover:text-white dark:border-[#a7d503] dark:text-[#a7d503] dark:hover:bg-[#a7d503] dark:hover:text-black"
-              >
-                <ChevronLeft size={20} />
-                <span>Previous</span>
-              </button>
-              <button
-                ref={nextRef}
-                className="group flex items-center gap-2 rounded-xl border-2 border-[#8db800] bg-transparent px-5 py-3 font-bold text-[#8db800] transition duration-300 hover:bg-[#8db800] hover:text-white dark:border-[#a7d503] dark:text-[#a7d503] dark:hover:bg-[#a7d503] dark:hover:text-black"
-              >
-                <span>Next</span>
-                <ChevronRight size={20} />
-              </button>
-            </div> */}
           </div>
 
           {/* Right - Slider */}
@@ -421,7 +403,7 @@ export default function Home() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, ease: "easeOut", delay: index * 0.15 }}
                     viewport={{ once: false, margin: "-50px" }}
-                    className="relative overflow-hidden rounded-[2rem] border border-black/10 bg-[#f7f7f5] p-8 dark:border-white/10 dark:bg-[#141414] sm:p-10 h-full flex flex-col"
+                    className="relative overflow-hidden rounded-[2rem] border border-black/10 bg-[var(--surface)] p-8 dark:border-white/10 dark:bg-[#141414] sm:p-10 h-full flex flex-col"
                   >
                     {/* Background Icon */}
                     <div className="absolute left-0 top-1/2 -translate-y-1/2 opacity-5 dark:opacity-10">
@@ -443,7 +425,7 @@ export default function Home() {
 
                       <a
                         href="#about"
-                        className="mt-6 inline-flex items-center gap-2 font-bold text-[#6f8f00] transition hover:gap-3 dark:text-[#a7d503]"
+                        className="mt-6 inline-flex items-center gap-2 font-bold text-[var(--accent)] transition hover:gap-3 dark:text-[var(--accent-bright)]"
                       >
                         Learn more
                         <ArrowRight size={18} />
@@ -485,10 +467,10 @@ export default function Home() {
           viewport={{ once: false, margin: "-100px" }}
           className="relative overflow-hidden rounded-[2.5rem] border border-black/10 bg-[#f5f5f2] px-7 py-20 text-center sm:px-12 dark:border-white/10 dark:bg-[#171717]"
         >
-          <div className="absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 rounded-full bg-[#a7d503]/15 blur-3xl" />
+          <div className="absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 rounded-full bg-[var(--accent-bright)]/20 blur-3xl" />
 
           <div className="relative mx-auto max-w-4xl">
-            <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#6f8f00] dark:text-[#a7d503]">
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-[var(--accent)] dark:text-[var(--accent-bright)]">
               Ready when you are
             </p>
 

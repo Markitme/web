@@ -31,7 +31,7 @@ return (
 <button
 type="button"
 onClick={toggleTheme}
-className="flex h-10 w-10 items-center justify-center rounded-full border border-black/15 bg-black/[0.03] text-black transition-all duration-300 hover:scale-105 hover:border-[#8db800] hover:text-[#8db800] dark:border-white/15 dark:bg-white/5 dark:text-white dark:hover:border-[#a7d503] dark:hover:text-[#a7d503]"
+className="flex h-10 w-10 items-center justify-center rounded-full border border-black/15 bg-black/[0.03] text-black transition-all duration-300 hover:scale-105 hover:border-[var(--accent)] hover:text-[var(--accent)] dark:border-white/15 dark:bg-white/5 dark:text-white dark:hover:border-[var(--accent-bright)] dark:hover:text-[var(--accent-bright)]"
 aria-label={
 isDark
 ? "Switch to light mode"

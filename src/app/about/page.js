@@ -2,6 +2,8 @@
 
 import Link from "next/link";
 import Button from "@/components/ui/Button";
+import ProcessSection from "@/components/ProcessSection";
+import AnimatedCounter from "@/components/AnimatedCounter";
 const values = [
 {
 number: "01",
@@ -47,25 +49,21 @@ text: "We measure, refine, and improve to help your business move forward.",
 ];
 
 export default function AboutPage() {
-return ( <main className="overflow-hidden bg-[var(--background)] text-[var(--foreground)]">
+return ( <main className="overflow-hidden bg-white text-[var(--foreground)] dark:bg-[#0a0a0a]">
 {/* HERO */} <section className="relative border-b border-[var(--border)]"> <div className="absolute inset-0 about-grid opacity-60" />
 
 
     <div className="container-custom relative py-24 sm:py-28 lg:py-36">
       <div className="max-w-5xl">
         <div className="flex items-center gap-3">
-          <span className="h-px w-10 bg-[#a7d503]" />
-          <p className="text-xs font-bold uppercase tracking-[0.28em] text-[#8db800] dark:text-[#a7d503]">
+          <span className="h-px w-10 bg-[var(--accent-bright)]" />
+          <p className="text-xs font-bold uppercase tracking-[0.28em] text-[var(--accent)] dark:text-[var(--accent-bright)]">
             About MarkitMe
           </p>
         </div>
-
-        <h1 className="mt-7 max-w-5xl text-3xl font-black leading-[0.96] tracking-[-0.06em] sm:text-4xl md:text-5xl lg:text-6xl">
-          We turn ideas into{" "}
-          <span className="text-[#8db800] dark:text-[#a7d503]">
-            meaningful growth.
-          </span>
-        </h1>
+         <h1 className="mt-5 text-5xl font-black tracking-[-0.05em] sm:text-4xl lg:text-5xl xl:text-6xl bg-gradient-to-r from-black via-[var(--accent)] to-[var(--accent-bright)] bg-clip-text text-transparent dark:from-white dark:via-[var(--accent-bright)] dark:to-[var(--accent)]">
+               We turn ideas into meaningful growth.
+            </h1>
 
         <div className="mt-10 grid max-w-4xl gap-8 md:grid-cols-[1.2fr_0.8fr]">
           <p className="text-lg leading-8 text-[var(--muted)] sm:text-xl">
@@ -74,7 +72,7 @@ return ( <main className="overflow-hidden bg-[var(--background)] text-[var(--for
             measurable results.
           </p>
 
-          <div className="border-l border-[#a7d503] pl-6">
+          <div className="border-l border-[var(--accent-bright)] pl-6">
             <p className="text-sm font-bold uppercase tracking-[0.18em]">
               Strategy. Creativity. Technology. Growth.
             </p>
@@ -88,7 +86,7 @@ return ( <main className="overflow-hidden bg-[var(--background)] text-[var(--for
   <section className="border-b border-[var(--border)] py-20 sm:py-24 lg:py-32">
     <div className="container-custom grid gap-14 lg:grid-cols-[0.8fr_1.2fr] lg:gap-24">
       <div>
-        <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#8db800] dark:text-[#a7d503]">
+        <p className="text-xs font-bold uppercase tracking-[0.25em] text-[var(--accent)] dark:text-[var(--accent-bright)]">
           Who We Are
         </p>
 
@@ -123,12 +121,22 @@ return ( <main className="overflow-hidden bg-[var(--background)] text-[var(--for
   </section>
 
   {/* STATS */}
-  <section className="border-b border-[var(--border)]">
-    <div className="container-custom grid sm:grid-cols-2 lg:grid-cols-4">
-      <Stat number="50+" label="Projects Delivered" />
-      <Stat number="5+" label="Years of Experience" />
-      <Stat number="100%" label="Focused on Results" />
-      <Stat number="1" label="Team Working With You" />
+  <section className="border-b border-[var(--border)] py-20 sm:py-24 lg:py-32">
+    <div className="container-custom">
+      <div className="mb-12">
+        <p className="text-xs font-bold uppercase tracking-[0.25em] text-[var(--accent)] dark:text-[var(--accent-bright)]">
+          By The Numbers
+        </p>
+        <h2 className="mt-4 text-3xl font-black tracking-[-0.05em] sm:text-4xl">
+          Our impact in numbers.
+        </h2>
+      </div>
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <AnimatedCounter value={50} suffix="+" label="Projects Delivered" />
+        <AnimatedCounter value={5} suffix="+" label="Years of Experience" />
+        <AnimatedCounter value={100} suffix="%" label="Focused on Results" />
+        <AnimatedCounter value={1} label="Team Working With You" />
+      </div>
     </div>
   </section>
 
@@ -136,12 +144,12 @@ return ( <main className="overflow-hidden bg-[var(--background)] text-[var(--for
   <section className="py-20 sm:py-24 lg:py-32">
     <div className="container-custom">
       <div className="grid gap-6 lg:grid-cols-2">
-        <article className="group rounded-[28px] border border-[var(--border)] bg-[var(--surface)] p-8 transition duration-300 hover:-translate-y-1 hover:border-[#a7d503]/50 sm:p-11">
-          <span className="inline-flex h-14 w-14 items-center justify-center rounded-full bg-[#a7d503] text-lg font-black text-black">
+        <article className="group rounded-[28px] border border-[var(--border)] bg-[var(--surface)] p-8 transition duration-300 hover:-translate-y-1 hover:border-[var(--accent-bright)]/50 sm:p-11">
+          <span className="inline-flex h-14 w-14 items-center justify-center rounded-full bg-[var(--accent-bright)] text-lg font-black text-black">
             M
           </span>
 
-          <p className="mt-9 text-xs font-bold uppercase tracking-[0.25em] text-[#8db800] dark:text-[#a7d503]">
+          <p className="mt-9 text-xs font-bold uppercase tracking-[0.25em] text-[var(--accent)] dark:text-[var(--accent-bright)]">
             Our Mission
           </p>
 
@@ -156,12 +164,12 @@ return ( <main className="overflow-hidden bg-[var(--background)] text-[var(--for
           </p>
         </article>
 
-        <article className="group rounded-[28px] border border-[var(--border)] bg-[var(--surface-secondary)] p-8 transition duration-300 hover:-translate-y-1 hover:border-[#a7d503]/50 sm:p-11">
-          <span className="inline-flex h-14 w-14 items-center justify-center rounded-full border border-[#a7d503]/50 text-lg font-black text-[#8db800] dark:text-[#a7d503]">
+        <article className="group rounded-[28px] border border-[var(--border)] bg-[var(--surface-secondary)] p-8 transition duration-300 hover:-translate-y-1 hover:border-[var(--accent-bright)]/50 sm:p-11">
+          <span className="inline-flex h-14 w-14 items-center justify-center rounded-full border border-[var(--accent-bright)]/50 text-lg font-black text-[var(--accent)] dark:text-[var(--accent-bright)]">
             V
           </span>
 
-          <p className="mt-9 text-xs font-bold uppercase tracking-[0.25em] text-[#8db800] dark:text-[#a7d503]">
+          <p className="mt-9 text-xs font-bold uppercase tracking-[0.25em] text-[var(--accent)] dark:text-[var(--accent-bright)]">
             Our Vision
           </p>
 
@@ -183,7 +191,7 @@ return ( <main className="overflow-hidden bg-[var(--background)] text-[var(--for
   <section className="border-y border-[var(--border)] bg-[var(--surface)] py-20 sm:py-24 lg:py-32">
     <div className="container-custom">
       <div className="max-w-3xl">
-        <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#8db800] dark:text-[#a7d503]">
+        <p className="text-xs font-bold uppercase tracking-[0.25em] text-[var(--accent)] dark:text-[var(--accent-bright)]">
           How We Think
         </p>
 
@@ -196,9 +204,9 @@ return ( <main className="overflow-hidden bg-[var(--background)] text-[var(--for
         {values.map((value) => (
           <article
             key={value.number}
-            className="rounded-3xl border border-[var(--border)] bg-[var(--card)] p-7 transition duration-300 hover:border-[#a7d503]/50 hover:shadow-xl"
+            className="rounded-3xl border border-[var(--border)] bg-[var(--card)] p-7 transition duration-300 hover:border-[var(--accent-bright)]/50 hover:shadow-xl"
           >
-            <span className="text-sm font-black text-[#8db800] dark:text-[#a7d503]">
+            <span className="text-sm font-black text-[var(--accent)] dark:text-[var(--accent-bright)]">
               {value.number}
             </span>
 
@@ -216,52 +224,38 @@ return ( <main className="overflow-hidden bg-[var(--background)] text-[var(--for
   </section>
 
   {/* PROCESS */}
-  <section className="py-20 sm:py-24 lg:py-32">
-    <div className="container-custom">
-      <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-24">
-        <div>
-          <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#8db800] dark:text-[#a7d503]">
-            Our Process
-          </p>
-
-          <h2 className="mt-5 text-4xl font-black leading-[1.02] tracking-[-0.045em] sm:text-5xl">
-            Clear thinking from the first conversation.
-          </h2>
-
-          <p className="mt-7 max-w-md leading-8 text-[var(--muted)]">
-            Our process keeps every project focused, collaborative, and
-            connected to your business goals.
-          </p>
-        </div>
-
-        <div className="divide-y divide-[var(--border)] border-y border-[var(--border)]">
-          {process.map((item) => (
-            <div
-              key={item.step}
-              className="grid gap-5 py-7 sm:grid-cols-[80px_1fr]"
-            >
-              <span className="text-sm font-black text-[#8db800] dark:text-[#a7d503]">
-                {item.step}
-              </span>
-
-              <div>
-                <h3 className="text-2xl font-black">{item.title}</h3>
-
-                <p className="mt-3 leading-7 text-[var(--muted)]">
-                  {item.text}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  </section>
+  <ProcessSection
+    label="Our Process"
+    title="Clear thinking from the first conversation."
+    description="Our process keeps every project focused, collaborative, and connected to your business goals."
+    steps={[
+      {
+        number: 1,
+        title: "Discover",
+        description: "We learn about your business, customers, challenges, and goals.",
+      },
+      {
+        number: 2,
+        title: "Define",
+        description: "We turn insights into a focused strategy and a clear creative direction.",
+      },
+      {
+        number: 3,
+        title: "Create",
+        description: "Our team designs and develops digital experiences with purpose.",
+      },
+      {
+        number: 4,
+        title: "Grow",
+        description: "We measure, refine, and improve to help your business move forward.",
+      },
+    ]}
+  />
 
   {/* CTA */}
   <section className="pb-20 sm:pb-24 lg:pb-32">
     <div className="container-custom">
-      <div className="relative overflow-hidden rounded-[32px] bg-[#a7d503] px-7 py-16 text-black sm:px-12 sm:py-20 lg:px-16">
+      <div className="relative overflow-hidden rounded-[32px] bg-[var(--accent-bright)] px-7 py-16 text-black sm:px-12 sm:py-20 lg:px-16">
         <div className="absolute right-0 top-0 h-64 w-64 rounded-full border-[40px] border-black/10" />
 
         <div className="relative max-w-4xl">
@@ -277,7 +271,7 @@ return ( <main className="overflow-hidden bg-[var(--background)] text-[var(--for
             Tell us what you are building, where you want to go, and how
             we can help you get there.
           </p>
-          <Button href="#contact" variant="outline" className="mt-10 hover:bg-[#a7d503]">
+          <Button href="#contact" variant="outline" className="mt-10 hover:bg-[var(--accent-bright)]">
             Start a Conversation
             </Button>
         </div>
@@ -285,20 +279,6 @@ return ( <main className="overflow-hidden bg-[var(--background)] text-[var(--for
     </div>
   </section>
 </main>
-
-
-);
-}
-
-function Stat({ number, label }) {
-return ( <div className="border-b border-[var(--border)] py-10 sm:border-r sm:px-7 lg:border-b-0 lg:px-9 lg:py-12 last:border-r-0"> <p className="text-4xl font-black tracking-[-0.05em] text-[#8db800] dark:text-[#a7d503] sm:text-5xl">
-{number} </p>
-
-
-  <p className="mt-3 text-xs font-bold uppercase tracking-[0.17em] text-[var(--muted)]">
-    {label}
-  </p>
-</div>
 
 
 );

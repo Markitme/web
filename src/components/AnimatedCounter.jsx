@@ -54,9 +54,9 @@ export default function AnimatedCounter({
   return (
     <div
       ref={ref}
-      className="group rounded-2xl border border-black/10 bg-white p-6 text-center transition-all duration-300 hover:-translate-y-1 hover:border-[#8db800] hover:shadow-xl dark:border-white/10 dark:bg-white/[0.03] dark:hover:border-[#a7d503] sm:rounded-3xl sm:p-7"
+      className="group rounded-2xl border border-black/10 bg-white p-6 text-center transition-all duration-300 hover:-translate-y-1 hover:border-[var(--accent)] hover:shadow-xl dark:border-white/10 dark:bg-white/[0.03] dark:hover:border-[var(--accent-bright)] sm:rounded-3xl sm:p-7"
     >
-      <p className="text-4xl font-black tracking-[-0.05em] text-[#8db800] dark:text-[#a7d503] sm:text-5xl">
+      <p className="text-4xl font-black tracking-[-0.05em] text-[var(--accent)] dark:text-[var(--accent-bright)] sm:text-5xl">
         {count}
         {suffix}
       </p>

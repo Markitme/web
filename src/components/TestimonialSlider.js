@@ -51,7 +51,7 @@ export default function TestimonialSlider() {
         {/* Section Heading */}
         <div className="mb-12 flex flex-col justify-between gap-8 md:flex-row md:items-end">
           <div>
-            <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#8db800] dark:text-[#a7d503]">
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-[var(--accent)] dark:text-[var(--accent-bright)]">
               Client Stories
             </p>
 
@@ -64,7 +64,7 @@ export default function TestimonialSlider() {
           <div className="testimonial-navigation flex items-center gap-3">
             <button
               type="button"
-              className="testimonial-prev flex h-12 w-12 items-center justify-center rounded-full border border-black/10 text-black transition hover:border-[#8db800] hover:bg-[#a7d503] hover:text-black dark:border-white/10 dark:text-white dark:hover:border-[#a7d503] dark:hover:bg-[#a7d503] dark:hover:text-black"
+              className="testimonial-prev flex h-12 w-12 items-center justify-center rounded-full border border-black/10 text-black transition hover:border-[var(--accent)] hover:bg-[var(--accent-bright)] hover:text-black dark:border-white/10 dark:text-white dark:hover:border-[var(--accent-bright)] dark:hover:bg-[var(--accent-bright)] dark:hover:text-black"
               aria-label="Previous testimonial"
             >
               <ArrowLeft size={19} />
@@ -72,7 +72,7 @@ export default function TestimonialSlider() {
 
             <button
               type="button"
-              className="testimonial-next flex h-12 w-12 items-center justify-center rounded-full bg-[#a7d503] text-black transition hover:scale-105 hover:bg-black hover:text-[#a7d503] dark:hover:bg-white dark:hover:text-black"
+              className="testimonial-next flex h-12 w-12 items-center justify-center rounded-full bg-[var(--accent-bright)] text-black transition hover:scale-105 hover:bg-black hover:text-[var(--accent-bright)] dark:hover:bg-white dark:hover:text-black"
               aria-label="Next testimonial"
             >
               <ArrowRight size={19} />
@@ -119,12 +119,12 @@ export default function TestimonialSlider() {
               <SwiperSlide key={testimonial.name}>
                 <article className="flex min-h-[390px] flex-col rounded-[28px] border border-black/10 bg-white p-7 text-black transition-colors duration-300 dark:border-white/10 dark:bg-[#151515] dark:text-white sm:p-9">
                   {/* Quote Icon */}
-                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#a7d503] text-black">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[var(--accent-bright)] text-black">
                     <Quote size={22} fill="currentColor" />
                   </div>
 
                   {/* Rating */}
-                  <div className="mt-7 flex items-center gap-1 text-[#8db800] dark:text-[#a7d503]">
+                  <div className="mt-7 flex items-center gap-1 text-[var(--accent)] dark:text-[var(--accent-bright)]">
                     {[...Array(5)].map((_, index) => (
                       <Star
                         key={index}

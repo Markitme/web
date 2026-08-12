@@ -28,13 +28,13 @@ export default function CaseStudies() {
 
         <div className="mb-10 flex flex-col gap-6 sm:mb-12 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-[680px]">
-            <p className="text-[8px] font-black uppercase tracking-[0.22em] text-[#6f8f00] dark:text-[#a7d503] sm:text-[9px]">
+            <p className="text-[8px] font-black uppercase tracking-[0.22em] text-[var(--accent)] dark:text-[var(--accent-bright)] sm:text-[9px]">
               Selected Work
             </p>
 
             <h2 className="mt-3 text-3xl font-black leading-[0.95] tracking-[-0.055em] sm:text-4xl md:text-5xl lg:text-6xl">
               Ideas turned into{" "}
-              <span className="text-[#6f8f00] dark:text-[#a7d503]">
+              <span className="text-[var(--accent)] dark:text-[var(--accent-bright)]">
                 measurable impact.
               </span>
             </h2>
@@ -164,7 +164,7 @@ export default function CaseStudies() {
 
                       <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between gap-3">
                         <div className="min-w-0">
-                          <p className="text-[8px] font-black uppercase tracking-[0.18em] text-[#a7d503]">
+                          <p className="text-[8px] font-black uppercase tracking-[0.18em] text-[var(--accent-bright)]">
                             Case Study
                           </p>
 
@@ -173,7 +173,7 @@ export default function CaseStudies() {
                           </p>
                         </div>
 
-                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#a7d503] text-black transition-transform duration-300 group-hover:rotate-[-45deg]">
+                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[var(--accent-bright)] text-black transition-transform duration-300 group-hover:rotate-[-45deg]">
                           <ArrowRight size={17} />
                         </div>
                       </div>
@@ -184,7 +184,7 @@ export default function CaseStudies() {
                     ================================================== */}
 
                     <div className="flex flex-1 flex-col p-5 sm:p-6">
-                      <p className="text-[8px] font-black uppercase tracking-[0.18em] text-[#6f8f00] dark:text-[#a7d503] sm:text-[9px]">
+                      <p className="text-[8px] font-black uppercase tracking-[0.18em] text-[var(--accent)] dark:text-[var(--accent-bright)] sm:text-[9px]">
                         {study.category}
                       </p>
 
@@ -220,7 +220,7 @@ export default function CaseStudies() {
                               key={result.label}
                               className="rounded-xl bg-black/[0.035] px-3 py-3 dark:bg-white/[0.04]"
                             >
-                              <p className="text-lg font-black tracking-[-0.04em] text-[#6f8f00] dark:text-[#a7d503]">
+                              <p className="text-lg font-black tracking-[-0.04em] text-[var(--accent)] dark:text-[var(--accent-bright)]">
                                 {result.value}
                               </p>
 
@@ -363,7 +363,7 @@ export default function CaseStudies() {
           .swiper-pagination-bullet.swiper-pagination-bullet-active {
           width: 22px;
           opacity: 1;
-          background: #a7d503;
+          background: var(--accent-bright);
         }
 
         /* =====================================================

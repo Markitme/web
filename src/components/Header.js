@@ -6,12 +6,14 @@ import {
   ChevronDown,
   Menu,
   X,
+  Settings,
 } from "lucide-react";
 
 import { useEffect, useState } from "react";
 
 import ThemeToggle from "../components/ThemeToggle";
 import Button from "../components/ui/Button";
+import ColorPicker from "../components/ColorPicker";
 
 // New dynamic services data
 import { services } from "@/data/services";
@@ -105,7 +107,7 @@ export default function Header() {
       <div className="fixed inset-x-0 top-0 z-[100]">
 
         {/* Top announcement bar */}
-        <div className="border-b border-black/10 bg-[#a7d503] py-2 text-center text-[10px] font-black uppercase tracking-[0.14em] text-black sm:text-xs sm:tracking-[0.18em]">
+        <div className="border-b border-black/10 bg-[var(--accent-bright)] py-2 text-center text-[10px] font-black uppercase tracking-[0.14em] text-black sm:text-xs sm:tracking-[0.18em]">
           Strategy. Creativity. Measurable Growth.
         </div>
 
@@ -160,7 +162,7 @@ export default function Header() {
                     key={link.name}
                     href={link.href}
                     onClick={closeMenus}
-                    className="text-sm font-semibold text-black/65 transition-colors duration-300 hover:text-[#8db800] dark:text-white/65 dark:hover:text-[#a7d503]"
+                    className="text-sm font-semibold text-black/65 transition-colors duration-300 hover:text-[var(--accent)] dark:text-white/65 dark:hover:text-[var(--accent-bright)]"
                   >
                     {link.name}
                   </Link>
@@ -180,8 +182,8 @@ export default function Header() {
                 }
                 className={`group flex items-center gap-1.5 text-sm font-semibold transition-colors duration-300 ${
                   servicesOpen
-                    ? "text-[#8db800] dark:text-[#a7d503]"
-                    : "text-black/65 hover:text-[#8db800] dark:text-white/65 dark:hover:text-[#a7d503]"
+                    ? "text-[var(--accent)] dark:text-[var(--accent-bright)]"
+                    : "text-black/65 hover:text-[var(--accent)] dark:text-white/65 dark:hover:text-[var(--accent-bright)]"
                 }`}
                 aria-expanded={
                   servicesOpen
@@ -208,7 +210,7 @@ export default function Header() {
                     key={link.name}
                     href={link.href}
                     onClick={closeMenus}
-                    className="text-sm font-semibold text-black/65 transition-colors duration-300 hover:text-[#8db800] dark:text-white/65 dark:hover:text-[#a7d503]"
+                    className="text-sm font-semibold text-black/65 transition-colors duration-300 hover:text-[var(--accent)] dark:text-white/65 dark:hover:text-[var(--accent-bright)]"
                   >
                     {link.name}
                   </Link>
@@ -218,6 +220,7 @@ export default function Header() {
             {/* Desktop Actions */}
             <div className="hidden items-center gap-3 lg:flex">
               <ThemeToggle />
+              <ColorPicker />
 
               <Button
                 href="/contact"
@@ -232,6 +235,7 @@ export default function Header() {
             {/* Mobile Actions */}
             <div className="flex items-center gap-3 lg:hidden">
               <ThemeToggle />
+              <ColorPicker />
 
               <button
                 type="button"
@@ -243,7 +247,7 @@ export default function Header() {
 
                   setServicesOpen(false);
                 }}
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-black/15 bg-black/[0.03] text-black transition-colors hover:border-[#8db800] hover:text-[#8db800] dark:border-white/15 dark:bg-white/5 dark:text-white dark:hover:border-[#a7d503] dark:hover:text-[#a7d503]"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-black/15 bg-black/[0.03] text-black transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)] dark:border-white/15 dark:bg-white/5 dark:text-white dark:hover:border-[var(--accent-bright)] dark:hover:text-[var(--accent-bright)]"
                 aria-label={
                   menuOpen
                     ? "Close navigation menu"
@@ -282,7 +286,7 @@ export default function Header() {
                 {/* Left Content */}
                 <div className="border-r border-black/10 px-8 py-9 dark:border-white/10 xl:px-10">
 
-                  <p className="text-xs font-black uppercase tracking-[0.2em] text-[#8db800] dark:text-[#a7d503]">
+                  <p className="text-xs font-black uppercase tracking-[0.2em] text-[var(--accent)] dark:text-[var(--accent-bright)]">
                     What we do
                   </p>
 
@@ -327,10 +331,10 @@ export default function Header() {
                           onClick={
                             closeMenus
                           }
-                          className="group flex min-h-[118px] gap-4 rounded-2xl border border-black/10 bg-black/[0.02] p-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-[#8db800]/40 hover:bg-[#a7d503]/10 dark:border-white/10 dark:bg-white/[0.03] dark:hover:border-[#a7d503]/40 dark:hover:bg-[#a7d503]/10"
+                          className="group flex min-h-[118px] gap-4 rounded-2xl border border-black/10 bg-black/[0.02] p-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-[var(--accent)]/40 hover:bg-[var(--accent-bright)]/10 dark:border-white/10 dark:bg-white/[0.03] dark:hover:border-[var(--accent-bright)]/40 dark:hover:bg-[var(--accent-bright)]/10"
                         >
                           {/* Icon */}
-                          <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#a7d503] text-black">
+                          <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[var(--accent-bright)] text-black">
                             <Icon
                               size={20}
                               strokeWidth={2}
@@ -339,7 +343,7 @@ export default function Header() {
 
                           {/* Text */}
                           <div>
-                            <h3 className="text-sm font-black text-black transition-colors group-hover:text-[#6f8f00] dark:text-white dark:group-hover:text-[#a7d503]">
+                            <h3 className="text-sm font-black text-black transition-colors group-hover:text-[var(--accent)] dark:text-white dark:group-hover:text-[var(--accent-bright)]">
                               {service.title}
                             </h3>
 
@@ -435,7 +439,7 @@ export default function Header() {
                     <Link
                       href="/services"
                       onClick={closeMenus}
-                      className="mb-2 flex rounded-xl bg-[#a7d503] px-4 py-3 text-sm font-black text-black"
+                      className="mb-2 flex rounded-xl bg-[var(--accent-bright)] px-4 py-3 text-sm font-black text-black"
                     >
                       View All Services
                     </Link>
@@ -455,11 +459,11 @@ export default function Header() {
                             onClick={
                               closeMenus
                             }
-                            className="flex items-center gap-3 rounded-xl px-3 py-3 text-sm font-bold text-black/70 transition hover:bg-[#a7d503]/15 hover:text-[#6f8f00] dark:text-white/70 dark:hover:text-[#a7d503]"
+                            className="flex items-center gap-3 rounded-xl px-3 py-3 text-sm font-bold text-black/70 transition hover:bg-[var(--accent-bright)]/15 hover:text-[var(--accent)] dark:text-white/70 dark:hover:text-[var(--accent-bright)]"
                           >
                             <Icon
                               size={17}
-                              className="text-[#8db800] dark:text-[#a7d503]"
+                              className="text-[var(--accent)] dark:text-[var(--accent-bright)]"
                             />
 
                             {service.title}

@@ -14,11 +14,11 @@ export default function ContactPage() {
 
           {/* Contact Information */}
           <div>
-            <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#8db800] dark:text-[#a7d503]">
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-[var(--accent)] dark:text-[var(--accent-bright)]">
               Contact MarkitMe
             </p>
 
-            <h1 className="mt-5 text-5xl font-black tracking-[-0.05em] sm:text-4xl lg:text-5xl xl:text-6xl">
+            <h1 className="mt-5 text-5xl font-black tracking-[-0.05em] sm:text-4xl lg:text-5xl xl:text-6xl bg-gradient-to-r from-black via-[var(--accent)] to-[var(--accent-bright)] bg-clip-text text-transparent dark:from-white dark:via-[var(--accent-bright)] dark:to-[var(--accent)]">
               Let&apos;s build something that matters.
             </h1>
 
@@ -31,7 +31,7 @@ export default function ContactPage() {
 
               {/* Email */}
               <div className="flex items-center gap-4">
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#a7d503] text-black">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[var(--accent-bright)] text-black">
                   <Mail size={20} />
                 </div>
 
@@ -42,7 +42,7 @@ export default function ContactPage() {
 
                   <a
                     href="mailto:info@markitme.ca"
-                    className="font-bold transition hover:text-[#8db800] dark:hover:text-[#a7d503]"
+                    className="font-bold transition hover:text-[var(--accent)] dark:hover:text-[var(--accent-bright)]"
                   >
                     info@markitme.ca
                   </a>
@@ -51,7 +51,7 @@ export default function ContactPage() {
 
               {/* Phone */}
               <div className="flex items-center gap-4">
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#a7d503] text-black">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[var(--accent-bright)] text-black">
                   <Phone size={20} />
                 </div>
 
@@ -62,7 +62,7 @@ export default function ContactPage() {
 
                   <a
                     href="tel:+16139814844"
-                    className="font-bold transition hover:text-[#8db800] dark:hover:text-[#a7d503]"
+                    className="font-bold transition hover:text-[var(--accent)] dark:hover:text-[var(--accent-bright)]"
                   >
                     +1 (613)-981-4844
                   </a>
@@ -71,7 +71,7 @@ export default function ContactPage() {
 
               {/* Location */}
               <div className="flex items-center gap-4">
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#a7d503] text-black">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[var(--accent-bright)] text-black">
                   <MapPin size={20} />
                 </div>
 
@@ -108,7 +108,7 @@ export default function ContactPage() {
                   name="name"
                   type="text"
                   placeholder="Your name"
-                  className="w-full rounded-xl border border-black/10 bg-white px-4 py-4 text-black outline-none transition placeholder:text-black/40 focus:border-[#8db800] dark:border-white/10 dark:bg-black dark:text-white dark:placeholder:text-white/35 dark:focus:border-[#a7d503]"
+                  className="w-full rounded-xl border border-black/10 bg-white px-4 py-4 text-black outline-none transition placeholder:text-black/40 focus:border-[var(--accent)] dark:border-white/10 dark:bg-black dark:text-white dark:placeholder:text-white/35 dark:focus:border-[var(--accent-bright)]"
                 />
               </div>
 
@@ -126,7 +126,7 @@ export default function ContactPage() {
                   name="email"
                   type="email"
                   placeholder="you@company.com"
-                  className="w-full rounded-xl border border-black/10 bg-white px-4 py-4 text-black outline-none transition placeholder:text-black/40 focus:border-[#8db800] dark:border-white/10 dark:bg-black dark:text-white dark:placeholder:text-white/35 dark:focus:border-[#a7d503]"
+                  className="w-full rounded-xl border border-black/10 bg-white px-4 py-4 text-black outline-none transition placeholder:text-black/40 focus:border-[var(--accent)] dark:border-white/10 dark:bg-black dark:text-white dark:placeholder:text-white/35 dark:focus:border-[var(--accent-bright)]"
                 />
               </div>
 
@@ -146,7 +146,7 @@ export default function ContactPage() {
                 name="company"
                 type="text"
                 placeholder="Your company"
-                className="w-full rounded-xl border border-black/10 bg-white px-4 py-4 text-black outline-none transition placeholder:text-black/40 focus:border-[#8db800] dark:border-white/10 dark:bg-black dark:text-white dark:placeholder:text-white/35 dark:focus:border-[#a7d503]"
+                className="w-full rounded-xl border border-black/10 bg-white px-4 py-4 text-black outline-none transition placeholder:text-black/40 focus:border-[var(--accent)] dark:border-white/10 dark:bg-black dark:text-white dark:placeholder:text-white/35 dark:focus:border-[var(--accent-bright)]"
               />
             </div>
 
@@ -164,7 +164,7 @@ export default function ContactPage() {
                 name="message"
                 rows={6}
                 placeholder="What would you like to achieve?"
-                className="w-full resize-none rounded-xl border border-black/10 bg-white px-4 py-4 text-black outline-none transition placeholder:text-black/40 focus:border-[#8db800] dark:border-white/10 dark:bg-black dark:text-white dark:placeholder:text-white/35 dark:focus:border-[#a7d503]"
+                className="w-full resize-none rounded-xl border border-black/10 bg-white px-4 py-4 text-black outline-none transition placeholder:text-black/40 focus:border-[var(--accent)] dark:border-white/10 dark:bg-black dark:text-white dark:placeholder:text-white/35 dark:focus:border-[var(--accent-bright)]"
               />
             </div>
 
