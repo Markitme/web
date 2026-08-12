@@ -203,13 +203,33 @@ export default function Home() {
         </div>
       </section>
       {/* Client Slider */}
-      <ClientLogoSlider />
+      <motion.div
+        initial={{ opacity: 0, y: 60 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: false, margin: "-100px" }}
+      >
+        <ClientLogoSlider />
+      </motion.div>
       {/* Brand Strip */}
-      <ServiceMarquee />
+      <motion.div
+        initial={{ opacity: 0, y: 60 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: false, margin: "-100px" }}
+      >
+        <ServiceMarquee />
+      </motion.div>
       {/* Services */}
       <section id="services" className="py-28">
         <div className="container-custom">
-          <div className="max-w-3xl">
+          <motion.div
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: false, margin: "-100px" }}
+            className="max-w-3xl"
+          >
             <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#6f8f00] dark:text-[#a7d503]">
               What we do
             </p>
@@ -222,10 +242,16 @@ export default function Home() {
               One strategic partner for your brand, website, marketing, and
               long-term digital growth.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="mt-16 grid gap-5 lg:grid-cols-3">
-            {services.map((service) => {
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            viewport={{ once: false, margin: "-100px" }}
+            className="mt-16 grid gap-5 lg:grid-cols-3"
+          >
+            {services.map((service, index) => {
               const Icon = service.icon;
 
               return (
@@ -233,53 +259,79 @@ export default function Home() {
                   key={service.title}
                   className="group rounded-[2rem] border border-black/10 bg-[#f7f7f5] p-8 transition duration-300 hover:-translate-y-2 hover:border-[#8db800]/50 dark:border-white/10 dark:bg-[#141414] dark:hover:border-[#a7d503]/50"
                 >
-                  <div className="flex items-start justify-between">
-                    <span className="text-sm text-black/30 dark:text-white/30">
-                      {service.number}
-                    </span>
-
-                    <div className="rounded-2xl bg-[#a7d503] p-3 text-black">
-                      <Icon size={24} />
-                    </div>
-                  </div>
-
-                  <h3 className="mt-16 text-2xl font-bold">{service.title}</h3>
-
-                  <p className="mt-4 leading-7 text-black/50 dark:text-white/50">
-                    {service.description}
-                  </p>
-
-                  <a
-                    href="#contact"
-                    className="mt-8 inline-flex items-center gap-2 font-bold text-[#6f8f00] transition hover:gap-3 dark:text-[#a7d503]"
+                  <motion.div
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, ease: "easeOut", delay: index * 0.15 }}
+                    viewport={{ once: false, margin: "-50px" }}
                   >
-                    Explore service
-                    <ArrowRight size={17} />
-                  </a>
+                    <div className="flex items-start justify-between">
+                      <span className="text-sm text-black/30 dark:text-white/30">
+                        {service.number}
+                      </span>
+
+                      <div className="rounded-2xl bg-[#a7d503] p-3 text-black">
+                        <Icon size={24} />
+                      </div>
+                    </div>
+
+                    <h3 className="mt-16 text-2xl font-bold">{service.title}</h3>
+
+                    <p className="mt-4 leading-7 text-black/50 dark:text-white/50">
+                      {service.description}
+                    </p>
+
+                    <a
+                      href="#contact"
+                      className="mt-8 inline-flex items-center gap-2 font-bold text-[#6f8f00] transition hover:gap-3 dark:text-[#a7d503]"
+                    >
+                      Explore service
+                      <ArrowRight size={17} />
+                    </a>
+                  </motion.div>
                 </article>
               );
             })}
-          </div>
+          </motion.div>
         </div>
       </section>
       {/* Stats */}
       <section className="bg-[#f7f7f5] py-16 text-black transition-colors duration-300 sm:py-20 dark:bg-[#141414]">
-        <div className="container-custom grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {stats.map((stat) => (
-            <AnimatedCounter
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: false, margin: "-100px" }}
+          className="container-custom grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
+        >
+          {stats.map((stat, index) => (
+            <motion.div
               key={stat.label}
-              value={stat.value}
-              suffix={stat.suffix}
-              label={stat.label}
-              duration={1600}
-            />
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: "easeOut", delay: index * 0.15 }}
+              viewport={{ once: false, margin: "-50px" }}
+            >
+              <AnimatedCounter
+                value={stat.value}
+                suffix={stat.suffix}
+                label={stat.label}
+                duration={1600}
+              />
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </section>
 
       {/* Why Us - Swiper Slider */}
       <section id="about" className="overflow-hidden py-28">
-        <div className="container-custom grid gap-12 lg:grid-cols-2 lg:items-center">
+        <motion.div
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: false, margin: "-100px" }}
+          className="container-custom grid gap-12 lg:grid-cols-2 lg:items-center"
+        >
           {/* Left - Heading & Navigation */}
           <div className="max-w-md flex flex-col justify-between">
             <div>
@@ -364,7 +416,13 @@ export default function Home() {
               const Icon = item.icon;
               return (
                 <SwiperSlide key={index} className="min-h-[450px]">
-                  <div className="relative overflow-hidden rounded-[2rem] border border-black/10 bg-[#f7f7f5] p-8 dark:border-white/10 dark:bg-[#141414] sm:p-10 h-full flex flex-col">
+                  <motion.div
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, ease: "easeOut", delay: index * 0.15 }}
+                    viewport={{ once: false, margin: "-50px" }}
+                    className="relative overflow-hidden rounded-[2rem] border border-black/10 bg-[#f7f7f5] p-8 dark:border-white/10 dark:bg-[#141414] sm:p-10 h-full flex flex-col"
+                  >
                     {/* Background Icon */}
                     <div className="absolute left-0 top-1/2 -translate-y-1/2 opacity-5 dark:opacity-10">
                       <Icon size={300} strokeWidth={0.5} />
@@ -391,13 +449,13 @@ export default function Home() {
                         <ArrowRight size={18} />
                       </a>
                     </div>
-                  </div>
+                  </motion.div>
                 </SwiperSlide>
               );
             })}
             </Swiper>
           </div>
-        </div>
+        </motion.div>
 
         <style jsx>{`
           :global(.why-us-swiper) {
@@ -410,10 +468,23 @@ export default function Home() {
         `}</style>
       </section>
       {/* Case Study */}
-      <CaseStudies />
+      <motion.div
+        initial={{ opacity: 0, y: 60 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: false, margin: "-100px" }}
+      >
+        <CaseStudies />
+      </motion.div>
       {/* CTA */}
       <section id="contact" className="container-custom pb-28 mt-20">
-        <div className="relative overflow-hidden rounded-[2.5rem] border border-black/10 bg-[#f5f5f2] px-7 py-20 text-center sm:px-12 dark:border-white/10 dark:bg-[#171717]">
+        <motion.div
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: false, margin: "-100px" }}
+          className="relative overflow-hidden rounded-[2.5rem] border border-black/10 bg-[#f5f5f2] px-7 py-20 text-center sm:px-12 dark:border-white/10 dark:bg-[#171717]"
+        >
           <div className="absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 rounded-full bg-[#a7d503]/15 blur-3xl" />
 
           <div className="relative mx-auto max-w-4xl">
@@ -436,10 +507,17 @@ export default function Home() {
               </Button>
             </div>
           </div>
-        </div>
+        </motion.div>
       </section>
       {/* Testimonials */}
-      <TestimonialSlider />
+      <motion.div
+        initial={{ opacity: 0, y: 60 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: false, margin: "-100px" }}
+      >
+        <TestimonialSlider />
+      </motion.div>
     </main>
   );
 }
