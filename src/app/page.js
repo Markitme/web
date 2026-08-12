@@ -4,19 +4,30 @@ import {
   ArrowRight,
   BarChart3,
   Check,
+  ChevronLeft,
+  ChevronRight,
   Globe,
   MoveUpRight,
   Search,
   Sparkles,
   Target,
+  Eye,
+  TrendingUp,
+  Users,
+  Zap,
 } from "lucide-react";
 import { motion } from "framer-motion";
+import { useRef } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Navigation } from "swiper/modules";
+import "swiper/css";
 
 import Button from "../components/ui/Button";
 import CaseStudies from "../components/CaseStudies";
 import ClientLogoSlider from "../components/ClientLogoSlider";
 import ServiceMarquee from "../components/ServiceMarquee";
 import TestimonialSlider from "../components/TestimonialSlider";
+import AnimatedCounter from "@/components/AnimatedCounter";
 
 const services = [
   {
@@ -43,13 +54,16 @@ const services = [
 ];
 
 const stats = [
-  { value: "150+", label: "Projects Delivered" },
-  { value: "92%", label: "Client Retention" },
-  { value: "3.5x", label: "Average Growth" },
-  { value: "10+", label: "Years of Experience" },
+  { value: 150, suffix: "+", label: "Projects Delivered" },
+  { value: 92, suffix: "%", label: "Client Retention" },
+  { value: 3.5, suffix: "x", label: "Average Growth" },
+  { value: 10, suffix: "+", label: "Years of Experience" },
 ];
 
 export default function Home() {
+  const prevRef = useRef(null);
+  const nextRef = useRef(null);
+
   return (
     <main className="bg-white text-black transition-colors duration-300 dark:bg-[#0a0a0a] dark:text-white">
       {/* Hero */}{" "}
@@ -249,72 +263,151 @@ export default function Home() {
         </div>
       </section>
       {/* Stats */}
-
-      <section className="bg-[#a7d503] py-16 text-black transition-colors duration-300 sm:py-20">
-        <div className="container-custom grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+      <section className="bg-[#f7f7f5] py-16 text-black transition-colors duration-300 sm:py-20 dark:bg-[#141414]">
+        <div className="container-custom grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {stats.map((stat) => (
-            <div
+            <AnimatedCounter
               key={stat.label}
-              className="border-b border-black/10 pb-8 last:border-b-0 sm:border-b-0 sm:pb-0"
-            >
-              <p className="text-5xl font-black tracking-[-0.07em] sm:text-6xl">
-                {stat.value}
-              </p>
-
-
-          <p className="mt-3 text-sm font-bold uppercase tracking-[0.12em] text-black/70">
-            {stat.label}
-          </p>
-        </div>
-      ))}
-
-
+              value={stat.value}
+              suffix={stat.suffix}
+              label={stat.label}
+              duration={1600}
+            />
+          ))}
         </div>
       </section>
 
-      {/* Why Us */}
-      <section id="about" className="py-28">
-        <div className="container-custom grid gap-14 lg:grid-cols-2">
-          <div>
-            <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#6f8f00] dark:text-[#a7d503]">
-              Why MarkitMe
-            </p>
+      {/* Why Us - Swiper Slider */}
+      <section id="about" className="overflow-hidden py-28">
+        <div className="container-custom grid gap-12 lg:grid-cols-2 lg:items-center">
+          {/* Left - Heading & Navigation */}
+          <div className="max-w-md flex flex-col justify-between">
+            <div>
+              <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#6f8f00] dark:text-[#a7d503]">
+                Why MarkitMe
+              </p>
 
-            <h2 className="mt-5 text-4xl font-black tracking-[-0.05em] sm:text-5xl">
-              Less noise.
-              <br />
-              More meaningful growth.
-            </h2>
+              <h2 className="mt-5 text-4xl font-black tracking-[-0.05em] sm:text-5xl">
+                Less noise.
+                <br />
+                More meaningful growth.
+              </h2>
+
+              <p className="mt-6 text-base leading-7 text-black/60 dark:text-white/60">
+                We don't chase vanity metrics. Every decision is connected to your business goals.
+              </p>
+            </div>
+
+            {/* Navigation Buttons - REMOVED */}
+            {/* <div className="mt-12 flex gap-3">
+              <button
+                ref={prevRef}
+                className="group flex items-center gap-2 rounded-xl border-2 border-[#8db800] bg-transparent px-5 py-3 font-bold text-[#8db800] transition duration-300 hover:bg-[#8db800] hover:text-white dark:border-[#a7d503] dark:text-[#a7d503] dark:hover:bg-[#a7d503] dark:hover:text-black"
+              >
+                <ChevronLeft size={20} />
+                <span>Previous</span>
+              </button>
+              <button
+                ref={nextRef}
+                className="group flex items-center gap-2 rounded-xl border-2 border-[#8db800] bg-transparent px-5 py-3 font-bold text-[#8db800] transition duration-300 hover:bg-[#8db800] hover:text-white dark:border-[#a7d503] dark:text-[#a7d503] dark:hover:bg-[#a7d503] dark:hover:text-black"
+              >
+                <span>Next</span>
+                <ChevronRight size={20} />
+              </button>
+            </div> */}
           </div>
 
+          {/* Right - Slider */}
           <div>
-            <p className="text-lg leading-8 text-black/60 dark:text-white/60">
-              We do not chase vanity metrics or build campaigns without purpose.
-              Every creative decision is connected to a clear business
-              objective.
-            </p>
-
-            <div className="mt-10 space-y-5">
+            <Swiper
+              modules={[Autoplay, Navigation]}
+              slidesPerView={1}
+              spaceBetween={24}
+              autoplay={{
+                delay: 4000,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true,
+              }}
+              navigation={{
+                prevEl: prevRef.current,
+                nextEl: nextRef.current,
+              }}
+              loop={true}
+              className="why-us-swiper"
+              onBeforeInit={(swiper) => {
+                swiper.params.navigation.prevEl = prevRef.current;
+                swiper.params.navigation.nextEl = nextRef.current;
+              }}
+            >
               {[
-                "Clear strategy before execution",
-                "Creative work built around your audience",
-                "Transparent reporting and measurable outcomes",
-                "A flexible team that grows with your business",
-              ].map((item) => (
-                <div
-                  key={item}
-                  className="flex items-center gap-4 border-b border-black/10 pb-5 dark:border-white/10"
-                >
-                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#a7d503] text-black">
-                    <Check size={16} strokeWidth={3} />
-                  </span>
+              {
+                icon: Target,
+                title: "Clear Strategy",
+                description: "Strategy before execution. We develop comprehensive plans based on your business goals.",
+              },
+              {
+                icon: Eye,
+                title: "Transparent Reporting",
+                description: "Measurable outcomes you can track. Real data, real insights, real growth metrics.",
+              },
+              {
+                icon: TrendingUp,
+                title: "Built for Growth",
+                description: "Creative work around your audience. Every campaign designed to scale with you.",
+              },
+              {
+                icon: Users,
+                title: "Flexible Team",
+                description: "A team that grows with you. Scalable resources for every stage of your journey.",
+              },
+            ].map((item, index) => {
+              const Icon = item.icon;
+              return (
+                <SwiperSlide key={index} className="min-h-[450px]">
+                  <div className="relative overflow-hidden rounded-[2rem] border border-black/10 bg-[#f7f7f5] p-8 dark:border-white/10 dark:bg-[#141414] sm:p-10 h-full flex flex-col">
+                    {/* Background Icon */}
+                    <div className="absolute left-0 top-1/2 -translate-y-1/2 opacity-5 dark:opacity-10">
+                      <Icon size={300} strokeWidth={0.5} />
+                    </div>
 
-                  <span className="font-semibold">{item}</span>
-                </div>
-              ))}
-            </div>
+                    {/* Heading at Top */}
+                    <div className="relative z-10">
+                      <h3 className="text-3xl font-black text-black dark:text-white sm:text-4xl">
+                        {item.title}
+                      </h3>
+                    </div>
+
+                    {/* Content at Bottom */}
+                    <div className="relative z-10 mt-auto">
+                      <p className="text-base leading-7 text-black/60 dark:text-white/60">
+                        {item.description}
+                      </p>
+
+                      <a
+                        href="#about"
+                        className="mt-6 inline-flex items-center gap-2 font-bold text-[#6f8f00] transition hover:gap-3 dark:text-[#a7d503]"
+                      >
+                        Learn more
+                        <ArrowRight size={18} />
+                      </a>
+                    </div>
+                  </div>
+                </SwiperSlide>
+              );
+            })}
+            </Swiper>
           </div>
         </div>
+
+        <style jsx>{`
+          :global(.why-us-swiper) {
+            padding-bottom: 0;
+          }
+
+          :global(.why-us-swiper .swiper-slide) {
+            height: auto;
+          }
+        `}</style>
       </section>
       {/* Case Study */}
       <CaseStudies />

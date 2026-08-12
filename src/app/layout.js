@@ -1,4 +1,4 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Poppins } from "next/font/google";
 import "./globals.css";
 
 import Header from "../components/Header";
@@ -15,6 +15,12 @@ variable: "--font-geist-mono",
 subsets: ["latin"],
 });
 
+const poppins = Poppins({
+variable: "--font-poppins",
+weight: ["400", "500", "600", "700"],
+subsets: ["latin"],
+});
+
 export const metadata = {
 title: "MarkitMe | Strategy, Creative & Digital Growth",
 description:
@@ -26,7 +32,7 @@ return (
 <html
 lang="en"
 suppressHydrationWarning
-className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} h-full antialiased`}
 >
   <body className="flex min-h-full flex-col bg-[var(--background)] text-[var(--foreground)]"> <ThemeProvider> <Header />
 
