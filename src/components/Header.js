@@ -223,10 +223,12 @@ export default function Header() {
               <ColorPicker />
 
               <Button
-                href="/contact"
                 variant="primary"
                 size="md"
-                onClick={closeMenus}
+                onClick={() => {
+                  closeMenus();
+                  window.dispatchEvent(new Event("open-contact-modal"));
+                }}
               >
                 Let&apos;s Talk
               </Button>
@@ -503,12 +505,14 @@ export default function Header() {
                 </Link>
 
                 {/* CTA */}
-                <Button
-                  href="/contact"
+               <Button
                   variant="primary"
                   size="lg"
                   className="mt-6 w-full"
-                  onClick={closeMenus}
+                  onClick={() => {
+                    closeMenus();
+                    window.dispatchEvent(new Event("open-contact-modal"));
+                  }}
                 >
                   Let&apos;s Talk
                 </Button>

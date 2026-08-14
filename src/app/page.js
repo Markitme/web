@@ -21,7 +21,7 @@ import { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
 import "swiper/css";
-
+import HomePopupModal from "@/components/HomePopupModal";
 import Button from "../components/ui/Button";
 import CaseStudies from "../components/CaseStudies";
 import ClientLogoSlider from "../components/ClientLogoSlider";
@@ -104,19 +104,29 @@ export default function Home() {
             </motion.p>
 
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.25 }}
-              className="mt-10 flex flex-col gap-4 sm:flex-row"
-            >
-              <Button href="#contact" variant="primary">
-                Start Your Project
-              </Button>
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.7, delay: 0.25 }}
+  className="mt-10 flex flex-col gap-4 sm:flex-row"
+>
+  {/* Open Contact Modal */}
+  <Button
+    variant="primary"
+    onClick={() => {
+      window.dispatchEvent(new Event("open-contact-modal"));
+    }}
+  >
+    Start Your Project
+  </Button>
 
-              <Button href="#services" variant="outline">
-                Explore Services
-              </Button>
-            </motion.div>
+  {/* Go To Services Page */}
+  <Button
+    href="/services"
+    variant="outline"
+  >
+    Explore Services
+  </Button>
+</motion.div>
           </div>
           {/* Hero Visual */}
           <motion.div

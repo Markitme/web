@@ -4,7 +4,7 @@ import "./globals.css";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import ThemeProvider from "../components/ThemeProvider";
-
+import HomePopupModal from "@/components/HomePopupModal";
 const geistSans = Geist({
 variable: "--font-geist-sans",
 subsets: ["latin"],
@@ -39,6 +39,7 @@ className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} h-fu
 
       <main className="flex-1">
         {children}
+        <HomePopupModal />
       </main>
 
       <Footer />
