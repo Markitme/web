@@ -1,9 +1,14 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+
 import { services } from "@/data/services";
+import ServiceCard from "@/components/ServiceCard";
 
 export default function ServicesPage() {
-  // Category ke according services group kar rahe hain
+  /* =========================================================
+     GROUP SERVICES BY CATEGORY
+  ========================================================= */
+
   const serviceCategories = services.reduce((groups, service) => {
     const category = service.category;
 
@@ -17,135 +22,506 @@ export default function ServicesPage() {
   }, {});
 
   return (
-    <main className="bg-white text-black transition-colors duration-300 dark:bg-[#0a0a0a] dark:text-white">
-      {/* Hero Section */}
-      <section className="border-b border-black/10 px-5 py-24 dark:border-white/10 sm:py-32">
-        <div className="container-custom">
-          <p className="text-sm font-bold uppercase tracking-[0.2em] text-[var(--accent)] dark:text-[var(--accent-bright)]">
-            What We Do
-          </p>
-          
-         <h1 className="mt-5 text-5xl font-black tracking-[-0.05em] sm:text-4xl lg:text-5xl xl:text-6xl bg-gradient-to-r from-black via-[var(--accent)] to-[var(--accent-bright)] bg-clip-text text-transparent dark:from-white dark:via-[var(--accent-bright)] dark:to-[var(--accent)]">
-               Strategy, creativity, <br/> and growth — working together.
+    <main
+      className="
+        min-h-screen
+        bg-[#F1F3ED]
+        text-[#0C3B2E]
+
+        transition-colors
+        duration-300
+
+        dark:bg-[#071F18]
+        dark:text-[#F1F3ED]
+      "
+    >
+
+      {/* =====================================================
+          HERO
+      ===================================================== */}
+
+      <section
+        className="
+          relative
+          overflow-hidden
+
+          border-b
+          border-[#0C3B2E]/10
+
+          dark:border-[#6D9773]/20
+        "
+      >
+        {/* Decorative Glow */}
+        <div
+          className="
+            pointer-events-none
+            absolute
+            -right-32
+            -top-32
+
+            h-72
+            w-72
+
+            rounded-full
+
+            bg-[#6D9773]/10
+
+            blur-3xl
+
+            dark:bg-[#6D9773]/10
+          "
+        />
+
+        <div
+          className="
+            container-custom
+            relative
+            px-5
+
+            py-16
+            sm:py-20
+            lg:py-24
+          "
+        >
+          <div className="max-w-[760px]">
+
+            {/* Eyebrow */}
+            <div className="flex items-center gap-2">
+              <span
+                className="
+                  h-1.5
+                  w-1.5
+                  rounded-full
+                  bg-[#FFBA00]
+                "
+              />
+
+              <p
+                className="
+                  text-[8px]
+                  font-black
+                  uppercase
+                  tracking-[0.22em]
+
+                  text-[#6D9773]
+
+                  sm:text-[9px]
+
+                  dark:text-[#FFBA00]
+                "
+              >
+                What We Do
+              </p>
+
+              <span
+                className="
+                  h-1.5
+                  w-1.5
+                  rounded-full
+
+                  bg-[#6D9773]
+
+                  dark:bg-[#FFBA00]
+                "
+              />
+            </div>
+
+            {/* Main Heading */}
+            <h1
+              className="
+                mt-4
+
+                text-4xl
+                font-black
+                leading-[0.95]
+                tracking-[-0.055em]
+
+                text-[#0C3B2E]
+
+                sm:text-5xl
+                md:text-6xl
+                lg:text-7xl
+
+                dark:text-[#F1F3ED]
+              "
+            >
+              Strategy, creativity,{" "}
+
+              <span
+                className="
+                  text-[#6D9773]
+                  dark:text-[#FFBA00]
+                "
+              >
+                and growth
+              </span>{" "}
+
+              — working together.
             </h1>
 
-          <p className="mt-7 max-w-2xl text-lg leading-8 text-black/60 dark:text-white/60">
-            We combine strategy, design, technology, content, and marketing
-            to create digital experiences that help businesses grow.
-          </p>
+            {/* Description */}
+            <p
+              className="
+                mt-6
+                max-w-2xl
+
+                text-base
+                leading-7
+
+                text-[#0C3B2E]/60
+
+                sm:text-lg
+                sm:leading-8
+
+                dark:text-[#F1F3ED]/60
+              "
+            >
+              We combine strategy, design, technology, content, and marketing
+              to create digital experiences that help businesses grow.
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* Services */}
+
+      {/* =====================================================
+          SERVICE CATEGORY SECTIONS
+      ===================================================== */}
+
       {Object.entries(serviceCategories).map(
-        ([category, categoryServices], categoryIndex) => (
-          <section
-            key={category}
-            className={`px-5 py-20 sm:py-28 ${
-              categoryIndex % 2 === 1
-                ? "bg-black/[0.025] dark:bg-white/[0.02]"
-                : ""
-            }`}
-          >
-            <div className="container-custom">
-              {/* Category Heading */}
-              <div className="mb-12 max-w-3xl">
-                <p className="text-sm font-bold uppercase tracking-[0.2em] text-[var(--accent)] dark:text-[var(--accent-bright)]">
-                  {String(categoryIndex + 1).padStart(2, "0")}
-                </p>
+        ([category, categoryServices], categoryIndex) => {
+          const isAlternate = categoryIndex % 2 === 1;
 
-                <h2 className="mt-4 text-4xl font-black tracking-[-0.05em] sm:text-5xl">
-                  {category}
-                </h2>
+          return (
+            <section
+              key={category}
+              className={`
+                border-b
+                border-[#0C3B2E]/10
 
-                <p className="mt-5 max-w-2xl text-base leading-7 text-black/60 dark:text-white/60">
-                  Explore specialized services designed around your brand,
-                  audience, and long-term business goals.
-                </p>
-              </div>
+                py-16
+                sm:py-20
+                lg:py-24
 
-              {/* Service Cards */}
-              <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-                {categoryServices.map((service) => {
-                  const Icon = service.icon;
+                dark:border-[#6D9773]/20
 
-                  return (
-                    <article
-                      key={service.slug}
-                      className="group flex min-h-[360px] flex-col rounded-[28px] border border-black/10 bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:border-[var(--accent)] hover:shadow-xl dark:border-white/10 dark:bg-white/[0.03] dark:hover:border-[var(--accent-bright)] sm:p-8"
-                    >
-                      {/* Icon */}
-                      <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[var(--accent-bright)] text-black transition-transform duration-300 group-hover:scale-110">
-                        <Icon size={25} strokeWidth={1.8} />
-                      </div>
+                ${
+                  isAlternate
+                    ? `
+                      bg-[#E8ECE5]
+                      dark:bg-[#0A2A21]
+                    `
+                    : `
+                      bg-[#F1F3ED]
+                      dark:bg-[#071F18]
+                    `
+                }
+              `}
+            >
+              <div className="container-custom px-5">
 
-                      {/* Category */}
-                      <p className="mt-7 text-xs font-bold uppercase tracking-[0.16em] text-[var(--accent)] dark:text-[var(--accent-bright)]">
-                        {service.category}
-                      </p>
+                {/* =================================================
+                    CATEGORY HEADING
+                ================================================= */}
 
-                      {/* Title */}
-                      <h3 className="mt-3 text-2xl font-black tracking-[-0.03em]">
-                        {service.title}
-                      </h3>
+                <div
+                  className="
+                    mb-10
 
-                      {/* Description */}
-                      <p className="mt-4 leading-7 text-black/60 dark:text-white/60">
-                        {service.description}
-                      </p>
+                    flex
+                    flex-col
+                    gap-5
 
-                      {/* Button */}
-                      <Link
-                        href={`/services/${service.slug}`}
-                        className="group/link mt-auto inline-flex w-fit items-center gap-3 pt-8 text-sm font-bold text-black transition-colors duration-300 hover:text-[var(--accent)] dark:text-white dark:hover:text-[var(--accent-bright)]"
+                    sm:mb-12
+
+                    lg:flex-row
+                    lg:items-end
+                    lg:justify-between
+                  "
+                >
+                  <div className="max-w-[680px]">
+
+                    {/* Same Heading Pattern */}
+                    <div className="flex items-center gap-2">
+                      <span
+                        className="
+                          h-1.5
+                          w-1.5
+                          rounded-full
+                          bg-[#FFBA00]
+                        "
+                      />
+
+                      <p
+                        className="
+                          text-[8px]
+                          font-black
+                          uppercase
+                          tracking-[0.22em]
+
+                          text-[#6D9773]
+
+                          sm:text-[9px]
+
+                          dark:text-[#FFBA00]
+                        "
                       >
-                        Explore Service
+                        {String(categoryIndex + 1).padStart(2, "0")}
+                      </p>
 
-                        <ArrowRight
-                          size={18}
-                          className="transition-transform duration-300 group-hover/link:translate-x-1"
-                        />
-                      </Link>
-                    </article>
-                  );
-                })}
+                      <span
+                        className="
+                          h-1.5
+                          w-1.5
+                          rounded-full
+
+                          bg-[#6D9773]
+
+                          dark:bg-[#FFBA00]
+                        "
+                      />
+                    </div>
+
+                    {/* Category Heading */}
+                    <h2
+                      className="
+                        mt-3
+
+                        text-3xl
+                        font-black
+                        leading-[0.95]
+                        tracking-[-0.055em]
+
+                        text-[#0C3B2E]
+
+                        sm:text-4xl
+                        md:text-5xl
+                        lg:text-6xl
+
+                        dark:text-[#F1F3ED]
+                      "
+                    >
+                      {category}
+                    </h2>
+
+                    <p
+                      className="
+                        mt-5
+                        max-w-2xl
+
+                        text-base
+                        leading-7
+
+                        text-[#0C3B2E]/60
+
+                        dark:text-[#F1F3ED]/60
+                      "
+                    >
+                      Explore specialized services designed around your brand,
+                      audience, and long-term business goals.
+                    </p>
+                  </div>
+                </div>
+
+
+                {/* =================================================
+                    COMMON SERVICE CARDS
+                ================================================= */}
+
+                <div
+                  className="
+                    grid
+                    gap-5
+
+                    md:grid-cols-2
+                    lg:grid-cols-3
+                  "
+                >
+                  {categoryServices.map((service) => (
+                    <ServiceCard
+                      key={service.slug}
+                      service={service}
+                    />
+                  ))}
+                </div>
+
               </div>
-            </div>
-          </section>
-        )
+            </section>
+          );
+        }
       )}
 
-      {/* Bottom CTA */}
-      <section className="border-t border-black/10 bg-[var(--accent-bright)] px-5 py-20 text-black dark:border-white/10 sm:py-24">
-        <div className="container-custom flex flex-col justify-between gap-8 lg:flex-row lg:items-center">
-          <div className="max-w-3xl">
-            <p className="text-sm font-black uppercase tracking-[0.2em]">
-              Ready to Grow?
-            </p>
 
-            <h2 className="mt-4 text-4xl font-black tracking-[-0.05em] sm:text-5xl">
+      {/* =====================================================
+          BOTTOM CTA
+      ===================================================== */}
+
+      <section
+        className="
+          relative
+          overflow-hidden
+
+          bg-[#FFBA00]
+
+          px-5
+          py-16
+
+          text-[#0C3B2E]
+
+          sm:py-20
+          lg:py-24
+        "
+      >
+
+        {/* Decorative Circle */}
+        <div
+          className="
+            pointer-events-none
+            absolute
+            -right-24
+            -top-24
+
+            h-64
+            w-64
+
+            rounded-full
+
+            border-[40px]
+            border-[#0C3B2E]/5
+          "
+        />
+
+        <div
+          className="
+            container-custom
+            relative
+
+            flex
+            flex-col
+            justify-between
+            gap-8
+
+            lg:flex-row
+            lg:items-center
+          "
+        >
+
+          {/* Content */}
+          <div className="max-w-3xl">
+
+            <div className="flex items-center gap-2">
+              <span
+                className="
+                  h-1.5
+                  w-1.5
+                  rounded-full
+                  bg-[#0C3B2E]
+                "
+              />
+
+              <p
+                className="
+                  text-[9px]
+                  font-black
+                  uppercase
+                  tracking-[0.22em]
+                "
+              >
+                Ready to Grow?
+              </p>
+            </div>
+
+            <h2
+              className="
+                mt-4
+
+                text-4xl
+                font-black
+                leading-[0.98]
+                tracking-[-0.055em]
+
+                sm:text-5xl
+                lg:text-6xl
+              "
+            >
               Let&apos;s build something that moves your business forward.
             </h2>
 
-            <p className="mt-5 max-w-2xl text-base leading-7 text-black/70">
+            <p
+              className="
+                mt-5
+                max-w-2xl
+
+                text-base
+                leading-7
+
+                text-[#0C3B2E]/70
+              "
+            >
               Tell us what you want to achieve, and we&apos;ll help you find
               the right strategy, creative direction, and digital solution.
             </p>
+
           </div>
 
+
+          {/* CTA Button */}
           <Link
             href="/contact"
-            className="group flex w-fit items-center gap-3 rounded-full bg-black px-7 py-4 font-bold text-white transition duration-300 hover:scale-[1.03] hover:bg-white hover:text-black"
+            className="
+              group
+
+              flex
+              w-fit
+              shrink-0
+              items-center
+              gap-3
+
+              rounded-full
+
+              bg-[#0C3B2E]
+
+              px-7
+              py-4
+
+              font-black
+              text-[#F1F3ED]
+
+              transition-all
+              duration-300
+
+              hover:-translate-y-0.5
+              hover:bg-[#071F18]
+              hover:shadow-xl
+            "
           >
             Start Your Project
 
-            <ArrowRight
-              size={18}
-              className="transition-transform duration-300 group-hover:translate-x-1"
-            />
+            <span
+              className="
+                flex
+                h-8
+                w-8
+                items-center
+                justify-center
+                rounded-full
+
+                bg-[#FFBA00]
+                text-[#0C3B2E]
+
+                transition-transform
+                duration-300
+
+                group-hover:translate-x-1
+              "
+            >
+              <ArrowRight size={16} />
+            </span>
           </Link>
+
         </div>
       </section>
+
     </main>
   );
 }

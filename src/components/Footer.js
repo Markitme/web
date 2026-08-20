@@ -1,107 +1,886 @@
 import Link from "next/link";
-
 import Image from "next/image";
-export default function Footer() {
-return ( <footer className="border-t border-black/10 bg-white py-10 text-black transition-colors duration-300 dark:border-white/10 dark:bg-[#0a0a0a] dark:text-white"> <div className="container-custom">
-{/* Main Footer */} <div className="flex flex-col justify-between gap-8 md:flex-row md:items-center">
-{/* Brand */} <div> 
 
-        {/* Logo */}
+import {
+  Mail,
+  Phone,
+  MapPin,
+  ArrowUpRight,
+} from "lucide-react";
+
+export default function Footer() {
+  return (
+    <footer
+      className="
+        relative
+        overflow-hidden
+        border-t
+        border-[#0C3B2E]/10
+        bg-[#F1F3ED]
+        text-[#0C3B2E]
+        transition-colors
+        duration-300
+
+        dark:border-[#F1F3ED]/10
+        dark:bg-[#0C3B2E]
+        dark:text-[#F1F3ED]
+      "
+    >
+
+      {/* =====================================================
+          DECORATIVE BACKGROUND
+      ====================================================== */}
+
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+
+        {/* Sage glow */}
+
+        <div
+          className="
+            absolute
+            -right-32
+            -top-40
+            h-96
+            w-96
+            rounded-full
+            bg-[#6D9773]/15
+            blur-3xl
+          "
+        />
+
+        {/* Golden glow */}
+
+        <div
+          className="
+            absolute
+            -bottom-40
+            -left-32
+            h-80
+            w-80
+            rounded-full
+            bg-[#FFBA00]/10
+            blur-3xl
+          "
+        />
+
+        {/* Sand glow */}
+
+        <div
+          className="
+            absolute
+            right-[30%]
+            bottom-[-180px]
+            h-72
+            w-72
+            rounded-full
+            bg-[#BB8A52]/10
+            blur-3xl
+          "
+        />
+
+      </div>
+
+
+      {/* =====================================================
+          MAIN CONTAINER
+      ====================================================== */}
+
+      <div className="container-custom relative z-10">
+
+
+        {/* =====================================================
+            MAIN FOOTER
+        ====================================================== */}
+
+        <div
+          className="
+            grid
+            gap-12
+            py-14
+
+            sm:grid-cols-2
+
+            lg:grid-cols-[1.4fr_0.8fr_1.2fr_0.9fr]
+            lg:gap-10
+            lg:py-16
+          "
+        >
+
+
+          {/* =================================================
+              BRAND
+          ================================================= */}
+
+          <div>
+
+            {/* Logo */}
+
             <Link
               href="/"
-              className="flex shrink-0 items-center"
+              className="flex w-fit shrink-0 items-center"
               aria-label="MarkitMe Home"
             >
-              {/* Light Mode: Light theme me show, Dark theme me hidden */}
+
+              {/* Dark mode logo */}
+
               <Image
                 src="/images/logo-light.png"
                 alt="MarkitMe"
                 width={190}
                 height={60}
                 priority
-                className=" h-auto w-[145px] object-contain hidden dark:block  sm:w-[170px]"
+                className="
+                  hidden
+                  h-auto
+                  w-[145px]
+                  object-contain
+                  dark:block
+                  sm:w-[170px]
+                "
               />
 
-              {/* Dark Mode: Light theme me hidden, Dark theme me show */}
+              {/* Light mode logo */}
+
               <Image
                 src="/images/logo-dark.png"
                 alt="MarkitMe"
                 width={190}
                 height={60}
                 priority
-                className="block h-auto w-[145px] object-contain dark:hidden sm:w-[170px]"
+                className="
+                  block
+                  h-auto
+                  w-[145px]
+                  object-contain
+                  dark:hidden
+                  sm:w-[170px]
+                "
               />
+
             </Link>
-        <p className="mt-3 max-w-sm text-sm leading-6 text-black/50 dark:text-white/40">
-          Strategy, creativity, technology, and marketing built to help
-          ambitious businesses grow.
-        </p>
-      </div>
 
-      {/* Footer Navigation */}
-      <nav className="flex flex-wrap gap-x-6 gap-y-3">
-        <Link
-          href="/about"
-          className="text-sm text-black/55 transition-colors duration-300 hover:text-[var(--accent)] dark:text-white/50 dark:hover:text-[var(--accent-bright)]"
-        >
-          About
-        </Link>
 
-        <Link
-          href="/services"
-          className="text-sm text-black/55 transition-colors duration-300 hover:text-[var(--accent)] dark:text-white/50 dark:hover:text-[var(--accent-bright)]"
-        >
-          Services
-        </Link>
+            {/* Description */}
 
-        <Link
-          href="/work"
-          className="text-sm text-black/55 transition-colors duration-300 hover:text-[var(--accent)] dark:text-white/50 dark:hover:text-[var(--accent-bright)]"
-        >
-          Work
-        </Link>
+            <p
+              className="
+                mt-5
+                max-w-sm
+                text-sm
+                leading-6
+                text-[#0C3B2E]/55
 
-        <Link
-          href="/blog"
-          className="text-sm text-black/55 transition-colors duration-300 hover:text-[var(--accent)] dark:text-white/50 dark:hover:text-[var(--accent-bright)]"
-        >
-          Blog
-        </Link>
+                dark:text-[#F1F3ED]/55
+              "
+            >
+              Strategy, creativity, technology, and marketing
+              built to help ambitious businesses grow.
+            </p>
 
-        <Link
-          href="/contact"
-          className="text-sm text-black/55 transition-colors duration-300 hover:text-[var(--accent)] dark:text-white/50 dark:hover:text-[var(--accent-bright)]"
-        >
-          Contact
-        </Link>
-      </nav>
-    </div>
 
-    {/* Bottom Footer */}
-    <div className="mt-10 flex flex-col justify-between gap-4 border-t border-black/10 pt-7 text-sm text-black/40 sm:flex-row dark:border-white/10 dark:text-white/35">
-      <p>
-        © {new Date().getFullYear()} MarkitMe. All rights reserved.
-      </p>
+            {/* Let's Talk */}
 
-      <div className="flex flex-wrap gap-5">
-        <Link
-          href="/privacy-policy"
-          className="transition-colors duration-300 hover:text-black dark:hover:text-white"
-        >
-          Privacy Policy
-        </Link>
+            <Link
+              href="/contact"
+              className="
+                group
+                mt-6
+                inline-flex
+                items-center
+                gap-2
 
-        <Link
-          href="/terms-and-conditions"
-          className="transition-colors duration-300 hover:text-black dark:hover:text-white"
-        >
-          Terms & Conditions
-        </Link>
-      </div>
-    </div>
+                text-sm
+                font-bold
+
+                text-[#0C3B2E]
+
+                transition-colors
+                duration-300
+
+                hover:text-[#6D9773]
+
+                dark:text-[#F1F3ED]
+                dark:hover:text-[#FFBA00]
+              "
+            >
+
+              Let&apos;s Talk
+
+              <ArrowUpRight
+                size={16}
+                className="
+                  transition-transform
+                  duration-300
+
+                  group-hover:translate-x-0.5
+                  group-hover:-translate-y-0.5
+                "
+              />
+
+            </Link>
+
+          </div>
+
+
+          {/* =================================================
+              QUICK LINKS
+          ================================================= */}
+
+          <div>
+
+            <h3
+              className="
+                mb-5
+                text-xs
+                font-black
+                uppercase
+                tracking-[0.16em]
+                text-[#0C3B2E]
+
+                dark:text-[#F1F3ED]
+              "
+            >
+              Explore
+            </h3>
+
+
+            <nav className="flex flex-col gap-3.5">
+
+              {[
+                {
+                  label: "About",
+                  href: "/about",
+                },
+                {
+                  label: "Services",
+                  href: "/services",
+                },
+                {
+                  label: "Work",
+                  href: "/work",
+                },
+                {
+                  label: "Blog",
+                  href: "/blog",
+                },
+                {
+                  label: "Contact",
+                  href: "/contact",
+                },
+              ].map((item) => (
+
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  className="
+                    group
+                    flex
+                    w-fit
+                    items-center
+                    gap-1.5
+
+                    text-sm
+                    font-medium
+
+                    text-[#0C3B2E]/55
+
+                    transition-all
+                    duration-300
+
+                    hover:translate-x-1
+                    hover:text-[#6D9773]
+
+                    dark:text-[#F1F3ED]/55
+                    dark:hover:text-[#FFBA00]
+                  "
+                >
+
+                  <span>
+                    {item.label}
+                  </span>
+
+                  <ArrowUpRight
+                    size={13}
+                    className="
+                      opacity-0
+                      -translate-x-1
+
+                      transition-all
+                      duration-300
+
+                      group-hover:translate-x-0
+                      group-hover:opacity-100
+                    "
+                  />
+
+                </Link>
+
+              ))}
+
+            </nav>
+
+          </div>
+
+
+          {/* =================================================
+              CONTACT
+          ================================================= */}
+
+          <div>
+
+            <h3
+              className="
+                mb-5
+                text-xs
+                font-black
+                uppercase
+                tracking-[0.16em]
+
+                text-[#0C3B2E]
+
+                dark:text-[#F1F3ED]
+              "
+            >
+              Contact
+            </h3>
+
+
+            <div className="flex flex-col gap-5">
+
+
+              {/* =================================================
+                  EMAIL
+              ================================================= */}
+
+              <a
+                href="mailto:info@markitme.ca"
+                className="group flex items-start gap-3"
+              >
+
+                <span
+                  className="
+                    mt-0.5
+                    flex
+                    h-9
+                    w-9
+                    shrink-0
+                    items-center
+                    justify-center
+                    rounded-xl
+
+                    border
+                    border-[#0C3B2E]/10
+
+                    bg-white/50
+
+                    text-[#0C3B2E]/65
+
+                    transition-all
+                    duration-300
+
+                    group-hover:border-[#6D9773]
+                    group-hover:bg-[#6D9773]
+                    group-hover:text-white
+
+                    dark:border-[#F1F3ED]/10
+                    dark:bg-[#F1F3ED]/5
+                    dark:text-[#F1F3ED]/65
+
+                    dark:group-hover:border-[#6D9773]
+                    dark:group-hover:bg-[#6D9773]
+                    dark:group-hover:text-[#0C3B2E]
+                  "
+                >
+
+                  <Mail size={15} />
+
+                </span>
+
+
+                <div>
+
+                  <span
+                    className="
+                      block
+                      text-[10px]
+                      font-bold
+                      uppercase
+                      tracking-[0.12em]
+
+                      text-[#0C3B2E]/35
+
+                      dark:text-[#F1F3ED]/35
+                    "
+                  >
+                    Email
+                  </span>
+
+                  <span
+                    className="
+                      mt-1
+                      block
+                      text-sm
+                      font-medium
+
+                      text-[#0C3B2E]/70
+
+                      transition-colors
+                      duration-300
+
+                      group-hover:text-[#6D9773]
+
+                      dark:text-[#F1F3ED]/65
+                      dark:group-hover:text-[#FFBA00]
+                    "
+                  >
+                    info@markitme.ca
+                  </span>
+
+                </div>
+
+              </a>
+
+
+              {/* =================================================
+                  PHONE
+              ================================================= */}
+
+              <a
+                href="tel:+16139814844"
+                className="group flex items-start gap-3"
+              >
+
+                <span
+                  className="
+                    mt-0.5
+                    flex
+                    h-9
+                    w-9
+                    shrink-0
+                    items-center
+                    justify-center
+                    rounded-xl
+
+                    border
+                    border-[#0C3B2E]/10
+
+                    bg-white/50
+
+                    text-[#0C3B2E]/65
+
+                    transition-all
+                    duration-300
+
+                    group-hover:border-[#6D9773]
+                    group-hover:bg-[#6D9773]
+                    group-hover:text-white
+
+                    dark:border-[#F1F3ED]/10
+                    dark:bg-[#F1F3ED]/5
+                    dark:text-[#F1F3ED]/65
+
+                    dark:group-hover:border-[#6D9773]
+                    dark:group-hover:bg-[#6D9773]
+                    dark:group-hover:text-[#0C3B2E]
+                  "
+                >
+
+                  <Phone size={15} />
+
+                </span>
+
+
+                <div>
+
+                  <span
+                    className="
+                      block
+                      text-[10px]
+                      font-bold
+                      uppercase
+                      tracking-[0.12em]
+
+                      text-[#0C3B2E]/35
+
+                      dark:text-[#F1F3ED]/35
+                    "
+                  >
+                    Phone
+                  </span>
+
+                  <span
+                    className="
+                      mt-1
+                      block
+                      text-sm
+                      font-medium
+
+                      text-[#0C3B2E]/70
+
+                      transition-colors
+                      duration-300
+
+                      group-hover:text-[#6D9773]
+
+                      dark:text-[#F1F3ED]/65
+                      dark:group-hover:text-[#FFBA00]
+                    "
+                  >
+                    +1 (613)-981-4844
+                  </span>
+
+                </div>
+
+              </a>
+
+
+              {/* =================================================
+                  LOCATION
+              ================================================= */}
+
+              <div className="flex items-start gap-3">
+
+                <span
+                  className="
+                    mt-0.5
+                    flex
+                    h-9
+                    w-9
+                    shrink-0
+                    items-center
+                    justify-center
+                    rounded-xl
+
+                    border
+                    border-[#0C3B2E]/10
+
+                    bg-white/50
+
+                    text-[#0C3B2E]/65
+
+                    dark:border-[#F1F3ED]/10
+                    dark:bg-[#F1F3ED]/5
+                    dark:text-[#F1F3ED]/65
+                  "
+                >
+
+                  <MapPin size={15} />
+
+                </span>
+
+
+                <div>
+
+                  <span
+                    className="
+                      block
+                      text-[10px]
+                      font-bold
+                      uppercase
+                      tracking-[0.12em]
+
+                      text-[#0C3B2E]/35
+
+                      dark:text-[#F1F3ED]/35
+                    "
+                  >
+                    Location
+                  </span>
+
+
+                  <span
+                    className="
+                      mt-1
+                      block
+                      max-w-[220px]
+                      text-sm
+                      leading-5
+                      font-medium
+
+                      text-[#0C3B2E]/70
+
+                      dark:text-[#F1F3ED]/65
+                    "
+                  >
+                    34 Minowan Miikan Lane,
+                    <br />
+                    Toronto, M6J 0G3
+                  </span>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          {/* =================================================
+    SOCIAL MEDIA
+================================================= */}
+
+<div>
+  <h3
+    className="
+      mb-5
+      text-xs
+      font-black
+      uppercase
+      tracking-[0.16em]
+      text-[#0C3B2E]
+      dark:text-[#F1F3ED]
+    "
+  >
+    Follow Us
+  </h3>
+
+  <p
+    className="
+      max-w-[230px]
+      text-sm
+      leading-6
+      text-[#0C3B2E]/50
+      dark:text-[#F1F3ED]/45
+    "
+  >
+    Follow MarkitMe for creative ideas,
+    digital insights, and business growth.
+  </p>
+
+  <div className="mt-6 flex flex-wrap gap-3">
+
+    {/* Instagram */}
+    <a
+      href="YOUR_INSTAGRAM_URL"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="MarkitMe Instagram"
+      className="
+        flex h-10 w-10 items-center justify-center
+        rounded-full
+        border border-[#0C3B2E]/10
+        bg-white/50
+        text-[#0C3B2E]/60
+        transition-all duration-300
+        hover:-translate-y-1
+        hover:border-[#FFBA00]
+        hover:bg-[#FFBA00]
+        hover:text-[#0C3B2E]
+
+        dark:border-[#F1F3ED]/10
+        dark:bg-[#F1F3ED]/5
+        dark:text-[#F1F3ED]/60
+        dark:hover:border-[#FFBA00]
+        dark:hover:bg-[#FFBA00]
+        dark:hover:text-[#0C3B2E]
+      "
+    >
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        className="h-[17px] w-[17px]"
+        aria-hidden="true"
+      >
+        <rect
+          x="3"
+          y="3"
+          width="18"
+          height="18"
+          rx="5"
+        />
+
+        <circle
+          cx="12"
+          cy="12"
+          r="4"
+        />
+
+        <circle
+          cx="17.5"
+          cy="6.5"
+          r="1"
+          fill="currentColor"
+          stroke="none"
+        />
+      </svg>
+    </a>
+
+
+    {/* LinkedIn */}
+    <a
+      href="YOUR_LINKEDIN_URL"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="MarkitMe LinkedIn"
+      className="
+        flex h-10 w-10 items-center justify-center
+        rounded-full
+        border border-[#0C3B2E]/10
+        bg-white/50
+        text-[#0C3B2E]/60
+        transition-all duration-300
+        hover:-translate-y-1
+        hover:border-[#6D9773]
+        hover:bg-[#6D9773]
+        hover:text-[#0C3B2E]
+
+        dark:border-[#F1F3ED]/10
+        dark:bg-[#F1F3ED]/5
+        dark:text-[#F1F3ED]/60
+        dark:hover:border-[#6D9773]
+        dark:hover:bg-[#6D9773]
+        dark:hover:text-[#0C3B2E]
+      "
+    >
+      <svg
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        className="h-[17px] w-[17px]"
+        aria-hidden="true"
+      >
+        <path d="M6.5 8.5H3.5V20h3V8.5ZM5 3.5C4 3.5 3.2 4.3 3.2 5.3S4 7.1 5 7.1s1.8-.8 1.8-1.8S6 3.5 5 3.5ZM20.5 13.4c0-3.5-1.9-5.1-4.5-5.1-2.1 0-3 1.2-3.5 2v-1.8h-3V20h3v-6.1c0-1.6.3-3.2 2.3-3.2 2 0 2 1.9 2 3.3V20h3v-6.6Z" />
+      </svg>
+    </a>
+
+
+    {/* Facebook */}
+    <a
+      href="YOUR_FACEBOOK_URL"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="MarkitMe Facebook"
+      className="
+        flex h-10 w-10 items-center justify-center
+        rounded-full
+        border border-[#0C3B2E]/10
+        bg-white/50
+        text-[#0C3B2E]/60
+        transition-all duration-300
+        hover:-translate-y-1
+        hover:border-[#BB8A52]
+        hover:bg-[#BB8A52]
+        hover:text-white
+
+        dark:border-[#F1F3ED]/10
+        dark:bg-[#F1F3ED]/5
+        dark:text-[#F1F3ED]/60
+        dark:hover:border-[#BB8A52]
+        dark:hover:bg-[#BB8A52]
+        dark:hover:text-[#0C3B2E]
+      "
+    >
+      <svg
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        className="h-[17px] w-[17px]"
+        aria-hidden="true"
+      >
+        <path d="M14 8h3V4h-3c-2.8 0-5 2.2-5 5v2H6v4h3v6h4v-6h3.2l.8-4H13V9c0-.6.4-1 1-1Z" />
+      </svg>
+    </a>
+
   </div>
-</footer>
+</div>
+
+        </div>
 
 
-);
+        {/* =====================================================
+            BRAND STRIP
+        ====================================================== */}
+
+        <div
+          className="
+            mb-8
+            hidden
+            h-px
+            bg-gradient-to-r
+            from-transparent
+            via-[#6D9773]/30
+            to-transparent
+
+            sm:block
+          "
+        />
+
+
+        {/* =====================================================
+            BOTTOM FOOTER
+        ====================================================== */}
+
+        <div
+          className="
+            flex
+            flex-col
+            justify-between
+            gap-4
+
+            border-t
+            border-[#0C3B2E]/10
+
+            py-7
+
+            text-sm
+            text-[#0C3B2E]/40
+
+            sm:flex-row
+            sm:items-center
+
+            dark:border-[#F1F3ED]/10
+            dark:text-[#F1F3ED]/35
+          "
+        >
+
+          {/* Copyright */}
+
+          <p>
+            © {new Date().getFullYear()} MarkitMe.
+            All rights reserved.
+          </p>
+
+
+          {/* Legal */}
+
+          <div className="flex flex-wrap gap-5">
+
+            <Link
+              href="/privacy-policy"
+              className="
+                transition-colors
+                duration-300
+
+                hover:text-[#6D9773]
+
+                dark:hover:text-[#FFBA00]
+              "
+            >
+              Privacy Policy
+            </Link>
+
+
+            <Link
+              href="/terms-and-conditions"
+              className="
+                transition-colors
+                duration-300
+
+                hover:text-[#6D9773]
+
+                dark:hover:text-[#FFBA00]
+              "
+            >
+              Terms & Conditions
+            </Link>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </footer>
+  );
 }

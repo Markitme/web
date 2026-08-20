@@ -3,30 +3,40 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  --background: #faf8fd;
-  --foreground: #15100f;
-  --surface: #f3ecf7;
-  --surface-secondary: #e8dff4;
-  --card: #fcf9ff;
-  --border: rgba(126, 34, 206, 0.12);
-  --muted: rgba(21, 16, 15, 0.62);
-  --accent: #7e22ce;
-  --accent-bright: #d8b4fe;
-  --accent-muted: #a855f7;
+  --background: #f1f3ed;
+  --surface: #ffffff;
+  --surface-soft: #e5ebe3;
+
+  --foreground: #0c3b2e;
+  --muted: #587064;
+
+  --accent: #ffba00;
+  --accent-dark: #d99b00;
+
+  --green: #6d9773;
+  --green-dark: #0c3b2e;
+
+  --sand: #bb8a52;
+  --cream: #f1f3ed;
 }
 
 .dark {
-  --background: #050309;
-  --foreground: #f5ecf9;
-  --surface: #0f0915;
-  --surface-secondary: #1a0f26;
-  --card: #140a1f;
-  --border: rgba(216, 180, 254, 0.12);
-  --muted: rgba(245, 236, 249, 0.62);
-  --accent: #d8b4fe;
-  --accent-bright: #e9d5ff;
-  --accent-muted: #c084fc;
-} 
+  --background: #071f18;
+  --surface: #0c3b2e;
+  --surface-soft: #123f32;
+
+  --foreground: #f1f3ed;
+  --muted: #a8b9ae;
+
+  --accent: #ffba00;
+  --accent-dark: #e0a300;
+
+  --green: #6d9773;
+  --green-dark: #0c3b2e;
+
+  --sand: #bb8a52;
+  --cream: #f1f3ed;
+}
 /* ========================================
 RESET + GLOBAL SETTINGS
 ======================================== */
@@ -48,7 +58,7 @@ padding: 0;
 background-color: var(--background);
 color: var(--foreground);
 
-font-family: var(--font-geist-sans);
+font-family: var(--font-jakarta), sans-serif;
 
 overflow-x: hidden;
 
@@ -125,8 +135,10 @@ font-weight: 600;
 }
 
 /* Paragraph and text - Use Poppins font */
-p, span, li {
-font-family: var(--font-poppins);
+p,
+span,
+li {
+  font-family: var(--font-jakarta), sans-serif;
 }
 
 body {

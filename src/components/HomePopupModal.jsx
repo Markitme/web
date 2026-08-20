@@ -21,12 +21,11 @@ export default function HomePopupModal() {
 
   /*
   =====================================================
-  AUTO OPEN + HEADER TRIGGER
+  AUTO OPEN + GLOBAL TRIGGER
   =====================================================
   */
 
   useEffect(() => {
-    // Header "Let's Talk" button se modal open karne ke liye
     const openModal = () => {
       setIsOpen(true);
       setSubmitted(false);
@@ -34,7 +33,12 @@ export default function HomePopupModal() {
 
     window.addEventListener("open-contact-modal", openModal);
 
-    // Homepage par automatic popup
+    /*
+    -----------------------------------------
+    AUTO POPUP
+    -----------------------------------------
+    */
+
     const lastClosed = localStorage.getItem(STORAGE_KEY);
 
     if (!lastClosed) {
@@ -50,7 +54,10 @@ export default function HomePopupModal() {
     }
 
     return () => {
-      window.removeEventListener("open-contact-modal", openModal);
+      window.removeEventListener(
+        "open-contact-modal",
+        openModal
+      );
     };
   }, []);
 
@@ -61,7 +68,11 @@ export default function HomePopupModal() {
   */
 
   const handleClose = () => {
-    localStorage.setItem(STORAGE_KEY, Date.now().toString());
+    localStorage.setItem(
+      STORAGE_KEY,
+      Date.now().toString()
+    );
+
     setIsOpen(false);
   };
 
@@ -94,23 +105,51 @@ export default function HomePopupModal() {
     try {
       console.log("Form submitted:", formData);
 
-      await new Promise((resolve) => setTimeout(resolve, 800));
+      /*
+      -----------------------------------------
+      Replace this with API / Form service later
+      -----------------------------------------
+      */
+
+      await new Promise((resolve) =>
+        setTimeout(resolve, 800)
+      );
 
       setSubmitted(true);
 
-      localStorage.setItem(STORAGE_KEY, Date.now().toString());
+      localStorage.setItem(
+        STORAGE_KEY,
+        Date.now().toString()
+      );
 
       setTimeout(() => {
         setIsOpen(false);
       }, 1500);
     } catch (error) {
-      console.error("Form submission failed:", error);
+      console.error(
+        "Form submission failed:",
+        error
+      );
     } finally {
       setIsSubmitting(false);
     }
   };
 
-  if (!isOpen) return null;
+  /*
+  =====================================================
+  DON'T RENDER
+  =====================================================
+  */
+
+  if (!isOpen) {
+    return null;
+  }
+
+  /*
+  =====================================================
+  UI
+  =====================================================
+  */
 
   return (
     <div
@@ -118,13 +157,18 @@ export default function HomePopupModal() {
         fixed
         inset-0
         z-[9999]
+
         flex
         items-center
         justify-center
+
         bg-black/65
+
         px-3
         py-3
+
         backdrop-blur-sm
+
         sm:px-5
         sm:py-4
       "
@@ -134,21 +178,34 @@ export default function HomePopupModal() {
           relative
           w-full
           max-w-[520px]
+
           overflow-hidden
+
           rounded-[24px]
+
           border
-          border-black/10
-          bg-white
-          text-black
+          border-[#0C3B2E]/10
+
+          bg-[#F1F3ED]
+
+          text-[#0C3B2E]
+
           shadow-2xl
-          dark:border-white/10
-          dark:bg-[#111111]
-          dark:text-white
+
+          dark:border-[#F1F3ED]/10
+          dark:bg-[#0C3B2E]
+          dark:text-[#F1F3ED]
+
           max-h-[calc(100dvh-24px)]
+
           sm:max-h-[calc(100dvh-32px)]
         "
       >
-        {/* Close */}
+
+        {/* =====================================================
+            CLOSE
+        ===================================================== */}
+
         <button
           type="button"
           onClick={handleClose}
@@ -158,19 +215,28 @@ export default function HomePopupModal() {
             right-3
             top-3
             z-30
+
             flex
             h-8
             w-8
+
             items-center
             justify-center
+
             rounded-full
-            bg-black/5
-            text-black
+
+            bg-[#0C3B2E]/5
+
+            text-[#0C3B2E]
+
             transition
-            hover:bg-black/10
-            dark:bg-white/10
-            dark:text-white
-            dark:hover:bg-white/20
+
+            hover:bg-[#0C3B2E]/10
+
+            dark:bg-[#F1F3ED]/10
+            dark:text-[#F1F3ED]
+            dark:hover:bg-[#F1F3ED]/20
+
             sm:right-4
             sm:top-4
             sm:h-9
@@ -181,16 +247,24 @@ export default function HomePopupModal() {
         </button>
 
         <div className="p-5 sm:p-7">
-          {/* Header */}
+
+          {/* =====================================================
+              HEADER
+          ===================================================== */}
+
           <div className="pr-10">
+
             <p
               className="
                 text-[10px]
                 font-bold
                 uppercase
                 tracking-[0.22em]
-                text-[var(--accent)]
-                dark:text-[var(--accent-bright)]
+
+                text-[#BB8A52]
+
+                dark:text-[#FFBA00]
+
                 sm:text-[11px]
               "
             >
@@ -200,10 +274,12 @@ export default function HomePopupModal() {
             <h2
               className="
                 mt-2
+
                 text-[27px]
                 font-black
                 leading-[1.02]
                 tracking-[-0.045em]
+
                 sm:text-[32px]
               "
             >
@@ -213,20 +289,63 @@ export default function HomePopupModal() {
             <p
               className="
                 mt-2.5
+
                 text-[12px]
                 leading-5
-                text-black/55
-                dark:text-white/55
+
+                text-[#0C3B2E]/55
+
+                dark:text-[#F1F3ED]/55
+
                 sm:text-[13px]
               "
             >
-              Fill in the details below and our team will get back to you.
+              Fill in the details below and our team
+              will get back to you.
             </p>
+
           </div>
 
+          {/* =====================================================
+              SUCCESS
+          ===================================================== */}
+
           {submitted ? (
-            <div className="mt-5 rounded-2xl border border-[var(--accent)]/20 bg-[var(--accent)]/5 p-5 text-center">
-              <div className="mx-auto flex h-10 w-10 items-center justify-center rounded-full bg-[var(--accent-bright)] text-base font-black text-black">
+            <div
+              className="
+                mt-5
+
+                rounded-2xl
+
+                border
+                border-[#FFBA00]/20
+
+                bg-[#FFBA00]/5
+
+                p-5
+
+                text-center
+              "
+            >
+              <div
+                className="
+                  mx-auto
+                  flex
+                  h-10
+                  w-10
+
+                  items-center
+                  justify-center
+
+                  rounded-full
+
+                  bg-[#FFBA00]
+
+                  text-base
+                  font-black
+                  text-[#0C3B2E]
+                "
+              >
                 ✓
               </div>
 
@@ -234,21 +353,46 @@ export default function HomePopupModal() {
                 Thank you!
               </h3>
 
-              <p className="mt-1 text-xs text-black/60 dark:text-white/60">
-                We&apos;ve received your request and will get back to you
-                soon.
+              <p
+                className="
+                  mt-1
+                  text-xs
+
+                  text-[#0C3B2E]/60
+
+                  dark:text-[#F1F3ED]/60
+                "
+              >
+                We&apos;ve received your request and
+                will get back to you soon.
               </p>
             </div>
           ) : (
             <form
               onSubmit={handleSubmit}
-              className="mt-5 space-y-3.5 sm:mt-6 sm:space-y-4"
+              className="
+                mt-5
+                space-y-3.5
+
+                sm:mt-6
+                sm:space-y-4
+              "
             >
-              {/* Name */}
+
+              {/* =================================================
+                  NAME
+              ================================================= */}
+
               <div>
                 <label
                   htmlFor="popup-name"
-                  className="mb-1.5 block text-xs font-bold sm:text-sm"
+                  className="
+                    mb-1.5
+                    block
+                    text-xs
+                    font-bold
+                    sm:text-sm
+                  "
                 >
                   Name
                 </label>
@@ -264,31 +408,51 @@ export default function HomePopupModal() {
                   className="
                     h-[43px]
                     w-full
+
                     rounded-xl
+
                     border
-                    border-black/10
-                    bg-black/[0.02]
+                    border-[#0C3B2E]/10
+
+                    bg-white/60
+
                     px-3.5
+
                     text-[13px]
-                    text-black
+
+                    text-[#0C3B2E]
+
                     outline-none
-                    placeholder:text-black/35
-                    focus:border-[var(--accent)]
-                    dark:border-white/10
-                    dark:bg-[#181818]
-                    dark:text-white
-                    dark:placeholder:text-white/35
-                    dark:focus:border-[var(--accent-bright)]
+
+                    placeholder:text-[#0C3B2E]/35
+
+                    focus:border-[#FFBA00]
+
+                    dark:border-[#F1F3ED]/10
+                    dark:bg-[#123F32]
+                    dark:text-[#F1F3ED]
+                    dark:placeholder:text-[#F1F3ED]/35
+                    dark:focus:border-[#FFBA00]
                   "
                 />
               </div>
 
-              {/* Email + Phone */}
+              {/* =================================================
+                  EMAIL + PHONE
+              ================================================= */}
+
               <div className="grid grid-cols-2 gap-3">
+
                 <div>
                   <label
                     htmlFor="popup-email"
-                    className="mb-1.5 block text-xs font-bold sm:text-sm"
+                    className="
+                      mb-1.5
+                      block
+                      text-xs
+                      font-bold
+                      sm:text-sm
+                    "
                   >
                     Email
                   </label>
@@ -304,21 +468,31 @@ export default function HomePopupModal() {
                     className="
                       h-[43px]
                       w-full
+
                       rounded-xl
+
                       border
-                      border-black/10
-                      bg-black/[0.02]
+                      border-[#0C3B2E]/10
+
+                      bg-white/60
+
                       px-3
+
                       text-[12px]
-                      text-black
+
+                      text-[#0C3B2E]
+
                       outline-none
-                      placeholder:text-black/35
-                      focus:border-[var(--accent)]
-                      dark:border-white/10
-                      dark:bg-[#181818]
-                      dark:text-white
-                      dark:placeholder:text-white/35
-                      dark:focus:border-[var(--accent-bright)]
+
+                      placeholder:text-[#0C3B2E]/35
+
+                      focus:border-[#FFBA00]
+
+                      dark:border-[#F1F3ED]/10
+                      dark:bg-[#123F32]
+                      dark:text-[#F1F3ED]
+                      dark:placeholder:text-[#F1F3ED]/35
+                      dark:focus:border-[#FFBA00]
                     "
                   />
                 </div>
@@ -326,7 +500,13 @@ export default function HomePopupModal() {
                 <div>
                   <label
                     htmlFor="popup-phone"
-                    className="mb-1.5 block text-xs font-bold sm:text-sm"
+                    className="
+                      mb-1.5
+                      block
+                      text-xs
+                      font-bold
+                      sm:text-sm
+                    "
                   >
                     Phone
                   </label>
@@ -342,31 +522,51 @@ export default function HomePopupModal() {
                     className="
                       h-[43px]
                       w-full
+
                       rounded-xl
+
                       border
-                      border-black/10
-                      bg-black/[0.02]
+                      border-[#0C3B2E]/10
+
+                      bg-white/60
+
                       px-3
+
                       text-[12px]
-                      text-black
+
+                      text-[#0C3B2E]
+
                       outline-none
-                      placeholder:text-black/35
-                      focus:border-[var(--accent)]
-                      dark:border-white/10
-                      dark:bg-[#181818]
-                      dark:text-white
-                      dark:placeholder:text-white/35
-                      dark:focus:border-[var(--accent-bright)]
+
+                      placeholder:text-[#0C3B2E]/35
+
+                      focus:border-[#FFBA00]
+
+                      dark:border-[#F1F3ED]/10
+                      dark:bg-[#123F32]
+                      dark:text-[#F1F3ED]
+                      dark:placeholder:text-[#F1F3ED]/35
+                      dark:focus:border-[#FFBA00]
                     "
                   />
                 </div>
+
               </div>
 
-              {/* Service */}
+              {/* =================================================
+                  SERVICE
+              ================================================= */}
+
               <div>
                 <label
                   htmlFor="popup-service"
-                  className="mb-1.5 block text-xs font-bold sm:text-sm"
+                  className="
+                    mb-1.5
+                    block
+                    text-xs
+                    font-bold
+                    sm:text-sm
+                  "
                 >
                   Services
                 </label>
@@ -380,82 +580,130 @@ export default function HomePopupModal() {
                   className="
                     h-[43px]
                     w-full
+
                     appearance-none
+
                     rounded-xl
+
                     border
-                    border-black/10
-                    bg-black/[0.02]
+                    border-[#0C3B2E]/10
+
+                    bg-white/60
+
                     px-3.5
+
                     text-[13px]
-                    text-black
+
+                    text-[#0C3B2E]
+
                     outline-none
-                    focus:border-[var(--accent)]
-                    dark:border-white/10
-                    dark:bg-[#181818]
-                    dark:text-white
-                    dark:focus:border-[var(--accent-bright)]
+
+                    focus:border-[#FFBA00]
+
+                    dark:border-[#F1F3ED]/10
+                    dark:bg-[#123F32]
+                    dark:text-[#F1F3ED]
+                    dark:focus:border-[#FFBA00]
                   "
                 >
                   <option value="" disabled>
                     Select a service
                   </option>
 
-                  <option value="Web Design">Web Design</option>
+                  <option value="Web Design">
+                    Web Design
+                  </option>
+
                   <option value="Web Development">
                     Web Development
                   </option>
+
                   <option value="WordPress Development">
                     WordPress Development
                   </option>
-                  <option value="SEO">SEO</option>
+
+                  <option value="SEO">
+                    SEO
+                  </option>
+
                   <option value="Digital Marketing">
                     Digital Marketing
                   </option>
-                  <option value="Branding">Branding</option>
+
+                  <option value="Branding">
+                    Branding
+                  </option>
+
                   <option value="UI/UX Design">
                     UI/UX Design
                   </option>
-                  <option value="Other">Other</option>
+
+                  <option value="Other">
+                    Other
+                  </option>
                 </select>
               </div>
 
-              {/* Submit */}
+              {/* =================================================
+                  SUBMIT
+              ================================================= */}
+
               <button
                 type="submit"
                 disabled={isSubmitting}
                 className="
                   group
+
                   mt-1
+
                   inline-flex
+
                   h-[43px]
                   w-full
+
                   items-center
                   justify-center
                   gap-2
+
                   rounded-full
-                  bg-[var(--accent-bright)]
+
+                  bg-[#FFBA00]
+
                   px-5
+
                   text-[13px]
                   font-bold
-                  text-black
+
+                  text-[#0C3B2E]
+
                   transition-all
-                  hover:bg-black
+
+                  hover:bg-[#0C3B2E]
                   hover:text-white
+
                   disabled:cursor-not-allowed
                   disabled:opacity-60
-                  dark:hover:bg-white
-                  dark:hover:text-black
+
+                  dark:hover:bg-[#F1F3ED]
+                  dark:hover:text-[#0C3B2E]
                 "
               >
-                {isSubmitting ? "Sending..." : "Send Enquiry"}
+                {isSubmitting
+                  ? "Sending..."
+                  : "Send Enquiry"}
 
                 {!isSubmitting && (
                   <ArrowRight
                     size={15}
-                    className="transition-transform group-hover:translate-x-1"
+                    className="
+                      transition-transform
+                      group-hover:translate-x-1
+                    "
                   />
                 )}
               </button>
+
+              {/* Maybe Later */}
 
               <button
                 type="button"
@@ -463,18 +711,24 @@ export default function HomePopupModal() {
                 className="
                   mx-auto
                   block
+
                   text-[10px]
                   font-semibold
-                  text-black/40
-                  hover:text-black
-                  dark:text-white/40
-                  dark:hover:text-white
+
+                  text-[#0C3B2E]/40
+
+                  hover:text-[#0C3B2E]
+
+                  dark:text-[#F1F3ED]/40
+                  dark:hover:text-[#F1F3ED]
                 "
               >
                 Maybe later
               </button>
+
             </form>
           )}
+
         </div>
       </div>
     </div>

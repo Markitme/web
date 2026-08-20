@@ -21,13 +21,16 @@ import { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
 import "swiper/css";
-import HomePopupModal from "@/components/HomePopupModal";
 import Button from "../components/ui/Button";
 import CaseStudies from "../components/CaseStudies";
 import ClientLogoSlider from "../components/ClientLogoSlider";
 import ServiceMarquee from "../components/ServiceMarquee";
 import TestimonialSlider from "../components/TestimonialSlider";
 import AnimatedCounter from "@/components/AnimatedCounter";
+import WhyMarkitMe from "@/components/WhyMarkitMe";
+import CreativeSolutions from "@/components/CreativeSolutions";
+import Hero from "@/components/Hero";
+import CTA from "@/components/CTA";
 
 const services = [
   {
@@ -66,152 +69,8 @@ export default function Home() {
 
   return (
     <main className="bg-white text-black transition-colors duration-300 dark:bg-[#0a0a0a] dark:text-white">
-      {/* Hero */}{" "}
-      <section id="home" className="grid-pattern relative overflow-hidden">
-        {" "}
-        <div className="container-custom relative grid min-h-[760px] items-center gap-16 py-24 lg:grid-cols-[1.1fr_0.9fr]">
-          {" "}
-          <div>
-            <motion.div
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="mb-7 inline-flex items-center gap-2 rounded-full border border-black/10 bg-black/[0.03] px-4 py-2 text-xs uppercase tracking-[0.16em] text-black/65 dark:border-white/15 dark:bg-white/5 dark:text-white/70"
-            >
-              {" "}
-              <span className="h-2 w-2 rounded-full bg-[var(--accent)]" />
-              Digital growth partner
-            </motion.div>
-
-            <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7 }}
-              className="max-w-4xl text-4xl font-black leading-[0.94] tracking-[-0.07em] sm:text-5xl lg:text-6xl"
-            >
-              Build a brand
-              <span className="text-gradient block">people choose.</span>
-            </motion.h1>
-
-            <motion.p
-              initial={{ opacity: 0, y: 25 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.15 }}
-              className="mt-8 max-w-xl text-lg leading-8 text-black/60 dark:text-white/60"
-            >
-              MarkitMe combines strategy, creative thinking, technology, and
-              performance marketing to help ambitious businesses grow.
-            </motion.p>
-
-            <motion.div
-  initial={{ opacity: 0, y: 20 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.7, delay: 0.25 }}
-  className="mt-10 flex flex-col gap-4 sm:flex-row"
->
-  {/* Open Contact Modal */}
-  <Button
-    variant="primary"
-    onClick={() => {
-      window.dispatchEvent(new Event("open-contact-modal"));
-    }}
-  >
-    Start Your Project
-  </Button>
-
-  {/* Go To Services Page */}
-  <Button
-    href="/services"
-    variant="outline"
-  >
-    Explore Services
-  </Button>
-</motion.div>
-          </div>
-          {/* Hero Visual */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.92 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative"
-          >
-            <div className="absolute -inset-10 rounded-full bg-[var(--accent-bright)]/20 blur-3xl" />
-
-            <div className="relative rounded-[2rem] border border-black/10 bg-[#f5f5f2] p-5 shadow-2xl dark:border-white/15 dark:bg-[#151515]">
-              <div className="rounded-[1.5rem] border border-black/10 bg-white p-6 dark:border-white/10 dark:bg-[#0d0d0d]">
-                <div className="flex items-center justify-between">
-                  <span className="text-sm text-black/50 dark:text-white/50">
-                    Growth dashboard
-                  </span>
-
-                  <span className="rounded-full bg-[var(--accent-bright)]/25 px-3 py-1 text-xs text-[var(--accent)] dark:text-[var(--accent-bright)]">
-                    Live
-                  </span>
-                </div>
-
-                <div className="mt-12">
-                  <p className="text-sm text-black/50 dark:text-white/50">
-                    Monthly growth
-                  </p>
-
-                  <div className="mt-2 flex items-end gap-3">
-                    <span className="text-6xl font-black tracking-[-0.07em]">
-                      247%
-                    </span>
-
-                    <span className="mb-2 flex items-center gap-1 text-sm text-[var(--accent)] dark:text-[var(--accent-bright)]">
-                      <MoveUpRight size={15} />
-                      Up
-                    </span>
-                  </div>
-                </div>
-
-                <div className="mt-10 flex h-44 items-end gap-3">
-                  {[35, 48, 42, 67, 58, 82, 96].map((height, index) => (
-                    <div
-                      key={index}
-                      style={{ height: `${height}%` }}
-                      className={`flex-1 rounded-t-xl ${
-                        index === 6
-                          ? "bg-[var(--accent)]"
-                          : "bg-black/10 dark:bg-white/10"
-                      }`}
-                    />
-                  ))}
-                </div>
-
-                <div className="mt-8 grid grid-cols-2 gap-4">
-                  <div className="rounded-2xl border border-black/10 bg-black/[0.03] p-4 dark:border-white/10 dark:bg-white/[0.03]">
-                    <Target
-                      className="text-[var(--accent)] dark:text-[var(--accent-bright)]"
-                      size={22}
-                    />
-
-                    <p className="mt-4 text-2xl font-bold">4.2x</p>
-
-                    <p className="mt-1 text-xs text-black/45 dark:text-white/45">
-                      Better ROI
-                    </p>
-                  </div>
-
-                  <div className="rounded-2xl border border-black/10 bg-black/[0.03] p-4 dark:border-white/10 dark:bg-white/[0.03]">
-                    <Search
-                      className="text-[var(--accent)] dark:text-[var(--accent-bright)]"
-                      size={22}
-                    />
-
-                    <p className="mt-4 text-2xl font-bold">82%</p>
-
-                    <p className="mt-1 text-xs text-black/45 dark:text-white/45">
-                      More visibility
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      {/* Hero */}
+      <Hero />
       {/* Client Slider */}
       <motion.div
         initial={{ opacity: 0, y: 60 }}
@@ -231,234 +90,661 @@ export default function Home() {
         <ServiceMarquee />
       </motion.div>
       {/* Services */}
-      <section id="services" className="py-28">
-        <div className="container-custom">
-          <motion.div
-            initial={{ opacity: 0, y: 60 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            viewport={{ once: false, margin: "-100px" }}
-            className="max-w-3xl"
-          >
-            <p className="text-sm font-bold uppercase tracking-[0.2em] text-[var(--accent)] dark:text-[var(--accent-bright)]">
-              What we do
-            </p>
+<section
+  id="services"
+  className="
+    relative
+    overflow-hidden
+    py-24
+    sm:py-28
+    lg:py-32
+  "
+>
+  {/* =========================================
+      BACKGROUND ACCENTS
+  ========================================== */}
 
-            <h2 className="mt-5 text-4xl font-black leading-tight tracking-[-0.05em] sm:text-5xl">
-              Everything your brand needs to grow.
-            </h2>
+  <div
+    className="
+      pointer-events-none
+      absolute
+      inset-0
+      overflow-hidden
+    "
+  >
+    {/* Green glow */}
 
-            <p className="mt-6 text-lg leading-8 text-black/55 dark:text-white/55">
-              One strategic partner for your brand, website, marketing, and
-              long-term digital growth.
-            </p>
-          </motion.div>
+    <div
+      className="
+        absolute
+        -left-40
+        top-20
+        h-80
+        w-80
+        rounded-full
+        bg-[#6D9773]/[0.07]
+        blur-[100px]
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            viewport={{ once: false, margin: "-100px" }}
-            className="mt-16 grid gap-5 lg:grid-cols-3"
-          >
-            {services.map((service, index) => {
-              const Icon = service.icon;
+        dark:bg-[#6D9773]/[0.08]
+      "
+    />
 
-              return (
-                <article
-                  key={service.title}
-                  className="group rounded-[2rem] border border-black/10 bg-[var(--surface)] p-8 transition duration-300 hover:-translate-y-2 hover:border-[var(--accent)]/50 dark:border-white/10 dark:bg-[#141414] dark:hover:border-[var(--accent-bright)]/50"
-                >
-                  <motion.div
-                    initial={{ opacity: 0, y: 40 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, ease: "easeOut", delay: index * 0.15 }}
-                    viewport={{ once: false, margin: "-50px" }}
-                  >
-                    <div className="flex items-start justify-between">
-                      <span className="text-sm text-black/30 dark:text-white/30">
-                        {service.number}
-                      </span>
+    {/* Gold glow */}
 
-                      <div className="rounded-2xl bg-[var(--accent)] p-3 text-white">
-                        <Icon size={24} />
-                      </div>
-                    </div>
+    <div
+      className="
+        absolute
+        -right-40
+        top-[35%]
+        h-80
+        w-80
+        rounded-full
+        bg-[#FFBA00]/[0.055]
+        blur-[100px]
 
-                    <h3 className="mt-16 text-2xl font-bold">{service.title}</h3>
+        dark:bg-[#FFBA00]/[0.035]
+      "
+    />
 
-                    <p className="mt-4 leading-7 text-black/50 dark:text-white/50">
-                      {service.description}
-                    </p>
+    {/* Sand glow */}
 
-                    <a
-                      href="#contact"
-                      className="mt-8 inline-flex items-center gap-2 font-bold text-[var(--accent)] transition hover:gap-3 dark:text-[var(--accent-bright)]"
-                    >
-                      Explore service
-                      <ArrowRight size={17} />
-                    </a>
-                  </motion.div>
-                </article>
-              );
-            })}
-          </motion.div>
-        </div>
-      </section>
-      {/* Stats */}
-      <section className="bg-[#f7f7f5] py-16 text-black transition-colors duration-300 sm:py-20 dark:bg-[#141414]">
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: false, margin: "-100px" }}
-          className="container-custom grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
+    <div
+      className="
+        absolute
+        bottom-0
+        left-1/2
+        h-72
+        w-72
+        -translate-x-1/2
+        rounded-full
+        bg-[#BB8A52]/[0.04]
+        blur-[100px]
+
+        dark:bg-[#BB8A52]/[0.035]
+      "
+    />
+  </div>
+
+  <div className="container-custom relative z-10">
+
+    {/* =========================================
+        SECTION INTRO
+    ========================================== */}
+
+    <motion.div
+      initial={{ opacity: 0, y: 60 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{
+        duration: 0.8,
+        ease: "easeOut",
+      }}
+      viewport={{
+        once: false,
+        margin: "-100px",
+      }}
+      className="max-w-3xl"
+    >
+      {/* Eyebrow */}
+
+      <div
+        className="
+          inline-flex
+          items-center
+          gap-3
+        "
+      >
+        <span
+          className="
+            h-2
+            w-2
+            rounded-full
+            bg-[#FFBA00]
+          "
+        />
+
+        <p
+          className="
+            text-xs
+            font-black
+            uppercase
+            tracking-[0.22em]
+
+            text-[#6D9773]
+
+            dark:text-[#FFBA00]
+          "
         >
-          {stats.map((stat, index) => (
+          What we do
+        </p>
+         <span
+        className="
+          h-1.5
+          w-1.5
+          rounded-full
+          bg-[#6D9773]
+          dark:bg-[#FFBA00]
+        "
+      />
+      </div>
+
+      {/* Heading */}
+
+      <h2
+        className="
+          mt-5
+
+          max-w-3xl
+
+          text-4xl
+          font-black
+          leading-[1.05]
+          tracking-[-0.05em]
+
+          text-[#0C3B2E]
+
+          sm:text-5xl
+          lg:text-6xl
+
+          dark:text-[#F1F3ED]
+        "
+      >
+        Everything your brand needs to{" "}
+        <span
+          className="
+            text-[#6D9773]
+
+            dark:text-[#FFBA00]
+          "
+        >
+          grow.
+        </span>
+      </h2>
+
+      {/* Description */}
+
+      <p
+        className="
+          mt-6
+          max-w-2xl
+
+          text-base
+          leading-7
+
+          text-[#587064]
+
+          sm:text-lg
+          sm:leading-8
+
+          dark:text-[#A8B9AE]
+        "
+      >
+        One strategic partner for your brand, website, marketing, and
+        long-term digital growth.
+      </p>
+    </motion.div>
+
+
+    {/* =========================================
+        SERVICE CARDS
+    ========================================== */}
+
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{
+        duration: 0.5,
+        delay: 0.3,
+      }}
+      viewport={{
+        once: false,
+        margin: "-100px",
+      }}
+      className="
+        mt-14
+        grid
+        gap-5
+
+        sm:mt-16
+
+        md:grid-cols-2
+        lg:grid-cols-3
+      "
+    >
+      {services.map((service, index) => {
+        const Icon = service.icon;
+
+        /*
+         * Different accent colors for cards.
+         * Keeps the whole section inside the
+         * existing brand palette.
+         */
+
+        const accentColors = [
+          {
+            icon: "bg-[#0C3B2E]",
+            iconHover: "group-hover:bg-[#FFBA00]",
+            number: "text-[#6D9773]",
+            hover: "hover:border-[#6D9773]/50",
+            link: "text-[#0C3B2E]",
+            darkIcon: "dark:bg-[#6D9773]",
+          },
+          {
+            icon: "bg-[#6D9773]",
+            iconHover: "group-hover:bg-[#FFBA00]",
+            number: "text-[#BB8A52]",
+            hover: "hover:border-[#FFBA00]/50",
+            link: "text-[#6D9773]",
+            darkIcon: "dark:bg-[#6D9773]",
+          },
+          {
+            icon: "bg-[#FFBA00]",
+            iconHover: "group-hover:bg-[#0C3B2E]",
+            number: "text-[#6D9773]",
+            hover: "hover:border-[#FFBA00]/50",
+            link: "text-[#D99B00]",
+            darkIcon: "dark:bg-[#FFBA00]",
+          },
+          {
+            icon: "bg-[#BB8A52]",
+            iconHover: "group-hover:bg-[#6D9773]",
+            number: "text-[#6D9773]",
+            hover: "hover:border-[#BB8A52]/50",
+            link: "text-[#BB8A52]",
+            darkIcon: "dark:bg-[#BB8A52]",
+          },
+        ];
+
+        const color = accentColors[index % accentColors.length];
+
+        return (
+          <article
+            key={service.title}
+            className={`
+              group
+              relative
+              overflow-hidden
+
+              rounded-[2rem]
+
+              border
+              border-[#0C3B2E]/[0.09]
+
+              bg-white/70
+
+              p-7
+              sm:p-8
+
+              shadow-[0_10px_40px_rgba(12,59,46,0.035)]
+
+              transition-all
+              duration-500
+              ease-out
+
+              hover:-translate-y-2
+              hover:shadow-[0_20px_55px_rgba(12,59,46,0.08)]
+
+              ${color.hover}
+
+              dark:border-[#F1F3ED]/[0.09]
+              dark:bg-[#0C3B2E]/70
+
+              dark:hover:shadow-[0_20px_55px_rgba(0,0,0,0.18)]
+            `}
+          >
+            {/* =====================================
+                CARD TOP GLOW
+            ====================================== */}
+
+            <div
+              className="
+                pointer-events-none
+                absolute
+                -right-16
+                -top-16
+                h-32
+                w-32
+                rounded-full
+
+                bg-[#6D9773]/[0.06]
+
+                blur-2xl
+
+                transition-all
+                duration-500
+
+                group-hover:scale-150
+                group-hover:bg-[#FFBA00]/[0.08]
+
+                dark:bg-[#6D9773]/[0.05]
+                dark:group-hover:bg-[#FFBA00]/[0.06]
+              "
+            />
+
             <motion.div
-              key={stat.label}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: "easeOut", delay: index * 0.15 }}
-              viewport={{ once: false, margin: "-50px" }}
+              initial={{
+                opacity: 0,
+                y: 40,
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+              }}
+              transition={{
+                duration: 0.6,
+                ease: "easeOut",
+                delay: index * 0.12,
+              }}
+              viewport={{
+                once: false,
+                margin: "-50px",
+              }}
+              className="relative z-10"
             >
-              <AnimatedCounter
-                value={stat.value}
-                suffix={stat.suffix}
-                label={stat.label}
-                duration={1600}
-              />
+              {/* =================================
+                  TOP ROW
+              ================================== */}
+
+              <div className="flex items-start justify-between">
+                {/* Number */}
+
+                <span
+                  className={`
+                    text-xs
+                    font-bold
+                    tracking-[0.15em]
+
+                    ${color.number}
+
+                    opacity-70
+                  `}
+                >
+                  {service.number}
+                </span>
+
+                {/* Icon */}
+
+                <div
+                  className={`
+                    flex
+                    h-12
+                    w-12
+                    items-center
+                    justify-center
+
+                    rounded-2xl
+
+                    ${color.icon}
+                    ${color.iconHover}
+                    ${color.darkIcon}
+
+                    text-white
+
+                    shadow-sm
+
+                    transition-all
+                    duration-400
+                    ease-out
+
+                    group-hover:scale-110
+                    group-hover:rotate-3
+                  `}
+                >
+                  <Icon
+                    size={22}
+                    strokeWidth={1.8}
+                  />
+                </div>
+              </div>
+
+              {/* =================================
+                  TITLE
+              ================================== */}
+
+              <h3
+                className="
+                  mt-14
+
+                  text-xl
+                  font-bold
+                  leading-tight
+                  tracking-[-0.025em]
+
+                  text-[#0C3B2E]
+
+                  sm:text-2xl
+
+                  dark:text-[#F1F3ED]
+                "
+              >
+                {service.title}
+              </h3>
+
+              {/* =================================
+                  DESCRIPTION
+              ================================== */}
+
+              <p
+                className="
+                  mt-4
+
+                  text-sm
+                  leading-7
+
+                  text-[#587064]
+
+                  dark:text-[#A8B9AE]
+                "
+              >
+                {service.description}
+              </p>
+
+              {/* =================================
+                  LINK
+              ================================== */}
+
+              <a
+                href="#contact"
+                className={`
+                  mt-7
+                  inline-flex
+                  items-center
+                  gap-2
+
+                  text-sm
+                  font-bold
+
+                  ${color.link}
+
+                  transition-all
+                  duration-300
+
+                  group-hover:gap-3
+
+                  dark:text-[#FFBA00]
+                `}
+              >
+                Explore service
+
+                <ArrowRight
+                  size={17}
+                  className="
+                    transition-transform
+                    duration-300
+
+                    group-hover:translate-x-1
+                  "
+                />
+              </a>
             </motion.div>
-          ))}
-        </motion.div>
-      </section>
 
-      {/* Why Us - Swiper Slider */}
-      <section id="about" className="overflow-hidden py-28">
-        <motion.div
-          initial={{ opacity: 0, y: 60 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: false, margin: "-100px" }}
-          className="container-custom grid gap-12 lg:grid-cols-2 lg:items-center"
-        >
-          {/* Left - Heading & Navigation */}
-          <div className="max-w-md flex flex-col justify-between">
-            <div>
-              <p className="text-sm font-bold uppercase tracking-[0.2em] text-[var(--accent)] dark:text-[var(--accent-bright)]">
-                Why MarkitMe
-              </p>
+            {/* =====================================
+                BOTTOM ACCENT LINE
+            ====================================== */}
 
-              <h2 className="mt-5 text-4xl font-black tracking-[-0.05em] sm:text-5xl">
-                Less noise.
-                <br />
-                More meaningful growth.
-              </h2>
+            <span
+              className="
+                pointer-events-none
+                absolute
+                bottom-0
+                left-8
+                right-8
 
-              <p className="mt-6 text-base leading-7 text-black/60 dark:text-white/60">
-                We don't chase vanity metrics. Every decision is connected to your business goals.
-              </p>
-            </div>
-          </div>
+                h-px
 
-          {/* Right - Slider */}
-          <div>
-            <Swiper
-              modules={[Autoplay, Navigation]}
-              slidesPerView={1}
-              spaceBetween={24}
-              autoplay={{
-                delay: 4000,
-                disableOnInteraction: false,
-                pauseOnMouseEnter: true,
-              }}
-              navigation={{
-                prevEl: prevRef.current,
-                nextEl: nextRef.current,
-              }}
-              loop={true}
-              className="why-us-swiper"
-              onBeforeInit={(swiper) => {
-                swiper.params.navigation.prevEl = prevRef.current;
-                swiper.params.navigation.nextEl = nextRef.current;
-              }}
-            >
-              {[
-              {
-                icon: Target,
-                title: "Clear Strategy",
-                description: "Strategy before execution. We develop comprehensive plans based on your business goals.",
-              },
-              {
-                icon: Eye,
-                title: "Transparent Reporting",
-                description: "Measurable outcomes you can track. Real data, real insights, real growth metrics.",
-              },
-              {
-                icon: TrendingUp,
-                title: "Built for Growth",
-                description: "Creative work around your audience. Every campaign designed to scale with you.",
-              },
-              {
-                icon: Users,
-                title: "Flexible Team",
-                description: "A team that grows with you. Scalable resources for every stage of your journey.",
-              },
-            ].map((item, index) => {
-              const Icon = item.icon;
-              return (
-                <SwiperSlide key={index} className="min-h-[450px]">
-                  <motion.div
-                    initial={{ opacity: 0, y: 50 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, ease: "easeOut", delay: index * 0.15 }}
-                    viewport={{ once: false, margin: "-50px" }}
-                    className="relative overflow-hidden rounded-[2rem] border border-black/10 bg-[var(--surface)] p-8 dark:border-white/10 dark:bg-[#141414] sm:p-10 h-full flex flex-col"
-                  >
-                    {/* Background Icon */}
-                    <div className="absolute left-0 top-1/2 -translate-y-1/2 opacity-5 dark:opacity-10">
-                      <Icon size={300} strokeWidth={0.5} />
-                    </div>
+                origin-left
+                scale-x-0
 
-                    {/* Heading at Top */}
-                    <div className="relative z-10">
-                      <h3 className="text-3xl font-black text-black dark:text-white sm:text-4xl">
-                        {item.title}
-                      </h3>
-                    </div>
+                bg-[#FFBA00]
 
-                    {/* Content at Bottom */}
-                    <div className="relative z-10 mt-auto">
-                      <p className="text-base leading-7 text-black/60 dark:text-white/60">
-                        {item.description}
-                      </p>
+                transition-transform
+                duration-500
 
-                      <a
-                        href="#about"
-                        className="mt-6 inline-flex items-center gap-2 font-bold text-[var(--accent)] transition hover:gap-3 dark:text-[var(--accent-bright)]"
-                      >
-                        Learn more
-                        <ArrowRight size={18} />
-                      </a>
-                    </div>
-                  </motion.div>
-                </SwiperSlide>
-              );
-            })}
-            </Swiper>
-          </div>
-        </motion.div>
+                group-hover:scale-x-100
+              "
+            />
+          </article>
+        );
+      })}
+    </motion.div>
+  </div>
+</section>
+     
+      {/* Stats */}
+<section
+  className="
+    relative
+    overflow-hidden
 
-        <style jsx>{`
-          :global(.why-us-swiper) {
-            padding-bottom: 0;
-          }
+    border-y
+    border-[#0C3B2E]/[0.08]
 
-          :global(.why-us-swiper .swiper-slide) {
-            height: auto;
-          }
-        `}</style>
-      </section>
+    bg-[#E7EDE4]
+
+    py-16
+
+    transition-colors
+    duration-500
+
+    sm:py-20
+    lg:py-24
+
+    dark:border-[#F1F3ED]/[0.08]
+    dark:bg-[#071F18]
+  "
+>
+  {/* =========================================
+      BACKGROUND DECORATION
+  ========================================== */}
+
+  <div
+    className="
+      pointer-events-none
+      absolute
+      inset-0
+      overflow-hidden
+    "
+  >
+    {/* Green glow */}
+
+    <div
+      className="
+        absolute
+        -left-32
+        top-1/2
+
+        h-72
+        w-72
+
+        -translate-y-1/2
+
+        rounded-full
+
+        bg-[#6D9773]/[0.08]
+
+        blur-[100px]
+
+        dark:bg-[#6D9773]/[0.06]
+      "
+    />
+
+    {/* Gold glow */}
+
+    <div
+      className="
+        absolute
+        -right-32
+        top-1/3
+
+        h-72
+        w-72
+
+        rounded-full
+
+        bg-[#FFBA00]/[0.055]
+
+        blur-[100px]
+
+        dark:bg-[#FFBA00]/[0.03]
+      "
+    />
+  </div>
+
+  <motion.div
+    initial={{ opacity: 0 }}
+    whileInView={{ opacity: 1 }}
+    transition={{ duration: 0.5 }}
+    viewport={{
+      once: false,
+      margin: "-100px",
+    }}
+    className="
+      container-custom
+      relative
+      z-10
+
+      grid
+      gap-4
+
+      sm:grid-cols-2
+      sm:gap-5
+
+      lg:grid-cols-4
+    "
+  >
+    {stats.map((stat, index) => (
+      <motion.div
+        key={stat.label}
+        initial={{
+          opacity: 0,
+          y: 40,
+        }}
+        whileInView={{
+          opacity: 1,
+          y: 0,
+        }}
+        transition={{
+          duration: 0.6,
+          ease: "easeOut",
+          delay: index * 0.15,
+        }}
+        viewport={{
+          once: false,
+          margin: "-50px",
+        }}
+      >
+        <AnimatedCounter
+          value={stat.value}
+          suffix={stat.suffix}
+          label={stat.label}
+          duration={1600}
+          index={index}
+        />
+      </motion.div>
+    ))}
+  </motion.div>
+</section>
+
+      <CreativeSolutions/>
       {/* Case Study */}
       <motion.div
         initial={{ opacity: 0, y: 60 }}
@@ -468,39 +754,10 @@ export default function Home() {
       >
         <CaseStudies />
       </motion.div>
+      {/* Why Us - Swiper Slider */}
+      <WhyMarkitMe />
       {/* CTA */}
-      <section id="contact" className="container-custom pb-28 mt-20">
-        <motion.div
-          initial={{ opacity: 0, y: 60 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: false, margin: "-100px" }}
-          className="relative overflow-hidden rounded-[2.5rem] border border-black/10 bg-[#f5f5f2] px-7 py-20 text-center sm:px-12 dark:border-white/10 dark:bg-[#171717]"
-        >
-          <div className="absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 rounded-full bg-[var(--accent-bright)]/20 blur-3xl" />
-
-          <div className="relative mx-auto max-w-4xl">
-            <p className="text-sm font-bold uppercase tracking-[0.2em] text-[var(--accent)] dark:text-[var(--accent-bright)]">
-              Ready when you are
-            </p>
-
-            <h2 className="mt-5 text-4xl font-black tracking-[-0.06em] sm:text-5xl">
-              Let&apos;s make your next move matter.
-            </h2>
-
-            <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-black/55 dark:text-white/55">
-              Tell us where your business is today and where you want it to go.
-              We will help build the path between them.
-            </p>
-
-            <div className="mt-9">
-              <Button href="mailto:info@markitme.ca" variant="primary">
-                Book a Free Consultation
-              </Button>
-            </div>
-          </div>
-        </motion.div>
-      </section>
+      <CTA />
       {/* Testimonials */}
       <motion.div
         initial={{ opacity: 0, y: 60 }}

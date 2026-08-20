@@ -19,24 +19,38 @@ export function generateStaticParams() {
 export default async function ProjectDetailsPage({ params }) {
   const { slug } = await params;
 
-  const project = projects.find(
-    (item) => item.slug === slug
-  );
+  const project = projects.find((item) => item.slug === slug);
 
   if (!project) {
     notFound();
   }
 
   return (
-    <main className="overflow-hidden bg-white text-black dark:bg-[#0a0a0a] dark:text-white">
+    <main className="overflow-hidden bg-[#F1F3ED] text-[#0C3B2E] dark:bg-[#071F18] dark:text-[#F1F3ED]">
 
-      {/* HERO */}
-      <section className="relative border-b border-black/10 px-5 pb-20 pt-28 dark:border-white/10 sm:pb-28 sm:pt-36">
+      {/* =====================================================
+          HERO
+      ====================================================== */}
+
+      <section className="relative border-b border-[#0C3B2E]/10 px-5 pb-20 pt-28 dark:border-[#F1F3ED]/10 sm:pb-28 sm:pt-36">
         <div className="container-custom">
+
+          {/* Back */}
 
           <Link
             href="/work"
-            className="inline-flex items-center gap-2 text-sm font-bold text-black/60 transition hover:text-[var(--accent)] dark:text-white/60 dark:hover:text-[var(--accent-bright)]"
+            className="
+              inline-flex
+              items-center
+              gap-2
+              text-sm
+              font-bold
+              text-[#0C3B2E]/60
+              transition
+              hover:text-[#6D9773]
+              dark:text-[#F1F3ED]/60
+              dark:hover:text-[#FFBA00]
+            "
           >
             <ArrowLeft size={17} />
             Back to Work
@@ -44,29 +58,106 @@ export default async function ProjectDetailsPage({ params }) {
 
           <div className="mt-10 grid gap-12 lg:grid-cols-[1fr_0.95fr] lg:items-center">
 
-            <div>
-              <p className="text-sm font-black uppercase tracking-[0.22em] text-[var(--accent)] dark:text-[var(--accent-bright)]">
-                Case Study — {project.number}
-              </p>
+            {/* Hero Content */}
 
-              <h1 className="mt-5 text-4xl font-black leading-[0.95] tracking-[-0.06em] sm:text-6xl lg:text-7xl">
+            <div>
+
+              {/* Eyebrow */}
+
+              <div className="inline-flex items-center gap-2">
+                <span className="h-1.5 w-1.5 rounded-full bg-[#FFBA00]" />
+
+                <p
+                  className="
+                    text-[9px]
+                    font-black
+                    uppercase
+                    tracking-[0.24em]
+                    text-[#6D9773]
+                    dark:text-[#FFBA00]
+                  "
+                >
+                  Case Study — {project.number}
+                </p>
+
+                <span className="h-1.5 w-1.5 rounded-full bg-[#6D9773] dark:bg-[#FFBA00]" />
+              </div>
+
+              {/* Heading */}
+
+              <h1
+                className="
+                  mt-5
+                  max-w-4xl
+                  text-4xl
+                  font-black
+                  leading-[0.95]
+                  tracking-[-0.06em]
+                  sm:text-6xl
+                  lg:text-7xl
+                "
+              >
                 {project.title}
               </h1>
 
+              {/* Meta */}
+
               <div className="mt-6 flex flex-wrap gap-3">
-                <span className="rounded-full bg-[var(--accent-bright)]/15 px-4 py-2 text-sm font-bold text-[var(--accent)]">
+
+                <span
+                  className="
+                    rounded-full
+                    bg-[#FFBA00]/15
+                    px-4
+                    py-2
+                    text-sm
+                    font-bold
+                    text-[#0C3B2E]
+                    dark:text-[#FFBA00]
+                  "
+                >
                   {project.category}
                 </span>
 
-                <span className="inline-flex items-center gap-2 rounded-full border border-black/10 px-4 py-2 text-sm font-semibold text-black/60 dark:border-white/10 dark:text-white/60">
+                <span
+                  className="
+                    inline-flex
+                    items-center
+                    gap-2
+                    rounded-full
+                    border
+                    border-[#0C3B2E]/10
+                    px-4
+                    py-2
+                    text-sm
+                    font-semibold
+                    text-[#0C3B2E]/60
+                    dark:border-[#F1F3ED]/10
+                    dark:text-[#F1F3ED]/60
+                  "
+                >
                   <MapPin size={16} />
                   {project.location}
                 </span>
+
               </div>
 
-              <p className="mt-7 max-w-2xl text-lg leading-8 text-black/65 dark:text-white/65">
+              {/* Description */}
+
+              <p
+                className="
+                  mt-7
+                  max-w-2xl
+                  text-lg
+                  leading-8
+                  text-[#0C3B2E]/65
+                  dark:text-[#F1F3ED]/65
+                "
+              >
                 {project.shortDescription}
               </p>
+
+              {/* Buttons */}
 
               <div className="mt-8 flex flex-wrap gap-4">
 
@@ -74,7 +165,22 @@ export default async function ProjectDetailsPage({ params }) {
                   href={project.website}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-3 rounded-full bg-[var(--accent-bright)] px-6 py-3.5 text-sm font-black text-black transition hover:scale-[1.03] hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black"
+                  className="
+                    inline-flex
+                    items-center
+                    gap-3
+                    rounded-full
+                    bg-[#FFBA00]
+                    px-6
+                    py-3.5
+                    text-sm
+                    font-black
+                    text-[#0C3B2E]
+                    transition-all
+                    hover:-translate-y-0.5
+                    hover:bg-[#0C3B2E]
+                    hover:text-[#FFBA00]
+                  "
                 >
                   Visit Live Website
                   <ExternalLink size={17} />
@@ -82,7 +188,26 @@ export default async function ProjectDetailsPage({ params }) {
 
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-3 rounded-full border border-black/15 px-6 py-3.5 text-sm font-black transition hover:border-[var(--accent)] hover:text-[var(--accent)] dark:border-white/15 dark:hover:border-[var(--accent-bright)] dark:hover:text-[var(--accent-bright)]"
+                  className="
+                    inline-flex
+                    items-center
+                    gap-3
+                    rounded-full
+                    border
+                    border-[#0C3B2E]/15
+                    px-6
+                    py-3.5
+                    text-sm
+                    font-black
+                    transition-all
+                    hover:border-[#6D9773]
+                    hover:bg-[#6D9773]
+                    hover:text-white
+                    dark:border-[#F1F3ED]/15
+                    dark:hover:border-[#FFBA00]
+                    dark:hover:bg-[#FFBA00]
+                    dark:hover:text-[#0C3B2E]
+                  "
                 >
                   Start a Project
                   <ArrowRight size={17} />
@@ -91,7 +216,22 @@ export default async function ProjectDetailsPage({ params }) {
               </div>
             </div>
 
-            <div className="relative aspect-[4/3] overflow-hidden rounded-[32px] border border-black/10 bg-black/5 shadow-2xl dark:border-white/10 dark:bg-white/5">
+            {/* Hero Image */}
+
+            <div
+              className="
+                relative
+                aspect-[4/3]
+                overflow-hidden
+                rounded-[32px]
+                border
+                border-[#0C3B2E]/10
+                bg-[#0C3B2E]/5
+                shadow-2xl
+                dark:border-[#F1F3ED]/10
+                dark:bg-[#F1F3ED]/5
+              "
+            >
 
               <Image
                 src={project.image}
@@ -102,10 +242,26 @@ export default async function ProjectDetailsPage({ params }) {
                 className="object-cover"
               />
 
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0C3B2E]/65 via-transparent to-transparent" />
 
-              <div className="absolute bottom-6 left-6 rounded-full bg-black/65 px-4 py-2 text-xs font-black uppercase tracking-[0.15em] text-white backdrop-blur">
-                Markit Me Case Study
+              <div
+                className="
+                  absolute
+                  bottom-6
+                  left-6
+                  rounded-full
+                  bg-[#0C3B2E]/80
+                  px-4
+                  py-2
+                  text-xs
+                  font-black
+                  uppercase
+                  tracking-[0.15em]
+                  text-[#F1F3ED]
+                  backdrop-blur
+                "
+              >
+                MarkitMe Case Study
               </div>
 
             </div>
@@ -114,22 +270,55 @@ export default async function ProjectDetailsPage({ params }) {
         </div>
       </section>
 
-      {/* ABOUT */}
+      {/* =====================================================
+          ABOUT
+      ====================================================== */}
+
       <section className="px-5 py-20 sm:py-28">
 
         <div className="container-custom grid gap-12 lg:grid-cols-[0.7fr_1.3fr]">
 
           <div>
-            <p className="text-sm font-black uppercase tracking-[0.2em] text-[var(--accent)] dark:text-[var(--accent-bright)]">
-              {project.aboutTitle}
-            </p>
 
-            <h2 className="mt-4 text-4xl font-black leading-none tracking-[-0.05em] sm:text-5xl">
+            {/* Eyebrow */}
+
+            <div className="inline-flex items-center gap-2">
+
+              <span className="h-1.5 w-1.5 rounded-full bg-[#FFBA00]" />
+
+              <p
+                className="
+                  text-[9px]
+                  font-black
+                  uppercase
+                  tracking-[0.24em]
+                  text-[#6D9773]
+                  dark:text-[#FFBA00]
+                "
+              >
+                {project.aboutTitle}
+              </p>
+
+              <span className="h-1.5 w-1.5 rounded-full bg-[#6D9773] dark:bg-[#FFBA00]" />
+
+            </div>
+
+            <h2
+              className="
+                mt-4
+                text-4xl
+                font-black
+                leading-[0.98]
+                tracking-[-0.055em]
+                sm:text-5xl
+              "
+            >
               The story
-              <span className="block text-[var(--accent)] dark:text-[var(--accent-bright)]">
+              <span className="block text-[#6D9773] dark:text-[#FFBA00]">
                 behind the work.
               </span>
             </h2>
+
           </div>
 
           <div className="space-y-6">
@@ -137,7 +326,12 @@ export default async function ProjectDetailsPage({ params }) {
             {project.overview.map((paragraph, index) => (
               <p
                 key={index}
-                className="text-lg leading-9 text-black/65 dark:text-white/65"
+                className="
+                  text-lg
+                  leading-9
+                  text-[#0C3B2E]/65
+                  dark:text-[#F1F3ED]/65
+                "
               >
                 {paragraph}
               </p>
@@ -148,20 +342,62 @@ export default async function ProjectDetailsPage({ params }) {
         </div>
       </section>
 
-      {/* CHALLENGE */}
-      <section className="border-y border-black/10 bg-black/[0.025] px-5 py-20 dark:border-white/10 dark:bg-white/[0.03] sm:py-28">
+      {/* =====================================================
+          CHALLENGE
+      ====================================================== */}
+
+      <section
+        className="
+          border-y
+          border-[#0C3B2E]/10
+          bg-white/50
+          px-5
+          py-20
+          dark:border-[#F1F3ED]/10
+          dark:bg-[#0C3B2E]/40
+          sm:py-28
+        "
+      >
 
         <div className="container-custom grid gap-12 lg:grid-cols-2">
 
           <div>
 
-            <p className="text-sm font-black uppercase tracking-[0.2em] text-[var(--accent)] dark:text-[var(--accent-bright)]">
-              The Challenge
-            </p>
+            <div className="inline-flex items-center gap-2">
 
-            <h2 className="mt-4 text-4xl font-black leading-none tracking-[-0.05em] sm:text-5xl">
+              <span className="h-1.5 w-1.5 rounded-full bg-[#FFBA00]" />
+
+              <p
+                className="
+                  text-[9px]
+                  font-black
+                  uppercase
+                  tracking-[0.24em]
+                  text-[#6D9773]
+                  dark:text-[#FFBA00]
+                "
+              >
+                The Challenge
+              </p>
+
+              <span className="h-1.5 w-1.5 rounded-full bg-[#6D9773] dark:bg-[#FFBA00]" />
+
+            </div>
+
+            <h2
+              className="
+                mt-4
+                text-4xl
+                font-black
+                leading-[0.98]
+                tracking-[-0.055em]
+                sm:text-5xl
+              "
+            >
               What needed
-              <span className="block">to change.</span>
+              <span className="block text-[#6D9773] dark:text-[#FFBA00]">
+                to change.
+              </span>
             </h2>
 
             <div className="mt-8 space-y-5">
@@ -169,7 +405,11 @@ export default async function ProjectDetailsPage({ params }) {
               {project.challenge.map((paragraph, index) => (
                 <p
                   key={index}
-                  className="leading-8 text-black/65 dark:text-white/65"
+                  className="
+                    leading-8
+                    text-[#0C3B2E]/65
+                    dark:text-[#F1F3ED]/65
+                  "
                 >
                   {paragraph}
                 </p>
@@ -185,14 +425,27 @@ export default async function ProjectDetailsPage({ params }) {
 
               <div
                 key={challenge}
-                className="rounded-3xl border border-black/10 bg-white p-6 dark:border-white/10 dark:bg-[#0a0a0a]"
+                className="
+                  rounded-3xl
+                  border
+                  border-[#0C3B2E]/10
+                  bg-[#F1F3ED]
+                  p-6
+                  transition-all
+                  duration-300
+                  hover:-translate-y-1
+                  hover:border-[#6D9773]/40
+                  dark:border-[#F1F3ED]/10
+                  dark:bg-[#071F18]
+                  dark:hover:border-[#FFBA00]/40
+                "
               >
 
-                <span className="text-4xl font-black text-[var(--accent)] dark:text-[var(--accent-bright)]">
+                <span className="text-4xl font-black text-[#FFBA00]">
                   0{index + 1}
                 </span>
 
-                <p className="mt-8 font-bold leading-7 text-black/70 dark:text-white/70">
+                <p className="mt-8 font-bold leading-7 text-[#0C3B2E]/70 dark:text-[#F1F3ED]/70">
                   {challenge}
                 </p>
 
@@ -205,20 +458,51 @@ export default async function ProjectDetailsPage({ params }) {
         </div>
       </section>
 
-      {/* SERVICES */}
+      {/* =====================================================
+          SERVICES
+      ====================================================== */}
+
       <section className="px-5 py-20 sm:py-28">
 
         <div className="container-custom">
 
           <div className="max-w-3xl">
 
-            <p className="text-sm font-black uppercase tracking-[0.2em] text-[var(--accent)] dark:text-[var(--accent-bright)]">
-              What Markit Me Did
-            </p>
+            <div className="inline-flex items-center gap-2">
 
-            <h2 className="mt-4 text-4xl font-black leading-none tracking-[-0.05em] sm:text-5xl">
+              <span className="h-1.5 w-1.5 rounded-full bg-[#FFBA00]" />
+
+              <p
+                className="
+                  text-[9px]
+                  font-black
+                  uppercase
+                  tracking-[0.24em]
+                  text-[#6D9773]
+                  dark:text-[#FFBA00]
+                "
+              >
+                What MarkitMe Did
+              </p>
+
+              <span className="h-1.5 w-1.5 rounded-full bg-[#6D9773] dark:bg-[#FFBA00]" />
+
+            </div>
+
+            <h2
+              className="
+                mt-4
+                text-4xl
+                font-black
+                leading-[0.98]
+                tracking-[-0.055em]
+                sm:text-5xl
+              "
+            >
               Strategy turned
-              <span className="block">into action.</span>
+              <span className="block text-[#6D9773] dark:text-[#FFBA00]">
+                into action.
+              </span>
             </h2>
 
           </div>
@@ -229,18 +513,46 @@ export default async function ProjectDetailsPage({ params }) {
 
               <article
                 key={service.title}
-                className="group rounded-[28px] border border-black/10 p-7 transition hover:border-[var(--accent)] hover:shadow-xl dark:border-white/10 dark:hover:border-[var(--accent-bright)] sm:p-9"
+                className="
+                  group
+                  rounded-[28px]
+                  border
+                  border-[#0C3B2E]/10
+                  bg-white/60
+                  p-7
+                  transition-all
+                  duration-300
+                  hover:-translate-y-1
+                  hover:border-[#6D9773]/50
+                  hover:shadow-xl
+                  dark:border-[#F1F3ED]/10
+                  dark:bg-[#0C3B2E]/50
+                  dark:hover:border-[#FFBA00]/50
+                  sm:p-9
+                "
               >
 
                 <div className="flex items-start justify-between gap-5">
 
-                  <span className="flex h-11 w-11 items-center justify-center rounded-full bg-[var(--accent-bright)] font-black text-black">
+                  <span
+                    className="
+                      flex
+                      h-11
+                      w-11
+                      items-center
+                      justify-center
+                      rounded-full
+                      bg-[#FFBA00]
+                      font-black
+                      text-[#0C3B2E]
+                    "
+                  >
                     0{index + 1}
                   </span>
 
                   <Check
                     size={22}
-                    className="text-[var(--accent)] dark:text-[var(--accent-bright)]"
+                    className="text-[#6D9773] dark:text-[#FFBA00]"
                   />
 
                 </div>
@@ -249,7 +561,7 @@ export default async function ProjectDetailsPage({ params }) {
                   {service.title}
                 </h3>
 
-                <p className="mt-4 leading-8 text-black/60 dark:text-white/60">
+                <p className="mt-4 leading-8 text-[#0C3B2E]/60 dark:text-[#F1F3ED]/60">
                   {service.description}
                 </p>
 
@@ -262,18 +574,39 @@ export default async function ProjectDetailsPage({ params }) {
         </div>
       </section>
 
-      {/* RESULTS */}
-      <section className="bg-black px-5 py-20 text-white dark:bg-white dark:text-black sm:py-28">
+      {/* =====================================================
+          RESULTS
+      ====================================================== */}
+
+      <section className="bg-[#0C3B2E] px-5 py-20 text-[#F1F3ED] sm:py-28">
 
         <div className="container-custom">
 
-          <p className="text-sm font-black uppercase tracking-[0.2em] text-[var(--accent-bright)] dark:text-[var(--accent)]">
-            The Outcome
-          </p>
+          <div className="inline-flex items-center gap-2">
 
-          <h2 className="mt-4 max-w-3xl text-4xl font-black leading-none tracking-[-0.05em] sm:text-6xl">
+            <span className="h-1.5 w-1.5 rounded-full bg-[#FFBA00]" />
+
+            <p className="text-[9px] font-black uppercase tracking-[0.24em] text-[#FFBA00]">
+              The Outcome
+            </p>
+
+            <span className="h-1.5 w-1.5 rounded-full bg-[#6D9773]" />
+
+          </div>
+
+          <h2
+            className="
+              mt-4
+              max-w-3xl
+              text-4xl
+              font-black
+              leading-[0.98]
+              tracking-[-0.055em]
+              sm:text-6xl
+            "
+          >
             Results that
-              <span className="block text-[var(--accent-bright)] dark:text-[var(--accent)]">
+            <span className="block text-[#FFBA00]">
               moved the business.
             </span>
           </h2>
@@ -284,14 +617,24 @@ export default async function ProjectDetailsPage({ params }) {
 
               <div
                 key={result.label}
-                className="rounded-[28px] border border-white/15 bg-white/5 p-7 dark:border-black/10 dark:bg-black/[0.03]"
+                className="
+                  rounded-[28px]
+                  border
+                  border-[#F1F3ED]/15
+                  bg-[#F1F3ED]/5
+                  p-7
+                  transition-all
+                  duration-300
+                  hover:-translate-y-1
+                  hover:border-[#FFBA00]/40
+                "
               >
 
-                <p className="text-5xl font-black tracking-[-0.05em] text-[var(--accent-bright)] dark:text-[var(--accent)]">
+                <p className="text-5xl font-black tracking-[-0.05em] text-[#FFBA00]">
                   {result.value}
                 </p>
 
-                <p className="mt-4 font-bold leading-6 text-white/65 dark:text-black/60">
+                <p className="mt-4 font-bold leading-6 text-[#F1F3ED]/65">
                   {result.label}
                 </p>
 
@@ -304,20 +647,51 @@ export default async function ProjectDetailsPage({ params }) {
         </div>
       </section>
 
-      {/* WHAT CHANGED */}
+      {/* =====================================================
+          WHAT CHANGED
+      ====================================================== */}
+
       <section className="px-5 py-20 sm:py-28">
 
         <div className="container-custom grid gap-12 lg:grid-cols-[0.7fr_1.3fr]">
 
           <div>
 
-            <p className="text-sm font-black uppercase tracking-[0.2em] text-[var(--accent)] dark:text-[var(--accent-bright)]">
-              What Changed
-            </p>
+            <div className="inline-flex items-center gap-2">
 
-            <h2 className="mt-4 text-4xl font-black leading-none tracking-[-0.05em] sm:text-5xl">
+              <span className="h-1.5 w-1.5 rounded-full bg-[#FFBA00]" />
+
+              <p
+                className="
+                  text-[9px]
+                  font-black
+                  uppercase
+                  tracking-[0.24em]
+                  text-[#6D9773]
+                  dark:text-[#FFBA00]
+                "
+              >
+                What Changed
+              </p>
+
+              <span className="h-1.5 w-1.5 rounded-full bg-[#6D9773] dark:bg-[#FFBA00]" />
+
+            </div>
+
+            <h2
+              className="
+                mt-4
+                text-4xl
+                font-black
+                leading-[0.98]
+                tracking-[-0.055em]
+                sm:text-5xl
+              "
+            >
               A stronger
-              <span className="block">digital presence.</span>
+              <span className="block text-[#6D9773] dark:text-[#FFBA00]">
+                digital presence.
+              </span>
             </h2>
 
           </div>
@@ -330,14 +704,36 @@ export default async function ProjectDetailsPage({ params }) {
 
                 <div
                   key={item}
-                  className="flex gap-4 rounded-2xl border border-black/10 p-5 dark:border-white/10"
+                  className="
+                    flex
+                    gap-4
+                    rounded-2xl
+                    border
+                    border-[#0C3B2E]/10
+                    bg-white/40
+                    p-5
+                    dark:border-[#F1F3ED]/10
+                    dark:bg-[#0C3B2E]/40
+                  "
                 >
 
-                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[var(--accent-bright)] text-black">
+                  <span
+                    className="
+                      flex
+                      h-8
+                      w-8
+                      shrink-0
+                      items-center
+                      justify-center
+                      rounded-full
+                      bg-[#FFBA00]
+                      text-[#0C3B2E]
+                    "
+                  >
                     <Check size={17} />
                   </span>
 
-                  <p className="font-semibold leading-7 text-black/65 dark:text-white/65">
+                  <p className="font-semibold leading-7 text-[#0C3B2E]/65 dark:text-[#F1F3ED]/65">
                     {item}
                   </p>
 
@@ -347,7 +743,7 @@ export default async function ProjectDetailsPage({ params }) {
 
             </div>
 
-            <p className="mt-8 text-lg leading-9 text-black/65 dark:text-white/65">
+            <p className="mt-8 text-lg leading-9 text-[#0C3B2E]/65 dark:text-[#F1F3ED]/65">
               {project.conclusion}
             </p>
 
@@ -356,22 +752,69 @@ export default async function ProjectDetailsPage({ params }) {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* =====================================================
+          CTA
+      ====================================================== */}
+
       <section className="px-5 pb-20 sm:pb-28">
 
         <div className="container-custom">
 
-          <div className="rounded-[35px] bg-[var(--accent-bright)] p-8 text-black sm:p-14">
+          <div
+            className="
+              relative
+              overflow-hidden
+              rounded-[35px]
+              bg-[#FFBA00]
+              p-8
+              text-[#0C3B2E]
+              sm:p-14
+            "
+          >
 
-            <div className="flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
+            {/* Decorative circle */}
+
+            <div
+              className="
+                pointer-events-none
+                absolute
+                -right-20
+                -top-20
+                h-64
+                w-64
+                rounded-full
+                bg-[#6D9773]/20
+                blur-3xl
+              "
+            />
+
+            <div className="relative flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
 
               <div>
 
-                <p className="text-sm font-black uppercase tracking-[0.2em]">
-                  Ready to Grow?
-                </p>
+                <div className="inline-flex items-center gap-2">
 
-                <h2 className="mt-4 max-w-3xl text-4xl font-black leading-[0.95] tracking-[-0.05em] sm:text-6xl">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#0C3B2E]" />
+
+                  <p className="text-[9px] font-black uppercase tracking-[0.24em]">
+                    Ready to Grow?
+                  </p>
+
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#6D9773]" />
+
+                </div>
+
+                <h2
+                  className="
+                    mt-4
+                    max-w-3xl
+                    text-4xl
+                    font-black
+                    leading-[0.95]
+                    tracking-[-0.05em]
+                    sm:text-6xl
+                  "
+                >
                   Let’s build your next success story.
                 </h2>
 
@@ -379,7 +822,23 @@ export default async function ProjectDetailsPage({ params }) {
 
               <Link
                 href="/contact"
-                className="inline-flex w-fit items-center gap-3 rounded-full bg-black px-7 py-4 font-black text-white transition hover:scale-[1.03]"
+                className="
+                  inline-flex
+                  w-fit
+                  shrink-0
+                  items-center
+                  gap-3
+                  rounded-full
+                  bg-[#0C3B2E]
+                  px-7
+                  py-4
+                  font-black
+                  text-[#F1F3ED]
+                  transition-all
+                  duration-300
+                  hover:-translate-y-1
+                  hover:bg-[#6D9773]
+                "
               >
                 Get in Touch
                 <ArrowRight size={18} />
