@@ -230,17 +230,9 @@ export default function Header() {
                   md:text-[11px]
                 "
               >
-                Strategy
-                <span className="mx-1.5 opacity-40">
-                  •
-                </span>
+               
 
-                Creativity
-                <span className="mx-1.5 opacity-40">
-                  •
-                </span>
-
-                Measurable Growth
+                Make Your Business Impossible to Ignore
               </p>
 
 

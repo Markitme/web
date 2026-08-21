@@ -880,9 +880,7 @@ export default function Hero() {
               dark:text-[#F1F3ED]/65
             "
           >
-            MarkitMe combines strategy, creative thinking,
-            technology, and performance marketing to help
-            ambitious businesses grow.
+            We combine strategy, creative, technology, and performance marketing to turn attention into measurable growth.
           </motion.p>
 
           {/* =================================================
@@ -970,7 +968,7 @@ export default function Hero() {
                 dark:hover:bg-[#6D9773]/15
               "
             >
-              Explore Services
+              Start Your Growth
             </Button>
 
           </motion.div>
