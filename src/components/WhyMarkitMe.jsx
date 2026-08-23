@@ -480,9 +480,14 @@ export default function WhyMarkitMe() {
                   One partner. Full capability.
                 </span>
 
-                <span
+                <button type="button" onClick={() => {
+                  window.dispatchEvent(
+                    new Event("open-contact-modal")
+                  );
+                }}
                   className="
                     flex
+                    cursor-pointer
                     h-10
                     w-10
                     items-center
@@ -496,7 +501,7 @@ export default function WhyMarkitMe() {
                   "
                 >
                   <ArrowUpRight size={18} />
-                </span>
+                </button>
               </div>
             </motion.div>
 

@@ -268,40 +268,6 @@ export default function ContactPage() {
               "
             >
 
-              {/* Form Heading */}
-              <div className="mb-8">
-
-                <p
-                  className="
-                    text-[9px]
-                    font-black
-                    uppercase
-                    tracking-[0.22em]
-                    text-[var(--color-green)]
-                    dark:text-[var(--color-gold)]
-                  "
-                >
-                  Start a conversation
-                </p>
-
-                <h2
-                  className="
-                    mt-3
-                    text-3xl
-                    font-black
-                    leading-[0.98]
-                    tracking-[-0.045em]
-                    text-[var(--color-deep)]
-
-                    sm:text-4xl
-
-                    dark:text-[var(--color-cream)]
-                  "
-                >
-                  Tell us what you&apos;re building.
-                </h2>
-
-              </div>
 
 
               {/* =================================================
