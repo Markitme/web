@@ -4,6 +4,8 @@ import {
   ArrowRight,
   Clock3,
   CalendarDays,
+  ChevronLeft,
+  ChevronRight,
 } from "lucide-react";
 
 import {
@@ -18,10 +20,16 @@ export const metadata = {
     "Explore practical insights on brand strategy, websites, digital marketing, user experience, content, and business growth.",
 };
 
-export default async function BlogPage() {
-  const { posts } = await getPosts({
-    page: 1,
-    perPage: 12,
+export default async function BlogPage({ searchParams }) {
+  const params = await searchParams;
+  const requestedPage = Number.parseInt(params?.page || "1", 10);
+  const currentPage = Number.isNaN(requestedPage) || requestedPage < 1
+    ? 1
+    : requestedPage;
+
+  const { posts, totalPages } = await getPosts({
+    page: currentPage,
+    perPage: 6,
   });
 
   const formattedPosts = posts.map(
@@ -647,6 +655,60 @@ export default async function BlogPage() {
               })}
 
             </div>
+          )}
+
+          {totalPages > 1 && (
+            <nav
+              aria-label="Blog pagination"
+              className="mt-12 flex flex-wrap items-center justify-center gap-2 sm:mt-16"
+            >
+              {currentPage > 1 ? (
+                <Link
+                  href={`/blog?page=${currentPage - 1}`}
+                  aria-label="Previous page"
+                  className="flex h-11 w-11 items-center justify-center rounded-full border border-[var(--color-deep)]/15 text-[var(--color-deep)] transition-colors hover:border-[var(--color-green)] hover:text-[var(--color-green)] dark:border-[var(--color-cream)]/15 dark:text-[var(--color-cream)] dark:hover:border-[var(--color-gold)] dark:hover:text-[var(--color-gold)]"
+                >
+                  <ChevronLeft size={18} />
+                </Link>
+              ) : (
+                <span className="flex h-11 w-11 items-center justify-center rounded-full border border-[var(--color-deep)]/10 text-[var(--color-deep)]/25 dark:border-[var(--color-cream)]/10 dark:text-[var(--color-cream)]/25">
+                  <ChevronLeft size={18} />
+                </span>
+              )}
+
+              {Array.from({ length: totalPages }, (_, index) => index + 1).map(
+                (pageNumber) => (
+                  <Link
+                    key={pageNumber}
+                    href={`/blog?page=${pageNumber}`}
+                    aria-current={
+                      pageNumber === currentPage ? "page" : undefined
+                    }
+                    className={`flex h-11 min-w-11 items-center justify-center rounded-full px-3 text-sm font-bold transition-colors ${
+                      pageNumber === currentPage
+                        ? "bg-[var(--color-gold)] text-[var(--color-deep)]"
+                        : "border border-[var(--color-deep)]/15 text-[var(--color-deep)] hover:border-[var(--color-green)] hover:text-[var(--color-green)] dark:border-[var(--color-cream)]/15 dark:text-[var(--color-cream)] dark:hover:border-[var(--color-gold)] dark:hover:text-[var(--color-gold)]"
+                    }`}
+                  >
+                    {pageNumber}
+                  </Link>
+                )
+              )}
+
+              {currentPage < totalPages ? (
+                <Link
+                  href={`/blog?page=${currentPage + 1}`}
+                  aria-label="Next page"
+                  className="flex h-11 w-11 items-center justify-center rounded-full border border-[var(--color-deep)]/15 text-[var(--color-deep)] transition-colors hover:border-[var(--color-green)] hover:text-[var(--color-green)] dark:border-[var(--color-cream)]/15 dark:text-[var(--color-cream)] dark:hover:border-[var(--color-gold)] dark:hover:text-[var(--color-gold)]"
+                >
+                  <ChevronRight size={18} />
+                </Link>
+              ) : (
+                <span className="flex h-11 w-11 items-center justify-center rounded-full border border-[var(--color-deep)]/10 text-[var(--color-deep)]/25 dark:border-[var(--color-cream)]/10 dark:text-[var(--color-cream)]/25">
+                  <ChevronRight size={18} />
+                </span>
+              )}
+            </nav>
           )}
 
         </div>
