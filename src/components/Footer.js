@@ -652,7 +652,7 @@ export default function Footer() {
 
     {/* Instagram */}
     <a
-      href="YOUR_INSTAGRAM_URL"
+      href="https://www.instagram.com/markitme.ca/"
       target="_blank"
       rel="noopener noreferrer"
       aria-label="MarkitMe Instagram"
