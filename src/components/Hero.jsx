@@ -965,7 +965,7 @@ export default function Hero() {
                 dark:bg-[var(--color-cream)]/5
                 dark:text-[var(--color-cream)]
                 dark:hover:border-[var(--color-green)]
-                dark:hover:bg-[var(--color-green)]/15
+                dark:hover:bg-[var(--color-cream)]/20
               "
             >
               Start Your Growth
