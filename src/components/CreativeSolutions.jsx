@@ -416,14 +416,19 @@ export default function CreativeSolutions() {
                     MarkitMe
                   </span>
 
-                  <span
+                  <button type="button"
+              onClick={() => {
+                window.dispatchEvent(
+                  new Event("open-contact-modal")
+                );
+              }}
                     className="
                       flex
                       h-10
                       w-10
                       items-center
                       justify-center
-
+                      cursor-pointer
                       rounded-full
 
                       border
@@ -445,7 +450,7 @@ export default function CreativeSolutions() {
                     "
                   >
                     ↗
-                  </span>
+                  </button>
                 </div>
 
                 {/* =================================

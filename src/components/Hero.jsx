@@ -686,6 +686,7 @@ export default function Hero() {
               }}
               className="
                 inline-flex
+                cursor-pointer
                 h-12
                 min-w-[190px]
                 items-center
@@ -715,6 +716,7 @@ export default function Hero() {
               variant="outline"
               className="
                 inline-flex
+                cursor-pointer
                 h-12
                 min-w-[190px]
                 items-center

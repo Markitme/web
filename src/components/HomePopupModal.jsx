@@ -96,44 +96,37 @@ export default function HomePopupModal() {
   SUBMIT
   =====================================================
   */
+const handleSubmit = async (e) => {
+  e.preventDefault();
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  setIsSubmitting(true);
 
-    setIsSubmitting(true);
+  try {
+    console.log("Form submitted:", formData);
 
-    try {
-      console.log("Form submitted:", formData);
+    await new Promise((resolve) =>
+      setTimeout(resolve, 800)
+    );
 
-      /*
-      -----------------------------------------
-      Replace this with API / Form service later
-      -----------------------------------------
-      */
+    setSubmitted(true);
 
-      await new Promise((resolve) =>
-        setTimeout(resolve, 800)
-      );
+    localStorage.setItem(
+      STORAGE_KEY,
+      Date.now().toString()
+    );
 
-      setSubmitted(true);
-
-      localStorage.setItem(
-        STORAGE_KEY,
-        Date.now().toString()
-      );
-
-      setTimeout(() => {
-        setIsOpen(false);
-      }, 1500);
-    } catch (error) {
-      console.error(
-        "Form submission failed:",
-        error
-      );
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
+    setTimeout(() => {
+      setIsOpen(false);
+    }, 1500);
+  } catch (error) {
+    console.error(
+      "Form submission failed:",
+      error
+    );
+  } finally {
+    setIsSubmitting(false);
+  }
+};
 
   /*
   =====================================================

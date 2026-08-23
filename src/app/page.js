@@ -18,6 +18,7 @@ import {
 } from "lucide-react";
 import { motion } from "framer-motion";
 import { useRef } from "react";
+import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
 import "swiper/css";
@@ -441,39 +442,39 @@ export default function Home() {
                   LINK
               ================================== */}
 
-              <a
-                href="#contact"
-                className={`
-                  mt-7
-                  inline-flex
-                  items-center
-                  gap-2
+             <Link
+  href="/services"
+  className={`
+    mt-7
+    inline-flex
+    items-center
+    gap-2
 
-                  text-sm
-                  font-bold
+    text-sm
+    font-bold
 
-                  ${color.link}
+    ${color.link}
 
-                  transition-all
-                  duration-300
+    transition-all
+    duration-300
 
-                  group-hover:gap-3
+    group-hover:gap-3
 
-                  dark:text-[#FFBA00]
-                `}
-              >
-                Explore service
+    dark:text-[#FFBA00]
+  `}
+>
+  Explore service
 
-                <ArrowRight
-                  size={17}
-                  className="
-                    transition-transform
-                    duration-300
+  <ArrowRight
+    size={17}
+    className="
+      transition-transform
+      duration-300
 
-                    group-hover:translate-x-1
-                  "
-                />
-              </a>
+      group-hover:translate-x-1
+    "
+  />
+</Link>
             </motion.div>
 
             {/* =====================================
