@@ -7,7 +7,6 @@ import Button from "@/components/ui/Button";
 
 /* =====================================================
    INLINE SVG ICONS
-   No lucide-react dependency
 ===================================================== */
 
 const SvgGithub = ({ color }) => (
@@ -125,7 +124,7 @@ const SvgMegaphone = ({ color }) => (
 );
 
 /* =====================================================
-   HERO ICON DATA
+   HERO DATA
 ===================================================== */
 
 const heroIcons = [
@@ -151,46 +150,38 @@ const heroIcons = [
   },
 ];
 
-/* =====================================================
-   FALLING DIGITAL LINES
-===================================================== */
-
 const fallingLines = [
   {
     left: "16%",
     height: "110px",
     delay: 0,
-    duration: 7,
+    duration: 8,
   },
   {
     left: "34%",
     height: "150px",
-    delay: 2.2,
-    duration: 8,
+    delay: 2,
+    duration: 9,
   },
   {
     left: "52%",
     height: "90px",
-    delay: 4.5,
-    duration: 7,
+    delay: 4,
+    duration: 8,
   },
   {
     left: "70%",
     height: "170px",
-    delay: 6.8,
-    duration: 8.5,
+    delay: 6,
+    duration: 9,
   },
   {
     left: "86%",
     height: "100px",
-    delay: 9.2,
-    duration: 7.5,
+    delay: 8,
+    duration: 8,
   },
 ];
-
-/* =====================================================
-   TYPING HEADLINES
-===================================================== */
 
 const typingTexts = [
   "Build a brand people choose.",
@@ -198,6 +189,10 @@ const typingTexts = [
   "Make your business stand out.",
   "Grow with better marketing.",
 ];
+
+/* =====================================================
+   HERO
+===================================================== */
 
 export default function Hero() {
   const [textIndex, setTextIndex] = useState(0);
@@ -211,7 +206,7 @@ export default function Hero() {
   useEffect(() => {
     const currentText = typingTexts[textIndex];
 
-    let speed = isDeleting ? 45 : 75;
+    let speed = isDeleting ? 40 : 70;
 
     if (!isDeleting && displayText === currentText) {
       speed = 1800;
@@ -219,11 +214,7 @@ export default function Hero() {
 
     if (isDeleting && displayText === "") {
       setIsDeleting(false);
-
-      setTextIndex(
-        (prev) => (prev + 1) % typingTexts.length
-      );
-
+      setTextIndex((prev) => (prev + 1) % typingTexts.length);
       return;
     }
 
@@ -232,27 +223,17 @@ export default function Hero() {
         setDisplayText((prev) => prev.slice(0, -1));
       } else {
         setDisplayText(
-          currentText.slice(
-            0,
-            displayText.length + 1
-          )
+          currentText.slice(0, displayText.length + 1)
         );
       }
 
-      if (
-        !isDeleting &&
-        displayText === currentText
-      ) {
+      if (!isDeleting && displayText === currentText) {
         setIsDeleting(true);
       }
     }, speed);
 
     return () => clearTimeout(timer);
-  }, [
-    displayText,
-    isDeleting,
-    textIndex,
-  ]);
+  }, [displayText, isDeleting, textIndex]);
 
   return (
     <section
@@ -267,15 +248,12 @@ export default function Hero() {
         dark:bg-[var(--color-deep)]
       "
     >
-
       {/* =====================================================
-          BACKGROUND
+          LIGHTWEIGHT BACKGROUND
       ===================================================== */}
 
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-
-        {/* BASE COLOR */}
-
+        {/* BASE */}
         <div
           className="
             absolute
@@ -285,226 +263,103 @@ export default function Hero() {
           "
         />
 
+        {/* STATIC SOFT GLOWS
+            No continuous animation + cheaper blur
+        */}
+
+        <div
+          className="
+            absolute
+            -right-40
+            -top-40
+            h-[500px]
+            w-[500px]
+            rounded-full
+            bg-[var(--color-green)]/10
+            blur-[90px]
+            dark:bg-[var(--color-green)]/15
+          "
+        />
+
+        <div
+          className="
+            absolute
+            -left-40
+            top-[35%]
+            h-[360px]
+            w-[360px]
+            rounded-full
+            bg-[var(--color-gold)]/8
+            blur-[80px]
+          "
+        />
+
+        <div
+          className="
+            absolute
+            left-1/2
+            top-1/2
+            h-[420px]
+            w-[600px]
+            -translate-x-1/2
+            -translate-y-1/2
+            rounded-full
+            bg-[var(--color-green)]/5
+            blur-[100px]
+            dark:bg-[var(--color-green)]/10
+          "
+        />
+
+        <div
+          className="
+            absolute
+            bottom-0
+            right-[10%]
+            h-[260px]
+            w-[260px]
+            rounded-full
+            bg-[var(--color-sand)]/8
+            blur-[80px]
+          "
+        />
+
+        {/* LIGHT OVERLAY */}
+        <div
+          className="
+            absolute
+            inset-0
+            bg-white/[0.12]
+            dark:bg-black/10
+          "
+        />
+
         {/* =================================================
-            GLASS OVERLAY
+            STATIC GRID
+
+            Grid does NOT move anymore.
+            This saves continuous GPU work.
         ================================================= */}
 
         <div
           className="
             absolute
             inset-0
-            bg-white/[0.16]
-            backdrop-blur-[2px]
-            dark:bg-[var(--color-night)]/20
-          "
-        />
-
-        {/* =================================================
-            SAGE GLOW
-        ================================================= */}
-
-        <motion.div
-          className="
-            absolute
-            -right-[12%]
-            -top-[18%]
-            h-[620px]
-            w-[620px]
-            rounded-full
-            bg-[var(--color-green)]/20
-            blur-3xl
-          "
-          animate={{
-            scale: [1, 1.08, 1],
-            x: [0, -25, 0],
-            y: [0, 20, 0],
-          }}
-          transition={{
-            duration: 10,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        />
-
-        {/* =================================================
-            GOLD GLOW
-        ================================================= */}
-
-        <motion.div
-          className="
-            absolute
-            -left-[12%]
-            top-[35%]
-            h-[420px]
-            w-[420px]
-            rounded-full
-            bg-[var(--color-gold)]/10
-            blur-[120px]
-          "
-          animate={{
-            scale: [1, 1.15, 1],
-            opacity: [0.35, 0.6, 0.35],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        />
-
-        {/* =================================================
-            CENTER GLOW
-        ================================================= */}
-
-        <motion.div
-          className="
-            absolute
-            left-1/2
-            top-[48%]
-            h-[420px]
-            w-[650px]
-            -translate-x-1/2
-            -translate-y-1/2
-            rounded-full
-            bg-[var(--color-green)]/10
-            blur-[130px]
-            dark:bg-[var(--color-green)]/20
-          "
-          animate={{
-            scale: [1, 1.08, 1],
-            opacity: [0.25, 0.45, 0.25],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        />
-
-        {/* =================================================
-            WARM GLOW
-        ================================================= */}
-
-        <motion.div
-          className="
-            absolute
-            bottom-[8%]
-            right-[10%]
-            h-[280px]
-            w-[280px]
-            rounded-full
-            bg-[var(--color-sand)]/10
-            blur-[100px]
-          "
-          animate={{
-            scale: [1, 1.12, 1],
-            opacity: [0.2, 0.4, 0.2],
-          }}
-          transition={{
-            duration: 9,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        />
-
-        {/* =================================================
-            LIGHT GRID
-        ================================================= */}
-
-        <motion.div
-          className="
-            absolute
-            inset-[-100px]
-            opacity-[0.07]
-            dark:hidden
+            opacity-[0.055]
+            dark:opacity-[0.04]
           "
           style={{
             backgroundImage: `
               linear-gradient(
-                rgba(12,59,46,0.16) 1px,
+                rgba(12,59,46,0.18) 1px,
                 transparent 1px
               ),
               linear-gradient(
                 90deg,
-                rgba(12,59,46,0.16) 1px,
+                rgba(12,59,46,0.18) 1px,
                 transparent 1px
               )
             `,
             backgroundSize: "70px 70px",
-          }}
-          animate={{
-            x: [0, 70],
-            y: [0, 70],
-          }}
-          transition={{
-            duration: 22,
-            repeat: Infinity,
-            ease: "linear",
-          }}
-        />
-
-        {/* =================================================
-            DARK GRID
-        ================================================= */}
-
-        <motion.div
-          className="
-            absolute
-            inset-[-100px]
-            hidden
-            opacity-[0.06]
-            dark:block
-          "
-          style={{
-            backgroundImage: `
-              linear-gradient(
-                rgba(241,243,237,0.12) 1px,
-                transparent 1px
-              ),
-              linear-gradient(
-                90deg,
-                rgba(241,243,237,0.12) 1px,
-                transparent 1px
-              )
-            `,
-            backgroundSize: "70px 70px",
-          }}
-          animate={{
-            x: [0, 70],
-            y: [0, 70],
-          }}
-          transition={{
-            duration: 22,
-            repeat: Infinity,
-            ease: "linear",
-          }}
-        />
-
-        {/* =================================================
-            MOVING LIGHT
-        ================================================= */}
-
-        <motion.div
-          className="
-            absolute
-            inset-y-0
-            left-[-35%]
-            w-[35%]
-            rotate-[15deg]
-            bg-gradient-to-r
-            from-transparent
-            via-[var(--color-green)]/15
-            to-transparent
-            blur-2xl
-          "
-          animate={{
-            x: ["0%", "420%"],
-          }}
-          transition={{
-            duration: 12,
-            repeat: Infinity,
-            repeatDelay: 3,
-            ease: "easeInOut",
           }}
         />
 
@@ -513,99 +368,83 @@ export default function Hero() {
         ================================================= */}
 
         <div className="absolute inset-0 overflow-hidden">
+          {fallingLines.map((line, index) => (
+            <motion.div
+              key={index}
+              className="absolute top-[-180px] w-px will-change-transform"
+              style={{
+                left: line.left,
+                height: line.height,
+              }}
+              animate={{
+                y: ["0vh", "120vh"],
+                opacity: [0, 0.22, 0.12, 0],
+              }}
+              transition={{
+                duration: line.duration,
+                delay: line.delay,
+                repeat: Infinity,
+                repeatDelay: 3,
+                ease: "linear",
+              }}
+            >
+              <div
+                className="
+                  h-full
+                  w-full
+                  bg-gradient-to-b
+                  from-transparent
+                  via-[var(--color-green)]/60
+                  to-transparent
+                "
+              />
 
-          {fallingLines.map(
-            (line, index) => (
-              <motion.div
-                key={index}
+              <div
                 className="
                   absolute
-                  top-[-180px]
-                  w-px
+                  bottom-0
+                  left-1/2
+                  h-1
+                  w-1
+                  -translate-x-1/2
+                  rounded-full
+                  bg-[var(--color-gold)]
+                  opacity-70
                 "
-                style={{
-                  left: line.left,
-                  height: line.height,
-                }}
-                animate={{
-                  y: ["0vh", "120vh"],
-                  opacity: [
-                    0,
-                    0.25,
-                    0.15,
-                    0,
-                  ],
-                }}
-                transition={{
-                  duration: line.duration,
-                  delay: line.delay,
-                  repeat: Infinity,
-                  repeatDelay: 2,
-                  ease: "linear",
-                }}
-              >
-                <div
-                  className="
-                    h-full
-                    w-full
-                    bg-gradient-to-b
-                    from-transparent
-                    via-[var(--color-green)]/70
-                    to-transparent
-                  "
-                />
-
-                <div
-                  className="
-                    absolute
-                    bottom-0
-                    left-1/2
-                    h-1
-                    w-1
-                    -translate-x-1/2
-                    rounded-full
-                    bg-[var(--color-gold)]
-                    opacity-80
-                    shadow-[0_0_12px_var(--color-gold)]
-                  "
-                />
-              </motion.div>
-            )
-          )}
-
+              />
+            </motion.div>
+          ))}
         </div>
 
         {/* =================================================
-            HORIZONTAL GOLD LIGHT
+            VERY LIGHT HORIZONTAL LIGHT
         ================================================= */}
 
         <motion.div
           className="
             absolute
             left-[-30%]
-            top-[50%]
+            top-1/2
             h-px
             w-[160%]
             bg-gradient-to-r
             from-transparent
-            via-[var(--color-gold)]/25
+            via-[var(--color-gold)]/15
             to-transparent
+            will-change-transform
           "
           animate={{
-            x: ["-5%", "5%", "-5%"],
-            opacity: [0.15, 0.4, 0.15],
+            x: ["-3%", "3%", "-3%"],
+            opacity: [0.15, 0.3, 0.15],
           }}
           transition={{
-            duration: 9,
+            duration: 12,
             repeat: Infinity,
             ease: "easeInOut",
           }}
         />
 
-        {/* =================================================
-            BOTTOM FADE
-        ================================================= */}
-
+        {/* BOTTOM FADE */}
         <div
           className="
             absolute
@@ -618,7 +457,6 @@ export default function Hero() {
             dark:from-[var(--color-deep)]
           "
         />
-
       </div>
 
       {/* =====================================================
@@ -638,7 +476,6 @@ export default function Hero() {
           py-24
         "
       >
-
         <div
           className="
             mx-auto
@@ -647,150 +484,81 @@ export default function Hero() {
             text-center
           "
         >
-
           {/* =================================================
-              ANIMATED ICON CLUSTER
+              ICON CLUSTER
           ================================================= */}
-
           <div
-            className="
-              relative
-              mx-auto
-              mb-8
-              flex
-              h-12
-              w-[210px]
-              items-center
-              justify-center
-              sm:h-14
-              sm:w-[220px]
-            "
-          >
+  className="
+    relative
+    mx-auto
+    mb-8
+    flex
+    h-12
+    w-[210px]
+    items-center
+    justify-center
+  "
+>
+  {heroIcons.map(({ Icon, color }, index) => {
+    const positions = [-57.6, -28.8, 0, 28.8, 57.6];
 
-            {heroIcons.map(
-              ({ Icon, color }, index) => {
+    return (
+      <motion.div
+        key={index}
+        className="
+          absolute
+          z-10
+          flex
+          h-10
+          w-10
+          items-center
+          justify-center
+          rounded-full
 
-                /*
-                  Much smaller spacing.
+          /* LIGHT MODE */
+          border
+          border-[var(--color-green)]/25
+          bg-[var(--color-deep)]
+          shadow-[0_6px_20px_rgba(12,59,46,0.15)]
 
-                  Positions:
-                  -72
-                  -36
-                   0
-                  +36
-                  +72
+          /* DARK MODE */
+          dark:border-[var(--color-green)]/40
+          dark:bg-[var(--color-cream)]
+          dark:shadow-[0_6px_22px_rgba(0,0,0,0.3)]
 
-                  Circle = 32px
-                  Gap between circles = 4px
-
-                  So there is NO excessive overlap.
-                */
-
-                const positions = [
-  -57.6,
-  -28.8,
-  0,
-  28.8,
-  57.6,
-];
-
-                return (
-                  <motion.div
-                    key={index}
-                    className="
-  absolute
-  z-10
-  flex
-  h-10
-  w-10
-  items-center
-  justify-center
-  rounded-full
-  border
-  border-[var(--color-deep)]/10
-  bg-[var(--color-deep)]
-  shadow-[0_6px_20px_rgba(12,59,46,0.18)]
-  dark:border-[#B8D8B0]/20
-  dark:bg-[#B8D8B0]
-  dark:shadow-[0_6px_20px_rgba(0,0,0,0.25)]
-"
-                    initial={{
-                      x: 0,
-                      scale: 0.8,
-                      opacity: 1,
-                    }}
-                    animate={{
-                      x: [
-                        0,
-                        0,
-                        positions[index],
-                        positions[index],
-                        positions[index],
-                        0,
-                        0,
-                      ],
-
-                      scale: [
-                        0.8,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        0.8,
-                      ],
-
-                      /*
-                        IMPORTANT:
-                        opacity never goes to 0.
-                        Icons will NOT disappear.
-                      */
-
-                      opacity: [
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                      ],
-                    }}
-                    transition={{
-                      duration: 18,
-
-                      times: [
-                        0,
-                        0.08,
-                        0.20,
-                        0.30,
-                        0.70,
-                        0.90,
-                        1,
-                      ],
-
-                      delay: index * 0.05,
-
-                      repeat: Infinity,
-
-                      /*
-                        After reaching the horizontal
-                        position, stays there for around
-                        10 seconds before returning.
-                      */
-
-                      repeatDelay: 0,
-
-                      ease: "easeInOut",
-                    }}
-                  >
-                    <Icon color={color} />
-                  </motion.div>
-                );
-              }
-            )}
-
-          </div>
+          will-change-transform
+        "
+        initial={{
+          x: 0,
+          scale: 0.85,
+        }}
+        animate={{
+          x: [
+            0,
+            positions[index],
+            positions[index],
+            0,
+          ],
+          scale: [
+            0.85,
+            1,
+            1,
+            0.85,
+          ],
+        }}
+        transition={{
+          duration: 16,
+          times: [0, 0.2, 0.8, 1],
+          delay: index * 0.08,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+      >
+        <Icon color={color} />
+      </motion.div>
+    );
+  })}
+</div>
 
           {/* =================================================
               TYPING HEADING
@@ -799,15 +567,15 @@ export default function Hero() {
           <motion.h1
             initial={{
               opacity: 0,
-              y: 35,
+              y: 25,
             }}
             animate={{
               opacity: 1,
               y: 0,
             }}
             transition={{
-              duration: 0.8,
-              delay: 0.1,
+              duration: 0.7,
+              delay: 0.05,
               ease: [0.16, 1, 0.3, 1],
             }}
             className="
@@ -824,7 +592,6 @@ export default function Hero() {
               dark:text-[var(--color-cream)]
             "
           >
-
             {displayText}
 
             <motion.span
@@ -847,7 +614,6 @@ export default function Hero() {
                 align-middle
               "
             />
-
           </motion.h1>
 
           {/* =================================================
@@ -857,15 +623,15 @@ export default function Hero() {
           <motion.p
             initial={{
               opacity: 0,
-              y: 20,
+              y: 15,
             }}
             animate={{
               opacity: 1,
               y: 0,
             }}
             transition={{
-              duration: 0.7,
-              delay: 0.25,
+              duration: 0.6,
+              delay: 0.2,
             }}
             className="
               mx-auto
@@ -880,7 +646,8 @@ export default function Hero() {
               dark:text-[var(--color-cream)]/65
             "
           >
-            We combine strategy, creative, technology, and performance marketing to turn attention into measurable growth.
+            We combine strategy, creative, technology, and performance
+            marketing to turn attention into measurable growth.
           </motion.p>
 
           {/* =================================================
@@ -890,15 +657,15 @@ export default function Hero() {
           <motion.div
             initial={{
               opacity: 0,
-              y: 20,
+              y: 15,
             }}
             animate={{
               opacity: 1,
               y: 0,
             }}
             transition={{
-              duration: 0.7,
-              delay: 0.35,
+              duration: 0.6,
+              delay: 0.3,
             }}
             className="
               mt-9
@@ -910,7 +677,6 @@ export default function Hero() {
               sm:flex-row
             "
           >
-
             <button
               type="button"
               onClick={() => {
@@ -930,12 +696,12 @@ export default function Hero() {
                 text-sm
                 font-bold
                 text-[var(--color-deep)]
-                shadow-[0_12px_35px_rgba(255,186,0,0.20)]
+                shadow-[0_10px_25px_rgba(255,186,0,0.18)]
                 transition-all
                 duration-300
                 hover:-translate-y-1
                 hover:bg-[#E9A900]
-                hover:shadow-[0_18px_45px_rgba(255,186,0,0.30)]
+                hover:shadow-[0_15px_35px_rgba(255,186,0,0.25)]
                 focus:outline-none
                 focus:ring-2
                 focus:ring-[var(--color-gold)]/40
@@ -970,7 +736,6 @@ export default function Hero() {
             >
               Start Your Growth
             </Button>
-
           </motion.div>
 
           {/* =================================================
@@ -985,8 +750,8 @@ export default function Hero() {
               opacity: 1,
             }}
             transition={{
-              duration: 0.8,
-              delay: 0.65,
+              duration: 0.7,
+              delay: 0.55,
             }}
             className="
               mx-auto
@@ -1005,7 +770,6 @@ export default function Hero() {
               dark:text-[var(--color-cream)]/40
             "
           >
-
             <span>Strategy</span>
 
             <span className="h-1 w-1 rounded-full bg-[var(--color-gold)]" />
@@ -1019,7 +783,6 @@ export default function Hero() {
             <span className="h-1 w-1 rounded-full bg-[var(--color-sand)]" />
 
             <span>Performance</span>
-
           </motion.div>
 
           {/* =================================================
@@ -1029,15 +792,15 @@ export default function Hero() {
           <motion.div
             initial={{
               opacity: 0,
-              y: 10,
+              y: 8,
             }}
             animate={{
               opacity: 1,
               y: 0,
             }}
             transition={{
-              delay: 1,
-              duration: 0.8,
+              delay: 0.9,
+              duration: 0.6,
             }}
             className="
               mx-auto
@@ -1049,7 +812,6 @@ export default function Hero() {
               dark:text-[var(--color-cream)]/40
             "
           >
-
             <span
               className="
                 text-[9px]
@@ -1063,7 +825,7 @@ export default function Hero() {
 
             <motion.div
               animate={{
-                y: [0, 7, 0],
+                y: [0, 6, 0],
                 opacity: [0.45, 1, 0.45],
               }}
               transition={{
@@ -1078,7 +840,6 @@ export default function Hero() {
                 items-center
               "
             >
-
               <span
                 className="
                   h-6
@@ -1101,15 +862,10 @@ export default function Hero() {
                   border-[var(--color-gold)]
                 "
               />
-
             </motion.div>
-
           </motion.div>
-
         </div>
-
       </div>
-
     </section>
   );
 }
