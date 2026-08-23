@@ -24,9 +24,9 @@ export const metadata = {
   description:
     "MarkitMe helps businesses grow through branding, website development, digital marketing, and strategy.",
   icons: {
-    icon: "/favicon.png",
-    shortcut: "/favicon.png",
-    apple: "/favicon.png",
+    icon: "/images/favicon.png",
+    shortcut: "/images/favicon.png",
+    apple: "/images/favicon.png",
   },
 };
 
