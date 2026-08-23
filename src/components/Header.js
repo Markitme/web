@@ -130,10 +130,10 @@ export default function Header() {
             overflow-hidden
 
             border-b
-            border-[#0C3B2E]/10
+            border-[var(--color-deep)]/10
 
-            bg-[#FFBA00]
-            text-[#0C3B2E]
+            bg-[var(--color-gold)]
+            text-[var(--color-deep)]
           "
         >
 
@@ -191,8 +191,8 @@ export default function Header() {
                   items-center
                   justify-center
                   rounded-full
-                  bg-[#0C3B2E]
-                  text-[#FFBA00]
+                  bg-[var(--color-deep)]
+                  text-[var(--color-gold)]
                 "
               >
                 <Sparkles
@@ -208,7 +208,7 @@ export default function Header() {
                     h-1.5
                     w-1.5
                     rounded-full
-                    bg-[#6D9773]
+                    bg-[var(--color-green)]
                   "
                 />
               </span>
@@ -244,7 +244,7 @@ export default function Header() {
                   h-1.5
                   w-1.5
                   rounded-full
-                  bg-[#6D9773]
+                  bg-[var(--color-green)]
 
                   sm:block
                 "
@@ -266,9 +266,9 @@ export default function Header() {
             relative
 
             border-b
-            border-[#0C3B2E]/10
+            border-[var(--color-deep)]/10
 
-            bg-[#F1F3ED]/95
+            bg-[var(--color-cream)]/95
 
             shadow-[0_8px_30px_rgba(12,59,46,0.04)]
 
@@ -277,8 +277,8 @@ export default function Header() {
             transition-colors
             duration-300
 
-            dark:border-[#F1F3ED]/10
-            dark:bg-[#0C3B2E]/95
+            dark:border-[var(--color-cream)]/10
+            dark:bg-[var(--color-deep)]/95
             dark:shadow-[0_8px_30px_rgba(0,0,0,0.12)]
           "
           onMouseLeave={() =>
@@ -391,15 +391,15 @@ export default function Header() {
                       text-sm
                       font-semibold
 
-                      text-[#0C3B2E]/65
+                      text-[var(--color-deep)]/65
 
                       transition-colors
                       duration-300
 
-                      hover:text-[#6D9773]
+                      hover:text-[var(--color-green)]
 
-                      dark:text-[#F1F3ED]/65
-                      dark:hover:text-[#FFBA00]
+                      dark:text-[var(--color-cream)]/65
+                      dark:hover:text-[var(--color-gold)]
                     "
                   >
                     {link.name}
@@ -436,8 +436,8 @@ export default function Header() {
 
                   ${
                     servicesOpen
-                      ? "text-[#6D9773] dark:text-[#FFBA00]"
-                      : "text-[#0C3B2E]/65 hover:text-[#6D9773] dark:text-[#F1F3ED]/65 dark:hover:text-[#FFBA00]"
+                      ? "text-[var(--color-green)] dark:text-[var(--color-gold)]"
+                      : "text-[var(--color-deep)]/65 hover:text-[var(--color-green)] dark:text-[var(--color-cream)]/65 dark:hover:text-[var(--color-gold)]"
                   }
                 `}
                 aria-expanded={
@@ -478,15 +478,15 @@ export default function Header() {
                       text-sm
                       font-semibold
 
-                      text-[#0C3B2E]/65
+                      text-[var(--color-deep)]/65
 
                       transition-colors
                       duration-300
 
-                      hover:text-[#6D9773]
+                      hover:text-[var(--color-green)]
 
-                      dark:text-[#F1F3ED]/65
-                      dark:hover:text-[#FFBA00]
+                      dark:text-[var(--color-cream)]/65
+                      dark:hover:text-[var(--color-gold)]
                     "
                   >
                     {link.name}
@@ -576,26 +576,26 @@ export default function Header() {
                   rounded-full
 
                   border
-                  border-[#0C3B2E]/15
+                  border-[var(--color-deep)]/15
 
-                  bg-[#0C3B2E]/[0.03]
+                  bg-[var(--color-deep)]/[0.03]
 
-                  text-[#0C3B2E]
+                  text-[var(--color-deep)]
 
                   transition-all
                   duration-300
 
-                  hover:border-[#6D9773]
-                  hover:bg-[#6D9773]/10
-                  hover:text-[#6D9773]
+                  hover:border-[var(--color-green)]
+                  hover:bg-[var(--color-green)]/10
+                  hover:text-[var(--color-green)]
 
-                  dark:border-[#F1F3ED]/15
-                  dark:bg-[#F1F3ED]/5
-                  dark:text-[#F1F3ED]
+                  dark:border-[var(--color-cream)]/15
+                  dark:bg-[var(--color-cream)]/5
+                  dark:text-[var(--color-cream)]
 
-                  dark:hover:border-[#6D9773]
-                  dark:hover:bg-[#6D9773]/15
-                  dark:hover:text-[#FFBA00]
+                  dark:hover:border-[var(--color-green)]
+                  dark:hover:bg-[var(--color-green)]/15
+                  dark:hover:text-[var(--color-gold)]
                 "
                 aria-label={
                   menuOpen
@@ -634,17 +634,17 @@ export default function Header() {
               top-full
 
               border-b
-              border-[#0C3B2E]/10
+              border-[var(--color-deep)]/10
 
-              bg-[#F1F3ED]
+              bg-[var(--color-cream)]
 
               shadow-2xl
 
               transition-all
               duration-300
 
-              dark:border-[#F1F3ED]/10
-              dark:bg-[#0C3B2E]
+              dark:border-[var(--color-cream)]/10
+              dark:bg-[var(--color-deep)]
 
               ${
                 servicesOpen
@@ -672,12 +672,12 @@ export default function Header() {
                 <div
                   className="
                     border-r
-                    border-[#0C3B2E]/10
+                    border-[var(--color-deep)]/10
 
                     px-8
                     py-9
 
-                    dark:border-[#F1F3ED]/10
+                    dark:border-[var(--color-cream)]/10
 
                     xl:px-10
                   "
@@ -690,9 +690,9 @@ export default function Header() {
                       uppercase
                       tracking-[0.2em]
 
-                      text-[#6D9773]
+                      text-[var(--color-green)]
 
-                      dark:text-[#FFBA00]
+                      dark:text-[var(--color-gold)]
                     "
                   >
                     What we do
@@ -708,9 +708,9 @@ export default function Header() {
                       leading-[0.98]
                       tracking-[-0.05em]
 
-                      text-[#0C3B2E]
+                      text-[var(--color-deep)]
 
-                      dark:text-[#F1F3ED]
+                      dark:text-[var(--color-cream)]
                     "
                   >
                     Strategy and creative work
@@ -725,9 +725,9 @@ export default function Header() {
                       text-sm
                       leading-7
 
-                      text-[#0C3B2E]/55
+                      text-[var(--color-deep)]/55
 
-                      dark:text-[#F1F3ED]/55
+                      dark:text-[var(--color-cream)]/55
                     "
                   >
                     We connect strategy,
@@ -790,7 +790,7 @@ export default function Header() {
                             rounded-2xl
 
                             border
-                            border-[#0C3B2E]/10
+                            border-[var(--color-deep)]/10
 
                             bg-white/50
 
@@ -801,14 +801,14 @@ export default function Header() {
 
                             hover:-translate-y-0.5
 
-                            hover:border-[#6D9773]/40
-                            hover:bg-[#6D9773]/10
+                            hover:border-[var(--color-green)]/40
+                            hover:bg-[var(--color-green)]/10
 
-                            dark:border-[#F1F3ED]/10
-                            dark:bg-[#F1F3ED]/[0.03]
+                            dark:border-[var(--color-cream)]/10
+                            dark:bg-[var(--color-cream)]/[0.03]
 
-                            dark:hover:border-[#6D9773]/50
-                            dark:hover:bg-[#6D9773]/10
+                            dark:hover:border-[var(--color-green)]/50
+                            dark:hover:bg-[var(--color-green)]/10
                           "
                         >
 
@@ -824,9 +824,9 @@ export default function Header() {
                               justify-center
                               rounded-xl
 
-                              bg-[#FFBA00]
+                              bg-[var(--color-gold)]
 
-                              text-[#0C3B2E]
+                              text-[var(--color-deep)]
                             "
                           >
                             <Icon
@@ -845,14 +845,14 @@ export default function Header() {
                                 text-sm
                                 font-black
 
-                                text-[#0C3B2E]
+                                text-[var(--color-deep)]
 
                                 transition-colors
 
-                                group-hover:text-[#6D9773]
+                                group-hover:text-[var(--color-green)]
 
-                                dark:text-[#F1F3ED]
-                                dark:group-hover:text-[#FFBA00]
+                                dark:text-[var(--color-cream)]
+                                dark:group-hover:text-[var(--color-gold)]
                               "
                             >
                               {service.title}
@@ -866,9 +866,9 @@ export default function Header() {
                                 text-xs
                                 leading-5
 
-                                text-[#0C3B2E]/50
+                                text-[var(--color-deep)]/50
 
-                                dark:text-[#F1F3ED]/50
+                                dark:text-[var(--color-cream)]/50
                               "
                             >
                               {
@@ -902,17 +902,17 @@ export default function Header() {
               overflow-hidden
 
               border-t
-              border-[#0C3B2E]/10
+              border-[var(--color-deep)]/10
 
-              bg-[#F1F3ED]
+              bg-[var(--color-cream)]
 
               transition-all
               duration-300
 
               lg:hidden
 
-              dark:border-[#F1F3ED]/10
-              dark:bg-[#0C3B2E]
+              dark:border-[var(--color-cream)]/10
+              dark:bg-[var(--color-deep)]
 
               ${
                 menuOpen
@@ -940,17 +940,17 @@ export default function Header() {
                   onClick={closeMenus}
                   className="
                     border-b
-                    border-[#0C3B2E]/10
+                    border-[var(--color-deep)]/10
 
                     py-4
 
                     text-lg
                     font-bold
 
-                    text-[#0C3B2E]
+                    text-[var(--color-deep)]
 
-                    dark:border-[#F1F3ED]/10
-                    dark:text-[#F1F3ED]
+                    dark:border-[var(--color-cream)]/10
+                    dark:text-[var(--color-cream)]
                   "
                 >
                   Home
@@ -964,17 +964,17 @@ export default function Header() {
                   onClick={closeMenus}
                   className="
                     border-b
-                    border-[#0C3B2E]/10
+                    border-[var(--color-deep)]/10
 
                     py-4
 
                     text-lg
                     font-bold
 
-                    text-[#0C3B2E]
+                    text-[var(--color-deep)]
 
-                    dark:border-[#F1F3ED]/10
-                    dark:text-[#F1F3ED]
+                    dark:border-[var(--color-cream)]/10
+                    dark:text-[var(--color-cream)]
                   "
                 >
                   About
@@ -997,7 +997,7 @@ export default function Header() {
                     justify-between
 
                     border-b
-                    border-[#0C3B2E]/10
+                    border-[var(--color-deep)]/10
 
                     py-4
 
@@ -1005,10 +1005,10 @@ export default function Header() {
                     text-lg
                     font-bold
 
-                    text-[#0C3B2E]
+                    text-[var(--color-deep)]
 
-                    dark:border-[#F1F3ED]/10
-                    dark:text-[#F1F3ED]
+                    dark:border-[var(--color-cream)]/10
+                    dark:text-[var(--color-cream)]
                   "
                   aria-expanded={
                     mobileServicesOpen
@@ -1053,15 +1053,15 @@ export default function Header() {
                   <div
                     className="
                       border-b
-                      border-[#0C3B2E]/10
+                      border-[var(--color-deep)]/10
 
-                      bg-[#0C3B2E]/[0.025]
+                      bg-[var(--color-deep)]/[0.025]
 
                       px-4
                       py-3
 
-                      dark:border-[#F1F3ED]/10
-                      dark:bg-[#F1F3ED]/[0.03]
+                      dark:border-[var(--color-cream)]/10
+                      dark:bg-[var(--color-cream)]/[0.03]
                     "
                   >
 
@@ -1075,7 +1075,7 @@ export default function Header() {
                         flex
                         rounded-xl
 
-                        bg-[#FFBA00]
+                        bg-[var(--color-gold)]
 
                         px-4
                         py-3
@@ -1083,7 +1083,7 @@ export default function Header() {
                         text-sm
                         font-black
 
-                        text-[#0C3B2E]
+                        text-[var(--color-deep)]
                       "
                     >
                       View All Services
@@ -1118,24 +1118,24 @@ export default function Header() {
                               text-sm
                               font-bold
 
-                              text-[#0C3B2E]/70
+                              text-[var(--color-deep)]/70
 
                               transition
 
-                              hover:bg-[#FFBA00]/15
-                              hover:text-[#6D9773]
+                              hover:bg-[var(--color-gold)]/15
+                              hover:text-[var(--color-green)]
 
-                              dark:text-[#F1F3ED]/70
-                              dark:hover:text-[#FFBA00]
+                              dark:text-[var(--color-cream)]/70
+                              dark:hover:text-[var(--color-gold)]
                             "
                           >
 
                             <Icon
                               size={17}
                               className="
-                                text-[#6D9773]
+                                text-[var(--color-green)]
 
-                                dark:text-[#FFBA00]
+                                dark:text-[var(--color-gold)]
                               "
                             />
 
@@ -1158,17 +1158,17 @@ export default function Header() {
                   onClick={closeMenus}
                   className="
                     border-b
-                    border-[#0C3B2E]/10
+                    border-[var(--color-deep)]/10
 
                     py-4
 
                     text-lg
                     font-bold
 
-                    text-[#0C3B2E]
+                    text-[var(--color-deep)]
 
-                    dark:border-[#F1F3ED]/10
-                    dark:text-[#F1F3ED]
+                    dark:border-[var(--color-cream)]/10
+                    dark:text-[var(--color-cream)]
                   "
                 >
                   Work
@@ -1182,17 +1182,17 @@ export default function Header() {
                   onClick={closeMenus}
                   className="
                     border-b
-                    border-[#0C3B2E]/10
+                    border-[var(--color-deep)]/10
 
                     py-4
 
                     text-lg
                     font-bold
 
-                    text-[#0C3B2E]
+                    text-[var(--color-deep)]
 
-                    dark:border-[#F1F3ED]/10
-                    dark:text-[#F1F3ED]
+                    dark:border-[var(--color-cream)]/10
+                    dark:text-[var(--color-cream)]
                   "
                 >
                   Blog
@@ -1206,17 +1206,17 @@ export default function Header() {
                   onClick={closeMenus}
                   className="
                     border-b
-                    border-[#0C3B2E]/10
+                    border-[var(--color-deep)]/10
 
                     py-4
 
                     text-lg
                     font-bold
 
-                    text-[#0C3B2E]
+                    text-[var(--color-deep)]
 
-                    dark:border-[#F1F3ED]/10
-                    dark:text-[#F1F3ED]
+                    dark:border-[var(--color-cream)]/10
+                    dark:text-[var(--color-cream)]
                   "
                 >
                   Contact

@@ -131,23 +131,23 @@ const SvgMegaphone = ({ color }) => (
 const heroIcons = [
   {
     Icon: SvgGithub,
-    color: "#FFBA00",
+    color: "var(--color-gold)",
   },
   {
     Icon: SvgSearch,
-    color: "#6D9773",
+    color: "var(--color-green)",
   },
   {
     Icon: SvgPalette,
-    color: "#BB8A52",
+    color: "var(--color-sand)",
   },
   {
     Icon: SvgCamera,
-    color: "#FFBA00",
+    color: "var(--color-gold)",
   },
   {
     Icon: SvgMegaphone,
-    color: "#6D9773",
+    color: "var(--color-green)",
   },
 ];
 
@@ -263,8 +263,8 @@ export default function Hero() {
         isolate
         min-h-[700px]
         overflow-hidden
-        bg-[#F1F3ED]
-        dark:bg-[#0C3B2E]
+        bg-[var(--color-cream)]
+        dark:bg-[var(--color-deep)]
       "
     >
 
@@ -280,8 +280,8 @@ export default function Hero() {
           className="
             absolute
             inset-0
-            bg-[#F1F3ED]
-            dark:bg-[#0C3B2E]
+            bg-[var(--color-cream)]
+            dark:bg-[var(--color-deep)]
           "
         />
 
@@ -295,7 +295,7 @@ export default function Hero() {
             inset-0
             bg-white/[0.16]
             backdrop-blur-[2px]
-            dark:bg-[#071F18]/20
+            dark:bg-[var(--color-night)]/20
           "
         />
 
@@ -311,7 +311,7 @@ export default function Hero() {
             h-[620px]
             w-[620px]
             rounded-full
-            bg-[#6D9773]/20
+            bg-[var(--color-green)]/20
             blur-3xl
           "
           animate={{
@@ -338,7 +338,7 @@ export default function Hero() {
             h-[420px]
             w-[420px]
             rounded-full
-            bg-[#FFBA00]/10
+            bg-[var(--color-gold)]/10
             blur-[120px]
           "
           animate={{
@@ -366,9 +366,9 @@ export default function Hero() {
             -translate-x-1/2
             -translate-y-1/2
             rounded-full
-            bg-[#6D9773]/10
+            bg-[var(--color-green)]/10
             blur-[130px]
-            dark:bg-[#6D9773]/20
+            dark:bg-[var(--color-green)]/20
           "
           animate={{
             scale: [1, 1.08, 1],
@@ -393,7 +393,7 @@ export default function Hero() {
             h-[280px]
             w-[280px]
             rounded-full
-            bg-[#BB8A52]/10
+            bg-[var(--color-sand)]/10
             blur-[100px]
           "
           animate={{
@@ -493,7 +493,7 @@ export default function Hero() {
             rotate-[15deg]
             bg-gradient-to-r
             from-transparent
-            via-[#6D9773]/15
+            via-[var(--color-green)]/15
             to-transparent
             blur-2xl
           "
@@ -550,7 +550,7 @@ export default function Hero() {
                     w-full
                     bg-gradient-to-b
                     from-transparent
-                    via-[#6D9773]/70
+                    via-[var(--color-green)]/70
                     to-transparent
                   "
                 />
@@ -564,9 +564,9 @@ export default function Hero() {
                     w-1
                     -translate-x-1/2
                     rounded-full
-                    bg-[#FFBA00]
+                    bg-[var(--color-gold)]
                     opacity-80
-                    shadow-[0_0_12px_#FFBA00]
+                    shadow-[0_0_12px_var(--color-gold)]
                   "
                 />
               </motion.div>
@@ -588,7 +588,7 @@ export default function Hero() {
             w-[160%]
             bg-gradient-to-r
             from-transparent
-            via-[#FFBA00]/25
+            via-[var(--color-gold)]/25
             to-transparent
           "
           animate={{
@@ -613,9 +613,9 @@ export default function Hero() {
             bottom-0
             h-40
             bg-gradient-to-t
-            from-[#F1F3ED]
+            from-[var(--color-cream)]
             to-transparent
-            dark:from-[#0C3B2E]
+            dark:from-[var(--color-deep)]
           "
         />
 
@@ -707,8 +707,8 @@ export default function Hero() {
   justify-center
   rounded-full
   border
-  border-[#0C3B2E]/10
-  bg-[#0C3B2E]
+  border-[var(--color-deep)]/10
+  bg-[var(--color-deep)]
   shadow-[0_6px_20px_rgba(12,59,46,0.18)]
   dark:border-[#B8D8B0]/20
   dark:bg-[#B8D8B0]
@@ -817,11 +817,11 @@ export default function Hero() {
               font-black
               leading-[0.94]
               tracking-[-0.075em]
-              text-[#0C3B2E]
+              text-[var(--color-deep)]
               sm:text-6xl
               md:text-7xl
               lg:text-[6.5rem]
-              dark:text-[#F1F3ED]
+              dark:text-[var(--color-cream)]
             "
           >
 
@@ -843,7 +843,7 @@ export default function Hero() {
                 w-[3px]
                 translate-y-[0.05em]
                 rounded-full
-                bg-[#FFBA00]
+                bg-[var(--color-gold)]
                 align-middle
               "
             />
@@ -873,11 +873,11 @@ export default function Hero() {
               max-w-2xl
               text-base
               leading-7
-              text-[#0C3B2E]/65
+              text-[var(--color-deep)]/65
               sm:mt-6
               sm:text-lg
               sm:leading-8
-              dark:text-[#F1F3ED]/65
+              dark:text-[var(--color-cream)]/65
             "
           >
             We combine strategy, creative, technology, and performance marketing to turn attention into measurable growth.
@@ -925,11 +925,11 @@ export default function Hero() {
                 items-center
                 justify-center
                 rounded-full
-                bg-[#FFBA00]
+                bg-[var(--color-gold)]
                 px-7
                 text-sm
                 font-bold
-                text-[#0C3B2E]
+                text-[var(--color-deep)]
                 shadow-[0_12px_35px_rgba(255,186,0,0.20)]
                 transition-all
                 duration-300
@@ -938,7 +938,7 @@ export default function Hero() {
                 hover:shadow-[0_18px_45px_rgba(255,186,0,0.30)]
                 focus:outline-none
                 focus:ring-2
-                focus:ring-[#FFBA00]/40
+                focus:ring-[var(--color-gold)]/40
               "
             >
               Start Your Project
@@ -954,18 +954,18 @@ export default function Hero() {
                 items-center
                 justify-center
                 rounded-full
-                border-[#0C3B2E]/20
+                border-[var(--color-deep)]/20
                 bg-white/50
                 px-7
-                text-[#0C3B2E]
+                text-[var(--color-deep)]
                 backdrop-blur-md
-                hover:border-[#6D9773]
-                hover:bg-[#6D9773]/10
-                dark:border-[#F1F3ED]/20
-                dark:bg-[#F1F3ED]/5
-                dark:text-[#F1F3ED]
-                dark:hover:border-[#6D9773]
-                dark:hover:bg-[#6D9773]/15
+                hover:border-[var(--color-green)]
+                hover:bg-[var(--color-green)]/10
+                dark:border-[var(--color-cream)]/20
+                dark:bg-[var(--color-cream)]/5
+                dark:text-[var(--color-cream)]
+                dark:hover:border-[var(--color-green)]
+                dark:hover:bg-[var(--color-green)]/15
               "
             >
               Start Your Growth
@@ -1001,22 +1001,22 @@ export default function Hero() {
               font-semibold
               uppercase
               tracking-[0.2em]
-              text-[#0C3B2E]/45
-              dark:text-[#F1F3ED]/40
+              text-[var(--color-deep)]/45
+              dark:text-[var(--color-cream)]/40
             "
           >
 
             <span>Strategy</span>
 
-            <span className="h-1 w-1 rounded-full bg-[#FFBA00]" />
+            <span className="h-1 w-1 rounded-full bg-[var(--color-gold)]" />
 
             <span>Creative</span>
 
-            <span className="h-1 w-1 rounded-full bg-[#6D9773]" />
+            <span className="h-1 w-1 rounded-full bg-[var(--color-green)]" />
 
             <span>Technology</span>
 
-            <span className="h-1 w-1 rounded-full bg-[#BB8A52]" />
+            <span className="h-1 w-1 rounded-full bg-[var(--color-sand)]" />
 
             <span>Performance</span>
 
@@ -1045,8 +1045,8 @@ export default function Hero() {
               flex
               flex-col
               items-center
-              text-[#0C3B2E]/40
-              dark:text-[#F1F3ED]/40
+              text-[var(--color-deep)]/40
+              dark:text-[var(--color-cream)]/40
             "
           >
 
@@ -1084,9 +1084,9 @@ export default function Hero() {
                   h-6
                   w-px
                   bg-gradient-to-b
-                  from-[#FFBA00]
-                  to-[#0C3B2E]/20
-                  dark:to-[#F1F3ED]/20
+                  from-[var(--color-gold)]
+                  to-[var(--color-deep)]/20
+                  dark:to-[var(--color-cream)]/20
                 "
               />
 
@@ -1098,7 +1098,7 @@ export default function Hero() {
                   rotate-45
                   border-b
                   border-r
-                  border-[#FFBA00]
+                  border-[var(--color-gold)]
                 "
               />
 

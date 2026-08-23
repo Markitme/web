@@ -8,6 +8,7 @@ import { Pagination, Autoplay } from "swiper/modules";
 
 import { projects } from "@/data/projects";
 import Button from "./ui/Button";
+import SectionHeading from "./SectionHeading";
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -22,13 +23,13 @@ export default function CaseStudies() {
         overflow-hidden
 
         border-y
-        border-[#0C3B2E]/[0.08]
+        border-[var(--color-deep)]/[0.08]
 
         bg-[#E9EEE7]
 
         py-16
 
-        text-[#0C3B2E]
+        text-[var(--color-deep)]
 
         transition-colors
         duration-500
@@ -36,9 +37,9 @@ export default function CaseStudies() {
         sm:py-20
         lg:py-24
 
-        dark:border-[#F1F3ED]/[0.08]
-        dark:bg-[#071F18]
-        dark:text-[#F1F3ED]
+        dark:border-[var(--color-cream)]/[0.08]
+        dark:bg-[var(--color-night)]
+        dark:text-[var(--color-cream)]
       "
     >
       {/* =====================================================
@@ -66,11 +67,11 @@ export default function CaseStudies() {
 
             rounded-full
 
-            bg-[#6D9773]/[0.07]
+            bg-[var(--color-green)]/[0.07]
 
             blur-[110px]
 
-            dark:bg-[#6D9773]/[0.055]
+            dark:bg-[var(--color-green)]/[0.055]
           "
         />
 
@@ -87,11 +88,11 @@ export default function CaseStudies() {
 
             rounded-full
 
-            bg-[#FFBA00]/[0.045]
+            bg-[var(--color-gold)]/[0.045]
 
             blur-[110px]
 
-            dark:bg-[#FFBA00]/[0.025]
+            dark:bg-[var(--color-gold)]/[0.025]
           "
         />
       </div>
@@ -107,73 +108,12 @@ export default function CaseStudies() {
         ====================================================== */}
 
         <div className="mb-10 flex flex-col gap-6 sm:mb-12 lg:flex-row lg:items-end lg:justify-between">
-          <div className="max-w-[680px]">
-
-            {/* Eyebrow */}
-
-            <div className="flex items-center gap-2">
-              <span
-                className="
-                  h-1.5
-                  w-1.5
-                  rounded-full
-                  bg-[#FFBA00]
-                "
-              />
-
-              <p
-                className="
-                  text-[8px]
-                  font-black
-                  uppercase
-                  tracking-[0.22em]
-
-                  text-[#6D9773]
-
-                  sm:text-[9px]
-
-                  dark:text-[#FFBA00]
-                "
-              >
-                Selected Work
-              </p>
-               <span
-        className="
-          h-1.5
-          w-1.5
-          rounded-full
-          bg-[#6D9773]
-          dark:bg-[#FFBA00]
-        "
-      />
-            </div>
-
-            {/* Heading */}
-
-            <h2
-              className="
-                mt-3
-
-                text-3xl
-                font-black
-                leading-[0.95]
-                tracking-[-0.055em]
-
-                text-[#0C3B2E]
-
-                sm:text-4xl
-                md:text-5xl
-                lg:text-6xl
-
-                dark:text-[#F1F3ED]
-              "
-            >
+          <SectionHeading eyebrow="Selected Work">
               Ideas turned into{" "}
-              <span className="text-[#6D9773] dark:text-[#FFBA00]">
+              <span className="text-[var(--color-green)] dark:text-[var(--color-gold)]">
                 measurable impact.
               </span>
-            </h2>
-          </div>
+          </SectionHeading>
 
           <div className="shrink-0">
             <Button href="/work" variant="outline">
@@ -276,7 +216,7 @@ export default function CaseStudies() {
                       rounded-[22px]
 
                       border
-                      border-[#0C3B2E]/[0.09]
+                      border-[var(--color-deep)]/[0.09]
 
                       bg-white
 
@@ -287,14 +227,14 @@ export default function CaseStudies() {
 
                       hover:-translate-y-1
 
-                      hover:border-[#6D9773]/40
+                      hover:border-[var(--color-green)]/40
 
                       hover:shadow-[0_20px_50px_rgba(12,59,46,0.10)]
 
-                      dark:border-[#F1F3ED]/[0.09]
-                      dark:bg-[#0C3B2E]
+                      dark:border-[var(--color-cream)]/[0.09]
+                      dark:bg-[var(--color-deep)]
 
-                      dark:hover:border-[#FFBA00]/35
+                      dark:hover:border-[var(--color-gold)]/35
 
                       dark:hover:shadow-[0_20px_50px_rgba(0,0,0,0.18)]
                     "
@@ -312,7 +252,7 @@ export default function CaseStudies() {
 
                         overflow-hidden
 
-                        bg-[#0C3B2E]
+                        bg-[var(--color-deep)]
 
                         sm:h-[270px]
                         lg:h-[285px]
@@ -344,12 +284,12 @@ export default function CaseStudies() {
                           absolute
                           inset-0
 
-                          bg-[#0C3B2E]/25
+                          bg-[var(--color-deep)]/25
 
                           transition-all
                           duration-500
 
-                          group-hover:bg-[#0C3B2E]/35
+                          group-hover:bg-[var(--color-deep)]/35
                         "
                       />
 
@@ -363,8 +303,8 @@ export default function CaseStudies() {
                           h-2/3
 
                           bg-gradient-to-t
-                          from-[#0C3B2E]/90
-                          via-[#0C3B2E]/25
+                          from-[var(--color-deep)]/90
+                          via-[var(--color-deep)]/25
                           to-transparent
                         "
                       />
@@ -380,16 +320,16 @@ export default function CaseStudies() {
                           rounded-full
 
                           border
-                          border-[#F1F3ED]/25
+                          border-[var(--color-cream)]/25
 
-                          bg-[#0C3B2E]/45
+                          bg-[var(--color-deep)]/45
 
                           px-3
                           py-1.5
 
                           text-[9px]
                           font-bold
-                          text-[#F1F3ED]
+                          text-[var(--color-cream)]
 
                           backdrop-blur-md
                         "
@@ -411,16 +351,16 @@ export default function CaseStudies() {
                           rounded-full
 
                           border
-                          border-[#F1F3ED]/25
+                          border-[var(--color-cream)]/25
 
-                          bg-[#0C3B2E]/45
+                          bg-[var(--color-deep)]/45
 
                           px-3
                           py-1.5
 
                           text-[8px]
                           font-medium
-                          text-[#F1F3ED]
+                          text-[var(--color-cream)]
 
                           backdrop-blur-md
                         "
@@ -452,7 +392,7 @@ export default function CaseStudies() {
                               uppercase
                               tracking-[0.18em]
 
-                              text-[#FFBA00]
+                              text-[var(--color-gold)]
                             "
                           >
                             Case Study
@@ -466,7 +406,7 @@ export default function CaseStudies() {
                               text-lg
                               font-black
 
-                              text-[#F1F3ED]
+                              text-[var(--color-cream)]
                             "
                           >
                             {study.title}
@@ -486,9 +426,9 @@ export default function CaseStudies() {
 
                             rounded-full
 
-                            bg-[#FFBA00]
+                            bg-[var(--color-gold)]
 
-                            text-[#0C3B2E]
+                            text-[var(--color-deep)]
 
                             transition-transform
                             duration-300
@@ -511,7 +451,7 @@ export default function CaseStudies() {
                           h-[2px]
                           w-0
 
-                          bg-[#FFBA00]
+                          bg-[var(--color-gold)]
 
                           transition-all
                           duration-700
@@ -536,11 +476,11 @@ export default function CaseStudies() {
                           uppercase
                           tracking-[0.18em]
 
-                          text-[#6D9773]
+                          text-[var(--color-green)]
 
                           sm:text-[9px]
 
-                          dark:text-[#FFBA00]
+                          dark:text-[var(--color-gold)]
                         "
                       >
                         {study.category}
@@ -557,11 +497,11 @@ export default function CaseStudies() {
                           leading-[0.95]
                           tracking-[-0.045em]
 
-                          text-[#0C3B2E]
+                          text-[var(--color-deep)]
 
                           sm:text-[27px]
 
-                          dark:text-[#F1F3ED]
+                          dark:text-[var(--color-cream)]
                         "
                       >
                         {study.title}
@@ -601,9 +541,9 @@ export default function CaseStudies() {
                                   rounded-full
 
                                   border
-                                  border-[#0C3B2E]/10
+                                  border-[var(--color-deep)]/10
 
-                                  bg-[#E5EBE3]/60
+                                  bg-[var(--color-soft)]/60
 
                                   px-3
                                   py-1.5
@@ -616,10 +556,10 @@ export default function CaseStudies() {
                                   transition-colors
                                   duration-300
 
-                                  group-hover:border-[#6D9773]/30
+                                  group-hover:border-[var(--color-green)]/30
 
-                                  dark:border-[#F1F3ED]/10
-                                  dark:bg-[#F1F3ED]/[0.06]
+                                  dark:border-[var(--color-cream)]/10
+                                  dark:bg-[var(--color-cream)]/[0.06]
                                   dark:text-[#A8B9AE]
                                 "
                               >
@@ -644,9 +584,9 @@ export default function CaseStudies() {
                                   rounded-xl
 
                                   border
-                                  border-[#0C3B2E]/[0.06]
+                                  border-[var(--color-deep)]/[0.06]
 
-                                  bg-[#E5EBE3]/50
+                                  bg-[var(--color-soft)]/50
 
                                   px-3
                                   py-3
@@ -654,10 +594,10 @@ export default function CaseStudies() {
                                   transition-all
                                   duration-300
 
-                                  group-hover:border-[#6D9773]/20
+                                  group-hover:border-[var(--color-green)]/20
 
-                                  dark:border-[#F1F3ED]/[0.07]
-                                  dark:bg-[#071F18]/45
+                                  dark:border-[var(--color-cream)]/[0.07]
+                                  dark:bg-[var(--color-night)]/45
                                 "
                               >
                                 <p
@@ -668,11 +608,11 @@ export default function CaseStudies() {
 
                                     ${
                                       resultIndex === 1
-                                        ? "text-[#BB8A52]"
-                                        : "text-[#FFBA00]"
+                                        ? "text-[var(--color-sand)]"
+                                        : "text-[var(--color-gold)]"
                                     }
 
-                                    dark:text-[#FFBA00]
+                                    dark:text-[var(--color-gold)]
                                   `}
                                 >
                                   {result.value}
@@ -725,7 +665,7 @@ export default function CaseStudies() {
                               rounded-full
 
                               border
-                              border-[#0C3B2E]/10
+                              border-[var(--color-deep)]/10
 
                               bg-transparent
 
@@ -735,21 +675,21 @@ export default function CaseStudies() {
                               text-xs
                               font-bold
 
-                              text-[#0C3B2E]
+                              text-[var(--color-deep)]
 
                               transition-all
                               duration-300
 
-                              hover:border-[#0C3B2E]
-                              hover:bg-[#0C3B2E]
-                              hover:text-[#F1F3ED]
+                              hover:border-[var(--color-deep)]
+                              hover:bg-[var(--color-deep)]
+                              hover:text-[var(--color-cream)]
 
-                              dark:border-[#F1F3ED]/10
-                              dark:text-[#F1F3ED]
+                              dark:border-[var(--color-cream)]/10
+                              dark:text-[var(--color-cream)]
 
-                              dark:hover:border-[#FFBA00]
-                              dark:hover:bg-[#FFBA00]
-                              dark:hover:text-[#0C3B2E]
+                              dark:hover:border-[var(--color-gold)]
+                              dark:hover:bg-[var(--color-gold)]
+                              dark:hover:text-[var(--color-deep)]
                             "
                           >
                             Website
@@ -803,11 +743,11 @@ export default function CaseStudies() {
                   rounded-full
 
                   border
-                  border-[#0C3B2E]/10
+                  border-[var(--color-deep)]/10
 
-                  bg-[#F1F3ED]
+                  bg-[var(--color-cream)]
 
-                  text-[#0C3B2E]
+                  text-[var(--color-deep)]
 
                   shadow-lg
 
@@ -816,17 +756,17 @@ export default function CaseStudies() {
 
                   hover:scale-105
 
-                  hover:border-[#6D9773]
-                  hover:bg-[#0C3B2E]
-                  hover:text-[#F1F3ED]
+                  hover:border-[var(--color-green)]
+                  hover:bg-[var(--color-deep)]
+                  hover:text-[var(--color-cream)]
 
-                  dark:border-[#F1F3ED]/10
-                  dark:bg-[#0C3B2E]
-                  dark:text-[#F1F3ED]
+                  dark:border-[var(--color-cream)]/10
+                  dark:bg-[var(--color-deep)]
+                  dark:text-[var(--color-cream)]
 
-                  dark:hover:border-[#FFBA00]
-                  dark:hover:bg-[#FFBA00]
-                  dark:hover:text-[#0C3B2E]
+                  dark:hover:border-[var(--color-gold)]
+                  dark:hover:bg-[var(--color-gold)]
+                  dark:hover:text-[var(--color-deep)]
                 "
                 aria-label="Previous project"
               >
@@ -855,11 +795,11 @@ export default function CaseStudies() {
                   rounded-full
 
                   border
-                  border-[#0C3B2E]/10
+                  border-[var(--color-deep)]/10
 
-                  bg-[#F1F3ED]
+                  bg-[var(--color-cream)]
 
-                  text-[#0C3B2E]
+                  text-[var(--color-deep)]
 
                   shadow-lg
 
@@ -868,17 +808,17 @@ export default function CaseStudies() {
 
                   hover:scale-105
 
-                  hover:border-[#6D9773]
-                  hover:bg-[#0C3B2E]
-                  hover:text-[#F1F3ED]
+                  hover:border-[var(--color-green)]
+                  hover:bg-[var(--color-deep)]
+                  hover:text-[var(--color-cream)]
 
-                  dark:border-[#F1F3ED]/10
-                  dark:bg-[#0C3B2E]
-                  dark:text-[#F1F3ED]
+                  dark:border-[var(--color-cream)]/10
+                  dark:bg-[var(--color-deep)]
+                  dark:text-[var(--color-cream)]
 
-                  dark:hover:border-[#FFBA00]
-                  dark:hover:bg-[#FFBA00]
-                  dark:hover:text-[#0C3B2E]
+                  dark:hover:border-[var(--color-gold)]
+                  dark:hover:bg-[var(--color-gold)]
+                  dark:hover:text-[var(--color-deep)]
                 "
                 aria-label="Next project"
               >
@@ -955,13 +895,13 @@ export default function CaseStudies() {
 
           opacity: 0.25;
 
-          background: #0c3b2e;
+          background: var(--color-deep);
 
           transition: all 0.3s ease;
         }
 
         .dark .case-studies-swiper .swiper-pagination-bullet {
-          background: #f1f3ed;
+          background: var(--color-cream);
         }
 
         .case-studies-swiper
@@ -970,7 +910,7 @@ export default function CaseStudies() {
 
           opacity: 1;
 
-          background: #ffba00;
+          background: var(--color-gold);
         }
 
         /* =====================================================

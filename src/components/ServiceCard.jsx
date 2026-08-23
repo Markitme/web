@@ -16,8 +16,8 @@ export default function ServiceCard({ service }) {
         rounded-[28px]
 
         border
-        border-[#0C3B2E]/10
-        bg-[#F1F3ED]
+        border-[var(--color-deep)]/10
+        bg-[var(--color-cream)]
 
         p-7
 
@@ -25,13 +25,13 @@ export default function ServiceCard({ service }) {
         duration-500
 
         hover:-translate-y-1
-        hover:border-[#6D9773]
+        hover:border-[var(--color-green)]
         hover:shadow-[0_20px_60px_rgba(12,59,46,0.10)]
 
-        dark:border-[#6D9773]/20
-        dark:bg-[#0C3B2E]
+        dark:border-[var(--color-green)]/20
+        dark:bg-[var(--color-deep)]
 
-        dark:hover:border-[#FFBA00]/60
+        dark:hover:border-[var(--color-gold)]/60
         dark:hover:bg-[#104A3A]
         dark:hover:shadow-[0_20px_60px_rgba(0,0,0,0.30)]
 
@@ -48,16 +48,16 @@ export default function ServiceCard({ service }) {
           h-32
           w-32
           rounded-full
-          bg-[#6D9773]/10
+          bg-[var(--color-green)]/10
           blur-3xl
 
           transition-all
           duration-500
 
-          group-hover:bg-[#FFBA00]/20
+          group-hover:bg-[var(--color-gold)]/20
 
-          dark:bg-[#6D9773]/10
-          dark:group-hover:bg-[#FFBA00]/10
+          dark:bg-[var(--color-green)]/10
+          dark:group-hover:bg-[var(--color-gold)]/10
         "
       />
 
@@ -73,8 +73,8 @@ export default function ServiceCard({ service }) {
           justify-center
           rounded-2xl
 
-          bg-[#FFBA00]
-          text-[#0C3B2E]
+          bg-[var(--color-gold)]
+          text-[var(--color-deep)]
 
           transition-all
           duration-500
@@ -98,9 +98,9 @@ export default function ServiceCard({ service }) {
           uppercase
           tracking-[0.22em]
 
-          text-[#6D9773]
+          text-[var(--color-green)]
 
-          dark:text-[#FFBA00]
+          dark:text-[var(--color-gold)]
         "
       >
         {service.category}
@@ -115,9 +115,9 @@ export default function ServiceCard({ service }) {
           leading-[1.05]
           tracking-[-0.04em]
 
-          text-[#0C3B2E]
+          text-[var(--color-deep)]
 
-          dark:text-[#F1F3ED]
+          dark:text-[var(--color-cream)]
         "
       >
         {service.title}
@@ -129,9 +129,9 @@ export default function ServiceCard({ service }) {
           mt-4
           leading-7
 
-          text-[#0C3B2E]/60
+          text-[var(--color-deep)]/60
 
-          dark:text-[#F1F3ED]/65
+          dark:text-[var(--color-cream)]/65
         "
       >
         {service.description}
@@ -152,15 +152,15 @@ export default function ServiceCard({ service }) {
           text-sm
           font-black
 
-          text-[#0C3B2E]
+          text-[var(--color-deep)]
 
           transition-colors
           duration-300
 
-          hover:text-[#6D9773]
+          hover:text-[var(--color-green)]
 
-          dark:text-[#F1F3ED]
-          dark:hover:text-[#FFBA00]
+          dark:text-[var(--color-cream)]
+          dark:hover:text-[var(--color-gold)]
         "
       >
         Explore Service
@@ -175,16 +175,16 @@ export default function ServiceCard({ service }) {
             rounded-full
 
             border
-            border-[#0C3B2E]/10
+            border-[var(--color-deep)]/10
 
             transition-all
             duration-300
 
             group-hover/link:translate-x-1
-            group-hover/link:border-[#6D9773]
+            group-hover/link:border-[var(--color-green)]
 
-            dark:border-[#6D9773]/30
-            dark:group-hover/link:border-[#FFBA00]
+            dark:border-[var(--color-green)]/30
+            dark:group-hover/link:border-[var(--color-gold)]
           "
         >
           <ArrowRight size={16} />

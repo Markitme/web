@@ -55,7 +55,7 @@ export default function ServiceMarquee() {
         overflow-hidden
 
         border-y
-        border-[#0C3B2E]/[0.08]
+        border-[var(--color-deep)]/[0.08]
 
         bg-[#E7EDE4]
 
@@ -64,7 +64,7 @@ export default function ServiceMarquee() {
         transition-colors
         duration-500
 
-        dark:border-[#F1F3ED]/[0.08]
+        dark:border-[var(--color-cream)]/[0.08]
         dark:bg-[#0A2B22]
 
         sm:py-7
@@ -92,10 +92,10 @@ export default function ServiceMarquee() {
             w-40
             -translate-y-1/2
             rounded-full
-            bg-[#6D9773]/[0.08]
+            bg-[var(--color-green)]/[0.08]
             blur-[70px]
 
-            dark:bg-[#6D9773]/[0.06]
+            dark:bg-[var(--color-green)]/[0.06]
           "
         />
 
@@ -108,10 +108,10 @@ export default function ServiceMarquee() {
             w-40
             -translate-y-1/2
             rounded-full
-            bg-[#FFBA00]/[0.07]
+            bg-[var(--color-gold)]/[0.07]
             blur-[70px]
 
-            dark:bg-[#FFBA00]/[0.035]
+            dark:bg-[var(--color-gold)]/[0.035]
           "
         />
       </div>
@@ -139,12 +139,12 @@ export default function ServiceMarquee() {
 
                   whitespace-nowrap
 
-                  text-[#0C3B2E]
+                  text-[var(--color-deep)]
 
                   transition-colors
                   duration-300
 
-                  dark:text-[#F1F3ED]
+                  dark:text-[var(--color-cream)]
                 "
               >
                 {/* Icon Circle */}
@@ -161,21 +161,21 @@ export default function ServiceMarquee() {
                     rounded-full
 
                     border
-                    border-[#0C3B2E]/[0.10]
+                    border-[var(--color-deep)]/[0.10]
 
                     bg-white/60
 
                     transition-all
                     duration-300
 
-                    group-hover:border-[#FFBA00]/60
-                    group-hover:bg-[#FFBA00]/10
+                    group-hover:border-[var(--color-gold)]/60
+                    group-hover:bg-[var(--color-gold)]/10
 
-                    dark:border-[#F1F3ED]/[0.10]
-                    dark:bg-[#F1F3ED]/[0.045]
+                    dark:border-[var(--color-cream)]/[0.10]
+                    dark:bg-[var(--color-cream)]/[0.045]
 
-                    dark:group-hover:border-[#FFBA00]/50
-                    dark:group-hover:bg-[#FFBA00]/[0.08]
+                    dark:group-hover:border-[var(--color-gold)]/50
+                    dark:group-hover:bg-[var(--color-gold)]/[0.08]
                   "
                 >
                   <Icon
@@ -183,16 +183,16 @@ export default function ServiceMarquee() {
                     strokeWidth={1.8}
                     aria-hidden="true"
                     className="
-                      text-[#6D9773]
+                      text-[var(--color-green)]
 
                       transition-all
                       duration-300
 
                       group-hover:scale-110
-                      group-hover:text-[#0C3B2E]
+                      group-hover:text-[var(--color-deep)]
 
-                      dark:text-[#FFBA00]
-                      dark:group-hover:text-[#FFBA00]
+                      dark:text-[var(--color-gold)]
+                      dark:group-hover:text-[var(--color-gold)]
                     "
                   />
                 </span>
@@ -206,17 +206,17 @@ export default function ServiceMarquee() {
                     uppercase
                     tracking-[0.16em]
 
-                    text-[#0C3B2E]/70
+                    text-[var(--color-deep)]/70
 
                     transition-colors
                     duration-300
 
-                    group-hover:text-[#0C3B2E]
+                    group-hover:text-[var(--color-deep)]
 
                     sm:text-[11px]
 
-                    dark:text-[#F1F3ED]/65
-                    dark:group-hover:text-[#F1F3ED]
+                    dark:text-[var(--color-cream)]/65
+                    dark:group-hover:text-[var(--color-cream)]
                   "
                 >
                   {service.name}
@@ -232,9 +232,9 @@ export default function ServiceMarquee() {
                     shrink-0
                     rounded-full
 
-                    bg-[#BB8A52]/50
+                    bg-[var(--color-sand)]/50
 
-                    dark:bg-[#FFBA00]/40
+                    dark:bg-[var(--color-gold)]/40
                   "
                 />
               </div>

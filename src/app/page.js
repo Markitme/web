@@ -31,6 +31,7 @@ import WhyMarkitMe from "@/components/WhyMarkitMe";
 import CreativeSolutions from "@/components/CreativeSolutions";
 import Hero from "@/components/Hero";
 import CTA from "@/components/CTA";
+import SectionHeading from "@/components/SectionHeading";
 
 const services = [
   {
@@ -171,117 +172,15 @@ export default function Home() {
         SECTION INTRO
     ========================================== */}
 
-    <motion.div
-      initial={{ opacity: 0, y: 60 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{
-        duration: 0.8,
-        ease: "easeOut",
-      }}
-      viewport={{
-        once: false,
-        margin: "-100px",
-      }}
-      className="max-w-3xl"
+    <SectionHeading
+      eyebrow="What we do"
+      description="One strategic partner for your brand, website, marketing, and long-term digital growth."
     >
-      {/* Eyebrow */}
-
-      <div
-        className="
-          inline-flex
-          items-center
-          gap-3
-        "
-      >
-        <span
-          className="
-            h-2
-            w-2
-            rounded-full
-            bg-[#FFBA00]
-          "
-        />
-
-        <p
-          className="
-            text-xs
-            font-black
-            uppercase
-            tracking-[0.22em]
-
-            text-[#6D9773]
-
-            dark:text-[#FFBA00]
-          "
-        >
-          What we do
-        </p>
-         <span
-        className="
-          h-1.5
-          w-1.5
-          rounded-full
-          bg-[#6D9773]
-          dark:bg-[#FFBA00]
-        "
-      />
-      </div>
-
-      {/* Heading */}
-
-      <h2
-        className="
-          mt-5
-
-          max-w-3xl
-
-          text-4xl
-          font-black
-          leading-[1.05]
-          tracking-[-0.05em]
-
-          text-[#0C3B2E]
-
-          sm:text-5xl
-          lg:text-6xl
-
-          dark:text-[#F1F3ED]
-        "
-      >
-        Everything your brand needs to{" "}
-        <span
-          className="
-            text-[#6D9773]
-
-            dark:text-[#FFBA00]
-          "
-        >
-          grow.
-        </span>
-      </h2>
-
-      {/* Description */}
-
-      <p
-        className="
-          mt-6
-          max-w-2xl
-
-          text-base
-          leading-7
-
-          text-[#587064]
-
-          sm:text-lg
-          sm:leading-8
-
-          dark:text-[#A8B9AE]
-        "
-      >
-        One strategic partner for your brand, website, marketing, and
-        long-term digital growth.
-      </p>
-    </motion.div>
+      Everything your brand needs to{" "}
+      <span className="text-[var(--color-green)] dark:text-[var(--color-gold)]">
+        grow.
+      </span>
+    </SectionHeading>
 
 
     {/* =========================================

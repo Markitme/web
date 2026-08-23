@@ -38,9 +38,9 @@ export default function CTA({
           rounded-[2.5rem]
 
           border
-          border-[#0C3B2E]/10
+          border-[var(--color-deep)]/10
 
-          bg-[#E5EBE3]
+          bg-[var(--color-soft)]
 
           px-7
           py-20
@@ -50,7 +50,7 @@ export default function CTA({
           transition-colors
           duration-300
 
-          dark:border-[#F1F3ED]/10
+          dark:border-[var(--color-cream)]/10
           dark:bg-[#123F32]
 
           sm:px-12
@@ -75,7 +75,7 @@ export default function CTA({
 
             rounded-full
 
-            bg-[#FFBA00]/15
+            bg-[var(--color-gold)]/15
 
             blur-3xl
           "
@@ -97,7 +97,7 @@ export default function CTA({
 
             rounded-full
 
-            bg-[#6D9773]/20
+            bg-[var(--color-green)]/20
 
             blur-3xl
           "
@@ -118,9 +118,9 @@ export default function CTA({
               uppercase
               tracking-[0.2em]
 
-              text-[#BB8A52]
+              text-[var(--color-sand)]
 
-              dark:text-[#FFBA00]
+              dark:text-[var(--color-gold)]
             "
           >
             {eyebrow}
@@ -137,9 +137,9 @@ export default function CTA({
               leading-[1.05]
               tracking-[-0.055em]
 
-              text-[#0C3B2E]
+              text-[var(--color-deep)]
 
-              dark:text-[#F1F3ED]
+              dark:text-[var(--color-cream)]
 
               sm:text-5xl
               lg:text-6xl
@@ -159,9 +159,9 @@ export default function CTA({
               text-lg
               leading-8
 
-              text-[#0C3B2E]/60
+              text-[var(--color-deep)]/60
 
-              dark:text-[#F1F3ED]/60
+              dark:text-[var(--color-cream)]/60
             "
           >
             {description}

@@ -8,6 +8,7 @@ import {
   Rocket,
   Target,
 } from "lucide-react";
+import SectionHeading from "./SectionHeading";
 
 const steps = [
   {
@@ -74,19 +75,13 @@ export default function HowWeWork() {
         {/* =====================================
             TOP HEADING — SEPARATE FULL ROW
         ===================================== */}
-        <div className="mb-12 max-w-3xl lg:mb-16">
-          <p className="text-xs font-bold uppercase tracking-[0.22em] text-[var(--accent)] dark:text-[var(--accent-bright)]">
-            Our Process
-          </p>
-
-          <h2 className="mt-4 text-4xl font-black leading-[0.95] tracking-[-0.055em] text-black dark:text-white sm:text-5xl lg:text-6xl">
-            How we turn ideas into impact.
-          </h2>
-
-          <p className="mt-5 max-w-2xl text-base leading-7 text-black/60 dark:text-white/60 sm:text-lg">
-            A clear process that combines strategy, creativity, and measurable growth.
-          </p>
-        </div>
+        <SectionHeading
+          eyebrow="Our Process"
+          description="A clear process that combines strategy, creativity, and measurable growth."
+          className="mb-12 lg:mb-16"
+        >
+          How we turn ideas into impact.
+        </SectionHeading>
 
         {/* =====================================
             BELOW — LEFT STEPS + RIGHT CARDS

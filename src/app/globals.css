@@ -3,6 +3,15 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
+  --color-deep: #0c3b2e;
+  --color-cream: #f1f3ed;
+  --color-gold: #ffba00;
+  --color-green: #6d9773;
+  --color-sand: #bb8a52;
+  --color-night: #071f18;
+  --color-deep-surface: #0a2a21;
+  --color-soft: #e5ebe3;
+
   --background: #f1f3ed;
   --surface: #ffffff;
   --surface-soft: #e5ebe3;
@@ -14,13 +23,22 @@
   --accent-dark: #d99b00;
 
   --green: #6d9773;
-  --green-dark: #0c3b2e;
-
   --sand: #bb8a52;
+    --foreground: #0c3b2e;
+    --muted: #587064;
   --cream: #f1f3ed;
 }
 
 .dark {
+  --color-deep: #0c3b2e;
+  --color-cream: #f1f3ed;
+  --color-gold: #ffba00;
+  --color-green: #6d9773;
+  --color-sand: #bb8a52;
+  --color-night: #071f18;
+  --color-deep-surface: #0a2a21;
+  --color-soft: #123f32;
+
   --background: #071f18;
   --surface: #0c3b2e;
   --surface-soft: #123f32;
@@ -33,9 +51,9 @@
 
   --green: #6d9773;
   --green-dark: #0c3b2e;
-
-  --sand: #bb8a52;
   --cream: #f1f3ed;
+    --foreground: #f1f3ed;
+    --muted: #a8b9ae;
 }
 /* ========================================
 RESET + GLOBAL SETTINGS

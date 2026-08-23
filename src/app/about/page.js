@@ -37,7 +37,7 @@ function SectionLabel({ children, dark = false }) {
           h-1.5
           w-1.5
           rounded-full
-          bg-[#FFBA00]
+          bg-[var(--color-gold)]
         "
       />
 
@@ -47,7 +47,7 @@ function SectionLabel({ children, dark = false }) {
           font-black
           uppercase
           tracking-[0.22em]
-          text-[#6D9773]
+          text-[var(--color-green)]
           sm:text-[9px]
           dark:text-[#8FBF9A]
         "
@@ -60,7 +60,7 @@ function SectionLabel({ children, dark = false }) {
           h-1.5
           w-1.5
           rounded-full
-          bg-[#6D9773]
+          bg-[var(--color-green)]
           dark:bg-[#8FBF9A]
         "
       />
@@ -79,7 +79,7 @@ function AboutCard({ children, className = "" }) {
         group
         rounded-[28px]
         border
-        border-[#0C3B2E]/10
+        border-[var(--color-deep)]/10
         bg-white/60
         p-8
 
@@ -87,11 +87,11 @@ function AboutCard({ children, className = "" }) {
         duration-300
 
         hover:-translate-y-1
-        hover:border-[#6D9773]
+        hover:border-[var(--color-green)]
         hover:shadow-[0_20px_60px_rgba(12,59,46,0.10)]
 
-        dark:border-[#6D9773]/20
-        dark:bg-[#0C3B2E]
+        dark:border-[var(--color-green)]/20
+        dark:bg-[var(--color-deep)]
         dark:hover:border-[#8FBF9A]
         dark:hover:bg-[#104A3A]
         dark:hover:shadow-[0_20px_60px_rgba(0,0,0,0.28)]
@@ -115,14 +115,14 @@ export default function AboutPage() {
     <main
       className="
         min-h-screen
-        bg-[#F1F3ED]
-        text-[#0C3B2E]
+        bg-[var(--color-cream)]
+        text-[var(--color-deep)]
 
         transition-colors
         duration-300
 
-        dark:bg-[#071F18]
-        dark:text-[#F1F3ED]
+        dark:bg-[var(--color-night)]
+        dark:text-[var(--color-cream)]
       "
     >
       {/* =====================================================
@@ -134,8 +134,8 @@ export default function AboutPage() {
           relative
           overflow-hidden
           border-b
-          border-[#0C3B2E]/10
-          dark:border-[#6D9773]/20
+          border-[var(--color-deep)]/10
+          dark:border-[var(--color-green)]/20
         "
       >
         {/* Background glow */}
@@ -149,9 +149,9 @@ export default function AboutPage() {
             h-72
             w-72
             rounded-full
-            bg-[#6D9773]/10
+            bg-[var(--color-green)]/10
             blur-3xl
-            dark:bg-[#6D9773]/10
+            dark:bg-[var(--color-green)]/10
           "
         />
 
@@ -164,7 +164,7 @@ export default function AboutPage() {
             h-64
             w-64
             rounded-full
-            bg-[#6D9773]/5
+            bg-[var(--color-green)]/5
             blur-3xl
             dark:bg-[#8FBF9A]/5
           "
@@ -196,17 +196,17 @@ export default function AboutPage() {
                 font-black
                 leading-[0.95]
                 tracking-[-0.055em]
-                text-[#0C3B2E]
+                text-[var(--color-deep)]
 
                 sm:text-4xl
                 md:text-5xl
                 lg:text-6xl
 
-                dark:text-[#F1F3ED]
+                dark:text-[var(--color-cream)]
               "
             >
               We turn ideas into{" "}
-              <span className="text-[#6D9773] dark:text-[#8FBF9A]">
+              <span className="text-[var(--color-green)] dark:text-[var(--color-gold)]">
                 meaningful growth.
               </span>
             </h1>
@@ -226,11 +226,11 @@ export default function AboutPage() {
                 className="
                   text-lg
                   leading-8
-                  text-[#0C3B2E]/60
+                  text-[var(--color-deep)]/60
 
                   sm:text-xl
 
-                  dark:text-[#F1F3ED]/65
+                  dark:text-[var(--color-cream)]/65
                 "
               >
                 MarkitMe combines strategy, creativity, technology, and
@@ -241,7 +241,7 @@ export default function AboutPage() {
               <div
                 className="
                   border-l
-                  border-[#6D9773]
+                  border-[var(--color-green)]
                   pl-6
 
                   dark:border-[#8FBF9A]
@@ -253,9 +253,9 @@ export default function AboutPage() {
                     font-bold
                     uppercase
                     tracking-[0.18em]
-                    text-[#0C3B2E]
+                    text-[var(--color-deep)]
 
-                    dark:text-[#F1F3ED]
+                    dark:text-[var(--color-cream)]
                   "
                 >
                   Strategy. Creativity. Technology. Growth.
@@ -273,12 +273,12 @@ export default function AboutPage() {
       <section
         className="
           border-b
-          border-[#0C3B2E]/10
-          bg-[#F1F3ED]
+          border-[var(--color-deep)]/10
+          bg-[var(--color-cream)]
           py-20
 
-          dark:border-[#6D9773]/20
-          dark:bg-[#071F18]
+          dark:border-[var(--color-green)]/20
+          dark:bg-[var(--color-night)]
 
           sm:py-24
           lg:py-32
@@ -307,17 +307,17 @@ export default function AboutPage() {
                 font-black
                 leading-[0.95]
                 tracking-[-0.055em]
-                text-[#0C3B2E]
+                text-[var(--color-deep)]
 
                 sm:text-4xl
                 md:text-5xl
                 lg:text-6xl
 
-                dark:text-[#F1F3ED]
+                dark:text-[var(--color-cream)]
               "
             >
               A digital partner built for{" "}
-              <span className="text-[#6D9773] dark:text-[#8FBF9A]">
+              <span className="text-[var(--color-green)] dark:text-[var(--color-gold)]">
                 ambitious brands.
               </span>
             </h2>
@@ -330,9 +330,9 @@ export default function AboutPage() {
               className="
                 text-xl
                 leading-9
-                text-[#0C3B2E]
+                text-[var(--color-deep)]
 
-                dark:text-[#F1F3ED]
+                dark:text-[var(--color-cream)]
 
                 sm:text-2xl
               "
@@ -346,9 +346,9 @@ export default function AboutPage() {
               className="
                 mt-7
                 leading-8
-                text-[#0C3B2E]/60
+                text-[var(--color-deep)]/60
 
-                dark:text-[#F1F3ED]/65
+                dark:text-[var(--color-cream)]/65
               "
             >
               Our team brings together strategic thinking, creative design,
@@ -362,9 +362,9 @@ export default function AboutPage() {
               className="
                 mt-5
                 leading-8
-                text-[#0C3B2E]/60
+                text-[var(--color-deep)]/60
 
-                dark:text-[#F1F3ED]/65
+                dark:text-[var(--color-cream)]/65
               "
             >
               Whether you are launching a new brand, improving your online
@@ -383,12 +383,12 @@ export default function AboutPage() {
       <section
         className="
           border-b
-          border-[#0C3B2E]/10
-          bg-[#E8ECE5]
+          border-[var(--color-deep)]/10
+          bg-[var(--color-soft)]
           py-20
 
-          dark:border-[#6D9773]/20
-          dark:bg-[#0A2A21]
+          dark:border-[var(--color-green)]/20
+          dark:bg-[var(--color-deep-surface)]
 
           sm:py-24
           lg:py-32
@@ -421,17 +421,17 @@ export default function AboutPage() {
                   font-black
                   leading-[0.95]
                   tracking-[-0.055em]
-                  text-[#0C3B2E]
+                  text-[var(--color-deep)]
 
                   sm:text-4xl
                   md:text-5xl
                   lg:text-6xl
 
-                  dark:text-[#F1F3ED]
+                  dark:text-[var(--color-cream)]
                 "
               >
                 Our impact in{" "}
-                <span className="text-[#6D9773] dark:text-[#8FBF9A]">
+                <span className="text-[var(--color-green)] dark:text-[var(--color-gold)]">
                   numbers.
                 </span>
               </h2>
@@ -474,12 +474,12 @@ export default function AboutPage() {
       <section
         className="
           border-b
-          border-[#0C3B2E]/10
-          bg-[#F1F3ED]
+          border-[var(--color-deep)]/10
+          bg-[var(--color-cream)]
           py-20
 
-          dark:border-[#6D9773]/20
-          dark:bg-[#071F18]
+          dark:border-[var(--color-green)]/20
+          dark:bg-[var(--color-night)]
 
           sm:py-24
           lg:py-32
@@ -498,17 +498,17 @@ export default function AboutPage() {
                 font-black
                 leading-[0.95]
                 tracking-[-0.055em]
-                text-[#0C3B2E]
+                text-[var(--color-deep)]
 
                 sm:text-4xl
                 md:text-5xl
                 lg:text-6xl
 
-                dark:text-[#F1F3ED]
+                dark:text-[var(--color-cream)]
               "
             >
               What guides our{" "}
-              <span className="text-[#6D9773] dark:text-[#8FBF9A]">
+              <span className="text-[var(--color-green)] dark:text-[var(--color-gold)]">
                 work.
               </span>
             </h2>
@@ -528,10 +528,10 @@ export default function AboutPage() {
                   items-center
                   justify-center
                   rounded-full
-                  bg-[#FFBA00]
+                  bg-[var(--color-gold)]
                   text-lg
                   font-black
-                  text-[#0C3B2E]
+                  text-[var(--color-deep)]
                 "
               >
                 M
@@ -544,7 +544,7 @@ export default function AboutPage() {
                   font-bold
                   uppercase
                   tracking-[0.25em]
-                  text-[#6D9773]
+                  text-[var(--color-green)]
 
                   dark:text-[#8FBF9A]
                 "
@@ -559,15 +559,15 @@ export default function AboutPage() {
                   font-black
                   leading-[1.02]
                   tracking-[-0.045em]
-                  text-[#0C3B2E]
+                  text-[var(--color-deep)]
 
-                  dark:text-[#F1F3ED]
+                  dark:text-[var(--color-cream)]
 
                   sm:text-4xl
                 "
               >
                 Make digital growth more{" "}
-                <span className="text-[#6D9773] dark:text-[#8FBF9A]">
+                <span className="text-[var(--color-green)] dark:text-[#8FBF9A]">
                   meaningful.
                 </span>
               </h3>
@@ -577,9 +577,9 @@ export default function AboutPage() {
                   mt-6
                   max-w-xl
                   leading-8
-                  text-[#0C3B2E]/60
+                  text-[var(--color-deep)]/60
 
-                  dark:text-[#F1F3ED]/65
+                  dark:text-[var(--color-cream)]/65
                 "
               >
                 Our mission is to help businesses make better digital
@@ -600,10 +600,10 @@ export default function AboutPage() {
                   justify-center
                   rounded-full
                   border
-                  border-[#6D9773]
+                  border-[var(--color-green)]
                   text-lg
                   font-black
-                  text-[#6D9773]
+                  text-[var(--color-green)]
 
                   dark:border-[#8FBF9A]
                   dark:text-[#8FBF9A]
@@ -619,7 +619,7 @@ export default function AboutPage() {
                   font-bold
                   uppercase
                   tracking-[0.25em]
-                  text-[#6D9773]
+                  text-[var(--color-green)]
 
                   dark:text-[#8FBF9A]
                 "
@@ -634,15 +634,15 @@ export default function AboutPage() {
                   font-black
                   leading-[1.02]
                   tracking-[-0.045em]
-                  text-[#0C3B2E]
+                  text-[var(--color-deep)]
 
-                  dark:text-[#F1F3ED]
+                  dark:text-[var(--color-cream)]
 
                   sm:text-4xl
                 "
               >
                 Build brands people{" "}
-                <span className="text-[#6D9773] dark:text-[#8FBF9A]">
+                <span className="text-[var(--color-green)] dark:text-[#8FBF9A]">
                   remember.
                 </span>
               </h3>
@@ -652,9 +652,9 @@ export default function AboutPage() {
                   mt-6
                   max-w-xl
                   leading-8
-                  text-[#0C3B2E]/60
+                  text-[var(--color-deep)]/60
 
-                  dark:text-[#F1F3ED]/65
+                  dark:text-[var(--color-cream)]/65
                 "
               >
                 We aim to become a trusted long-term digital partner for
@@ -673,12 +673,12 @@ export default function AboutPage() {
       <section
         className="
           border-y
-          border-[#0C3B2E]/10
-          bg-[#E8ECE5]
+          border-[var(--color-deep)]/10
+          bg-[var(--color-soft)]
           py-20
 
-          dark:border-[#6D9773]/20
-          dark:bg-[#0A2A21]
+          dark:border-[var(--color-green)]/20
+          dark:bg-[var(--color-deep-surface)]
 
           sm:py-24
           lg:py-32
@@ -697,17 +697,17 @@ export default function AboutPage() {
                 font-black
                 leading-[0.95]
                 tracking-[-0.055em]
-                text-[#0C3B2E]
+                text-[var(--color-deep)]
 
                 sm:text-4xl
                 md:text-5xl
                 lg:text-6xl
 
-                dark:text-[#F1F3ED]
+                dark:text-[var(--color-cream)]
               "
             >
               Good work starts with the{" "}
-              <span className="text-[#6D9773] dark:text-[#8FBF9A]">
+              <span className="text-[var(--color-green)] dark:text-[var(--color-gold)]">
                 right approach.
               </span>
             </h2>
@@ -721,10 +721,10 @@ export default function AboutPage() {
                 key={value.number}
                 className="
                   rounded-[26px]
-                  bg-[#F1F3ED]
+                  bg-[var(--color-cream)]
                   p-7
 
-                  dark:bg-[#0C3B2E]
+                  dark:bg-[var(--color-deep)]
 
                   sm:p-8
                 "
@@ -733,7 +733,7 @@ export default function AboutPage() {
                   className="
                     text-sm
                     font-black
-                    text-[#6D9773]
+                    text-[var(--color-green)]
 
                     dark:text-[#8FBF9A]
                   "
@@ -747,9 +747,9 @@ export default function AboutPage() {
                     text-2xl
                     font-black
                     tracking-[-0.03em]
-                    text-[#0C3B2E]
+                    text-[var(--color-deep)]
 
-                    dark:text-[#F1F3ED]
+                    dark:text-[var(--color-cream)]
                   "
                 >
                   {value.title}
@@ -759,9 +759,9 @@ export default function AboutPage() {
                   className="
                     mt-5
                     leading-7
-                    text-[#0C3B2E]/60
+                    text-[var(--color-deep)]/60
 
-                    dark:text-[#F1F3ED]/65
+                    dark:text-[var(--color-cream)]/65
                   "
                 >
                   {value.description}
@@ -778,8 +778,8 @@ export default function AboutPage() {
 
       <section
         className="
-          bg-[#F1F3ED]
-          dark:bg-[#071F18]
+          bg-[var(--color-cream)]
+          dark:bg-[var(--color-night)]
         "
       >
         <ProcessSection

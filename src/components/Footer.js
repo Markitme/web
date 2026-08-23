@@ -15,15 +15,15 @@ export default function Footer() {
         relative
         overflow-hidden
         border-t
-        border-[#0C3B2E]/10
-        bg-[#F1F3ED]
-        text-[#0C3B2E]
+        border-[var(--color-deep)]/10
+        bg-[var(--color-cream)]
+        text-[var(--color-deep)]
         transition-colors
         duration-300
 
-        dark:border-[#F1F3ED]/10
-        dark:bg-[#0C3B2E]
-        dark:text-[#F1F3ED]
+        dark:border-[var(--color-cream)]/10
+        dark:bg-[var(--color-deep)]
+        dark:text-[var(--color-cream)]
       "
     >
 
@@ -43,7 +43,7 @@ export default function Footer() {
             h-96
             w-96
             rounded-full
-            bg-[#6D9773]/15
+            bg-[var(--color-green)]/15
             blur-3xl
           "
         />
@@ -58,7 +58,7 @@ export default function Footer() {
             h-80
             w-80
             rounded-full
-            bg-[#FFBA00]/10
+            bg-[var(--color-gold)]/10
             blur-3xl
           "
         />
@@ -73,7 +73,7 @@ export default function Footer() {
             h-72
             w-72
             rounded-full
-            bg-[#BB8A52]/10
+            bg-[var(--color-sand)]/10
             blur-3xl
           "
         />
@@ -168,9 +168,9 @@ export default function Footer() {
                 max-w-sm
                 text-sm
                 leading-6
-                text-[#0C3B2E]/55
+                text-[var(--color-deep)]/55
 
-                dark:text-[#F1F3ED]/55
+                dark:text-[var(--color-cream)]/55
               "
             >
               Strategy, creativity, technology, and marketing
@@ -192,15 +192,15 @@ export default function Footer() {
                 text-sm
                 font-bold
 
-                text-[#0C3B2E]
+                text-[var(--color-deep)]
 
                 transition-colors
                 duration-300
 
-                hover:text-[#6D9773]
+                hover:text-[var(--color-green)]
 
-                dark:text-[#F1F3ED]
-                dark:hover:text-[#FFBA00]
+                dark:text-[var(--color-cream)]
+                dark:hover:text-[var(--color-gold)]
               "
             >
 
@@ -235,9 +235,9 @@ export default function Footer() {
                 font-black
                 uppercase
                 tracking-[0.16em]
-                text-[#0C3B2E]
+                text-[var(--color-deep)]
 
-                dark:text-[#F1F3ED]
+                dark:text-[var(--color-cream)]
               "
             >
               Explore
@@ -282,16 +282,16 @@ export default function Footer() {
                     text-sm
                     font-medium
 
-                    text-[#0C3B2E]/55
+                    text-[var(--color-deep)]/55
 
                     transition-all
                     duration-300
 
                     hover:translate-x-1
-                    hover:text-[#6D9773]
+                    hover:text-[var(--color-green)]
 
-                    dark:text-[#F1F3ED]/55
-                    dark:hover:text-[#FFBA00]
+                    dark:text-[var(--color-cream)]/55
+                    dark:hover:text-[var(--color-gold)]
                   "
                 >
 
@@ -336,9 +336,9 @@ export default function Footer() {
                 uppercase
                 tracking-[0.16em]
 
-                text-[#0C3B2E]
+                text-[var(--color-deep)]
 
-                dark:text-[#F1F3ED]
+                dark:text-[var(--color-cream)]
               "
             >
               Contact
@@ -369,26 +369,26 @@ export default function Footer() {
                     rounded-xl
 
                     border
-                    border-[#0C3B2E]/10
+                    border-[var(--color-deep)]/10
 
                     bg-white/50
 
-                    text-[#0C3B2E]/65
+                    text-[var(--color-deep)]/65
 
                     transition-all
                     duration-300
 
-                    group-hover:border-[#6D9773]
-                    group-hover:bg-[#6D9773]
+                    group-hover:border-[var(--color-green)]
+                    group-hover:bg-[var(--color-green)]
                     group-hover:text-white
 
-                    dark:border-[#F1F3ED]/10
-                    dark:bg-[#F1F3ED]/5
-                    dark:text-[#F1F3ED]/65
+                    dark:border-[var(--color-cream)]/10
+                    dark:bg-[var(--color-cream)]/5
+                    dark:text-[var(--color-cream)]/65
 
-                    dark:group-hover:border-[#6D9773]
-                    dark:group-hover:bg-[#6D9773]
-                    dark:group-hover:text-[#0C3B2E]
+                    dark:group-hover:border-[var(--color-green)]
+                    dark:group-hover:bg-[var(--color-green)]
+                    dark:group-hover:text-[var(--color-deep)]
                   "
                 >
 
@@ -407,9 +407,9 @@ export default function Footer() {
                       uppercase
                       tracking-[0.12em]
 
-                      text-[#0C3B2E]/35
+                      text-[var(--color-deep)]/35
 
-                      dark:text-[#F1F3ED]/35
+                      dark:text-[var(--color-cream)]/35
                     "
                   >
                     Email
@@ -422,15 +422,15 @@ export default function Footer() {
                       text-sm
                       font-medium
 
-                      text-[#0C3B2E]/70
+                      text-[var(--color-deep)]/70
 
                       transition-colors
                       duration-300
 
-                      group-hover:text-[#6D9773]
+                      group-hover:text-[var(--color-green)]
 
-                      dark:text-[#F1F3ED]/65
-                      dark:group-hover:text-[#FFBA00]
+                      dark:text-[var(--color-cream)]/65
+                      dark:group-hover:text-[var(--color-gold)]
                     "
                   >
                     info@markitme.ca
@@ -462,26 +462,26 @@ export default function Footer() {
                     rounded-xl
 
                     border
-                    border-[#0C3B2E]/10
+                    border-[var(--color-deep)]/10
 
                     bg-white/50
 
-                    text-[#0C3B2E]/65
+                    text-[var(--color-deep)]/65
 
                     transition-all
                     duration-300
 
-                    group-hover:border-[#6D9773]
-                    group-hover:bg-[#6D9773]
+                    group-hover:border-[var(--color-green)]
+                    group-hover:bg-[var(--color-green)]
                     group-hover:text-white
 
-                    dark:border-[#F1F3ED]/10
-                    dark:bg-[#F1F3ED]/5
-                    dark:text-[#F1F3ED]/65
+                    dark:border-[var(--color-cream)]/10
+                    dark:bg-[var(--color-cream)]/5
+                    dark:text-[var(--color-cream)]/65
 
-                    dark:group-hover:border-[#6D9773]
-                    dark:group-hover:bg-[#6D9773]
-                    dark:group-hover:text-[#0C3B2E]
+                    dark:group-hover:border-[var(--color-green)]
+                    dark:group-hover:bg-[var(--color-green)]
+                    dark:group-hover:text-[var(--color-deep)]
                   "
                 >
 
@@ -500,9 +500,9 @@ export default function Footer() {
                       uppercase
                       tracking-[0.12em]
 
-                      text-[#0C3B2E]/35
+                      text-[var(--color-deep)]/35
 
-                      dark:text-[#F1F3ED]/35
+                      dark:text-[var(--color-cream)]/35
                     "
                   >
                     Phone
@@ -515,15 +515,15 @@ export default function Footer() {
                       text-sm
                       font-medium
 
-                      text-[#0C3B2E]/70
+                      text-[var(--color-deep)]/70
 
                       transition-colors
                       duration-300
 
-                      group-hover:text-[#6D9773]
+                      group-hover:text-[var(--color-green)]
 
-                      dark:text-[#F1F3ED]/65
-                      dark:group-hover:text-[#FFBA00]
+                      dark:text-[var(--color-cream)]/65
+                      dark:group-hover:text-[var(--color-gold)]
                     "
                   >
                     +1 (613)-981-4844
@@ -552,15 +552,15 @@ export default function Footer() {
                     rounded-xl
 
                     border
-                    border-[#0C3B2E]/10
+                    border-[var(--color-deep)]/10
 
                     bg-white/50
 
-                    text-[#0C3B2E]/65
+                    text-[var(--color-deep)]/65
 
-                    dark:border-[#F1F3ED]/10
-                    dark:bg-[#F1F3ED]/5
-                    dark:text-[#F1F3ED]/65
+                    dark:border-[var(--color-cream)]/10
+                    dark:bg-[var(--color-cream)]/5
+                    dark:text-[var(--color-cream)]/65
                   "
                 >
 
@@ -579,9 +579,9 @@ export default function Footer() {
                       uppercase
                       tracking-[0.12em]
 
-                      text-[#0C3B2E]/35
+                      text-[var(--color-deep)]/35
 
-                      dark:text-[#F1F3ED]/35
+                      dark:text-[var(--color-cream)]/35
                     "
                   >
                     Location
@@ -597,9 +597,9 @@ export default function Footer() {
                       leading-5
                       font-medium
 
-                      text-[#0C3B2E]/70
+                      text-[var(--color-deep)]/70
 
-                      dark:text-[#F1F3ED]/65
+                      dark:text-[var(--color-cream)]/65
                     "
                   >
                     34 Minowan Miikan Lane,
@@ -628,8 +628,8 @@ export default function Footer() {
       font-black
       uppercase
       tracking-[0.16em]
-      text-[#0C3B2E]
-      dark:text-[#F1F3ED]
+      text-[var(--color-deep)]
+      dark:text-[var(--color-cream)]
     "
   >
     Follow Us
@@ -640,8 +640,8 @@ export default function Footer() {
       max-w-[230px]
       text-sm
       leading-6
-      text-[#0C3B2E]/50
-      dark:text-[#F1F3ED]/45
+      text-[var(--color-deep)]/50
+      dark:text-[var(--color-cream)]/45
     "
   >
     Follow MarkitMe for creative ideas,
@@ -659,21 +659,21 @@ export default function Footer() {
       className="
         flex h-10 w-10 items-center justify-center
         rounded-full
-        border border-[#0C3B2E]/10
+        border border-[var(--color-deep)]/10
         bg-white/50
-        text-[#0C3B2E]/60
+        text-[var(--color-deep)]/60
         transition-all duration-300
         hover:-translate-y-1
-        hover:border-[#FFBA00]
-        hover:bg-[#FFBA00]
-        hover:text-[#0C3B2E]
+        hover:border-[var(--color-gold)]
+        hover:bg-[var(--color-gold)]
+        hover:text-[var(--color-deep)]
 
-        dark:border-[#F1F3ED]/10
-        dark:bg-[#F1F3ED]/5
-        dark:text-[#F1F3ED]/60
-        dark:hover:border-[#FFBA00]
-        dark:hover:bg-[#FFBA00]
-        dark:hover:text-[#0C3B2E]
+        dark:border-[var(--color-cream)]/10
+        dark:bg-[var(--color-cream)]/5
+        dark:text-[var(--color-cream)]/60
+        dark:hover:border-[var(--color-gold)]
+        dark:hover:bg-[var(--color-gold)]
+        dark:hover:text-[var(--color-deep)]
       "
     >
       <svg
@@ -718,21 +718,21 @@ export default function Footer() {
       className="
         flex h-10 w-10 items-center justify-center
         rounded-full
-        border border-[#0C3B2E]/10
+        border border-[var(--color-deep)]/10
         bg-white/50
-        text-[#0C3B2E]/60
+        text-[var(--color-deep)]/60
         transition-all duration-300
         hover:-translate-y-1
-        hover:border-[#6D9773]
-        hover:bg-[#6D9773]
-        hover:text-[#0C3B2E]
+        hover:border-[var(--color-green)]
+        hover:bg-[var(--color-green)]
+        hover:text-[var(--color-deep)]
 
-        dark:border-[#F1F3ED]/10
-        dark:bg-[#F1F3ED]/5
-        dark:text-[#F1F3ED]/60
-        dark:hover:border-[#6D9773]
-        dark:hover:bg-[#6D9773]
-        dark:hover:text-[#0C3B2E]
+        dark:border-[var(--color-cream)]/10
+        dark:bg-[var(--color-cream)]/5
+        dark:text-[var(--color-cream)]/60
+        dark:hover:border-[var(--color-green)]
+        dark:hover:bg-[var(--color-green)]
+        dark:hover:text-[var(--color-deep)]
       "
     >
       <svg
@@ -755,21 +755,21 @@ export default function Footer() {
       className="
         flex h-10 w-10 items-center justify-center
         rounded-full
-        border border-[#0C3B2E]/10
+        border border-[var(--color-deep)]/10
         bg-white/50
-        text-[#0C3B2E]/60
+        text-[var(--color-deep)]/60
         transition-all duration-300
         hover:-translate-y-1
-        hover:border-[#BB8A52]
-        hover:bg-[#BB8A52]
+        hover:border-[var(--color-sand)]
+        hover:bg-[var(--color-sand)]
         hover:text-white
 
-        dark:border-[#F1F3ED]/10
-        dark:bg-[#F1F3ED]/5
-        dark:text-[#F1F3ED]/60
-        dark:hover:border-[#BB8A52]
-        dark:hover:bg-[#BB8A52]
-        dark:hover:text-[#0C3B2E]
+        dark:border-[var(--color-cream)]/10
+        dark:bg-[var(--color-cream)]/5
+        dark:text-[var(--color-cream)]/60
+        dark:hover:border-[var(--color-sand)]
+        dark:hover:bg-[var(--color-sand)]
+        dark:hover:text-[var(--color-deep)]
       "
     >
       <svg
@@ -799,7 +799,7 @@ export default function Footer() {
             h-px
             bg-gradient-to-r
             from-transparent
-            via-[#6D9773]/30
+            via-[var(--color-green)]/30
             to-transparent
 
             sm:block
@@ -819,18 +819,18 @@ export default function Footer() {
             gap-4
 
             border-t
-            border-[#0C3B2E]/10
+            border-[var(--color-deep)]/10
 
             py-7
 
             text-sm
-            text-[#0C3B2E]/40
+            text-[var(--color-deep)]/40
 
             sm:flex-row
             sm:items-center
 
-            dark:border-[#F1F3ED]/10
-            dark:text-[#F1F3ED]/35
+            dark:border-[var(--color-cream)]/10
+            dark:text-[var(--color-cream)]/35
           "
         >
 
@@ -852,9 +852,9 @@ export default function Footer() {
                 transition-colors
                 duration-300
 
-                hover:text-[#6D9773]
+                hover:text-[var(--color-green)]
 
-                dark:hover:text-[#FFBA00]
+                dark:hover:text-[var(--color-gold)]
               "
             >
               Privacy Policy
@@ -867,9 +867,9 @@ export default function Footer() {
                 transition-colors
                 duration-300
 
-                hover:text-[#6D9773]
+                hover:text-[var(--color-green)]
 
-                dark:hover:text-[#FFBA00]
+                dark:hover:text-[var(--color-gold)]
               "
             >
               Terms & Conditions

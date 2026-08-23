@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import SectionHeading from "./SectionHeading";
 
 const clientLogos = [
   {
@@ -40,7 +41,7 @@ export default function ClientLogoSlider() {
         overflow-hidden
 
         border-y
-        border-[#0C3B2E]/[0.08]
+        border-[var(--color-deep)]/[0.08]
 
         py-14
         sm:py-16
@@ -49,7 +50,7 @@ export default function ClientLogoSlider() {
         transition-colors
         duration-500
 
-        dark:border-[#F1F3ED]/[0.08]
+        dark:border-[var(--color-cream)]/[0.08]
       "
     >
       {/* =========================================
@@ -73,10 +74,10 @@ export default function ClientLogoSlider() {
             h-[420px]
             w-[420px]
             rounded-full
-            bg-[#6D9773]/[0.08]
+            bg-[var(--color-green)]/[0.08]
             blur-[100px]
 
-            dark:bg-[#FFBA00]/[0.035]
+            dark:bg-[var(--color-gold)]/[0.035]
           "
         />
 
@@ -89,10 +90,10 @@ export default function ClientLogoSlider() {
             h-[420px]
             w-[420px]
             rounded-full
-            bg-[#BB8A52]/[0.07]
+            bg-[var(--color-sand)]/[0.07]
             blur-[100px]
 
-            dark:bg-[#6D9773]/[0.06]
+            dark:bg-[var(--color-green)]/[0.06]
           "
         />
 
@@ -107,10 +108,10 @@ export default function ClientLogoSlider() {
             -translate-x-1/2
             -translate-y-1/2
             rounded-full
-            bg-[#6D9773]/[0.035]
+            bg-[var(--color-green)]/[0.035]
             blur-[120px]
 
-            dark:bg-[#F1F3ED]/[0.02]
+            dark:bg-[var(--color-cream)]/[0.02]
           "
         />
       </div>
@@ -129,7 +130,7 @@ export default function ClientLogoSlider() {
           w-24
           -translate-x-1/2
 
-          bg-[#FFBA00]
+          bg-[var(--color-gold)]
 
           sm:w-32
         "
@@ -174,7 +175,7 @@ export default function ClientLogoSlider() {
                 h-1.5
                 w-1.5
                 rounded-full
-                bg-[#FFBA00]
+                bg-[var(--color-gold)]
               "
             />
 
@@ -185,11 +186,11 @@ export default function ClientLogoSlider() {
                 uppercase
                 tracking-[0.24em]
 
-                text-[#6D9773]
+                text-[var(--color-green)]
 
                 sm:text-[9px]
 
-                dark:text-[#FFBA00]
+                dark:text-[var(--color-gold)]
               "
             >
               Trusted by ambitious brands
@@ -200,40 +201,24 @@ export default function ClientLogoSlider() {
                 h-1.5
                 w-1.5
                 rounded-full
-                bg-[#6D9773]
+                bg-[var(--color-green)]
               "
             />
           </div>
 
           {/* Heading */}
 
-          <h2
-            className="
-              mt-4
-
-              text-2xl
-              font-black
-              leading-tight
-              tracking-[-0.045em]
-
-              text-[#0C3B2E]
-
-              sm:mt-5
-              sm:text-4xl
-
-              dark:text-[#F1F3ED]
-            "
-          >
+          <SectionHeading className="mx-auto text-center">
             Building growth{" "}
             <span
               className="
-                text-[#6D9773]
-                dark:text-[#FFBA00]
+                text-[var(--color-green)]
+                dark:text-[var(--color-gold)]
               "
             >
               together.
             </span>
-          </h2>
+          </SectionHeading>
 
           {/* Supporting text */}
 
@@ -246,11 +231,11 @@ export default function ClientLogoSlider() {
               text-xs
               leading-6
 
-              text-[#0C3B2E]/50
+              text-[var(--color-deep)]/50
 
               sm:text-sm
 
-              dark:text-[#F1F3ED]/50
+              dark:text-[var(--color-cream)]/50
             "
           >
             Trusted partnerships that turn ideas, strategy, and creativity
@@ -321,7 +306,7 @@ export default function ClientLogoSlider() {
                   rounded-2xl
 
                   border
-                  border-[#0C3B2E]/[0.09]
+                  border-[var(--color-deep)]/[0.09]
 
                   bg-white/75
 
@@ -336,7 +321,7 @@ export default function ClientLogoSlider() {
                   hover:-translate-y-1
                   hover:scale-[1.015]
 
-                  hover:border-[#6D9773]/45
+                  hover:border-[var(--color-green)]/45
                   hover:bg-white
 
                   hover:shadow-[0_18px_45px_rgba(12,59,46,0.09)]
@@ -347,11 +332,11 @@ export default function ClientLogoSlider() {
                   lg:h-[88px]
                   lg:w-[188px]
 
-                  dark:border-[#F1F3ED]/[0.10]
-                  dark:bg-[#F1F3ED]/[0.045]
+                  dark:border-[var(--color-cream)]/[0.10]
+                  dark:bg-[var(--color-cream)]/[0.045]
 
-                  dark:hover:border-[#FFBA00]/35
-                  dark:hover:bg-[#F1F3ED]/[0.075]
+                  dark:hover:border-[var(--color-gold)]/35
+                  dark:hover:bg-[var(--color-cream)]/[0.075]
 
                   dark:hover:shadow-[0_18px_45px_rgba(0,0,0,0.16)]
                 "
@@ -374,7 +359,7 @@ export default function ClientLogoSlider() {
 
                     rounded-full
 
-                    bg-[#FFBA00]
+                    bg-[var(--color-gold)]
 
                     opacity-0
 
@@ -400,9 +385,9 @@ export default function ClientLogoSlider() {
                     rounded-2xl
 
                     bg-gradient-to-br
-                    from-[#6D9773]/[0.04]
+                    from-[var(--color-green)]/[0.04]
                     via-transparent
-                    to-[#FFBA00]/[0.035]
+                    to-[var(--color-gold)]/[0.035]
 
                     opacity-0
 
@@ -487,14 +472,14 @@ export default function ClientLogoSlider() {
 
                     -translate-x-1/2
 
-                    bg-[#6D9773]/50
+                    bg-[var(--color-green)]/50
 
                     transition-all
                     duration-500
 
                     group-hover:w-8
 
-                    dark:bg-[#FFBA00]/50
+                    dark:bg-[var(--color-gold)]/50
                   "
                 />
               </div>
@@ -517,11 +502,11 @@ export default function ClientLogoSlider() {
           w-16
           -translate-x-1/2
 
-          bg-[#6D9773]/40
+          bg-[var(--color-green)]/40
 
           sm:w-24
 
-          dark:bg-[#FFBA00]/30
+          dark:bg-[var(--color-gold)]/30
         "
       />
     </section>

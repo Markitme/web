@@ -9,6 +9,7 @@ import {
   Check,
   Sparkles,
 } from "lucide-react";
+import SectionHeading from "./SectionHeading";
 
 const comparisonItems = [
   {
@@ -43,15 +44,15 @@ export default function WhyMarkitMe() {
         relative
         overflow-hidden
         border-y
-        border-[#0C3B2E]/10
-        bg-[#F1F3ED]
+        border-[var(--color-deep)]/10
+        bg-[var(--color-cream)]
         py-24
-        text-[#0C3B2E]
+        text-[var(--color-deep)]
         transition-colors
         duration-300
-        dark:border-[#F1F3ED]/10
-        dark:bg-[#071F18]
-        dark:text-[#F1F3ED]
+        dark:border-[var(--color-cream)]/10
+        dark:bg-[var(--color-night)]
+        dark:text-[var(--color-cream)]
         sm:py-32
         lg:py-40
       "
@@ -105,9 +106,9 @@ export default function WhyMarkitMe() {
             h-80
             w-80
             rounded-full
-            bg-[#FFBA00]/10
+            bg-[var(--color-gold)]/10
             blur-3xl
-            dark:bg-[#FFBA00]/[0.06]
+            dark:bg-[var(--color-gold)]/[0.06]
           "
         />
 
@@ -120,9 +121,9 @@ export default function WhyMarkitMe() {
             h-96
             w-96
             rounded-full
-            bg-[#6D9773]/10
+            bg-[var(--color-green)]/10
             blur-3xl
-            dark:bg-[#6D9773]/[0.08]
+            dark:bg-[var(--color-green)]/[0.08]
           "
         />
       </div>
@@ -153,7 +154,7 @@ export default function WhyMarkitMe() {
         h-1.5
         w-1.5
         rounded-full
-        bg-[#FFBA00]
+        bg-[var(--color-gold)]
       "
     />
 
@@ -163,8 +164,8 @@ export default function WhyMarkitMe() {
         font-black
         uppercase
         tracking-[0.24em]
-        text-[#6D9773]
-        dark:text-[#FFBA00]
+        text-[var(--color-green)]
+        dark:text-[var(--color-gold)]
       "
     >
       A different way to work
@@ -175,8 +176,8 @@ export default function WhyMarkitMe() {
         h-1.5
         w-1.5
         rounded-full
-        bg-[#6D9773]
-        dark:bg-[#FFBA00]
+        bg-[var(--color-green)]
+        dark:bg-[var(--color-gold)]
       "
     />
   </div>
@@ -185,30 +186,17 @@ export default function WhyMarkitMe() {
       HEADING
   ================================================== */}
 
-  <h2
-    className="
-      mt-4
-      max-w-3xl
-      text-4xl
-      font-black
-      leading-[0.98]
-      tracking-[-0.055em]
-      text-[#0C3B2E]
-      dark:text-[#F1F3ED]
-      sm:text-5xl
-      lg:text-6xl
-    "
-  >
+  <SectionHeading>
     Not an agency.{" "}
     <span
       className="
-        text-[#6D9773]
-        dark:text-[#FFBA00]
+        text-[var(--color-green)]
+        dark:text-[var(--color-gold)]
       "
     >
       Not just a freelancer.
     </span>
-  </h2>
+  </SectionHeading>
 
   {/* =================================================
       DESCRIPTION
@@ -220,8 +208,8 @@ export default function WhyMarkitMe() {
       max-w-2xl
       text-sm
       leading-7
-      text-[#0C3B2E]/55
-      dark:text-[#F1F3ED]/55
+      text-[var(--color-deep)]/55
+      dark:text-[var(--color-cream)]/55
       sm:text-base
     "
   >
@@ -280,13 +268,13 @@ export default function WhyMarkitMe() {
                 overflow-hidden
                 rounded-[2rem]
                 border
-                border-[#0C3B2E]
-                bg-[#0C3B2E]
+                border-[var(--color-deep)]
+                bg-[var(--color-deep)]
                 p-7
-                text-[#F1F3ED]
+                text-[var(--color-cream)]
                 shadow-[0_30px_80px_rgba(12,59,46,0.18)]
-                dark:border-[#6D9773]/40
-                dark:bg-[#0C3B2E]
+                dark:border-[var(--color-green)]/40
+                dark:bg-[var(--color-deep)]
                 sm:p-9
                 lg:p-11
               "
@@ -303,8 +291,8 @@ export default function WhyMarkitMe() {
                   w-64
                   rounded-full
                   border
-                  border-[#FFBA00]/20
-                  bg-[#FFBA00]/10
+                  border-[var(--color-gold)]/20
+                  bg-[var(--color-gold)]/10
                   transition-transform
                   duration-700
                   group-hover:scale-125
@@ -325,7 +313,7 @@ export default function WhyMarkitMe() {
                   translate-y-1/3
                   rotate-12
                   border
-                  border-[#6D9773]/20
+                  border-[var(--color-green)]/20
                 "
               />
 
@@ -339,20 +327,20 @@ export default function WhyMarkitMe() {
                     gap-2
                     rounded-full
                     border
-                    border-[#F1F3ED]/15
-                    bg-[#F1F3ED]/[0.05]
+                    border-[var(--color-cream)]/15
+                    bg-[var(--color-cream)]/[0.05]
                     px-3
                     py-1.5
                     text-[9px]
                     font-medium
                     uppercase
                     tracking-[0.18em]
-                    text-[#F1F3ED]/60
+                    text-[var(--color-cream)]/60
                   "
                 >
                   <Sparkles
                     size={12}
-                    className="text-[#FFBA00]"
+                    className="text-[var(--color-gold)]"
                   />
 
                   The sweet spot
@@ -363,7 +351,7 @@ export default function WhyMarkitMe() {
                     text-[10px]
                     font-bold
                     tracking-[0.2em]
-                    text-[#F1F3ED]/30
+                    text-[var(--color-cream)]/30
                   "
                 >
                   03
@@ -379,7 +367,7 @@ export default function WhyMarkitMe() {
                     font-black
                     uppercase
                     tracking-[0.22em]
-                    text-[#FFBA00]
+                    text-[var(--color-gold)]
                   "
                 >
                   MarkitMe
@@ -399,7 +387,7 @@ export default function WhyMarkitMe() {
                   Built around
                   <br />
 
-                  <span className="text-[#6D9773]">
+                  <span className="text-[var(--color-green)]">
                     your business.
                   </span>
                 </h3>
@@ -410,7 +398,7 @@ export default function WhyMarkitMe() {
                     max-w-md
                     text-sm
                     leading-7
-                    text-[#F1F3ED]/60
+                    text-[var(--color-cream)]/60
                   "
                 >
                   A flexible digital partner that brings strategy, creativity,
@@ -444,7 +432,7 @@ export default function WhyMarkitMe() {
                       items-center
                       gap-3
                       border-t
-                      border-[#F1F3ED]/10
+                      border-[var(--color-cream)]/10
                       pt-3
                     "
                   >
@@ -457,8 +445,8 @@ export default function WhyMarkitMe() {
                         items-center
                         justify-center
                         rounded-full
-                        bg-[#FFBA00]
-                        text-[#0C3B2E]
+                        bg-[var(--color-gold)]
+                        text-[var(--color-deep)]
                       "
                     >
                       <Check
@@ -467,7 +455,7 @@ export default function WhyMarkitMe() {
                       />
                     </span>
 
-                    <span className="text-sm text-[#F1F3ED]/80">
+                    <span className="text-sm text-[var(--color-cream)]/80">
                       {point}
                     </span>
                   </motion.div>
@@ -484,11 +472,11 @@ export default function WhyMarkitMe() {
                   items-center
                   justify-between
                   border-t
-                  border-[#F1F3ED]/10
+                  border-[var(--color-cream)]/10
                   pt-6
                 "
               >
-                <span className="text-xs text-[#F1F3ED]/40">
+                <span className="text-xs text-[var(--color-cream)]/40">
                   One partner. Full capability.
                 </span>
 
@@ -500,8 +488,8 @@ export default function WhyMarkitMe() {
                     items-center
                     justify-center
                     rounded-full
-                    bg-[#FFBA00]
-                    text-[#0C3B2E]
+                    bg-[var(--color-gold)]
+                    text-[var(--color-deep)]
                     transition-transform
                     duration-300
                     group-hover:rotate-45
@@ -548,27 +536,27 @@ export default function WhyMarkitMe() {
             lg:mt-20
           "
         >
-          <div className="mb-6 h-px w-16 bg-[#FFBA00]" />
+          <div className="mb-6 h-px w-16 bg-[var(--color-gold)]" />
 
           <p
             className="
               text-xl
               leading-8
               tracking-[-0.02em]
-              text-[#0C3B2E]/55
-              dark:text-[#F1F3ED]/55
+              text-[var(--color-deep)]/55
+              dark:text-[var(--color-cream)]/55
               sm:text-2xl
             "
           >
-            <span className="font-black text-[#0C3B2E] dark:text-[#F1F3ED]">
+            <span className="font-black text-[var(--color-deep)] dark:text-[var(--color-cream)]">
               Less hierarchy.
             </span>{" "}
 
-            <span className="font-black text-[#6D9773]">
+            <span className="font-black text-[var(--color-green)]">
               More expertise.
             </span>{" "}
 
-            <span className="font-black text-[#0C3B2E] dark:text-[#F1F3ED]">
+            <span className="font-black text-[var(--color-deep)] dark:text-[var(--color-cream)]">
               Better communication.
             </span>
           </p>
@@ -578,13 +566,13 @@ export default function WhyMarkitMe() {
               mt-3
               text-sm
               leading-7
-              text-[#0C3B2E]/45
-              dark:text-[#F1F3ED]/45
+              text-[var(--color-deep)]/45
+              dark:text-[var(--color-cream)]/45
             "
           >
             And a team that stays focused on one thing:
 
-            <span className="font-bold text-[#BB8A52]">
+            <span className="font-bold text-[var(--color-sand)]">
               {" "}
               your growth.
             </span>
@@ -626,18 +614,18 @@ function ComparisonCard({ item, direction }) {
         overflow-hidden
         rounded-[2rem]
         border
-        border-[#0C3B2E]/10
+        border-[var(--color-deep)]/10
         bg-white/70
         p-7
         backdrop-blur-sm
         transition-all
         duration-500
         hover:-translate-y-2
-        hover:border-[#6D9773]/50
+        hover:border-[var(--color-green)]/50
         hover:shadow-[0_25px_60px_rgba(12,59,46,0.08)]
-        dark:border-[#F1F3ED]/10
-        dark:bg-[#0C3B2E]/40
-        dark:hover:border-[#6D9773]/40
+        dark:border-[var(--color-cream)]/10
+        dark:bg-[var(--color-deep)]/40
+        dark:hover:border-[var(--color-green)]/40
         sm:p-9
       "
     >
@@ -650,7 +638,7 @@ function ComparisonCard({ item, direction }) {
           top-0
           h-[3px]
           w-10
-          bg-[#BB8A52]
+          bg-[var(--color-sand)]
           transition-all
           duration-500
           group-hover:w-20
@@ -670,12 +658,12 @@ function ComparisonCard({ item, direction }) {
             justify-center
             rounded-2xl
             border
-            border-[#0C3B2E]/10
-            bg-[#E5EBE3]
-            text-[#0C3B2E]
-            dark:border-[#F1F3ED]/10
-            dark:bg-[#F1F3ED]/[0.05]
-            dark:text-[#F1F3ED]
+            border-[var(--color-deep)]/10
+            bg-[var(--color-soft)]
+            text-[var(--color-deep)]
+            dark:border-[var(--color-cream)]/10
+            dark:bg-[var(--color-cream)]/[0.05]
+            dark:text-[var(--color-cream)]
           "
         >
           <Icon
@@ -690,8 +678,8 @@ function ComparisonCard({ item, direction }) {
             font-black
             uppercase
             tracking-[0.18em]
-            text-[#0C3B2E]/25
-            dark:text-[#F1F3ED]/25
+            text-[var(--color-deep)]/25
+            dark:text-[var(--color-cream)]/25
           "
         >
           Option {item.number}
@@ -716,8 +704,8 @@ function ComparisonCard({ item, direction }) {
           mt-3
           text-sm
           leading-6
-          text-[#0C3B2E]/50
-          dark:text-[#F1F3ED]/50
+          text-[var(--color-deep)]/50
+          dark:text-[var(--color-cream)]/50
         "
       >
         {item.description}
@@ -734,8 +722,8 @@ function ComparisonCard({ item, direction }) {
               items-center
               gap-3
               text-sm
-              text-[#0C3B2E]/55
-              dark:text-[#F1F3ED]/55
+              text-[var(--color-deep)]/55
+              dark:text-[var(--color-cream)]/55
             "
           >
             <span
@@ -744,7 +732,7 @@ function ComparisonCard({ item, direction }) {
                 w-1.5
                 shrink-0
                 rounded-full
-                bg-[#BB8A52]
+                bg-[var(--color-sand)]
               "
             />
 
@@ -759,9 +747,9 @@ function ComparisonCard({ item, direction }) {
         className="
           mt-10
           border-t
-          border-[#0C3B2E]/10
+          border-[var(--color-deep)]/10
           pt-5
-          dark:border-[#F1F3ED]/10
+          dark:border-[var(--color-cream)]/10
         "
       >
         <span
@@ -770,8 +758,8 @@ function ComparisonCard({ item, direction }) {
             font-bold
             uppercase
             tracking-[0.18em]
-            text-[#0C3B2E]/25
-            dark:text-[#F1F3ED]/25
+            text-[var(--color-deep)]/25
+            dark:text-[var(--color-cream)]/25
           "
         >
           The usual route

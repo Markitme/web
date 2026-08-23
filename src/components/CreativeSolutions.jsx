@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
+import SectionHeading from "./SectionHeading";
 
 import "swiper/css";
 
@@ -58,7 +59,7 @@ export default function CreativeSolutions() {
         overflow-hidden
 
         border-y
-        border-[#0C3B2E]/[0.08]
+        border-[var(--color-deep)]/[0.08]
 
         py-20
 
@@ -68,7 +69,7 @@ export default function CreativeSolutions() {
         sm:py-24
         lg:py-28
 
-        dark:border-[#F1F3ED]/[0.08]
+        dark:border-[var(--color-cream)]/[0.08]
       "
     >
       {/* =========================================
@@ -96,11 +97,11 @@ export default function CreativeSolutions() {
 
             rounded-full
 
-            bg-[#6D9773]/[0.06]
+            bg-[var(--color-green)]/[0.06]
 
             blur-[110px]
 
-            dark:bg-[#6D9773]/[0.055]
+            dark:bg-[var(--color-green)]/[0.055]
           "
         />
 
@@ -117,11 +118,11 @@ export default function CreativeSolutions() {
 
             rounded-full
 
-            bg-[#FFBA00]/[0.045]
+            bg-[var(--color-gold)]/[0.045]
 
             blur-[110px]
 
-            dark:bg-[#FFBA00]/[0.025]
+            dark:bg-[var(--color-gold)]/[0.025]
           "
         />
       </div>
@@ -130,113 +131,18 @@ export default function CreativeSolutions() {
     HEADING
 ========================================= */}
 
-<div className="container-custom relative z-10">
-  <motion.div
-    initial={{
-      opacity: 0,
-      y: 30,
-    }}
-    whileInView={{
-      opacity: 1,
-      y: 0,
-    }}
-    viewport={{
-      once: true,
-      amount: 0.2,
-    }}
-    transition={{
-      duration: 0.7,
-      ease: "easeOut",
-    }}
-    className="mb-11 md:mb-14"
-  >
-    {/* =================================================
-        EYEBROW
-    ================================================== */}
-
-    <div className="inline-flex items-center gap-2">
-      <span
-        className="
-          h-1.5
-          w-1.5
-          rounded-full
-          bg-[#FFBA00]
-        "
-      />
-
-      <p
-        className="
-          text-[9px]
-          font-black
-          uppercase
-          tracking-[0.24em]
-          text-[#6D9773]
-          dark:text-[#FFBA00]
-        "
-      >
-        Easy & Hassle-Free
-      </p>
-
-      <span
-        className="
-          h-1.5
-          w-1.5
-          rounded-full
-          bg-[#6D9773]
-          dark:bg-[#FFBA00]
-        "
-      />
-    </div>
-
-    {/* =================================================
-        HEADING
-    ================================================== */}
-
-    <h2
-      className="
-        mt-4
-        max-w-3xl
-        text-4xl
-        font-black
-        leading-[0.98]
-        tracking-[-0.055em]
-        text-[#0C3B2E]
-        dark:text-[#F1F3ED]
-        sm:text-5xl
-        lg:text-6xl
-      "
-    >
-      All the creative solutions your{" "}
-      <span
-        className="
-          text-[#6D9773]
-          dark:text-[#FFBA00]
-        "
-      >
-        business needs.
-      </span>
-    </h2>
-
-    {/* =================================================
-        DESCRIPTION
-    ================================================== */}
-
-    <p
-      className="
-        mt-5
-        max-w-2xl
-        text-sm
-        leading-7
-        text-[#0C3B2E]/55
-        dark:text-[#F1F3ED]/55
-        sm:text-base
-      "
-    >
-      From strategy and design to development and growth, everything you need
-      to build a stronger digital presence.
-    </p>
-  </motion.div>
-</div>
+      <div className="container-custom relative z-10">
+        <SectionHeading
+          eyebrow="Easy & Hassle-Free"
+          description="From strategy and design to development and growth, everything you need to build a stronger digital presence."
+          className="mb-11 md:mb-14"
+        >
+          All the creative solutions your{" "}
+          <span className="text-[var(--color-green)] dark:text-[var(--color-gold)]">
+            business needs.
+          </span>
+        </SectionHeading>
+      </div>
 
       {/* =========================================
           SWIPER
@@ -308,7 +214,7 @@ export default function CreativeSolutions() {
 
                   rounded-2xl
 
-                  bg-[#0C3B2E]
+                  bg-[var(--color-deep)]
 
                   shadow-[0_12px_40px_rgba(12,59,46,0.10)]
 
@@ -356,12 +262,12 @@ export default function CreativeSolutions() {
                     absolute
                     inset-0
 
-                    bg-[#0C3B2E]/30
+                    bg-[var(--color-deep)]/30
 
                     transition-all
                     duration-500
 
-                    group-hover:bg-[#0C3B2E]/45
+                    group-hover:bg-[var(--color-deep)]/45
                   "
                 />
 
@@ -378,8 +284,8 @@ export default function CreativeSolutions() {
                     h-2/3
 
                     bg-gradient-to-b
-                    from-[#0C3B2E]/80
-                    via-[#0C3B2E]/25
+                    from-[var(--color-deep)]/80
+                    via-[var(--color-deep)]/25
                     to-transparent
                   "
                 />
@@ -400,7 +306,7 @@ export default function CreativeSolutions() {
 
                     rounded-full
 
-                    bg-[#FFBA00]/20
+                    bg-[var(--color-gold)]/20
 
                     opacity-0
 
@@ -461,7 +367,7 @@ export default function CreativeSolutions() {
                         font-semibold
                         tracking-[0.15em]
 
-                        text-[#F1F3ED]/45
+                        text-[var(--color-cream)]/45
                       "
                     >
                       {String(index + 1).padStart(2, "0")}
@@ -504,7 +410,7 @@ export default function CreativeSolutions() {
                       uppercase
                       tracking-[0.15em]
 
-                      text-[#F1F3ED]/70
+                      text-[var(--color-cream)]/70
                     "
                   >
                     MarkitMe
@@ -521,21 +427,21 @@ export default function CreativeSolutions() {
                       rounded-full
 
                       border
-                      border-[#F1F3ED]/30
+                      border-[var(--color-cream)]/30
 
-                      bg-[#F1F3ED]/10
+                      bg-[var(--color-cream)]/10
 
                       text-lg
-                      text-[#F1F3ED]
+                      text-[var(--color-cream)]
 
                       backdrop-blur-md
 
                       transition-all
                       duration-300
 
-                      group-hover:border-[#FFBA00]
-                      group-hover:bg-[#FFBA00]
-                      group-hover:text-[#0C3B2E]
+                      group-hover:border-[var(--color-gold)]
+                      group-hover:bg-[var(--color-gold)]
+                      group-hover:text-[var(--color-deep)]
                     "
                   >
                     ↗
@@ -555,7 +461,7 @@ export default function CreativeSolutions() {
                     h-[2px]
                     w-0
 
-                    bg-[#FFBA00]
+                    bg-[var(--color-gold)]
 
                     transition-all
                     duration-700
@@ -583,11 +489,11 @@ export default function CreativeSolutions() {
             justify-between
 
             border-t
-            border-[#0C3B2E]/[0.10]
+            border-[var(--color-deep)]/[0.10]
 
             pt-5
 
-            dark:border-[#F1F3ED]/[0.10]
+            dark:border-[var(--color-cream)]/[0.10]
           "
         >
           <span

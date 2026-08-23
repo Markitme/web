@@ -5,7 +5,7 @@ import { projects } from "@/data/projects";
 
 export default function WorkPage() {
   return (
-    <main className=" transition-colors duration-300 bg-[#F1F3ED] text-[#0C3B2E] dark:bg-[#071F18] dark:text-[#F1F3ED]">
+    <main className=" transition-colors duration-300 bg-[var(--color-cream)] text-[var(--color-deep)] dark:bg-[var(--color-night)] dark:text-[var(--color-cream)]">
 
       {/* =====================================================
           HERO
@@ -17,7 +17,7 @@ export default function WorkPage() {
           {/* Eyebrow */}
 
           <div className="inline-flex items-center gap-3">
-            <span className="h-2 w-2 rounded-full bg-[#FFBA00]" />
+            <span className="h-2 w-2 rounded-full bg-[var(--color-gold)]" />
 
             <p
               className="
@@ -25,8 +25,8 @@ export default function WorkPage() {
                 font-black
                 uppercase
                 tracking-[0.2em]
-                text-[#6D9773]
-                dark:text-[#FFBA00]
+                text-[var(--color-green)]
+                dark:text-[var(--color-gold)]
               "
             >
               Case Studies
@@ -43,16 +43,16 @@ export default function WorkPage() {
               font-black
               leading-[0.95]
               tracking-[-0.055em]
-              text-[#0C3B2E]
+              text-[var(--color-deep)]
 
-              dark:text-[#F1F3ED]
+              dark:text-[var(--color-cream)]
 
               sm:text-5xl
               lg:text-6xl
             "
           >
             Ideas turned into{" "}
-            <span className="text-[#6D9773] dark:text-[#FFBA00]">
+            <span className="text-[var(--color-green)] dark:text-[var(--color-gold)]">
               measurable impact.
             </span>
           </h1>
@@ -65,8 +65,8 @@ export default function WorkPage() {
               max-w-2xl
               text-sm
               leading-7
-              text-[#0C3B2E]/55
-              dark:text-[#F1F3ED]/55
+              text-[var(--color-deep)]/55
+              dark:text-[var(--color-cream)]/55
               sm:text-base
             "
           >
@@ -100,7 +100,7 @@ export default function WorkPage() {
                   h-1.5
                   w-1.5
                   rounded-full
-                  bg-[#FFBA00]
+                  bg-[var(--color-gold)]
                 "
               />
 
@@ -110,8 +110,8 @@ export default function WorkPage() {
                   font-black
                   uppercase
                   tracking-[0.24em]
-                  text-[#6D9773]
-                  dark:text-[#FFBA00]
+                  text-[var(--color-green)]
+                  dark:text-[var(--color-gold)]
                 "
               >
                 Our Latest Projects
@@ -122,8 +122,8 @@ export default function WorkPage() {
                   h-1.5
                   w-1.5
                   rounded-full
-                  bg-[#6D9773]
-                  dark:bg-[#FFBA00]
+                  bg-[var(--color-green)]
+                  dark:bg-[var(--color-gold)]
                 "
               />
 
@@ -139,16 +139,16 @@ export default function WorkPage() {
                 font-black
                 leading-[0.98]
                 tracking-[-0.055em]
-                text-[#0C3B2E]
+                text-[var(--color-deep)]
 
-                dark:text-[#F1F3ED]
+                dark:text-[var(--color-cream)]
 
                 sm:text-5xl
                 lg:text-6xl
               "
             >
               Work built to move{" "}
-              <span className="text-[#6D9773] dark:text-[#FFBA00]">
+              <span className="text-[var(--color-green)] dark:text-[var(--color-gold)]">
                 businesses forward.
               </span>
             </h2>
@@ -161,9 +161,9 @@ export default function WorkPage() {
                 max-w-2xl
                 text-sm
                 leading-7
-                text-[#0C3B2E]/55
+                text-[var(--color-deep)]/55
 
-                dark:text-[#F1F3ED]/55
+                dark:text-[var(--color-cream)]/55
 
                 sm:text-base
               "
@@ -190,19 +190,19 @@ export default function WorkPage() {
                   overflow-hidden
                   rounded-[28px]
                   border
-                  border-[#0C3B2E]/10
-                  bg-[#F1F3ED]/50
+                  border-[var(--color-deep)]/10
+                  bg-[var(--color-cream)]/50
                   transition-all
                   duration-500
 
                   hover:-translate-y-1
-                  hover:border-[#6D9773]
+                  hover:border-[var(--color-green)]
                   hover:shadow-xl
 
-                  dark:border-[#F1F3ED]/10
+                  dark:border-[var(--color-cream)]/10
                   dark:bg-white/[0.03]
 
-                  dark:hover:border-[#FFBA00]
+                  dark:hover:border-[var(--color-gold)]
                 "
               >
 
@@ -215,7 +215,7 @@ export default function WorkPage() {
                     relative
                     aspect-[16/10]
                     overflow-hidden
-                    bg-[#0C3B2E]/5
+                    bg-[var(--color-deep)]/5
                     dark:bg-white/10
                   "
                 >
@@ -259,7 +259,7 @@ export default function WorkPage() {
                       py-2
                       text-xs
                       font-black
-                      text-[#0C3B2E]
+                      text-[var(--color-deep)]
                       backdrop-blur-md
                     "
                   >
@@ -303,8 +303,8 @@ export default function WorkPage() {
                       font-black
                       uppercase
                       tracking-[0.2em]
-                      text-[#6D9773]
-                      dark:text-[#FFBA00]
+                      text-[var(--color-green)]
+                      dark:text-[var(--color-gold)]
                     "
                   >
                     {project.category}
@@ -319,8 +319,8 @@ export default function WorkPage() {
                       font-black
                       leading-[1]
                       tracking-[-0.045em]
-                      text-[#0C3B2E]
-                      dark:text-[#F1F3ED]
+                      text-[var(--color-deep)]
+                      dark:text-[var(--color-cream)]
                     "
                   >
                     {project.title}
@@ -333,8 +333,8 @@ export default function WorkPage() {
                       mt-3
                       text-sm
                       font-semibold
-                      text-[#0C3B2E]/45
-                      dark:text-[#F1F3ED]/45
+                      text-[var(--color-deep)]/45
+                      dark:text-[var(--color-cream)]/45
                     "
                   >
                     {project.location}
@@ -347,8 +347,8 @@ export default function WorkPage() {
                       mt-5
                       text-sm
                       leading-7
-                      text-[#0C3B2E]/60
-                      dark:text-[#F1F3ED]/60
+                      text-[var(--color-deep)]/60
+                      dark:text-[var(--color-cream)]/60
                     "
                   >
                     {project.description}
@@ -365,21 +365,21 @@ export default function WorkPage() {
                       items-center
                       gap-3
                       rounded-full
-                      bg-[#FFBA00]
+                      bg-[var(--color-gold)]
                       px-6
                       py-3.5
                       text-sm
                       font-bold
-                      text-[#0C3B2E]
+                      text-[var(--color-deep)]
                       transition-all
                       duration-300
 
                       hover:scale-[1.03]
-                      hover:bg-[#0C3B2E]
-                      hover:text-[#FFBA00]
+                      hover:bg-[var(--color-deep)]
+                      hover:text-[var(--color-gold)]
 
-                      dark:hover:bg-[#F1F3ED]
-                      dark:hover:text-[#0C3B2E]
+                      dark:hover:bg-[var(--color-cream)]
+                      dark:hover:text-[var(--color-deep)]
                     "
                   >
                     View Case Study

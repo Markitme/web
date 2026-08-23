@@ -10,12 +10,12 @@ import Button from "../../components/ui/Button";
 import CTA from "../../components/CTA";
 export default function ContactPage() {
   return (
-    <main className="transition-colors duration-300 bg-[#F1F3ED] text-[#0C3B2E] dark:bg-[#071F18] dark:text-[#F1F3ED]">
+    <main className="transition-colors duration-300 bg-[var(--color-cream)] text-[var(--color-deep)] dark:bg-[var(--color-night)] dark:text-[var(--color-cream)]">
 
       {/* =====================================================
           HERO / CONTACT
       ===================================================== */}
-      <section className="relative overflow-hidden border-b border-[#0C3B2E]/10 bg-[#F1F3ED] dark:border-[#F1F3ED]/10 dark:bg-[#071F18]">
+      <section className="relative overflow-hidden border-b border-[var(--color-deep)]/10 bg-[var(--color-cream)] dark:border-[var(--color-cream)]/10 dark:bg-[var(--color-night)]">
 
         <div className="container-custom relative px-5 py-16 sm:py-20 lg:py-24">
 
@@ -39,7 +39,7 @@ export default function ContactPage() {
                         h-1.5
                         w-1.5
                         rounded-full
-                        bg-[#FFBA00]
+                        bg-[var(--color-gold)]
                       "
                     />
 
@@ -49,11 +49,11 @@ export default function ContactPage() {
                         font-black
                         uppercase
                         tracking-[0.22em]
-                        text-[#6D9773]
+                        text-[var(--color-green)]
 
                         sm:text-[9px]
 
-                        dark:text-[#FFBA00]
+                        dark:text-[var(--color-gold)]
                       "
                     >
                       Contact MarkitMe
@@ -64,8 +64,8 @@ export default function ContactPage() {
                         h-1.5
                         w-1.5
                         rounded-full
-                        bg-[#6D9773]
-                        dark:bg-[#FFBA00]
+                        bg-[var(--color-green)]
+                        dark:bg-[var(--color-gold)]
                       "
                     />
 
@@ -79,17 +79,17 @@ export default function ContactPage() {
                       font-black
                       leading-[0.95]
                       tracking-[-0.055em]
-                      text-[#0C3B2E]
+                      text-[var(--color-deep)]
 
                       sm:text-4xl
                       md:text-5xl
                       lg:text-6xl
 
-                      dark:text-[#F1F3ED]
+                      dark:text-[var(--color-cream)]
                     "
                   >
                     Let&apos;s build something{" "}
-                    <span className="text-[#6D9773] dark:text-[#FFBA00]">
+                    <span className="text-[var(--color-green)] dark:text-[var(--color-gold)]">
                       that matters.
                     </span>
                   </h1>
@@ -103,9 +103,9 @@ export default function ContactPage() {
                     max-w-2xl
                     text-lg
                     leading-8
-                    text-[#0C3B2E]/60
+                    text-[var(--color-deep)]/60
 
-                    dark:text-[#F1F3ED]/60
+                    dark:text-[var(--color-cream)]/60
 
                     sm:text-xl
                   "
@@ -135,8 +135,8 @@ export default function ContactPage() {
                       items-center
                       justify-center
                       rounded-full
-                      bg-[#FFBA00]
-                      text-[#0C3B2E]
+                      bg-[var(--color-gold)]
+                      text-[var(--color-deep)]
                     "
                   >
                     <Mail size={20} />
@@ -144,7 +144,7 @@ export default function ContactPage() {
 
                   <div>
 
-                    <p className="text-sm text-[#0C3B2E]/50 dark:text-[#F1F3ED]/50">
+                    <p className="text-sm text-[var(--color-deep)]/50 dark:text-[var(--color-cream)]/50">
                       Email
                     </p>
 
@@ -153,8 +153,8 @@ export default function ContactPage() {
                       className="
                         font-bold
                         transition
-                        hover:text-[#6D9773]
-                        dark:hover:text-[#FFBA00]
+                        hover:text-[var(--color-green)]
+                        dark:hover:text-[var(--color-gold)]
                       "
                     >
                       info@markitme.ca
@@ -177,8 +177,8 @@ export default function ContactPage() {
                       items-center
                       justify-center
                       rounded-full
-                      bg-[#FFBA00]
-                      text-[#0C3B2E]
+                      bg-[var(--color-gold)]
+                      text-[var(--color-deep)]
                     "
                   >
                     <Phone size={20} />
@@ -186,7 +186,7 @@ export default function ContactPage() {
 
                   <div>
 
-                    <p className="text-sm text-[#0C3B2E]/50 dark:text-[#F1F3ED]/50">
+                    <p className="text-sm text-[var(--color-deep)]/50 dark:text-[var(--color-cream)]/50">
                       Phone
                     </p>
 
@@ -195,8 +195,8 @@ export default function ContactPage() {
                       className="
                         font-bold
                         transition
-                        hover:text-[#6D9773]
-                        dark:hover:text-[#FFBA00]
+                        hover:text-[var(--color-green)]
+                        dark:hover:text-[var(--color-gold)]
                       "
                     >
                       +1 (613)-981-4844
@@ -219,8 +219,8 @@ export default function ContactPage() {
                       items-center
                       justify-center
                       rounded-full
-                      bg-[#FFBA00]
-                      text-[#0C3B2E]
+                      bg-[var(--color-gold)]
+                      text-[var(--color-deep)]
                     "
                   >
                     <MapPin size={20} />
@@ -228,11 +228,11 @@ export default function ContactPage() {
 
                   <div>
 
-                    <p className="text-sm text-[#0C3B2E]/50 dark:text-[#F1F3ED]/50">
+                    <p className="text-sm text-[var(--color-deep)]/50 dark:text-[var(--color-cream)]/50">
                       Location
                     </p>
 
-                    <p className="font-bold text-[#0C3B2E] dark:text-[#F1F3ED]">
+                    <p className="font-bold text-[var(--color-deep)] dark:text-[var(--color-cream)]">
                       34 Minowan Miikan Lane, Toronto, M6J 0G3
                     </p>
 
@@ -252,17 +252,17 @@ export default function ContactPage() {
               className="
                 rounded-[28px]
                 border
-                border-[#0C3B2E]/10
-                bg-[#0C3B2E]/[0.025]
+                border-[var(--color-deep)]/10
+                bg-[var(--color-deep)]/[0.025]
                 p-6
                 shadow-sm
                 transition-all
                 duration-300
-                hover:border-[#6D9773]
+                hover:border-[var(--color-green)]
 
-                dark:border-[#F1F3ED]/10
-                dark:bg-[#F1F3ED]/[0.03]
-                dark:hover:border-[#FFBA00]
+                dark:border-[var(--color-cream)]/10
+                dark:bg-[var(--color-cream)]/[0.03]
+                dark:hover:border-[var(--color-gold)]
 
                 sm:p-9
               "
@@ -277,8 +277,8 @@ export default function ContactPage() {
                     font-black
                     uppercase
                     tracking-[0.22em]
-                    text-[#6D9773]
-                    dark:text-[#FFBA00]
+                    text-[var(--color-green)]
+                    dark:text-[var(--color-gold)]
                   "
                 >
                   Start a conversation
@@ -291,11 +291,11 @@ export default function ContactPage() {
                     font-black
                     leading-[0.98]
                     tracking-[-0.045em]
-                    text-[#0C3B2E]
+                    text-[var(--color-deep)]
 
                     sm:text-4xl
 
-                    dark:text-[#F1F3ED]
+                    dark:text-[var(--color-cream)]
                   "
                 >
                   Tell us what you&apos;re building.
@@ -319,8 +319,8 @@ export default function ContactPage() {
                       block
                       text-sm
                       font-bold
-                      text-[#0C3B2E]
-                      dark:text-[#F1F3ED]
+                      text-[var(--color-deep)]
+                      dark:text-[var(--color-cream)]
                     "
                   >
                     Name
@@ -335,23 +335,23 @@ export default function ContactPage() {
                       w-full
                       rounded-xl
                       border
-                      border-[#0C3B2E]/10
-                      bg-[#F1F3ED]
+                      border-[var(--color-deep)]/10
+                      bg-[var(--color-cream)]
                       px-4
                       py-4
-                      text-[#0C3B2E]
+                      text-[var(--color-deep)]
                       outline-none
                       transition
 
-                      placeholder:text-[#0C3B2E]/40
+                      placeholder:text-[var(--color-deep)]/40
 
-                      focus:border-[#6D9773]
+                      focus:border-[var(--color-green)]
 
-                      dark:border-[#F1F3ED]/10
-                      dark:bg-[#071F18]
-                      dark:text-[#F1F3ED]
-                      dark:placeholder:text-[#F1F3ED]/35
-                      dark:focus:border-[#FFBA00]
+                      dark:border-[var(--color-cream)]/10
+                      dark:bg-[var(--color-night)]
+                      dark:text-[var(--color-cream)]
+                      dark:placeholder:text-[var(--color-cream)]/35
+                      dark:focus:border-[var(--color-gold)]
                     "
                   />
 
@@ -368,8 +368,8 @@ export default function ContactPage() {
                       block
                       text-sm
                       font-bold
-                      text-[#0C3B2E]
-                      dark:text-[#F1F3ED]
+                      text-[var(--color-deep)]
+                      dark:text-[var(--color-cream)]
                     "
                   >
                     Email
@@ -384,23 +384,23 @@ export default function ContactPage() {
                       w-full
                       rounded-xl
                       border
-                      border-[#0C3B2E]/10
-                      bg-[#F1F3ED]
+                      border-[var(--color-deep)]/10
+                      bg-[var(--color-cream)]
                       px-4
                       py-4
-                      text-[#0C3B2E]
+                      text-[var(--color-deep)]
                       outline-none
                       transition
 
-                      placeholder:text-[#0C3B2E]/40
+                      placeholder:text-[var(--color-deep)]/40
 
-                      focus:border-[#6D9773]
+                      focus:border-[var(--color-green)]
 
-                      dark:border-[#F1F3ED]/10
-                      dark:bg-[#071F18]
-                      dark:text-[#F1F3ED]
-                      dark:placeholder:text-[#F1F3ED]/35
-                      dark:focus:border-[#FFBA00]
+                      dark:border-[var(--color-cream)]/10
+                      dark:bg-[var(--color-night)]
+                      dark:text-[var(--color-cream)]
+                      dark:placeholder:text-[var(--color-cream)]/35
+                      dark:focus:border-[var(--color-gold)]
                     "
                   />
 
@@ -421,8 +421,8 @@ export default function ContactPage() {
                     block
                     text-sm
                     font-bold
-                    text-[#0C3B2E]
-                    dark:text-[#F1F3ED]
+                    text-[var(--color-deep)]
+                    dark:text-[var(--color-cream)]
                   "
                 >
                   Company
@@ -437,23 +437,23 @@ export default function ContactPage() {
                     w-full
                     rounded-xl
                     border
-                    border-[#0C3B2E]/10
-                    bg-[#F1F3ED]
+                    border-[var(--color-deep)]/10
+                    bg-[var(--color-cream)]
                     px-4
                     py-4
-                    text-[#0C3B2E]
+                    text-[var(--color-deep)]
                     outline-none
                     transition
 
-                    placeholder:text-[#0C3B2E]/40
+                    placeholder:text-[var(--color-deep)]/40
 
-                    focus:border-[#6D9773]
+                    focus:border-[var(--color-green)]
 
-                    dark:border-[#F1F3ED]/10
-                    dark:bg-[#071F18]
-                    dark:text-[#F1F3ED]
-                    dark:placeholder:text-[#F1F3ED]/35
-                    dark:focus:border-[#FFBA00]
+                    dark:border-[var(--color-cream)]/10
+                    dark:bg-[var(--color-night)]
+                    dark:text-[var(--color-cream)]
+                    dark:placeholder:text-[var(--color-cream)]/35
+                    dark:focus:border-[var(--color-gold)]
                   "
                 />
 
@@ -472,8 +472,8 @@ export default function ContactPage() {
                     block
                     text-sm
                     font-bold
-                    text-[#0C3B2E]
-                    dark:text-[#F1F3ED]
+                    text-[var(--color-deep)]
+                    dark:text-[var(--color-cream)]
                   "
                 >
                   Tell us about your project
@@ -489,23 +489,23 @@ export default function ContactPage() {
                     resize-none
                     rounded-xl
                     border
-                    border-[#0C3B2E]/10
-                    bg-[#F1F3ED]
+                    border-[var(--color-deep)]/10
+                    bg-[var(--color-cream)]
                     px-4
                     py-4
-                    text-[#0C3B2E]
+                    text-[var(--color-deep)]
                     outline-none
                     transition
 
-                    placeholder:text-[#0C3B2E]/40
+                    placeholder:text-[var(--color-deep)]/40
 
-                    focus:border-[#6D9773]
+                    focus:border-[var(--color-green)]
 
-                    dark:border-[#F1F3ED]/10
-                    dark:bg-[#071F18]
-                    dark:text-[#F1F3ED]
-                    dark:placeholder:text-[#F1F3ED]/35
-                    dark:focus:border-[#FFBA00]
+                    dark:border-[var(--color-cream)]/10
+                    dark:bg-[var(--color-night)]
+                    dark:text-[var(--color-cream)]
+                    dark:placeholder:text-[var(--color-cream)]/35
+                    dark:focus:border-[var(--color-gold)]
                   "
                 />
 

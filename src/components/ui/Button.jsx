@@ -32,11 +32,11 @@ export default function Button({
 
     focus:outline-none
     focus:ring-2
-    focus:ring-[#FFBA00]
+    focus:ring-[var(--color-gold)]
     focus:ring-offset-2
-    focus:ring-offset-[#F1F3ED]
+    focus:ring-offset-[var(--color-cream)]
 
-    dark:focus:ring-offset-[#0C3B2E]
+    dark:focus:ring-offset-[var(--color-deep)]
 
     disabled:cursor-not-allowed
     disabled:opacity-50
@@ -60,21 +60,21 @@ export default function Button({
     ================================================= */
 
     primary: `
-      bg-[#FFBA00]
-      text-[#0C3B2E]
+      bg-[var(--color-gold)]
+      text-[var(--color-deep)]
 
       shadow-[0_10px_30px_rgba(255,186,0,0.16)]
 
       hover:-translate-y-0.5
-      hover:bg-[#0C3B2E]
-      hover:text-[#F1F3ED]
+      hover:bg-[var(--color-deep)]
+      hover:text-[var(--color-cream)]
       hover:shadow-[0_14px_38px_rgba(12,59,46,0.20)]
 
-      dark:bg-[#FFBA00]
-      dark:text-[#0C3B2E]
+      dark:bg-[var(--color-gold)]
+      dark:text-[var(--color-deep)]
 
-      dark:hover:bg-[#F1F3ED]
-      dark:hover:text-[#0C3B2E]
+      dark:hover:bg-[var(--color-cream)]
+      dark:hover:text-[var(--color-deep)]
       dark:hover:shadow-[0_14px_38px_rgba(241,243,237,0.12)]
     `,
 
@@ -91,22 +91,22 @@ export default function Button({
 
     outline: `
       border
-      border-[#0C3B2E]/20
+      border-[var(--color-deep)]/20
       bg-transparent
-      text-[#0C3B2E]
+      text-[var(--color-deep)]
 
       hover:-translate-y-0.5
-      hover:border-[#6D9773]
-      hover:bg-[#6D9773]/10
-      hover:text-[#0C3B2E]
+      hover:border-[var(--color-green)]
+      hover:bg-[var(--color-green)]/10
+      hover:text-[var(--color-deep)]
 
-      dark:border-[#F1F3ED]/20
+      dark:border-[var(--color-cream)]/20
       dark:bg-transparent
-      dark:text-[#F1F3ED]
+      dark:text-[var(--color-cream)]
 
-      dark:hover:border-[#6D9773]
-      dark:hover:bg-[#6D9773]
-      dark:hover:text-[#0C3B2E]
+      dark:hover:border-[var(--color-green)]
+      dark:hover:bg-[var(--color-green)]
+      dark:hover:text-[var(--color-deep)]
     `,
 
 
@@ -117,18 +117,18 @@ export default function Button({
     ================================================= */
 
     sage: `
-      bg-[#6D9773]
-      text-[#0C3B2E]
+      bg-[var(--color-green)]
+      text-[var(--color-deep)]
 
       hover:-translate-y-0.5
-      hover:bg-[#0C3B2E]
-      hover:text-[#F1F3ED]
+      hover:bg-[var(--color-deep)]
+      hover:text-[var(--color-cream)]
 
-      dark:bg-[#6D9773]
-      dark:text-[#0C3B2E]
+      dark:bg-[var(--color-green)]
+      dark:text-[var(--color-deep)]
 
-      dark:hover:bg-[#FFBA00]
-      dark:hover:text-[#0C3B2E]
+      dark:hover:bg-[var(--color-gold)]
+      dark:hover:text-[var(--color-deep)]
     `,
 
 
@@ -139,18 +139,18 @@ export default function Button({
     ================================================= */
 
     dark: `
-      bg-[#0C3B2E]
-      text-[#F1F3ED]
+      bg-[var(--color-deep)]
+      text-[var(--color-cream)]
 
       hover:-translate-y-0.5
-      hover:bg-[#6D9773]
-      hover:text-[#0C3B2E]
+      hover:bg-[var(--color-green)]
+      hover:text-[var(--color-deep)]
 
-      dark:bg-[#F1F3ED]
-      dark:text-[#0C3B2E]
+      dark:bg-[var(--color-cream)]
+      dark:text-[var(--color-deep)]
 
-      dark:hover:bg-[#FFBA00]
-      dark:hover:text-[#0C3B2E]
+      dark:hover:bg-[var(--color-gold)]
+      dark:hover:text-[var(--color-deep)]
     `,
 
 
@@ -162,15 +162,15 @@ export default function Button({
 
     ghost: `
       bg-transparent
-      text-[#0C3B2E]
+      text-[var(--color-deep)]
 
-      hover:bg-[#6D9773]/10
-      hover:text-[#6D9773]
+      hover:bg-[var(--color-green)]/10
+      hover:text-[var(--color-green)]
 
-      dark:text-[#F1F3ED]
+      dark:text-[var(--color-cream)]
 
-      dark:hover:bg-[#6D9773]/10
-      dark:hover:text-[#FFBA00]
+      dark:hover:bg-[var(--color-green)]/10
+      dark:hover:text-[var(--color-gold)]
     `,
   };
 

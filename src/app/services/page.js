@@ -3,6 +3,7 @@ import { ArrowRight } from "lucide-react";
 
 import { services } from "@/data/services";
 import ServiceCard from "@/components/ServiceCard";
+import SectionHeading from "@/components/SectionHeading";
 
 export default function ServicesPage() {
   /* =========================================================
@@ -25,14 +26,14 @@ export default function ServicesPage() {
     <main
       className="
         min-h-screen
-        bg-[#F1F3ED]
-        text-[#0C3B2E]
+        bg-[var(--color-cream)]
+        text-[var(--color-deep)]
 
         transition-colors
         duration-300
 
-        dark:bg-[#071F18]
-        dark:text-[#F1F3ED]
+        dark:bg-[var(--color-night)]
+        dark:text-[var(--color-cream)]
       "
     >
 
@@ -46,9 +47,9 @@ export default function ServicesPage() {
           overflow-hidden
 
           border-b
-          border-[#0C3B2E]/10
+          border-[var(--color-deep)]/10
 
-          dark:border-[#6D9773]/20
+          dark:border-[var(--color-green)]/20
         "
       >
         {/* Decorative Glow */}
@@ -64,11 +65,11 @@ export default function ServicesPage() {
 
             rounded-full
 
-            bg-[#6D9773]/10
+            bg-[var(--color-green)]/10
 
             blur-3xl
 
-            dark:bg-[#6D9773]/10
+            dark:bg-[var(--color-green)]/10
           "
         />
 
@@ -92,7 +93,7 @@ export default function ServicesPage() {
                   h-1.5
                   w-1.5
                   rounded-full
-                  bg-[#FFBA00]
+                  bg-[var(--color-gold)]
                 "
               />
 
@@ -103,11 +104,11 @@ export default function ServicesPage() {
                   uppercase
                   tracking-[0.22em]
 
-                  text-[#6D9773]
+                  text-[var(--color-green)]
 
                   sm:text-[9px]
 
-                  dark:text-[#FFBA00]
+                  dark:text-[var(--color-gold)]
                 "
               >
                 What We Do
@@ -119,9 +120,9 @@ export default function ServicesPage() {
                   w-1.5
                   rounded-full
 
-                  bg-[#6D9773]
+                  bg-[var(--color-green)]
 
-                  dark:bg-[#FFBA00]
+                  dark:bg-[var(--color-gold)]
                 "
               />
             </div>
@@ -136,21 +137,21 @@ export default function ServicesPage() {
                 leading-[0.95]
                 tracking-[-0.055em]
 
-                text-[#0C3B2E]
+                text-[var(--color-deep)]
 
                 sm:text-5xl
                 md:text-6xl
                 lg:text-7xl
 
-                dark:text-[#F1F3ED]
+                dark:text-[var(--color-cream)]
               "
             >
               Strategy, creativity,{" "}
 
               <span
                 className="
-                  text-[#6D9773]
-                  dark:text-[#FFBA00]
+                  text-[var(--color-green)]
+                  dark:text-[var(--color-gold)]
                 "
               >
                 and growth
@@ -168,12 +169,12 @@ export default function ServicesPage() {
                 text-base
                 leading-7
 
-                text-[#0C3B2E]/60
+                text-[var(--color-deep)]/60
 
                 sm:text-lg
                 sm:leading-8
 
-                dark:text-[#F1F3ED]/60
+                dark:text-[var(--color-cream)]/60
               "
             >
               We combine strategy, design, technology, content, and marketing
@@ -197,23 +198,23 @@ export default function ServicesPage() {
               key={category}
               className={`
                 border-b
-                border-[#0C3B2E]/10
+                border-[var(--color-deep)]/10
 
                 py-16
                 sm:py-20
                 lg:py-24
 
-                dark:border-[#6D9773]/20
+                dark:border-[var(--color-green)]/20
 
                 ${
                   isAlternate
                     ? `
-                      bg-[#E8ECE5]
-                      dark:bg-[#0A2A21]
+                      bg-[var(--color-soft)]
+                      dark:bg-[var(--color-deep-surface)]
                     `
                     : `
-                      bg-[#F1F3ED]
-                      dark:bg-[#071F18]
+                      bg-[var(--color-cream)]
+                      dark:bg-[var(--color-night)]
                     `
                 }
               `}
@@ -248,7 +249,7 @@ export default function ServicesPage() {
                           h-1.5
                           w-1.5
                           rounded-full
-                          bg-[#FFBA00]
+                          bg-[var(--color-gold)]
                         "
                       />
 
@@ -259,11 +260,11 @@ export default function ServicesPage() {
                           uppercase
                           tracking-[0.22em]
 
-                          text-[#6D9773]
+                          text-[var(--color-green)]
 
                           sm:text-[9px]
 
-                          dark:text-[#FFBA00]
+                          dark:text-[var(--color-gold)]
                         "
                       >
                         {String(categoryIndex + 1).padStart(2, "0")}
@@ -275,9 +276,9 @@ export default function ServicesPage() {
                           w-1.5
                           rounded-full
 
-                          bg-[#6D9773]
+                          bg-[var(--color-green)]
 
-                          dark:bg-[#FFBA00]
+                          dark:bg-[var(--color-gold)]
                         "
                       />
                     </div>
@@ -292,13 +293,13 @@ export default function ServicesPage() {
                         leading-[0.95]
                         tracking-[-0.055em]
 
-                        text-[#0C3B2E]
+                        text-[var(--color-deep)]
 
                         sm:text-4xl
                         md:text-5xl
                         lg:text-6xl
 
-                        dark:text-[#F1F3ED]
+                        dark:text-[var(--color-cream)]
                       "
                     >
                       {category}
@@ -312,9 +313,9 @@ export default function ServicesPage() {
                         text-base
                         leading-7
 
-                        text-[#0C3B2E]/60
+                        text-[var(--color-deep)]/60
 
-                        dark:text-[#F1F3ED]/60
+                        dark:text-[var(--color-cream)]/60
                       "
                     >
                       Explore specialized services designed around your brand,
@@ -361,12 +362,12 @@ export default function ServicesPage() {
           relative
           overflow-hidden
 
-          bg-[#FFBA00]
+          bg-[var(--color-gold)]
 
           px-5
           py-16
 
-          text-[#0C3B2E]
+          text-[var(--color-deep)]
 
           sm:py-20
           lg:py-24
@@ -387,7 +388,7 @@ export default function ServicesPage() {
             rounded-full
 
             border-[40px]
-            border-[#0C3B2E]/5
+            border-[var(--color-deep)]/5
           "
         />
 
@@ -415,7 +416,7 @@ export default function ServicesPage() {
                   h-1.5
                   w-1.5
                   rounded-full
-                  bg-[#0C3B2E]
+                  bg-[var(--color-deep)]
                 "
               />
 
@@ -440,6 +441,10 @@ export default function ServicesPage() {
                 leading-[0.98]
                 tracking-[-0.055em]
 
+                text-[var(--color-deep)]
+
+                dark:text-[var(--color-deep)]
+
                 sm:text-5xl
                 lg:text-6xl
               "
@@ -455,7 +460,7 @@ export default function ServicesPage() {
                 text-base
                 leading-7
 
-                text-[#0C3B2E]/70
+                text-[var(--color-deep)]/70
               "
             >
               Tell us what you want to achieve, and we&apos;ll help you find
@@ -479,19 +484,19 @@ export default function ServicesPage() {
 
               rounded-full
 
-              bg-[#0C3B2E]
+              bg-[var(--color-deep)]
 
               px-7
               py-4
 
               font-black
-              text-[#F1F3ED]
+              text-[var(--color-cream)]
 
               transition-all
               duration-300
 
               hover:-translate-y-0.5
-              hover:bg-[#071F18]
+              hover:bg-[var(--color-night)]
               hover:shadow-xl
             "
           >
@@ -506,8 +511,8 @@ export default function ServicesPage() {
                 justify-center
                 rounded-full
 
-                bg-[#FFBA00]
-                text-[#0C3B2E]
+                bg-[var(--color-gold)]
+                text-[var(--color-deep)]
 
                 transition-transform
                 duration-300

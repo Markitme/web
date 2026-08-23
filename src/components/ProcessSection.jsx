@@ -1,5 +1,8 @@
 "use client";
 
+import SectionHeading from "./SectionHeading";
+
+
 export default function ProcessSection({
   label = "Our Process",
   title = "How We Work",
@@ -55,9 +58,9 @@ export default function ProcessSection({
                   h-2
                   w-2
                   rounded-full
-                  bg-[#FFBA00]
+                  bg-[var(--color-gold)]
                   shadow-[0_0_12px_rgba(255,186,0,0.40)]
-                  dark:bg-[#FFBA00]
+                  dark:bg-[var(--color-gold)]
                 "
               />
 
@@ -67,8 +70,8 @@ export default function ProcessSection({
                   font-black
                   uppercase
                   tracking-[0.25em]
-                  text-[#6D9773]
-                  dark:text-[#FFBA00]
+                  text-[var(--color-green)]
+                  dark:text-[var(--color-gold)]
                   sm:text-[10px]
                 "
               >
@@ -79,8 +82,8 @@ export default function ProcessSection({
                 className="
                   h-px
                   w-8
-                  bg-[#6D9773]/40
-                  dark:bg-[#FFBA00]/40
+                  bg-[var(--color-green)]/40
+                  dark:bg-[var(--color-gold)]/40
                 "
               />
 
@@ -90,8 +93,8 @@ export default function ProcessSection({
                   font-bold
                   uppercase
                   tracking-[0.18em]
-                  text-[#0C3B2E]/35
-                  dark:text-[#F1F3ED]/35
+                  text-[var(--color-deep)]/35
+                  dark:text-[var(--color-cream)]/35
                 "
               >
                 {String(steps.length).padStart(2, "0")} STEPS
@@ -103,24 +106,7 @@ export default function ProcessSection({
                 HEADING
             ================================================= */}
 
-            <h2
-              className="
-                max-w-4xl
-                text-4xl
-                font-black
-                leading-[0.94]
-                tracking-[-0.065em]
-                text-[#0C3B2E]
-
-                dark:text-[#F1F3ED]
-
-                sm:text-5xl
-                md:text-6xl
-                lg:text-[4.4rem]
-              "
-            >
-              {title}
-            </h2>
+            <SectionHeading>{title}</SectionHeading>
 
 
             {/* Accent line */}
@@ -131,7 +117,7 @@ export default function ProcessSection({
                 h-[3px]
                 w-16
                 rounded-full
-                bg-[#FFBA00]
+                bg-[var(--color-gold)]
                 shadow-[0_0_12px_rgba(255,186,0,0.20)]
               "
             />
@@ -147,9 +133,9 @@ export default function ProcessSection({
                 max-w-2xl
                 text-sm
                 leading-7
-                text-[#0C3B2E]/55
+                text-[var(--color-deep)]/55
 
-                dark:text-[#F1F3ED]/55
+                dark:text-[var(--color-cream)]/55
 
                 sm:text-base
                 sm:leading-8
@@ -177,12 +163,12 @@ export default function ProcessSection({
               right-0
               h-px
               bg-gradient-to-r
-              from-[#6D9773]/25
-              via-[#6D9773]/5
+              from-[var(--color-green)]/25
+              via-[var(--color-green)]/5
               to-transparent
 
-              dark:from-[#FFBA00]/25
-              dark:via-[#FFBA00]/5
+              dark:from-[var(--color-gold)]/25
+              dark:via-[var(--color-gold)]/5
             "
           />
 
@@ -227,12 +213,12 @@ export default function ProcessSection({
                     hidden
                     h-px
                     bg-gradient-to-r
-                    from-[#6D9773]/30
-                    to-[#6D9773]/5
+                    from-[var(--color-green)]/30
+                    to-[var(--color-green)]/5
                     lg:block
 
-                    dark:from-[#FFBA00]/30
-                    dark:to-[#FFBA00]/5
+                    dark:from-[var(--color-gold)]/30
+                    dark:to-[var(--color-gold)]/5
                   "
                 />
               )}
@@ -254,12 +240,12 @@ export default function ProcessSection({
                   rounded-full
 
                   border-[5px]
-                  border-[#F1F3ED]
+                  border-[var(--color-cream)]
 
-                  bg-[#6D9773]
+                  bg-[var(--color-green)]
                   text-base
                   font-black
-                  text-[#F1F3ED]
+                  text-[var(--color-cream)]
 
                   shadow-[0_10px_30px_rgba(109,151,115,0.20)]
 
@@ -268,18 +254,18 @@ export default function ProcessSection({
 
                   group-hover:-translate-y-1
                   group-hover:scale-105
-                  group-hover:bg-[#FFBA00]
-                  group-hover:text-[#0C3B2E]
+                  group-hover:bg-[var(--color-gold)]
+                  group-hover:text-[var(--color-deep)]
                   group-hover:shadow-[0_12px_35px_rgba(255,186,0,0.25)]
 
-                  dark:border-[#0C3B2E]
-                  dark:bg-[#FFBA00]
-                  dark:text-[#0C3B2E]
+                  dark:border-[var(--color-deep)]
+                  dark:bg-[var(--color-gold)]
+                  dark:text-[var(--color-deep)]
 
                   dark:shadow-[0_10px_30px_rgba(255,186,0,0.16)]
 
-                  dark:group-hover:bg-[#F1F3ED]
-                  dark:group-hover:text-[#0C3B2E]
+                  dark:group-hover:bg-[var(--color-cream)]
+                  dark:group-hover:text-[var(--color-deep)]
 
                   sm:h-[72px]
                   sm:w-[72px]
@@ -302,9 +288,9 @@ export default function ProcessSection({
                   rounded-[24px]
 
                   border
-                  border-[#0C3B2E]/10
+                  border-[var(--color-deep)]/10
 
-                  bg-[#F1F3ED]/70
+                  bg-[var(--color-cream)]/70
 
                   p-6
 
@@ -312,15 +298,15 @@ export default function ProcessSection({
                   duration-300
 
                   group-hover:-translate-y-1
-                  group-hover:border-[#6D9773]/50
+                  group-hover:border-[var(--color-green)]/50
                   group-hover:bg-white
                   group-hover:shadow-[0_20px_50px_rgba(12,59,46,0.08)]
 
-                  dark:border-[#F1F3ED]/10
-                  dark:bg-[#F1F3ED]/[0.035]
+                  dark:border-[var(--color-cream)]/10
+                  dark:bg-[var(--color-cream)]/[0.035]
 
-                  dark:group-hover:border-[#FFBA00]/40
-                  dark:group-hover:bg-[#F1F3ED]/[0.06]
+                  dark:group-hover:border-[var(--color-gold)]/40
+                  dark:group-hover:bg-[var(--color-cream)]/[0.06]
                   dark:group-hover:shadow-[0_20px_50px_rgba(0,0,0,0.18)]
 
                   sm:mt-7
@@ -348,9 +334,9 @@ export default function ProcessSection({
                       font-black
                       uppercase
                       tracking-[0.16em]
-                      text-[#6D9773]
+                      text-[var(--color-green)]
 
-                      dark:text-[#FFBA00]
+                      dark:text-[var(--color-gold)]
 
                       sm:text-xs
                     "
@@ -366,10 +352,10 @@ export default function ProcessSection({
                       h-1.5
                       w-1.5
                       rounded-full
-                      bg-[#FFBA00]
+                      bg-[var(--color-gold)]
                       opacity-60
 
-                      dark:bg-[#FFBA00]
+                      dark:bg-[var(--color-gold)]
                     "
                   />
 
@@ -386,9 +372,9 @@ export default function ProcessSection({
                     text-xl
                     font-black
                     tracking-[-0.035em]
-                    text-[#0C3B2E]
+                    text-[var(--color-deep)]
 
-                    dark:text-[#F1F3ED]
+                    dark:text-[var(--color-cream)]
 
                     sm:mt-5
                     sm:text-2xl
@@ -407,9 +393,9 @@ export default function ProcessSection({
                     mt-4
                     text-sm
                     leading-7
-                    text-[#0C3B2E]/60
+                    text-[var(--color-deep)]/60
 
-                    dark:text-[#F1F3ED]/60
+                    dark:text-[var(--color-cream)]/60
 
                     sm:text-base
                   "
@@ -428,16 +414,16 @@ export default function ProcessSection({
                     h-[2px]
                     w-8
                     rounded-full
-                    bg-[#6D9773]/50
+                    bg-[var(--color-green)]/50
 
                     transition-all
                     duration-300
 
                     group-hover:w-14
-                    group-hover:bg-[#FFBA00]
+                    group-hover:bg-[var(--color-gold)]
 
-                    dark:bg-[#FFBA00]/40
-                    dark:group-hover:bg-[#FFBA00]
+                    dark:bg-[var(--color-gold)]/40
+                    dark:group-hover:bg-[var(--color-gold)]
                   "
                 />
 

@@ -26,13 +26,13 @@ export default async function ProjectDetailsPage({ params }) {
   }
 
   return (
-    <main className="overflow-hidden bg-[#F1F3ED] text-[#0C3B2E] dark:bg-[#071F18] dark:text-[#F1F3ED]">
+    <main className="overflow-hidden bg-[var(--color-cream)] text-[var(--color-deep)] dark:bg-[var(--color-night)] dark:text-[var(--color-cream)]">
 
       {/* =====================================================
           HERO
       ====================================================== */}
 
-      <section className="relative border-b border-[#0C3B2E]/10 px-5 pb-20 pt-28 dark:border-[#F1F3ED]/10 sm:pb-28 sm:pt-36">
+      <section className="relative border-b border-[var(--color-deep)]/10 px-5 pb-20 pt-28 dark:border-[var(--color-cream)]/10 sm:pb-28 sm:pt-36">
         <div className="container-custom">
 
           {/* Back */}
@@ -45,11 +45,11 @@ export default async function ProjectDetailsPage({ params }) {
               gap-2
               text-sm
               font-bold
-              text-[#0C3B2E]/60
+              text-[var(--color-deep)]/60
               transition
-              hover:text-[#6D9773]
-              dark:text-[#F1F3ED]/60
-              dark:hover:text-[#FFBA00]
+              hover:text-[var(--color-green)]
+              dark:text-[var(--color-cream)]/60
+              dark:hover:text-[var(--color-gold)]
             "
           >
             <ArrowLeft size={17} />
@@ -65,7 +65,7 @@ export default async function ProjectDetailsPage({ params }) {
               {/* Eyebrow */}
 
               <div className="inline-flex items-center gap-2">
-                <span className="h-1.5 w-1.5 rounded-full bg-[#FFBA00]" />
+                <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-gold)]" />
 
                 <p
                   className="
@@ -73,14 +73,14 @@ export default async function ProjectDetailsPage({ params }) {
                     font-black
                     uppercase
                     tracking-[0.24em]
-                    text-[#6D9773]
-                    dark:text-[#FFBA00]
+                    text-[var(--color-green)]
+                    dark:text-[var(--color-gold)]
                   "
                 >
                   Case Study — {project.number}
                 </p>
 
-                <span className="h-1.5 w-1.5 rounded-full bg-[#6D9773] dark:bg-[#FFBA00]" />
+                <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-green)] dark:bg-[var(--color-gold)]" />
               </div>
 
               {/* Heading */}
@@ -107,13 +107,13 @@ export default async function ProjectDetailsPage({ params }) {
                 <span
                   className="
                     rounded-full
-                    bg-[#FFBA00]/15
+                    bg-[var(--color-gold)]/15
                     px-4
                     py-2
                     text-sm
                     font-bold
-                    text-[#0C3B2E]
-                    dark:text-[#FFBA00]
+                    text-[var(--color-deep)]
+                    dark:text-[var(--color-gold)]
                   "
                 >
                   {project.category}
@@ -126,14 +126,14 @@ export default async function ProjectDetailsPage({ params }) {
                     gap-2
                     rounded-full
                     border
-                    border-[#0C3B2E]/10
+                    border-[var(--color-deep)]/10
                     px-4
                     py-2
                     text-sm
                     font-semibold
-                    text-[#0C3B2E]/60
-                    dark:border-[#F1F3ED]/10
-                    dark:text-[#F1F3ED]/60
+                    text-[var(--color-deep)]/60
+                    dark:border-[var(--color-cream)]/10
+                    dark:text-[var(--color-cream)]/60
                   "
                 >
                   <MapPin size={16} />
@@ -150,8 +150,8 @@ export default async function ProjectDetailsPage({ params }) {
                   max-w-2xl
                   text-lg
                   leading-8
-                  text-[#0C3B2E]/65
-                  dark:text-[#F1F3ED]/65
+                  text-[var(--color-deep)]/65
+                  dark:text-[var(--color-cream)]/65
                 "
               >
                 {project.shortDescription}
@@ -170,16 +170,16 @@ export default async function ProjectDetailsPage({ params }) {
                     items-center
                     gap-3
                     rounded-full
-                    bg-[#FFBA00]
+                    bg-[var(--color-gold)]
                     px-6
                     py-3.5
                     text-sm
                     font-black
-                    text-[#0C3B2E]
+                    text-[var(--color-deep)]
                     transition-all
                     hover:-translate-y-0.5
-                    hover:bg-[#0C3B2E]
-                    hover:text-[#FFBA00]
+                    hover:bg-[var(--color-deep)]
+                    hover:text-[var(--color-gold)]
                   "
                 >
                   Visit Live Website
@@ -194,19 +194,19 @@ export default async function ProjectDetailsPage({ params }) {
                     gap-3
                     rounded-full
                     border
-                    border-[#0C3B2E]/15
+                    border-[var(--color-deep)]/15
                     px-6
                     py-3.5
                     text-sm
                     font-black
                     transition-all
-                    hover:border-[#6D9773]
-                    hover:bg-[#6D9773]
+                    hover:border-[var(--color-green)]
+                    hover:bg-[var(--color-green)]
                     hover:text-white
-                    dark:border-[#F1F3ED]/15
-                    dark:hover:border-[#FFBA00]
-                    dark:hover:bg-[#FFBA00]
-                    dark:hover:text-[#0C3B2E]
+                    dark:border-[var(--color-cream)]/15
+                    dark:hover:border-[var(--color-gold)]
+                    dark:hover:bg-[var(--color-gold)]
+                    dark:hover:text-[var(--color-deep)]
                   "
                 >
                   Start a Project
@@ -225,11 +225,11 @@ export default async function ProjectDetailsPage({ params }) {
                 overflow-hidden
                 rounded-[32px]
                 border
-                border-[#0C3B2E]/10
-                bg-[#0C3B2E]/5
+                border-[var(--color-deep)]/10
+                bg-[var(--color-deep)]/5
                 shadow-2xl
-                dark:border-[#F1F3ED]/10
-                dark:bg-[#F1F3ED]/5
+                dark:border-[var(--color-cream)]/10
+                dark:bg-[var(--color-cream)]/5
               "
             >
 
@@ -242,7 +242,7 @@ export default async function ProjectDetailsPage({ params }) {
                 className="object-cover"
               />
 
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0C3B2E]/65 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-deep)]/65 via-transparent to-transparent" />
 
               <div
                 className="
@@ -250,14 +250,14 @@ export default async function ProjectDetailsPage({ params }) {
                   bottom-6
                   left-6
                   rounded-full
-                  bg-[#0C3B2E]/80
+                  bg-[var(--color-deep)]/80
                   px-4
                   py-2
                   text-xs
                   font-black
                   uppercase
                   tracking-[0.15em]
-                  text-[#F1F3ED]
+                  text-[var(--color-cream)]
                   backdrop-blur
                 "
               >
@@ -284,7 +284,7 @@ export default async function ProjectDetailsPage({ params }) {
 
             <div className="inline-flex items-center gap-2">
 
-              <span className="h-1.5 w-1.5 rounded-full bg-[#FFBA00]" />
+              <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-gold)]" />
 
               <p
                 className="
@@ -292,14 +292,14 @@ export default async function ProjectDetailsPage({ params }) {
                   font-black
                   uppercase
                   tracking-[0.24em]
-                  text-[#6D9773]
-                  dark:text-[#FFBA00]
+                  text-[var(--color-green)]
+                  dark:text-[var(--color-gold)]
                 "
               >
                 {project.aboutTitle}
               </p>
 
-              <span className="h-1.5 w-1.5 rounded-full bg-[#6D9773] dark:bg-[#FFBA00]" />
+              <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-green)] dark:bg-[var(--color-gold)]" />
 
             </div>
 
@@ -314,7 +314,7 @@ export default async function ProjectDetailsPage({ params }) {
               "
             >
               The story
-              <span className="block text-[#6D9773] dark:text-[#FFBA00]">
+              <span className="block text-[var(--color-green)] dark:text-[var(--color-gold)]">
                 behind the work.
               </span>
             </h2>
@@ -329,8 +329,8 @@ export default async function ProjectDetailsPage({ params }) {
                 className="
                   text-lg
                   leading-9
-                  text-[#0C3B2E]/65
-                  dark:text-[#F1F3ED]/65
+                  text-[var(--color-deep)]/65
+                  dark:text-[var(--color-cream)]/65
                 "
               >
                 {paragraph}
@@ -349,12 +349,12 @@ export default async function ProjectDetailsPage({ params }) {
       <section
         className="
           border-y
-          border-[#0C3B2E]/10
+          border-[var(--color-deep)]/10
           bg-white/50
           px-5
           py-20
-          dark:border-[#F1F3ED]/10
-          dark:bg-[#0C3B2E]/40
+          dark:border-[var(--color-cream)]/10
+          dark:bg-[var(--color-deep)]/40
           sm:py-28
         "
       >
@@ -365,7 +365,7 @@ export default async function ProjectDetailsPage({ params }) {
 
             <div className="inline-flex items-center gap-2">
 
-              <span className="h-1.5 w-1.5 rounded-full bg-[#FFBA00]" />
+              <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-gold)]" />
 
               <p
                 className="
@@ -373,14 +373,14 @@ export default async function ProjectDetailsPage({ params }) {
                   font-black
                   uppercase
                   tracking-[0.24em]
-                  text-[#6D9773]
-                  dark:text-[#FFBA00]
+                  text-[var(--color-green)]
+                  dark:text-[var(--color-gold)]
                 "
               >
                 The Challenge
               </p>
 
-              <span className="h-1.5 w-1.5 rounded-full bg-[#6D9773] dark:bg-[#FFBA00]" />
+              <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-green)] dark:bg-[var(--color-gold)]" />
 
             </div>
 
@@ -395,7 +395,7 @@ export default async function ProjectDetailsPage({ params }) {
               "
             >
               What needed
-              <span className="block text-[#6D9773] dark:text-[#FFBA00]">
+              <span className="block text-[var(--color-green)] dark:text-[var(--color-gold)]">
                 to change.
               </span>
             </h2>
@@ -407,8 +407,8 @@ export default async function ProjectDetailsPage({ params }) {
                   key={index}
                   className="
                     leading-8
-                    text-[#0C3B2E]/65
-                    dark:text-[#F1F3ED]/65
+                    text-[var(--color-deep)]/65
+                    dark:text-[var(--color-cream)]/65
                   "
                 >
                   {paragraph}
@@ -428,24 +428,24 @@ export default async function ProjectDetailsPage({ params }) {
                 className="
                   rounded-3xl
                   border
-                  border-[#0C3B2E]/10
-                  bg-[#F1F3ED]
+                  border-[var(--color-deep)]/10
+                  bg-[var(--color-cream)]
                   p-6
                   transition-all
                   duration-300
                   hover:-translate-y-1
-                  hover:border-[#6D9773]/40
-                  dark:border-[#F1F3ED]/10
-                  dark:bg-[#071F18]
-                  dark:hover:border-[#FFBA00]/40
+                  hover:border-[var(--color-green)]/40
+                  dark:border-[var(--color-cream)]/10
+                  dark:bg-[var(--color-night)]
+                  dark:hover:border-[var(--color-gold)]/40
                 "
               >
 
-                <span className="text-4xl font-black text-[#FFBA00]">
+                <span className="text-4xl font-black text-[var(--color-gold)]">
                   0{index + 1}
                 </span>
 
-                <p className="mt-8 font-bold leading-7 text-[#0C3B2E]/70 dark:text-[#F1F3ED]/70">
+                <p className="mt-8 font-bold leading-7 text-[var(--color-deep)]/70 dark:text-[var(--color-cream)]/70">
                   {challenge}
                 </p>
 
@@ -470,7 +470,7 @@ export default async function ProjectDetailsPage({ params }) {
 
             <div className="inline-flex items-center gap-2">
 
-              <span className="h-1.5 w-1.5 rounded-full bg-[#FFBA00]" />
+              <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-gold)]" />
 
               <p
                 className="
@@ -478,14 +478,14 @@ export default async function ProjectDetailsPage({ params }) {
                   font-black
                   uppercase
                   tracking-[0.24em]
-                  text-[#6D9773]
-                  dark:text-[#FFBA00]
+                  text-[var(--color-green)]
+                  dark:text-[var(--color-gold)]
                 "
               >
                 What MarkitMe Did
               </p>
 
-              <span className="h-1.5 w-1.5 rounded-full bg-[#6D9773] dark:bg-[#FFBA00]" />
+              <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-green)] dark:bg-[var(--color-gold)]" />
 
             </div>
 
@@ -500,7 +500,7 @@ export default async function ProjectDetailsPage({ params }) {
               "
             >
               Strategy turned
-              <span className="block text-[#6D9773] dark:text-[#FFBA00]">
+              <span className="block text-[var(--color-green)] dark:text-[var(--color-gold)]">
                 into action.
               </span>
             </h2>
@@ -517,17 +517,17 @@ export default async function ProjectDetailsPage({ params }) {
                   group
                   rounded-[28px]
                   border
-                  border-[#0C3B2E]/10
+                  border-[var(--color-deep)]/10
                   bg-white/60
                   p-7
                   transition-all
                   duration-300
                   hover:-translate-y-1
-                  hover:border-[#6D9773]/50
+                  hover:border-[var(--color-green)]/50
                   hover:shadow-xl
-                  dark:border-[#F1F3ED]/10
-                  dark:bg-[#0C3B2E]/50
-                  dark:hover:border-[#FFBA00]/50
+                  dark:border-[var(--color-cream)]/10
+                  dark:bg-[var(--color-deep)]/50
+                  dark:hover:border-[var(--color-gold)]/50
                   sm:p-9
                 "
               >
@@ -542,9 +542,9 @@ export default async function ProjectDetailsPage({ params }) {
                       items-center
                       justify-center
                       rounded-full
-                      bg-[#FFBA00]
+                      bg-[var(--color-gold)]
                       font-black
-                      text-[#0C3B2E]
+                      text-[var(--color-deep)]
                     "
                   >
                     0{index + 1}
@@ -552,7 +552,7 @@ export default async function ProjectDetailsPage({ params }) {
 
                   <Check
                     size={22}
-                    className="text-[#6D9773] dark:text-[#FFBA00]"
+                    className="text-[var(--color-green)] dark:text-[var(--color-gold)]"
                   />
 
                 </div>
@@ -561,7 +561,7 @@ export default async function ProjectDetailsPage({ params }) {
                   {service.title}
                 </h3>
 
-                <p className="mt-4 leading-8 text-[#0C3B2E]/60 dark:text-[#F1F3ED]/60">
+                <p className="mt-4 leading-8 text-[var(--color-deep)]/60 dark:text-[var(--color-cream)]/60">
                   {service.description}
                 </p>
 
@@ -578,19 +578,19 @@ export default async function ProjectDetailsPage({ params }) {
           RESULTS
       ====================================================== */}
 
-      <section className="bg-[#0C3B2E] px-5 py-20 text-[#F1F3ED] sm:py-28">
+      <section className="bg-[var(--color-deep)] px-5 py-20 text-[var(--color-cream)] sm:py-28">
 
         <div className="container-custom">
 
           <div className="inline-flex items-center gap-2">
 
-            <span className="h-1.5 w-1.5 rounded-full bg-[#FFBA00]" />
+            <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-gold)]" />
 
-            <p className="text-[9px] font-black uppercase tracking-[0.24em] text-[#FFBA00]">
+            <p className="text-[9px] font-black uppercase tracking-[0.24em] text-[var(--color-gold)]">
               The Outcome
             </p>
 
-            <span className="h-1.5 w-1.5 rounded-full bg-[#6D9773]" />
+            <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-green)]" />
 
           </div>
 
@@ -606,7 +606,7 @@ export default async function ProjectDetailsPage({ params }) {
             "
           >
             Results that
-            <span className="block text-[#FFBA00]">
+            <span className="block text-[var(--color-gold)]">
               moved the business.
             </span>
           </h2>
@@ -620,21 +620,21 @@ export default async function ProjectDetailsPage({ params }) {
                 className="
                   rounded-[28px]
                   border
-                  border-[#F1F3ED]/15
-                  bg-[#F1F3ED]/5
+                  border-[var(--color-cream)]/15
+                  bg-[var(--color-cream)]/5
                   p-7
                   transition-all
                   duration-300
                   hover:-translate-y-1
-                  hover:border-[#FFBA00]/40
+                  hover:border-[var(--color-gold)]/40
                 "
               >
 
-                <p className="text-5xl font-black tracking-[-0.05em] text-[#FFBA00]">
+                <p className="text-5xl font-black tracking-[-0.05em] text-[var(--color-gold)]">
                   {result.value}
                 </p>
 
-                <p className="mt-4 font-bold leading-6 text-[#F1F3ED]/65">
+                <p className="mt-4 font-bold leading-6 text-[var(--color-cream)]/65">
                   {result.label}
                 </p>
 
@@ -659,7 +659,7 @@ export default async function ProjectDetailsPage({ params }) {
 
             <div className="inline-flex items-center gap-2">
 
-              <span className="h-1.5 w-1.5 rounded-full bg-[#FFBA00]" />
+              <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-gold)]" />
 
               <p
                 className="
@@ -667,14 +667,14 @@ export default async function ProjectDetailsPage({ params }) {
                   font-black
                   uppercase
                   tracking-[0.24em]
-                  text-[#6D9773]
-                  dark:text-[#FFBA00]
+                  text-[var(--color-green)]
+                  dark:text-[var(--color-gold)]
                 "
               >
                 What Changed
               </p>
 
-              <span className="h-1.5 w-1.5 rounded-full bg-[#6D9773] dark:bg-[#FFBA00]" />
+              <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-green)] dark:bg-[var(--color-gold)]" />
 
             </div>
 
@@ -689,7 +689,7 @@ export default async function ProjectDetailsPage({ params }) {
               "
             >
               A stronger
-              <span className="block text-[#6D9773] dark:text-[#FFBA00]">
+              <span className="block text-[var(--color-green)] dark:text-[var(--color-gold)]">
                 digital presence.
               </span>
             </h2>
@@ -709,11 +709,11 @@ export default async function ProjectDetailsPage({ params }) {
                     gap-4
                     rounded-2xl
                     border
-                    border-[#0C3B2E]/10
+                    border-[var(--color-deep)]/10
                     bg-white/40
                     p-5
-                    dark:border-[#F1F3ED]/10
-                    dark:bg-[#0C3B2E]/40
+                    dark:border-[var(--color-cream)]/10
+                    dark:bg-[var(--color-deep)]/40
                   "
                 >
 
@@ -726,14 +726,14 @@ export default async function ProjectDetailsPage({ params }) {
                       items-center
                       justify-center
                       rounded-full
-                      bg-[#FFBA00]
-                      text-[#0C3B2E]
+                      bg-[var(--color-gold)]
+                      text-[var(--color-deep)]
                     "
                   >
                     <Check size={17} />
                   </span>
 
-                  <p className="font-semibold leading-7 text-[#0C3B2E]/65 dark:text-[#F1F3ED]/65">
+                  <p className="font-semibold leading-7 text-[var(--color-deep)]/65 dark:text-[var(--color-cream)]/65">
                     {item}
                   </p>
 
@@ -743,7 +743,7 @@ export default async function ProjectDetailsPage({ params }) {
 
             </div>
 
-            <p className="mt-8 text-lg leading-9 text-[#0C3B2E]/65 dark:text-[#F1F3ED]/65">
+            <p className="mt-8 text-lg leading-9 text-[var(--color-deep)]/65 dark:text-[var(--color-cream)]/65">
               {project.conclusion}
             </p>
 
@@ -765,9 +765,9 @@ export default async function ProjectDetailsPage({ params }) {
               relative
               overflow-hidden
               rounded-[35px]
-              bg-[#FFBA00]
+              bg-[var(--color-gold)]
               p-8
-              text-[#0C3B2E]
+              text-[var(--color-deep)]
               sm:p-14
             "
           >
@@ -783,7 +783,7 @@ export default async function ProjectDetailsPage({ params }) {
                 h-64
                 w-64
                 rounded-full
-                bg-[#6D9773]/20
+                bg-[var(--color-green)]/20
                 blur-3xl
               "
             />
@@ -794,13 +794,13 @@ export default async function ProjectDetailsPage({ params }) {
 
                 <div className="inline-flex items-center gap-2">
 
-                  <span className="h-1.5 w-1.5 rounded-full bg-[#0C3B2E]" />
+                  <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-deep)]" />
 
                   <p className="text-[9px] font-black uppercase tracking-[0.24em]">
                     Ready to Grow?
                   </p>
 
-                  <span className="h-1.5 w-1.5 rounded-full bg-[#6D9773]" />
+                  <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-green)]" />
 
                 </div>
 
@@ -829,15 +829,15 @@ export default async function ProjectDetailsPage({ params }) {
                   items-center
                   gap-3
                   rounded-full
-                  bg-[#0C3B2E]
+                  bg-[var(--color-deep)]
                   px-7
                   py-4
                   font-black
-                  text-[#F1F3ED]
+                  text-[var(--color-cream)]
                   transition-all
                   duration-300
                   hover:-translate-y-1
-                  hover:bg-[#6D9773]
+                  hover:bg-[var(--color-green)]
                 "
               >
                 Get in Touch

@@ -60,28 +60,28 @@ export default function AnimatedCounter({
 
   const accentColors = [
     {
-      number: "text-[#0C3B2E]",
-      hoverBorder: "hover:border-[#6D9773]/50",
-      dot: "bg-[#6D9773]",
-      hoverDot: "group-hover:bg-[#FFBA00]",
+      number: "text-[var(--color-deep)]",
+      hoverBorder: "hover:border-[var(--color-green)]/50",
+      dot: "bg-[var(--color-green)]",
+      hoverDot: "group-hover:bg-[var(--color-gold)]",
     },
     {
-      number: "text-[#6D9773]",
-      hoverBorder: "hover:border-[#FFBA00]/50",
-      dot: "bg-[#FFBA00]",
-      hoverDot: "group-hover:bg-[#6D9773]",
+      number: "text-[var(--color-green)]",
+      hoverBorder: "hover:border-[var(--color-gold)]/50",
+      dot: "bg-[var(--color-gold)]",
+      hoverDot: "group-hover:bg-[var(--color-green)]",
     },
     {
-      number: "text-[#BB8A52]",
-      hoverBorder: "hover:border-[#BB8A52]/50",
-      dot: "bg-[#BB8A52]",
-      hoverDot: "group-hover:bg-[#FFBA00]",
+      number: "text-[var(--color-sand)]",
+      hoverBorder: "hover:border-[var(--color-sand)]/50",
+      dot: "bg-[var(--color-sand)]",
+      hoverDot: "group-hover:bg-[var(--color-gold)]",
     },
     {
-      number: "text-[#FFBA00]",
-      hoverBorder: "hover:border-[#FFBA00]/50",
-      dot: "bg-[#FFBA00]",
-      hoverDot: "group-hover:bg-[#6D9773]",
+      number: "text-[var(--color-gold)]",
+      hoverBorder: "hover:border-[var(--color-gold)]/50",
+      dot: "bg-[var(--color-gold)]",
+      hoverDot: "group-hover:bg-[var(--color-green)]",
     },
   ];
 
@@ -99,7 +99,7 @@ export default function AnimatedCounter({
         rounded-2xl
 
         border
-        border-[#0C3B2E]/[0.09]
+        border-[var(--color-deep)]/[0.09]
 
         bg-white/75
 
@@ -121,10 +121,10 @@ export default function AnimatedCounter({
         sm:rounded-3xl
         sm:p-7
 
-        dark:border-[#F1F3ED]/[0.09]
-        dark:bg-[#0C3B2E]/70
+        dark:border-[var(--color-cream)]/[0.09]
+        dark:bg-[var(--color-deep)]/70
 
-        dark:hover:bg-[#0C3B2E]/90
+        dark:hover:bg-[var(--color-deep)]/90
 
         dark:hover:shadow-[0_18px_45px_rgba(0,0,0,0.16)]
       `}
@@ -177,7 +177,7 @@ export default function AnimatedCounter({
           sm:text-5xl
           lg:text-[3.25rem]
 
-          dark:text-[#F1F3ED]
+          dark:text-[var(--color-cream)]
         `}
       >
         {count}
@@ -202,12 +202,12 @@ export default function AnimatedCounter({
           transition-colors
           duration-300
 
-          group-hover:text-[#0C3B2E]
+          group-hover:text-[var(--color-deep)]
 
           sm:text-sm
 
           dark:text-[#A8B9AE]
-          dark:group-hover:text-[#F1F3ED]
+          dark:group-hover:text-[var(--color-cream)]
         "
       >
         {label}
@@ -229,7 +229,7 @@ export default function AnimatedCounter({
 
           -translate-x-1/2
 
-          bg-[#FFBA00]
+          bg-[var(--color-gold)]
 
           transition-all
           duration-500

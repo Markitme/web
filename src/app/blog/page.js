@@ -34,12 +34,12 @@ const posts = [
 
 export default function BlogPage() {
   return (
-    <main className="transition-colors duration-300 bg-[#F1F3ED] text-[#0C3B2E] dark:bg-[#071F18] dark:text-[#F1F3ED]">
+    <main className="transition-colors duration-300 bg-[var(--color-cream)] text-[var(--color-deep)] dark:bg-[var(--color-night)] dark:text-[var(--color-cream)]">
 
       {/* =====================================================
           HERO
       ===================================================== */}
-      <section className="relative border-b border-[#0C3B2E]/10 dark:border-[#F1F3ED]/10">
+      <section className="relative border-b border-[var(--color-deep)]/10 dark:border-[var(--color-cream)]/10">
         <div className="absolute inset-0 about-grid opacity-60" />
 
         <div className="container-custom relative px-5 py-24 sm:py-32 lg:py-36">
@@ -52,7 +52,7 @@ export default function BlogPage() {
                   h-1.5
                   w-1.5
                   rounded-full
-                  bg-[#FFBA00]
+                  bg-[var(--color-gold)]
                 "
               />
 
@@ -62,11 +62,11 @@ export default function BlogPage() {
                   font-black
                   uppercase
                   tracking-[0.22em]
-                  text-[#6D9773]
+                  text-[var(--color-green)]
 
                   sm:text-[9px]
 
-                  dark:text-[#FFBA00]
+                  dark:text-[var(--color-gold)]
                 "
               >
                 Insights
@@ -77,9 +77,9 @@ export default function BlogPage() {
                   h-1.5
                   w-1.5
                   rounded-full
-                  bg-[#6D9773]
+                  bg-[var(--color-green)]
 
-                  dark:bg-[#FFBA00]
+                  dark:bg-[var(--color-gold)]
                 "
               />
             </div>
@@ -93,17 +93,17 @@ export default function BlogPage() {
                 leading-[0.95]
                 tracking-[-0.055em]
 
-                text-[#0C3B2E]
+                text-[var(--color-deep)]
 
                 sm:text-4xl
                 md:text-5xl
                 lg:text-6xl
 
-                dark:text-[#F1F3ED]
+                dark:text-[var(--color-cream)]
               "
             >
               Ideas worth putting into{" "}
-              <span className="text-[#6D9773] dark:text-[#FFBA00]">
+              <span className="text-[var(--color-green)] dark:text-[var(--color-gold)]">
                 action.
               </span>
             </h1>
@@ -114,9 +114,9 @@ export default function BlogPage() {
                 max-w-2xl
                 text-lg
                 leading-8
-                text-[#0C3B2E]/60
+                text-[var(--color-deep)]/60
 
-                dark:text-[#F1F3ED]/60
+                dark:text-[var(--color-cream)]/60
               "
             >
               Practical perspectives on branding, websites, marketing,
@@ -143,7 +143,7 @@ export default function BlogPage() {
                     h-1.5
                     w-1.5
                     rounded-full
-                    bg-[#FFBA00]
+                    bg-[var(--color-gold)]
                   "
                 />
 
@@ -153,11 +153,11 @@ export default function BlogPage() {
                     font-black
                     uppercase
                     tracking-[0.22em]
-                    text-[#6D9773]
+                    text-[var(--color-green)]
 
                     sm:text-[9px]
 
-                    dark:text-[#FFBA00]
+                    dark:text-[var(--color-gold)]
                   "
                 >
                   Latest Insights
@@ -168,9 +168,9 @@ export default function BlogPage() {
                     h-1.5
                     w-1.5
                     rounded-full
-                    bg-[#6D9773]
+                    bg-[var(--color-green)]
 
-                    dark:bg-[#FFBA00]
+                    dark:bg-[var(--color-gold)]
                   "
                 />
               </div>
@@ -184,17 +184,17 @@ export default function BlogPage() {
                   leading-[0.95]
                   tracking-[-0.055em]
 
-                  text-[#0C3B2E]
+                  text-[var(--color-deep)]
 
                   sm:text-4xl
                   md:text-5xl
                   lg:text-6xl
 
-                  dark:text-[#F1F3ED]
+                  dark:text-[var(--color-cream)]
                 "
               >
                 Ideas, insights, and{" "}
-                <span className="text-[#6D9773] dark:text-[#FFBA00]">
+                <span className="text-[var(--color-green)] dark:text-[var(--color-gold)]">
                   useful perspectives.
                 </span>
               </h2>
@@ -213,20 +213,20 @@ export default function BlogPage() {
                   group
                   rounded-3xl
                   border
-                  border-[#0C3B2E]/10
-                  bg-[#0C3B2E]/[0.025]
+                  border-[var(--color-deep)]/10
+                  bg-[var(--color-deep)]/[0.025]
                   p-7
 
                   transition-all
                   duration-300
 
                   hover:-translate-y-1
-                  hover:border-[#6D9773]
+                  hover:border-[var(--color-green)]
                   hover:shadow-xl
 
-                  dark:border-[#F1F3ED]/10
-                  dark:bg-[#F1F3ED]/[0.03]
-                  dark:hover:border-[#FFBA00]
+                  dark:border-[var(--color-cream)]/10
+                  dark:bg-[var(--color-cream)]/[0.03]
+                  dark:hover:border-[var(--color-gold)]
                 "
               >
 
@@ -237,11 +237,11 @@ export default function BlogPage() {
                     font-black
                     uppercase
                     tracking-[0.22em]
-                    text-[#6D9773]
+                    text-[var(--color-green)]
 
                     sm:text-[9px]
 
-                    dark:text-[#FFBA00]
+                    dark:text-[var(--color-gold)]
                   "
                 >
                   {post.category}
@@ -256,11 +256,11 @@ export default function BlogPage() {
                     font-black
                     leading-[1.05]
                     tracking-[-0.035em]
-                    text-[#0C3B2E]
+                    text-[var(--color-deep)]
 
                     sm:text-3xl
 
-                    dark:text-[#F1F3ED]
+                    dark:text-[var(--color-cream)]
                   "
                 >
                   {post.title}
@@ -272,9 +272,9 @@ export default function BlogPage() {
                   className="
                     mt-5
                     leading-7
-                    text-[#0C3B2E]/60
+                    text-[var(--color-deep)]/60
 
-                    dark:text-[#F1F3ED]/60
+                    dark:text-[var(--color-cream)]/60
                   "
                 >
                   {post.excerpt}
@@ -290,9 +290,9 @@ export default function BlogPage() {
                       items-center
                       gap-2
                       text-sm
-                      text-[#0C3B2E]/50
+                      text-[var(--color-deep)]/50
 
-                      dark:text-[#F1F3ED]/50
+                      dark:text-[var(--color-cream)]/50
                     "
                   >
                     <Clock3 size={16} />
@@ -308,16 +308,16 @@ export default function BlogPage() {
                       gap-2
                       text-sm
                       font-bold
-                      text-[#0C3B2E]
+                      text-[var(--color-deep)]
 
                       transition-all
                       duration-300
 
                       group-hover:gap-3
-                      hover:text-[#6D9773]
+                      hover:text-[var(--color-green)]
 
-                      dark:text-[#F1F3ED]
-                      dark:hover:text-[#FFBA00]
+                      dark:text-[var(--color-cream)]
+                      dark:hover:text-[var(--color-gold)]
                     "
                   >
                     Read article
