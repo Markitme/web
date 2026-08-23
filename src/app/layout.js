@@ -23,6 +23,11 @@ export const metadata = {
   title: "MarkitMe | Strategy, Creative & Digital Growth",
   description:
     "MarkitMe helps businesses grow through branding, website development, digital marketing, and strategy.",
+  icons: {
+    icon: "/favicon.png",
+    shortcut: "/favicon.png",
+    apple: "/favicon.png",
+  },
 };
 
 export default function RootLayout({ children }) {

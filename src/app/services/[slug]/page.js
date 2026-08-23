@@ -1147,3 +1147,20 @@ export default async function ServiceDetailsPage({ params }) {
     </main>
   );
 }
+
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
+  const service = getServiceBySlug(slug);
+
+  if (!service) {
+    return {
+      title: "Service Not Found | MarkitMe",
+      description: "The requested MarkitMe service could not be found.",
+    };
+  }
+
+  return {
+    title: `${service.title} | MarkitMe`,
+    description: service.heroDescription,
+  };
+}

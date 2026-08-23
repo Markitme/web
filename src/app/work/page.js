@@ -3,6 +3,12 @@ import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { projects } from "@/data/projects";
 
+export const metadata = {
+  title: "Our Work | MarkitMe Case Studies",
+  description:
+    "Explore selected MarkitMe projects shaped by strategy, design, technology, and focused digital growth.",
+};
+
 export default function WorkPage() {
   return (
     <main className=" transition-colors duration-300 bg-[var(--color-cream)] text-[var(--color-deep)] dark:bg-[var(--color-night)] dark:text-[var(--color-cream)]">

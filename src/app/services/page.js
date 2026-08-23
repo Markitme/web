@@ -5,6 +5,12 @@ import { services } from "@/data/services";
 import ServiceCard from "@/components/ServiceCard";
 import SectionHeading from "@/components/SectionHeading";
 
+export const metadata = {
+  title: "Services | MarkitMe Digital Strategy & Creative",
+  description:
+    "Explore MarkitMe services for branding, web design and development, digital marketing, SEO, and sustainable business growth.",
+};
+
 export default function ServicesPage() {
   /* =========================================================
      GROUP SERVICES BY CATEGORY

@@ -854,3 +854,20 @@ export default async function ProjectDetailsPage({ params }) {
     </main>
   );
 }
+
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
+  const project = projects.find((item) => item.slug === slug);
+
+  if (!project) {
+    return {
+      title: "Project Not Found | MarkitMe",
+      description: "The requested MarkitMe project could not be found.",
+    };
+  }
+
+  return {
+    title: `${project.title} | MarkitMe Case Study`,
+    description: project.shortDescription || project.description,
+  };
+}
