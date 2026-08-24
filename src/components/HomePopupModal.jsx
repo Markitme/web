@@ -96,17 +96,33 @@ export default function HomePopupModal() {
   SUBMIT
   =====================================================
   */
-const handleSubmit = async (e) => {
+ const handleSubmit = async (e) => {
   e.preventDefault();
 
   setIsSubmitting(true);
 
   try {
-    console.log("Form submitted:", formData);
+    const response = await fetch("/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        service: formData.service,
+        message: formData.message || "",
+      }),
+    });
 
-    await new Promise((resolve) =>
-      setTimeout(resolve, 800)
-    );
+    const result = await response.json();
+
+    if (!response.ok || !result.success) {
+      throw new Error(
+        result.message || "Failed to send message."
+      );
+    }
 
     setSubmitted(true);
 
@@ -117,11 +133,24 @@ const handleSubmit = async (e) => {
 
     setTimeout(() => {
       setIsOpen(false);
-    }, 1500);
+
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        service: "",
+        message: "",
+      });
+
+      setSubmitted(false);
+    }, 2000);
+
   } catch (error) {
-    console.error(
-      "Form submission failed:",
-      error
+    console.error("Form submission failed:", error);
+
+    alert(
+      error.message ||
+        "Unable to send your enquiry. Please try again."
     );
   } finally {
     setIsSubmitting(false);

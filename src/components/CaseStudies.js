@@ -55,7 +55,6 @@ export default function CaseStudies() {
         "
       >
         {/* Green glow */}
-
         <div
           className="
             absolute
@@ -76,7 +75,6 @@ export default function CaseStudies() {
         />
 
         {/* Gold glow */}
-
         <div
           className="
             absolute
@@ -102,17 +100,16 @@ export default function CaseStudies() {
       ====================================================== */}
 
       <div className="relative z-10 mx-auto w-full max-w-[1280px] px-5 sm:px-6 lg:px-8">
-
         {/* =====================================================
             HEADING
         ====================================================== */}
 
         <div className="mb-10 flex flex-col gap-6 sm:mb-12 lg:flex-row lg:items-end lg:justify-between">
           <SectionHeading eyebrow="Selected Work">
-              Ideas turned into{" "}
-              <span className="text-[var(--color-green)] dark:text-[var(--color-gold)]">
-                measurable impact.
-              </span>
+            Ideas turned into{" "}
+            <span className="text-[var(--color-green)] dark:text-[var(--color-gold)]">
+              measurable impact.
+            </span>
           </SectionHeading>
 
           <div className="shrink-0">
@@ -128,7 +125,6 @@ export default function CaseStudies() {
 
         <div className="mx-auto w-full max-w-[1200px]">
           <div className="relative w-full">
-
             <Swiper
               modules={[Pagination, Autoplay]}
               onSwiper={setSwiper}
@@ -192,7 +188,7 @@ export default function CaseStudies() {
               }}
               className="case-studies-swiper"
             >
-              {projects.map((study, index) => (
+              {projects.map((study) => (
                 <SwiperSlide
                   key={study.slug}
                   className="case-study-slide"
@@ -384,7 +380,6 @@ export default function CaseStudies() {
                         "
                       >
                         <div className="min-w-0">
-
                           <p
                             className="
                               text-[8px]
@@ -465,185 +460,252 @@ export default function CaseStudies() {
                         CONTENT
                     ================================================== */}
 
-                    <div className="flex flex-1 flex-col p-5 sm:p-6">
+                    <div
+                      className="
+                        flex
+                        flex-1
+                        flex-col
 
-                      {/* Category */}
+                        p-5
 
-                      <p
-                        className="
-                          text-[8px]
-                          font-black
-                          uppercase
-                          tracking-[0.18em]
+                        sm:p-6
+                      "
+                    >
+                      {/* =================================================
+                          CATEGORY
+                      ================================================== */}
 
-                          text-[var(--color-green)]
+                      <div className="shrink-0">
+                        <p
+                          className="
+                            text-[8px]
+                            font-black
+                            uppercase
+                            tracking-[0.18em]
 
-                          sm:text-[9px]
+                            text-[var(--color-green)]
 
-                          dark:text-[var(--color-gold)]
-                        "
-                      >
-                        {study.category}
-                      </p>
+                            sm:text-[9px]
 
-                      {/* Title */}
+                            dark:text-[var(--color-gold)]
+                          "
+                        >
+                          {study.category}
+                        </p>
+                      </div>
 
-                      <h3
+                      {/* =================================================
+                          TITLE
+
+                          Fixed minimum height keeps all titles aligned.
+                      ================================================== */}
+
+                      <div
                         className="
                           mt-3
+                          min-h-[52px]
 
-                          text-2xl
-                          font-black
-                          leading-[0.95]
-                          tracking-[-0.045em]
-
-                          text-[var(--color-deep)]
-
-                          sm:text-[27px]
-
-                          dark:text-[var(--color-cream)]
+                          sm:min-h-[58px]
                         "
                       >
-                        {study.title}
-                      </h3>
+                        <h3
+                          className="
+                            text-2xl
+                            font-black
+                            leading-[0.95]
+                            tracking-[-0.045em]
 
-                      {/* Description */}
+                            text-[var(--color-deep)]
 
-                      <p
+                            sm:text-[27px]
+
+                            dark:text-[var(--color-cream)]
+                          "
+                        >
+                          {study.title}
+                        </h3>
+                      </div>
+
+                      {/* =================================================
+                          DESCRIPTION
+
+                          Fixed area keeps services aligned.
+                      ================================================== */}
+
+                      <div
                         className="
                           mt-4
+                          min-h-[96px]
 
-                          line-clamp-4
-
-                          text-sm
-                          leading-6
-
-                          text-[#587064]
-
-                          dark:text-[#A8B9AE]
+                          sm:min-h-[102px]
                         "
                       >
-                        {study.shortDescription}
-                      </p>
+                        <p
+                          className="
+                            line-clamp-4
+
+                            text-sm
+                            leading-6
+
+                            text-[#587064]
+
+                            dark:text-[#A8B9AE]
+                          "
+                        >
+                          {study.shortDescription}
+                        </p>
+                      </div>
 
                       {/* =================================================
                           SERVICES
+
+                          IMPORTANT:
+                          Fixed/minimum height makes service chips
+                          occupy the same vertical area.
                       ================================================== */}
 
-                      {study.services?.length > 0 && (
-                        <div className="mt-5 flex flex-wrap gap-2">
-                          {study.services
-                            .slice(0, 3)
-                            .map((service) => (
-                              <span
-                                key={service.title}
-                                className="
-                                  rounded-full
-
-                                  border
-                                  border-[var(--color-deep)]/10
-
-                                  bg-[var(--color-soft)]/60
-
-                                  px-3
-                                  py-1.5
-
-                                  text-[8px]
-                                  font-semibold
-
-                                  text-[#587064]
-
-                                  transition-colors
-                                  duration-300
-
-                                  group-hover:border-[var(--color-green)]/30
-
-                                  dark:border-[var(--color-cream)]/10
-                                  dark:bg-[var(--color-cream)]/[0.06]
-                                  dark:text-[#A8B9AE]
-                                "
-                              >
-                                {service.title}
-                              </span>
-                            ))}
-                        </div>
-                      )}
-
-                      {/* =================================================
-                          RESULTS
-                      ================================================== */}
-
-                      {study.results?.length > 0 && (
-                        <div className="mt-5 grid grid-cols-2 gap-2">
-                          {study.results
-                            .slice(0, 2)
-                            .map((result, resultIndex) => (
-                              <div
-                                key={result.label}
-                                className="
-                                  rounded-xl
-
-                                  border
-                                  border-[var(--color-deep)]/[0.06]
-
-                                  bg-[var(--color-soft)]/50
-
-                                  px-3
-                                  py-3
-
-                                  transition-all
-                                  duration-300
-
-                                  group-hover:border-[var(--color-green)]/20
-
-                                  dark:border-[var(--color-cream)]/[0.07]
-                                  dark:bg-[var(--color-night)]/45
-                                "
-                              >
-                                <p
-                                  className={`
-                                    text-lg
-                                    font-black
-                                    tracking-[-0.04em]
-
-                                    ${
-                                      resultIndex === 1
-                                        ? "text-[var(--color-sand)]"
-                                        : "text-[var(--color-gold)]"
-                                    }
-
-                                    dark:text-[var(--color-gold)]
-                                  `}
-                                >
-                                  {result.value}
-                                </p>
-
-                                <p
+                      <div
+                        className="
+                          mt-5
+                          min-h-[58px]
+                          shrink-0
+                        "
+                      >
+                        {study.services?.length > 0 && (
+                          <div className="flex flex-wrap gap-2">
+                            {study.services
+                              .slice(0, 3)
+                              .map((service) => (
+                                <span
+                                  key={service.title}
                                   className="
-                                    mt-0.5
+                                    rounded-full
 
-                                    line-clamp-1
+                                    border
+                                    border-[var(--color-deep)]/10
+
+                                    bg-[var(--color-soft)]/60
+
+                                    px-3
+                                    py-1.5
 
                                     text-[8px]
                                     font-semibold
 
-                                    text-[#587064]/75
+                                    text-[#587064]
 
-                                    dark:text-[#A8B9AE]/70
+                                    transition-colors
+                                    duration-300
+
+                                    group-hover:border-[var(--color-green)]/30
+
+                                    dark:border-[var(--color-cream)]/10
+                                    dark:bg-[var(--color-cream)]/[0.06]
+                                    dark:text-[#A8B9AE]
                                   "
                                 >
-                                  {result.label}
-                                </p>
-                              </div>
-                            ))}
-                        </div>
-                      )}
+                                  {service.title}
+                                </span>
+                              ))}
+                          </div>
+                        )}
+                      </div>
+
+                      {/* =================================================
+                          RESULTS
+
+                          Fixed height keeps metrics aligned across cards.
+                      ================================================== */}
+
+                      <div
+                        className="
+                          mt-5
+                          min-h-[72px]
+                          shrink-0
+                        "
+                      >
+                        {study.results?.length > 0 && (
+                          <div className="grid grid-cols-2 gap-2">
+                            {study.results
+                              .slice(0, 2)
+                              .map((result, resultIndex) => (
+                                <div
+                                  key={result.label}
+                                  className="
+                                    rounded-xl
+
+                                    border
+                                    border-[var(--color-deep)]/[0.06]
+
+                                    bg-[var(--color-soft)]/50
+
+                                    px-3
+                                    py-3
+
+                                    transition-all
+                                    duration-300
+
+                                    group-hover:border-[var(--color-green)]/20
+
+                                    dark:border-[var(--color-cream)]/[0.07]
+                                    dark:bg-[var(--color-night)]/45
+                                  "
+                                >
+                                  <p
+                                    className={`
+                                      text-lg
+                                      font-black
+                                      tracking-[-0.04em]
+
+                                      ${
+                                        resultIndex === 1
+                                          ? "text-[var(--color-sand)]"
+                                          : "text-[var(--color-gold)]"
+                                      }
+
+                                      dark:text-[var(--color-gold)]
+                                    `}
+                                  >
+                                    {result.value}
+                                  </p>
+
+                                  <p
+                                    className="
+                                      mt-0.5
+
+                                      line-clamp-1
+
+                                      text-[8px]
+                                      font-semibold
+
+                                      text-[#587064]/75
+
+                                      dark:text-[#A8B9AE]/70
+                                    "
+                                  >
+                                    {result.label}
+                                  </p>
+                                </div>
+                              ))}
+                          </div>
+                        )}
+                      </div>
 
                       {/* =================================================
                           BUTTONS
+
+                          mt-auto guarantees bottom alignment.
                       ================================================== */}
 
-                      <div className="mt-auto flex flex-wrap gap-2 pt-6">
+                      <div
+                        className="
+                          mt-auto
+                          flex
+                          flex-wrap
+                          gap-2
+                          pt-6
+                        "
+                      >
                         <Button
                           href={`/work/${study.slug}`}
                           variant="primary"
@@ -693,6 +755,7 @@ export default function CaseStudies() {
                             "
                           >
                             Website
+
                             <ExternalLink size={13} />
                           </a>
                         )}
@@ -849,6 +912,10 @@ export default function CaseStudies() {
           display: flex;
         }
 
+        .case-studies-swiper .swiper-slide > article {
+          height: 100%;
+        }
+
         /* =====================================================
            XL FIX
         ====================================================== */
@@ -940,6 +1007,19 @@ export default function CaseStudies() {
         @media (min-width: 640px) and (max-width: 1023px) {
           .case-studies-swiper {
             padding-bottom: 42px !important;
+          }
+        }
+
+        /* =====================================================
+           MOBILE CONTENT HEIGHT RESET
+           
+           On very small screens we allow content to grow naturally.
+           This prevents overly large empty spaces.
+        ====================================================== */
+
+        @media (max-width: 639px) {
+          .case-studies-swiper .case-study-slide {
+            height: auto !important;
           }
         }
       `}</style>
