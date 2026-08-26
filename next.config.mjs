@@ -3,11 +3,11 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "markitme.ca",
+        hostname: "cms.markitme.ca",
       },
       {
         protocol: "https",
-        hostname: "www.markitme.ca",
+        hostname: "www.cms.markitme.ca",
       },
     ],
   },
