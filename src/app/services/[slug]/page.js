@@ -224,7 +224,10 @@ function AnimatedServiceVisual({
             <div className="flex items-center gap-3">
               <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[var(--color-gold)] text-[var(--color-deep)] shadow-[0_0_30px_rgba(255,186,0,0.25)] sm:h-12 sm:w-12 sm:rounded-2xl">
                 {ServiceIcon && (
-                  <ServiceIcon size={22} strokeWidth={1.8} />
+                  <ServiceIcon
+                    size={22}
+                    strokeWidth={1.8}
+                  />
                 )}
               </div>
 
@@ -293,7 +296,10 @@ function AnimatedServiceVisual({
           <div className="max-w-md">
             <div className="mb-3 flex h-11 w-11 items-center justify-center rounded-xl bg-[var(--color-gold)] text-[var(--color-deep)] shadow-[0_0_35px_rgba(255,186,0,0.25)] transition-transform duration-500 group-hover:scale-110 sm:h-14 sm:w-14 sm:rounded-2xl">
               {ServiceIcon && (
-                <ServiceIcon size={24} strokeWidth={1.8} />
+                <ServiceIcon
+                  size={24}
+                  strokeWidth={1.8}
+                />
               )}
             </div>
 
@@ -349,7 +355,10 @@ function AnimatedServiceVisual({
         <div>
           <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-xl border border-[var(--color-gold)]/30 bg-[var(--color-gold)]/10 text-[var(--color-gold)] sm:h-14 sm:w-14 sm:rounded-2xl">
             {ServiceIcon && (
-              <ServiceIcon size={24} strokeWidth={1.7} />
+              <ServiceIcon
+                size={24}
+                strokeWidth={1.7}
+              />
             )}
           </div>
 
@@ -375,7 +384,10 @@ function AnimatedServiceVisual({
 
           <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-[var(--color-gold)] text-[var(--color-deep)] shadow-[0_0_40px_rgba(255,186,0,0.30)] transition-transform duration-500 group-hover:rotate-6 group-hover:scale-110 sm:h-20 sm:w-20">
             {ServiceIcon && (
-              <ServiceIcon size={30} strokeWidth={1.7} />
+              <ServiceIcon
+                size={30}
+                strokeWidth={1.7}
+              />
             )}
           </div>
         </div>
@@ -386,7 +398,6 @@ function AnimatedServiceVisual({
 
 /* =====================================================
    FEATURE CARD
-   Same visual language as common ServiceCard
 ===================================================== */
 
 function FeatureCard({ feature }) {
@@ -419,7 +430,6 @@ function FeatureCard({ feature }) {
         dark:hover:shadow-[0_20px_60px_rgba(0,0,0,0.25)]
       "
     >
-      {/* Decorative glow */}
       <div
         className="
           pointer-events-none absolute
@@ -435,7 +445,10 @@ function FeatureCard({ feature }) {
       />
 
       <div className="relative flex h-12 w-12 items-center justify-center rounded-xl bg-[var(--color-gold)] text-[var(--color-deep)] transition-all duration-300 group-hover:rotate-3 group-hover:scale-105 sm:h-14 sm:w-14 sm:rounded-2xl">
-        <FeatureIcon size={22} strokeWidth={1.8} />
+        <FeatureIcon
+          size={22}
+          strokeWidth={1.8}
+        />
       </div>
 
       <h3 className="relative mt-6 text-xl font-black tracking-[-0.035em] text-[var(--color-deep)] dark:text-[var(--color-cream)] sm:mt-7 sm:text-2xl">
@@ -502,6 +515,7 @@ export default async function ServiceDetailsPage({ params }) {
         "
       >
         {/* Background glow */}
+
         <div className="pointer-events-none absolute -right-32 -top-32 h-72 w-72 rounded-full bg-[var(--color-green)]/10 blur-3xl dark:bg-[var(--color-green)]/10" />
 
         <div
@@ -517,6 +531,7 @@ export default async function ServiceDetailsPage({ params }) {
           "
         >
           {/* Back */}
+
           <Link
             href="/services"
             className="
@@ -554,62 +569,17 @@ export default async function ServiceDetailsPage({ params }) {
               xl:gap-16
             "
           >
-            {/* Hero Text */}
+            {/* =================================================
+                HERO TEXT
+            ================================================= */}
 
             <div className="min-w-0 max-w-3xl">
-              <div className="flex items-center gap-3 sm:gap-4">
-                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[var(--color-gold)] text-[var(--color-deep)] shadow-lg shadow-[var(--color-gold)]/15 sm:h-14 sm:w-14 sm:rounded-2xl">
-                  <ServiceIcon
-                    size={23}
-                    strokeWidth={1.8}
-                  />
-                </div>
-
-                <p className="min-w-0 break-words text-[9px] font-black uppercase tracking-[0.15em] text-[var(--color-green)] dark:text-[var(--color-gold)] sm:text-xs sm:tracking-[0.2em]">
-                  {service.category}
-                </p>
-              </div>
-
-              <h1
-                className="
-                  mt-5
-
-                  text-4xl
-                  font-black
-                  leading-[0.95]
-                  tracking-[-0.055em]
-
-                  text-[var(--color-deep)]
-
-                  sm:text-5xl
-                  md:text-6xl
-                  xl:text-7xl
-
-                  dark:text-[var(--color-cream)]
-                "
+              <SectionHeading
+                eyebrow={service.category}
+                description={service.heroDescription}
               >
                 {service.heroTitle}
-              </h1>
-
-              <p
-                className="
-                  mt-5
-                  max-w-2xl
-
-                  text-base
-                  leading-7
-
-                  text-[var(--color-deep)]/60
-
-                  sm:mt-6
-                  sm:text-lg
-                  sm:leading-8
-
-                  dark:text-[var(--color-cream)]/60
-                "
-              >
-                {service.heroDescription}
-              </p>
+              </SectionHeading>
 
               <div className="mt-7 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:flex-wrap sm:gap-4">
                 <Link
@@ -677,7 +647,9 @@ export default async function ServiceDetailsPage({ params }) {
               </div>
             </div>
 
-            {/* Hero Visual */}
+            {/* =================================================
+                HERO VISUAL
+            ================================================= */}
 
             <div className="flex w-full items-center justify-center lg:justify-end">
               <AnimatedServiceVisual
@@ -979,7 +951,7 @@ export default async function ServiceDetailsPage({ params }) {
       >
         <div className="container-custom grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
           <SectionHeading
-            eyebrow="What&apos;s Included"
+            eyebrow="What's Included"
             description="Every project is tailored to your business. These are the core deliverables that can be included in your service plan."
             tone="dark"
           >
@@ -1148,8 +1120,13 @@ export default async function ServiceDetailsPage({ params }) {
   );
 }
 
+/* =====================================================
+   DYNAMIC METADATA
+===================================================== */
+
 export async function generateMetadata({ params }) {
   const { slug } = await params;
+
   const service = getServiceBySlug(slug);
 
   if (!service) {

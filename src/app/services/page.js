@@ -42,7 +42,6 @@ export default function ServicesPage() {
         dark:text-[var(--color-cream)]
       "
     >
-
       {/* =====================================================
           HERO
       ===================================================== */}
@@ -90,106 +89,18 @@ export default function ServicesPage() {
             lg:py-24
           "
         >
-          <div className="max-w-[760px]">
-
-            {/* Eyebrow */}
-            <div className="flex items-center gap-2">
-              <span
-                className="
-                  h-1.5
-                  w-1.5
-                  rounded-full
-                  bg-[var(--color-gold)]
-                "
-              />
-
-              <p
-                className="
-                  text-[8px]
-                  font-black
-                  uppercase
-                  tracking-[0.22em]
-
-                  text-[var(--color-green)]
-
-                  sm:text-[9px]
-
-                  dark:text-[var(--color-gold)]
-                "
-              >
-                What We Do
-              </p>
-
-              <span
-                className="
-                  h-1.5
-                  w-1.5
-                  rounded-full
-
-                  bg-[var(--color-green)]
-
-                  dark:bg-[var(--color-gold)]
-                "
-              />
-            </div>
-
-            {/* Main Heading */}
-            <h1
-              className="
-                mt-4
-
-                text-4xl
-                font-black
-                leading-[0.95]
-                tracking-[-0.055em]
-
-                text-[var(--color-deep)]
-
-                sm:text-5xl
-                md:text-6xl
-                lg:text-7xl
-
-                dark:text-[var(--color-cream)]
-              "
-            >
-              Strategy, creativity,{" "}
-
-              <span
-                className="
-                  text-[var(--color-green)]
-                  dark:text-[var(--color-gold)]
-                "
-              >
-                and growth
-              </span>{" "}
-
-              — working together.
-            </h1>
-
-            {/* Description */}
-            <p
-              className="
-                mt-6
-                max-w-2xl
-
-                text-base
-                leading-7
-
-                text-[var(--color-deep)]/60
-
-                sm:text-lg
-                sm:leading-8
-
-                dark:text-[var(--color-cream)]/60
-              "
-            >
-              We combine strategy, design, technology, content, and marketing
-              to create digital experiences that help businesses grow.
-            </p>
-          </div>
+          <SectionHeading
+            eyebrow="What we do"
+            description="We combine strategy, design, technology, content, and marketing to create digital experiences that help businesses grow."
+          >
+            Strategy, creativity,{" "}
+            <span className="text-[var(--color-green)] dark:text-[var(--color-gold)]">
+              and growth
+            </span>{" "}
+            — working together.
+          </SectionHeading>
         </div>
       </section>
-
 
       {/* =====================================================
           SERVICE CATEGORY SECTIONS
@@ -226,110 +137,18 @@ export default function ServicesPage() {
               `}
             >
               <div className="container-custom px-5">
-
                 {/* =================================================
                     CATEGORY HEADING
                 ================================================= */}
 
-                <div
-                  className="
-                    mb-10
-
-                    flex
-                    flex-col
-                    gap-5
-
-                    sm:mb-12
-
-                    lg:flex-row
-                    lg:items-end
-                    lg:justify-between
-                  "
-                >
-                  <div className="max-w-[680px]">
-
-                    {/* Same Heading Pattern */}
-                    <div className="flex items-center gap-2">
-                      <span
-                        className="
-                          h-1.5
-                          w-1.5
-                          rounded-full
-                          bg-[var(--color-gold)]
-                        "
-                      />
-
-                      <p
-                        className="
-                          text-[8px]
-                          font-black
-                          uppercase
-                          tracking-[0.22em]
-
-                          text-[var(--color-green)]
-
-                          sm:text-[9px]
-
-                          dark:text-[var(--color-gold)]
-                        "
-                      >
-                        {String(categoryIndex + 1).padStart(2, "0")}
-                      </p>
-
-                      <span
-                        className="
-                          h-1.5
-                          w-1.5
-                          rounded-full
-
-                          bg-[var(--color-green)]
-
-                          dark:bg-[var(--color-gold)]
-                        "
-                      />
-                    </div>
-
-                    {/* Category Heading */}
-                    <h2
-                      className="
-                        mt-3
-
-                        text-3xl
-                        font-black
-                        leading-[0.95]
-                        tracking-[-0.055em]
-
-                        text-[var(--color-deep)]
-
-                        sm:text-4xl
-                        md:text-5xl
-                        lg:text-6xl
-
-                        dark:text-[var(--color-cream)]
-                      "
-                    >
-                      {category}
-                    </h2>
-
-                    <p
-                      className="
-                        mt-5
-                        max-w-2xl
-
-                        text-base
-                        leading-7
-
-                        text-[var(--color-deep)]/60
-
-                        dark:text-[var(--color-cream)]/60
-                      "
-                    >
-                      Explore specialized services designed around your brand,
-                      audience, and long-term business goals.
-                    </p>
-                  </div>
+                <div className="mb-10 sm:mb-12">
+                  <SectionHeading
+                    eyebrow={String(categoryIndex + 1).padStart(2, "0")}
+                    description="Explore specialized services designed around your brand, audience, and long-term business goals."
+                  >
+                    {category}
+                  </SectionHeading>
                 </div>
-
 
                 {/* =================================================
                     COMMON SERVICE CARDS
@@ -351,13 +170,11 @@ export default function ServicesPage() {
                     />
                   ))}
                 </div>
-
               </div>
             </section>
           );
         }
       )}
-
 
       {/* =====================================================
           BOTTOM CTA
@@ -379,7 +196,6 @@ export default function ServicesPage() {
           lg:py-24
         "
       >
-
         {/* Decorative Circle */}
         <div
           className="
@@ -412,10 +228,8 @@ export default function ServicesPage() {
             lg:items-center
           "
         >
-
           {/* Content */}
           <div className="max-w-3xl">
-
             <div className="flex items-center gap-2">
               <span
                 className="
@@ -472,9 +286,7 @@ export default function ServicesPage() {
               Tell us what you want to achieve, and we&apos;ll help you find
               the right strategy, creative direction, and digital solution.
             </p>
-
           </div>
-
 
           {/* CTA Button */}
           <Link
@@ -529,10 +341,8 @@ export default function ServicesPage() {
               <ArrowRight size={16} />
             </span>
           </Link>
-
         </div>
       </section>
-
     </main>
   );
 }
