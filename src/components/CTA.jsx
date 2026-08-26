@@ -136,7 +136,7 @@ export default function CTA({
               font-black
               leading-[1.05]
               tracking-[-0.055em]
-
+              capitalize
               text-[var(--color-deep)]
 
               dark:text-[var(--color-cream)]

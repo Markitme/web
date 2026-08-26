@@ -31,7 +31,7 @@ export default function SectionHeading({
         </div>
       )}
 
-      <Heading className={`mt-4 text-4xl font-black leading-[0.98] tracking-[-0.055em] sm:text-5xl lg:text-6xl ${isDark ? "text-[var(--color-cream)]" : "text-[var(--color-deep)] dark:text-[var(--color-cream)]"}`}>
+      <Heading className={`mt-4 text-4xl capitalize font-black leading-[0.98] tracking-[-0.055em] sm:text-5xl lg:text-6xl ${isDark ? "text-[var(--color-cream)]" : "text-[var(--color-deep)] dark:text-[var(--color-cream)]"}`}>
         {children}
       </Heading>
 

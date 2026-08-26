@@ -588,6 +588,9 @@ export default function Hero() {
               text-[var(--color-deep)]
               sm:text-6xl
               md:text-7xl
+              capitalize
+              sm:leading-[0.92]
+              md:leading-[0.9]
               lg:text-[6.5rem]
               dark:text-[var(--color-cream)]
             "

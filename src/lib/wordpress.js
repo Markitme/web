@@ -1,5 +1,4 @@
-const WP_API = "https://markitme.ca/wp-json/wp/v2";
-
+const WP_API = process.env.NEXT_PUBLIC_WP_API;
 export async function getPosts({
   page = 1,
   perPage = 12,
@@ -8,7 +7,7 @@ export async function getPosts({
     `${WP_API}/posts?page=${page}&per_page=${perPage}&_embed`,
     {
       next: {
-        revalidate: 3600,
+        revalidate: 300,
         tags: ["wordpress-posts"],
       },
     }
