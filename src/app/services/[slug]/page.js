@@ -14,9 +14,7 @@ import AnimatedCounter from "@/components/AnimatedCounter";
 import ProcessSection from "@/components/ProcessSection";
 import SectionHeading from "@/components/SectionHeading";
 
-/* =====================================================
-   MARKITME DESIGN TOKENS
-===================================================== */
+/* MARKITME DESIGN TOKENS */
 
 const COLORS = {
   lightBg: "var(--color-cream)",
@@ -34,9 +32,7 @@ const COLORS = {
   cream: "var(--color-cream)",
 };
 
-/* =====================================================
-   SERVICE IMAGES
-===================================================== */
+/* SERVICE IMAGES */
 
 function getServiceImages(serviceTitle = "") {
   const title = serviceTitle.toLowerCase();
@@ -150,9 +146,7 @@ function getServiceImages(serviceTitle = "") {
   };
 }
 
-/* =====================================================
-   ANIMATED SERVICE VISUAL
-===================================================== */
+/* ANIMATED SERVICE VISUAL */
 
 function AnimatedServiceVisual({
   serviceTitle = "",
@@ -169,9 +163,7 @@ function AnimatedServiceVisual({
         ? images.overview
         : images.challenge;
 
-  /* =====================================================
-     HERO VISUAL
-  ===================================================== */
+  /* HERO VISUAL */
 
   if (variant === "hero") {
     return (
@@ -255,9 +247,7 @@ function AnimatedServiceVisual({
     );
   }
 
-  /* =====================================================
-     OVERVIEW VISUAL
-  ===================================================== */
+  /* OVERVIEW VISUAL */
 
   if (variant === "overview") {
     return (
@@ -318,9 +308,7 @@ function AnimatedServiceVisual({
     );
   }
 
-  /* =====================================================
-     CHALLENGE VISUAL
-  ===================================================== */
+  /* CHALLENGE VISUAL */
 
   return (
     <div
@@ -396,9 +384,7 @@ function AnimatedServiceVisual({
   );
 }
 
-/* =====================================================
-   FEATURE CARD
-===================================================== */
+/* FEATURE CARD */
 
 function FeatureCard({ feature }) {
   const FeatureIcon = feature.icon;
@@ -462,9 +448,7 @@ function FeatureCard({ feature }) {
   );
 }
 
-/* =====================================================
-   STATIC PATHS
-===================================================== */
+/* STATIC PATHS */
 
 export function generateStaticParams() {
   return services.map((service) => ({
@@ -472,9 +456,7 @@ export function generateStaticParams() {
   }));
 }
 
-/* =====================================================
-   SERVICE DETAILS PAGE
-===================================================== */
+/* SERVICE DETAILS PAGE */
 
 export default async function ServiceDetailsPage({ params }) {
   const { slug } = await params;
@@ -753,53 +735,97 @@ export default async function ServiceDetailsPage({ params }) {
       ===================================================== */}
 
       <section
-        className="
-          border-y
-          border-[var(--color-deep)]/10
+  className="
+    relative
+    overflow-hidden
 
-          bg-[var(--color-soft)]
+    border-y
+    border-[var(--color-deep)]/10
 
-          px-4 py-12
+    bg-[var(--color-soft)]
 
-          dark:border-[var(--color-green)]/20
-          dark:bg-[var(--color-deep-surface)]
+    px-4
+    py-12
 
-          sm:px-5
-          sm:py-16
-        "
-      >
-        <div className="container-custom">
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            <AnimatedCounter
-              value={100}
-              suffix="%"
-              label="Responsive Design"
-            />
+    dark:border-[var(--color-green)]/20
+    dark:bg-[var(--color-deep-surface)]
 
-            <AnimatedCounter
-              value={95}
-              suffix="+"
-              label="Performance Focused"
-            />
+    sm:px-5
+    sm:py-16
+  "
+>
+  {/* Background decoration */}
+  <div className="pointer-events-none absolute inset-0 overflow-hidden">
+    <div
+      className="
+        absolute
+        -left-32
+        top-1/2
+        h-72
+        w-72
+        -translate-y-1/2
+        rounded-full
+        bg-[var(--color-green)]/[0.06]
+        blur-[100px]
 
-            <AnimatedCounter
-              value={90}
-              suffix="+"
-              label="SEO Ready"
-            />
+        dark:bg-[var(--color-green)]/[0.05]
+      "
+    />
 
-            <AnimatedCounter
-              value={100}
-              suffix="%"
-              label="Audience Focused"
-            />
-          </div>
-        </div>
-      </section>
+    <div
+      className="
+        absolute
+        -right-32
+        top-1/3
+        h-72
+        w-72
+        rounded-full
+        bg-[var(--color-gold)]/[0.05]
+        blur-[100px]
 
-      {/* =====================================================
-          CHALLENGE
-      ===================================================== */}
+        dark:bg-[var(--color-gold)]/[0.025]
+      "
+    />
+  </div>
+
+  <div className="container-custom relative z-10">
+    <div className="grid gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4">
+      <AnimatedCounter
+        value={100}
+        suffix="%"
+        label="Responsive Design"
+        duration={1600}
+        index={0}
+      />
+
+      <AnimatedCounter
+        value={95}
+        suffix="+"
+        label="Performance Focused"
+        duration={1600}
+        index={1}
+      />
+
+      <AnimatedCounter
+        value={90}
+        suffix="+"
+        label="SEO Ready"
+        duration={1600}
+        index={2}
+      />
+
+      <AnimatedCounter
+        value={100}
+        suffix="%"
+        label="Audience Focused"
+        duration={1600}
+        index={3}
+      />
+    </div>
+  </div>
+</section>
+
+      {/* CHALLENGE */}
 
       <section
         className="
@@ -1120,9 +1146,7 @@ export default async function ServiceDetailsPage({ params }) {
   );
 }
 
-/* =====================================================
-   DYNAMIC METADATA
-===================================================== */
+/* DYNAMIC METADATA */
 
 export async function generateMetadata({ params }) {
   const { slug } = await params;

@@ -662,7 +662,84 @@ height: auto;
 .testimonial-swiper .swiper-wrapper {
 align-items: stretch;
 }
+/* =====================================================
+   CLIENT LOGO - SEAMLESS INFINITE MARQUEE
+===================================================== */
 
+.client-logo-marquee {
+  width: 100%;
+}
+
+.client-logo-track {
+  display: flex;
+  width: max-content;
+  align-items: center;
+  gap: 12px;
+
+  animation: client-logo-scroll 28s linear infinite;
+
+  will-change: transform;
+}
+
+.client-logo-item {
+  flex-shrink: 0;
+}
+
+/* Tablet */
+
+@media (min-width: 640px) {
+  .client-logo-track {
+    gap: 16px;
+  }
+}
+
+/* Desktop */
+
+@media (min-width: 1024px) {
+  .client-logo-track {
+    gap: 20px;
+  }
+}
+
+/* Large Desktop */
+
+@media (min-width: 1280px) {
+  .client-logo-track {
+    gap: 22px;
+  }
+}
+
+/* =====================================================
+   PAUSE ON HOVER
+===================================================== */
+
+.client-logo-marquee:hover .client-logo-track {
+  animation-play-state: paused;
+}
+
+/* =====================================================
+   SEAMLESS LOOP
+===================================================== */
+
+@keyframes client-logo-scroll {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+/* =====================================================
+   ACCESSIBILITY
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .client-logo-track {
+    animation: none;
+  }
+}
 /* ========================================
 TESTIMONIAL — MOBILE
 ======================================== */

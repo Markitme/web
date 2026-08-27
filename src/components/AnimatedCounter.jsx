@@ -58,184 +58,278 @@ export default function AnimatedCounter({
     return () => observer.disconnect();
   }, [value, duration]);
 
-  const accentColors = [
+  const accents = [
     {
-      number: "text-[var(--color-deep)]",
-      hoverBorder: "hover:border-[var(--color-green)]/50",
-      dot: "bg-[var(--color-green)]",
-      hoverDot: "group-hover:bg-[var(--color-gold)]",
+      color: "var(--color-green)",
+      soft: "bg-[var(--color-green)]/[0.07]",
+      text: "text-[var(--color-green)]",
     },
     {
-      number: "text-[var(--color-green)]",
-      hoverBorder: "hover:border-[var(--color-gold)]/50",
-      dot: "bg-[var(--color-gold)]",
-      hoverDot: "group-hover:bg-[var(--color-green)]",
+      color: "var(--color-gold)",
+      soft: "bg-[var(--color-gold)]/[0.08]",
+      text: "text-[var(--color-gold)]",
     },
     {
-      number: "text-[var(--color-sand)]",
-      hoverBorder: "hover:border-[var(--color-sand)]/50",
-      dot: "bg-[var(--color-sand)]",
-      hoverDot: "group-hover:bg-[var(--color-gold)]",
+      color: "var(--color-sand)",
+      soft: "bg-[var(--color-sand)]/[0.08]",
+      text: "text-[var(--color-sand)]",
     },
     {
-      number: "text-[var(--color-gold)]",
-      hoverBorder: "hover:border-[var(--color-gold)]/50",
-      dot: "bg-[var(--color-gold)]",
-      hoverDot: "group-hover:bg-[var(--color-green)]",
+      color: "var(--color-green)",
+      soft: "bg-[var(--color-green)]/[0.06]",
+      text: "text-[var(--color-green)]",
     },
   ];
 
-  const accent =
-    accentColors[index % accentColors.length];
+  const accent = accents[index % accents.length];
 
   return (
     <div
       ref={ref}
-      className={`
+      className="
         group
         relative
         overflow-hidden
 
-        rounded-2xl
+        min-h-[190px]
+
+        rounded-[2rem]
 
         border
-        border-[var(--color-deep)]/[0.09]
+        border-[var(--color-deep)]/[0.07]
 
-        bg-white/75
+        bg-white/55
 
         p-6
-        text-center
 
-        shadow-[0_8px_30px_rgba(12,59,46,0.035)]
+        backdrop-blur-sm
 
         transition-all
-        duration-500
+        duration-700
+        ease-out
 
-        hover:-translate-y-1.5
-
-        ${accent.hoverBorder}
+        hover:-translate-y-2
 
         hover:bg-white
-        hover:shadow-[0_18px_45px_rgba(12,59,46,0.08)]
 
-        sm:rounded-3xl
-        sm:p-7
+        hover:shadow-[0_25px_70px_rgba(12,59,46,0.09)]
 
-        dark:border-[var(--color-cream)]/[0.09]
-        dark:bg-[var(--color-deep)]/70
+        sm:min-h-[210px]
+        sm:p-8
 
-        dark:hover:bg-[var(--color-deep)]/90
+        lg:min-h-[230px]
+        lg:rounded-[2.5rem]
 
-        dark:hover:shadow-[0_18px_45px_rgba(0,0,0,0.16)]
-      `}
+        dark:border-[var(--color-cream)]/[0.08]
+        dark:bg-[var(--color-deep)]/45
+
+        dark:hover:bg-[var(--color-deep)]/70
+
+        dark:hover:shadow-[0_25px_70px_rgba(0,0,0,0.25)]
+      "
     >
-      {/* =====================================
-          TOP ACCENT
-      ====================================== */}
-
-      <span
-        className={`
-          absolute
-          left-1/2
-          top-0
-
-          h-[2px]
-          w-8
-
-          -translate-x-1/2
-
-          rounded-full
-
-          ${accent.dot}
-
-          transition-all
-          duration-500
-
-          group-hover:w-14
-          ${accent.hoverDot}
-        `}
-      />
-
-      {/* =====================================
-          NUMBER
-      ====================================== */}
-
-      <p
-        className={`
-          text-4xl
-          font-black
-
-          tracking-[-0.05em]
-
-          ${accent.number}
-
-          transition-all
-          duration-500
-
-          group-hover:scale-[1.03]
-
-          sm:text-5xl
-          lg:text-[3.25rem]
-
-          dark:text-[var(--color-cream)]
-        `}
-      >
-        {count}
-        {suffix}
-      </p>
-
-      {/* =====================================
-          LABEL
-      ====================================== */}
-
-      <p
-        className="
-          mt-3
-
-          text-xs
-          font-bold
-          uppercase
-          tracking-[0.12em]
-
-          text-[#587064]
-
-          transition-colors
-          duration-300
-
-          group-hover:text-[var(--color-deep)]
-
-          sm:text-sm
-
-          dark:text-[#A8B9AE]
-          dark:group-hover:text-[var(--color-cream)]
-        "
-      >
-        {label}
-      </p>
-
-      {/* =====================================
-          BOTTOM ACCENT
-      ====================================== */}
+      {/* =========================================
+          GIANT BACKGROUND INDEX
+      ========================================== */}
 
       <span
         className="
           pointer-events-none
           absolute
-          bottom-0
-          left-1/2
 
-          h-px
-          w-0
+          -right-2
+          -top-8
 
-          -translate-x-1/2
+          select-none
 
-          bg-[var(--color-gold)]
+          text-[8rem]
+          font-black
+          leading-none
+
+          tracking-[-0.1em]
+
+          text-[var(--color-deep)]/[0.025]
 
           transition-all
-          duration-500
+          duration-700
 
-          group-hover:w-12
+          group-hover:translate-x-2
+          group-hover:text-[var(--color-green)]/[0.055]
+
+          dark:text-[var(--color-cream)]/[0.025]
+
+          dark:group-hover:text-[var(--color-gold)]/[0.05]
+
+          sm:text-[9rem]
         "
+      >
+        {String(index + 1).padStart(2, "0")}
+      </span>
+
+      
+      {/*numbers*/}
+
+      <div
+        className="
+          relative
+          z-10
+
+          mt-9
+
+          flex
+          items-baseline
+        "
+      >
+        <span
+          className="
+            text-[3.5rem]
+            font-black
+            leading-none
+
+            tracking-[-0.075em]
+
+            text-[var(--color-deep)]
+
+            transition-all
+            duration-700
+
+            group-hover:translate-x-1
+
+            sm:text-6xl
+
+            lg:text-[4.5rem]
+
+            dark:text-[var(--color-cream)]
+          "
+        >
+          {count}
+        </span>
+
+        {suffix && (
+          <span
+            className={`
+              ml-1
+
+              text-2xl
+              font-black
+
+              ${accent.text}
+
+              transition-transform
+              duration-500
+
+              group-hover:translate-x-1
+
+              sm:text-3xl
+            `}
+          >
+            {suffix}
+          </span>
+        )}
+      </div>
+
+      {/* =========================================
+          LABEL
+      ========================================== */}
+
+      <div
+        className="
+          relative
+          z-10
+
+          mt-5
+        "
+      >
+        <p
+          className="
+            max-w-[180px]
+
+            text-xs
+            font-bold
+            uppercase
+            leading-5
+            tracking-[0.12em]
+
+            text-[var(--color-deep)]/60
+
+            dark:text-[var(--color-cream)]/60
+          "
+        >
+          {label}
+        </p>
+      </div>
+
+      {/* =========================================
+          BOTTOM PROGRESS LINE
+      ========================================== */}
+
+      <div
+        className="
+          absolute
+          bottom-0
+          left-6
+          right-6
+
+          h-[2px]
+
+          overflow-hidden
+
+          bg-[var(--color-deep)]/[0.06]
+
+          dark:bg-[var(--color-cream)]/[0.06]
+
+          sm:left-8
+          sm:right-8
+        "
+      >
+        <span
+          className="
+            absolute
+            left-0
+            top-0
+
+            h-full
+            w-8
+
+            transition-all
+            duration-700
+
+            group-hover:w-full
+          "
+          style={{
+            backgroundColor: accent.color,
+          }}
+        />
+      </div>
+
+      {/* =========================================
+          HOVER GLOW
+      ========================================== */}
+
+      <div
+        className={`
+          pointer-events-none
+          absolute
+
+          -bottom-20
+          -right-20
+
+          h-40
+          w-40
+
+          rounded-full
+
+          ${accent.soft}
+
+          blur-[60px]
+
+          opacity-0
+
+          transition-opacity
+          duration-700
+
+          group-hover:opacity-100
+        `}
       />
     </div>
   );

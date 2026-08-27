@@ -31,140 +31,129 @@ const clientLogos = [
 ];
 
 export default function ClientLogoSlider() {
-  const duplicatedLogos = [...clientLogos, ...clientLogos];
+  const marqueeLogos = [...clientLogos, ...clientLogos];
 
   return (
     <section
       className="
-        client-logo-section
         relative
         overflow-hidden
 
         border-y
         border-[var(--color-deep)]/[0.08]
 
+        bg-[#E7EDE4]
+
         py-14
-        sm:py-16
-        lg:py-20
 
         transition-colors
         duration-500
 
         dark:border-[var(--color-cream)]/[0.08]
+        dark:bg-[#071F18]
+
+        sm:py-16
+        lg:py-20
       "
     >
-      {/* =========================================
-          BACKGROUND DECORATION
-      ========================================== */}
+      {/* =====================================================
+          BACKGROUND
+      ====================================================== */}
 
-      <div
-        className="
-          pointer-events-none
-          absolute
-          inset-0
-          overflow-hidden
-        "
-      >
-        {/* Top soft glow */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        {/* Green glow */}
+
         <div
           className="
             absolute
-            -left-32
-            -top-40
+            -left-40
+            top-1/2
+
             h-[420px]
             w-[420px]
+
+            -translate-y-1/2
+
             rounded-full
+
             bg-[var(--color-green)]/[0.08]
-            blur-[100px]
 
-            dark:bg-[var(--color-gold)]/[0.035]
+            blur-[120px]
+
+            dark:bg-[var(--color-green)]/[0.045]
           "
         />
 
-        {/* Bottom soft glow */}
+        {/* Gold glow */}
+
         <div
           className="
             absolute
-            -bottom-40
-            -right-32
-            h-[420px]
-            w-[420px]
-            rounded-full
-            bg-[var(--color-sand)]/[0.07]
-            blur-[100px]
+            -right-40
+            top-1/3
 
-            dark:bg-[var(--color-green)]/[0.06]
+            h-[380px]
+            w-[380px]
+
+            rounded-full
+
+            bg-[var(--color-gold)]/[0.07]
+
+            blur-[120px]
+
+            dark:bg-[var(--color-gold)]/[0.025]
           "
         />
 
-        {/* Center subtle glow */}
+        {/* Center glow */}
+
         <div
           className="
             absolute
             left-1/2
             top-1/2
-            h-[300px]
-            w-[600px]
+
+            h-[260px]
+            w-[700px]
+
             -translate-x-1/2
             -translate-y-1/2
+
             rounded-full
-            bg-[var(--color-green)]/[0.035]
+
+            bg-[var(--color-green)]/[0.025]
+
             blur-[120px]
 
-            dark:bg-[var(--color-cream)]/[0.02]
+            dark:bg-[var(--color-cream)]/[0.015]
           "
         />
       </div>
 
-      {/* =========================================
-          TOP DECORATIVE LINE
-      ========================================== */}
-
-      <div
-        className="
-          pointer-events-none
-          absolute
-          left-1/2
-          top-0
-          h-px
-          w-24
-          -translate-x-1/2
-
-          bg-[var(--color-gold)]
-
-          sm:w-32
-        "
-      />
-
-      {/* =========================================
-          MAIN CONTAINER
-      ========================================== */}
+      {/* =====================================================
+          CONTENT
+      ====================================================== */}
 
       <div
         className="
           relative
           z-10
+
           mx-auto
           w-full
+
           max-w-[1600px]
         "
       >
-        {/* =========================================
-            HEADING
-        ========================================== */}
+        {/*  HEADING */}
 
-        <div
-          className="
-            px-5
-            text-center
-
-            sm:px-8
-          "
-        >
+        <div className="px-5 text-center sm:px-8">
           {/* Eyebrow */}
 
           <div
             className="
+              mb-3
+
               inline-flex
               items-center
               gap-2
@@ -174,7 +163,9 @@ export default function ClientLogoSlider() {
               className="
                 h-1.5
                 w-1.5
+
                 rounded-full
+
                 bg-[var(--color-gold)]
               "
             />
@@ -182,8 +173,10 @@ export default function ClientLogoSlider() {
             <p
               className="
                 text-[8px]
+
                 font-black
                 uppercase
+
                 tracking-[0.24em]
 
                 text-[var(--color-green)]
@@ -200,7 +193,9 @@ export default function ClientLogoSlider() {
               className="
                 h-1.5
                 w-1.5
+
                 rounded-full
+
                 bg-[var(--color-green)]
               "
             />
@@ -213,6 +208,7 @@ export default function ClientLogoSlider() {
             <span
               className="
                 text-[var(--color-green)]
+
                 dark:text-[var(--color-gold)]
               "
             >
@@ -220,12 +216,14 @@ export default function ClientLogoSlider() {
             </span>
           </SectionHeading>
 
-          {/* Supporting text */}
+          {/* Description */}
 
           <p
             className="
               mx-auto
+
               mt-3
+
               max-w-xl
 
               text-xs
@@ -238,277 +236,216 @@ export default function ClientLogoSlider() {
               dark:text-[var(--color-cream)]/50
             "
           >
-            Trusted partnerships that turn ideas, strategy, and creativity
-            into measurable digital growth.
+            Trusted partnerships that turn ideas, strategy, and creativity into
+            measurable digital growth.
           </p>
         </div>
 
-        {/* =========================================
-            LOGO VIEWPORT
-        ========================================== */}
+        {/* =================================================
+            LOGO MARQUEE
+        ================================================== */}
 
         <div
           className="
             relative
-            mt-9
-            w-full
 
-            overflow-hidden
+            mt-10
 
-            px-0
-            py-5
+            sm:mt-12
 
-            sm:mt-11
-            sm:py-6
-
-            lg:py-7
+            lg:mt-14
           "
         >
 
-          {/* =========================================
-              MOVING TRACK
-          ========================================== */}
+
+          {/* =================================================
+              MARQUEE VIEWPORT
+          ================================================== */}
 
           <div
             className="
-              client-logo-track
-              flex
-              w-max
-              items-center
-              gap-3
+              client-logo-marquee
 
-              px-2
+              relative
 
-              sm:gap-4
-              sm:px-4
+              overflow-hidden
 
-              lg:gap-5
-              lg:px-6
+              px-4
+
+              sm:px-6
+
+              lg:px-8
             "
           >
-            {duplicatedLogos.map((client, index) => (
-              <div
-                key={`${client.name}-${index}`}
-                className="
-                  client-logo-card
-                  group
-                  relative
+            {/* TRACK */}
 
-                  flex
-                  h-[76px]
-                  w-[148px]
-                  shrink-0
-                  items-center
-                  justify-center
-
-                  overflow-hidden
-
-                  rounded-2xl
-
-                  border
-                  border-[var(--color-deep)]/[0.09]
-
-                  bg-white/75
-
-                  px-5
-
-                  shadow-[0_8px_30px_rgba(12,59,46,0.045)]
-
-                  transition-all
-                  duration-500
-                  ease-out
-
-                  hover:-translate-y-1
-                  hover:scale-[1.015]
-
-                  hover:border-[var(--color-green)]/45
-                  hover:bg-white
-
-                  hover:shadow-[0_18px_45px_rgba(12,59,46,0.09)]
-
-                  sm:h-[82px]
-                  sm:w-[172px]
-
-                  lg:h-[88px]
-                  lg:w-[188px]
-
-                  dark:border-[var(--color-cream)]/[0.10]
-                  dark:bg-[var(--color-cream)]/[0.045]
-
-                  dark:hover:border-[var(--color-gold)]/35
-                  dark:hover:bg-[var(--color-cream)]/[0.075]
-
-                  dark:hover:shadow-[0_18px_45px_rgba(0,0,0,0.16)]
-                "
-              >
-                {/* =========================================
-                    TOP ACCENT
-                ========================================== */}
-
-                <span
-                  className="
-                    pointer-events-none
-                    absolute
-                    left-1/2
-                    top-0
-
-                    h-[2px]
-                    w-0
-
-                    -translate-x-1/2
-
-                    rounded-full
-
-                    bg-[var(--color-gold)]
-
-                    opacity-0
-
-                    transition-all
-                    duration-500
-                    ease-out
-
-                    group-hover:w-12
-                    group-hover:opacity-100
-                  "
-                />
-
-                {/* =========================================
-                    INNER GLOW
-                ========================================== */}
-
-                <span
-                  className="
-                    pointer-events-none
-                    absolute
-                    inset-0
-
-                    rounded-2xl
-
-                    bg-gradient-to-br
-                    from-[var(--color-green)]/[0.04]
-                    via-transparent
-                    to-[var(--color-gold)]/[0.035]
-
-                    opacity-0
-
-                    transition-opacity
-                    duration-500
-
-                    group-hover:opacity-100
-                  "
-                />
-
-                {/* =========================================
-                    LOGO
-                ========================================== */}
-
+            <div className="client-logo-track">
+              {marqueeLogos.map((client, index) => (
                 <div
+                  key={`${client.name}-${index}`}
                   className="
+                    client-logo-item
+
+                    group
+
                     relative
-                    z-10
 
                     flex
+                    h-[88px]
+
+                    w-[150px]
+
+                    shrink-0
+
                     items-center
                     justify-center
 
+                    overflow-hidden
+
+                    rounded-[22px]
+
+                    border
+                    border-[var(--color-deep)]/[0.08]
+
+                    bg-white/65
+
+                    px-5
+
+                    backdrop-blur-sm
+
+                    shadow-[0_10px_35px_rgba(12,59,46,0.045)]
+
                     transition-all
                     duration-500
-                    ease-out
 
-                    group-hover:-translate-y-0.5
+                    hover:-translate-y-1
+
+                    hover:border-[var(--color-green)]/40
+
+                    hover:bg-white
+
+                    hover:shadow-[0_20px_50px_rgba(12,59,46,0.10)]
+
+                    dark:border-[var(--color-cream)]/[0.09]
+
+                    dark:bg-[var(--color-cream)]/[0.04]
+
+                    dark:hover:border-[var(--color-gold)]/40
+
+                    dark:hover:bg-[var(--color-cream)]/[0.075]
+
+                    dark:hover:shadow-[0_20px_50px_rgba(0,0,0,0.18)]
+
+                    sm:h-[96px]
+
+                    sm:w-[180px]
+
+                    sm:rounded-[24px]
+
+                    lg:h-[105px]
+
+                    lg:w-[200px]
                   "
                 >
-                  <Image
-                    src={client.logo}
-                    alt={client.name}
-                    width={150}
-                    height={55}
+
+                  {/* INNER GLOW */}
+
+                  <span
                     className="
-                      h-auto
-                      max-h-[38px]
-                      w-auto
-                      max-w-[125px]
+                      pointer-events-none
 
-                      object-contain
+                      absolute
+                      inset-0
 
-                      grayscale
-                      opacity-55
+                      rounded-[22px]
 
-                      transition-all
+                      bg-[var(--color-green)]/[20%]
+
+
+                      transition-opacity
                       duration-500
-                      ease-out
 
-                      group-hover:scale-[1.04]
-                      group-hover:grayscale-0
                       group-hover:opacity-100
-
-                      sm:max-h-[42px]
-                      sm:max-w-[145px]
-
-                      dark:brightness-0
-                      dark:invert
-                      dark:opacity-60
-
-                      dark:group-hover:brightness-100
-                      dark:group-hover:invert-0
-                      dark:group-hover:opacity-100
                     "
                   />
+
+                  {/* LOGO */}
+
+                  <div
+                    className="
+                      relative
+                      z-10
+
+                      flex
+                      h-full
+                      w-full
+
+                      items-center
+                      justify-center
+
+                      transition-transform
+                      duration-500
+
+                      group-hover:scale-[1.05]
+                    "
+                  >
+                    <Image
+                      src={client.logo}
+                      alt={client.name}
+                      width={160}
+                      height={60}
+                      className="
+                        h-auto
+
+                        max-h-[42px]
+
+                        w-auto
+
+                        max-w-[135px]
+
+                        object-contain
+
+                        grayscale
+
+                        opacity-60
+
+                        transition-all
+                        duration-500
+
+                        group-hover:grayscale-0
+
+                        group-hover:opacity-100
+
+                        sm:max-h-[46px]
+
+                        sm:max-w-[150px]
+
+                        lg:max-h-[50px]
+
+                        lg:max-w-[165px]
+
+                        dark:brightness-0
+
+                        dark:invert
+
+                        dark:opacity-65
+
+                        dark:group-hover:brightness-500
+
+                        dark:group-hover:invert-0
+
+                        dark:group-hover:opacity-100
+                      "
+                    />
+                  </div>
+
                 </div>
-
-                {/* =========================================
-                    BOTTOM ACCENT
-                ========================================== */}
-
-                <span
-                  className="
-                    pointer-events-none
-                    absolute
-                    bottom-0
-                    left-1/2
-
-                    h-px
-                    w-0
-
-                    -translate-x-1/2
-
-                    bg-[var(--color-green)]/50
-
-                    transition-all
-                    duration-500
-
-                    group-hover:w-8
-
-                    dark:bg-[var(--color-gold)]/50
-                  "
-                />
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </div>
 
-      {/* =========================================
-          BOTTOM DECORATIVE ELEMENT
-      ========================================== */}
-
-      <div
-        className="
-          pointer-events-none
-          absolute
-          bottom-0
-          left-1/2
-          h-px
-          w-16
-          -translate-x-1/2
-
-          bg-[var(--color-green)]/40
-
-          sm:w-24
-
-          dark:bg-[var(--color-gold)]/30
-        "
-      />
     </section>
   );
 }
