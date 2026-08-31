@@ -492,7 +492,7 @@ export default async function BlogDetailPage({
             {/* Main Content */}
 
             <article
-              className="
+              className=" articles_content
                 min-w-0
 
                 prose
