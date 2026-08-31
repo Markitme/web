@@ -427,11 +427,14 @@ export default function CaseStudies() {
 
                             transition-transform
                             duration-300
+                            cursor-pointer
 
                             group-hover:rotate-[-45deg]
                           "
+                          onClick={() => window.location.href = `/work/${study.slug}`}
                         >
                           <ArrowRight size={17} />
+
                         </div>
                       </div>
 

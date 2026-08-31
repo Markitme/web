@@ -711,7 +711,7 @@ export default function Footer() {
 
     {/* LinkedIn */}
     <a
-      href="YOUR_LINKEDIN_URL"
+      href="https://www.linkedin.com/company/markitme-ca/"
       target="_blank"
       rel="noopener noreferrer"
       aria-label="MarkitMe LinkedIn"
@@ -748,7 +748,7 @@ export default function Footer() {
 
     {/* Facebook */}
     <a
-      href="YOUR_FACEBOOK_URL"
+      href="https://www.facebook.com/profile.php?id=61570996980204"
       target="_blank"
       rel="noopener noreferrer"
       aria-label="MarkitMe Facebook"

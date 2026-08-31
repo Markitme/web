@@ -7,46 +7,41 @@ import SectionHeading from "./SectionHeading";
 
 import "swiper/css";
 
+const IMAGE_BASE_URL =
+  "https://cms.markitme.ca/wp-content/uploads/2026/08/";
+
 const creativeSolutions = [
   {
     title: "Web Development",
-    image:
-      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=85",
+    image: `${IMAGE_BASE_URL}web-development.jpg`,
   },
   {
     title: "UI / UX Design",
-    image:
-      "https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=1200&q=85",
+    image: `${IMAGE_BASE_URL}ui-ux-design.jpg`,
   },
   {
     title: "Brand Identity",
-    image:
-      "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=1200&q=85",
+    image: `${IMAGE_BASE_URL}brand-identity.jpg`,
   },
   {
     title: "Digital Marketing",
-    image:
-      "https://images.unsplash.com/photo-1533750349088-cd871a92f312?auto=format&fit=crop&w=1200&q=85",
+    image: `${IMAGE_BASE_URL}marketing.jpg`,
   },
   {
     title: "SEO & Growth",
-    image:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=85",
+    image: `${IMAGE_BASE_URL}seo-and-growth.jpg`,
   },
   {
     title: "AI & Automation",
-    image:
-      "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=85",
+    image: `${IMAGE_BASE_URL}ai-automation.jpg`,
   },
   {
     title: "Content & Creative",
-    image:
-      "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1200&q=85",
+    image: `${IMAGE_BASE_URL}content-creative.jpg`,
   },
   {
     title: "E-Commerce",
-    image:
-      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1200&q=85",
+    image: `${IMAGE_BASE_URL}e-commerce.jpg`,
   },
 ];
 
