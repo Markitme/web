@@ -23,13 +23,13 @@ export default function CaseStudies() {
         overflow-hidden
 
         border-y
-        border-[var(--color-deep)]/[0.08]
+        border-[var(--border)]
 
-        bg-[#E9EEE7]
+        bg-[var(--background)]
 
         py-16
 
-        text-[var(--color-deep)]
+        text-[var(--foreground)]
 
         transition-colors
         duration-500
@@ -37,9 +37,9 @@ export default function CaseStudies() {
         sm:py-20
         lg:py-24
 
-        dark:border-[var(--color-cream)]/[0.08]
-        dark:bg-[var(--color-night)]
-        dark:text-[var(--color-cream)]
+        dark:border-[var(--border)]
+        dark:bg-[var(--background)]
+        dark:text-[var(--foreground)]
       "
     >
       {/* =====================================================
@@ -54,7 +54,6 @@ export default function CaseStudies() {
           overflow-hidden
         "
       >
-        {/* Green glow */}
         <div
           className="
             absolute
@@ -66,15 +65,14 @@ export default function CaseStudies() {
 
             rounded-full
 
-            bg-[var(--color-green)]/[0.07]
+            bg-[var(--foreground)]/[0.04]
 
             blur-[110px]
 
-            dark:bg-[var(--color-green)]/[0.055]
+            dark:bg-[var(--foreground)]/[0.05]
           "
         />
 
-        {/* Gold glow */}
         <div
           className="
             absolute
@@ -86,11 +84,11 @@ export default function CaseStudies() {
 
             rounded-full
 
-            bg-[var(--color-gold)]/[0.045]
+            bg-[var(--foreground)]/[0.03]
 
             blur-[110px]
 
-            dark:bg-[var(--color-gold)]/[0.025]
+            dark:bg-[var(--foreground)]/[0.04]
           "
         />
       </div>
@@ -107,7 +105,7 @@ export default function CaseStudies() {
         <div className="mb-10 flex flex-col gap-6 sm:mb-12 lg:flex-row lg:items-end lg:justify-between">
           <SectionHeading eyebrow="Selected Work">
             Ideas turned into{" "}
-            <span className="text-[var(--color-green)] dark:text-[var(--color-gold)]">
+            <span className="text-[var(--muted)] dark:text-[var(--muted)]">
               measurable impact.
             </span>
           </SectionHeading>
@@ -212,25 +210,25 @@ export default function CaseStudies() {
                       rounded-[22px]
 
                       border
-                      border-[var(--color-deep)]/[0.09]
+                      border-[var(--border)]
 
-                      bg-white
+                      bg-[var(--background)]
 
-                      shadow-[0_10px_35px_rgba(12,59,46,0.035)]
+                      shadow-[0_10px_30px_rgba(17,17,17,0.04)]
 
                       transition-all
                       duration-500
 
                       hover:-translate-y-1
 
-                      hover:border-[var(--color-green)]/40
+                      hover:border-[var(--foreground)]/25
 
-                      hover:shadow-[0_20px_50px_rgba(12,59,46,0.10)]
+                      hover:shadow-[0_20px_50px_rgba(17,17,17,0.09)]
 
-                      dark:border-[var(--color-cream)]/[0.09]
-                      dark:bg-[var(--color-deep)]
+                      dark:border-[var(--border)]
+                      dark:bg-[var(--background)]
 
-                      dark:hover:border-[var(--color-gold)]/35
+                      dark:hover:border-[var(--foreground)]/35
 
                       dark:hover:shadow-[0_20px_50px_rgba(0,0,0,0.18)]
                     "
@@ -387,7 +385,7 @@ export default function CaseStudies() {
                               uppercase
                               tracking-[0.18em]
 
-                              text-[var(--color-gold)]
+                              text-[var(--foreground)]/80
                             "
                           >
                             Case Study
@@ -421,9 +419,9 @@ export default function CaseStudies() {
 
                             rounded-full
 
-                            bg-[var(--color-gold)]
+                            bg-[var(--foreground)]
 
-                            text-[var(--color-deep)]
+                            text-[var(--background)]
 
                             transition-transform
                             duration-300
@@ -486,11 +484,11 @@ export default function CaseStudies() {
                             uppercase
                             tracking-[0.18em]
 
-                            text-[var(--color-green)]
+                            text-[var(--muted)]
 
                             sm:text-[9px]
 
-                            dark:text-[var(--color-gold)]
+                            dark:text-[var(--foreground)]
                           "
                         >
                           {study.category}
@@ -550,9 +548,9 @@ export default function CaseStudies() {
                             text-sm
                             leading-6
 
-                            text-[#587064]
+                            text-[var(--foreground)]/75
 
-                            dark:text-[#A8B9AE]
+                            dark:text-[var(--foreground)]/80
                           "
                         >
                           {study.shortDescription}
@@ -585,9 +583,9 @@ export default function CaseStudies() {
                                     rounded-full
 
                                     border
-                                    border-[var(--color-deep)]/10
+                                    border-[var(--border)]
 
-                                    bg-[var(--color-soft)]/60
+                                    bg-[var(--surface-soft)]
 
                                     px-3
                                     py-1.5
@@ -595,16 +593,16 @@ export default function CaseStudies() {
                                     text-[8px]
                                     font-semibold
 
-                                    text-[#587064]
+                                    text-[var(--foreground)]
 
                                     transition-colors
                                     duration-300
 
-                                    group-hover:border-[var(--color-green)]/30
+                                    group-hover:border-[var(--foreground)]/25
 
-                                    dark:border-[var(--color-cream)]/10
-                                    dark:bg-[var(--color-cream)]/[0.06]
-                                    dark:text-[#A8B9AE]
+                                    dark:border-[var(--border)]
+                                    dark:bg-[var(--surface)]
+                                    dark:text-[var(--foreground)]
                                   "
                                 >
                                   {service.title}
@@ -638,9 +636,9 @@ export default function CaseStudies() {
                                     rounded-xl
 
                                     border
-                                    border-[var(--color-deep)]/[0.06]
+                                    border-[var(--border)]
 
-                                    bg-[var(--color-soft)]/50
+                                    bg-[var(--surface-soft)]
 
                                     px-3
                                     py-3
@@ -648,10 +646,10 @@ export default function CaseStudies() {
                                     transition-all
                                     duration-300
 
-                                    group-hover:border-[var(--color-green)]/20
+                                    group-hover:border-[var(--foreground)]/20
 
-                                    dark:border-[var(--color-cream)]/[0.07]
-                                    dark:bg-[var(--color-night)]/45
+                                    dark:border-[var(--border)]
+                                    dark:bg-[var(--surface)]
                                   "
                                 >
                                   <p
@@ -662,11 +660,11 @@ export default function CaseStudies() {
 
                                       ${
                                         resultIndex === 1
-                                          ? "text-[var(--color-sand)]"
-                                          : "text-[var(--color-gold)]"
+                                          ? "text-[var(--foreground)]/70"
+                                          : "text-[var(--foreground)]"
                                       }
 
-                                      dark:text-[var(--color-gold)]
+                                      dark:text-[var(--foreground)]
                                     `}
                                   >
                                     {result.value}
@@ -681,9 +679,9 @@ export default function CaseStudies() {
                                       text-[8px]
                                       font-semibold
 
-                                      text-[#587064]/75
+                                      text-[var(--foreground)]/70
 
-                                      dark:text-[#A8B9AE]/70
+                                      dark:text-[var(--foreground)]/75
                                     "
                                   >
                                     {result.label}
@@ -717,50 +715,16 @@ export default function CaseStudies() {
                         </Button>
 
                         {study.website && (
-                          <a
+                          <Button
                             href={study.website}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="
-                              inline-flex
-                              items-center
-                              justify-center
-                              gap-2
-
-                              rounded-full
-
-                              border
-                              border-[var(--color-deep)]/10
-
-                              bg-transparent
-
-                              px-4
-                              py-3
-
-                              text-xs
-                              font-bold
-
-                              text-[var(--color-deep)]
-
-                              transition-all
-                              duration-300
-
-                              hover:border-[var(--color-deep)]
-                              hover:bg-[var(--color-deep)]
-                              hover:text-[var(--color-cream)]
-
-                              dark:border-[var(--color-cream)]/10
-                              dark:text-[var(--color-cream)]
-
-                              dark:hover:border-[var(--color-gold)]
-                              dark:hover:bg-[var(--color-gold)]
-                              dark:hover:text-[var(--color-deep)]
-                            "
+                            variant="outline"
+                            size="sm"
+                            className="px-4"
+                            showArrow={false}
                           >
                             Website
-
                             <ExternalLink size={13} />
-                          </a>
+                          </Button>
                         )}
                       </div>
                     </div>
@@ -809,11 +773,11 @@ export default function CaseStudies() {
                   rounded-full
 
                   border
-                  border-[var(--color-deep)]/10
+                  border-[var(--border)]
 
-                  bg-[var(--color-cream)]
+                  bg-[var(--background)]
 
-                  text-[var(--color-deep)]
+                  text-[var(--foreground)]
 
                   shadow-lg
 
@@ -822,17 +786,17 @@ export default function CaseStudies() {
 
                   hover:scale-105
 
-                  hover:border-[var(--color-green)]
-                  hover:bg-[var(--color-deep)]
-                  hover:text-[var(--color-cream)]
+                  hover:border-[var(--foreground)]
+                  hover:bg-[var(--foreground)]
+                  hover:text-[var(--background)]
 
-                  dark:border-[var(--color-cream)]/10
-                  dark:bg-[var(--color-deep)]
-                  dark:text-[var(--color-cream)]
+                  dark:border-[var(--border)]
+                  dark:bg-[var(--background)]
+                  dark:text-[var(--foreground)]
 
-                  dark:hover:border-[var(--color-gold)]
-                  dark:hover:bg-[var(--color-gold)]
-                  dark:hover:text-[var(--color-deep)]
+                  dark:hover:border-[var(--foreground)]
+                  dark:hover:bg-[var(--foreground)]
+                  dark:hover:text-[var(--background)]
                 "
                 aria-label="Previous project"
               >
@@ -861,11 +825,11 @@ export default function CaseStudies() {
                   rounded-full
 
                   border
-                  border-[var(--color-deep)]/10
+                  border-[var(--border)]
 
-                  bg-[var(--color-cream)]
+                  bg-[var(--background)]
 
-                  text-[var(--color-deep)]
+                  text-[var(--foreground)]
 
                   shadow-lg
 
@@ -874,17 +838,17 @@ export default function CaseStudies() {
 
                   hover:scale-105
 
-                  hover:border-[var(--color-green)]
-                  hover:bg-[var(--color-deep)]
-                  hover:text-[var(--color-cream)]
+                  hover:border-[var(--foreground)]
+                  hover:bg-[var(--foreground)]
+                  hover:text-[var(--background)]
 
-                  dark:border-[var(--color-cream)]/10
-                  dark:bg-[var(--color-deep)]
-                  dark:text-[var(--color-cream)]
+                  dark:border-[var(--border)]
+                  dark:bg-[var(--background)]
+                  dark:text-[var(--foreground)]
 
-                  dark:hover:border-[var(--color-gold)]
-                  dark:hover:bg-[var(--color-gold)]
-                  dark:hover:text-[var(--color-deep)]
+                  dark:hover:border-[var(--foreground)]
+                  dark:hover:bg-[var(--foreground)]
+                  dark:hover:text-[var(--background)]
                 "
                 aria-label="Next project"
               >

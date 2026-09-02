@@ -23,20 +23,20 @@ export default function SectionHeading({
     >
       {eyebrow && (
         <div className="inline-flex items-center gap-2">
-          <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-gold)]" />
-          <p className={`text-[9px] font-black uppercase tracking-[0.24em] ${isDark ? "text-[var(--color-gold)]" : "text-[var(--color-green)] dark:text-[var(--color-gold)]"}`}>
+          <span className={`h-1.5 w-1.5 rounded-full ${isDark ? "bg-[var(--background)]" : "bg-[var(--foreground)]"}`} />
+          <p className={`text-[9px] font-black uppercase tracking-[0.24em] ${isDark ? "text-[var(--background)]" : "text-[var(--muted)] dark:text-[var(--foreground)]"}`}>
             {eyebrow}
           </p>
-          <span className={`h-1.5 w-1.5 rounded-full ${isDark ? "bg-[var(--color-gold)]" : "bg-[var(--color-green)] dark:bg-[var(--color-gold)]"}`} />
+          <span className={`h-1.5 w-1.5 rounded-full ${isDark ? "bg-[var(--background)]" : "bg-[var(--muted)] dark:bg-[var(--foreground)]"}`} />
         </div>
       )}
 
-      <Heading className={`mt-4 text-4xl capitalize font-black leading-[0.98] tracking-[-0.055em] sm:text-5xl lg:text-6xl ${isDark ? "text-[var(--color-cream)]" : "text-[var(--color-deep)] dark:text-[var(--color-cream)]"}`}>
+      <Heading className={`mt-4 text-4xl capitalize font-black leading-[0.98] tracking-[-0.055em] sm:text-5xl lg:text-6xl ${isDark ? "text-[var(--background)]" : "text-[var(--foreground)] dark:text-[var(--foreground)]"}`}>
         {children}
       </Heading>
 
       {description && (
-        <p className={`mt-5 max-w-2xl text-sm leading-7 sm:text-base ${isDark ? "text-[var(--color-cream)]/60" : "text-[#587064]/55 dark:text-[#A8B9AE]/55"}`}>
+        <p className={`mt-5 max-w-2xl text-sm leading-7 sm:text-base ${isDark ? "text-[var(--background)]/70" : "text-[var(--muted)] dark:text-[var(--muted)]"}`}>
           {description}
         </p>
       )}

@@ -411,12 +411,13 @@ export default function CreativeSolutions() {
                     MarkitMe
                   </span>
 
-                  <button type="button"
-              onClick={() => {
-                window.dispatchEvent(
-                  new Event("open-contact-modal")
-                );
-              }}
+                  <button
+                    type="button"
+                    onClick={() => {
+                      window.dispatchEvent(
+                        new Event("open-contact-modal")
+                      );
+                    }}
                     className="
                       flex
                       h-10
@@ -427,21 +428,29 @@ export default function CreativeSolutions() {
                       rounded-full
 
                       border
-                      border-[var(--color-cream)]/30
+                      border-[var(--foreground)]/25
 
-                      bg-[var(--color-cream)]/10
+                      bg-[var(--background)]/80
 
                       text-lg
-                      text-[var(--color-cream)]
+                      text-[var(--foreground)]
 
                       backdrop-blur-md
 
                       transition-all
                       duration-300
 
-                      group-hover:border-[var(--color-gold)]
-                      group-hover:bg-[var(--color-gold)]
-                      group-hover:text-[var(--color-deep)]
+                      group-hover:border-[var(--foreground)]
+                      group-hover:bg-[var(--foreground)]
+                      group-hover:text-[var(--background)]
+
+                      dark:border-[var(--foreground)]/30
+                      dark:bg-[var(--foreground)]/10
+                      dark:text-[var(--foreground)]
+
+                      dark:group-hover:border-[var(--foreground)]
+                      dark:group-hover:bg-[var(--foreground)]
+                      dark:group-hover:text-[var(--background)]
                     "
                   >
                     ↗

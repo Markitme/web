@@ -9,6 +9,7 @@ import {
   Check,
   Sparkles,
 } from "lucide-react";
+import Button from "./ui/Button";
 import SectionHeading from "./SectionHeading";
 
 const comparisonItems = [
@@ -480,28 +481,20 @@ export default function WhyMarkitMe() {
                   One partner. Full capability.
                 </span>
 
-                <button type="button" onClick={() => {
-                  window.dispatchEvent(
-                    new Event("open-contact-modal")
-                  );
-                }}
-                  className="
-                    flex
-                    cursor-pointer
-                    h-10
-                    w-10
-                    items-center
-                    justify-center
-                    rounded-full
-                    bg-[var(--color-gold)]
-                    text-[var(--color-deep)]
-                    transition-transform
-                    duration-300
-                    group-hover:rotate-45
-                  "
+                <Button
+                  type="button"
+                  variant="primary"
+                  size="sm"
+                  onClick={() => {
+                    window.dispatchEvent(
+                      new Event("open-contact-modal")
+                    );
+                  }}
+                  className="h-10 w-10 rounded-full p-0 group-hover:rotate-45"
+                  showArrow={false}
                 >
                   <ArrowUpRight size={18} />
-                </button>
+                </Button>
               </div>
             </motion.div>
 

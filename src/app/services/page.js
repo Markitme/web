@@ -32,14 +32,14 @@ export default function ServicesPage() {
     <main
       className="
         min-h-screen
-        bg-[var(--color-cream)]
-        text-[var(--color-deep)]
+        bg-[var(--background)]
+        text-[var(--foreground)]
 
         transition-colors
         duration-300
 
-        dark:bg-[var(--color-night)]
-        dark:text-[var(--color-cream)]
+        dark:bg-[var(--background)]
+        dark:text-[var(--foreground)]
       "
     >
       {/* =====================================================
@@ -52,9 +52,9 @@ export default function ServicesPage() {
           overflow-hidden
 
           border-b
-          border-[var(--color-deep)]/10
+          border-[var(--border)]
 
-          dark:border-[var(--color-green)]/20
+          dark:border-[var(--border)]
         "
       >
         {/* Decorative Glow */}
@@ -70,11 +70,11 @@ export default function ServicesPage() {
 
             rounded-full
 
-            bg-[var(--color-green)]/10
+            bg-[var(--foreground)]/6
 
             blur-3xl
 
-            dark:bg-[var(--color-green)]/10
+            dark:bg-[var(--foreground)]/8
           "
         />
 
@@ -94,7 +94,7 @@ export default function ServicesPage() {
             description="We combine strategy, design, technology, content, and marketing to create digital experiences that help businesses grow."
           >
             Strategy, creativity,{" "}
-            <span className="text-[var(--color-green)] dark:text-[var(--color-gold)]">
+            <span className="text-[var(--muted)] dark:text-[var(--foreground)]/85">
               and growth
             </span>{" "}
             — working together.
@@ -115,23 +115,23 @@ export default function ServicesPage() {
               key={category}
               className={`
                 border-b
-                border-[var(--color-deep)]/10
+                border-[var(--border)]
 
                 py-16
                 sm:py-20
                 lg:py-24
 
-                dark:border-[var(--color-green)]/20
+                dark:border-[var(--border)]
 
                 ${
                   isAlternate
                     ? `
-                      bg-[var(--color-soft)]
-                      dark:bg-[var(--color-deep-surface)]
+                      bg-[var(--surface-soft)]
+                      dark:bg-[var(--surface)]
                     `
                     : `
-                      bg-[var(--color-cream)]
-                      dark:bg-[var(--color-night)]
+                      bg-[var(--background)]
+                      dark:bg-[var(--background)]
                     `
                 }
               `}
@@ -185,12 +185,12 @@ export default function ServicesPage() {
           relative
           overflow-hidden
 
-          bg-[var(--color-gold)]
+          bg-[var(--foreground)]
 
           px-5
           py-16
 
-          text-[var(--color-deep)]
+          text-[var(--background)]
 
           sm:py-20
           lg:py-24
@@ -236,7 +236,7 @@ export default function ServicesPage() {
                   h-1.5
                   w-1.5
                   rounded-full
-                  bg-[var(--color-deep)]
+                  bg-[var(--background)]
                 "
               />
 
@@ -261,9 +261,9 @@ export default function ServicesPage() {
                 leading-[0.98]
                 tracking-[-0.055em]
 
-                text-[var(--color-deep)]
+                text-[var(--background)]
 
-                dark:text-[var(--color-deep)]
+                dark:text-[var(--background)]
 
                 sm:text-5xl
                 lg:text-6xl
@@ -280,7 +280,7 @@ export default function ServicesPage() {
                 text-base
                 leading-7
 
-                text-[var(--color-deep)]/70
+                text-[var(--background)]/75
               "
             >
               Tell us what you want to achieve, and we&apos;ll help you find
@@ -302,19 +302,19 @@ export default function ServicesPage() {
 
               rounded-full
 
-              bg-[var(--color-deep)]
+              bg-[var(--background)]
 
               px-7
               py-4
 
               font-black
-              text-[var(--color-cream)]
+              text-[var(--foreground)]
 
               transition-all
               duration-300
 
               hover:-translate-y-0.5
-              hover:bg-[var(--color-night)]
+              hover:bg-[var(--surface-soft)]
               hover:shadow-xl
             "
           >
@@ -329,8 +329,8 @@ export default function ServicesPage() {
                 justify-center
                 rounded-full
 
-                bg-[var(--color-gold)]
-                text-[var(--color-deep)]
+                bg-[var(--foreground)]
+                text-[var(--background)]
 
                 transition-transform
                 duration-300

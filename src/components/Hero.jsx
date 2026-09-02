@@ -1,3 +1,4 @@
+
 "use client";
 
 import { motion } from "framer-motion";
@@ -37,6 +38,7 @@ const SvgSearch = ({ color }) => (
       stroke={color}
       strokeWidth="2"
     />
+
     <path
       d="M16 16L21 21"
       stroke={color}
@@ -130,23 +132,18 @@ const SvgMegaphone = ({ color }) => (
 const heroIcons = [
   {
     Icon: SvgDevelopment,
-    color: "var(--color-gold)",
   },
   {
     Icon: SvgSearch,
-    color: "var(--color-green)",
   },
   {
     Icon: SvgPalette,
-    color: "var(--color-sand)",
   },
   {
     Icon: SvgCamera,
-    color: "var(--color-gold)",
   },
   {
     Icon: SvgMegaphone,
-    color: "var(--color-green)",
   },
 ];
 
@@ -214,20 +211,32 @@ export default function Hero() {
 
     if (isDeleting && displayText === "") {
       setIsDeleting(false);
-      setTextIndex((prev) => (prev + 1) % typingTexts.length);
+
+      setTextIndex(
+        (prev) => (prev + 1) % typingTexts.length
+      );
+
       return;
     }
 
     const timer = setTimeout(() => {
       if (isDeleting) {
-        setDisplayText((prev) => prev.slice(0, -1));
+        setDisplayText((prev) =>
+          prev.slice(0, -1)
+        );
       } else {
         setDisplayText(
-          currentText.slice(0, displayText.length + 1)
+          currentText.slice(
+            0,
+            displayText.length + 1
+          )
         );
       }
 
-      if (!isDeleting && displayText === currentText) {
+      if (
+        !isDeleting &&
+        displayText === currentText
+      ) {
         setIsDeleting(true);
       }
     }, speed);
@@ -244,28 +253,64 @@ export default function Hero() {
         isolate
         min-h-[700px]
         overflow-hidden
-        bg-[var(--color-cream)]
-        dark:bg-[var(--color-deep)]
+
+        bg-[var(--color-white)]
+        text-[var(--color-black)]
+
+        dark:bg-[var(--color-black)]
+        dark:text-[var(--color-white)]
       "
     >
+
       {/* =====================================================
-          LIGHTWEIGHT BACKGROUND
+          BACKGROUND
       ===================================================== */}
 
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        {/* BASE */}
+
+        {/* -------------------------------------------------
+            MAIN IMAGE
+
+            Visible in BOTH light and dark modes
+        ------------------------------------------------- */}
+
         <div
           className="
             absolute
             inset-0
-            bg-[var(--color-cream)]
-            dark:bg-[var(--color-deep)]
+
+            bg-cover
+            bg-center
+            bg-no-repeat
+
+            opacity-[0.24]
+
+            dark:opacity-[0.32]
+          "
+          style={{
+            backgroundImage:
+              "url('https://cms.markitme.ca/wp-content/uploads/2026/08/home-scaled.jpeg')",
+          }}
+        />
+
+        {/* -------------------------------------------------
+            IMAGE READABILITY OVERLAY
+        ------------------------------------------------- */}
+
+        <div
+          className="
+            absolute
+            inset-0
+
+            bg-[var(--color-white)]/65
+
+            dark:bg-[var(--color-black)]/58
           "
         />
 
-        {/* STATIC SOFT GLOWS
-            No continuous animation + cheaper blur
-        */}
+        {/* -------------------------------------------------
+            SOFT MONOCHROME GLOW
+        ------------------------------------------------- */}
 
         <div
           className="
@@ -275,9 +320,12 @@ export default function Hero() {
             h-[500px]
             w-[500px]
             rounded-full
-            bg-[var(--color-green)]/10
-            blur-[90px]
-            dark:bg-[var(--color-green)]/15
+
+            bg-[var(--color-black)]/[0.06]
+
+            blur-[100px]
+
+            dark:bg-[var(--color-white)]/[0.08]
           "
         />
 
@@ -289,8 +337,12 @@ export default function Hero() {
             h-[360px]
             w-[360px]
             rounded-full
-            bg-[var(--color-gold)]/8
-            blur-[80px]
+
+            bg-[var(--color-black)]/[0.045]
+
+            blur-[90px]
+
+            dark:bg-[var(--color-white)]/[0.055]
           "
         />
 
@@ -299,63 +351,102 @@ export default function Hero() {
             absolute
             left-1/2
             top-1/2
+
             h-[420px]
             w-[600px]
+
             -translate-x-1/2
             -translate-y-1/2
+
             rounded-full
-            bg-[var(--color-green)]/5
-            blur-[100px]
-            dark:bg-[var(--color-green)]/10
+
+            bg-[var(--color-white)]/[0.35]
+
+            blur-[110px]
+
+            dark:bg-[var(--color-black)]/[0.35]
           "
         />
+
+        {/* -------------------------------------------------
+            CENTER READABILITY
+        ------------------------------------------------- */}
 
         <div
           className="
             absolute
-            bottom-0
-            right-[10%]
-            h-[260px]
-            w-[260px]
-            rounded-full
-            bg-[var(--color-sand)]/8
-            blur-[80px]
-          "
-        />
+            left-1/2
+            top-1/2
 
-        {/* LIGHT OVERLAY */}
-        <div
-          className="
-            absolute
-            inset-0
-            bg-white/[0.12]
-            dark:bg-black/10
+            h-[620px]
+            w-[900px]
+
+            -translate-x-1/2
+            -translate-y-1/2
+
+            rounded-full
+
+            bg-[var(--color-white)]/[0.58]
+
+            blur-[90px]
+
+            dark:bg-[var(--color-black)]/[0.58]
           "
         />
 
         {/* =================================================
             STATIC GRID
-
-            Grid does NOT move anymore.
-            This saves continuous GPU work.
         ================================================= */}
 
         <div
           className="
             absolute
             inset-0
-            opacity-[0.055]
-            dark:opacity-[0.04]
+
+            opacity-[0.07]
+
+            dark:opacity-[0.08]
           "
           style={{
             backgroundImage: `
               linear-gradient(
-                rgba(12,59,46,0.18) 1px,
+                var(--color-black) 1px,
                 transparent 1px
               ),
               linear-gradient(
                 90deg,
-                rgba(12,59,46,0.18) 1px,
+                var(--color-black) 1px,
+                transparent 1px
+              )
+            `,
+            backgroundSize: "70px 70px",
+          }}
+        />
+
+        {/* =================================================
+            DARK MODE GRID
+        ================================================= */}
+
+        <div
+          className="
+            absolute
+            inset-0
+
+            hidden
+
+            opacity-[0.055]
+
+            dark:block
+          "
+          style={{
+            backgroundImage: `
+              linear-gradient(
+                var(--color-white) 1px,
+                transparent 1px
+              ),
+              linear-gradient(
+                90deg,
+                var(--color-white) 1px,
                 transparent 1px
               )
             `,
@@ -368,17 +459,28 @@ export default function Hero() {
         ================================================= */}
 
         <div className="absolute inset-0 overflow-hidden">
+
           {fallingLines.map((line, index) => (
             <motion.div
               key={index}
-              className="absolute top-[-180px] w-px will-change-transform"
+              className="
+                absolute
+                top-[-180px]
+                w-px
+                will-change-transform
+              "
               style={{
                 left: line.left,
                 height: line.height,
               }}
               animate={{
                 y: ["0vh", "120vh"],
-                opacity: [0, 0.22, 0.12, 0],
+                opacity: [
+                  0,
+                  0.18,
+                  0.08,
+                  0,
+                ],
               }}
               transition={{
                 duration: line.duration,
@@ -392,10 +494,13 @@ export default function Hero() {
                 className="
                   h-full
                   w-full
+
                   bg-gradient-to-b
                   from-transparent
-                  via-[var(--color-green)]/60
+                  via-[var(--color-black)]/45
                   to-transparent
+
+                  dark:via-[var(--color-white)]/45
                 "
               />
 
@@ -404,20 +509,28 @@ export default function Hero() {
                   absolute
                   bottom-0
                   left-1/2
+
                   h-1
                   w-1
+
                   -translate-x-1/2
+
                   rounded-full
-                  bg-[var(--color-gold)]
+
+                  bg-[var(--color-black)]
+
                   opacity-70
+
+                  dark:bg-[var(--color-white)]
                 "
               />
             </motion.div>
           ))}
+
         </div>
 
         {/* =================================================
-            VERY LIGHT HORIZONTAL LIGHT
+            HORIZONTAL LIGHT
         ================================================= */}
 
         <motion.div
@@ -425,12 +538,17 @@ export default function Hero() {
             absolute
             left-[-30%]
             top-1/2
+
             h-px
             w-[160%]
+
             bg-gradient-to-r
             from-transparent
-            via-[var(--color-gold)]/15
+            via-[var(--color-black)]/20
             to-transparent
+
+            dark:via-[var(--color-white)]/20
+
             will-change-transform
           "
           animate={{
@@ -444,19 +562,25 @@ export default function Hero() {
           }}
         />
 
-        {/* BOTTOM FADE */}
+        {/* =================================================
+            BOTTOM FADE
+        ================================================= */}
+
         <div
           className="
             absolute
             inset-x-0
             bottom-0
             h-40
+
             bg-gradient-to-t
-            from-[var(--color-cream)]
+            from-[var(--color-white)]
             to-transparent
-            dark:from-[var(--color-deep)]
+
+            dark:from-[var(--color-black)]
           "
         />
+
       </div>
 
       {/* =====================================================
@@ -468,14 +592,18 @@ export default function Hero() {
           container-custom
           relative
           z-10
+
           flex
           min-h-[700px]
+
           items-center
           justify-center
+
           px-5
           py-24
         "
       >
+
         <div
           className="
             mx-auto
@@ -484,81 +612,106 @@ export default function Hero() {
             text-center
           "
         >
+
           {/* =================================================
               ICON CLUSTER
           ================================================= */}
+
           <div
-  className="
-    relative
-    mx-auto
-    mb-8
-    flex
-    h-12
-    w-[210px]
-    items-center
-    justify-center
-  "
->
-  {heroIcons.map(({ Icon, color }, index) => {
-    const positions = [-57.6, -28.8, 0, 28.8, 57.6];
+            className="
+              relative
+              mx-auto
+              mb-8
 
-    return (
-      <motion.div
-        key={index}
-        className="
-          absolute
-          z-10
-          flex
-          h-10
-          w-10
-          items-center
-          justify-center
-          rounded-full
+              flex
+              h-12
+              w-[210px]
 
-          /* LIGHT MODE */
-          border
-          border-[var(--color-green)]/25
-          bg-[var(--color-deep)]
-          shadow-[0_6px_20px_rgba(12,59,46,0.15)]
+              items-center
+              justify-center
+            "
+          >
 
-          /* DARK MODE */
-          dark:border-[var(--color-green)]/40
-          dark:bg-[var(--color-cream)]
-          dark:shadow-[0_6px_22px_rgba(0,0,0,0.3)]
+            {heroIcons.map(
+              ({ Icon }, index) => {
+                const positions = [
+                  -57.6,
+                  -28.8,
+                  0,
+                  28.8,
+                  57.6,
+                ];
 
-          will-change-transform
-        "
-        initial={{
-          x: 0,
-          scale: 0.85,
-        }}
-        animate={{
-          x: [
-            0,
-            positions[index],
-            positions[index],
-            0,
-          ],
-          scale: [
-            0.85,
-            1,
-            1,
-            0.85,
-          ],
-        }}
-        transition={{
-          duration: 16,
-          times: [0, 0.2, 0.8, 1],
-          delay: index * 0.08,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-      >
-        <Icon color={color} />
-      </motion.div>
-    );
-  })}
-</div>
+                return (
+                  <motion.div
+                    key={index}
+                    className="
+                      absolute
+                      z-10
+
+                      flex
+                      h-10
+                      w-10
+
+                      items-center
+                      justify-center
+
+                      rounded-full
+
+                      border
+                      border-[var(--color-black)]/15
+
+                      bg-[var(--color-white)]
+
+                      shadow-[0_6px_20px_rgba(0,0,0,0.10)]
+
+                      dark:border-[var(--color-white)]/20
+                      dark:bg-[var(--color-black)]
+                      dark:shadow-[0_6px_22px_rgba(255,255,255,0.06)]
+
+                      will-change-transform
+                    "
+                    initial={{
+                      x: 0,
+                      scale: 0.85,
+                    }}
+                    animate={{
+                      x: [
+                        0,
+                        positions[index],
+                        positions[index],
+                        0,
+                      ],
+                      scale: [
+                        0.85,
+                        1,
+                        1,
+                        0.85,
+                      ],
+                    }}
+                    transition={{
+                      duration: 16,
+                      times: [0, 0.2, 0.8, 1],
+                      delay: index * 0.08,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                    }}
+                  >
+                    <Icon
+                      color="var(--color-black)"
+                    />
+
+                    <span className="hidden dark:block">
+                      <Icon
+                        color="var(--color-white)"
+                      />
+                    </span>
+                  </motion.div>
+                );
+              }
+            )}
+
+          </div>
 
           {/* =================================================
               TYPING HEADING
@@ -581,18 +734,26 @@ export default function Hero() {
             className="
               mx-auto
               max-w-5xl
+
               text-5xl
               font-black
+
               leading-[0.94]
               tracking-[-0.075em]
-              text-[var(--color-deep)]
+
+              text-[var(--color-black)]
+
               sm:text-6xl
               md:text-7xl
+
               capitalize
+
               sm:leading-[0.92]
               md:leading-[0.9]
+
               lg:text-[6.5rem]
-              dark:text-[var(--color-cream)]
+
+              dark:text-[var(--color-white)]
             "
           >
             {displayText}
@@ -609,12 +770,19 @@ export default function Hero() {
               className="
                 ml-1
                 inline-block
+
                 h-[0.8em]
                 w-[3px]
+
                 translate-y-[0.05em]
+
                 rounded-full
-                bg-[var(--color-gold)]
+
+                bg-[var(--color-black)]
+
                 align-middle
+
+                dark:bg-[var(--color-white)]
               "
             />
           </motion.h1>
@@ -640,17 +808,22 @@ export default function Hero() {
               mx-auto
               mt-5
               max-w-2xl
+
               text-base
               leading-7
-              text-[var(--color-deep)]/65
+
+              text-[var(--color-black)]/65
+
               sm:mt-6
               sm:text-lg
               sm:leading-8
-              dark:text-[var(--color-cream)]/65
+
+              dark:text-[var(--color-white)]/65
             "
           >
-            We combine strategy, creative, technology, and performance
-            marketing to turn attention into measurable growth.
+            We combine strategy, creative, technology,
+            and performance marketing to turn attention
+            into measurable growth.
           </motion.p>
 
           {/* =================================================
@@ -672,75 +845,91 @@ export default function Hero() {
             }}
             className="
               mt-9
+
               flex
               flex-col
               items-center
               justify-center
+
               gap-3
+
               sm:flex-row
             "
           >
-            <button
+
+            <Button
               type="button"
-              onClick={() => {
-                window.dispatchEvent(
-                  new Event("open-contact-modal")
-                );
-              }}
+              href="/contact"
+              variant="primary"
               className="
                 inline-flex
-                cursor-pointer
                 h-12
                 min-w-[190px]
+
+                cursor-pointer
+
                 items-center
                 justify-center
+
                 rounded-full
-                bg-[var(--color-gold)]
+
                 px-7
+
                 text-sm
                 font-bold
-                text-[var(--color-deep)]
-                shadow-[0_10px_25px_rgba(255,186,0,0.18)]
+
                 transition-all
                 duration-300
+
                 hover:-translate-y-1
-                hover:bg-[#E9A900]
-                hover:shadow-[0_15px_35px_rgba(255,186,0,0.25)]
-                focus:outline-none
-                focus:ring-2
-                focus:ring-[var(--color-gold)]/40
               "
             >
               Start Your Project
-            </button>
+            </Button>
 
             <Button
               href="/services"
               variant="outline"
               className="
                 inline-flex
-                cursor-pointer
                 h-12
                 min-w-[190px]
+
+                cursor-pointer
+
                 items-center
                 justify-center
+
                 rounded-full
-                border-[var(--color-deep)]/20
-                bg-white/50
+
                 px-7
-                text-[var(--color-deep)]
+
+                text-sm
+                font-bold
+
                 backdrop-blur-md
-                hover:border-[var(--color-green)]
-                hover:bg-[var(--color-green)]/10
-                dark:border-[var(--color-cream)]/20
-                dark:bg-[var(--color-cream)]/5
-                dark:text-[var(--color-cream)]
-                dark:hover:border-[var(--color-green)]
-                dark:hover:bg-[var(--color-cream)]/20
+
+                transition-all
+                duration-300
+
+                border-[var(--color-black)]/20
+                bg-[var(--color-white)]/55
+                text-[var(--color-black)]
+
+                hover:border-[var(--color-black)]
+                hover:bg-[var(--color-black)]/10
+
+                dark:border-[var(--color-white)]/20
+                dark:bg-[var(--color-black)]/55
+                dark:text-[var(--color-white)]
+
+                dark:hover:border-[var(--color-white)]
+                dark:hover:bg-[var(--color-white)]/10
               "
             >
               Start Your Growth
             </Button>
+
           </motion.div>
 
           {/* =================================================
@@ -761,33 +950,72 @@ export default function Hero() {
             className="
               mx-auto
               mt-11
+
               flex
               flex-wrap
+
               items-center
               justify-center
+
               gap-x-6
               gap-y-3
+
               text-[10px]
               font-semibold
+
               uppercase
               tracking-[0.2em]
-              text-[var(--color-deep)]/45
-              dark:text-[var(--color-cream)]/40
+
+              text-[var(--color-black)]/45
+
+              dark:text-[var(--color-white)]/45
             "
           >
+
             <span>Strategy</span>
 
-            <span className="h-1 w-1 rounded-full bg-[var(--color-gold)]" />
+            <span
+              className="
+                h-1
+                w-1
+                rounded-full
+
+                bg-[var(--color-black)]
+
+                dark:bg-[var(--color-white)]
+              "
+            />
 
             <span>Creative</span>
 
-            <span className="h-1 w-1 rounded-full bg-[var(--color-green)]" />
+            <span
+              className="
+                h-1
+                w-1
+                rounded-full
+
+                bg-[var(--color-black)]
+
+                dark:bg-[var(--color-white)]
+              "
+            />
 
             <span>Technology</span>
 
-            <span className="h-1 w-1 rounded-full bg-[var(--color-sand)]" />
+            <span
+              className="
+                h-1
+                w-1
+                rounded-full
+
+                bg-[var(--color-black)]
+
+                dark:bg-[var(--color-white)]
+              "
+            />
 
             <span>Performance</span>
+
           </motion.div>
 
           {/* =================================================
@@ -810,13 +1038,17 @@ export default function Hero() {
             className="
               mx-auto
               mt-11
+
               flex
               flex-col
               items-center
-              text-[var(--color-deep)]/40
-              dark:text-[var(--color-cream)]/40
+
+              text-[var(--color-black)]/40
+
+              dark:text-[var(--color-white)]/40
             "
           >
+
             <span
               className="
                 text-[9px]
@@ -840,35 +1072,50 @@ export default function Hero() {
               }}
               className="
                 mt-3
+
                 flex
                 flex-col
                 items-center
               "
             >
+
               <span
                 className="
                   h-6
                   w-px
+
                   bg-gradient-to-b
-                  from-[var(--color-gold)]
-                  to-[var(--color-deep)]/20
-                  dark:to-[var(--color-cream)]/20
+
+                  from-[var(--color-black)]
+                  to-[var(--color-black)]/20
+
+                  dark:from-[var(--color-white)]
+                  dark:to-[var(--color-white)]/20
                 "
               />
 
               <span
                 className="
                   -mt-[3px]
+
                   h-2
                   w-2
+
                   rotate-45
+
                   border-b
                   border-r
-                  border-[var(--color-gold)]
+
+                  border-[var(--color-black)]
+
+                  dark:border-[var(--color-white)]
                 "
               />
+
             </motion.div>
+
           </motion.div>
+
         </div>
       </div>
     </section>

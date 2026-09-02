@@ -38,9 +38,9 @@ export default function CTA({
           rounded-[2.5rem]
 
           border
-          border-[var(--color-deep)]/10
+          border-[var(--border)]
 
-          bg-[var(--color-soft)]
+          bg-[var(--surface-soft)]
 
           px-7
           py-20
@@ -50,8 +50,8 @@ export default function CTA({
           transition-colors
           duration-300
 
-          dark:border-[var(--color-cream)]/10
-          dark:bg-[#123F32]
+          dark:border-[var(--border)]
+          dark:bg-[var(--surface)]
 
           sm:px-12
           lg:py-24
@@ -75,7 +75,7 @@ export default function CTA({
 
             rounded-full
 
-            bg-[var(--color-gold)]/15
+            bg-[var(--foreground)]/[0.07]
 
             blur-3xl
           "
@@ -97,7 +97,7 @@ export default function CTA({
 
             rounded-full
 
-            bg-[var(--color-green)]/20
+            bg-[var(--color-white-soft)]/[0.18]
 
             blur-3xl
           "
@@ -118,9 +118,9 @@ export default function CTA({
               uppercase
               tracking-[0.2em]
 
-              text-[var(--color-sand)]
+              text-[var(--muted)]
 
-              dark:text-[var(--color-gold)]
+              dark:text-[var(--color-white-soft)]
             "
           >
             {eyebrow}

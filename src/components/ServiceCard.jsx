@@ -16,8 +16,8 @@ export default function ServiceCard({ service }) {
         rounded-[28px]
 
         border
-        border-[var(--color-deep)]/10
-        bg-[var(--color-cream)]
+        border-[var(--border)]
+        bg-[var(--surface)]
 
         p-7
 
@@ -25,15 +25,15 @@ export default function ServiceCard({ service }) {
         duration-500
 
         hover:-translate-y-1
-        hover:border-[var(--color-green)]
-        hover:shadow-[0_20px_60px_rgba(12,59,46,0.10)]
+        hover:border-[var(--foreground)]/35
+        hover:shadow-[0_20px_60px_rgba(17,17,17,0.10)]
 
-        dark:border-[var(--color-green)]/20
-        dark:bg-[var(--color-deep)]
+        dark:border-[var(--border)]
+        dark:bg-[var(--surface)]
 
-        dark:hover:border-[var(--color-gold)]/60
-        dark:hover:bg-[#104A3A]
-        dark:hover:shadow-[0_20px_60px_rgba(0,0,0,0.30)]
+        dark:hover:border-[var(--foreground)]/35
+        dark:hover:bg-[var(--surface-soft)]
+        dark:hover:shadow-[0_20px_60px_rgba(0,0,0,0.18)]
 
         sm:p-8
       "
@@ -48,16 +48,16 @@ export default function ServiceCard({ service }) {
           h-32
           w-32
           rounded-full
-          bg-[var(--color-green)]/10
+          bg-[var(--foreground)]/[0.06]
           blur-3xl
 
           transition-all
           duration-500
 
-          group-hover:bg-[var(--color-gold)]/20
+          group-hover:bg-[var(--foreground)]/[0.09]
 
-          dark:bg-[var(--color-green)]/10
-          dark:group-hover:bg-[var(--color-gold)]/10
+          dark:bg-[var(--foreground)]/[0.08]
+          dark:group-hover:bg-[var(--foreground)]/[0.12]
         "
       />
 
@@ -73,8 +73,8 @@ export default function ServiceCard({ service }) {
           justify-center
           rounded-2xl
 
-          bg-[var(--color-gold)]
-          text-[var(--color-deep)]
+          bg-[var(--foreground)]
+          text-[var(--background)]
 
           transition-all
           duration-500
@@ -98,9 +98,9 @@ export default function ServiceCard({ service }) {
           uppercase
           tracking-[0.22em]
 
-          text-[var(--color-green)]
+          text-[var(--muted)]
 
-          dark:text-[var(--color-gold)]
+          dark:text-[var(--foreground)]/80
         "
       >
         {service.category}
@@ -115,9 +115,9 @@ export default function ServiceCard({ service }) {
           leading-[1.05]
           tracking-[-0.04em]
 
-          text-[var(--color-deep)]
+          text-[var(--foreground)]
 
-          dark:text-[var(--color-cream)]
+          dark:text-[var(--foreground)]
         "
       >
         {service.title}
@@ -129,9 +129,9 @@ export default function ServiceCard({ service }) {
           mt-4
           leading-7
 
-          text-[var(--color-deep)]/60
+          text-[var(--foreground)]/70
 
-          dark:text-[var(--color-cream)]/65
+          dark:text-[var(--foreground)]/70
         "
       >
         {service.description}
@@ -152,15 +152,15 @@ export default function ServiceCard({ service }) {
           text-sm
           font-black
 
-          text-[var(--color-deep)]
+          text-[var(--foreground)]
 
           transition-colors
           duration-300
 
-          hover:text-[var(--color-green)]
+          hover:text-[var(--foreground)]
 
-          dark:text-[var(--color-cream)]
-          dark:hover:text-[var(--color-gold)]
+          dark:text-[var(--foreground)]
+          dark:hover:text-[var(--foreground)]
         "
       >
         Explore Service
@@ -175,16 +175,16 @@ export default function ServiceCard({ service }) {
             rounded-full
 
             border
-            border-[var(--color-deep)]/10
+            border-[var(--border)]
 
             transition-all
             duration-300
 
             group-hover/link:translate-x-1
-            group-hover/link:border-[var(--color-green)]
+            group-hover/link:border-[var(--foreground)]
 
-            dark:border-[var(--color-green)]/30
-            dark:group-hover/link:border-[var(--color-gold)]
+            dark:border-[var(--border)]
+            dark:group-hover/link:border-[var(--foreground)]
           "
         >
           <ArrowRight size={16} />

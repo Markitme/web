@@ -69,7 +69,7 @@ export default function HowWeWork() {
   const [activeStep, setActiveStep] = useState(0);
 
   return (
-    <section className="overflow-hidden border-y border-black/10 bg-white py-20 text-black dark:border-white/10 dark:bg-[#0a0a0a] dark:text-white lg:py-24">
+    <section className="overflow-hidden border-y border-[var(--border)] bg-[var(--background)] py-20 text-[var(--foreground)] dark:border-[var(--border)] dark:bg-[var(--background)] dark:text-[var(--foreground)] lg:py-24">
       <div className="container-custom">
 
         {/* =====================================
@@ -105,16 +105,16 @@ export default function HowWeWork() {
                     onClick={() => setActiveStep(index)}
                     className={`group flex min-w-[190px] items-center gap-4 rounded-xl border px-4 py-3.5 text-left transition-all duration-500 lg:min-w-0 ${
                       isActive
-                        ? "border-[var(--accent)]/35 bg-[var(--accent-bright)]/10"
-                        : "border-black/10 bg-transparent hover:border-black/20 hover:bg-black/[0.03] dark:border-white/10 dark:hover:border-white/20 dark:hover:bg-white/[0.03]"
+                        ? "border-[var(--foreground)]/25 bg-[var(--surface-soft)]"
+                        : "border-[var(--border)] bg-transparent hover:border-[var(--foreground)]/20 hover:bg-[var(--surface-soft)] dark:border-[var(--border)] dark:hover:border-[var(--foreground)]/30 dark:hover:bg-[var(--surface-soft)]"
                     }`}
                   >
                     {/* Step Number */}
                     <span
                       className={`text-xs font-black ${
                         isActive
-                          ? "text-[var(--accent)] dark:text-[var(--accent-bright)]"
-                          : "text-black/35 dark:text-white/35"
+                          ? "text-[var(--foreground)]"
+                          : "text-[var(--muted)]"
                       }`}
                     >
                       {step.number}
@@ -124,8 +124,8 @@ export default function HowWeWork() {
                     <span
                       className={`text-base font-black ${
                         isActive
-                          ? "text-black dark:text-white"
-                          : "text-black/50 dark:text-white/50"
+                          ? "text-[var(--foreground)]"
+                          : "text-[var(--muted)]"
                       }`}
                     >
                       {step.title}
@@ -135,7 +135,7 @@ export default function HowWeWork() {
                     <span
                       className={`ml-auto h-2 w-2 rounded-full transition-all duration-300 ${
                         isActive
-                          ? "scale-100 bg-[var(--accent-bright)]"
+                          ? "scale-100 bg-[var(--foreground)]"
                           : "scale-0"
                       }`}
                     />
@@ -148,16 +148,16 @@ export default function HowWeWork() {
             {/* Progress Bar */}
             <div className="mt-7 hidden lg:block">
 
-              <div className="h-[2px] w-full overflow-hidden bg-black/10 dark:bg-white/10">
+              <div className="h-[2px] w-full overflow-hidden bg-[var(--border)]">
                 <div
-                  className="h-full bg-[var(--accent-bright)] transition-all duration-500"
+                  className="h-full bg-[var(--foreground)] transition-all duration-500"
                   style={{
                     width: `${((activeStep + 1) / steps.length) * 100}%`,
                   }}
                 />
               </div>
 
-              <p className="mt-3 text-xs font-bold text-black/35 dark:text-white/35">
+              <p className="mt-3 text-xs font-bold text-[var(--muted)]">
                 Step {activeStep + 1} of {steps.length}
               </p>
 
@@ -221,7 +221,7 @@ function ProcessCard({
 
   return (
     <article
-      className="absolute inset-x-0 top-0 overflow-hidden rounded-[24px] border border-black/10 bg-[#f5f5f1] p-6 shadow-xl transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] dark:border-white/10 dark:bg-[#171717] sm:p-8"
+      className="absolute inset-x-0 top-0 overflow-hidden rounded-[24px] border border-[var(--border)] bg-[var(--surface)] p-6 shadow-xl transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] dark:border-[var(--border)] dark:bg-[var(--surface)] sm:p-8"
       style={{
         zIndex: 20 - offset,
 
@@ -244,8 +244,8 @@ function ProcessCard({
           : "none",
       }}
     >
-      {/* Lime Background Glow */}
-      <div className="absolute -right-16 -top-16 h-48 w-48 rounded-full bg-[var(--accent-bright)]/20 blur-3xl" />
+      {/* Neutral Background Glow */}
+      <div className="absolute -right-16 -top-16 h-48 w-48 rounded-full bg-[var(--foreground)]/[0.06] blur-3xl" />
 
       <div className="relative z-10">
 
@@ -255,10 +255,10 @@ function ProcessCard({
         <div className="flex items-start justify-between">
 
           <div
-            className={`flex h-12 w-12 items-center justify-center rounded-2xl text-black ${
+            className={`flex h-12 w-12 items-center justify-center rounded-2xl text-[var(--background)] ${
               isActive
-                ? "bg-[var(--accent-bright)]"
-                : "bg-black/10 dark:bg-white/10"
+                ? "bg-[var(--foreground)]"
+                : "bg-[var(--surface-soft)]"
             }`}
           >
             <Icon
@@ -267,7 +267,7 @@ function ProcessCard({
             />
           </div>
 
-          <span className="text-5xl font-black tracking-[-0.08em] text-black/5 dark:text-white/5 sm:text-5xl">
+          <span className="text-5xl font-black tracking-[-0.08em] text-[var(--foreground)]/10 sm:text-5xl">
             {step.number}
           </span>
 
@@ -278,15 +278,15 @@ function ProcessCard({
         ============================= */}
         <div className="mt-7">
 
-          <p className="text-xs font-bold uppercase tracking-[0.18em] text-[var(--accent)] dark:text-[var(--accent-bright)]">
+          <p className="text-xs font-bold uppercase tracking-[0.18em] text-[var(--muted)]">
             {step.eyebrow}
           </p>
 
-          <h3 className="mt-3 text-4xl font-black tracking-[-0.05em] text-black dark:text-white sm:text-5xl">
+          <h3 className="mt-3 text-4xl font-black tracking-[-0.05em] text-[var(--foreground)] sm:text-5xl">
             {step.title}.
           </h3>
 
-          <p className="mt-4 max-w-xl text-base leading-7 text-black/60 dark:text-white/60">
+          <p className="mt-4 max-w-xl text-base leading-7 text-[var(--muted)]">
             {step.description}
           </p>
 
@@ -296,7 +296,7 @@ function ProcessCard({
             {step.tags.map((tag) => (
               <span
                 key={tag}
-                className="rounded-full border border-black/10 bg-white px-3.5 py-2 text-xs font-bold text-black dark:border-white/10 dark:bg-black/25 dark:text-white"
+                className="rounded-full border border-[var(--border)] bg-[var(--surface-soft)] px-3.5 py-2 text-xs font-bold text-[var(--foreground)] dark:border-[var(--border)] dark:bg-[var(--surface-soft)] dark:text-[var(--foreground)]"
               >
                 {tag}
               </span>
@@ -307,11 +307,11 @@ function ProcessCard({
           {/* Button */}
           <button
             type="button"
-            className="mt-7 inline-flex items-center gap-3 text-sm font-bold text-black dark:text-white"
+            className="mt-7 inline-flex items-center gap-3 text-sm font-bold text-[var(--foreground)]"
           >
             Explore this step
 
-            <span className="flex h-9 w-9 items-center justify-center rounded-full bg-black text-white transition duration-300 hover:scale-110 dark:bg-white dark:text-black">
+            <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[var(--foreground)] text-[var(--background)] transition duration-300 hover:scale-110">
               <ArrowUpRight size={16} />
             </span>
           </button>

@@ -55,17 +55,17 @@ export default function ServiceMarquee() {
         overflow-hidden
 
         border-y
-        border-[var(--color-deep)]/[0.08]
+        border-[var(--border)]
 
-        bg-[#E7EDE4]
+        bg-[var(--surface-soft)]
 
         py-6
 
         transition-colors
         duration-500
 
-        dark:border-[var(--color-cream)]/[0.08]
-        dark:bg-[#0A2B22]
+        dark:border-[var(--border)]
+        dark:bg-[var(--surface)]
 
         sm:py-7
         lg:py-8
@@ -92,10 +92,10 @@ export default function ServiceMarquee() {
             w-40
             -translate-y-1/2
             rounded-full
-            bg-[var(--color-green)]/[0.08]
+            bg-[var(--color-gray-light)]/[0.08]
             blur-[70px]
 
-            dark:bg-[var(--color-green)]/[0.06]
+            dark:bg-[var(--color-white-soft)]/[0.06]
           "
         />
 
@@ -108,10 +108,10 @@ export default function ServiceMarquee() {
             w-40
             -translate-y-1/2
             rounded-full
-            bg-[var(--color-gold)]/[0.07]
+            bg-[var(--color-black)]/[0.04]
             blur-[70px]
 
-            dark:bg-[var(--color-gold)]/[0.035]
+            dark:bg-[var(--color-white)]/[0.035]
           "
         />
       </div>
@@ -161,21 +161,21 @@ export default function ServiceMarquee() {
                     rounded-full
 
                     border
-                    border-[var(--color-deep)]/[0.10]
+                    border-[var(--border)]
 
-                    bg-white/60
+                    bg-[var(--surface)]
 
                     transition-all
                     duration-300
 
-                    group-hover:border-[var(--color-gold)]/60
-                    group-hover:bg-[var(--color-gold)]/10
+                    group-hover:border-[var(--foreground)]
+                    group-hover:bg-[var(--surface-soft)]
 
-                    dark:border-[var(--color-cream)]/[0.10]
-                    dark:bg-[var(--color-cream)]/[0.045]
+                    dark:border-[var(--border)]
+                    dark:bg-[var(--surface-soft)]
 
-                    dark:group-hover:border-[var(--color-gold)]/50
-                    dark:group-hover:bg-[var(--color-gold)]/[0.08]
+                    dark:group-hover:border-[var(--foreground)]
+                    dark:group-hover:bg-[var(--surface)]
                   "
                 >
                   <Icon
@@ -183,16 +183,16 @@ export default function ServiceMarquee() {
                     strokeWidth={1.8}
                     aria-hidden="true"
                     className="
-                      text-[var(--color-green)]
+                      text-[var(--foreground)]
 
                       transition-all
                       duration-300
 
                       group-hover:scale-110
-                      group-hover:text-[var(--color-deep)]
+                      group-hover:text-[var(--foreground)]
 
-                      dark:text-[var(--color-gold)]
-                      dark:group-hover:text-[var(--color-gold)]
+                      dark:text-[var(--foreground)]
+                      dark:group-hover:text-[var(--foreground)]
                     "
                   />
                 </span>

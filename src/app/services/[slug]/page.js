@@ -19,16 +19,16 @@ import SectionHeading from "@/components/SectionHeading";
 const COLORS = {
   lightBg: "var(--color-cream)",
   lightSection: "var(--color-soft)",
-  lightAlt: "#DDE5DC",
+  lightAlt: "#f1f1f1",
 
   darkBg: "var(--color-night)",
   darkSection: "var(--color-deep-surface)",
   darkCard: "var(--color-deep)",
-  darkCardHover: "#104A3A",
+  darkCardHover: "var(--color-black-soft)",
 
-  green: "var(--color-deep)",
-  greenLight: "var(--color-green)",
-  yellow: "var(--color-gold)",
+  green: "var(--foreground)",
+  greenLight: "var(--muted)",
+  yellow: "var(--foreground)",
   cream: "var(--color-cream)",
 };
 
@@ -172,11 +172,12 @@ function AnimatedServiceVisual({
           group relative isolate overflow-hidden
           rounded-[24px] sm:rounded-[30px]
 
-          border border-[var(--color-green)]/20
-          bg-[var(--color-deep)]
+          border border-[var(--border)]
+          bg-[var(--surface)]
 
-          shadow-[0_25px_80px_rgba(12,59,46,0.18)]
-          dark:border-[var(--color-green)]/30
+          shadow-[0_25px_80px_rgba(17,17,17,0.10)]
+          dark:border-[var(--border)]
+          dark:bg-[var(--surface)]
 
           ${className}
         `}
@@ -191,12 +192,12 @@ function AnimatedServiceVisual({
           "
         />
 
-        <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-deep)]/10 via-[var(--color-night)]/35 to-[var(--color-night)]/90" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[var(--foreground)]/10 via-[var(--foreground)]/20 to-[var(--background)]/90" />
 
-        <div className="absolute -right-16 top-10 h-40 w-40 rounded-full bg-[var(--color-gold)]/20 blur-3xl transition-all duration-700 group-hover:scale-125" />
+        <div className="absolute -right-16 top-10 h-40 w-40 rounded-full bg-[var(--foreground)]/10 blur-3xl transition-all duration-700 group-hover:scale-125" />
 
         <div className="absolute left-4 top-4 sm:left-6 sm:top-6">
-          <div className="rounded-full border border-white/20 bg-[var(--color-night)]/50 px-3 py-1.5 text-[8px] font-black uppercase tracking-[0.15em] text-white backdrop-blur-xl sm:px-4 sm:py-2 sm:text-[10px]">
+          <div className="rounded-full border border-white/20 bg-[var(--background)]/75 px-3 py-1.5 text-[8px] font-black uppercase tracking-[0.15em] text-[var(--foreground)] backdrop-blur-xl sm:px-4 sm:py-2 sm:text-[10px] dark:bg-[var(--surface)]/80 dark:text-[var(--foreground)]">
             MarkitMe
           </div>
         </div>
@@ -206,15 +207,16 @@ function AnimatedServiceVisual({
             className="
               rounded-[18px] sm:rounded-[22px]
               border border-white/15
-              bg-[var(--color-night)]/55
+              bg-[var(--background)]/80
               p-4 sm:p-5
               backdrop-blur-xl
               transition-transform duration-500
               group-hover:-translate-y-1
+              dark:bg-[var(--surface)]/75
             "
           >
             <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[var(--color-gold)] text-[var(--color-deep)] shadow-[0_0_30px_rgba(255,186,0,0.25)] sm:h-12 sm:w-12 sm:rounded-2xl">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[var(--foreground)] text-[var(--background)] shadow-[0_0_30px_rgba(17,17,17,0.15)] sm:h-12 sm:w-12 sm:rounded-2xl dark:bg-[var(--foreground)] dark:text-[var(--background)]">
                 {ServiceIcon && (
                   <ServiceIcon
                     size={22}
@@ -224,11 +226,11 @@ function AnimatedServiceVisual({
               </div>
 
               <div className="min-w-0">
-                <p className="text-[8px] font-black uppercase tracking-[0.15em] text-[var(--color-gold)] sm:text-[9px]">
+                <p className="text-[8px] font-black uppercase tracking-[0.15em] text-[var(--muted)] sm:text-[9px] dark:text-[var(--foreground)]/80">
                   Digital Service
                 </p>
 
-                <p className="mt-1 truncate text-sm font-black text-white sm:text-base">
+                <p className="mt-1 truncate text-sm font-black text-[var(--foreground)] sm:text-base dark:text-[var(--foreground)]">
                   {serviceTitle}
                 </p>
               </div>
@@ -238,9 +240,9 @@ function AnimatedServiceVisual({
 
         <div className="absolute right-6 top-1/2 hidden -translate-y-1/2 sm:block">
           <div className="flex gap-2">
-            <span className="h-2 w-2 animate-pulse rounded-full bg-[var(--color-gold)]" />
-            <span className="h-2 w-2 animate-pulse rounded-full bg-[var(--color-gold)]/60 [animation-delay:200ms]" />
-            <span className="h-2 w-2 animate-pulse rounded-full bg-[var(--color-gold)]/30 [animation-delay:400ms]" />
+            <span className="h-2 w-2 animate-pulse rounded-full bg-[var(--foreground)]" />
+            <span className="h-2 w-2 animate-pulse rounded-full bg-[var(--foreground)]/60 [animation-delay:200ms]" />
+            <span className="h-2 w-2 animate-pulse rounded-full bg-[var(--foreground)]/30 [animation-delay:400ms]" />
           </div>
         </div>
       </div>
@@ -256,12 +258,13 @@ function AnimatedServiceVisual({
           group relative isolate overflow-hidden
           rounded-[24px] sm:rounded-[30px]
 
-          border border-[var(--color-green)]/20
-          bg-[var(--color-deep)]
+          border border-[var(--border)]
+          bg-[var(--surface)]
 
-          shadow-[0_20px_60px_rgba(12,59,46,0.15)]
+          shadow-[0_20px_60px_rgba(17,17,17,0.08)]
 
-          dark:border-[var(--color-green)]/30
+          dark:border-[var(--border)]
+          dark:bg-[var(--surface)]
 
           ${className}
         `}
@@ -276,15 +279,15 @@ function AnimatedServiceVisual({
           "
         />
 
-        <div className="absolute inset-0 bg-gradient-to-tr from-[var(--color-night)]/95 via-[var(--color-deep)]/55 to-[var(--color-night)]/10" />
+        <div className="absolute inset-0 bg-gradient-to-tr from-[var(--foreground)]/15 via-[var(--foreground)]/10 to-[var(--background)]/85" />
 
-        <div className="absolute right-5 top-5 rounded-full border border-white/15 bg-[var(--color-night)]/50 px-3 py-2 text-[9px] font-black uppercase tracking-[0.15em] text-white backdrop-blur-xl">
+        <div className="absolute right-5 top-5 rounded-full border border-white/15 bg-[var(--background)]/75 px-3 py-2 text-[9px] font-black uppercase tracking-[0.15em] text-[var(--foreground)] backdrop-blur-xl dark:bg-[var(--surface)]/80 dark:text-[var(--foreground)]">
           Strategy
         </div>
 
         <div className="absolute bottom-5 left-5 right-5 sm:bottom-7 sm:left-7 sm:right-7">
           <div className="max-w-md">
-            <div className="mb-3 flex h-11 w-11 items-center justify-center rounded-xl bg-[var(--color-gold)] text-[var(--color-deep)] shadow-[0_0_35px_rgba(255,186,0,0.25)] transition-transform duration-500 group-hover:scale-110 sm:h-14 sm:w-14 sm:rounded-2xl">
+            <div className="mb-3 flex h-11 w-11 items-center justify-center rounded-xl bg-[var(--foreground)] text-[var(--background)] shadow-[0_0_35px_rgba(17,17,17,0.16)] transition-transform duration-500 group-hover:scale-110 sm:h-14 sm:w-14 sm:rounded-2xl dark:bg-[var(--foreground)] dark:text-[var(--background)]">
               {ServiceIcon && (
                 <ServiceIcon
                   size={24}
@@ -293,17 +296,17 @@ function AnimatedServiceVisual({
               )}
             </div>
 
-            <p className="text-[9px] font-black uppercase tracking-[0.18em] text-[var(--color-gold)] sm:text-[10px]">
+            <p className="text-[9px] font-black uppercase tracking-[0.18em] text-[var(--muted)] sm:text-[10px] dark:text-[var(--foreground)]/80">
               Why It Matters
             </p>
 
-            <h3 className="mt-2 text-2xl font-black leading-tight text-white sm:text-3xl">
+            <h3 className="mt-2 text-2xl font-black leading-tight text-[var(--foreground)] sm:text-3xl dark:text-[var(--foreground)]">
               Built around your goals, audience and growth.
             </h3>
           </div>
         </div>
 
-        <div className="absolute bottom-0 left-0 h-1 w-0 bg-[var(--color-gold)] transition-all duration-700 group-hover:w-full" />
+        <div className="absolute bottom-0 left-0 h-1 w-0 bg-[var(--foreground)] transition-all duration-700 group-hover:w-full" />
       </div>
     );
   }
@@ -316,11 +319,11 @@ function AnimatedServiceVisual({
         group relative isolate overflow-hidden
         rounded-[24px] sm:rounded-[30px]
 
-        border border-[var(--color-green)]/20
-        bg-[var(--color-deep)]
-        text-white
+        border border-[var(--border)]
+        bg-[var(--surface)]
+        text-[var(--foreground)]
 
-        shadow-[0_25px_80px_rgba(12,59,46,0.20)]
+        shadow-[0_25px_80px_rgba(17,17,17,0.08)]
 
         ${className}
       `}
@@ -335,13 +338,13 @@ function AnimatedServiceVisual({
         "
       />
 
-      <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-night)]/95 via-[var(--color-deep)]/65 to-[var(--color-deep)]/20" />
+      <div className="absolute inset-0 bg-gradient-to-br from-[var(--foreground)]/10 via-[var(--foreground)]/15 to-[var(--background)]/90" />
 
-      <div className="absolute -left-20 bottom-10 h-48 w-48 rounded-full bg-[var(--color-gold)]/10 blur-3xl transition-transform duration-700 group-hover:scale-125" />
+      <div className="absolute -left-20 bottom-10 h-48 w-48 rounded-full bg-[var(--foreground)]/10 blur-3xl transition-transform duration-700 group-hover:scale-125" />
 
       <div className="relative flex h-full min-h-[350px] flex-col justify-between p-5 sm:min-h-[410px] sm:p-8 lg:min-h-[460px]">
         <div>
-          <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-xl border border-[var(--color-gold)]/30 bg-[var(--color-gold)]/10 text-[var(--color-gold)] sm:h-14 sm:w-14 sm:rounded-2xl">
+          <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-xl border border-[var(--foreground)]/15 bg-[var(--foreground)] text-[var(--background)] sm:h-14 sm:w-14 sm:rounded-2xl dark:border-[var(--foreground)]/20 dark:bg-[var(--foreground)] dark:text-[var(--background)]">
             {ServiceIcon && (
               <ServiceIcon
                 size={24}
@@ -350,27 +353,27 @@ function AnimatedServiceVisual({
             )}
           </div>
 
-          <p className="text-[8px] font-black uppercase tracking-[0.16em] text-[var(--color-gold)] sm:text-[9px]">
+          <p className="text-[8px] font-black uppercase tracking-[0.16em] text-[var(--muted)] sm:text-[9px] dark:text-[var(--foreground)]/80">
             From challenge to growth
           </p>
 
-          <h3 className="mt-3 max-w-sm text-lg font-black leading-tight sm:text-3xl">
+          <h3 className="mt-3 max-w-sm text-lg font-black leading-tight text-[var(--foreground)] sm:text-3xl dark:text-[var(--foreground)]">
             Turning complex problems into clear opportunities.
           </h3>
         </div>
 
         <div className="flex items-end justify-between gap-3">
-          <div className="rounded-2xl border border-white/15 bg-[var(--color-night)]/50 p-3 backdrop-blur-xl sm:p-4">
-            <p className="text-[8px] font-black uppercase tracking-[0.14em] text-white/50">
+          <div className="rounded-2xl border border-[var(--foreground)]/15 bg-[var(--background)]/80 p-3 backdrop-blur-xl sm:p-4 dark:border-[var(--foreground)]/15 dark:bg-[var(--surface)]/80">
+            <p className="text-[8px] font-black uppercase tracking-[0.14em] text-[var(--muted)] dark:text-[var(--foreground)]/60">
               Service
             </p>
 
-            <p className="mt-1 text-sm font-black text-[var(--color-gold)] sm:text-base">
+            <p className="mt-1 text-sm font-black text-[var(--foreground)] sm:text-base dark:text-[var(--foreground)]">
               {serviceTitle}
             </p>
           </div>
 
-          <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-[var(--color-gold)] text-[var(--color-deep)] shadow-[0_0_40px_rgba(255,186,0,0.30)] transition-transform duration-500 group-hover:rotate-6 group-hover:scale-110 sm:h-20 sm:w-20">
+          <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-[var(--foreground)] text-[var(--background)] shadow-[0_0_40px_rgba(17,17,17,0.18)] transition-transform duration-500 group-hover:rotate-6 group-hover:scale-110 sm:h-20 sm:w-20 dark:bg-[var(--foreground)] dark:text-[var(--background)]">
             {ServiceIcon && (
               <ServiceIcon
                 size={30}
@@ -396,24 +399,24 @@ function FeatureCard({ feature }) {
 
         rounded-[24px] sm:rounded-[28px]
 
-        border border-[var(--color-deep)]/10
-        bg-[var(--color-cream)]
+        border border-[var(--border)]
+        bg-[var(--surface)]
 
         p-6 sm:p-8
 
         transition-all duration-500
 
         hover:-translate-y-1
-        hover:border-[var(--color-green)]
-        hover:bg-[var(--color-soft)]
-        hover:shadow-[0_20px_60px_rgba(12,59,46,0.10)]
+        hover:border-[var(--foreground)]
+        hover:bg-[var(--surface-soft)]
+        hover:shadow-[0_20px_60px_rgba(17,17,17,0.10)]
 
-        dark:border-[var(--color-green)]/20
-        dark:bg-[var(--color-deep)]
+        dark:border-[var(--border)]
+        dark:bg-[var(--surface)]
 
-        dark:hover:border-[var(--color-gold)]/50
-        dark:hover:bg-[#104A3A]
-        dark:hover:shadow-[0_20px_60px_rgba(0,0,0,0.25)]
+        dark:hover:border-[var(--foreground)]/50
+        dark:hover:bg-[var(--surface-soft)]
+        dark:hover:shadow-[0_20px_60px_rgba(0,0,0,0.18)]
       "
     >
       <div
@@ -422,26 +425,26 @@ function FeatureCard({ feature }) {
           -right-12 -top-12
           h-28 w-28
           rounded-full
-          bg-[var(--color-green)]/10
+          bg-[var(--foreground)]/5
           blur-3xl
           transition-all duration-500
-          group-hover:bg-[var(--color-gold)]/10
+          group-hover:bg-[var(--foreground)]/10
           group-hover:scale-125
         "
       />
 
-      <div className="relative flex h-12 w-12 items-center justify-center rounded-xl bg-[var(--color-gold)] text-[var(--color-deep)] transition-all duration-300 group-hover:rotate-3 group-hover:scale-105 sm:h-14 sm:w-14 sm:rounded-2xl">
+      <div className="relative flex h-12 w-12 items-center justify-center rounded-xl bg-[var(--foreground)] text-[var(--background)] transition-all duration-300 group-hover:rotate-3 group-hover:scale-105 sm:h-14 sm:w-14 sm:rounded-2xl dark:bg-[var(--foreground)] dark:text-[var(--background)]">
         <FeatureIcon
           size={22}
           strokeWidth={1.8}
         />
       </div>
 
-      <h3 className="relative mt-6 text-xl font-black tracking-[-0.035em] text-[var(--color-deep)] dark:text-[var(--color-cream)] sm:mt-7 sm:text-2xl">
+      <h3 className="relative mt-6 text-xl font-black tracking-[-0.035em] text-[var(--foreground)] dark:text-[var(--foreground)] sm:mt-7 sm:text-2xl">
         {feature.title}
       </h3>
 
-      <p className="relative mt-4 text-sm leading-7 text-[var(--color-deep)]/60 dark:text-[var(--color-cream)]/65 sm:text-base">
+      <p className="relative mt-4 text-sm leading-7 text-[var(--foreground)]/70 dark:text-[var(--foreground)]/70 sm:text-base">
         {feature.description}
       </p>
     </article>
@@ -474,13 +477,13 @@ export default async function ServiceDetailsPage({ params }) {
       className="
         min-h-screen
 
-        bg-[var(--color-cream)]
-        text-[var(--color-deep)]
+        bg-[var(--background)]
+        text-[var(--foreground)]
 
         transition-colors duration-300
 
-        dark:bg-[var(--color-night)]
-        dark:text-[var(--color-cream)]
+        dark:bg-[var(--background)]
+        dark:text-[var(--foreground)]
       "
     >
       {/* =====================================================
@@ -492,13 +495,13 @@ export default async function ServiceDetailsPage({ params }) {
           relative overflow-hidden
 
           border-b
-          border-[var(--color-deep)]/10
-          dark:border-[var(--color-green)]/20
+          border-[var(--border)]
+          dark:border-[var(--border)]
         "
       >
         {/* Background glow */}
 
-        <div className="pointer-events-none absolute -right-32 -top-32 h-72 w-72 rounded-full bg-[var(--color-green)]/10 blur-3xl dark:bg-[var(--color-green)]/10" />
+        <div className="pointer-events-none absolute -right-32 -top-32 h-72 w-72 rounded-full bg-[var(--foreground)]/8 blur-3xl dark:bg-[var(--foreground)]/8" />
 
         <div
           className="
@@ -521,13 +524,13 @@ export default async function ServiceDetailsPage({ params }) {
 
               text-sm font-bold
 
-              text-[var(--color-deep)]/55
+              text-[var(--foreground)]/60
               transition-colors
 
-              hover:text-[var(--color-green)]
+              hover:text-[var(--foreground)]
 
-              dark:text-[var(--color-cream)]/55
-              dark:hover:text-[var(--color-gold)]
+              dark:text-[var(--foreground)]/70
+              dark:hover:text-[var(--foreground)]
 
               sm:mb-8
             "
@@ -571,18 +574,18 @@ export default async function ServiceDetailsPage({ params }) {
 
                     rounded-full
 
-                    bg-[var(--color-gold)]
+                    bg-[var(--foreground)]
 
                     px-6 py-4
 
                     text-sm font-black
-                    text-[var(--color-deep)]
+                    text-[var(--background)]
 
                     transition-all duration-300
 
                     hover:-translate-y-0.5
-                    hover:bg-[var(--color-deep)]
-                    hover:text-white
+                    hover:bg-[var(--background)]
+                    hover:text-[var(--foreground)]
                     hover:shadow-xl
 
                     sm:w-auto
@@ -605,20 +608,21 @@ export default async function ServiceDetailsPage({ params }) {
                     rounded-full
 
                     border
-                    border-[var(--color-deep)]/15
+                    border-[var(--border)]
 
                     px-6 py-4
 
                     text-sm font-bold
+                    text-[var(--foreground)]
 
                     transition-all duration-300
 
-                    hover:border-[var(--color-green)]
-                    hover:text-[var(--color-green)]
+                    hover:border-[var(--foreground)]
+                    hover:text-[var(--foreground)]
 
-                    dark:border-[var(--color-green)]/30
-                    dark:hover:border-[var(--color-gold)]
-                    dark:hover:text-[var(--color-gold)]
+                    dark:border-[var(--border)]
+                    dark:hover:border-[var(--foreground)]
+                    dark:hover:text-[var(--foreground)]
 
                     sm:w-auto
                     sm:px-7
@@ -656,7 +660,7 @@ export default async function ServiceDetailsPage({ params }) {
           ACCENT STRIP
       ===================================================== */}
 
-      <section className="bg-[var(--color-gold)] px-4 py-6 text-[var(--color-deep)] sm:px-5 sm:py-7">
+      <section className="bg-[var(--foreground)] px-4 py-6 text-[var(--background)] sm:px-5 sm:py-7 dark:bg-[var(--foreground)] dark:text-[var(--background)]">
         <div className="container-custom">
           <p className="text-center text-base font-black leading-6 tracking-[-0.03em] sm:text-xl sm:leading-normal lg:text-2xl">
             {service.accentText}
@@ -670,13 +674,13 @@ export default async function ServiceDetailsPage({ params }) {
 
       <section
         className="
-          bg-[var(--color-cream)]
+          bg-[var(--background)]
           px-4 py-14
 
           sm:px-5 sm:py-20
           lg:py-24
 
-          dark:bg-[var(--color-night)]
+          dark:bg-[var(--background)]
         "
       >
         <div className="container-custom grid items-center gap-9 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16 xl:gap-20">
@@ -697,8 +701,8 @@ export default async function ServiceDetailsPage({ params }) {
 
                 transition-colors
 
-                hover:text-[var(--color-green)]
-                dark:hover:text-[var(--color-gold)]
+                hover:text-[var(--foreground)]
+                dark:hover:text-[var(--foreground)]
 
                 sm:mt-8
               "
@@ -740,15 +744,15 @@ export default async function ServiceDetailsPage({ params }) {
     overflow-hidden
 
     border-y
-    border-[var(--color-deep)]/10
+    border-[var(--border)]
 
-    bg-[var(--color-soft)]
+    bg-[var(--surface-soft)]
 
     px-4
     py-12
 
-    dark:border-[var(--color-green)]/20
-    dark:bg-[var(--color-deep-surface)]
+    dark:border-[var(--border)]
+    dark:bg-[var(--surface)]
 
     sm:px-5
     sm:py-16
@@ -765,10 +769,10 @@ export default async function ServiceDetailsPage({ params }) {
         w-72
         -translate-y-1/2
         rounded-full
-        bg-[var(--color-green)]/[0.06]
+        bg-[var(--foreground)]/[0.06]
         blur-[100px]
 
-        dark:bg-[var(--color-green)]/[0.05]
+        dark:bg-[var(--foreground)]/[0.05]
       "
     />
 
@@ -780,10 +784,10 @@ export default async function ServiceDetailsPage({ params }) {
         h-72
         w-72
         rounded-full
-        bg-[var(--color-gold)]/[0.05]
+        bg-[var(--foreground)]/[0.05]
         blur-[100px]
 
-        dark:bg-[var(--color-gold)]/[0.025]
+        dark:bg-[var(--foreground)]/[0.025]
       "
     />
   </div>
@@ -829,14 +833,14 @@ export default async function ServiceDetailsPage({ params }) {
 
       <section
         className="
-          bg-[var(--color-cream)]
+          bg-[var(--background)]
 
           px-4 py-14
 
           sm:px-5 sm:py-20
           lg:py-24
 
-          dark:bg-[var(--color-night)]
+          dark:bg-[var(--background)]
         "
       >
         <div className="container-custom grid items-center gap-9 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16 xl:gap-20">
@@ -867,30 +871,30 @@ export default async function ServiceDetailsPage({ params }) {
                     rounded-2xl
 
                     border
-                    border-[var(--color-deep)]/10
+                    border-[var(--border)]
 
-                    bg-[var(--color-soft)]
+                    bg-[var(--surface-soft)]
 
                     p-4
 
                     transition-all duration-300
 
                     hover:-translate-y-1
-                    hover:border-[var(--color-green)]
+                    hover:border-[var(--foreground)]/35
                     hover:shadow-lg
 
-                    dark:border-[var(--color-green)]/20
-                    dark:bg-[var(--color-deep)]
-                    dark:hover:border-[var(--color-gold)]/50
-                    dark:hover:bg-[#104A3A]
+                    dark:border-[var(--border)]
+                    dark:bg-[var(--surface)]
+                    dark:hover:border-[var(--foreground)]/35
+                    dark:hover:bg-[var(--surface-soft)]
                   "
                 >
                   <CheckCircle2
                     size={18}
-                    className="mt-0.5 shrink-0 text-[var(--color-green)] dark:text-[var(--color-gold)]"
+                    className="mt-0.5 shrink-0 text-[var(--foreground)] dark:text-[var(--foreground)]"
                   />
 
-                  <p className="min-w-0 text-sm font-semibold leading-6 text-[var(--color-deep)]/65 dark:text-[var(--color-cream)]/65">
+                  <p className="min-w-0 text-sm font-semibold leading-6 text-[var(--foreground)]/70 dark:text-[var(--foreground)]/70">
                     {point}
                   </p>
                 </div>
@@ -908,14 +912,14 @@ export default async function ServiceDetailsPage({ params }) {
         id="services"
         className="
           border-y
-          border-[var(--color-deep)]/10
+          border-[var(--border)]
 
-          bg-[var(--color-soft)]
+          bg-[var(--surface-soft)]
 
           px-4 py-14
 
-          dark:border-[var(--color-green)]/20
-          dark:bg-[var(--color-deep-surface)]
+          dark:border-[var(--border)]
+          dark:bg-[var(--surface)]
 
           sm:px-5 sm:py-20
           lg:py-24
@@ -943,8 +947,8 @@ export default async function ServiceDetailsPage({ params }) {
 
       <section
         className="
-          bg-[var(--color-cream)]
-          dark:bg-[var(--color-night)]
+          bg-[var(--background)]
+          dark:bg-[var(--background)]
         "
       >
         <ProcessSection
@@ -962,24 +966,23 @@ export default async function ServiceDetailsPage({ params }) {
       <section
         className="
           border-y
-          border-[var(--color-green)]/20
+          border-[var(--border)]
 
-          bg-[var(--color-deep)]
+          bg-[var(--surface-soft)]
 
           px-4 py-14
-          text-[var(--color-cream)]
+          text-[var(--foreground)]
 
           sm:px-5 sm:py-20
           lg:py-24
 
-          dark:bg-[var(--color-deep-surface)]
+          dark:bg-[var(--surface)]
         "
       >
         <div className="container-custom grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
           <SectionHeading
             eyebrow="What's Included"
             description="Every project is tailored to your business. These are the core deliverables that can be included in your service plan."
-            tone="dark"
           >
             Everything needed to move your project forward.
           </SectionHeading>
@@ -994,20 +997,23 @@ export default async function ServiceDetailsPage({ params }) {
                   rounded-2xl
 
                   border
-                  border-[var(--color-green)]/20
+                  border-[var(--border)]
 
-                  bg-[var(--color-night)]/50
+                  bg-[var(--background)]/80
 
                   p-4
 
                   transition-all duration-300
 
                   hover:-translate-y-1
-                  hover:border-[var(--color-gold)]/50
-                  hover:bg-[#104A3A]
+                  hover:border-[var(--foreground)]/35
+                  hover:bg-[var(--surface-soft)]
 
                   sm:gap-4
                   sm:p-5
+                  dark:border-[var(--border)]
+                  dark:bg-[var(--surface)]/80
+                  dark:hover:border-[var(--foreground)]/35
                 "
               >
                 <div
@@ -1016,8 +1022,8 @@ export default async function ServiceDetailsPage({ params }) {
 
                     rounded-full
 
-                    bg-[var(--color-gold)]
-                    text-[var(--color-deep)]
+                    bg-[var(--foreground)]
+                    text-[var(--background)]
 
                     transition-transform duration-300
 
@@ -1032,7 +1038,7 @@ export default async function ServiceDetailsPage({ params }) {
                   />
                 </div>
 
-                <p className="min-w-0 text-sm font-bold text-[var(--color-cream)]/85 sm:text-base">
+                <p className="min-w-0 text-sm font-bold text-[var(--foreground)]/80 sm:text-base dark:text-[var(--foreground)]/85">
                   {item}
                 </p>
               </div>
@@ -1049,11 +1055,11 @@ export default async function ServiceDetailsPage({ params }) {
         className="
           relative overflow-hidden
 
-          bg-[var(--color-gold)]
+          bg-[var(--foreground)]
 
           px-4 py-14
 
-          text-[var(--color-deep)]
+          text-[var(--background)]
 
           sm:px-5 sm:py-20
           lg:py-24
@@ -1061,20 +1067,20 @@ export default async function ServiceDetailsPage({ params }) {
       >
         {/* Decorative circles */}
 
-        <div className="pointer-events-none absolute -right-24 -top-24 h-64 w-64 rounded-full border-[40px] border-[var(--color-deep)]/5" />
+        <div className="pointer-events-none absolute -right-24 -top-24 h-64 w-64 rounded-full border-[40px] border-[var(--foreground)]/5" />
 
-        <div className="pointer-events-none absolute -bottom-32 -left-20 h-56 w-56 rounded-full bg-[var(--color-deep)]/5 blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-32 -left-20 h-56 w-56 rounded-full bg-[var(--foreground)]/5 blur-3xl" />
 
         <div className="container-custom relative text-center">
           <p className="text-xs font-black uppercase tracking-[0.18em] sm:text-sm">
             Ready to Get Started?
           </p>
 
-          <h2 className="mx-auto mt-5 max-w-5xl text-3xl font-black leading-[1.05] tracking-[-0.055em] text-[var(--color-deep)] dark:text-[var(--color-deep)] sm:text-5xl lg:text-6xl">
+          <h2 className="mx-auto mt-5 max-w-5xl text-3xl font-black leading-[1.05] tracking-[-0.055em] text-[var(--background)] dark:text-[var(--background)] sm:text-5xl lg:text-6xl">
             {service.ctaTitle}
           </h2>
 
-          <p className="mx-auto mt-6 max-w-2xl text-base leading-7 text-[var(--color-deep)]/70 sm:mt-7 sm:text-lg sm:leading-8">
+          <p className="mx-auto mt-6 max-w-2xl text-base leading-7 text-[var(--background)]/75 sm:mt-7 sm:text-lg sm:leading-8">
             {service.ctaDescription}
           </p>
 
@@ -1086,17 +1092,17 @@ export default async function ServiceDetailsPage({ params }) {
 
                 rounded-full
 
-                bg-[var(--color-deep)]
+                bg-[var(--background)]
 
                 px-7 py-4
 
                 text-sm font-black
-                text-[var(--color-cream)]
+                text-[var(--foreground)]
 
                 transition-all duration-300
 
                 hover:-translate-y-0.5
-                hover:bg-[var(--color-night)]
+                hover:bg-[var(--surface-soft)]
                 hover:shadow-xl
 
                 sm:w-auto sm:px-8
@@ -1118,16 +1124,17 @@ export default async function ServiceDetailsPage({ params }) {
                 rounded-full
 
                 border-2
-                border-[var(--color-deep)]
+                border-[var(--background)]
 
                 px-7 py-4
 
                 text-sm font-black
+                text-[var(--background)]
 
                 transition-all duration-300
 
-                hover:bg-[var(--color-deep)]
-                hover:text-[var(--color-cream)]
+                hover:bg-[var(--background)]
+                hover:text-[var(--foreground)]
 
                 sm:w-auto sm:px-8
               "

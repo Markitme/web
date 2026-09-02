@@ -49,7 +49,7 @@ function SectionLabel({ children, dark = false }) {
           tracking-[0.22em]
           text-[var(--color-green)]
           sm:text-[9px]
-          dark:text-[#8FBF9A]
+          dark:text-[var(--color-white-soft)]
         "
       >
         {children}
@@ -61,7 +61,7 @@ function SectionLabel({ children, dark = false }) {
           w-1.5
           rounded-full
           bg-[var(--color-green)]
-          dark:bg-[#8FBF9A]
+          dark:bg-[var(--color-white-soft)]
         "
       />
     </div>
@@ -92,8 +92,8 @@ function AboutCard({ children, className = "" }) {
 
         dark:border-[var(--color-green)]/20
         dark:bg-[var(--color-deep)]
-        dark:hover:border-[#8FBF9A]
-        dark:hover:bg-[#104A3A]
+        dark:hover:border-[var(--color-white-soft)]
+        dark:hover:bg-[var(--color-black-soft)]
         dark:hover:shadow-[0_20px_60px_rgba(0,0,0,0.28)]
 
         sm:p-11
@@ -166,7 +166,7 @@ export default function AboutPage() {
             rounded-full
             bg-[var(--color-green)]/5
             blur-3xl
-            dark:bg-[#8FBF9A]/5
+            dark:bg-[var(--color-white)]/5
           "
         />
 
@@ -244,7 +244,7 @@ export default function AboutPage() {
                   border-[var(--color-green)]
                   pl-6
 
-                  dark:border-[#8FBF9A]
+                  dark:border-[var(--color-white-soft)]
                 "
               >
                 <p
@@ -544,9 +544,9 @@ export default function AboutPage() {
                   font-bold
                   uppercase
                   tracking-[0.25em]
-                  text-[var(--color-green)]
+                  text-[var(--muted)]
 
-                  dark:text-[#8FBF9A]
+                  dark:text-[var(--color-white-soft)]
                 "
               >
                 Our Mission
@@ -567,7 +567,7 @@ export default function AboutPage() {
                 "
               >
                 Make digital growth more{" "}
-                <span className="text-[var(--color-green)] dark:text-[#8FBF9A]">
+                <span className="text-[var(--muted)] dark:text-[var(--color-white-soft)]">
                   meaningful.
                 </span>
               </h3>
@@ -600,13 +600,13 @@ export default function AboutPage() {
                   justify-center
                   rounded-full
                   border
-                  border-[var(--color-green)]
+                  border-[var(--foreground)]
                   text-lg
                   font-black
-                  text-[var(--color-green)]
+                  text-[var(--foreground)]
 
-                  dark:border-[#8FBF9A]
-                  dark:text-[#8FBF9A]
+                  dark:border-[var(--color-white-soft)]
+                  dark:text-[var(--color-white-soft)]
                 "
               >
                 V
@@ -619,9 +619,9 @@ export default function AboutPage() {
                   font-bold
                   uppercase
                   tracking-[0.25em]
-                  text-[var(--color-green)]
+                  text-[var(--muted)]
 
-                  dark:text-[#8FBF9A]
+                  dark:text-[var(--color-white-soft)]
                 "
               >
                 Our Vision
@@ -642,7 +642,7 @@ export default function AboutPage() {
                 "
               >
                 Build brands people{" "}
-                <span className="text-[var(--color-green)] dark:text-[#8FBF9A]">
+                <span className="text-[var(--muted)] dark:text-[var(--color-white-soft)]">
                   remember.
                 </span>
               </h3>
@@ -733,9 +733,9 @@ export default function AboutPage() {
                   className="
                     text-sm
                     font-black
-                    text-[var(--color-green)]
+                    text-[var(--muted)]
 
-                    dark:text-[#8FBF9A]
+                    dark:text-[var(--color-white-soft)]
                   "
                 >
                   {value.number}

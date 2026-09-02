@@ -31,7 +31,7 @@ const serviceGroups = [
       "High-performing websites and digital experiences designed to turn attention into meaningful business growth.",
     icon: Globe2,
     image: `${IMAGE_BASE_URL}web-development.jpg`,
-    accent: "#6D9773",
+    accent: "#1a1a1a",
     size: "lg:col-span-7",
   },
   {
@@ -41,7 +41,7 @@ const serviceGroups = [
       "Strategic marketing systems that help your brand reach the right audience and grow consistently.",
     icon: TrendingUp,
     image: `${IMAGE_BASE_URL}marketing.jpg`,
-    accent: "#FFBA00",
+    accent: "#7a7a7a",
     size: "lg:col-span-5",
   },
   {
@@ -51,7 +51,7 @@ const serviceGroups = [
       "Distinctive brand identities and creative direction that make your business recognizable and memorable.",
     icon: Palette,
     image: `${IMAGE_BASE_URL}brand-identity.jpg`,
-    accent: "#BB8A52",
+    accent: "#d6d6d6",
     size: "lg:col-span-5",
   },
   {
@@ -61,7 +61,7 @@ const serviceGroups = [
       "Visual content built to tell your story, showcase your brand, and create stronger connections.",
     icon: Camera,
     image: `${IMAGE_BASE_URL}content-creative.jpg`,
-    accent: "#FFBA00",
+    accent: "#ffffff",
     size: "lg:col-span-7",
   },
 ];
@@ -103,12 +103,12 @@ export default function ServicesSection() {
             backgroundImage: `
               linear-gradient(
                 to right,
-                #0C3B2E 1px,
+                var(--color-black) 1px,
                 transparent 1px
               ),
               linear-gradient(
                 to bottom,
-                #0C3B2E 1px,
+                var(--color-black) 1px,
                 transparent 1px
               )
             `,
@@ -116,7 +116,7 @@ export default function ServicesSection() {
           }}
         />
 
-        {/* Left green glow */}
+        {/* Left neutral glow */}
 
         <div
           className="
@@ -126,13 +126,13 @@ export default function ServicesSection() {
             h-96
             w-96
             rounded-full
-            bg-[var(--color-green)]/[0.06]
+            bg-[var(--foreground)]/[0.04]
             blur-[110px]
-            dark:bg-[var(--color-green)]/[0.055]
+            dark:bg-[var(--foreground)]/[0.06]
           "
         />
 
-        {/* Right gold glow */}
+        {/* Right neutral glow */}
 
         <div
           className="
@@ -142,9 +142,9 @@ export default function ServicesSection() {
             h-96
             w-96
             rounded-full
-            bg-[var(--color-gold)]/[0.045]
+            bg-[var(--foreground)]/[0.025]
             blur-[110px]
-            dark:bg-[var(--color-gold)]/[0.025]
+            dark:bg-[var(--foreground)]/[0.04]
           "
         />
 
@@ -160,9 +160,9 @@ export default function ServicesSection() {
             -translate-x-1/2
             -translate-y-1/2
             rounded-full
-            bg-[var(--color-green)]/[0.025]
+            bg-[var(--foreground)]/[0.02]
             blur-[120px]
-            dark:bg-[var(--color-cream)]/[0.015]
+            dark:bg-[var(--foreground)]/[0.03]
           "
         />
       </div>
@@ -181,7 +181,7 @@ export default function ServicesSection() {
           w-24
           -translate-x-1/2
           rounded-full
-          bg-[var(--color-gold)]
+          bg-[var(--foreground)]
           sm:w-32
         "
       />
@@ -201,8 +201,7 @@ export default function ServicesSection() {
               className="
                 h-px
                 w-9
-                bg-[var(--color-green)]
-                dark:bg-[var(--color-gold)]
+                bg-[var(--foreground)]
               "
             />
 
@@ -212,8 +211,7 @@ export default function ServicesSection() {
                 font-bold
                 uppercase
                 tracking-[0.2em]
-                text-[var(--color-green)]
-                dark:text-[var(--color-gold)]
+                text-[var(--muted)]
               "
             >
               What we do
@@ -237,8 +235,7 @@ export default function ServicesSection() {
             <span
               className="
                 block
-                text-[var(--color-green)]
-                dark:text-[var(--color-gold)]
+                text-[var(--foreground)]
               "
             >
               to grow.
@@ -348,10 +345,10 @@ export default function ServicesSection() {
                   className="
                     absolute
                     inset-0
-                    bg-[#071f18]/[0.68]
+                    bg-[var(--color-black-soft)]/[0.68]
                     transition-all
                     duration-700
-                    group-hover:bg-[#071f18]/[0.54]
+                    group-hover:bg-[var(--color-black-soft)]/[0.54]
                   "
                 />
 
@@ -364,8 +361,8 @@ export default function ServicesSection() {
                     absolute
                     inset-0
                     bg-gradient-to-t
-                    from-[#071f18]
-                    via-[#071f18]/45
+                    from-[var(--color-black)]
+                    via-[var(--color-black)]/45
                     to-transparent
                     opacity-95
                   "
@@ -558,18 +555,25 @@ export default function ServicesSection() {
                     w-12
                     items-center
                     justify-center
+                    gap-2
                     rounded-full
                     border
-                    border-white/20
-                    bg-white/10
-                    text-white
+                    border-[var(--border)]
+                    bg-[var(--background)]/80
+                    text-[var(--foreground)]
                     backdrop-blur-md
                     transition-all
                     duration-500
                     group-hover:w-28
-                    group-hover:border-[var(--color-gold)]
-                    group-hover:bg-[var(--color-gold)]
-                    group-hover:text-[var(--color-deep)]
+                    group-hover:border-[var(--foreground)]
+                    group-hover:bg-[var(--foreground)]
+                    group-hover:text-[var(--background)]
+                    dark:border-[var(--border)]
+                    dark:bg-[var(--background)]/80
+                    dark:text-[var(--foreground)]
+                    dark:group-hover:border-[var(--foreground)]
+                    dark:group-hover:bg-[var(--foreground)]
+                    dark:group-hover:text-[var(--background)]
                     sm:bottom-9
                     sm:right-9
                   "

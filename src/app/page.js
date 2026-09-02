@@ -71,7 +71,7 @@ export default function Home() {
   const nextRef = useRef(null);
 
   return (
-    <main className="bg-white text-black transition-colors duration-300 dark:bg-[#0a0a0a] dark:text-white">
+    <main className="bg-[var(--background)] text-[var(--foreground)] transition-colors duration-300">
       {/* Hero */}
       <Hero />
       <ClientLogoSlider />
@@ -84,9 +84,9 @@ export default function Home() {
     overflow-hidden
 
     border-y
-    border-[#0C3B2E]/[0.08]
+    border-[var(--border)]
 
-    bg-[#E7EDE4]
+    bg-[var(--surface-soft)]
 
     py-16
 
@@ -96,8 +96,8 @@ export default function Home() {
     sm:py-20
     lg:py-24
 
-    dark:border-[#F1F3ED]/[0.08]
-    dark:bg-[#071F18]
+    dark:border-[var(--border)]
+    dark:bg-[var(--surface)]
   "
       >
         {/*       BACKGROUND DECORATION
@@ -126,15 +126,15 @@ export default function Home() {
 
         rounded-full
 
-        bg-[#6D9773]/[0.08]
+        bg-[var(--color-gray-light)]/[0.10]
 
         blur-[100px]
 
-        dark:bg-[#6D9773]/[0.06]
+        dark:bg-[var(--color-white-soft)]/[0.06]
       "
           />
 
-          {/* Gold glow */}
+          {/* Secondary glow */}
 
           <div
             className="
@@ -147,11 +147,11 @@ export default function Home() {
 
         rounded-full
 
-        bg-[#FFBA00]/[0.055]
+        bg-[var(--color-black)]/[0.04]
 
         blur-[100px]
 
-        dark:bg-[#FFBA00]/[0.03]
+        dark:bg-[var(--color-white)]/[0.03]
       "
           />
         </div>

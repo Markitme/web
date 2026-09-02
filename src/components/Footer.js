@@ -33,7 +33,7 @@ export default function Footer() {
 
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
 
-        {/* Sage glow */}
+        {/* Neutral glow */}
 
         <div
           className="
@@ -43,12 +43,12 @@ export default function Footer() {
             h-96
             w-96
             rounded-full
-            bg-[var(--color-green)]/15
+            bg-[var(--color-black)]/[0.04]
             blur-3xl
           "
         />
 
-        {/* Golden glow */}
+        {/* Neutral glow */}
 
         <div
           className="
@@ -58,12 +58,12 @@ export default function Footer() {
             h-80
             w-80
             rounded-full
-            bg-[var(--color-gold)]/10
+            bg-[var(--color-white-soft)]/[0.08]
             blur-3xl
           "
         />
 
-        {/* Sand glow */}
+        {/* Neutral glow */}
 
         <div
           className="
@@ -73,7 +73,7 @@ export default function Footer() {
             h-72
             w-72
             rounded-full
-            bg-[var(--color-sand)]/10
+            bg-[var(--color-gray-light)]/[0.08]
             blur-3xl
           "
         />
@@ -197,10 +197,10 @@ export default function Footer() {
                 transition-colors
                 duration-300
 
-                hover:text-[var(--color-green)]
+                hover:text-[var(--foreground)]
 
                 dark:text-[var(--color-cream)]
-                dark:hover:text-[var(--color-gold)]
+                dark:hover:text-[var(--color-white-soft)]
               "
             >
 
@@ -288,10 +288,10 @@ export default function Footer() {
                     duration-300
 
                     hover:translate-x-1
-                    hover:text-[var(--color-green)]
+                    hover:text-[var(--foreground)]
 
                     dark:text-[var(--color-cream)]/55
-                    dark:hover:text-[var(--color-gold)]
+                    dark:hover:text-[var(--color-white-soft)]
                   "
                 >
 
@@ -369,26 +369,26 @@ export default function Footer() {
                     rounded-xl
 
                     border
-                    border-[var(--color-deep)]/10
+                    border-[var(--border)]
 
-                    bg-white/50
+                    bg-[var(--surface-soft)]
 
-                    text-[var(--color-deep)]/65
+                    text-[var(--foreground)]/75
 
                     transition-all
                     duration-300
 
-                    group-hover:border-[var(--color-green)]
-                    group-hover:bg-[var(--color-green)]
-                    group-hover:text-white
+                    group-hover:border-[var(--foreground)]
+                    group-hover:bg-[var(--foreground)]
+                    group-hover:text-[var(--background)]
 
-                    dark:border-[var(--color-cream)]/10
-                    dark:bg-[var(--color-cream)]/5
-                    dark:text-[var(--color-cream)]/65
+                    dark:border-[var(--border)]
+                    dark:bg-[var(--surface-soft)]
+                    dark:text-[var(--foreground)]/75
 
-                    dark:group-hover:border-[var(--color-green)]
-                    dark:group-hover:bg-[var(--color-green)]
-                    dark:group-hover:text-[var(--color-deep)]
+                    dark:group-hover:border-[var(--foreground)]
+                    dark:group-hover:bg-[var(--foreground)]
+                    dark:group-hover:text-[var(--background)]
                   "
                 >
 
@@ -462,26 +462,26 @@ export default function Footer() {
                     rounded-xl
 
                     border
-                    border-[var(--color-deep)]/10
+                    border-[var(--border)]
 
-                    bg-white/50
+                    bg-[var(--surface-soft)]
 
-                    text-[var(--color-deep)]/65
+                    text-[var(--foreground)]/75
 
                     transition-all
                     duration-300
 
-                    group-hover:border-[var(--color-green)]
-                    group-hover:bg-[var(--color-green)]
-                    group-hover:text-white
+                    group-hover:border-[var(--foreground)]
+                    group-hover:bg-[var(--foreground)]
+                    group-hover:text-[var(--background)]
 
-                    dark:border-[var(--color-cream)]/10
-                    dark:bg-[var(--color-cream)]/5
-                    dark:text-[var(--color-cream)]/65
+                    dark:border-[var(--border)]
+                    dark:bg-[var(--surface-soft)]
+                    dark:text-[var(--foreground)]/75
 
-                    dark:group-hover:border-[var(--color-green)]
-                    dark:group-hover:bg-[var(--color-green)]
-                    dark:group-hover:text-[var(--color-deep)]
+                    dark:group-hover:border-[var(--foreground)]
+                    dark:group-hover:bg-[var(--foreground)]
+                    dark:group-hover:text-[var(--background)]
                   "
                 >
 
@@ -515,15 +515,15 @@ export default function Footer() {
                       text-sm
                       font-medium
 
-                      text-[var(--color-deep)]/70
+                      text-[var(--foreground)]/75
 
                       transition-colors
                       duration-300
 
-                      group-hover:text-[var(--color-green)]
+                      group-hover:text-[var(--foreground)]
 
-                      dark:text-[var(--color-cream)]/65
-                      dark:group-hover:text-[var(--color-gold)]
+                      dark:text-[var(--foreground)]/75
+                      dark:group-hover:text-[var(--foreground)]
                     "
                   >
                     +1 (613)-981-4844
@@ -552,15 +552,18 @@ export default function Footer() {
                     rounded-xl
 
                     border
-                    border-[var(--color-deep)]/10
+                    border-[var(--border)]
 
-                    bg-white/50
+                    bg-[var(--surface-soft)]
 
-                    text-[var(--color-deep)]/65
+                    text-[var(--foreground)]/75
 
-                    dark:border-[var(--color-cream)]/10
-                    dark:bg-[var(--color-cream)]/5
-                    dark:text-[var(--color-cream)]/65
+                    transition-all
+                    duration-300
+
+                    dark:border-[var(--border)]
+                    dark:bg-[var(--surface-soft)]
+                    dark:text-[var(--foreground)]/75
                   "
                 >
 
@@ -659,21 +662,21 @@ export default function Footer() {
       className="
         flex h-10 w-10 items-center justify-center
         rounded-full
-        border border-[var(--color-deep)]/10
-        bg-white/50
-        text-[var(--color-deep)]/60
+        border border-[var(--border)]
+        bg-[var(--surface-soft)]
+        text-[var(--foreground)]/75
         transition-all duration-300
         hover:-translate-y-1
-        hover:border-[var(--color-gold)]
-        hover:bg-[var(--color-gold)]
-        hover:text-[var(--color-deep)]
+        hover:border-[var(--foreground)]
+        hover:bg-[var(--foreground)]
+        hover:text-[var(--background)]
 
-        dark:border-[var(--color-cream)]/10
-        dark:bg-[var(--color-cream)]/5
-        dark:text-[var(--color-cream)]/60
-        dark:hover:border-[var(--color-gold)]
-        dark:hover:bg-[var(--color-gold)]
-        dark:hover:text-[var(--color-deep)]
+        dark:border-[var(--border)]
+        dark:bg-[var(--surface-soft)]
+        dark:text-[var(--foreground)]/75
+        dark:hover:border-[var(--foreground)]
+        dark:hover:bg-[var(--foreground)]
+        dark:hover:text-[var(--background)]
       "
     >
       <svg
@@ -718,21 +721,21 @@ export default function Footer() {
       className="
         flex h-10 w-10 items-center justify-center
         rounded-full
-        border border-[var(--color-deep)]/10
-        bg-white/50
-        text-[var(--color-deep)]/60
+        border border-[var(--border)]
+        bg-[var(--surface-soft)]
+        text-[var(--foreground)]/75
         transition-all duration-300
         hover:-translate-y-1
-        hover:border-[var(--color-green)]
-        hover:bg-[var(--color-green)]
-        hover:text-[var(--color-deep)]
+        hover:border-[var(--foreground)]
+        hover:bg-[var(--foreground)]
+        hover:text-[var(--background)]
 
-        dark:border-[var(--color-cream)]/10
-        dark:bg-[var(--color-cream)]/5
-        dark:text-[var(--color-cream)]/60
-        dark:hover:border-[var(--color-green)]
-        dark:hover:bg-[var(--color-green)]
-        dark:hover:text-[var(--color-deep)]
+        dark:border-[var(--border)]
+        dark:bg-[var(--surface-soft)]
+        dark:text-[var(--foreground)]/75
+        dark:hover:border-[var(--foreground)]
+        dark:hover:bg-[var(--foreground)]
+        dark:hover:text-[var(--background)]
       "
     >
       <svg
@@ -755,21 +758,21 @@ export default function Footer() {
       className="
         flex h-10 w-10 items-center justify-center
         rounded-full
-        border border-[var(--color-deep)]/10
-        bg-white/50
-        text-[var(--color-deep)]/60
+        border border-[var(--border)]
+        bg-[var(--surface-soft)]
+        text-[var(--foreground)]/75
         transition-all duration-300
         hover:-translate-y-1
-        hover:border-[var(--color-sand)]
-        hover:bg-[var(--color-sand)]
-        hover:text-white
+        hover:border-[var(--foreground)]
+        hover:bg-[var(--foreground)]
+        hover:text-[var(--background)]
 
-        dark:border-[var(--color-cream)]/10
-        dark:bg-[var(--color-cream)]/5
-        dark:text-[var(--color-cream)]/60
-        dark:hover:border-[var(--color-sand)]
-        dark:hover:bg-[var(--color-sand)]
-        dark:hover:text-[var(--color-deep)]
+        dark:border-[var(--border)]
+        dark:bg-[var(--surface-soft)]
+        dark:text-[var(--foreground)]/75
+        dark:hover:border-[var(--foreground)]
+        dark:hover:bg-[var(--foreground)]
+        dark:hover:text-[var(--background)]
       "
     >
       <svg

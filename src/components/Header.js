@@ -15,7 +15,6 @@ import { useEffect, useState } from "react";
 import ThemeToggle from "../components/ThemeToggle";
 import Button from "../components/ui/Button";
 
-// Dynamic services data
 import { services } from "@/data/services";
 
 const navLinks = [
@@ -112,150 +111,158 @@ export default function Header() {
 
       <div className="h-[112px] sm:h-[120px]" />
 
-
       {/* =====================================================
           FIXED HEADER
       ====================================================== */}
 
       <div className="fixed inset-x-0 top-0 z-[100]">
 
+        {/* ================================================= 
+    ANNOUNCEMENT BAR 
+================================================== */}
 
-        {/* =================================================
-            ANNOUNCEMENT BAR
-        ================================================== */}
+<div
+  className="
+    relative
+    overflow-hidden
 
-        <div
+    border-b
+    border-[var(--color-black)]/10
+
+    bg-[var(--color-white)]
+    text-[var(--color-black)]
+
+    dark:border-[var(--color-white)]/10
+
+    dark:bg-[var(--color-black)]
+    dark:text-[var(--color-white)]
+  "
+>
+  {/* Decorative shine */}
+
+  <div
+    className="
+      pointer-events-none
+      absolute
+      inset-y-0
+      -left-20
+      w-32
+      rotate-12
+
+      bg-[var(--color-black)]/10
+
+      blur-xl
+
+      animate-[pulse_3s_ease-in-out_infinite]
+
+      dark:bg-[var(--color-white)]/10
+    "
+  />
+
+  {/* Announcement Content */}
+
+  <div
+    className="
+      container-custom
+      flex
+      min-h-[32px]
+      items-center
+      justify-center
+
+      px-4
+      py-1.5
+
+      sm:min-h-[36px]
+    "
+  >
+    <div
+      className="
+        flex
+        items-center
+        justify-center
+        gap-2.5
+        text-center
+      "
+    >
+      {/* Brand indicator */}
+
+      <span
+        className="
+          relative
+          flex
+          h-5
+          w-5
+          shrink-0
+          items-center
+          justify-center
+          rounded-full
+
+          bg-[var(--color-black)]
+          text-[var(--color-white)]
+
+          dark:bg-[var(--color-white)]
+          dark:text-[var(--color-black)]
+        "
+      >
+        <Sparkles
+          size={11}
+          strokeWidth={2.5}
+        />
+
+        <span
           className="
-            relative
-            overflow-hidden
+            absolute
+            -right-0.5
+            -top-0.5
+            h-1.5
+            w-1.5
+            rounded-full
 
-            border-b
-            border-[var(--color-deep)]/10
+            bg-[var(--color-black)]
 
-            bg-[var(--color-gold)]
-            text-[var(--color-deep)]
+            dark:bg-[var(--color-white)]
           "
-        >
+        />
+      </span>
 
-          {/* Decorative shine */}
+      {/* Main Message */}
 
-          <div
-            className="
-              pointer-events-none
-              absolute
-              inset-y-0
-              -left-20
-              w-32
-              rotate-12
-              bg-white/20
-              blur-xl
-              animate-[pulse_3s_ease-in-out_infinite]
-            "
-          />
+      <p
+        className="
+          text-[9px]
+          font-black
+          uppercase
+          leading-none
+          tracking-[0.16em]
 
+          sm:text-[10px]
+          sm:tracking-[0.2em]
 
-          {/* Announcement Content */}
+          md:text-[11px]
+        "
+      >
+        Make Your Business Impossible to Ignore
+      </p>
 
-          <div
-            className="
-              container-custom
-              flex
-              min-h-[32px]
-              items-center
-              justify-center
-              px-4
-              py-1.5
-              sm:min-h-[36px]
-            "
-          >
+      {/* Right decorative dot */}
 
-            <div
-              className="
-                flex
-                items-center
-                justify-center
-                gap-2.5
-                text-center
-              "
-            >
+      <span
+        className="
+          hidden
+          h-1.5
+          w-1.5
+          rounded-full
 
-              {/* Small brand indicator */}
+          bg-[var(--color-black)]
 
-              <span
-                className="
-                  relative
-                  flex
-                  h-5
-                  w-5
-                  shrink-0
-                  items-center
-                  justify-center
-                  rounded-full
-                  bg-[var(--color-deep)]
-                  text-[var(--color-gold)]
-                "
-              >
-                <Sparkles
-                  size={11}
-                  strokeWidth={2.5}
-                />
+          dark:bg-[var(--color-white)]
 
-                <span
-                  className="
-                    absolute
-                    -right-0.5
-                    -top-0.5
-                    h-1.5
-                    w-1.5
-                    rounded-full
-                    bg-[var(--color-green)]
-                  "
-                />
-              </span>
-
-
-              {/* Main Message */}
-
-              <p
-                className="
-                  text-[9px]
-                  font-black
-                  uppercase
-                  leading-none
-                  tracking-[0.16em]
-
-                  sm:text-[10px]
-                  sm:tracking-[0.2em]
-
-                  md:text-[11px]
-                "
-              >
-               
-
-                Make Your Business Impossible to Ignore
-              </p>
-
-
-              {/* Right decorative dot */}
-
-              <span
-                className="
-                  hidden
-                  h-1.5
-                  w-1.5
-                  rounded-full
-                  bg-[var(--color-green)]
-
-                  sm:block
-                "
-              />
-
-            </div>
-
-          </div>
-
-        </div>
-
+          sm:block
+        "
+      />
+    </div>
+  </div>
+</div>
 
         {/* =====================================================
             MAIN HEADER
@@ -266,26 +273,26 @@ export default function Header() {
             relative
 
             border-b
-            border-[var(--color-deep)]/10
+            border-[var(--color-black)]/10
 
-            bg-[var(--color-cream)]/95
+            bg-[var(--color-white)]/95
 
-            shadow-[0_8px_30px_rgba(12,59,46,0.04)]
+            shadow-[0_8px_30px_rgba(0,0,0,0.04)]
 
             backdrop-blur-xl
 
             transition-colors
             duration-300
 
-            dark:border-[var(--color-cream)]/10
-            dark:bg-[var(--color-deep)]/95
-            dark:shadow-[0_8px_30px_rgba(0,0,0,0.12)]
+            dark:border-[var(--color-white)]/10
+            dark:bg-[var(--color-black)]/95
+
+            dark:shadow-[0_8px_30px_rgba(0,0,0,0.25)]
           "
           onMouseLeave={() =>
             setServicesOpen(false)
           }
         >
-
           {/* =================================================
               MAIN HEADER CONTENT
           ================================================== */}
@@ -301,8 +308,6 @@ export default function Header() {
               sm:h-20
             "
           >
-
-
             {/* =================================================
                 LOGO
             ================================================== */}
@@ -317,7 +322,6 @@ export default function Header() {
               "
               aria-label="MarkitMe Home"
             >
-
               {/* Dark theme logo */}
 
               <Image
@@ -338,7 +342,6 @@ export default function Header() {
                 "
               />
 
-
               {/* Light theme logo */}
 
               <Image
@@ -358,9 +361,7 @@ export default function Header() {
                   sm:w-[170px]
                 "
               />
-
             </Link>
-
 
             {/* =================================================
                 DESKTOP NAVIGATION
@@ -377,7 +378,6 @@ export default function Header() {
               "
               aria-label="Main navigation"
             >
-
               {/* Home + About */}
 
               {navLinks
@@ -391,21 +391,20 @@ export default function Header() {
                       text-sm
                       font-semibold
 
-                      text-[var(--color-deep)]/65
+                      text-[var(--color-black)]/65
 
                       transition-colors
                       duration-300
 
-                      hover:text-[var(--color-green)]
+                      hover:text-[var(--color-black)]
 
-                      dark:text-[var(--color-cream)]/65
-                      dark:hover:text-[var(--color-gold)]
+                      dark:text-[var(--color-white)]/65
+                      dark:hover:text-[var(--color-white)]
                     "
                   >
                     {link.name}
                   </Link>
                 ))}
-
 
               {/* =================================================
                   SERVICES
@@ -436,8 +435,8 @@ export default function Header() {
 
                   ${
                     servicesOpen
-                      ? "text-[var(--color-green)] dark:text-[var(--color-gold)]"
-                      : "text-[var(--color-deep)]/65 hover:text-[var(--color-green)] dark:text-[var(--color-cream)]/65 dark:hover:text-[var(--color-gold)]"
+                      ? "text-[var(--color-black)] dark:text-[var(--color-white)]"
+                      : "text-[var(--color-black)]/65 hover:text-[var(--color-black)] dark:text-[var(--color-white)]/65 dark:hover:text-[var(--color-white)]"
                   }
                 `}
                 aria-expanded={
@@ -445,7 +444,6 @@ export default function Header() {
                 }
                 aria-haspopup="true"
               >
-
                 Services
 
                 <ChevronDown
@@ -461,9 +459,7 @@ export default function Header() {
                     }
                   `}
                 />
-
               </button>
-
 
               {/* Work + Blog + Contact */}
 
@@ -478,23 +474,21 @@ export default function Header() {
                       text-sm
                       font-semibold
 
-                      text-[var(--color-deep)]/65
+                      text-[var(--color-black)]/65
 
                       transition-colors
                       duration-300
 
-                      hover:text-[var(--color-green)]
+                      hover:text-[var(--color-black)]
 
-                      dark:text-[var(--color-cream)]/65
-                      dark:hover:text-[var(--color-gold)]
+                      dark:text-[var(--color-white)]/65
+                      dark:hover:text-[var(--color-white)]
                     "
                   >
                     {link.name}
                   </Link>
                 ))}
-
             </nav>
-
 
             {/* =================================================
                 DESKTOP ACTIONS
@@ -509,13 +503,7 @@ export default function Header() {
                 lg:flex
               "
             >
-
-              {/* Theme only */}
-
               <ThemeToggle />
-
-
-              {/* CTA */}
 
               <Button
                 variant="primary"
@@ -532,9 +520,7 @@ export default function Header() {
               >
                 Let&apos;s Talk
               </Button>
-
             </div>
-
 
             {/* =================================================
                 MOBILE ACTIONS
@@ -549,13 +535,7 @@ export default function Header() {
                 lg:hidden
               "
             >
-
-              {/* Theme */}
-
               <ThemeToggle />
-
-
-              {/* Menu */}
 
               <button
                 type="button"
@@ -576,26 +556,26 @@ export default function Header() {
                   rounded-full
 
                   border
-                  border-[var(--color-deep)]/15
+                  border-[var(--color-black)]/15
 
-                  bg-[var(--color-deep)]/[0.03]
+                  bg-[var(--color-black)]/[0.03]
 
-                  text-[var(--color-deep)]
+                  text-[var(--color-black)]
 
                   transition-all
                   duration-300
 
-                  hover:border-[var(--color-green)]
-                  hover:bg-[var(--color-green)]/10
-                  hover:text-[var(--color-green)]
+                  hover:border-[var(--color-black)]
+                  hover:bg-[var(--color-black)]/[0.06]
+                  hover:text-[var(--color-black)]
 
-                  dark:border-[var(--color-cream)]/15
-                  dark:bg-[var(--color-cream)]/5
-                  dark:text-[var(--color-cream)]
+                  dark:border-[var(--color-white)]/15
+                  dark:bg-[var(--color-white)]/5
+                  dark:text-[var(--color-white)]
 
-                  dark:hover:border-[var(--color-green)]
-                  dark:hover:bg-[var(--color-green)]/15
-                  dark:hover:text-[var(--color-gold)]
+                  dark:hover:border-[var(--color-white)]
+                  dark:hover:bg-[var(--color-white)]/10
+                  dark:hover:text-[var(--color-white)]
                 "
                 aria-label={
                   menuOpen
@@ -605,19 +585,14 @@ export default function Header() {
                 aria-expanded={menuOpen}
                 aria-controls="mobile-navigation"
               >
-
                 {menuOpen ? (
                   <X size={22} />
                 ) : (
                   <Menu size={22} />
                 )}
-
               </button>
-
             </div>
-
           </div>
-
 
           {/* =====================================================
               DESKTOP MEGA MENU
@@ -634,17 +609,17 @@ export default function Header() {
               top-full
 
               border-b
-              border-[var(--color-deep)]/10
+              border-[var(--color-black)]/10
 
-              bg-[var(--color-cream)]
+              bg-[var(--color-white)]
 
               shadow-2xl
 
               transition-all
               duration-300
 
-              dark:border-[var(--color-cream)]/10
-              dark:bg-[var(--color-deep)]
+              dark:border-[var(--color-white)]/10
+              dark:bg-[var(--color-black)]
 
               ${
                 servicesOpen
@@ -653,9 +628,7 @@ export default function Header() {
               }
             `}
           >
-
             <div className="container-custom">
-
               <div
                 className="
                   grid
@@ -664,25 +637,21 @@ export default function Header() {
                   overflow-y-auto
                 "
               >
-
-                {/* =================================================
-                    LEFT CONTENT
-                ================================================== */}
+                {/* LEFT CONTENT */}
 
                 <div
                   className="
                     border-r
-                    border-[var(--color-deep)]/10
+                    border-[var(--color-black)]/10
 
                     px-8
                     py-9
 
-                    dark:border-[var(--color-cream)]/10
+                    dark:border-[var(--color-white)]/10
 
                     xl:px-10
                   "
                 >
-
                   <p
                     className="
                       text-xs
@@ -690,14 +659,13 @@ export default function Header() {
                       uppercase
                       tracking-[0.2em]
 
-                      text-[var(--color-green)]
+                      text-[var(--color-black)]
 
-                      dark:text-[var(--color-gold)]
+                      dark:text-[var(--color-white)]
                     "
                   >
                     What we do
                   </p>
-
 
                   <h2
                     className="
@@ -708,15 +676,14 @@ export default function Header() {
                       leading-[0.98]
                       tracking-[-0.05em]
 
-                      text-[var(--color-deep)]
+                      text-[var(--color-black)]
 
-                      dark:text-[var(--color-cream)]
+                      dark:text-[var(--color-white)]
                     "
                   >
                     Strategy and creative work
                     built for growth.
                   </h2>
-
 
                   <p
                     className="
@@ -725,9 +692,9 @@ export default function Header() {
                       text-sm
                       leading-7
 
-                      text-[var(--color-deep)]/55
+                      text-[var(--color-black)]/55
 
-                      dark:text-[var(--color-cream)]/55
+                      dark:text-[var(--color-white)]/55
                     "
                   >
                     We connect strategy,
@@ -736,7 +703,6 @@ export default function Header() {
                     stronger digital
                     experiences.
                   </p>
-
 
                   <Button
                     href="/services"
@@ -747,13 +713,9 @@ export default function Header() {
                   >
                     View All Services
                   </Button>
-
                 </div>
 
-
-                {/* =================================================
-                    SERVICES GRID
-                ================================================== */}
+                {/* SERVICES GRID */}
 
                 <div
                   className="
@@ -767,7 +729,6 @@ export default function Header() {
                     xl:px-10
                   "
                 >
-
                   {services.map(
                     (service) => {
                       const Icon =
@@ -790,9 +751,9 @@ export default function Header() {
                             rounded-2xl
 
                             border
-                            border-[var(--color-deep)]/10
+                            border-[var(--color-black)]/10
 
-                            bg-white/50
+                            bg-[var(--color-black)]/[0.02]
 
                             p-5
 
@@ -801,17 +762,16 @@ export default function Header() {
 
                             hover:-translate-y-0.5
 
-                            hover:border-[var(--color-green)]/40
-                            hover:bg-[var(--color-green)]/10
+                            hover:border-[var(--color-black)]/30
+                            hover:bg-[var(--color-black)]/[0.05]
 
-                            dark:border-[var(--color-cream)]/10
-                            dark:bg-[var(--color-cream)]/[0.03]
+                            dark:border-[var(--color-white)]/10
+                            dark:bg-[var(--color-white)]/[0.03]
 
-                            dark:hover:border-[var(--color-green)]/50
-                            dark:hover:bg-[var(--color-green)]/10
+                            dark:hover:border-[var(--color-white)]/30
+                            dark:hover:bg-[var(--color-white)]/[0.07]
                           "
                         >
-
                           {/* Icon */}
 
                           <div
@@ -824,9 +784,11 @@ export default function Header() {
                               justify-center
                               rounded-xl
 
-                              bg-[var(--color-gold)]
+                              bg-[var(--color-black)]
+                              text-[var(--color-white)]
 
-                              text-[var(--color-deep)]
+                              dark:bg-[var(--color-white)]
+                              dark:text-[var(--color-black)]
                             "
                           >
                             <Icon
@@ -835,29 +797,26 @@ export default function Header() {
                             />
                           </div>
 
-
                           {/* Text */}
 
                           <div>
-
                             <h3
                               className="
                                 text-sm
                                 font-black
 
-                                text-[var(--color-deep)]
+                                text-[var(--color-black)]
 
                                 transition-colors
 
-                                group-hover:text-[var(--color-green)]
+                                group-hover:text-[var(--color-black)]
 
-                                dark:text-[var(--color-cream)]
-                                dark:group-hover:text-[var(--color-gold)]
+                                dark:text-[var(--color-white)]
+                                dark:group-hover:text-[var(--color-white)]
                               "
                             >
                               {service.title}
                             </h3>
-
 
                             <p
                               className="
@@ -866,31 +825,24 @@ export default function Header() {
                                 text-xs
                                 leading-5
 
-                                text-[var(--color-deep)]/50
+                                text-[var(--color-black)]/50
 
-                                dark:text-[var(--color-cream)]/50
+                                dark:text-[var(--color-white)]/50
                               "
                             >
                               {
                                 service.description
                               }
                             </p>
-
                           </div>
-
                         </Link>
                       );
                     }
                   )}
-
                 </div>
-
               </div>
-
             </div>
-
           </div>
-
 
           {/* =====================================================
               MOBILE MENU
@@ -902,17 +854,17 @@ export default function Header() {
               overflow-hidden
 
               border-t
-              border-[var(--color-deep)]/10
+              border-[var(--color-black)]/10
 
-              bg-[var(--color-cream)]
+              bg-[var(--color-white)]
 
               transition-all
               duration-300
 
               lg:hidden
 
-              dark:border-[var(--color-cream)]/10
-              dark:bg-[var(--color-deep)]
+              dark:border-[var(--color-white)]/10
+              dark:bg-[var(--color-black)]
 
               ${
                 menuOpen
@@ -921,7 +873,6 @@ export default function Header() {
               }
             `}
           >
-
             <div
               className="
                 container-custom
@@ -929,9 +880,7 @@ export default function Header() {
                 py-5
               "
             >
-
               <nav className="flex flex-col">
-
 
                 {/* Home */}
 
@@ -940,22 +889,21 @@ export default function Header() {
                   onClick={closeMenus}
                   className="
                     border-b
-                    border-[var(--color-deep)]/10
+                    border-[var(--color-black)]/10
 
                     py-4
 
                     text-lg
                     font-bold
 
-                    text-[var(--color-deep)]
+                    text-[var(--color-black)]
 
-                    dark:border-[var(--color-cream)]/10
-                    dark:text-[var(--color-cream)]
+                    dark:border-[var(--color-white)]/10
+                    dark:text-[var(--color-white)]
                   "
                 >
                   Home
                 </Link>
-
 
                 {/* About */}
 
@@ -964,22 +912,21 @@ export default function Header() {
                   onClick={closeMenus}
                   className="
                     border-b
-                    border-[var(--color-deep)]/10
+                    border-[var(--color-black)]/10
 
                     py-4
 
                     text-lg
                     font-bold
 
-                    text-[var(--color-deep)]
+                    text-[var(--color-black)]
 
-                    dark:border-[var(--color-cream)]/10
-                    dark:text-[var(--color-cream)]
+                    dark:border-[var(--color-white)]/10
+                    dark:text-[var(--color-white)]
                   "
                 >
                   About
                 </Link>
-
 
                 {/* Services */}
 
@@ -997,7 +944,7 @@ export default function Header() {
                     justify-between
 
                     border-b
-                    border-[var(--color-deep)]/10
+                    border-[var(--color-black)]/10
 
                     py-4
 
@@ -1005,16 +952,15 @@ export default function Header() {
                     text-lg
                     font-bold
 
-                    text-[var(--color-deep)]
+                    text-[var(--color-black)]
 
-                    dark:border-[var(--color-cream)]/10
-                    dark:text-[var(--color-cream)]
+                    dark:border-[var(--color-white)]/10
+                    dark:text-[var(--color-white)]
                   "
                   aria-expanded={
                     mobileServicesOpen
                   }
                 >
-
                   Services
 
                   <ChevronDown
@@ -1030,9 +976,7 @@ export default function Header() {
                       }
                     `}
                   />
-
                 </button>
-
 
                 {/* Mobile Services */}
 
@@ -1049,22 +993,20 @@ export default function Header() {
                     }
                   `}
                 >
-
                   <div
                     className="
                       border-b
-                      border-[var(--color-deep)]/10
+                      border-[var(--color-black)]/10
 
-                      bg-[var(--color-deep)]/[0.025]
+                      bg-[var(--color-black)]/[0.025]
 
                       px-4
                       py-3
 
-                      dark:border-[var(--color-cream)]/10
-                      dark:bg-[var(--color-cream)]/[0.03]
+                      dark:border-[var(--color-white)]/10
+                      dark:bg-[var(--color-white)]/[0.03]
                     "
                   >
-
                     {/* View All */}
 
                     <Link
@@ -1075,7 +1017,7 @@ export default function Header() {
                         flex
                         rounded-xl
 
-                        bg-[var(--color-gold)]
+                        bg-[var(--color-black)]
 
                         px-4
                         py-3
@@ -1083,12 +1025,14 @@ export default function Header() {
                         text-sm
                         font-black
 
-                        text-[var(--color-deep)]
+                        text-[var(--color-white)]
+
+                        dark:bg-[var(--color-white)]
+                        dark:text-[var(--color-black)]
                       "
                     >
                       View All Services
                     </Link>
-
 
                     {/* Services */}
 
@@ -1118,38 +1062,34 @@ export default function Header() {
                               text-sm
                               font-bold
 
-                              text-[var(--color-deep)]/70
+                              text-[var(--color-black)]/70
 
                               transition
 
-                              hover:bg-[var(--color-gold)]/15
-                              hover:text-[var(--color-green)]
+                              hover:bg-[var(--color-black)]/[0.06]
+                              hover:text-[var(--color-black)]
 
-                              dark:text-[var(--color-cream)]/70
-                              dark:hover:text-[var(--color-gold)]
+                              dark:text-[var(--color-white)]/70
+                              dark:hover:bg-[var(--color-white)]/[0.08]
+                              dark:hover:text-[var(--color-white)]
                             "
                           >
-
                             <Icon
                               size={17}
                               className="
-                                text-[var(--color-green)]
+                                text-[var(--color-black)]
 
-                                dark:text-[var(--color-gold)]
+                                dark:text-[var(--color-white)]
                               "
                             />
 
                             {service.title}
-
                           </Link>
                         );
                       }
                     )}
-
                   </div>
-
                 </div>
-
 
                 {/* Work */}
 
@@ -1158,22 +1098,21 @@ export default function Header() {
                   onClick={closeMenus}
                   className="
                     border-b
-                    border-[var(--color-deep)]/10
+                    border-[var(--color-black)]/10
 
                     py-4
 
                     text-lg
                     font-bold
 
-                    text-[var(--color-deep)]
+                    text-[var(--color-black)]
 
-                    dark:border-[var(--color-cream)]/10
-                    dark:text-[var(--color-cream)]
+                    dark:border-[var(--color-white)]/10
+                    dark:text-[var(--color-white)]
                   "
                 >
                   Work
                 </Link>
-
 
                 {/* Blog */}
 
@@ -1182,22 +1121,21 @@ export default function Header() {
                   onClick={closeMenus}
                   className="
                     border-b
-                    border-[var(--color-deep)]/10
+                    border-[var(--color-black)]/10
 
                     py-4
 
                     text-lg
                     font-bold
 
-                    text-[var(--color-deep)]
+                    text-[var(--color-black)]
 
-                    dark:border-[var(--color-cream)]/10
-                    dark:text-[var(--color-cream)]
+                    dark:border-[var(--color-white)]/10
+                    dark:text-[var(--color-white)]
                   "
                 >
                   Blog
                 </Link>
-
 
                 {/* Contact */}
 
@@ -1206,22 +1144,21 @@ export default function Header() {
                   onClick={closeMenus}
                   className="
                     border-b
-                    border-[var(--color-deep)]/10
+                    border-[var(--color-black)]/10
 
                     py-4
 
                     text-lg
                     font-bold
 
-                    text-[var(--color-deep)]
+                    text-[var(--color-black)]
 
-                    dark:border-[var(--color-cream)]/10
-                    dark:text-[var(--color-cream)]
+                    dark:border-[var(--color-white)]/10
+                    dark:text-[var(--color-white)]
                   "
                 >
                   Contact
                 </Link>
-
 
                 {/* CTA */}
 
@@ -1241,15 +1178,10 @@ export default function Header() {
                 >
                   Let&apos;s Talk
                 </Button>
-
               </nav>
-
             </div>
-
           </div>
-
         </header>
-
       </div>
     </>
   );

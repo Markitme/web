@@ -40,213 +40,52 @@ export default async function BlogPage({ searchParams }) {
     <main
       className="
         min-h-screen
-        bg-[var(--color-cream)]
-        text-[var(--color-deep)]
+        bg-[var(--background)]
+        text-[var(--foreground)]
         transition-colors
         duration-300
 
-        dark:bg-[var(--color-night)]
-        dark:text-[var(--color-cream)]
+        dark:bg-[var(--background)]
+        dark:text-[var(--foreground)]
       "
     >
-      {/* =====================================================
-          HERO
-      ===================================================== */}
-
       <section
         className="
           relative
           overflow-hidden
           border-b
-          border-[var(--color-deep)]/10
-
-          dark:border-[var(--color-cream)]/10
+          border-[var(--border)]
+          dark:border-[var(--border)]
         "
       >
-        {/* Background grid */}
+        <div className="pointer-events-none absolute inset-0 about-grid opacity-50" />
 
-        <div
-          className="
-            pointer-events-none
-            absolute
-            inset-0
-            about-grid
-            opacity-50
-          "
-        />
+        <div className="pointer-events-none absolute -right-24 top-10 h-64 w-64 rounded-full bg-[var(--foreground)]/5 blur-3xl" />
+        <div className="pointer-events-none absolute -left-24 bottom-0 h-56 w-56 rounded-full bg-[var(--foreground)]/4 blur-3xl" />
 
-        {/* Decorative blobs */}
-
-        <div
-          className="
-            pointer-events-none
-            absolute
-            -right-24
-            top-10
-            h-64
-            w-64
-            rounded-full
-            bg-[var(--color-gold)]/10
-            blur-3xl
-          "
-        />
-
-        <div
-          className="
-            pointer-events-none
-            absolute
-            -left-24
-            bottom-0
-            h-56
-            w-56
-            rounded-full
-            bg-[var(--color-green)]/10
-            blur-3xl
-          "
-        />
-
-        <div
-          className="
-            container-custom
-            relative
-            px-5
-            py-24
-
-            sm:py-32
-            lg:py-36
-          "
-        >
+        <div className="container-custom relative px-5 py-24 sm:py-32 lg:py-36">
           <div className="max-w-[920px]">
-
-            {/* Eyebrow */}
-
             <div className="flex items-center gap-2">
-
-              <span
-                className="
-                  h-1.5
-                  w-1.5
-                  rounded-full
-                  bg-[var(--color-gold)]
-                "
-              />
-
-              <p
-                className="
-                  text-[8px]
-                  font-black
-                  uppercase
-                  tracking-[0.22em]
-
-                  text-[var(--color-green)]
-
-                  sm:text-[9px]
-
-                  dark:text-[var(--color-gold)]
-                "
-              >
+              <span className="h-1.5 w-1.5 rounded-full bg-[var(--foreground)]" />
+              <p className="text-[8px] font-black uppercase tracking-[0.22em] text-[var(--muted)] sm:text-[9px] dark:text-[var(--foreground)]/80">
                 MarkitMe Insights
               </p>
-
-              <span
-                className="
-                  h-1.5
-                  w-1.5
-                  rounded-full
-
-                  bg-[var(--color-green)]
-
-                  dark:bg-[var(--color-gold)]
-                "
-              />
-
+              <span className="h-1.5 w-1.5 rounded-full bg-[var(--muted)] dark:bg-[var(--foreground)]/70" />
             </div>
 
-
-            {/* Heading */}
-
-            <h1
-              className="
-                mt-4
-                max-w-4xl
-
-                text-4xl
-                font-black
-                leading-[0.92]
-                tracking-[-0.06em]
-
-                text-[var(--color-deep)]
-
-                sm:text-5xl
-                md:text-6xl
-                lg:text-7xl
-
-                dark:text-[var(--color-cream)]
-              "
-            >
-              Ideas worth putting
-              into{" "}
-
-              <span
-                className="
-                  text-[var(--color-green)]
-
-                  dark:text-[var(--color-gold)]
-                "
-              >
-                action.
-              </span>
+            <h1 className="mt-4 max-w-4xl text-4xl font-black leading-[0.92] tracking-[-0.06em] text-[var(--foreground)] sm:text-5xl md:text-6xl lg:text-7xl dark:text-[var(--foreground)]">
+              Ideas worth putting into <span className="text-[var(--muted)] dark:text-[var(--foreground)]/80">action.</span>
             </h1>
 
-
-            {/* Description */}
-
-            <p
-              className="
-                mt-7
-                max-w-2xl
-
-                text-base
-                leading-7
-
-                text-[var(--color-deep)]/60
-
-                sm:text-lg
-                sm:leading-8
-
-                dark:text-[var(--color-cream)]/60
-              "
-            >
-              Practical perspectives on branding,
-              websites, marketing, content, and
-              sustainable business growth.
+            <p className="mt-7 max-w-2xl text-base leading-7 text-[var(--foreground)]/70 sm:text-lg sm:leading-8 dark:text-[var(--foreground)]/70">
+              Practical perspectives on branding, websites, marketing, content, and sustainable business growth.
             </p>
-
           </div>
         </div>
       </section>
 
-
-      {/* =====================================================
-          BLOG LIST
-      ===================================================== */}
-
-      <section
-        className="
-          px-5
-          py-20
-
-          sm:py-28
-        "
-      >
+      <section className="px-5 py-20 sm:py-28">
         <div className="container-custom">
-
-          
-
-          {/* =================================================
-              POSTS
-          ================================================== */}
-
           {formattedPosts.length === 0 ? (
 
             <div
@@ -297,27 +136,27 @@ export default async function BlogPage({ searchParams }) {
                       rounded-[28px]
 
                       border
-                      border-[var(--color-deep)]/10
+                      border-[var(--border)]
 
-                      bg-white/50
+                      bg-[var(--surface-soft)]
 
                       p-3
 
-                      shadow-[0_10px_40px_rgba(12,59,46,0.03)]
+                      shadow-[0_10px_40px_rgba(17,17,17,0.03)]
 
                       transition-all
                       duration-300
 
                       hover:-translate-y-1.5
 
-                      hover:border-[var(--color-green)]/40
+                      hover:border-[var(--foreground)]/30
 
-                      hover:shadow-[0_20px_60px_rgba(12,59,46,0.08)]
+                      hover:shadow-[0_20px_60px_rgba(17,17,17,0.08)]
 
-                      dark:border-[var(--color-cream)]/10
-                      dark:bg-[var(--color-cream)]/[0.035]
+                      dark:border-[var(--border)]
+                      dark:bg-[var(--surface-soft)]
 
-                      dark:hover:border-[var(--color-gold)]/40
+                      dark:hover:border-[var(--foreground)]/35
 
                       dark:hover:shadow-[0_20px_60px_rgba(0,0,0,0.15)]
                     "
@@ -390,7 +229,7 @@ export default async function BlogPage({ searchParams }) {
 
                             rounded-full
 
-                            bg-[var(--color-cream)]/90
+                            bg-[var(--background)]/90
 
                             px-3
                             py-1.5
@@ -400,12 +239,12 @@ export default async function BlogPage({ searchParams }) {
                             uppercase
                             tracking-[0.12em]
 
-                            text-[var(--color-deep)]
+                            text-[var(--foreground)]
 
                             backdrop-blur-md
 
-                            dark:bg-[var(--color-night)]/85
-                            dark:text-[var(--color-cream)]
+                            dark:bg-[var(--background)]/85
+                            dark:text-[var(--foreground)]
                           "
                         >
                           Read
@@ -424,11 +263,11 @@ export default async function BlogPage({ searchParams }) {
                           overflow-hidden
                           rounded-[20px]
 
-                          bg-[var(--color-green)]
+                          bg-[var(--foreground)]
 
                           p-6
 
-                          dark:bg-[var(--color-gold)]
+                          dark:bg-[var(--foreground)]
                         "
                       >
                         <div
@@ -440,9 +279,9 @@ export default async function BlogPage({ searchParams }) {
                             w-32
                             rounded-full
                             border-[20px]
-                            border-[var(--color-gold)]/30
+                            border-[var(--background)]/35
 
-                            dark:border-[var(--color-green)]/30
+                            dark:border-[var(--background)]/30
                           "
                         />
 
@@ -454,9 +293,9 @@ export default async function BlogPage({ searchParams }) {
                             uppercase
                             tracking-[0.12em]
 
-                            text-[var(--color-cream)]
+                            text-[var(--background)]
 
-                            dark:text-[var(--color-deep)]
+                            dark:text-[var(--background)]
                           "
                         >
                           MarkitMe Insights
@@ -488,11 +327,11 @@ export default async function BlogPage({ searchParams }) {
                           uppercase
                           tracking-[0.22em]
 
-                          text-[var(--color-green)]
+                          text-[var(--muted)]
 
                           sm:text-[9px]
 
-                          dark:text-[var(--color-gold)]
+                          dark:text-[var(--foreground)]/80
                         "
                       >
                         {post.category}
@@ -512,11 +351,11 @@ export default async function BlogPage({ searchParams }) {
                           leading-[1.05]
                           tracking-[-0.035em]
 
-                          text-[var(--color-deep)]
+                          text-[var(--foreground)]
 
                           sm:text-[25px]
 
-                          dark:text-[var(--color-cream)]
+                          dark:text-[var(--foreground)]
                         "
                         dangerouslySetInnerHTML={{
                           __html: post.title,
@@ -535,9 +374,9 @@ export default async function BlogPage({ searchParams }) {
                           text-sm
                           leading-6
 
-                          text-[var(--color-deep)]/60
+                          text-[var(--foreground)]/70
 
-                          dark:text-[var(--color-cream)]/60
+                          dark:text-[var(--foreground)]/70
                         "
                         dangerouslySetInnerHTML={{
                           __html: post.excerpt,
@@ -621,18 +460,18 @@ export default async function BlogPage({ searchParams }) {
                           text-sm
                           font-black
 
-                          text-[var(--color-deep)]
+                          text-[var(--foreground)]
 
                           transition-all
                           duration-300
 
                           group-hover:gap-3
 
-                          hover:text-[var(--color-green)]
+                          hover:text-[var(--muted)]
 
-                          dark:text-[var(--color-cream)]
+                          dark:text-[var(--foreground)]
 
-                          dark:hover:text-[var(--color-gold)]
+                          dark:hover:text-[var(--foreground)]/80
                         "
                       >
                         Read article
@@ -666,12 +505,12 @@ export default async function BlogPage({ searchParams }) {
                 <Link
                   href={`/blog?page=${currentPage - 1}`}
                   aria-label="Previous page"
-                  className="flex h-11 w-11 items-center justify-center rounded-full border border-[var(--color-deep)]/15 text-[var(--color-deep)] transition-colors hover:border-[var(--color-green)] hover:text-[var(--color-green)] dark:border-[var(--color-cream)]/15 dark:text-[var(--color-cream)] dark:hover:border-[var(--color-gold)] dark:hover:text-[var(--color-gold)]"
+                  className="flex h-11 w-11 items-center justify-center rounded-full border border-[var(--border)] bg-[var(--surface)] text-[var(--foreground)] transition-colors hover:border-[var(--foreground)]/40 hover:text-[var(--foreground)] dark:border-[var(--border)] dark:bg-[var(--surface)] dark:text-[var(--foreground)] dark:hover:border-[var(--foreground)]/40"
                 >
                   <ChevronLeft size={18} />
                 </Link>
               ) : (
-                <span className="flex h-11 w-11 items-center justify-center rounded-full border border-[var(--color-deep)]/10 text-[var(--color-deep)]/25 dark:border-[var(--color-cream)]/10 dark:text-[var(--color-cream)]/25">
+                <span className="flex h-11 w-11 items-center justify-center rounded-full border border-[var(--border)] bg-[var(--surface-soft)] text-[var(--foreground)]/30 dark:border-[var(--border)] dark:bg-[var(--surface-soft)] dark:text-[var(--foreground)]/30">
                   <ChevronLeft size={18} />
                 </span>
               )}
@@ -686,8 +525,8 @@ export default async function BlogPage({ searchParams }) {
                     }
                     className={`flex h-11 min-w-11 items-center justify-center rounded-full px-3 text-sm font-bold transition-colors ${
                       pageNumber === currentPage
-                        ? "bg-[var(--color-gold)] text-[var(--color-deep)]"
-                        : "border border-[var(--color-deep)]/15 text-[var(--color-deep)] hover:border-[var(--color-green)] hover:text-[var(--color-green)] dark:border-[var(--color-cream)]/15 dark:text-[var(--color-cream)] dark:hover:border-[var(--color-gold)] dark:hover:text-[var(--color-gold)]"
+                        ? "bg-[var(--foreground)] text-[var(--background)]"
+                        : "border border-[var(--border)] bg-[var(--surface)] text-[var(--foreground)] hover:border-[var(--foreground)]/40 hover:text-[var(--foreground)] dark:border-[var(--border)] dark:bg-[var(--surface)] dark:text-[var(--foreground)] dark:hover:border-[var(--foreground)]/40"
                     }`}
                   >
                     {pageNumber}
@@ -699,12 +538,12 @@ export default async function BlogPage({ searchParams }) {
                 <Link
                   href={`/blog?page=${currentPage + 1}`}
                   aria-label="Next page"
-                  className="flex h-11 w-11 items-center justify-center rounded-full border border-[var(--color-deep)]/15 text-[var(--color-deep)] transition-colors hover:border-[var(--color-green)] hover:text-[var(--color-green)] dark:border-[var(--color-cream)]/15 dark:text-[var(--color-cream)] dark:hover:border-[var(--color-gold)] dark:hover:text-[var(--color-gold)]"
+                  className="flex h-11 w-11 items-center justify-center rounded-full border border-[var(--border)] bg-[var(--surface)] text-[var(--foreground)] transition-colors hover:border-[var(--foreground)]/40 hover:text-[var(--foreground)] dark:border-[var(--border)] dark:bg-[var(--surface)] dark:text-[var(--foreground)] dark:hover:border-[var(--foreground)]/40"
                 >
                   <ChevronRight size={18} />
                 </Link>
               ) : (
-                <span className="flex h-11 w-11 items-center justify-center rounded-full border border-[var(--color-deep)]/10 text-[var(--color-deep)]/25 dark:border-[var(--color-cream)]/10 dark:text-[var(--color-cream)]/25">
+                <span className="flex h-11 w-11 items-center justify-center rounded-full border border-[var(--border)] bg-[var(--surface-soft)] text-[var(--foreground)]/30 dark:border-[var(--border)] dark:bg-[var(--surface-soft)] dark:text-[var(--foreground)]/30">
                   <ChevronRight size={18} />
                 </span>
               )}

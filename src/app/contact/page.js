@@ -90,12 +90,12 @@ export default function ContactPage() {
   };
 
   return (
-    <main className="bg-[var(--color-cream)] text-[var(--color-deep)] transition-colors duration-300 dark:bg-[var(--color-night)] dark:text-[var(--color-cream)]">
+    <main className="bg-[var(--background)] text-[var(--foreground)] transition-colors duration-300 dark:bg-[var(--background)] dark:text-[var(--foreground)]">
 
       {/* =====================================================
           HERO / CONTACT
       ===================================================== */}
-      <section className="relative overflow-hidden border-b border-[var(--color-deep)]/10 bg-[var(--color-cream)] dark:border-[var(--color-cream)]/10 dark:bg-[var(--color-night)]">
+      <section className="relative overflow-hidden border-b border-[var(--border)] bg-[var(--background)] dark:border-[var(--border)] dark:bg-[var(--background)]">
 
         <div className="container-custom relative px-5 py-16 sm:py-20 lg:py-24">
 
@@ -111,24 +111,24 @@ export default function ContactPage() {
 
                 <div className="flex items-center gap-2">
 
-                  <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-gold)]" />
+                  <span className="h-1.5 w-1.5 rounded-full bg-[var(--foreground)]" />
 
-                  <p className="text-[8px] font-black uppercase tracking-[0.22em] text-[var(--color-green)] dark:text-[var(--color-gold)] sm:text-[9px]">
+                  <p className="text-[8px] font-black uppercase tracking-[0.22em] text-[var(--muted)] dark:text-[var(--muted)] sm:text-[9px]">
                     Contact MarkitMe
                   </p>
 
-                  <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-green)] dark:bg-[var(--color-gold)]" />
+                  <span className="h-1.5 w-1.5 rounded-full bg-[var(--foreground)]" />
 
                 </div>
 
-                <h1 className="mt-4 text-3xl font-black leading-[0.95] tracking-[-0.055em] text-[var(--color-deep)] sm:text-4xl md:text-5xl lg:text-6xl dark:text-[var(--color-cream)]">
+                <h1 className="mt-4 text-3xl font-black leading-[0.95] tracking-[-0.055em] text-[var(--foreground)] sm:text-4xl md:text-5xl lg:text-6xl dark:text-[var(--foreground)]">
                   Let&apos;s build something{" "}
-                  <span className="text-[var(--color-green)] dark:text-[var(--color-gold)]">
+                  <span className="text-[var(--muted)] dark:text-[var(--muted)]">
                     that matters.
                   </span>
                 </h1>
 
-                <p className="mt-6 max-w-2xl text-lg leading-8 text-[var(--color-deep)]/60 dark:text-[var(--color-cream)]/60 sm:text-xl">
+                <p className="mt-6 max-w-2xl text-lg leading-8 text-[var(--foreground)]/70 dark:text-[var(--foreground)]/70 sm:text-xl">
                   Have a project, challenge, or growth goal in mind?
                   Tell us about it, and we&apos;ll explore how we can
                   help turn your ideas into meaningful digital growth.
@@ -142,18 +142,18 @@ export default function ContactPage() {
                 {/* Email */}
                 <div className="flex items-center gap-4">
 
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[var(--color-gold)] text-[var(--color-deep)]">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[var(--foreground)] text-[var(--background)]">
                     <Mail size={20} />
                   </div>
 
                   <div>
-                    <p className="text-sm text-[var(--color-deep)]/50 dark:text-[var(--color-cream)]/50">
+                    <p className="text-sm text-[var(--muted)] dark:text-[var(--muted)]">
                       Email
                     </p>
 
                     <a
                       href="mailto:info@markitme.ca"
-                      className="font-bold transition hover:text-[var(--color-green)] dark:hover:text-[var(--color-gold)]"
+                      className="font-bold transition hover:text-[var(--foreground)] dark:hover:text-[var(--foreground)]"
                     >
                       info@markitme.ca
                     </a>
@@ -164,18 +164,18 @@ export default function ContactPage() {
                 {/* Phone */}
                 <div className="flex items-center gap-4">
 
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[var(--color-gold)] text-[var(--color-deep)]">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[var(--foreground)] text-[var(--background)]">
                     <Phone size={20} />
                   </div>
 
                   <div>
-                    <p className="text-sm text-[var(--color-deep)]/50 dark:text-[var(--color-cream)]/50">
+                    <p className="text-sm text-[var(--muted)] dark:text-[var(--muted)]">
                       Phone
                     </p>
 
                     <a
                       href="tel:+16139814844"
-                      className="font-bold transition hover:text-[var(--color-green)] dark:hover:text-[var(--color-gold)]"
+                      className="font-bold transition hover:text-[var(--foreground)] dark:hover:text-[var(--foreground)]"
                     >
                       +1 (613)-981-4844
                     </a>
@@ -186,16 +186,16 @@ export default function ContactPage() {
                 {/* Location */}
                 <div className="flex items-center gap-4">
 
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[var(--color-gold)] text-[var(--color-deep)]">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[var(--foreground)] text-[var(--background)]">
                     <MapPin size={20} />
                   </div>
 
                   <div>
-                    <p className="text-sm text-[var(--color-deep)]/50 dark:text-[var(--color-cream)]/50">
+                    <p className="text-sm text-[var(--muted)] dark:text-[var(--muted)]">
                       Location
                     </p>
 
-                    <p className="font-bold text-[var(--color-deep)] dark:text-[var(--color-cream)]">
+                    <p className="font-bold text-[var(--foreground)] dark:text-[var(--foreground)]">
                       34 Minowan Miikan Lane,
                       <br />
                       Toronto, M6J 0G3
@@ -214,7 +214,7 @@ export default function ContactPage() {
             ================================================= */}
             <form
               onSubmit={handleSubmit}
-              className="rounded-[28px] border border-[var(--color-deep)]/10 bg-[var(--color-deep)]/[0.025] p-6 shadow-sm transition-all duration-300 hover:border-[var(--color-green)] dark:border-[var(--color-cream)]/10 dark:bg-[var(--color-cream)]/[0.03] dark:hover:border-[var(--color-gold)] sm:p-9"
+              className="rounded-[28px] border border-[var(--border)] bg-[var(--surface-soft)] p-6 shadow-sm transition-all duration-300 hover:border-[var(--foreground)]/30 dark:border-[var(--border)] dark:bg-[var(--surface-soft)] dark:hover:border-[var(--foreground)]/40 sm:p-9"
             >
 
               {/* Success Message */}
@@ -234,13 +234,16 @@ export default function ContactPage() {
                     sent successfully. We&apos;ll get back to you soon.
                   </p>
 
-                  <button
+                  <Button
                     type="button"
+                    variant="ghost"
+                    size="sm"
                     onClick={() => setSubmitted(false)}
-                    className="mt-7 text-sm font-bold text-[var(--color-green)] transition hover:opacity-70 dark:text-[var(--color-gold)]"
+                    className="mt-7"
+                    showArrow={false}
                   >
                     Send another message
-                  </button>
+                  </Button>
 
                 </div>
               ) : (

@@ -13,6 +13,7 @@ import {
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import Button from "./ui/Button";
 import SectionHeading from "./SectionHeading";
 
 const testimonials = [
@@ -58,16 +59,16 @@ export default function TestimonialSlider() {
         relative
         overflow-hidden
         border-y
-        border-[var(--color-deep)]/10
-        bg-[var(--color-soft)]
+        border-[var(--border)]
+        bg-[var(--surface-soft)]
         py-20
-        text-[var(--color-deep)]
+        text-[var(--foreground)]
         transition-colors
         duration-300
 
-        dark:border-[var(--color-cream)]/10
-        dark:bg-[var(--color-night)]
-        dark:text-[var(--color-cream)]
+        dark:border-[var(--border)]
+        dark:bg-[var(--background)]
+        dark:text-[var(--foreground)]
 
         sm:py-24
         lg:py-28
@@ -85,7 +86,7 @@ export default function TestimonialSlider() {
           top-0
           h-px
           w-32
-          bg-[var(--color-gold)]
+          bg-[var(--foreground)]/35
           sm:w-44
         "
       />
@@ -98,7 +99,7 @@ export default function TestimonialSlider() {
           right-0
           h-px
           w-32
-          bg-[var(--color-green)]
+          bg-[var(--foreground)]/35
           sm:w-44
         "
       />
@@ -113,9 +114,9 @@ export default function TestimonialSlider() {
           w-72
           -translate-y-1/2
           rounded-full
-          bg-[var(--color-green)]/10
+          bg-[var(--foreground)]/[0.04]
           blur-3xl
-          dark:bg-[var(--color-gold)]/[0.06]
+          dark:bg-[var(--foreground)]/[0.05]
         "
       />
 
@@ -153,7 +154,7 @@ export default function TestimonialSlider() {
                   h-1.5
                   w-1.5
                   rounded-full
-                  bg-[var(--color-gold)]
+                  bg-[var(--foreground)]
                 "
               />
 
@@ -163,9 +164,9 @@ export default function TestimonialSlider() {
                   font-black
                   uppercase
                   tracking-[0.24em]
-                  text-[var(--color-green)]
+                  text-[var(--muted)]
 
-                  dark:text-[var(--color-gold)]
+                  dark:text-[var(--muted)]
                 "
               >
                 Client Stories
@@ -176,9 +177,7 @@ export default function TestimonialSlider() {
                   h-1.5
                   w-1.5
                   rounded-full
-                  bg-[var(--color-green)]
-
-                  dark:bg-[var(--color-gold)]
+                  bg-[var(--foreground)]
                 "
               />
             </div>
@@ -189,8 +188,8 @@ export default function TestimonialSlider() {
               Trusted by teams{" "}
               <span
                 className="
-                  text-[var(--color-green)]
-                  dark:text-[var(--color-gold)]
+                  text-[var(--muted)]
+                  dark:text-[var(--muted)]
                 "
               >
                 ready to grow.
@@ -203,9 +202,9 @@ export default function TestimonialSlider() {
                 max-w-2xl
                 text-sm
                 leading-7
-                text-[var(--color-deep)]/55
+                text-[var(--foreground)]/70
 
-                dark:text-[var(--color-cream)]/55
+                dark:text-[var(--foreground)]/70
 
                 sm:text-base
               "
@@ -228,75 +227,29 @@ export default function TestimonialSlider() {
               gap-2
             "
           >
-            <button
+            <Button
               type="button"
-              className="
-                testimonial-prev
-                flex
-                h-11
-                w-11
-                items-center
-                justify-center
-                rounded-full
-                border
-                border-[var(--color-deep)]/15
-                bg-[var(--color-cream)]
-                text-[var(--color-deep)]
-                transition-all
-                duration-300
-
-                hover:-translate-x-0.5
-                hover:border-[var(--color-green)]
-                hover:bg-[var(--color-green)]
-                hover:text-white
-
-                dark:border-[var(--color-cream)]/15
-                dark:bg-[var(--color-deep)]
-                dark:text-[var(--color-cream)]
-
-                dark:hover:border-[var(--color-gold)]
-                dark:hover:bg-[var(--color-gold)]
-                dark:hover:text-[var(--color-deep)]
-
-                sm:h-12
-                sm:w-12
-              "
+              variant="outline"
+              size="sm"
+              onClick={() => {}}
+              className="testimonial-prev h-11 w-11 rounded-full p-0 sm:h-12 sm:w-12"
+              showArrow={false}
               aria-label="Previous testimonial"
             >
               <ArrowLeft size={18} />
-            </button>
+            </Button>
 
-            <button
+            <Button
               type="button"
-              className="
-                testimonial-next
-                flex
-                h-11
-                w-11
-                items-center
-                justify-center
-                rounded-full
-                bg-[var(--color-gold)]
-                text-[var(--color-deep)]
-                shadow-[0_8px_25px_rgba(255,186,0,0.18)]
-                transition-all
-                duration-300
-
-                hover:translate-x-0.5
-                hover:scale-105
-                hover:bg-[var(--color-deep)]
-                hover:text-[var(--color-gold)]
-
-                dark:hover:bg-[var(--color-cream)]
-                dark:hover:text-[var(--color-deep)]
-
-                sm:h-12
-                sm:w-12
-              "
+              variant="primary"
+              size="sm"
+              onClick={() => {}}
+              className="testimonial-next h-11 w-11 rounded-full p-0 sm:h-12 sm:w-12"
+              showArrow={false}
               aria-label="Next testimonial"
             >
               <ArrowRight size={18} />
-            </button>
+            </Button>
           </div>
         </div>
 
@@ -360,24 +313,24 @@ export default function TestimonialSlider() {
                     overflow-hidden
                     rounded-[26px]
                     border
-                    border-[var(--color-deep)]/10
-                    bg-[var(--color-cream)]
+                    border-[var(--border)]
+                    bg-[var(--card)]
                     p-6
-                    text-[var(--color-deep)]
-                    shadow-[0_10px_40px_rgba(12,59,46,0.04)]
+                    text-[var(--foreground)]
+                    shadow-[0_10px_35px_rgba(17,17,17,0.05)]
                     transition-all
                     duration-500
 
                     hover:-translate-y-1
-                    hover:border-[var(--color-green)]/45
-                    hover:shadow-[0_18px_45px_rgba(12,59,46,0.09)]
+                    hover:border-[var(--foreground)]/30
+                    hover:shadow-[0_18px_40px_rgba(17,17,17,0.08)]
 
-                    dark:border-[var(--color-cream)]/10
-                    dark:bg-[var(--color-deep)]
-                    dark:text-[var(--color-cream)]
-                    dark:shadow-none
+                    dark:border-[var(--border)]
+                    dark:bg-[var(--surface)]
+                    dark:text-[var(--foreground)]
+                    dark:shadow-[0_18px_40px_rgba(0,0,0,0.18)]
 
-                    dark:hover:border-[var(--color-gold)]/40
+                    dark:hover:border-[var(--foreground)]/40
 
                     sm:p-8
                   "
@@ -393,7 +346,7 @@ export default function TestimonialSlider() {
                       top-0
                       h-[3px]
                       w-0
-                      bg-[var(--color-gold)]
+                      bg-[var(--foreground)]
                       transition-all
                       duration-500
                       group-hover:w-full
@@ -415,15 +368,15 @@ export default function TestimonialSlider() {
                         items-center
                         justify-center
                         rounded-2xl
-                        bg-[var(--color-deep)]
-                        text-[var(--color-gold)]
+                        bg-[var(--foreground)]
+                        text-[var(--background)]
                         transition-transform
                         duration-300
 
                         group-hover:scale-105
 
-                        dark:bg-[var(--color-gold)]
-                        dark:text-[var(--color-deep)]
+                        dark:bg-[var(--foreground)]
+                        dark:text-[var(--background)]
                       "
                     >
                       <Quote
@@ -439,9 +392,9 @@ export default function TestimonialSlider() {
                         text-[9px]
                         font-black
                         tracking-[0.18em]
-                        text-[var(--color-deep)]/25
+                        text-[var(--foreground)]/35
 
-                        dark:text-[var(--color-cream)]/25
+                        dark:text-[var(--foreground)]/35
                       "
                     >
                       {String(index + 1).padStart(2, "0")}
@@ -458,7 +411,7 @@ export default function TestimonialSlider() {
                       flex
                       items-center
                       gap-1
-                      text-[var(--color-gold)]
+                      text-[var(--foreground)]
                     "
                   >
                     {[...Array(5)].map((_, starIndex) => (
@@ -482,9 +435,9 @@ export default function TestimonialSlider() {
                       font-semibold
                       leading-7
                       tracking-[-0.02em]
-                      text-[var(--color-deep)]
+                      text-[var(--foreground)]
 
-                      dark:text-[var(--color-cream)]
+                      dark:text-[var(--foreground)]
 
                       sm:text-xl
                       sm:leading-8
@@ -504,10 +457,10 @@ export default function TestimonialSlider() {
                       items-center
                       gap-3
                       border-t
-                      border-[var(--color-deep)]/10
+                      border-[var(--border)]
                       pt-6
 
-                      dark:border-[var(--color-cream)]/10
+                      dark:border-[var(--border)]
                     "
                   >
                     {/* Initials */}
@@ -521,17 +474,18 @@ export default function TestimonialSlider() {
                         items-center
                         justify-center
                         rounded-full
-                        bg-[var(--color-green)]
+                        bg-[var(--foreground)]
                         text-xs
                         font-black
-                        text-white
+                        text-[var(--background)]
                         transition-all
                         duration-300
 
-                        group-hover:bg-[var(--color-gold)]
-                        group-hover:text-[var(--color-deep)]
+                        group-hover:bg-[var(--muted)]
+                        group-hover:text-[var(--background)]
 
-                        dark:bg-[var(--color-green)]
+                        dark:bg-[var(--foreground)]
+                        dark:text-[var(--background)]
                       "
                     >
                       {testimonial.initials}
@@ -543,9 +497,9 @@ export default function TestimonialSlider() {
                           truncate
                           text-sm
                           font-black
-                          text-[var(--color-deep)]
+                          text-[var(--foreground)]
 
-                          dark:text-[var(--color-cream)]
+                          dark:text-[var(--foreground)]
                         "
                       >
                         {testimonial.name}
@@ -556,9 +510,9 @@ export default function TestimonialSlider() {
                           mt-0.5
                           truncate
                           text-xs
-                          text-[var(--color-deep)]/50
+                          text-[var(--muted)]
 
-                          dark:text-[var(--color-cream)]/50
+                          dark:text-[var(--muted)]
                         "
                       >
                         {testimonial.role} ·{" "}
@@ -615,19 +569,19 @@ export default function TestimonialSlider() {
           margin: 0 !important;
           border-radius: 999px;
           opacity: 0.25;
-          background: var(--color-deep);
+          background: var(--foreground);
           transition: all 0.3s ease;
         }
 
         .dark .testimonial-swiper .swiper-pagination-bullet {
-          background: var(--color-cream);
+          background: var(--foreground);
         }
 
         .testimonial-swiper
           .swiper-pagination-bullet.swiper-pagination-bullet-active {
           width: 22px;
           opacity: 1;
-          background: var(--color-gold);
+          background: var(--foreground);
         }
 
         /* =====================================================

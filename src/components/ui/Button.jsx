@@ -26,161 +26,140 @@ export default function Button({
     gap-2
     rounded-full
     font-bold
+
     transition-all
     duration-300
     ease-out
 
     focus:outline-none
     focus:ring-2
-    focus:ring-[var(--color-gold)]
+    focus:ring-[var(--foreground)]
     focus:ring-offset-2
-    focus:ring-offset-[var(--color-cream)]
-
-    dark:focus:ring-offset-[var(--color-deep)]
+    focus:ring-offset-[var(--background)]
 
     disabled:cursor-not-allowed
     disabled:opacity-50
   `;
-
 
   /* =====================================================
      VARIANTS
   ===================================================== */
 
   const variants = {
-
     /* =================================================
        PRIMARY
 
        Light:
-       Yellow → Dark Green hover
+       Black → Black/White contrast
 
        Dark:
-       Yellow → Cream hover
+       White → Soft white
     ================================================= */
 
     primary: `
-      bg-[var(--color-gold)]
-      text-[var(--color-deep)]
+      bg-[var(--color-black)]
+      text-[var(--color-white)]
 
-      shadow-[0_10px_30px_rgba(255,186,0,0.16)]
+      shadow-[0_10px_30px_rgba(0,0,0,0.12)]
 
       hover:-translate-y-0.5
-      hover:bg-[var(--color-deep)]
-      hover:text-[var(--color-cream)]
-      hover:shadow-[0_14px_38px_rgba(12,59,46,0.20)]
+      hover:bg-[var(--color-black-soft)]
+      hover:text-[var(--color-white)]
 
-      dark:bg-[var(--color-gold)]
-      dark:text-[var(--color-deep)]
+      hover:shadow-[0_14px_38px_rgba(0,0,0,0.18)]
 
-      dark:hover:bg-[var(--color-cream)]
-      dark:hover:text-[var(--color-deep)]
-      dark:hover:shadow-[0_14px_38px_rgba(241,243,237,0.12)]
+      dark:bg-[var(--color-white)]
+      dark:text-[var(--color-black)]
+
+      dark:hover:bg-[var(--color-white-soft)]
+      dark:hover:text-[var(--color-black)]
+
+      dark:hover:shadow-[0_14px_38px_rgba(255,255,255,0.10)]
     `,
-
 
     /* =================================================
        OUTLINE
-
-       Light:
-       Cream/transparent → Sage
-
-       Dark:
-       Transparent → Sage
     ================================================= */
 
     outline: `
       border
-      border-[var(--color-deep)]/20
+      border-[var(--foreground)]/20
+
       bg-transparent
-      text-[var(--color-deep)]
+      text-[var(--foreground)]
 
       hover:-translate-y-0.5
-      hover:border-[var(--color-green)]
-      hover:bg-[var(--color-green)]/10
-      hover:text-[var(--color-deep)]
 
-      dark:border-[var(--color-cream)]/20
-      dark:bg-transparent
-      dark:text-[var(--color-cream)]
-
-      dark:hover:border-[var(--color-green)]
-      dark:hover:bg-[var(--color-green)]
-      dark:hover:text-[var(--color-deep)]
+      hover:border-[var(--foreground)]
+      hover:bg-[var(--foreground)]
+      hover:text-[var(--background)]
     `,
 
-
     /* =================================================
-       SAGE
-
-       Useful for secondary CTAs.
+       SOFT
     ================================================= */
 
     sage: `
-      bg-[var(--color-green)]
-      text-[var(--color-deep)]
+      bg-[var(--surface-soft)]
+      text-[var(--foreground)]
+
+      border
+      border-[var(--border)]
 
       hover:-translate-y-0.5
-      hover:bg-[var(--color-deep)]
-      hover:text-[var(--color-cream)]
 
-      dark:bg-[var(--color-green)]
-      dark:text-[var(--color-deep)]
+      hover:bg-[var(--foreground)]
+      hover:text-[var(--background)]
 
-      dark:hover:bg-[var(--color-gold)]
-      dark:hover:text-[var(--color-deep)]
+      hover:border-[var(--foreground)]
     `,
-
 
     /* =================================================
        DARK
-
-       Strong forest green button.
     ================================================= */
 
     dark: `
-      bg-[var(--color-deep)]
-      text-[var(--color-cream)]
+      bg-[var(--color-black)]
+      text-[var(--color-white)]
+
+      border
+      border-[var(--color-black)]
 
       hover:-translate-y-0.5
-      hover:bg-[var(--color-green)]
-      hover:text-[var(--color-deep)]
 
-      dark:bg-[var(--color-cream)]
-      dark:text-[var(--color-deep)]
+      hover:bg-[var(--color-white)]
+      hover:text-[var(--color-black)]
 
-      dark:hover:bg-[var(--color-gold)]
-      dark:hover:text-[var(--color-deep)]
+      hover:border-[var(--color-white)]
+
+      dark:bg-[var(--color-white)]
+      dark:text-[var(--color-black)]
+
+      dark:border-[var(--color-white)]
+
+      dark:hover:bg-[var(--color-black)]
+      dark:hover:text-[var(--color-white)]
+      dark:hover:border-[var(--color-white)]
     `,
-
 
     /* =================================================
        GHOST
-
-       Minimal button.
     ================================================= */
 
     ghost: `
       bg-transparent
-      text-[var(--color-deep)]
+      text-[var(--foreground)]
 
-      hover:bg-[var(--color-green)]/10
-      hover:text-[var(--color-green)]
-
-      dark:text-[var(--color-cream)]
-
-      dark:hover:bg-[var(--color-green)]/10
-      dark:hover:text-[var(--color-gold)]
+      hover:bg-[var(--foreground)]/[0.06]
+      hover:text-[var(--foreground)]
     `,
   };
-
 
   /* =====================================================
      SIZES
   ===================================================== */
 
   const sizes = {
-
     sm: `
       min-h-10
       px-4
@@ -210,7 +189,6 @@ export default function Button({
     `,
   };
 
-
   /* =====================================================
      FINAL CLASSES
   ===================================================== */
@@ -222,36 +200,38 @@ export default function Button({
     ${className}
   `;
 
-
   /* =====================================================
-     BUTTON CONTENT
+     CONTENT
   ===================================================== */
 
   const buttonContent = (
     <>
-      <span>{children}</span>
+      <span className="inline-flex items-center gap-1.5 leading-none">
+        {children}
+      </span>
 
       {showArrow && (
-        <ArrowRight
-          size={
-            size === "xl"
-              ? 19
-              : size === "lg"
-                ? 18
-                : 16
-          }
-          strokeWidth={2.5}
-          className="
-            shrink-0
-            transition-transform
-            duration-300
-            group-hover:translate-x-1
-          "
-        />
+        <span className="inline-flex shrink-0 items-center justify-center leading-none">
+          <ArrowRight
+            size={
+              size === "xl"
+                ? 19
+                : size === "lg"
+                  ? 18
+                  : 16
+            }
+            strokeWidth={2.5}
+            className="
+              shrink-0
+              transition-transform
+              duration-300
+              group-hover:translate-x-1
+            "
+          />
+        </span>
       )}
     </>
   );
-
 
   /* =====================================================
      LINK BUTTON
@@ -263,15 +243,10 @@ export default function Button({
         href={href}
         className={buttonClasses}
         aria-disabled={disabled}
-        tabIndex={
-          disabled
-            ? -1
-            : undefined
-        }
+        tabIndex={disabled ? -1 : undefined}
         onClick={
           disabled
-            ? (event) =>
-                event.preventDefault()
+            ? (event) => event.preventDefault()
             : onClick
         }
       >
@@ -279,7 +254,6 @@ export default function Button({
       </Link>
     );
   }
-
 
   /* =====================================================
      NORMAL BUTTON

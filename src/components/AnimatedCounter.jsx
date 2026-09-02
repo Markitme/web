@@ -96,9 +96,9 @@ export default function AnimatedCounter({
         rounded-[2rem]
 
         border
-        border-[var(--color-deep)]/[0.07]
+        border-[var(--foreground)]/10
 
-        bg-white/55
+        bg-[var(--foreground)]
 
         p-6
 
@@ -110,9 +110,9 @@ export default function AnimatedCounter({
 
         hover:-translate-y-2
 
-        hover:bg-white
+        hover:bg-[var(--foreground)]
 
-        hover:shadow-[0_25px_70px_rgba(12,59,46,0.09)]
+        hover:shadow-[0_25px_70px_rgba(17,17,17,0.12)]
 
         sm:min-h-[210px]
         sm:p-8
@@ -120,12 +120,12 @@ export default function AnimatedCounter({
         lg:min-h-[230px]
         lg:rounded-[2.5rem]
 
-        dark:border-[var(--color-cream)]/[0.08]
-        dark:bg-[var(--color-deep)]/45
+        dark:border-[var(--foreground)]/10
+        dark:bg-[var(--background)]
 
-        dark:hover:bg-[var(--color-deep)]/70
+        dark:hover:bg-[var(--background)]
 
-        dark:hover:shadow-[0_25px_70px_rgba(0,0,0,0.25)]
+        dark:hover:shadow-[0_25px_70px_rgba(0,0,0,0.18)]
       "
     >
       {/* =========================================
@@ -148,17 +148,17 @@ export default function AnimatedCounter({
 
           tracking-[-0.1em]
 
-          text-[var(--color-deep)]/[0.025]
+          text-[var(--background)]/[0.12]
 
           transition-all
           duration-700
 
           group-hover:translate-x-2
-          group-hover:text-[var(--color-green)]/[0.055]
+          group-hover:text-[var(--muted)]/[0.35]
 
-          dark:text-[var(--color-cream)]/[0.025]
+          dark:text-[var(--foreground)]/[0.08]
 
-          dark:group-hover:text-[var(--color-gold)]/[0.05]
+          dark:group-hover:text-[var(--muted)]/[0.18]
 
           sm:text-[9rem]
         "
@@ -188,7 +188,7 @@ export default function AnimatedCounter({
 
             tracking-[-0.075em]
 
-            text-[var(--color-deep)]
+            text-[var(--background)]
 
             transition-all
             duration-700
@@ -199,7 +199,7 @@ export default function AnimatedCounter({
 
             lg:text-[4.5rem]
 
-            dark:text-[var(--color-cream)]
+            dark:text-[var(--foreground)]
           "
         >
           {count}
@@ -250,9 +250,9 @@ export default function AnimatedCounter({
             leading-5
             tracking-[0.12em]
 
-            text-[var(--color-deep)]/60
+            text-[var(--background)]/75
 
-            dark:text-[var(--color-cream)]/60
+            dark:text-[var(--foreground)]/70
           "
         >
           {label}
@@ -294,11 +294,11 @@ export default function AnimatedCounter({
             transition-all
             duration-700
 
+            bg-[var(--background)]
             group-hover:w-full
+
+            dark:bg-[var(--foreground)]
           "
-          style={{
-            backgroundColor: accent.color,
-          }}
         />
       </div>
 

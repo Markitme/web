@@ -40,17 +40,17 @@ export default function ClientLogoSlider() {
         overflow-hidden
 
         border-y
-        border-[var(--color-deep)]/[0.08]
+        border-[var(--border)]
 
-        bg-[#E7EDE4]
+        bg-[var(--surface-soft)]
 
         py-14
 
         transition-colors
         duration-500
 
-        dark:border-[var(--color-cream)]/[0.08]
-        dark:bg-[#071F18]
+        dark:border-[var(--border)]
+        dark:bg-[var(--surface)]
 
         sm:py-16
         lg:py-20
@@ -76,15 +76,15 @@ export default function ClientLogoSlider() {
 
             rounded-full
 
-            bg-[var(--color-green)]/[0.08]
+            bg-[var(--color-gray-light)]/[0.10]
 
             blur-[120px]
 
-            dark:bg-[var(--color-green)]/[0.045]
+            dark:bg-[var(--color-white-soft)]/[0.045]
           "
         />
 
-        {/* Gold glow */}
+        {/* Secondary glow */}
 
         <div
           className="
@@ -97,11 +97,11 @@ export default function ClientLogoSlider() {
 
             rounded-full
 
-            bg-[var(--color-gold)]/[0.07]
+            bg-[var(--color-black)]/[0.04]
 
             blur-[120px]
 
-            dark:bg-[var(--color-gold)]/[0.025]
+            dark:bg-[var(--color-white)]/[0.025]
           "
         />
 
@@ -121,11 +121,11 @@ export default function ClientLogoSlider() {
 
             rounded-full
 
-            bg-[var(--color-green)]/[0.025]
+            bg-[var(--color-gray-light)]/[0.04]
 
             blur-[120px]
 
-            dark:bg-[var(--color-cream)]/[0.015]
+            dark:bg-[var(--color-white)]/[0.015]
           "
         />
       </div>

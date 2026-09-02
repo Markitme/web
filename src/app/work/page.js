@@ -11,7 +11,7 @@ export const metadata = {
 
 export default function WorkPage() {
   return (
-    <main className=" transition-colors duration-300 bg-[var(--color-cream)] text-[var(--color-deep)] dark:bg-[var(--color-night)] dark:text-[var(--color-cream)]">
+    <main className=" transition-colors duration-300 bg-[var(--background)] text-[var(--foreground)] dark:bg-[var(--background)] dark:text-[var(--foreground)]">
 
       {/* =====================================================
           HERO
@@ -23,7 +23,7 @@ export default function WorkPage() {
           {/* Eyebrow */}
 
           <div className="inline-flex items-center gap-3">
-            <span className="h-2 w-2 rounded-full bg-[var(--color-gold)]" />
+            <span className="h-2 w-2 rounded-full bg-[var(--foreground)]" />
 
             <p
               className="
@@ -31,8 +31,8 @@ export default function WorkPage() {
                 font-black
                 uppercase
                 tracking-[0.2em]
-                text-[var(--color-green)]
-                dark:text-[var(--color-gold)]
+                text-[var(--muted)]
+                dark:text-[var(--foreground)]/80
               "
             >
               Case Studies
@@ -71,8 +71,8 @@ export default function WorkPage() {
               max-w-2xl
               text-sm
               leading-7
-              text-[var(--color-deep)]/55
-              dark:text-[var(--color-cream)]/55
+              text-[var(--foreground)]/70
+              dark:text-[var(--foreground)]/70
               sm:text-base
             "
           >
@@ -106,7 +106,7 @@ export default function WorkPage() {
                   h-1.5
                   w-1.5
                   rounded-full
-                  bg-[var(--color-gold)]
+                  bg-[var(--foreground)]
                 "
               />
 
@@ -116,8 +116,8 @@ export default function WorkPage() {
                   font-black
                   uppercase
                   tracking-[0.24em]
-                  text-[var(--color-green)]
-                  dark:text-[var(--color-gold)]
+                  text-[var(--muted)]
+                  dark:text-[var(--foreground)]/80
                 "
               >
                 Our Latest Projects
@@ -128,8 +128,8 @@ export default function WorkPage() {
                   h-1.5
                   w-1.5
                   rounded-full
-                  bg-[var(--color-green)]
-                  dark:bg-[var(--color-gold)]
+                  bg-[var(--muted)]
+                  dark:bg-[var(--foreground)]/70
                 "
               />
 
@@ -154,7 +154,7 @@ export default function WorkPage() {
               "
             >
               Work built to move{" "}
-              <span className="text-[var(--color-green)] dark:text-[var(--color-gold)]">
+              <span className="text-[var(--muted)] dark:text-[var(--foreground)]/80">
                 businesses forward.
               </span>
             </h2>
@@ -167,9 +167,9 @@ export default function WorkPage() {
                 max-w-2xl
                 text-sm
                 leading-7
-                text-[var(--color-deep)]/55
+                text-[var(--foreground)]/70
 
-                dark:text-[var(--color-cream)]/55
+                dark:text-[var(--foreground)]/70
 
                 sm:text-base
               "
@@ -196,19 +196,19 @@ export default function WorkPage() {
                   overflow-hidden
                   rounded-[28px]
                   border
-                  border-[var(--color-deep)]/10
-                  bg-[var(--color-cream)]/50
+                  border-[var(--border)]
+                  bg-[var(--surface-soft)]
                   transition-all
                   duration-500
 
                   hover:-translate-y-1
-                  hover:border-[var(--color-green)]
+                  hover:border-[var(--foreground)]/40
                   hover:shadow-xl
 
-                  dark:border-[var(--color-cream)]/10
-                  dark:bg-white/[0.03]
+                  dark:border-[var(--border)]
+                  dark:bg-[var(--surface-soft)]
 
-                  dark:hover:border-[var(--color-gold)]
+                  dark:hover:border-[var(--foreground)]/40
                 "
               >
 
@@ -221,8 +221,8 @@ export default function WorkPage() {
                     relative
                     aspect-[16/10]
                     overflow-hidden
-                    bg-[var(--color-deep)]/5
-                    dark:bg-white/10
+                    bg-[var(--foreground)]/5
+                    dark:bg-[var(--foreground)]/8
                   "
                 >
 
@@ -309,8 +309,8 @@ export default function WorkPage() {
                       font-black
                       uppercase
                       tracking-[0.2em]
-                      text-[var(--color-green)]
-                      dark:text-[var(--color-gold)]
+                      text-[var(--muted)]
+                      dark:text-[var(--foreground)]/80
                     "
                   >
                     {project.category}
@@ -325,8 +325,8 @@ export default function WorkPage() {
                       font-black
                       leading-[1]
                       tracking-[-0.045em]
-                      text-[var(--color-deep)]
-                      dark:text-[var(--color-cream)]
+                      text-[var(--foreground)]
+                      dark:text-[var(--foreground)]
                     "
                   >
                     {project.title}
@@ -339,8 +339,8 @@ export default function WorkPage() {
                       mt-3
                       text-sm
                       font-semibold
-                      text-[var(--color-deep)]/45
-                      dark:text-[var(--color-cream)]/45
+                      text-[var(--foreground)]/60
+                      dark:text-[var(--foreground)]/60
                     "
                   >
                     {project.location}
@@ -353,8 +353,8 @@ export default function WorkPage() {
                       mt-5
                       text-sm
                       leading-7
-                      text-[var(--color-deep)]/60
-                      dark:text-[var(--color-cream)]/60
+                      text-[var(--foreground)]/70
+                      dark:text-[var(--foreground)]/70
                     "
                   >
                     {project.description}
@@ -371,21 +371,23 @@ export default function WorkPage() {
                       items-center
                       gap-3
                       rounded-full
-                      bg-[var(--color-gold)]
+                      bg-[var(--foreground)]
                       px-6
                       py-3.5
                       text-sm
                       font-bold
-                      text-[var(--color-deep)]
+                      text-[var(--background)]
                       transition-all
                       duration-300
 
                       hover:scale-[1.03]
-                      hover:bg-[var(--color-deep)]
-                      hover:text-[var(--color-gold)]
+                      hover:bg-[var(--foreground)]/90
+                      hover:text-[var(--background)]
 
-                      dark:hover:bg-[var(--color-cream)]
-                      dark:hover:text-[var(--color-deep)]
+                      dark:bg-[var(--foreground)]
+                      dark:text-[var(--background)]
+                      dark:hover:bg-[var(--foreground)]/90
+                      dark:hover:text-[var(--background)]
                     "
                   >
                     View Case Study
