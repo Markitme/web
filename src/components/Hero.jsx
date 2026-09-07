@@ -243,15 +243,32 @@ export default function Hero() {
       id="home"
       className="
         hero-section
+        section-dark
         relative
         isolate
         min-h-[700px]
         overflow-hidden
-        bg-[var(--background)]
-        dark:bg-[var(--background)]
+        bg-[var(--section-dark)]
       "
       style={{
-        background: "linear-gradient(180deg, #07080d 0%, #0d1017 100%)",
+        background: `
+          radial-gradient(
+            circle at 92% 4%,
+            color-mix(in srgb, var(--accent-bright) 52%, transparent),
+            transparent 34%
+          ),
+          radial-gradient(
+            circle at 10% 82%,
+            color-mix(in srgb, var(--accent) 42%, transparent),
+            transparent 38%
+          ),
+          linear-gradient(
+            135deg,
+            color-mix(in srgb, var(--section-dark) 86%, var(--accent-dark)),
+            var(--section-dark) 52%,
+            color-mix(in srgb, var(--section-dark) 76%, var(--accent) 24%)
+          )
+        `,
       }}
     >
       {/* =====================================================
@@ -264,8 +281,7 @@ export default function Hero() {
           className="
             absolute
             inset-0
-            bg-[var(--background)]
-            dark:bg-[var(--background)]
+            bg-transparent
           "
         />
 
@@ -457,9 +473,8 @@ export default function Hero() {
             bottom-0
             h-40
             bg-gradient-to-t
-            from-[var(--background)]
+            from-[var(--section-dark)]
             to-transparent
-            dark:from-[var(--background)]
           "
         />
       </div>

@@ -2,13 +2,13 @@ import Link from "next/link";
 import Image from "next/image";
 import {
   ArrowLeft,
-  ArrowRight,
   Check,
-  ExternalLink,
   MapPin,
 } from "lucide-react";
 import { notFound } from "next/navigation";
 import { projects } from "@/data/projects";
+import Button from "@/components/ui/Button";
+import CTA from "@/components/CTA";
 
 export function generateStaticParams() {
   return projects.map((project) => ({
@@ -32,7 +32,7 @@ export default async function ProjectDetailsPage({ params }) {
           HERO
       ====================================================== */}
 
-      <section className="section-dark relative border-b border-[var(--accent)]/30 px-5 pb-20 pt-28 sm:pb-28 sm:pt-36">
+      <section className="site-hero section-dark relative border-b border-[var(--accent)]/30 px-5 pb-20 pt-28 sm:pb-28 sm:pt-36">
         <div className="container-custom">
 
           {/* Back */}
@@ -161,57 +161,13 @@ export default async function ProjectDetailsPage({ params }) {
 
               <div className="mt-8 flex flex-wrap gap-4">
 
-                <a
-                  href={project.website}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="
-                    inline-flex
-                    items-center
-                    gap-3
-                    rounded-full
-                    bg-[var(--color-gold)]
-                    px-6
-                    py-3.5
-                    text-sm
-                    font-black
-                    text-[var(--color-deep)]
-                    transition-all
-                    hover:-translate-y-0.5
-                    hover:bg-[var(--color-deep)]
-                    hover:text-[var(--color-gold)]
-                  "
-                >
+                <Button href={project.website} target="_blank" rel="noopener noreferrer" variant="primary" size="lg">
                   Visit Live Website
-                  <ExternalLink size={17} />
-                </a>
+                </Button>
 
-                <Link
-                  href="/contact"
-                  className="
-                    inline-flex
-                    items-center
-                    gap-3
-                    rounded-full
-                    border
-                    border-[var(--color-deep)]/15
-                    px-6
-                    py-3.5
-                    text-sm
-                    font-black
-                    transition-all
-                    hover:border-[var(--color-green)]
-                    hover:bg-[var(--color-green)]
-                    hover:text-white
-                    dark:border-[var(--color-cream)]/15
-                    dark:hover:border-[var(--color-gold)]
-                    dark:hover:bg-[var(--color-gold)]
-                    dark:hover:text-[var(--color-deep)]
-                  "
-                >
+                <Button href="/contact" variant="outline" size="lg">
                   Start a Project
-                  <ArrowRight size={17} />
-                </Link>
+                </Button>
 
               </div>
             </div>
@@ -351,7 +307,7 @@ export default async function ProjectDetailsPage({ params }) {
           section-dark
           border-y
           border-[var(--color-deep)]/10
-          bg-white/50
+          bg-[var(--section-dark)]
           px-5
           py-20
           dark:border-[var(--color-cream)]/10
@@ -427,10 +383,11 @@ export default async function ProjectDetailsPage({ params }) {
               <div
                 key={challenge}
                 className="
+                  card-purple-border
                   rounded-3xl
                   border
                   border-[var(--color-deep)]/10
-                  bg-[var(--color-cream)]
+                  bg-[var(--section-dark-surface)]
                   p-6
                   transition-all
                   duration-300
@@ -516,10 +473,11 @@ export default async function ProjectDetailsPage({ params }) {
                 key={service.title}
                 className="
                   group
+                  card-purple-border
                   rounded-[28px]
                   border
                   border-[var(--color-deep)]/10
-                  bg-white/60
+                  bg-[var(--surface)]
                   p-7
                   transition-all
                   duration-300
@@ -621,13 +579,13 @@ export default async function ProjectDetailsPage({ params }) {
                 className="
                   rounded-[28px]
                   border
-                  border-[var(--color-cream)]/15
+                  border-[var(--accent)]/55
                   bg-[var(--color-cream)]/5
                   p-7
                   transition-all
                   duration-300
                   hover:-translate-y-1
-                  hover:border-[var(--color-gold)]/40
+                  hover:border-[var(--accent-bright)]
                 "
               >
 
@@ -652,7 +610,7 @@ export default async function ProjectDetailsPage({ params }) {
           WHAT CHANGED
       ====================================================== */}
 
-      <section className="px-5 py-20 sm:py-28">
+      <section className="section-light px-5 py-20 sm:py-28">
 
         <div className="container-custom grid gap-12 lg:grid-cols-[0.7fr_1.3fr]">
 
@@ -711,7 +669,7 @@ export default async function ProjectDetailsPage({ params }) {
                     rounded-2xl
                     border
                     border-[var(--color-deep)]/10
-                    bg-white/40
+                    bg-[var(--surface)]
                     p-5
                     dark:border-[var(--color-cream)]/10
                     dark:bg-[var(--color-deep)]/40
@@ -757,101 +715,13 @@ export default async function ProjectDetailsPage({ params }) {
           CTA
       ====================================================== */}
 
-      <section className="section-light px-5 pb-20 sm:pb-28">
-
-        <div className="container-custom">
-
-          <div
-            className="
-              card-purple-border
-              relative
-              overflow-hidden
-              rounded-[35px]
-              bg-[var(--color-gold)]
-              p-8
-              text-[var(--color-deep)]
-              sm:p-14
-            "
-          >
-
-            {/* Decorative circle */}
-
-            <div
-              className="
-                pointer-events-none
-                absolute
-                -right-20
-                -top-20
-                h-64
-                w-64
-                rounded-full
-                bg-[var(--color-green)]/20
-                blur-3xl
-              "
-            />
-
-            <div className="relative flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
-
-              <div>
-
-                <div className="inline-flex items-center gap-2">
-
-                  <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-deep)]" />
-
-                  <p className="text-[9px] font-black uppercase tracking-[0.24em]">
-                    Ready to Grow?
-                  </p>
-
-                  <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-green)]" />
-
-                </div>
-
-                <h2
-                  className="
-                    mt-4
-                    max-w-3xl
-                    text-4xl
-                    font-black
-                    leading-[0.95]
-                    tracking-[-0.05em]
-                    sm:text-6xl
-                  "
-                >
-                  Let’s build your next success story.
-                </h2>
-
-              </div>
-
-              <Link
-                href="/contact"
-                className="
-                  inline-flex
-                  w-fit
-                  shrink-0
-                  items-center
-                  gap-3
-                  rounded-full
-                  bg-[var(--color-deep)]
-                  px-7
-                  py-4
-                  font-black
-                  text-[var(--color-cream)]
-                  transition-all
-                  duration-300
-                  hover:-translate-y-1
-                  hover:bg-[var(--color-green)]
-                "
-              >
-                Get in Touch
-                <ArrowRight size={18} />
-              </Link>
-
-            </div>
-
-          </div>
-
-        </div>
-      </section>
+      <CTA
+        eyebrow="Ready to Grow?"
+        title="Let's build your next success story."
+        buttonText="Get in Touch"
+        buttonHref="/contact"
+        openModal={false}
+      />
 
     </main>
   );

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
 import { projects } from "@/data/projects";
+import Button from "@/components/ui/Button";
 
 export const metadata = {
   title: "Our Work | MarkitMe Case Studies",
@@ -17,7 +17,7 @@ export default function WorkPage() {
           HERO
       ====================================================== */}
 
-      <section className="border-b border-black/10 px-5 py-24 dark:border-white/10 sm:py-32">
+      <section className="site-hero border-b border-black/10 px-5 py-24 dark:border-white/10 sm:py-32">
         <div className="container-custom">
 
           {/* Eyebrow */}
@@ -362,43 +362,9 @@ export default function WorkPage() {
 
                   {/* CTA */}
 
-                  <Link
-                    href={`/work/${project.slug}`}
-                    className="
-                      group/link
-                      mt-7
-                      inline-flex
-                      items-center
-                      gap-3
-                      rounded-full
-                      bg-[var(--color-gold)]
-                      px-6
-                      py-3.5
-                      text-sm
-                      font-bold
-                      text-[var(--color-deep)]
-                      transition-all
-                      duration-300
-
-                      hover:scale-[1.03]
-                      hover:bg-[var(--color-deep)]
-                      hover:text-[var(--color-gold)]
-
-                      dark:hover:bg-[var(--color-cream)]
-                      dark:hover:text-[var(--color-deep)]
-                    "
-                  >
+                  <Button href={`/work/${project.slug}`} variant="primary" size="md" className="mt-7">
                     View Case Study
-
-                    <ArrowRight
-                      size={17}
-                      className="
-                        transition-transform
-                        duration-300
-                        group-hover/link:translate-x-1
-                      "
-                    />
-                  </Link>
+                  </Button>
 
                 </div>
 

@@ -9,6 +9,7 @@ export default function ServiceCard({ service }) {
       className="
         group
         card-purple-border
+        service-index-card
         relative
         flex
         min-h-[360px]

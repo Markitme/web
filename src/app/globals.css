@@ -120,9 +120,55 @@ body {
   color: var(--muted);
 }
 
+.site-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 92% 4%, color-mix(in srgb, var(--accent-bright) 52%, transparent), transparent 34%),
+    radial-gradient(circle at 8% 86%, color-mix(in srgb, var(--accent) 42%, transparent), transparent 38%),
+    linear-gradient(135deg, #080611 0%, #100b25 48%, #17103b 100%) !important;
+  color: #ffffff !important;
+}
+
+.site-hero::after {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  content: "";
+  background: radial-gradient(circle at 50% 42%, rgba(139, 92, 246, 0.1), transparent 48%);
+}
+
+.site-hero h1,
+.site-hero h2,
+.site-hero h3 {
+  color: #ffffff !important;
+}
+
+.site-hero p {
+  color: rgba(255, 255, 255, 0.68) !important;
+}
+
 .services-section {
   background-color: var(--purple-soft) !important;
   color: var(--foreground);
+}
+
+.services-cta-section {
+  background-color: var(--purple-soft) !important;
+  color: var(--foreground);
+}
+
+.services-cta-section .btn-outline {
+  border-color: var(--accent) !important;
+  color: var(--accent) !important;
+}
+
+.services-cta-section .btn-outline:hover {
+  background: var(--accent) !important;
+  border-color: var(--accent) !important;
+  color: #ffffff !important;
 }
 
 .card-purple-border {
@@ -132,6 +178,66 @@ body {
 .card-purple-border:hover {
   border-color: var(--accent-bright) !important;
   box-shadow: 0 20px 60px color-mix(in srgb, var(--accent) 18%, transparent);
+}
+
+.services-card {
+  border: 2px solid transparent !important;
+  background:
+    linear-gradient(#111116, #111116) padding-box,
+    linear-gradient(
+      135deg,
+      var(--accent-dark) 0%,
+      var(--accent) 48%,
+      var(--accent-bright) 100%
+    ) border-box !important;
+  box-shadow:
+    0 16px 48px rgba(76, 29, 149, 0.14),
+    0 0 24px rgba(124, 58, 237, 0.06) !important;
+}
+
+.services-card:hover {
+  border-color: transparent !important;
+  background:
+    linear-gradient(#111116, #111116) padding-box,
+    linear-gradient(
+      135deg,
+      var(--accent) 0%,
+      var(--accent-bright) 52%,
+      #c4b5fd 100%
+    ) border-box !important;
+  box-shadow:
+    0 24px 70px rgba(76, 29, 149, 0.24),
+    0 0 34px rgba(139, 92, 246, 0.14) !important;
+}
+
+.service-index-card {
+  border: 2px solid transparent !important;
+  background:
+    linear-gradient(var(--card), var(--card)) padding-box,
+    linear-gradient(
+      135deg,
+      var(--accent-dark) 0%,
+      var(--accent) 50%,
+      var(--accent-bright) 100%
+    ) border-box !important;
+  box-shadow:
+    0 14px 42px rgba(76, 29, 149, 0.12),
+    0 0 22px rgba(124, 58, 237, 0.05) !important;
+}
+
+.service-index-card:hover {
+  border-color: transparent !important;
+  background:
+    linear-gradient(var(--card), var(--card)) padding-box,
+    linear-gradient(
+      135deg,
+      var(--accent) 0%,
+      var(--accent-bright) 55%,
+      #c4b5fd 100%
+    ) border-box !important;
+  box-shadow:
+    0 22px 58px rgba(76, 29, 149, 0.2),
+    0 0 30px rgba(139, 92, 246, 0.1) !important;
 }
 
 .section-dark .card-purple-border {

@@ -9,6 +9,7 @@ export default function CTA({
   description = "Tell us where your business is today and where you want it to go. We will help build the path between them.",
   buttonText = "Book a Free Consultation",
   buttonHref = "#",
+  openModal = true,
   className = "",
 }) {
   const handleCTA = (e) => {
@@ -146,20 +147,22 @@ export default function CTA({
 
           {/* Description */}
 
-          <p
-            className="
-              mx-auto
-              mt-6
-              max-w-2xl
+          {description && (
+            <p
+              className="
+                mx-auto
+                mt-6
+                max-w-2xl
 
-              text-lg
-              leading-8
+                text-lg
+                leading-8
 
-              text-white/70
-            "
-          >
-            {description}
-          </p>
+                text-white/70
+              "
+            >
+              {description}
+            </p>
+          )}
 
           {/* =================================================
               CTA BUTTON
@@ -169,7 +172,7 @@ export default function CTA({
             <Button
               href={buttonHref}
               variant="primary"
-              onClick={handleCTA}
+              onClick={openModal ? handleCTA : undefined}
             >
               {buttonText}
             </Button>

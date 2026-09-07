@@ -131,6 +131,7 @@ export default function AboutPage() {
 
       <section
         className="
+          site-hero
           relative
           overflow-hidden
           border-b

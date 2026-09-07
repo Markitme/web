@@ -13,6 +13,8 @@ export default function Button({
   type = "button",
   disabled = false,
   showArrow = true,
+  target,
+  rel,
 }) {
   /* =====================================================
      BASE
@@ -259,6 +261,8 @@ export default function Button({
     return (
       <Link
         href={href}
+        target={target}
+        rel={rel}
         className={buttonClasses}
         aria-disabled={disabled}
         tabIndex={

@@ -55,6 +55,7 @@ export default async function BlogPage({ searchParams }) {
 
       <section
         className="
+          site-hero
           relative
           overflow-hidden
           border-b

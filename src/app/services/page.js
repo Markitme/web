@@ -1,9 +1,7 @@
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
-
 import { services } from "@/data/services";
 import ServiceCard from "@/components/ServiceCard";
 import SectionHeading from "@/components/SectionHeading";
+import Button from "@/components/ui/Button";
 
 export const metadata = {
   title: "Services | MarkitMe Digital Strategy & Creative",
@@ -48,6 +46,7 @@ export default function ServicesPage() {
 
       <section
         className="
+          site-hero
           section-dark
           relative
           overflow-hidden
@@ -180,12 +179,14 @@ export default function ServicesPage() {
           relative
           overflow-hidden
 
-          bg-[var(--color-gold)]
+          section-light
+          services-cta-section
+          bg-[var(--purple-soft)]
 
           px-5
           py-16
 
-          text-[var(--color-deep)]
+          text-[var(--foreground)]
 
           sm:py-20
           lg:py-24
@@ -231,7 +232,7 @@ export default function ServicesPage() {
                   h-1.5
                   w-1.5
                   rounded-full
-                  bg-[var(--color-deep)]
+                  bg-[var(--accent)]
                 "
               />
 
@@ -256,9 +257,7 @@ export default function ServicesPage() {
                 leading-[0.98]
                 tracking-[-0.055em]
 
-                text-[var(--color-deep)]
-
-                dark:text-[var(--color-deep)]
+                text-[var(--foreground)]
 
                 sm:text-5xl
                 lg:text-6xl
@@ -275,7 +274,7 @@ export default function ServicesPage() {
                 text-base
                 leading-7
 
-                text-[var(--color-deep)]/70
+                text-[var(--muted)]
               "
             >
               Tell us what you want to achieve, and we&apos;ll help you find
@@ -284,58 +283,9 @@ export default function ServicesPage() {
           </div>
 
           {/* CTA Button */}
-          <Link
-            href="/contact"
-            className="
-              group
-
-              flex
-              w-fit
-              shrink-0
-              items-center
-              gap-3
-
-              rounded-full
-
-              bg-[var(--color-deep)]
-
-              px-7
-              py-4
-
-              font-black
-              text-[var(--color-cream)]
-
-              transition-all
-              duration-300
-
-              hover:-translate-y-0.5
-              hover:bg-[var(--color-night)]
-              hover:shadow-xl
-            "
-          >
+          <Button href="/contact" variant="primary" size="lg">
             Start Your Project
-
-            <span
-              className="
-                flex
-                h-8
-                w-8
-                items-center
-                justify-center
-                rounded-full
-
-                bg-[var(--color-gold)]
-                text-[var(--color-deep)]
-
-                transition-transform
-                duration-300
-
-                group-hover:translate-x-1
-              "
-            >
-              <ArrowRight size={16} />
-            </span>
-          </Link>
+          </Button>
         </div>
       </section>
     </main>

@@ -104,6 +104,7 @@ export default async function BlogDetailPage({
 
       <section
         className="
+          site-hero
           relative
           overflow-hidden
 

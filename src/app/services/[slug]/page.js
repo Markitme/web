@@ -13,6 +13,7 @@ import { services, getServiceBySlug } from "@/data/services";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import ProcessSection from "@/components/ProcessSection";
 import SectionHeading from "@/components/SectionHeading";
+import Button from "@/components/ui/Button";
 
 /* MARKITME DESIGN TOKENS */
 
@@ -33,39 +34,8 @@ const COLORS = {
 };
 
 /* SERVICE IMAGES */
-
 function getServiceImages(serviceTitle = "") {
   const title = serviceTitle.toLowerCase();
-
-  if (
-    title.includes("photography") ||
-    title.includes("photo") ||
-    title.includes("brand shoot")
-  ) {
-    return {
-      hero:
-        "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1600&q=85",
-      overview:
-        "https://images.unsplash.com/photo-1542744094-3a31f272c490?auto=format&fit=crop&w=1400&q=85",
-      challenge:
-        "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1400&q=85",
-    };
-  }
-
-  if (
-    title.includes("videography") ||
-    title.includes("video") ||
-    title.includes("reel")
-  ) {
-    return {
-      hero:
-        "https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?auto=format&fit=crop&w=1600&q=85",
-      overview:
-        "https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1400&q=85",
-      challenge:
-        "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=1400&q=85",
-    };
-  }
 
   if (
     title.includes("website") ||
@@ -489,6 +459,7 @@ export default async function ServiceDetailsPage({ params }) {
 
       <section
         className="
+          site-hero
           section-dark
           relative overflow-hidden
 
@@ -565,68 +536,13 @@ export default async function ServiceDetailsPage({ params }) {
               </SectionHeading>
 
               <div className="mt-7 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:flex-wrap sm:gap-4">
-                <Link
-                  href="/contact"
-                  className="
-                    group inline-flex w-full items-center justify-center gap-3
-
-                    rounded-full
-
-                    bg-[var(--color-gold)]
-
-                    px-6 py-4
-
-                    text-sm font-black
-                    text-[var(--color-deep)]
-
-                    transition-all duration-300
-
-                    hover:-translate-y-0.5
-                    hover:bg-[var(--color-deep)]
-                    hover:text-white
-                    hover:shadow-xl
-
-                    sm:w-auto
-                    sm:px-7
-                  "
-                >
+                <Button href="/contact" variant="primary" size="lg" className="w-full sm:w-auto">
                   Start Your Project
+                </Button>
 
-                  <ArrowRight
-                    size={18}
-                    className="transition-transform duration-300 group-hover:translate-x-1"
-                  />
-                </Link>
-
-                <a
-                  href="#services"
-                  className="
-                    inline-flex w-full items-center justify-center gap-3
-
-                    rounded-full
-
-                    border
-                    border-[var(--color-deep)]/15
-
-                    px-6 py-4
-
-                    text-sm font-bold
-
-                    transition-all duration-300
-
-                    hover:border-[var(--color-green)]
-                    hover:text-[var(--color-green)]
-
-                    dark:border-[var(--color-green)]/30
-                    dark:hover:border-[var(--color-gold)]
-                    dark:hover:text-[var(--color-gold)]
-
-                    sm:w-auto
-                    sm:px-7
-                  "
-                >
+                <Button href="#services" variant="outline" size="lg" className="w-full sm:w-auto">
                   Explore Services
-                </a>
+                </Button>
               </div>
             </div>
 
@@ -1056,11 +972,13 @@ export default async function ServiceDetailsPage({ params }) {
         className="
           relative overflow-hidden
 
-          bg-[var(--color-gold)]
+          section-light
+          services-cta-section
+          bg-[var(--purple-soft)]
 
           px-4 py-14
 
-          text-[var(--color-deep)]
+          text-[var(--foreground)]
 
           sm:px-5 sm:py-20
           lg:py-24
@@ -1077,75 +995,22 @@ export default async function ServiceDetailsPage({ params }) {
             Ready to Get Started?
           </p>
 
-          <h2 className="mx-auto mt-5 max-w-5xl text-3xl font-black leading-[1.05] tracking-[-0.055em] text-[var(--color-deep)] dark:text-[var(--color-deep)] sm:text-5xl lg:text-6xl">
+          <h2 className="mx-auto mt-5 max-w-5xl text-3xl font-black leading-[1.05] tracking-[-0.055em] text-[var(--foreground)] sm:text-5xl lg:text-6xl">
             {service.ctaTitle}
           </h2>
 
-          <p className="mx-auto mt-6 max-w-2xl text-base leading-7 text-[var(--color-deep)]/70 sm:mt-7 sm:text-lg sm:leading-8">
+          <p className="mx-auto mt-6 max-w-2xl text-base leading-7 text-[var(--muted)] sm:mt-7 sm:text-lg sm:leading-8">
             {service.ctaDescription}
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-4">
-            <Link
-              href="/contact"
-              className="
-                group inline-flex w-full items-center justify-center gap-3
-
-                rounded-full
-
-                bg-[var(--color-deep)]
-
-                px-7 py-4
-
-                text-sm font-black
-                text-[var(--color-cream)]
-
-                transition-all duration-300
-
-                hover:-translate-y-0.5
-                hover:bg-[var(--color-night)]
-                hover:shadow-xl
-
-                sm:w-auto sm:px-8
-              "
-            >
+            <Button href="/contact" variant="primary" size="lg" className="w-full sm:w-auto">
               Start Your Project
+            </Button>
 
-              <ArrowRight
-                size={18}
-                className="transition-transform duration-300 group-hover:translate-x-1"
-              />
-            </Link>
-
-            <Link
-              href="/services"
-              className="
-                group inline-flex w-full items-center justify-center gap-3
-
-                rounded-full
-
-                border-2
-                border-[var(--color-deep)]
-
-                px-7 py-4
-
-                text-sm font-black
-
-                transition-all duration-300
-
-                hover:bg-[var(--color-deep)]
-                hover:text-[var(--color-cream)]
-
-                sm:w-auto sm:px-8
-              "
-            >
+            <Button href="/services" variant="outline" size="lg" className="w-full sm:w-auto">
               View All Services
-
-              <ExternalLink
-                size={17}
-                className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
-              />
-            </Link>
+            </Button>
           </div>
         </div>
       </section>
