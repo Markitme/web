@@ -40,29 +40,23 @@ export default function ClientLogoSlider() {
         overflow-hidden
 
         border-y
-        border-[var(--color-deep)]/[0.08]
+        border-[var(--accent)]/25
 
-        bg-[#E7EDE4]
+        bg-white
 
         py-14
 
         transition-colors
         duration-500
 
-        dark:border-[var(--color-cream)]/[0.08]
-        dark:bg-[#071F18]
-
         sm:py-16
         lg:py-20
       "
     >
-      {/* =====================================================
-          BACKGROUND
-      ====================================================== */}
+      {/*           BACKGROUND
+       */}
 
-      <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        {/* Green glow */}
-
+      <div className="pointer-events-none absolute inset-0 hidden overflow-hidden">
         <div
           className="
             absolute
@@ -76,15 +70,11 @@ export default function ClientLogoSlider() {
 
             rounded-full
 
-            bg-[var(--color-green)]/[0.08]
+            bg-[var(--purple-soft)]
 
             blur-[120px]
-
-            dark:bg-[var(--color-green)]/[0.045]
           "
         />
-
-        {/* Gold glow */}
 
         <div
           className="
@@ -97,11 +87,9 @@ export default function ClientLogoSlider() {
 
             rounded-full
 
-            bg-[var(--color-gold)]/[0.07]
+            bg-[var(--accent)]/[0.06]
 
             blur-[120px]
-
-            dark:bg-[var(--color-gold)]/[0.025]
           "
         />
 
@@ -121,18 +109,15 @@ export default function ClientLogoSlider() {
 
             rounded-full
 
-            bg-[var(--color-green)]/[0.025]
+            bg-[var(--accent)]/[0.04]
 
             blur-[120px]
-
-            dark:bg-[var(--color-cream)]/[0.015]
           "
         />
       </div>
 
-      {/* =====================================================
-          CONTENT
-      ====================================================== */}
+      {/*           CONTENT
+       */}
 
       <div
         className="
@@ -159,16 +144,6 @@ export default function ClientLogoSlider() {
               gap-2
             "
           >
-            <span
-              className="
-                h-1.5
-                w-1.5
-
-                rounded-full
-
-                bg-[var(--color-gold)]
-              "
-            />
 
             <p
               className="
@@ -179,37 +154,23 @@ export default function ClientLogoSlider() {
 
                 tracking-[0.24em]
 
-                text-[var(--color-green)]
+                text-[var(--accent)]
 
                 sm:text-[9px]
-
-                dark:text-[var(--color-gold)]
               "
             >
               Trusted by ambitious brands
             </p>
 
-            <span
-              className="
-                h-1.5
-                w-1.5
-
-                rounded-full
-
-                bg-[var(--color-green)]
-              "
-            />
           </div>
 
           {/* Heading */}
 
-          <SectionHeading className="mx-auto text-center">
+          <SectionHeading className="client-logo-heading mx-auto text-center">
             Building growth{" "}
             <span
               className="
-                text-[var(--color-green)]
-
-                dark:text-[var(--color-gold)]
+                text-[var(--accent)]
               "
             >
               together.
@@ -229,11 +190,10 @@ export default function ClientLogoSlider() {
               text-xs
               leading-6
 
-              text-[var(--color-deep)]/50
+              text-black/60
 
               sm:text-sm
 
-              dark:text-[var(--color-cream)]/50
             "
           >
             Trusted partnerships that turn ideas, strategy, and creativity into
@@ -241,9 +201,8 @@ export default function ClientLogoSlider() {
           </p>
         </div>
 
-        {/* =================================================
-            LOGO MARQUEE
-        ================================================== */}
+        {/*             LOGO MARQUEE
+         */}
 
         <div
           className="
@@ -256,11 +215,8 @@ export default function ClientLogoSlider() {
             lg:mt-14
           "
         >
-
-
-          {/* =================================================
-              MARQUEE VIEWPORT
-          ================================================== */}
+          {/*               MARQUEE VIEWPORT
+           */}
 
           <div
             className="
@@ -270,7 +226,7 @@ export default function ClientLogoSlider() {
 
               overflow-hidden
 
-              px-4
+              px-4 py-4
 
               sm:px-6
 
@@ -291,7 +247,7 @@ export default function ClientLogoSlider() {
                     relative
 
                     flex
-                    h-[88px]
+                    h-[100px]
 
                     w-[150px]
 
@@ -305,36 +261,25 @@ export default function ClientLogoSlider() {
                     rounded-[22px]
 
                     border
-                    border-[var(--color-deep)]/[0.08]
+                    border-[var(--accent)]/45
 
-                    bg-white/65
+                    bg-white
 
                     px-5
 
                     backdrop-blur-sm
 
-                    shadow-[0_10px_35px_rgba(12,59,46,0.045)]
+                    
 
                     transition-all
                     duration-500
 
                     hover:-translate-y-1
 
-                    hover:border-[var(--color-green)]/40
+                    hover:border-[var(--accent-bright)]
 
                     hover:bg-white
 
-                    hover:shadow-[0_20px_50px_rgba(12,59,46,0.10)]
-
-                    dark:border-[var(--color-cream)]/[0.09]
-
-                    dark:bg-[var(--color-cream)]/[0.04]
-
-                    dark:hover:border-[var(--color-gold)]/40
-
-                    dark:hover:bg-[var(--color-cream)]/[0.075]
-
-                    dark:hover:shadow-[0_20px_50px_rgba(0,0,0,0.18)]
 
                     sm:h-[96px]
 
@@ -347,7 +292,6 @@ export default function ClientLogoSlider() {
                     lg:w-[200px]
                   "
                 >
-
                   {/* INNER GLOW */}
 
                   <span
@@ -359,8 +303,9 @@ export default function ClientLogoSlider() {
 
                       rounded-[22px]
 
-                      bg-[var(--color-green)]/[20%]
+                      bg-[var(--accent)]/[20%]
 
+                      opacity-0
 
                       transition-opacity
                       duration-500
@@ -405,14 +350,11 @@ export default function ClientLogoSlider() {
 
                         object-contain
 
-                        grayscale
-
-                        opacity-60
+                        brightness-0
+                        opacity-75
 
                         transition-all
                         duration-500
-
-                        group-hover:grayscale-0
 
                         group-hover:opacity-100
 
@@ -424,28 +366,15 @@ export default function ClientLogoSlider() {
 
                         lg:max-w-[165px]
 
-                        dark:brightness-0
-
-                        dark:invert
-
-                        dark:opacity-65
-
-                        dark:group-hover:brightness-500
-
-                        dark:group-hover:invert-0
-
-                        dark:group-hover:opacity-100
                       "
                     />
                   </div>
-
                 </div>
               ))}
             </div>
           </div>
         </div>
       </div>
-
     </section>
   );
 }

@@ -10,6 +10,7 @@ export default function AnimatedCounter({
   index = 0,
 }) {
   const [count, setCount] = useState(0);
+
   const ref = useRef(null);
   const hasStarted = useRef(false);
 
@@ -58,26 +59,34 @@ export default function AnimatedCounter({
     return () => observer.disconnect();
   }, [value, duration]);
 
+  /* =====================================================
+     PURPLE ACCENTS
+  ===================================================== */
+
   const accents = [
     {
-      color: "var(--color-green)",
-      soft: "bg-[var(--color-green)]/[0.07]",
-      text: "text-[var(--color-green)]",
+      color: "var(--accent-dark)",
+      soft: "bg-[var(--accent-dark)]/[0.08]",
+      text: "text-[var(--accent-dark)]",
+      glow: "from-[var(--accent-dark)]/20",
     },
     {
-      color: "var(--color-gold)",
-      soft: "bg-[var(--color-gold)]/[0.08]",
-      text: "text-[var(--color-gold)]",
+      color: "var(--accent)",
+      soft: "bg-[var(--accent)]/[0.08]",
+      text: "text-[var(--accent)]",
+      glow: "from-[var(--accent)]/20",
     },
     {
-      color: "var(--color-sand)",
-      soft: "bg-[var(--color-sand)]/[0.08]",
-      text: "text-[var(--color-sand)]",
+      color: "var(--accent-bright)",
+      soft: "bg-[var(--accent-bright)]/[0.08]",
+      text: "text-[var(--accent-bright)]",
+      glow: "from-[var(--accent-bright)]/20",
     },
     {
-      color: "var(--color-green)",
-      soft: "bg-[var(--color-green)]/[0.06]",
-      text: "text-[var(--color-green)]",
+      color: "var(--accent)",
+      soft: "bg-[var(--accent)]/[0.08]",
+      text: "text-[var(--accent)]",
+      glow: "from-[var(--accent)]/20",
     },
   ];
 
@@ -96,23 +105,22 @@ export default function AnimatedCounter({
         rounded-[2rem]
 
         border
-        border-[var(--color-deep)]/[0.07]
+        border-[var(--accent)]/20
 
-        bg-white/55
+        bg-white
 
         p-6
 
-        backdrop-blur-sm
+        shadow-[0_10px_40px_color-mix(in_srgb,var(--accent)_7%,transparent)]
 
         transition-all
         duration-700
         ease-out
 
         hover:-translate-y-2
+        hover:border-[var(--accent)]/50
 
-        hover:bg-white
-
-        hover:shadow-[0_25px_70px_rgba(12,59,46,0.09)]
+        hover:shadow-[0_25px_70px_color-mix(in_srgb,var(--accent)_20%,transparent)]
 
         sm:min-h-[210px]
         sm:p-8
@@ -120,17 +128,109 @@ export default function AnimatedCounter({
         lg:min-h-[230px]
         lg:rounded-[2.5rem]
 
-        dark:border-[var(--color-cream)]/[0.08]
-        dark:bg-[var(--color-deep)]/45
-
-        dark:hover:bg-[var(--color-deep)]/70
-
-        dark:hover:shadow-[0_25px_70px_rgba(0,0,0,0.25)]
       "
     >
-      {/* =========================================
+      {/* =====================================================
+          TOP RIGHT PURPLE GRADIENT
+      ===================================================== */}
+
+      <div
+        className="
+          pointer-events-none
+          absolute
+
+          -right-24
+          -top-24
+
+          h-64
+          w-64
+
+          rounded-full
+
+          bg-gradient-to-br
+          from-[var(--accent)]/20
+          via-[var(--accent-bright)]/10
+          to-transparent
+
+          blur-3xl
+
+          transition-all
+          duration-700
+
+          group-hover:scale-125
+          group-hover:from-[var(--accent)]/30
+        "
+      />
+
+      {/* =====================================================
+          BOTTOM LEFT PURPLE GRADIENT
+      ===================================================== */}
+
+      <div
+        className="
+          pointer-events-none
+          absolute
+
+          -bottom-24
+          -left-24
+
+          h-56
+          w-56
+
+          rounded-full
+
+          bg-gradient-to-tr
+          from-[var(--accent-dark)]/15
+          via-[var(--accent)]/10
+          to-transparent
+
+          blur-3xl
+
+          opacity-80
+
+          transition-all
+          duration-700
+
+          group-hover:scale-125
+          group-hover:opacity-100
+
+        "
+      />
+
+      {/* =====================================================
+          SUBTLE BORDER GLOW
+      ===================================================== */}
+
+      <div
+        className="
+          pointer-events-none
+          absolute
+          inset-0
+
+          rounded-[2rem]
+
+          border
+          border-transparent
+
+          bg-gradient-to-br
+          from-[var(--accent)]/10
+          via-transparent
+          to-[var(--accent-bright)]/10
+
+          opacity-0
+
+          transition-opacity
+          duration-700
+
+          group-hover:opacity-100
+
+          lg:rounded-[2.5rem]
+        "
+      />
+
+      {/* =====================================================
           GIANT BACKGROUND INDEX
-      ========================================== */}
+      ===================================================== */}
 
       <span
         className="
@@ -148,26 +248,55 @@ export default function AnimatedCounter({
 
           tracking-[-0.1em]
 
-          text-[var(--color-deep)]/[0.025]
+          text-[var(--accent)]/[0.055]
 
           transition-all
           duration-700
 
           group-hover:translate-x-2
-          group-hover:text-[var(--color-green)]/[0.055]
-
-          dark:text-[var(--color-cream)]/[0.025]
-
-          dark:group-hover:text-[var(--color-gold)]/[0.05]
+          group-hover:text-[var(--accent)]/[0.12]
 
           sm:text-[9rem]
+
+          dark:text-white/[0.035]
         "
       >
         {String(index + 1).padStart(2, "0")}
       </span>
 
-      
-      {/*numbers*/}
+      {/* =====================================================
+          SMALL PURPLE CORNER ACCENT
+      ===================================================== */}
+
+      <div
+        className="
+          absolute
+          right-6
+          top-6
+
+          h-2
+          w-2
+
+          rounded-full
+
+          bg-[var(--accent)]
+
+          shadow-[0_0_18px_color-mix(in_srgb,var(--accent)_60%,transparent)]
+
+          transition-all
+          duration-500
+
+          group-hover:scale-150
+
+          sm:right-8
+          sm:top-8
+
+        "
+      />
+
+      {/* =====================================================
+          NUMBER
+      ===================================================== */}
 
       <div
         className="
@@ -188,18 +317,19 @@ export default function AnimatedCounter({
 
             tracking-[-0.075em]
 
-            text-[var(--color-deep)]
+            text-black
 
             transition-all
             duration-700
 
             group-hover:translate-x-1
+            group-hover:text-[var(--accent-dark)]
 
             sm:text-6xl
 
             lg:text-[4.5rem]
 
-            dark:text-[var(--color-cream)]
+            dark:text-white
           "
         >
           {count}
@@ -208,6 +338,7 @@ export default function AnimatedCounter({
         {suffix && (
           <span
             className={`
+              relative
               ml-1
 
               text-2xl
@@ -221,6 +352,8 @@ export default function AnimatedCounter({
               group-hover:translate-x-1
 
               sm:text-3xl
+
+              dark:brightness-125
             `}
           >
             {suffix}
@@ -228,9 +361,9 @@ export default function AnimatedCounter({
         )}
       </div>
 
-      {/* =========================================
+      {/* =====================================================
           LABEL
-      ========================================== */}
+      ===================================================== */}
 
       <div
         className="
@@ -250,18 +383,22 @@ export default function AnimatedCounter({
             leading-5
             tracking-[0.12em]
 
-            text-[var(--color-deep)]/60
+            text-black/60
 
-            dark:text-[var(--color-cream)]/60
+            transition-colors
+            duration-500
+
+            group-hover:text-black/80
+
           "
         >
           {label}
         </p>
       </div>
 
-      {/* =========================================
+      {/* =====================================================
           BOTTOM PROGRESS LINE
-      ========================================== */}
+      ===================================================== */}
 
       <div
         className="
@@ -274,12 +411,13 @@ export default function AnimatedCounter({
 
           overflow-hidden
 
-          bg-[var(--color-deep)]/[0.06]
+          rounded-full
 
-          dark:bg-[var(--color-cream)]/[0.06]
+          bg-black/[0.08]
 
           sm:left-8
           sm:right-8
+
         "
       >
         <span
@@ -289,22 +427,28 @@ export default function AnimatedCounter({
             top-0
 
             h-full
-            w-8
+            w-10
+
+            rounded-full
+
+            bg-gradient-to-r
+            from-[var(--accent-dark)]
+            via-[var(--accent)]
+            to-[var(--accent-bright)]
+
+            shadow-[0_0_12px_color-mix(in_srgb,var(--accent)_45%,transparent)]
 
             transition-all
             duration-700
 
             group-hover:w-full
           "
-          style={{
-            backgroundColor: accent.color,
-          }}
         />
       </div>
 
-      {/* =========================================
+      {/* =====================================================
           HOVER GLOW
-      ========================================== */}
+      ===================================================== */}
 
       <div
         className={`
@@ -330,6 +474,32 @@ export default function AnimatedCounter({
 
           group-hover:opacity-100
         `}
+      />
+
+      {/* =====================================================
+          INNER SHINE
+      ===================================================== */}
+
+      <div
+        className="
+          pointer-events-none
+          absolute
+          inset-0
+
+          bg-gradient-to-br
+          from-white/60
+          via-transparent
+          to-transparent
+
+          opacity-0
+
+          transition-opacity
+          duration-700
+
+          group-hover:opacity-100
+
+          dark:from-white/[0.04]
+        "
       />
     </div>
   );

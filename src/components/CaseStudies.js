@@ -23,23 +23,19 @@ export default function CaseStudies() {
         overflow-hidden
 
         border-y
-        border-[var(--color-deep)]/[0.08]
+        border-black/[0.06]
 
-        bg-[#E9EEE7]
+        bg-white
 
         py-16
 
-        text-[var(--color-deep)]
+        text-[#050507]
 
         transition-colors
         duration-500
 
         sm:py-20
         lg:py-24
-
-        dark:border-[var(--color-cream)]/[0.08]
-        dark:bg-[var(--color-night)]
-        dark:text-[var(--color-cream)]
       "
     >
       {/* =====================================================
@@ -54,43 +50,63 @@ export default function CaseStudies() {
           overflow-hidden
         "
       >
-        {/* Green glow */}
+        {/* Dark Purple Glow */}
+
         <div
           className="
             absolute
             -left-40
-            top-20
+            top-10
 
-            h-96
-            w-96
+            h-[420px]
+            w-[420px]
 
             rounded-full
 
-            bg-[var(--color-green)]/[0.07]
+            bg-[var(--accent-dark)]/[0.045]
 
-            blur-[110px]
-
-            dark:bg-[var(--color-green)]/[0.055]
+            blur-[120px]
           "
         />
 
-        {/* Gold glow */}
+        {/* Violet Glow */}
+
         <div
           className="
             absolute
             -right-40
-            bottom-10
+            bottom-0
 
-            h-96
-            w-96
+            h-[450px]
+            w-[450px]
 
             rounded-full
 
-            bg-[var(--color-gold)]/[0.045]
+            bg-[var(--accent-bright)]/[0.045]
 
-            blur-[110px]
+            blur-[120px]
+          "
+        />
 
-            dark:bg-[var(--color-gold)]/[0.025]
+        {/* Center Glow */}
+
+        <div
+          className="
+            absolute
+            left-1/2
+            top-1/2
+
+            h-[350px]
+            w-[350px]
+
+            -translate-x-1/2
+            -translate-y-1/2
+
+            rounded-full
+
+            bg-[var(--accent)]/[0.025]
+
+            blur-[120px]
           "
         />
       </div>
@@ -99,21 +115,59 @@ export default function CaseStudies() {
           MAIN CONTAINER
       ====================================================== */}
 
-      <div className="relative z-10 mx-auto w-full max-w-[1280px] px-5 sm:px-6 lg:px-8">
+      <div
+        className="
+          relative
+          z-10
+
+          mx-auto
+          w-full
+          max-w-[1280px]
+
+          px-5
+          sm:px-6
+          lg:px-8
+        "
+      >
         {/* =====================================================
             HEADING
         ====================================================== */}
 
-        <div className="mb-10 flex flex-col gap-6 sm:mb-12 lg:flex-row lg:items-end lg:justify-between">
+        <div
+          className="
+            mb-10
+
+            flex
+            flex-col
+            gap-6
+
+            sm:mb-12
+
+            lg:flex-row
+            lg:items-end
+            lg:justify-between
+          "
+        >
           <SectionHeading eyebrow="Selected Work">
-            Ideas turned into{" "}
-            <span className="text-[var(--color-green)] dark:text-[var(--color-gold)]">
+            <span className="text-black">
+              Ideas turned into
+            </span>{" "}
+            <span className="text-[var(--accent-dark)]">
               measurable impact.
             </span>
           </SectionHeading>
 
           <div className="shrink-0">
-            <Button href="/work" variant="outline">
+            <Button
+              href="/work"
+              variant="primary"
+              className="
+                px-6
+                py-3
+                text-sm
+                font-bold
+              "
+            >
               View All Work
             </Button>
           </div>
@@ -201,6 +255,8 @@ export default function CaseStudies() {
                     className="
                       group
 
+                      relative
+
                       flex
                       h-full
                       min-h-[570px]
@@ -212,29 +268,83 @@ export default function CaseStudies() {
                       rounded-[22px]
 
                       border
-                      border-[var(--color-deep)]/[0.09]
+                      border-[var(--accent)]/30
 
-                      bg-white
+                      bg-[#08070d]
 
-                      shadow-[0_10px_35px_rgba(12,59,46,0.035)]
+                      shadow-[0_15px_45px_rgba(5,5,7,0.14)]
 
                       transition-all
                       duration-500
 
                       hover:-translate-y-1
 
-                      hover:border-[var(--color-green)]/40
+                      hover:border-[var(--accent-bright)]/70
 
-                      hover:shadow-[0_20px_50px_rgba(12,59,46,0.10)]
-
-                      dark:border-[var(--color-cream)]/[0.09]
-                      dark:bg-[var(--color-deep)]
-
-                      dark:hover:border-[var(--color-gold)]/35
-
-                      dark:hover:shadow-[0_20px_50px_rgba(0,0,0,0.18)]
+                      hover:shadow-[0_25px_65px_color-mix(in_srgb,var(--accent-dark)_25%,transparent)]
                     "
                   >
+                    {/* =================================================
+                        CARD TOP PURPLE GLOW
+                    ================================================== */}
+
+                    <div
+                      className="
+                        pointer-events-none
+
+                        absolute
+                        -right-24
+                        -top-24
+
+                        h-56
+                        w-56
+
+                        rounded-full
+
+                        bg-[var(--accent)]/20
+
+                        blur-[80px]
+
+                        opacity-60
+
+                        transition-all
+                        duration-700
+
+                        group-hover:scale-125
+                        group-hover:bg-[var(--accent-bright)]/30
+                      "
+                    />
+
+                    {/* =================================================
+                        CARD BOTTOM PURPLE GLOW
+                    ================================================== */}
+
+                    <div
+                      className="
+                        pointer-events-none
+
+                        absolute
+                        -bottom-24
+                        -left-24
+
+                        h-48
+                        w-48
+
+                        rounded-full
+
+                        bg-[var(--accent-dark)]/20
+
+                        blur-[70px]
+
+                        opacity-50
+
+                        transition-all
+                        duration-700
+
+                        group-hover:scale-125
+                      "
+                    />
+
                     {/* =================================================
                         IMAGE
                     ================================================== */}
@@ -242,13 +352,14 @@ export default function CaseStudies() {
                     <div
                       className="
                         relative
+
                         h-[250px]
                         w-full
                         shrink-0
 
                         overflow-hidden
 
-                        bg-[var(--color-deep)]
+                        bg-[#050507]
 
                         sm:h-[270px]
                         lg:h-[285px]
@@ -273,35 +384,57 @@ export default function CaseStudies() {
                         "
                       />
 
-                      {/* Image overlay */}
+                      {/* Dark Overlay */}
 
                       <div
                         className="
                           absolute
                           inset-0
 
-                          bg-[var(--color-deep)]/25
+                          bg-[#050507]/25
 
                           transition-all
                           duration-500
 
-                          group-hover:bg-[var(--color-deep)]/35
+                          group-hover:bg-[#050507]/40
                         "
                       />
 
-                      {/* Bottom gradient */}
+                      {/* Purple Image Gradient */}
 
                       <div
                         className="
                           absolute
                           inset-x-0
                           bottom-0
+
                           h-2/3
 
                           bg-gradient-to-t
-                          from-[var(--color-deep)]/90
-                          via-[var(--color-deep)]/25
+                          from-[#050507]/95
+                          via-[#08070d]/45
                           to-transparent
+                        "
+                      />
+
+                      {/* Purple Image Glow */}
+
+                      <div
+                        className="
+                          pointer-events-none
+
+                          absolute
+                          -right-10
+                          -top-10
+
+                          h-32
+                          w-32
+
+                          rounded-full
+
+                          bg-[var(--accent-bright)]/25
+
+                          blur-[55px]
                         "
                       />
 
@@ -316,18 +449,24 @@ export default function CaseStudies() {
                           rounded-full
 
                           border
-                          border-[var(--color-cream)]/25
+                          border-white/20
 
-                          bg-[var(--color-deep)]/45
+                          bg-black/45
 
                           px-3
                           py-1.5
 
                           text-[9px]
                           font-bold
-                          text-[var(--color-cream)]
+                          text-white
 
                           backdrop-blur-md
+
+                          transition-all
+                          duration-300
+
+                          group-hover:border-[var(--accent-bright)]/70
+                          group-hover:bg-[var(--accent-dark)]/50
                         "
                       >
                         {study.number}
@@ -347,18 +486,24 @@ export default function CaseStudies() {
                           rounded-full
 
                           border
-                          border-[var(--color-cream)]/25
+                          border-white/20
 
-                          bg-[var(--color-deep)]/45
+                          bg-black/45
 
                           px-3
                           py-1.5
 
                           text-[8px]
                           font-medium
-                          text-[var(--color-cream)]
+                          text-white
 
                           backdrop-blur-md
+
+                          transition-all
+                          duration-300
+
+                          group-hover:border-[var(--accent-bright)]/70
+                          group-hover:bg-[var(--accent-dark)]/50
                         "
                       >
                         {study.category}
@@ -387,7 +532,7 @@ export default function CaseStudies() {
                               uppercase
                               tracking-[0.18em]
 
-                              text-[var(--color-gold)]
+                              text-[var(--accent-bright)]
                             "
                           >
                             Case Study
@@ -401,7 +546,7 @@ export default function CaseStudies() {
                               text-lg
                               font-black
 
-                              text-[var(--color-cream)]
+                              text-white
                             "
                           >
                             {study.title}
@@ -416,29 +561,36 @@ export default function CaseStudies() {
                             h-10
                             w-10
                             shrink-0
+                            cursor-pointer
+
                             items-center
                             justify-center
 
                             rounded-full
 
-                            bg-[var(--color-gold)]
+                            bg-gradient-to-br
+                            from-[var(--accent-dark)]
+                            to-[var(--accent-bright)]
 
-                            text-[var(--color-deep)]
+                            text-white
 
-                            transition-transform
+                            shadow-[0_8px_25px_color-mix(in_srgb,var(--accent)_40%,transparent)]
+
+                            transition-all
                             duration-300
-                            cursor-pointer
 
                             group-hover:rotate-[-45deg]
+                            group-hover:shadow-[0_10px_35px_color-mix(in_srgb,var(--accent-bright)_55%,transparent)]
                           "
-                          onClick={() => window.location.href = `/work/${study.slug}`}
+                          onClick={() =>
+                            (window.location.href = `/work/${study.slug}`)
+                          }
                         >
                           <ArrowRight size={17} />
-
                         </div>
                       </div>
 
-                      {/* Image accent */}
+                      {/* Image Accent */}
 
                       <div
                         className="
@@ -449,7 +601,10 @@ export default function CaseStudies() {
                           h-[2px]
                           w-0
 
-                          bg-[var(--color-gold)]
+                          bg-gradient-to-r
+                          from-[var(--accent-dark)]
+                          via-[var(--accent)]
+                          to-[var(--accent-bright)]
 
                           transition-all
                           duration-700
@@ -465,18 +620,21 @@ export default function CaseStudies() {
 
                     <div
                       className="
+                        relative
+                        z-10
+
                         flex
                         flex-1
                         flex-col
+
+                        bg-[#08070d]
 
                         p-5
 
                         sm:p-6
                       "
                     >
-                      {/* =================================================
-                          CATEGORY
-                      ================================================== */}
+                      {/* Category */}
 
                       <div className="shrink-0">
                         <p
@@ -486,22 +644,16 @@ export default function CaseStudies() {
                             uppercase
                             tracking-[0.18em]
 
-                            text-[var(--color-green)]
+                            text-[var(--accent-bright)]
 
                             sm:text-[9px]
-
-                            dark:text-[var(--color-gold)]
                           "
                         >
                           {study.category}
                         </p>
                       </div>
 
-                      {/* =================================================
-                          TITLE
-
-                          Fixed minimum height keeps all titles aligned.
-                      ================================================== */}
+                      {/* Title */}
 
                       <div
                         className="
@@ -518,22 +670,21 @@ export default function CaseStudies() {
                             leading-[0.95]
                             tracking-[-0.045em]
 
-                            text-[var(--color-deep)]
+                            text-white
+
+                            transition-colors
+                            duration-300
+
+                            group-hover:text-[var(--accent-bright)]
 
                             sm:text-[27px]
-
-                            dark:text-[var(--color-cream)]
                           "
                         >
                           {study.title}
                         </h3>
                       </div>
 
-                      {/* =================================================
-                          DESCRIPTION
-
-                          Fixed area keeps services aligned.
-                      ================================================== */}
+                      {/* Description */}
 
                       <div
                         className="
@@ -550,22 +701,14 @@ export default function CaseStudies() {
                             text-sm
                             leading-6
 
-                            text-[#587064]
-
-                            dark:text-[#A8B9AE]
+                            text-white/60
                           "
                         >
                           {study.shortDescription}
                         </p>
                       </div>
 
-                      {/* =================================================
-                          SERVICES
-
-                          IMPORTANT:
-                          Fixed/minimum height makes service chips
-                          occupy the same vertical area.
-                      ================================================== */}
+                      {/* Services */}
 
                       <div
                         className="
@@ -585,9 +728,9 @@ export default function CaseStudies() {
                                     rounded-full
 
                                     border
-                                    border-[var(--color-deep)]/10
+                                    border-[var(--accent-bright)]/25
 
-                                    bg-[var(--color-soft)]/60
+                                    bg-[var(--accent-dark)]/20
 
                                     px-3
                                     py-1.5
@@ -595,16 +738,14 @@ export default function CaseStudies() {
                                     text-[8px]
                                     font-semibold
 
-                                    text-[#587064]
+                                    text-white/70
 
-                                    transition-colors
+                                    transition-all
                                     duration-300
 
-                                    group-hover:border-[var(--color-green)]/30
-
-                                    dark:border-[var(--color-cream)]/10
-                                    dark:bg-[var(--color-cream)]/[0.06]
-                                    dark:text-[#A8B9AE]
+                                    group-hover:border-[var(--accent-bright)]/50
+                                    group-hover:bg-[var(--accent-dark)]/25
+                                    group-hover:text-white
                                   "
                                 >
                                   {service.title}
@@ -614,11 +755,7 @@ export default function CaseStudies() {
                         )}
                       </div>
 
-                      {/* =================================================
-                          RESULTS
-
-                          Fixed height keeps metrics aligned across cards.
-                      ================================================== */}
+                      {/* Results */}
 
                       <div
                         className="
@@ -638,9 +775,9 @@ export default function CaseStudies() {
                                     rounded-xl
 
                                     border
-                                    border-[var(--color-deep)]/[0.06]
+                                    border-white/[0.08]
 
-                                    bg-[var(--color-soft)]/50
+                                    bg-[#120d1d]
 
                                     px-3
                                     py-3
@@ -648,10 +785,8 @@ export default function CaseStudies() {
                                     transition-all
                                     duration-300
 
-                                    group-hover:border-[var(--color-green)]/20
-
-                                    dark:border-[var(--color-cream)]/[0.07]
-                                    dark:bg-[var(--color-night)]/45
+                                    group-hover:border-[var(--accent)]/30
+                                    group-hover:bg-[#1a1028]
                                   "
                                 >
                                   <p
@@ -662,11 +797,9 @@ export default function CaseStudies() {
 
                                       ${
                                         resultIndex === 1
-                                          ? "text-[var(--color-sand)]"
-                                          : "text-[var(--color-gold)]"
+                                          ? "text-[var(--accent-bright)]"
+                                          : "text-[var(--accent-bright)]"
                                       }
-
-                                      dark:text-[var(--color-gold)]
                                     `}
                                   >
                                     {result.value}
@@ -681,9 +814,7 @@ export default function CaseStudies() {
                                       text-[8px]
                                       font-semibold
 
-                                      text-[#587064]/75
-
-                                      dark:text-[#A8B9AE]/70
+                                      text-white/45
                                     "
                                   >
                                     {result.label}
@@ -694,21 +825,21 @@ export default function CaseStudies() {
                         )}
                       </div>
 
-                      {/* =================================================
-                          BUTTONS
-
-                          mt-auto guarantees bottom alignment.
-                      ================================================== */}
+                      {/* Buttons */}
 
                       <div
                         className="
                           mt-auto
+
                           flex
                           flex-wrap
                           gap-2
+
                           pt-6
                         "
                       >
+                        {/* Primary */}
+
                         <Button
                           href={`/work/${study.slug}`}
                           variant="primary"
@@ -716,21 +847,14 @@ export default function CaseStudies() {
                           View Case Study
                         </Button>
 
+                        {/* Website */}
+
                         {study.website && (
-                          <a
+                          <Button
                             href={study.website}
-                            target="_blank"
-                            rel="noopener noreferrer"
+                            variant="outline"
                             className="
-                              inline-flex
-                              items-center
-                              justify-center
-                              gap-2
-
-                              rounded-full
-
-                              border
-                              border-[var(--color-deep)]/10
+                              border-[var(--accent-bright)]/35
 
                               bg-transparent
 
@@ -740,27 +864,18 @@ export default function CaseStudies() {
                               text-xs
                               font-bold
 
-                              text-[var(--color-deep)]
+                              text-[var(--accent-bright)]
 
                               transition-all
                               duration-300
 
-                              hover:border-[var(--color-deep)]
-                              hover:bg-[var(--color-deep)]
-                              hover:text-[var(--color-cream)]
-
-                              dark:border-[var(--color-cream)]/10
-                              dark:text-[var(--color-cream)]
-
-                              dark:hover:border-[var(--color-gold)]
-                              dark:hover:bg-[var(--color-gold)]
-                              dark:hover:text-[var(--color-deep)]
+                              hover:border-[var(--accent-bright)]
+                              hover:bg-[var(--accent-dark)]
+                              hover:text-white
                             "
                           >
                             Website
-
-                            <ExternalLink size={13} />
-                          </a>
+                          </Button>
                         )}
                       </div>
                     </div>
@@ -776,12 +891,14 @@ export default function CaseStudies() {
             <div
               className="
                 pointer-events-none
+
                 absolute
                 inset-x-0
                 top-[45%]
                 z-20
 
                 hidden
+
                 -translate-y-1/2
 
                 items-center
@@ -809,30 +926,24 @@ export default function CaseStudies() {
                   rounded-full
 
                   border
-                  border-[var(--color-deep)]/10
+                  border-[var(--accent)]/20
 
-                  bg-[var(--color-cream)]
+                  bg-[#08070d]
 
-                  text-[var(--color-deep)]
+                  text-white
 
-                  shadow-lg
+                  shadow-[0_8px_30px_color-mix(in_srgb,var(--accent-dark)_18%,transparent)]
 
                   transition-all
                   duration-300
 
                   hover:scale-105
 
-                  hover:border-[var(--color-green)]
-                  hover:bg-[var(--color-deep)]
-                  hover:text-[var(--color-cream)]
+                  hover:border-[var(--accent-bright)]
+                  hover:bg-[var(--accent-dark)]
+                  hover:text-white
 
-                  dark:border-[var(--color-cream)]/10
-                  dark:bg-[var(--color-deep)]
-                  dark:text-[var(--color-cream)]
-
-                  dark:hover:border-[var(--color-gold)]
-                  dark:hover:bg-[var(--color-gold)]
-                  dark:hover:text-[var(--color-deep)]
+                  hover:shadow-[0_10px_30px_color-mix(in_srgb,var(--accent-dark)_35%,transparent)]
                 "
                 aria-label="Previous project"
               >
@@ -861,30 +972,24 @@ export default function CaseStudies() {
                   rounded-full
 
                   border
-                  border-[var(--color-deep)]/10
+                  border-[var(--accent)]/20
 
-                  bg-[var(--color-cream)]
+                  bg-[#08070d]
 
-                  text-[var(--color-deep)]
+                  text-white
 
-                  shadow-lg
+                  shadow-[0_8px_30px_color-mix(in_srgb,var(--accent-dark)_18%,transparent)]
 
                   transition-all
                   duration-300
 
                   hover:scale-105
 
-                  hover:border-[var(--color-green)]
-                  hover:bg-[var(--color-deep)]
-                  hover:text-[var(--color-cream)]
+                  hover:border-[var(--accent-bright)]
+                  hover:bg-[var(--accent-dark)]
+                  hover:text-white
 
-                  dark:border-[var(--color-cream)]/10
-                  dark:bg-[var(--color-deep)]
-                  dark:text-[var(--color-cream)]
-
-                  dark:hover:border-[var(--color-gold)]
-                  dark:hover:bg-[var(--color-gold)]
-                  dark:hover:text-[var(--color-deep)]
+                  hover:shadow-[0_10px_30px_color-mix(in_srgb,var(--accent-dark)_35%,transparent)]
                 "
                 aria-label="Next project"
               >
@@ -965,13 +1070,9 @@ export default function CaseStudies() {
 
           opacity: 0.25;
 
-          background: var(--color-deep);
+          background: #050507;
 
           transition: all 0.3s ease;
-        }
-
-        .dark .case-studies-swiper .swiper-pagination-bullet {
-          background: var(--color-cream);
         }
 
         .case-studies-swiper
@@ -980,7 +1081,15 @@ export default function CaseStudies() {
 
           opacity: 1;
 
-          background: var(--color-gold);
+          background: linear-gradient(
+            90deg,
+            var(--accent-dark),
+            var(--accent),
+            var(--accent-bright)
+          );
+
+          box-shadow:
+            0 0 12px rgba(124, 58, 237, 0.35);
         }
 
         /* =====================================================
@@ -1015,9 +1124,6 @@ export default function CaseStudies() {
 
         /* =====================================================
            MOBILE CONTENT HEIGHT RESET
-           
-           On very small screens we allow content to grow naturally.
-           This prevents overly large empty spaces.
         ====================================================== */
 
         @media (max-width: 639px) {
@@ -1029,3 +1135,4 @@ export default function CaseStudies() {
     </section>
   );
 }
+

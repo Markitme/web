@@ -55,17 +55,17 @@ export default function ServiceMarquee() {
         overflow-hidden
 
         border-y
-        border-[var(--color-deep)]/[0.08]
+        border-[var(--border)]
 
-        bg-[#E7EDE4]
+        bg-[var(--background-secondary)]
 
         py-6
 
         transition-colors
         duration-500
 
-        dark:border-[var(--color-cream)]/[0.08]
-        dark:bg-[#0A2B22]
+        dark:border-[var(--border)]
+        dark:bg-[var(--background-secondary)]
 
         sm:py-7
         lg:py-8
@@ -92,10 +92,10 @@ export default function ServiceMarquee() {
             w-40
             -translate-y-1/2
             rounded-full
-            bg-[var(--color-green)]/[0.08]
+            bg-[var(--purple-soft)]
             blur-[70px]
 
-            dark:bg-[var(--color-green)]/[0.06]
+            dark:bg-[var(--purple-soft)]
           "
         />
 
@@ -108,10 +108,10 @@ export default function ServiceMarquee() {
             w-40
             -translate-y-1/2
             rounded-full
-            bg-[var(--color-gold)]/[0.07]
+            bg-[var(--accent)]/[0.08]
             blur-[70px]
 
-            dark:bg-[var(--color-gold)]/[0.035]
+            dark:bg-[var(--accent)]/[0.08]
           "
         />
       </div>
@@ -161,9 +161,9 @@ export default function ServiceMarquee() {
                     rounded-full
 
                     border
-                    border-[var(--color-deep)]/[0.10]
+                    border-[var(--border)]
 
-                    bg-white/60
+                    bg-[var(--surface)]
 
                     transition-all
                     duration-300
@@ -206,12 +206,12 @@ export default function ServiceMarquee() {
                     uppercase
                     tracking-[0.16em]
 
-                    text-[var(--color-deep)]/70
+                    text-[var(--foreground)]
 
                     transition-colors
                     duration-300
 
-                    group-hover:text-[var(--color-deep)]
+                    dark:text-[var(--foreground)]
 
                     sm:text-[11px]
 

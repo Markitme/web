@@ -19,9 +19,10 @@ export default function CTA({
 
   return (
     <section
-      className={`container-custom mt-20 pb-28 ${className}`}
+      className={`cta-section w-full bg-white py-20 text-black sm:py-24 lg:py-28 ${className}`}
     >
-      <motion.div
+      <div className="container-custom">
+        <motion.div
         initial={{ opacity: 0, y: 60 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{
@@ -32,15 +33,16 @@ export default function CTA({
           once: false,
           margin: "-100px",
         }}
-        className="
+          className="
+          cta-card
           relative
           overflow-hidden
           rounded-[2.5rem]
 
           border
-          border-[var(--color-deep)]/10
+          border-[var(--accent)]/35
 
-          bg-[var(--color-soft)]
+          bg-[var(--surface)]
 
           px-7
           py-20
@@ -49,9 +51,6 @@ export default function CTA({
 
           transition-colors
           duration-300
-
-          dark:border-[var(--color-cream)]/10
-          dark:bg-[#123F32]
 
           sm:px-12
           lg:py-24
@@ -75,7 +74,7 @@ export default function CTA({
 
             rounded-full
 
-            bg-[var(--color-gold)]/15
+            bg-[var(--accent)]/15
 
             blur-3xl
           "
@@ -97,7 +96,7 @@ export default function CTA({
 
             rounded-full
 
-            bg-[var(--color-green)]/20
+            bg-[var(--accent-bright)]/20
 
             blur-3xl
           "
@@ -107,7 +106,7 @@ export default function CTA({
             CONTENT
         ===================================================== */}
 
-        <div className="relative mx-auto max-w-4xl">
+        <div className="relative z-10 mx-auto max-w-4xl">
 
           {/* Eyebrow */}
 
@@ -118,9 +117,7 @@ export default function CTA({
               uppercase
               tracking-[0.2em]
 
-              text-[var(--color-sand)]
-
-              dark:text-[var(--color-gold)]
+              text-[var(--accent-bright)]
             "
           >
             {eyebrow}
@@ -137,9 +134,7 @@ export default function CTA({
               leading-[1.05]
               tracking-[-0.055em]
               capitalize
-              text-[var(--color-deep)]
-
-              dark:text-[var(--color-cream)]
+              text-white
 
               sm:text-5xl
               lg:text-6xl
@@ -159,9 +154,7 @@ export default function CTA({
               text-lg
               leading-8
 
-              text-[var(--color-deep)]/60
-
-              dark:text-[var(--color-cream)]/60
+              text-white/70
             "
           >
             {description}
@@ -182,7 +175,8 @@ export default function CTA({
           </div>
 
         </div>
-      </motion.div>
+        </motion.div>
+      </div>
     </section>
   );
 }

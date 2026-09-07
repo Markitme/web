@@ -31,7 +31,7 @@ const serviceGroups = [
       "High-performing websites and digital experiences designed to turn attention into meaningful business growth.",
     icon: Globe2,
     image: `${IMAGE_BASE_URL}web-development.jpg`,
-    accent: "#6D9773",
+    accent: "var(--accent)",
     size: "lg:col-span-7",
   },
   {
@@ -41,7 +41,7 @@ const serviceGroups = [
       "Strategic marketing systems that help your brand reach the right audience and grow consistently.",
     icon: TrendingUp,
     image: `${IMAGE_BASE_URL}marketing.jpg`,
-    accent: "#FFBA00",
+    accent: "var(--accent-bright)",
     size: "lg:col-span-5",
   },
   {
@@ -51,7 +51,7 @@ const serviceGroups = [
       "Distinctive brand identities and creative direction that make your business recognizable and memorable.",
     icon: Palette,
     image: `${IMAGE_BASE_URL}brand-identity.jpg`,
-    accent: "#BB8A52",
+    accent: "var(--accent-bright)",
     size: "lg:col-span-5",
   },
   {
@@ -61,7 +61,7 @@ const serviceGroups = [
       "Visual content built to tell your story, showcase your brand, and create stronger connections.",
     icon: Camera,
     image: `${IMAGE_BASE_URL}content-creative.jpg`,
-    accent: "#FFBA00",
+    accent: "var(--accent)",
     size: "lg:col-span-7",
   },
 ];
@@ -75,9 +75,10 @@ export default function ServicesSection() {
     <section
       id="services"
       className="
+        services-section
         relative
         overflow-hidden
-        bg-[var(--background)]
+        bg-white
         py-24
         sm:py-28
         lg:py-32
@@ -97,18 +98,17 @@ export default function ServicesSection() {
             absolute
             inset-0
             opacity-[0.025]
-            dark:opacity-[0.018]
           "
           style={{
             backgroundImage: `
               linear-gradient(
                 to right,
-                #0C3B2E 1px,
+                color-mix(in srgb, var(--accent) 8%, transparent) 1px,
                 transparent 1px
               ),
               linear-gradient(
                 to bottom,
-                #0C3B2E 1px,
+                color-mix(in srgb, var(--accent) 8%, transparent) 1px,
                 transparent 1px
               )
             `,
@@ -116,79 +116,9 @@ export default function ServicesSection() {
           }}
         />
 
-        {/* Left green glow */}
 
-        <div
-          className="
-            absolute
-            -left-40
-            top-20
-            h-96
-            w-96
-            rounded-full
-            bg-[var(--color-green)]/[0.06]
-            blur-[110px]
-            dark:bg-[var(--color-green)]/[0.055]
-          "
-        />
-
-        {/* Right gold glow */}
-
-        <div
-          className="
-            absolute
-            -right-40
-            bottom-20
-            h-96
-            w-96
-            rounded-full
-            bg-[var(--color-gold)]/[0.045]
-            blur-[110px]
-            dark:bg-[var(--color-gold)]/[0.025]
-          "
-        />
-
-        {/* Center glow */}
-
-        <div
-          className="
-            absolute
-            left-1/2
-            top-1/2
-            h-[280px]
-            w-[700px]
-            -translate-x-1/2
-            -translate-y-1/2
-            rounded-full
-            bg-[var(--color-green)]/[0.025]
-            blur-[120px]
-            dark:bg-[var(--color-cream)]/[0.015]
-          "
-        />
       </div>
 
-      {/* =====================================================
-          TOP GOLD ACCENT
-      ====================================================== */}
-
-      <div
-        className="
-          pointer-events-none
-          absolute
-          left-1/2
-          top-0
-          h-[2px]
-          w-24
-          -translate-x-1/2
-          rounded-full
-          bg-[var(--color-gold)]
-          sm:w-32
-        "
-      />
-
-      {/* =====================================================
-          MAIN CONTENT
-      ====================================================== */}
 
       <div className="container-custom relative z-10">
         {/* ===================================================
@@ -197,14 +127,7 @@ export default function ServicesSection() {
 
         <div className="max-w-4xl">
           <div className="flex items-center gap-3">
-            <span
-              className="
-                h-px
-                w-9
-                bg-[var(--color-green)]
-                dark:bg-[var(--color-gold)]
-              "
-            />
+           
 
             <span
               className="
@@ -212,8 +135,7 @@ export default function ServicesSection() {
                 font-bold
                 uppercase
                 tracking-[0.2em]
-                text-[var(--color-green)]
-                dark:text-[var(--color-gold)]
+                text-[var(--accent)]
               "
             >
               What we do
@@ -227,7 +149,7 @@ export default function ServicesSection() {
               font-bold
               leading-[1.04]
               tracking-[-0.05em]
-              text-[var(--foreground)]
+              text-black
               sm:text-5xl
               lg:text-6xl
             "
@@ -237,8 +159,7 @@ export default function ServicesSection() {
             <span
               className="
                 block
-                text-[var(--color-green)]
-                dark:text-[var(--color-gold)]
+                text-[var(--accent)]
               "
             >
               to grow.
@@ -251,7 +172,7 @@ export default function ServicesSection() {
               max-w-2xl
               text-base
               leading-7
-              text-[var(--muted)]
+              text-black/60
               sm:text-lg
             "
           >
@@ -304,12 +225,13 @@ export default function ServicesSection() {
                   overflow-hidden
                   rounded-[2rem]
                   border
-                  border-white/10
-                  shadow-[0_20px_70px_rgba(12,59,46,0.12)]
+                  border-black/15
+                  shadow-[0_20px_70px_rgba(17,17,22,0.16)]
                   transition-all
                   duration-500
                   hover:-translate-y-2
-                  hover:shadow-[0_35px_90px_rgba(12,59,46,0.20)]
+                  hover:border-[var(--accent)]
+                  hover:shadow-[0_35px_90px_color-mix(in_srgb,var(--accent)_24%,transparent)]
                   ${service.size}
 
                   ${
@@ -348,10 +270,11 @@ export default function ServicesSection() {
                   className="
                     absolute
                     inset-0
-                    bg-[#071f18]/[0.68]
+                    bg-black/[0.52]
+                    backdrop-blur-[3px]
                     transition-all
                     duration-700
-                    group-hover:bg-[#071f18]/[0.54]
+                    group-hover:bg-[#171022]/[0.46]
                   "
                 />
 
@@ -364,8 +287,8 @@ export default function ServicesSection() {
                     absolute
                     inset-0
                     bg-gradient-to-t
-                    from-[#071f18]
-                    via-[#071f18]/45
+                    from-black
+                    via-black/45
                     to-transparent
                     opacity-95
                   "
@@ -549,6 +472,7 @@ export default function ServicesSection() {
                   href="/services"
                   aria-label={`Explore ${service.title}`}
                   className="
+                    service-explore-button
                     absolute
                     bottom-7
                     right-7
@@ -560,16 +484,21 @@ export default function ServicesSection() {
                     justify-center
                     rounded-full
                     border
-                    border-white/20
-                    bg-white/10
+                    border-[var(--accent-bright)]/70
+                    bg-gradient-to-br
+                    from-black/90
+                    via-[#171022]/95
+                    to-[var(--accent-dark)]
                     text-white
                     backdrop-blur-md
                     transition-all
                     duration-500
                     group-hover:w-28
-                    group-hover:border-[var(--color-gold)]
-                    group-hover:bg-[var(--color-gold)]
-                    group-hover:text-[var(--color-deep)]
+                    group-hover:border-[var(--accent-bright)]
+                    group-hover:from-[var(--accent-dark)]
+                    group-hover:via-[var(--accent)]
+                    group-hover:to-[var(--accent-bright)]
+                    group-hover:text-white
                     sm:bottom-9
                     sm:right-9
                   "
@@ -607,7 +536,7 @@ export default function ServicesSection() {
                     left-0
                     h-[3px]
                     w-0
-                    bg-[var(--color-gold)]
+                    bg-[var(--accent)]
                     transition-all
                     duration-700
                     group-hover:w-full
@@ -616,59 +545,6 @@ export default function ServicesSection() {
               </motion.article>
             );
           })}
-        </div>
-
-        {/* ===================================================
-            BOTTOM CTA
-        ==================================================== */}
-
-        <div
-          className="
-            mt-10
-            flex
-            justify-end
-          "
-        >
-          <Link
-            href="/services"
-            className="
-              group
-              inline-flex
-              items-center
-              gap-3
-              rounded-full
-              border
-              border-[var(--color-deep)]/10
-              bg-white/70
-              px-6
-              py-3.5
-              text-sm
-              font-bold
-              text-[var(--color-deep)]
-              backdrop-blur-md
-              transition-all
-              duration-300
-              hover:bg-[var(--color-deep)]
-              hover:text-white
-              dark:border-white/10
-              dark:bg-[var(--color-deep)]/70
-              dark:text-[var(--color-cream)]
-              dark:hover:bg-[var(--color-gold)]
-              dark:hover:text-[var(--color-deep)]
-            "
-          >
-            View all services
-
-            <ArrowUpRight
-              size={18}
-              className="
-                transition-transform
-                duration-300
-                group-hover:translate-x-0.5
-                group-hover:-translate-y-0.5
-              "
-            />
-          </Link>
         </div>
       </div>
 
@@ -685,9 +561,8 @@ export default function ServicesSection() {
           h-px
           w-20
           -translate-x-1/2
-          bg-[var(--color-green)]/35
+          bg-[var(--accent)]/35
           sm:w-28
-          dark:bg-[var(--color-gold)]/30
         "
       />
     </section>

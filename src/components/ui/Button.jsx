@@ -32,11 +32,11 @@ export default function Button({
 
     focus:outline-none
     focus:ring-2
-    focus:ring-[var(--color-gold)]
+    focus:ring-[var(--accent)]
     focus:ring-offset-2
-    focus:ring-offset-[var(--color-cream)]
+    focus:ring-offset-[var(--background)]
 
-    dark:focus:ring-offset-[var(--color-deep)]
+    dark:focus:ring-offset-[var(--background)]
 
     disabled:cursor-not-allowed
     disabled:opacity-50
@@ -60,22 +60,19 @@ export default function Button({
     ================================================= */
 
     primary: `
-      bg-[var(--color-gold)]
-      text-[var(--color-deep)]
+      btn-primary
+      text-white
 
-      shadow-[0_10px_30px_rgba(255,186,0,0.16)]
+      shadow-[0_10px_30px_color-mix(in_srgb,var(--accent-bright)_25%,transparent)]
 
       hover:-translate-y-0.5
-      hover:bg-[var(--color-deep)]
-      hover:text-[var(--color-cream)]
-      hover:shadow-[0_14px_38px_rgba(12,59,46,0.20)]
+      hover:text-white
+      hover:shadow-[0_14px_38px_color-mix(in_srgb,var(--accent-bright)_30%,transparent)]
 
-      dark:bg-[var(--color-gold)]
-      dark:text-[var(--color-deep)]
+      dark:text-white
 
-      dark:hover:bg-[var(--color-cream)]
-      dark:hover:text-[var(--color-deep)]
-      dark:hover:shadow-[0_14px_38px_rgba(241,243,237,0.12)]
+      dark:hover:text-white
+      dark:hover:shadow-[0_14px_38px_color-mix(in_srgb,var(--accent-bright)_30%,transparent)]
     `,
 
 
@@ -90,23 +87,24 @@ export default function Button({
     ================================================= */
 
     outline: `
+      btn-outline
       border
-      border-[var(--color-deep)]/20
+      border-[var(--border)]
       bg-transparent
-      text-[var(--color-deep)]
+      text-[var(--foreground)]
 
       hover:-translate-y-0.5
-      hover:border-[var(--color-green)]
-      hover:bg-[var(--color-green)]/10
-      hover:text-[var(--color-deep)]
+      hover:border-[var(--accent)]
+      hover:bg-[var(--accent)]
+      hover:text-white
 
-      dark:border-[var(--color-cream)]/20
+      dark:border-[var(--border)]
       dark:bg-transparent
-      dark:text-[var(--color-cream)]
+      dark:text-[var(--foreground)]
 
-      dark:hover:border-[var(--color-green)]
-      dark:hover:bg-[var(--color-green)]
-      dark:hover:text-[var(--color-deep)]
+      dark:hover:border-[var(--accent)]
+      dark:hover:bg-[var(--accent-bright)]
+      dark:hover:text-white
     `,
 
 
@@ -117,18 +115,18 @@ export default function Button({
     ================================================= */
 
     sage: `
-      bg-[var(--color-green)]
-      text-[var(--color-deep)]
+      bg-[var(--accent)]
+      text-white
 
       hover:-translate-y-0.5
-      hover:bg-[var(--color-deep)]
-      hover:text-[var(--color-cream)]
+      hover:bg-[var(--accent-bright)]
+      hover:text-white
 
-      dark:bg-[var(--color-green)]
-      dark:text-[var(--color-deep)]
+      dark:bg-[var(--accent)]
+      dark:text-white
 
-      dark:hover:bg-[var(--color-gold)]
-      dark:hover:text-[var(--color-deep)]
+      dark:hover:bg-[var(--accent-bright)]
+      dark:hover:text-white
     `,
 
 
@@ -139,18 +137,18 @@ export default function Button({
     ================================================= */
 
     dark: `
-      bg-[var(--color-deep)]
-      text-[var(--color-cream)]
+      bg-white
+      text-black
 
       hover:-translate-y-0.5
-      hover:bg-[var(--color-green)]
-      hover:text-[var(--color-deep)]
+      hover:bg-[var(--accent)]
+      hover:text-white
 
-      dark:bg-[var(--color-cream)]
-      dark:text-[var(--color-deep)]
+      dark:bg-white
+      dark:text-black
 
-      dark:hover:bg-[var(--color-gold)]
-      dark:hover:text-[var(--color-deep)]
+      dark:hover:bg-[var(--accent-bright)]
+      dark:hover:text-white
     `,
 
 
@@ -162,15 +160,15 @@ export default function Button({
 
     ghost: `
       bg-transparent
-      text-[var(--color-deep)]
+      text-[var(--foreground)]
 
-      hover:bg-[var(--color-green)]/10
-      hover:text-[var(--color-green)]
+      hover:bg-[var(--purple-soft)]
+      hover:text-[var(--accent)]
 
-      dark:text-[var(--color-cream)]
+      dark:text-[var(--foreground)]
 
-      dark:hover:bg-[var(--color-green)]/10
-      dark:hover:text-[var(--color-gold)]
+      dark:hover:bg-[var(--purple-soft)]
+      dark:hover:text-[var(--accent)]
     `,
   };
 

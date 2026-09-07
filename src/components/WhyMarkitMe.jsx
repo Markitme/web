@@ -1,14 +1,15 @@
 "use client";
 
 import { motion } from "framer-motion";
+
 import {
   ArrowUpRight,
   Building2,
   UserRound,
-  Zap,
   Check,
   Sparkles,
 } from "lucide-react";
+
 import SectionHeading from "./SectionHeading";
 
 const comparisonItems = [
@@ -43,16 +44,19 @@ export default function WhyMarkitMe() {
       className="
         relative
         overflow-hidden
+
         border-y
-        border-[var(--color-deep)]/10
-        bg-[var(--color-cream)]
+        border-[var(--color-cream)]/10
+
+        bg-[var(--color-night)]
+
         py-24
-        text-[var(--color-deep)]
+
+        text-[var(--color-cream)]
+
         transition-colors
         duration-300
-        dark:border-[var(--color-cream)]/10
-        dark:bg-[var(--color-night)]
-        dark:text-[var(--color-cream)]
+
         sm:py-32
         lg:py-40
       "
@@ -62,161 +66,179 @@ export default function WhyMarkitMe() {
       ====================================================== */}
 
       <div className="pointer-events-none absolute inset-0">
-        {/* Light grid */}
-        <div
-          className="
-            absolute
-            inset-0
-            opacity-[0.35]
-            dark:hidden
-          "
-          style={{
-            backgroundImage: `
-              linear-gradient(rgba(12,59,46,0.055) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(12,59,46,0.055) 1px, transparent 1px)
-            `,
-            backgroundSize: "64px 64px",
-          }}
-        />
-
         {/* Dark grid */}
+
         <div
           className="
             absolute
             inset-0
-            hidden
-            opacity-[0.2]
-            dark:block
+            opacity-[0.22]
           "
           style={{
             backgroundImage: `
-              linear-gradient(rgba(241,243,237,0.05) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(241,243,237,0.05) 1px, transparent 1px)
+              linear-gradient(rgba(241,243,237,0.045) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(241,243,237,0.045) 1px, transparent 1px)
             `,
             backgroundSize: "64px 64px",
           }}
         />
 
-        {/* Yellow glow */}
+        {/* Gold glow */}
+
         <div
           className="
             absolute
-            -right-32
-            top-20
-            h-80
-            w-80
+            -right-40
+            top-10
+
+            h-96
+            w-96
+
             rounded-full
-            bg-[var(--color-gold)]/10
+
+            bg-[var(--color-gold)]/[0.055]
+
             blur-3xl
-            dark:bg-[var(--color-gold)]/[0.06]
           "
         />
 
         {/* Green glow */}
+
         <div
           className="
             absolute
-            -left-32
-            bottom-20
+            -left-40
+            bottom-10
+
+            h-[28rem]
+            w-[28rem]
+
+            rounded-full
+
+            bg-[var(--color-green)]/[0.08]
+
+            blur-3xl
+          "
+        />
+
+        {/* Center subtle glow */}
+
+        <div
+          className="
+            absolute
+            left-1/2
+            top-1/2
+
             h-96
             w-96
+
+            -translate-x-1/2
+            -translate-y-1/2
+
             rounded-full
-            bg-[var(--color-green)]/10
+
+            bg-[var(--color-green)]/[0.025]
+
             blur-3xl
-            dark:bg-[var(--color-green)]/[0.08]
           "
         />
       </div>
 
+      {/* =====================================================
+          CONTENT
+      ====================================================== */}
+
       <div className="container-custom relative z-10">
-
         {/* =====================================================
-    HEADER
-===================================================== */}
+            HEADER
+        ====================================================== */}
 
-<motion.div
-  initial={{ opacity: 0, y: 30 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  viewport={{ once: true, amount: 0.2 }}
-  transition={{
-    duration: 0.7,
-    ease: "easeOut",
-  }}
-  className="mb-11 md:mb-14"
->
-  {/* =================================================
-      EYEBROW
-  ================================================== */}
+        <motion.div
+          initial={{
+            opacity: 0,
+            y: 30,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          viewport={{
+            once: true,
+            amount: 0.2,
+          }}
+          transition={{
+            duration: 0.7,
+            ease: "easeOut",
+          }}
+          className="mb-11 md:mb-14"
+        >
+          {/* Eyebrow */}
 
-  <div className="inline-flex items-center gap-2">
-    <span
-      className="
-        h-1.5
-        w-1.5
-        rounded-full
-        bg-[var(--color-gold)]
-      "
-    />
+          <div className="inline-flex items-center gap-2">
+            <span
+              className="
+                h-1.5
+                w-1.5
+                rounded-full
+                bg-[var(--color-gold)]
+              "
+            />
 
-    <p
-      className="
-        text-[9px]
-        font-black
-        uppercase
-        tracking-[0.24em]
-        text-[var(--color-green)]
-        dark:text-[var(--color-gold)]
-      "
-    >
-      A different way to work
-    </p>
+            <p
+              className="
+                text-[9px]
+                font-black
+                uppercase
+                tracking-[0.24em]
 
-    <span
-      className="
-        h-1.5
-        w-1.5
-        rounded-full
-        bg-[var(--color-green)]
-        dark:bg-[var(--color-gold)]
-      "
-    />
-  </div>
+                text-[var(--color-gold)]
+              "
+            >
+              A different way to work
+            </p>
 
-  {/* =================================================
-      HEADING
-  ================================================== */}
+            <span
+              className="
+                h-1.5
+                w-1.5
+                rounded-full
+                bg-[var(--color-green)]
+              "
+            />
+          </div>
 
-  <SectionHeading>
-    Not an agency.{" "}
-    <span
-      className="
-        text-[var(--color-green)]
-        dark:text-[var(--color-gold)]
-      "
-    >
-      Not just a freelancer.
-    </span>
-  </SectionHeading>
+          {/* Heading */}
 
-  {/* =================================================
-      DESCRIPTION
-  ================================================== */}
+          <SectionHeading>
+            Not an agency.{" "}
+            <span
+              className="
+                text-[var(--color-gold)]
+              "
+            >
+              Not just a freelancer.
+            </span>
+          </SectionHeading>
 
-  <p
-    className="
-      mt-5
-      max-w-2xl
-      text-sm
-      leading-7
-      text-[var(--color-deep)]/55
-      dark:text-[var(--color-cream)]/55
-      sm:text-base
-    "
-  >
-    You get the flexibility of a specialist and the capability of a full
-    digital team — without the unnecessary layers.
-  </p>
-</motion.div>
+          {/* Description */}
+
+          <p
+            className="
+              mt-5
+              max-w-2xl
+
+              text-sm
+              leading-7
+
+              text-[var(--color-cream)]/55
+
+              sm:text-base
+            "
+          >
+            You get the flexibility of a specialist and the capability of a
+            full digital team — without the unnecessary layers.
+          </p>
+        </motion.div>
 
         {/* =====================================================
             COMPARISON AREA
@@ -227,11 +249,12 @@ export default function WhyMarkitMe() {
             className="
               grid
               gap-5
+
               lg:grid-cols-[0.85fr_1.3fr_0.85fr]
+
               lg:items-stretch
             "
           >
-
             {/* =================================================
                 LEFT — TRADITIONAL AGENCY
             ================================================= */}
@@ -264,77 +287,129 @@ export default function WhyMarkitMe() {
               }}
               className="
                 group
+                why-center-card
                 relative
                 overflow-hidden
+                isolate
+                z-20
+
                 rounded-[2rem]
+
                 border
-                border-[var(--color-deep)]
-                bg-[var(--color-deep)]
+                border-[var(--accent-bright)]
+
+                bg-[var(--surface)]
+
                 p-7
-                text-[var(--color-cream)]
-                shadow-[0_30px_80px_rgba(12,59,46,0.18)]
-                dark:border-[var(--color-green)]/40
-                dark:bg-[var(--color-deep)]
+
+                text-white
+
+
+                transition-all
+                duration-500
+
+                hover:border-[var(--accent-bright)]
+                hover:shadow-[0_35px_100px_color-mix(in_srgb,var(--accent)_24%,transparent)]
+
+                lg:scale-[1.035]
+
                 sm:p-9
                 lg:p-11
               "
             >
-              {/* Decorative circle */}
+              {/* =================================================
+                  CENTER DECORATIVE CIRCLE
+              ================================================== */}
 
               <div
                 className="
                   pointer-events-none
                   absolute
+
                   -right-24
                   -top-24
+
                   h-64
                   w-64
+
                   rounded-full
+
                   border
                   border-[var(--color-gold)]/20
-                  bg-[var(--color-gold)]/10
+
+                  bg-[var(--color-gold)]/[0.06]
+
                   transition-transform
                   duration-700
+
                   group-hover:scale-125
                 "
               />
 
-              {/* Decorative square */}
+              {/* =================================================
+                  CENTER DECORATIVE SQUARE
+              ================================================== */}
 
               <div
                 className="
                   pointer-events-none
                   absolute
+
                   bottom-0
                   right-0
+
                   h-32
                   w-32
+
                   translate-x-1/3
                   translate-y-1/3
+
                   rotate-12
+
                   border
                   border-[var(--color-green)]/20
+
+                  transition-transform
+                  duration-700
+
+                  group-hover:rotate-6
                 "
               />
 
-              {/* Top */}
+              {/* =================================================
+                  TOP
+              ================================================== */}
 
-              <div className="relative flex items-center justify-between">
+              <div
+                className="
+                  relative
+                  z-10
+                  flex
+                  items-center
+                  justify-between
+                "
+              >
                 <span
                   className="
                     inline-flex
                     items-center
                     gap-2
+
                     rounded-full
+
                     border
                     border-[var(--color-cream)]/15
+
                     bg-[var(--color-cream)]/[0.05]
+
                     px-3
                     py-1.5
+
                     text-[9px]
                     font-medium
                     uppercase
                     tracking-[0.18em]
+
                     text-[var(--color-cream)]/60
                   "
                 >
@@ -351,6 +426,7 @@ export default function WhyMarkitMe() {
                     text-[10px]
                     font-bold
                     tracking-[0.2em]
+
                     text-[var(--color-cream)]/30
                   "
                 >
@@ -358,15 +434,18 @@ export default function WhyMarkitMe() {
                 </span>
               </div>
 
-              {/* Main content */}
+              {/* =================================================
+                  MAIN CONTENT
+              ================================================== */}
 
-              <div className="relative mt-14">
+              <div className="relative z-10 mt-14">
                 <p
                   className="
                     text-[10px]
                     font-black
                     uppercase
                     tracking-[0.22em]
+
                     text-[var(--color-gold)]
                   "
                 >
@@ -377,17 +456,22 @@ export default function WhyMarkitMe() {
                   className="
                     mt-4
                     max-w-lg
+
                     text-4xl
                     font-black
                     leading-[0.95]
+
                     tracking-[-0.05em]
+
+                    text-[var(--color-cream)]
+
                     sm:text-5xl
                   "
                 >
                   Built around
                   <br />
 
-                  <span className="text-[var(--color-green)]">
+                  <span className="text-[var(--color-gold)]">
                     your business.
                   </span>
                 </h3>
@@ -396,8 +480,10 @@ export default function WhyMarkitMe() {
                   className="
                     mt-6
                     max-w-md
+
                     text-sm
                     leading-7
+
                     text-[var(--color-cream)]/60
                   "
                 >
@@ -406,9 +492,11 @@ export default function WhyMarkitMe() {
                 </p>
               </div>
 
-              {/* Points */}
+              {/* =================================================
+                  POINTS
+              ================================================== */}
 
-              <div className="relative mt-9 space-y-3">
+              <div className="relative z-10 mt-9 space-y-3">
                 {markitmePoints.map((point, index) => (
                   <motion.div
                     key={point}
@@ -431,8 +519,10 @@ export default function WhyMarkitMe() {
                       flex
                       items-center
                       gap-3
+
                       border-t
                       border-[var(--color-cream)]/10
+
                       pt-3
                     "
                   >
@@ -444,9 +534,14 @@ export default function WhyMarkitMe() {
                         shrink-0
                         items-center
                         justify-center
+
                         rounded-full
+
                         bg-[var(--color-gold)]
+
                         text-[var(--color-deep)]
+
+                        shadow-[0_0_15px_rgba(255,186,0,0.15)]
                       "
                     >
                       <Check
@@ -455,48 +550,76 @@ export default function WhyMarkitMe() {
                       />
                     </span>
 
-                    <span className="text-sm text-[var(--color-cream)]/80">
+                    <span
+                      className="
+                        text-sm
+
+                        text-[var(--color-cream)]/80
+                      "
+                    >
                       {point}
                     </span>
                   </motion.div>
                 ))}
               </div>
 
-              {/* Bottom */}
+              {/* =================================================
+                  BOTTOM
+              ================================================== */}
 
               <div
                 className="
                   relative
+                  z-10
+
                   mt-10
+
                   flex
                   items-center
                   justify-between
+
                   border-t
                   border-[var(--color-cream)]/10
+
                   pt-6
                 "
               >
-                <span className="text-xs text-[var(--color-cream)]/40">
+                <span
+                  className="
+                    text-xs
+
+                    text-[var(--color-cream)]/40
+                  "
+                >
                   One partner. Full capability.
                 </span>
 
-                <button type="button" onClick={() => {
-                  window.dispatchEvent(
-                    new Event("open-contact-modal")
-                  );
-                }}
+                <button
+                  type="button"
+                  onClick={() => {
+                    window.dispatchEvent(
+                      new Event("open-contact-modal")
+                    );
+                  }}
+                  aria-label="Open contact form"
                   className="
                     flex
-                    cursor-pointer
                     h-10
                     w-10
+                    cursor-pointer
                     items-center
                     justify-center
+
                     rounded-full
+
                     bg-[var(--color-gold)]
+
                     text-[var(--color-deep)]
-                    transition-transform
+
+                    transition-all
                     duration-300
+
+                    hover:scale-110
                     group-hover:rotate-45
                   "
                 >
@@ -538,46 +661,84 @@ export default function WhyMarkitMe() {
           className="
             mt-16
             max-w-4xl
+
             lg:mt-20
           "
         >
-          <div className="mb-6 h-px w-16 bg-[var(--color-gold)]" />
+          {/* Accent line */}
+
+          <div
+            className="
+              mb-6
+              h-px
+              w-16
+
+              bg-[var(--color-gold)]
+            "
+          />
+
+          {/* Main statement */}
 
           <p
             className="
               text-xl
               leading-8
+
               tracking-[-0.02em]
-              text-[var(--color-deep)]/55
-              dark:text-[var(--color-cream)]/55
+
+              text-[var(--color-cream)]/55
+
               sm:text-2xl
             "
           >
-            <span className="font-black text-[var(--color-deep)] dark:text-[var(--color-cream)]">
+            <span
+              className="
+                font-black
+                text-[var(--color-cream)]
+              "
+            >
               Less hierarchy.
             </span>{" "}
 
-            <span className="font-black text-[var(--color-green)]">
+            <span
+              className="
+                font-black
+                text-[var(--color-gold)]
+              "
+            >
               More expertise.
             </span>{" "}
 
-            <span className="font-black text-[var(--color-deep)] dark:text-[var(--color-cream)]">
+            <span
+              className="
+                font-black
+                text-[var(--color-cream)]
+              "
+            >
               Better communication.
             </span>
           </p>
 
+          {/* Supporting statement */}
+
           <p
             className="
               mt-3
+
               text-sm
               leading-7
-              text-[var(--color-deep)]/45
-              dark:text-[var(--color-cream)]/45
+
+              text-[var(--color-cream)]/45
             "
           >
             And a team that stays focused on one thing:
 
-            <span className="font-bold text-[var(--color-sand)]">
+            <span
+              className="
+                font-bold
+                text-[var(--color-green)]
+              "
+            >
               {" "}
               your growth.
             </span>
@@ -617,43 +778,103 @@ function ComparisonCard({ item, direction }) {
         group
         relative
         overflow-hidden
+        z-10
+
         rounded-[2rem]
+
         border
-        border-[var(--color-deep)]/10
-        bg-white/70
+        border-[var(--accent)]/35
+
+        bg-[#101017]
+
         p-7
+
+        text-[var(--color-cream)]
+
         backdrop-blur-sm
+
         transition-all
         duration-500
+
         hover:-translate-y-2
-        hover:border-[var(--color-green)]/50
-        hover:shadow-[0_25px_60px_rgba(12,59,46,0.08)]
-        dark:border-[var(--color-cream)]/10
-        dark:bg-[var(--color-deep)]/40
-        dark:hover:border-[var(--color-green)]/40
+
+        hover:border-[var(--accent-bright)]
+
+        hover:bg-[#15151e]
+
+        hover:shadow-[0_25px_70px_color-mix(in_srgb,var(--accent)_22%,transparent)]
+
         sm:p-9
       "
     >
-      {/* Top accent */}
+      {/* =======================================================
+          BACKGROUND GLOW
+      ======================================================== */}
+
+      <div
+        className="
+          pointer-events-none
+          absolute
+
+          -right-20
+          -top-20
+
+          h-40
+          w-40
+
+          rounded-full
+
+          bg-[var(--accent)]/[0.10]
+
+          blur-3xl
+
+          transition-all
+          duration-700
+
+          group-hover:scale-125
+          group-hover:bg-[var(--accent-bright)]/[0.18]
+        "
+      />
+
+      {/* =======================================================
+          TOP ACCENT
+      ======================================================== */}
 
       <div
         className="
           absolute
+
           left-7
           top-0
+
           h-[3px]
           w-10
-          bg-[var(--color-sand)]
+
+          bg-[var(--accent-bright)]
+
           transition-all
           duration-500
+
           group-hover:w-20
+
           sm:left-9
         "
       />
 
-      {/* Header */}
+      {/* =======================================================
+          HEADER
+      ======================================================== */}
 
-      <div className="flex items-center justify-between">
+      <div
+        className="
+          relative
+          flex
+          items-center
+          justify-between
+        "
+      >
+        {/* ICON */}
+
         <div
           className="
             flex
@@ -661,14 +882,21 @@ function ComparisonCard({ item, direction }) {
             w-11
             items-center
             justify-center
+
             rounded-2xl
+
             border
-            border-[var(--color-deep)]/10
-            bg-[var(--color-soft)]
-            text-[var(--color-deep)]
-            dark:border-[var(--color-cream)]/10
-            dark:bg-[var(--color-cream)]/[0.05]
-            dark:text-[var(--color-cream)]
+            border-white/15
+
+            bg-white/[0.06]
+
+            text-[var(--accent-bright)]
+
+            transition-all
+            duration-300
+
+            group-hover:border-[var(--accent-bright)]/60
+            group-hover:bg-[var(--accent)]/[0.18]
           "
         >
           <Icon
@@ -677,84 +905,116 @@ function ComparisonCard({ item, direction }) {
           />
         </div>
 
+        {/* NUMBER */}
+
         <span
           className="
             text-[9px]
             font-black
             uppercase
             tracking-[0.18em]
-            text-[var(--color-deep)]/25
-            dark:text-[var(--color-cream)]/25
+
+            text-white/40
+
+            transition-colors
+            duration-300
+
+            group-hover:text-[var(--accent-bright)]
           "
         >
           Option {item.number}
         </span>
       </div>
 
-      {/* Content */}
+      {/* =======================================================
+          CONTENT
+      ======================================================== */}
 
-      <h3
-        className="
-          mt-10
-          text-2xl
-          font-black
-          tracking-[-0.04em]
-        "
-      >
-        {item.title}
-      </h3>
+      <div className="relative">
+        {/* TITLE */}
 
-      <p
-        className="
-          mt-3
-          text-sm
-          leading-6
-          text-[var(--color-deep)]/50
-          dark:text-[var(--color-cream)]/50
-        "
-      >
-        {item.description}
-      </p>
+        <h3
+          className="
+            mt-10
 
-      {/* Points */}
+            text-2xl
+            font-black
 
-      <div className="mt-7 space-y-3">
-        {item.points.map((point) => (
-          <div
-            key={point}
-            className="
-              flex
-              items-center
-              gap-3
-              text-sm
-              text-[var(--color-deep)]/55
-              dark:text-[var(--color-cream)]/55
-            "
-          >
-            <span
+            tracking-[-0.04em]
+
+            text-white
+          "
+        >
+          {item.title}
+        </h3>
+
+        {/* DESCRIPTION */}
+
+        <p
+          className="
+            mt-3
+
+            text-sm
+            leading-6
+
+            text-white/65
+          "
+        >
+          {item.description}
+        </p>
+
+        {/* =====================================================
+            POINTS
+        ====================================================== */}
+
+        <div className="mt-7 space-y-3">
+          {item.points.map((point) => (
+            <div
+              key={point}
               className="
-                h-1.5
-                w-1.5
-                shrink-0
-                rounded-full
-                bg-[var(--color-sand)]
-              "
-            />
+                flex
+                items-center
+                gap-3
 
-            {point}
-          </div>
-        ))}
+                text-sm
+
+                text-white/75
+              "
+            >
+              <span
+                className="
+                  h-1.5
+                  w-1.5
+                  shrink-0
+
+                  rounded-full
+
+                  bg-[var(--accent-bright)]
+
+                  shadow-[0_0_8px_rgba(255,186,0,0.30)]
+                "
+              />
+
+              {point}
+            </div>
+          ))}
+        </div>
       </div>
 
-      {/* Bottom */}
+      {/* =======================================================
+          BOTTOM
+      ======================================================== */}
 
       <div
         className="
+          relative
+
           mt-10
+
           border-t
-          border-[var(--color-deep)]/10
+            border-white/15
+
           pt-5
-          dark:border-[var(--color-cream)]/10
         "
       >
         <span
@@ -763,8 +1023,8 @@ function ComparisonCard({ item, direction }) {
             font-bold
             uppercase
             tracking-[0.18em]
-            text-[var(--color-deep)]/25
-            dark:text-[var(--color-cream)]/25
+
+            text-white/40
           "
         >
           The usual route

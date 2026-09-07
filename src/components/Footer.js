@@ -12,18 +12,13 @@ export default function Footer() {
   return (
     <footer
       className="
+        footer-light
         relative
         overflow-hidden
         border-t
-        border-[var(--color-deep)]/10
-        bg-[var(--color-cream)]
-        text-[var(--color-deep)]
-        transition-colors
-        duration-300
-
-        dark:border-[var(--color-cream)]/10
-        dark:bg-[var(--color-deep)]
-        dark:text-[var(--color-cream)]
+        border-[var(--accent)]/20
+        bg-white
+        text-[#111116]
       "
     >
 
@@ -33,7 +28,7 @@ export default function Footer() {
 
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
 
-        {/* Sage glow */}
+        {/* Purple glow */}
 
         <div
           className="
@@ -43,12 +38,12 @@ export default function Footer() {
             h-96
             w-96
             rounded-full
-            bg-[var(--color-green)]/15
+            bg-[var(--accent)]/10
             blur-3xl
           "
         />
 
-        {/* Golden glow */}
+        {/* Soft accent glow */}
 
         <div
           className="
@@ -58,12 +53,12 @@ export default function Footer() {
             h-80
             w-80
             rounded-full
-            bg-[var(--color-gold)]/10
+            bg-[var(--accent-bright)]/8
             blur-3xl
           "
         />
 
-        {/* Sand glow */}
+        {/* Neutral glow */}
 
         <div
           className="
@@ -73,7 +68,7 @@ export default function Footer() {
             h-72
             w-72
             rounded-full
-            bg-[var(--color-sand)]/10
+            bg-black/[0.03]
             blur-3xl
           "
         />
@@ -121,26 +116,6 @@ export default function Footer() {
               aria-label="MarkitMe Home"
             >
 
-              {/* Dark mode logo */}
-
-              <Image
-                src="/images/logo-light.png"
-                alt="MarkitMe"
-                width={190}
-                height={60}
-                priority
-                className="
-                  hidden
-                  h-auto
-                  w-[145px]
-                  object-contain
-                  dark:block
-                  sm:w-[170px]
-                "
-              />
-
-              {/* Light mode logo */}
-
               <Image
                 src="/images/logo-dark.png"
                 alt="MarkitMe"
@@ -152,7 +127,6 @@ export default function Footer() {
                   h-auto
                   w-[145px]
                   object-contain
-                  dark:hidden
                   sm:w-[170px]
                 "
               />
@@ -168,9 +142,7 @@ export default function Footer() {
                 max-w-sm
                 text-sm
                 leading-6
-                text-[var(--color-deep)]/55
-
-                dark:text-[var(--color-cream)]/55
+                text-[#111116]/60
               "
             >
               Strategy, creativity, technology, and marketing
@@ -192,15 +164,12 @@ export default function Footer() {
                 text-sm
                 font-bold
 
-                text-[var(--color-deep)]
+                text-[#111116]
 
                 transition-colors
                 duration-300
 
-                hover:text-[var(--color-green)]
-
-                dark:text-[var(--color-cream)]
-                dark:hover:text-[var(--color-gold)]
+                hover:text-[var(--accent)]
               "
             >
 
@@ -235,9 +204,7 @@ export default function Footer() {
                 font-black
                 uppercase
                 tracking-[0.16em]
-                text-[var(--color-deep)]
-
-                dark:text-[var(--color-cream)]
+                text-[#111116]
               "
             >
               Explore
@@ -282,16 +249,13 @@ export default function Footer() {
                     text-sm
                     font-medium
 
-                    text-[var(--color-deep)]/55
+                    text-[#111116]/60
 
                     transition-all
                     duration-300
 
                     hover:translate-x-1
-                    hover:text-[var(--color-green)]
-
-                    dark:text-[var(--color-cream)]/55
-                    dark:hover:text-[var(--color-gold)]
+                    hover:text-[var(--accent)]
                   "
                 >
 
@@ -338,7 +302,6 @@ export default function Footer() {
 
                 text-[var(--color-deep)]
 
-                dark:text-[var(--color-cream)]
               "
             >
               Contact
@@ -382,13 +345,6 @@ export default function Footer() {
                     group-hover:bg-[var(--color-green)]
                     group-hover:text-white
 
-                    dark:border-[var(--color-cream)]/10
-                    dark:bg-[var(--color-cream)]/5
-                    dark:text-[var(--color-cream)]/65
-
-                    dark:group-hover:border-[var(--color-green)]
-                    dark:group-hover:bg-[var(--color-green)]
-                    dark:group-hover:text-[var(--color-deep)]
                   "
                 >
 
@@ -409,7 +365,6 @@ export default function Footer() {
 
                       text-[var(--color-deep)]/35
 
-                      dark:text-[var(--color-cream)]/35
                     "
                   >
                     Email
@@ -429,8 +384,6 @@ export default function Footer() {
 
                       group-hover:text-[var(--color-green)]
 
-                      dark:text-[var(--color-cream)]/65
-                      dark:group-hover:text-[var(--color-gold)]
                     "
                   >
                     info@markitme.ca
@@ -475,13 +428,6 @@ export default function Footer() {
                     group-hover:bg-[var(--color-green)]
                     group-hover:text-white
 
-                    dark:border-[var(--color-cream)]/10
-                    dark:bg-[var(--color-cream)]/5
-                    dark:text-[var(--color-cream)]/65
-
-                    dark:group-hover:border-[var(--color-green)]
-                    dark:group-hover:bg-[var(--color-green)]
-                    dark:group-hover:text-[var(--color-deep)]
                   "
                 >
 
@@ -502,7 +448,6 @@ export default function Footer() {
 
                       text-[var(--color-deep)]/35
 
-                      dark:text-[var(--color-cream)]/35
                     "
                   >
                     Phone
@@ -522,8 +467,6 @@ export default function Footer() {
 
                       group-hover:text-[var(--color-green)]
 
-                      dark:text-[var(--color-cream)]/65
-                      dark:group-hover:text-[var(--color-gold)]
                     "
                   >
                     +1 (613)-981-4844
@@ -558,9 +501,6 @@ export default function Footer() {
 
                     text-[var(--color-deep)]/65
 
-                    dark:border-[var(--color-cream)]/10
-                    dark:bg-[var(--color-cream)]/5
-                    dark:text-[var(--color-cream)]/65
                   "
                 >
 
@@ -581,7 +521,6 @@ export default function Footer() {
 
                       text-[var(--color-deep)]/35
 
-                      dark:text-[var(--color-cream)]/35
                     "
                   >
                     Location
@@ -599,7 +538,6 @@ export default function Footer() {
 
                       text-[var(--color-deep)]/70
 
-                      dark:text-[var(--color-cream)]/65
                     "
                   >
                     34 Minowan Miikan Lane,
@@ -629,7 +567,6 @@ export default function Footer() {
       uppercase
       tracking-[0.16em]
       text-[var(--color-deep)]
-      dark:text-[var(--color-cream)]
     "
   >
     Follow Us
@@ -641,7 +578,6 @@ export default function Footer() {
       text-sm
       leading-6
       text-[var(--color-deep)]/50
-      dark:text-[var(--color-cream)]/45
     "
   >
     Follow MarkitMe for creative ideas,
@@ -668,12 +604,6 @@ export default function Footer() {
         hover:bg-[var(--color-gold)]
         hover:text-[var(--color-deep)]
 
-        dark:border-[var(--color-cream)]/10
-        dark:bg-[var(--color-cream)]/5
-        dark:text-[var(--color-cream)]/60
-        dark:hover:border-[var(--color-gold)]
-        dark:hover:bg-[var(--color-gold)]
-        dark:hover:text-[var(--color-deep)]
       "
     >
       <svg
@@ -727,12 +657,6 @@ export default function Footer() {
         hover:bg-[var(--color-green)]
         hover:text-[var(--color-deep)]
 
-        dark:border-[var(--color-cream)]/10
-        dark:bg-[var(--color-cream)]/5
-        dark:text-[var(--color-cream)]/60
-        dark:hover:border-[var(--color-green)]
-        dark:hover:bg-[var(--color-green)]
-        dark:hover:text-[var(--color-deep)]
       "
     >
       <svg
@@ -764,12 +688,6 @@ export default function Footer() {
         hover:bg-[var(--color-sand)]
         hover:text-white
 
-        dark:border-[var(--color-cream)]/10
-        dark:bg-[var(--color-cream)]/5
-        dark:text-[var(--color-cream)]/60
-        dark:hover:border-[var(--color-sand)]
-        dark:hover:bg-[var(--color-sand)]
-        dark:hover:text-[var(--color-deep)]
       "
     >
       <svg
@@ -829,8 +747,6 @@ export default function Footer() {
             sm:flex-row
             sm:items-center
 
-            dark:border-[var(--color-cream)]/10
-            dark:text-[var(--color-cream)]/35
           "
         >
 
@@ -854,7 +770,6 @@ export default function Footer() {
 
                 hover:text-[var(--color-green)]
 
-                dark:hover:text-[var(--color-gold)]
               "
             >
               Privacy Policy
@@ -869,7 +784,6 @@ export default function Footer() {
 
                 hover:text-[var(--color-green)]
 
-                dark:hover:text-[var(--color-gold)]
               "
             >
               Terms & Conditions

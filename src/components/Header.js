@@ -12,7 +12,6 @@ import {
 
 import { useEffect, useState } from "react";
 
-import ThemeToggle from "../components/ThemeToggle";
 import Button from "../components/ui/Button";
 
 // Dynamic services data
@@ -130,10 +129,10 @@ export default function Header() {
             overflow-hidden
 
             border-b
-            border-[var(--color-deep)]/10
+            border-[var(--border)]
 
-            bg-[var(--color-gold)]
-            text-[var(--color-deep)]
+            bg-[var(--accent)]
+            text-white
           "
         >
 
@@ -191,8 +190,8 @@ export default function Header() {
                   items-center
                   justify-center
                   rounded-full
-                  bg-[var(--color-deep)]
-                  text-[var(--color-gold)]
+                  bg-[var(--foreground)]
+                  text-[var(--accent-bright)]
                 "
               >
                 <Sparkles
@@ -208,7 +207,7 @@ export default function Header() {
                     h-1.5
                     w-1.5
                     rounded-full
-                    bg-[var(--color-green)]
+                    bg-[var(--accent-bright)]
                   "
                 />
               </span>
@@ -266,19 +265,19 @@ export default function Header() {
             relative
 
             border-b
-            border-[var(--color-deep)]/10
+            border-[var(--border)]
 
-            bg-[var(--color-cream)]/95
+            bg-[var(--background)]/90
 
-            shadow-[0_8px_30px_rgba(12,59,46,0.04)]
+            shadow-[0_8px_30px_rgba(0,0,0,0.04)]
 
             backdrop-blur-xl
 
             transition-colors
             duration-300
 
-            dark:border-[var(--color-cream)]/10
-            dark:bg-[var(--color-deep)]/95
+            dark:border-[var(--border)]
+            dark:bg-[var(--background)]/95
             dark:shadow-[0_8px_30px_rgba(0,0,0,0.12)]
           "
           onMouseLeave={() =>
@@ -436,8 +435,8 @@ export default function Header() {
 
                   ${
                     servicesOpen
-                      ? "text-[var(--color-green)] dark:text-[var(--color-gold)]"
-                      : "text-[var(--color-deep)]/65 hover:text-[var(--color-green)] dark:text-[var(--color-cream)]/65 dark:hover:text-[var(--color-gold)]"
+                      ? "text-[var(--accent)] dark:text-[var(--accent)]"
+                      : "text-[var(--foreground)]/70 hover:text-[var(--accent)] dark:text-[var(--foreground)]/70 dark:hover:text-[var(--accent)]"
                   }
                 `}
                 aria-expanded={
@@ -510,11 +509,6 @@ export default function Header() {
               "
             >
 
-              {/* Theme only */}
-
-              <ThemeToggle />
-
-
               {/* CTA */}
 
               <Button
@@ -549,11 +543,6 @@ export default function Header() {
                 lg:hidden
               "
             >
-
-              {/* Theme */}
-
-              <ThemeToggle />
-
 
               {/* Menu */}
 
@@ -636,7 +625,7 @@ export default function Header() {
               border-b
               border-[var(--color-deep)]/10
 
-              bg-[var(--color-cream)]
+              bg-[var(--background)]
 
               shadow-2xl
 
@@ -644,7 +633,7 @@ export default function Header() {
               duration-300
 
               dark:border-[var(--color-cream)]/10
-              dark:bg-[var(--color-deep)]
+              dark:bg-[var(--background)]
 
               ${
                 servicesOpen
@@ -792,7 +781,7 @@ export default function Header() {
                             border
                             border-[var(--color-deep)]/10
 
-                            bg-white/50
+                            bg-[var(--surface)]
 
                             p-5
 
@@ -805,7 +794,7 @@ export default function Header() {
                             hover:bg-[var(--color-green)]/10
 
                             dark:border-[var(--color-cream)]/10
-                            dark:bg-[var(--color-cream)]/[0.03]
+                            dark:bg-[var(--surface)]
 
                             dark:hover:border-[var(--color-green)]/50
                             dark:hover:bg-[var(--color-green)]/10
@@ -904,7 +893,7 @@ export default function Header() {
               border-t
               border-[var(--color-deep)]/10
 
-              bg-[var(--color-cream)]
+              bg-[var(--background)]
 
               transition-all
               duration-300
@@ -912,7 +901,7 @@ export default function Header() {
               lg:hidden
 
               dark:border-[var(--color-cream)]/10
-              dark:bg-[var(--color-deep)]
+              dark:bg-[var(--background)]
 
               ${
                 menuOpen

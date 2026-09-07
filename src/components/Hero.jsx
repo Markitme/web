@@ -244,9 +244,12 @@ export default function Hero() {
         isolate
         min-h-[700px]
         overflow-hidden
-        bg-[var(--color-cream)]
-        dark:bg-[var(--color-deep)]
+        bg-[var(--background)]
+        dark:bg-[var(--background)]
       "
+      style={{
+        background: "linear-gradient(180deg, #07080d 0%, #0d1017 100%)",
+      }}
     >
       {/* =====================================================
           LIGHTWEIGHT BACKGROUND
@@ -258,8 +261,8 @@ export default function Hero() {
           className="
             absolute
             inset-0
-            bg-[var(--color-cream)]
-            dark:bg-[var(--color-deep)]
+            bg-[var(--background)]
+            dark:bg-[var(--background)]
           "
         />
 
@@ -270,27 +273,27 @@ export default function Hero() {
         <div
           className="
             absolute
-            -right-40
-            -top-40
-            h-[500px]
-            w-[500px]
+            -right-24
+            -top-28
+            h-[520px]
+            w-[520px]
             rounded-full
-            bg-[var(--color-green)]/10
-            blur-[90px]
-            dark:bg-[var(--color-green)]/15
+            bg-[var(--accent)]/12
+            blur-[110px]
+            dark:bg-[var(--accent)]/18
           "
         />
 
         <div
           className="
             absolute
-            -left-40
-            top-[35%]
+            -left-28
+            top-[30%]
             h-[360px]
             w-[360px]
             rounded-full
-            bg-[var(--color-gold)]/8
-            blur-[80px]
+            bg-[var(--accent-bright)]/8
+            blur-[90px]
           "
         />
 
@@ -300,13 +303,13 @@ export default function Hero() {
             left-1/2
             top-1/2
             h-[420px]
-            w-[600px]
+            w-[640px]
             -translate-x-1/2
             -translate-y-1/2
             rounded-full
-            bg-[var(--color-green)]/5
-            blur-[100px]
-            dark:bg-[var(--color-green)]/10
+            bg-[var(--accent)]/6
+            blur-[120px]
+            dark:bg-[var(--accent)]/10
           "
         />
 
@@ -318,8 +321,8 @@ export default function Hero() {
             h-[260px]
             w-[260px]
             rounded-full
-            bg-[var(--color-sand)]/8
-            blur-[80px]
+            bg-[var(--accent-bright)]/8
+            blur-[90px]
           "
         />
 
@@ -328,8 +331,7 @@ export default function Hero() {
           className="
             absolute
             inset-0
-            bg-white/[0.12]
-            dark:bg-black/10
+            bg-[radial-gradient(circle_at_top,_color-mix(in_srgb,var(--accent-bright)_14%,transparent),transparent_42%)]
           "
         />
 
@@ -344,22 +346,22 @@ export default function Hero() {
           className="
             absolute
             inset-0
-            opacity-[0.055]
-            dark:opacity-[0.04]
+            opacity-[0.06]
+            dark:opacity-[0.05]
           "
           style={{
             backgroundImage: `
               linear-gradient(
-                rgba(12,59,46,0.18) 1px,
+                color-mix(in srgb, var(--accent) 10%, transparent) 1px,
                 transparent 1px
               ),
               linear-gradient(
                 90deg,
-                rgba(12,59,46,0.18) 1px,
+                color-mix(in srgb, var(--accent) 10%, transparent) 1px,
                 transparent 1px
               )
             `,
-            backgroundSize: "70px 70px",
+            backgroundSize: "72px 72px",
           }}
         />
 
@@ -394,7 +396,7 @@ export default function Hero() {
                   w-full
                   bg-gradient-to-b
                   from-transparent
-                  via-[var(--color-green)]/60
+                  via-[var(--accent)]/55
                   to-transparent
                 "
               />
@@ -408,8 +410,8 @@ export default function Hero() {
                   w-1
                   -translate-x-1/2
                   rounded-full
-                  bg-[var(--color-gold)]
-                  opacity-70
+                  bg-[var(--accent-bright)]
+                  opacity-80
                 "
               />
             </motion.div>
@@ -429,7 +431,7 @@ export default function Hero() {
             w-[160%]
             bg-gradient-to-r
             from-transparent
-            via-[var(--color-gold)]/15
+            via-[var(--accent)]/20
             to-transparent
             will-change-transform
           "
@@ -452,9 +454,9 @@ export default function Hero() {
             bottom-0
             h-40
             bg-gradient-to-t
-            from-[var(--color-cream)]
+            from-[var(--background)]
             to-transparent
-            dark:from-[var(--color-deep)]
+            dark:from-[var(--background)]
           "
         />
       </div>
@@ -585,14 +587,14 @@ export default function Hero() {
               font-black
               leading-[0.94]
               tracking-[-0.075em]
-              text-[var(--color-deep)]
+              text-[var(--foreground)]
               sm:text-6xl
               md:text-7xl
               capitalize
               sm:leading-[0.92]
               md:leading-[0.9]
               lg:text-[6.5rem]
-              dark:text-[var(--color-cream)]
+              dark:text-white
             "
           >
             {displayText}
@@ -642,11 +644,11 @@ export default function Hero() {
               max-w-2xl
               text-base
               leading-7
-              text-[var(--color-deep)]/65
+              text-[var(--muted)]
               sm:mt-6
               sm:text-lg
               sm:leading-8
-              dark:text-[var(--color-cream)]/65
+              dark:text-[var(--muted)]
             "
           >
             We combine strategy, creative, technology, and performance
@@ -680,64 +682,24 @@ export default function Hero() {
               sm:flex-row
             "
           >
-            <button
-              type="button"
+            <Button
               onClick={() => {
                 window.dispatchEvent(
                   new Event("open-contact-modal")
                 );
               }}
-              className="
-                inline-flex
-                cursor-pointer
-                h-12
-                min-w-[190px]
-                items-center
-                justify-center
-                rounded-full
-                bg-[var(--color-gold)]
-                px-7
-                text-sm
-                font-bold
-                text-[var(--color-deep)]
-                shadow-[0_10px_25px_rgba(255,186,0,0.18)]
-                transition-all
-                duration-300
-                hover:-translate-y-1
-                hover:bg-[#E9A900]
-                hover:shadow-[0_15px_35px_rgba(255,186,0,0.25)]
-                focus:outline-none
-                focus:ring-2
-                focus:ring-[var(--color-gold)]/40
-              "
+              variant="primary"
+              size="lg"
+              className="min-w-[190px]"
             >
               Start Your Project
-            </button>
+            </Button>
 
             <Button
               href="/services"
               variant="outline"
-              className="
-                inline-flex
-                cursor-pointer
-                h-12
-                min-w-[190px]
-                items-center
-                justify-center
-                rounded-full
-                border-[var(--color-deep)]/20
-                bg-white/50
-                px-7
-                text-[var(--color-deep)]
-                backdrop-blur-md
-                hover:border-[var(--color-green)]
-                hover:bg-[var(--color-green)]/10
-                dark:border-[var(--color-cream)]/20
-                dark:bg-[var(--color-cream)]/5
-                dark:text-[var(--color-cream)]
-                dark:hover:border-[var(--color-green)]
-                dark:hover:bg-[var(--color-cream)]/20
-              "
+              size="lg"
+              className="min-w-[190px]"
             >
               Start Your Growth
             </Button>

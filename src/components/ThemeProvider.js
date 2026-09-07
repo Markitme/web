@@ -6,6 +6,7 @@ export default function ThemeProvider({ children }) {
 return ( <NextThemesProvider
    attribute="class"
    defaultTheme="dark"
+  forcedTheme="dark"
    enableSystem={false}
    storageKey="markitme-theme"
  >
