@@ -392,7 +392,7 @@ function FeatureCard({ feature }) {
   return (
     <article
       className="
-        group relative overflow-hidden
+        group relative overflow-hidden card-purple-border
 
         rounded-[24px] sm:rounded-[28px]
 
@@ -489,6 +489,7 @@ export default async function ServiceDetailsPage({ params }) {
 
       <section
         className="
+          section-dark
           relative overflow-hidden
 
           border-b
@@ -670,6 +671,7 @@ export default async function ServiceDetailsPage({ params }) {
 
       <section
         className="
+          section-light
           bg-[var(--color-cream)]
           px-4 py-14
 
@@ -736,6 +738,7 @@ export default async function ServiceDetailsPage({ params }) {
 
       <section
   className="
+    section-dark
     relative
     overflow-hidden
 
@@ -829,6 +832,7 @@ export default async function ServiceDetailsPage({ params }) {
 
       <section
         className="
+          section-light
           bg-[var(--color-cream)]
 
           px-4 py-14
@@ -907,6 +911,7 @@ export default async function ServiceDetailsPage({ params }) {
       <section
         id="services"
         className="
+          section-dark
           border-y
           border-[var(--color-deep)]/10
 
@@ -943,6 +948,7 @@ export default async function ServiceDetailsPage({ params }) {
 
       <section
         className="
+          section-light
           bg-[var(--color-cream)]
           dark:bg-[var(--color-night)]
         "
@@ -961,6 +967,7 @@ export default async function ServiceDetailsPage({ params }) {
 
       <section
         className="
+          section-dark
           border-y
           border-[var(--color-green)]/20
 

@@ -32,7 +32,7 @@ export default async function ProjectDetailsPage({ params }) {
           HERO
       ====================================================== */}
 
-      <section className="relative border-b border-[var(--color-deep)]/10 px-5 pb-20 pt-28 dark:border-[var(--color-cream)]/10 sm:pb-28 sm:pt-36">
+      <section className="section-dark relative border-b border-[var(--accent)]/30 px-5 pb-20 pt-28 sm:pb-28 sm:pt-36">
         <div className="container-custom">
 
           {/* Back */}
@@ -274,7 +274,7 @@ export default async function ProjectDetailsPage({ params }) {
           ABOUT
       ====================================================== */}
 
-      <section className="px-5 py-20 sm:py-28">
+      <section className="section-light px-5 py-20 sm:py-28">
 
         <div className="container-custom grid gap-12 lg:grid-cols-[0.7fr_1.3fr]">
 
@@ -348,6 +348,7 @@ export default async function ProjectDetailsPage({ params }) {
 
       <section
         className="
+          section-dark
           border-y
           border-[var(--color-deep)]/10
           bg-white/50
@@ -462,7 +463,7 @@ export default async function ProjectDetailsPage({ params }) {
           SERVICES
       ====================================================== */}
 
-      <section className="px-5 py-20 sm:py-28">
+      <section className="section-light px-5 py-20 sm:py-28">
 
         <div className="container-custom">
 
@@ -756,12 +757,13 @@ export default async function ProjectDetailsPage({ params }) {
           CTA
       ====================================================== */}
 
-      <section className="px-5 pb-20 sm:pb-28">
+      <section className="section-light px-5 pb-20 sm:pb-28">
 
         <div className="container-custom">
 
           <div
             className="
+              card-purple-border
               relative
               overflow-hidden
               rounded-[35px]

@@ -19,7 +19,7 @@ export default function CTA({
 
   return (
     <section
-      className={`cta-section w-full bg-white py-20 text-black sm:py-24 lg:py-28 ${className}`}
+      className={`cta-section section-dark w-full py-20 sm:py-24 lg:py-28 ${className}`}
     >
       <div className="container-custom">
         <motion.div
@@ -35,6 +35,7 @@ export default function CTA({
         }}
           className="
           cta-card
+          card-purple-border
           relative
           overflow-hidden
           rounded-[2.5rem]
@@ -42,7 +43,7 @@ export default function CTA({
           border
           border-[var(--accent)]/35
 
-          bg-[var(--surface)]
+          bg-[var(--section-dark-surface)]
 
           px-7
           py-20

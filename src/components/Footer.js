@@ -240,6 +240,7 @@ export default function Footer() {
                   key={item.label}
                   href={item.href}
                   className="
+                    footer-explore-link
                     group
                     flex
                     w-fit
@@ -249,12 +250,13 @@ export default function Footer() {
                     text-sm
                     font-medium
 
-                    text-[#111116]/60
+                    !text-[#111116]
 
                     transition-all
                     duration-300
 
                     hover:translate-x-1
+                    hover:bg-transparent
                     hover:text-[var(--accent)]
                   "
                 >
@@ -342,8 +344,8 @@ export default function Footer() {
                     duration-300
 
                     group-hover:border-[var(--color-green)]
-                    group-hover:bg-[var(--color-green)]
-                    group-hover:text-white
+                    group-hover:bg-transparent
+                    group-hover:text-[var(--accent-bright)]
 
                   "
                 >
@@ -425,8 +427,8 @@ export default function Footer() {
                     duration-300
 
                     group-hover:border-[var(--color-green)]
-                    group-hover:bg-[var(--color-green)]
-                    group-hover:text-white
+                    group-hover:bg-transparent
+                    group-hover:text-[var(--accent-bright)]
 
                   "
                 >
@@ -601,8 +603,8 @@ export default function Footer() {
         transition-all duration-300
         hover:-translate-y-1
         hover:border-[var(--color-gold)]
-        hover:bg-[var(--color-gold)]
-        hover:text-[var(--color-deep)]
+        hover:bg-transparent
+        hover:text-[var(--accent-bright)]
 
       "
     >
@@ -654,8 +656,8 @@ export default function Footer() {
         transition-all duration-300
         hover:-translate-y-1
         hover:border-[var(--color-green)]
-        hover:bg-[var(--color-green)]
-        hover:text-[var(--color-deep)]
+        hover:bg-transparent
+        hover:text-[var(--accent-bright)]
 
       "
     >
@@ -685,8 +687,8 @@ export default function Footer() {
         transition-all duration-300
         hover:-translate-y-1
         hover:border-[var(--color-sand)]
-        hover:bg-[var(--color-sand)]
-        hover:text-white
+        hover:bg-transparent
+        hover:text-[var(--accent-bright)]
 
       "
     >

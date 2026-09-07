@@ -55,12 +55,13 @@ export default function TestimonialSlider() {
     <section
       className="
         testimonial-slider
+        section-light
         relative
         overflow-hidden
        
-        bg-[#050507]
+        bg-[var(--purple-soft)]
         py-20
-        text-white
+        text-[var(--foreground)]
         transition-colors
         duration-300
 
@@ -148,7 +149,7 @@ export default function TestimonialSlider() {
                 max-w-2xl
                 text-sm
                 leading-7
-                text-white/60
+                text-[var(--muted)]
 
                 sm:text-base
               "
@@ -182,9 +183,9 @@ export default function TestimonialSlider() {
                 justify-center
                 rounded-full
                 border
-                border-white/20
-                bg-black
-                text-white
+                border-[var(--accent)]/30
+                bg-white
+                text-[var(--foreground)]
                 transition-all
                 duration-300
 
@@ -236,7 +237,7 @@ export default function TestimonialSlider() {
             SLIDER
         ====================================================== */}
 
-        <div className="testimonial-slider-wrapper overflow-x-hidden overflow-y-visible pt-2">
+        <div className="testimonial-slider-wrapper overflow-x-hidden overflow-y-visible px-1 pt-2 sm:px-0">
           <Swiper
             modules={[
               Autoplay,
@@ -247,8 +248,8 @@ export default function TestimonialSlider() {
             spaceBetween={18}
             loop={true}
             centeredSlides={false}
-            slidesOffsetBefore={0}
-            slidesOffsetAfter={0}
+            slidesOffsetBefore={4}
+            slidesOffsetAfter={4}
             watchOverflow={true}
             autoplay={{
               delay: 5000,
@@ -297,14 +298,11 @@ export default function TestimonialSlider() {
                       bg-white
                     p-6
                       text-black
-                      shadow-[0_10px_40px_rgba(0,0,0,0.18)]
                     transition-all
                     duration-500
 
                     hover:-translate-y-1
                     hover:border-[var(--accent-bright)]
-                    hover:shadow-[0_18px_45px_color-mix(in_srgb,var(--accent)_28%,transparent)]
-
                     sm:p-8
                   "
                 >
@@ -323,7 +321,9 @@ export default function TestimonialSlider() {
                         items-center
                         justify-center
                         rounded-2xl
-                        bg-black
+                        border
+                        border-[var(--accent)]/15
+                        bg-white
                         text-[var(--accent-bright)]
                         transition-transform
                         duration-300
@@ -510,7 +510,7 @@ export default function TestimonialSlider() {
           margin: 0 !important;
           border-radius: 999px;
           opacity: 0.25;
-          background: #ffffff;
+          background: var(--accent);
           transition: all 0.3s ease;
         }
 

@@ -48,6 +48,7 @@ export default function ServicesPage() {
 
       <section
         className="
+          section-dark
           relative
           overflow-hidden
 
@@ -125,14 +126,8 @@ export default function ServicesPage() {
 
                 ${
                   isAlternate
-                    ? `
-                      bg-[var(--color-soft)]
-                      dark:bg-[var(--color-deep-surface)]
-                    `
-                    : `
-                      bg-[var(--color-cream)]
-                      dark:bg-[var(--color-night)]
-                    `
+                    ? `section-dark bg-[var(--color-deep-surface)]`
+                    : `section-light bg-[var(--color-cream)]`
                 }
               `}
             >

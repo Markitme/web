@@ -42,6 +42,7 @@ export default function WhyMarkitMe() {
   return (
     <section
       className="
+        section-dark
         relative
         overflow-hidden
 

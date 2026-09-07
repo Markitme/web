@@ -213,9 +213,12 @@ export default function Hero() {
     }
 
     if (isDeleting && displayText === "") {
-      setIsDeleting(false);
-      setTextIndex((prev) => (prev + 1) % typingTexts.length);
-      return;
+      const timer = setTimeout(() => {
+        setIsDeleting(false);
+        setTextIndex((prev) => (prev + 1) % typingTexts.length);
+      }, 0);
+
+      return () => clearTimeout(timer);
     }
 
     const timer = setTimeout(() => {

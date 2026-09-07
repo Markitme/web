@@ -1,7 +1,5 @@
 @import "tailwindcss";
 
-@custom-variant dark (&:where(.dark, .dark *));
-
 :root {
   --background: #ffffff;
   --background-secondary: #f8f7fc;
@@ -35,41 +33,10 @@
 
   --green: #7c3aed;
   --cream: #ffffff;
-}
-
-.dark {
-  --background: #050507;
-  --background-secondary: #0a0a0f;
-  --surface: #101017;
-  --surface-soft: #15151e;
-  --card: #101017;
-
-  --foreground: #ffffff;
-  --muted: #a1a1aa;
-  --muted-foreground: #71717a;
-
-  --border: rgba(255, 255, 255, 0.10);
-  --border-strong: rgba(139, 92, 246, 0.45);
-
-  --accent: #8b5cf6;
-  --accent-bright: #a855f7;
-  --accent-dark: #6d28d9;
-
-  --purple-soft: rgba(139, 92, 246, 0.10);
-  --shadow: rgba(0, 0, 0, 0.45);
-  --shadow-strong: rgba(139, 92, 246, 0.14);
-
-  --color-deep: #ffffff;
-  --color-cream: #f5f3ff;
-  --color-gold: #a855f7;
-  --color-green: #8b5cf6;
-  --color-sand: #101017;
-  --color-night: #050507;
-  --color-deep-surface: #0a0a0f;
-  --color-soft: rgba(139, 92, 246, 0.10);
-
-  --green: #8b5cf6;
-  --cream: #f5f3ff;
+  --section-dark: #07080d;
+  --section-dark-surface: #101017;
+  --section-light: #ffffff;
+  --section-light-surface: #f8f7fc;
 }
 
 /* ========================================
@@ -96,30 +63,80 @@ body {
   font-family: var(--font-jakarta), sans-serif;
   overflow-x: hidden;
 
-  transition:
-    background-color 0.3s ease,
-    color 0.3s ease,
-    border-color 0.3s ease;
-}
-
-html.dark {
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 body {
-  background:
-    radial-gradient(circle at 20% 20%, rgba(139, 92, 246, 0.10), transparent 35%),
-    radial-gradient(circle at 80% 60%, rgba(168, 85, 247, 0.06), transparent 35%),
-    var(--background);
+  background: var(--background);
   color: var(--foreground);
 }
 
-html.dark body {
-  background:
-    radial-gradient(circle at 20% 20%, rgba(139, 92, 246, 0.12), transparent 35%),
-    radial-gradient(circle at 80% 60%, rgba(168, 85, 247, 0.09), transparent 35%),
-    var(--background);
+.section-dark {
+  background-color: var(--section-dark);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  --color-deep: #ffffff;
+  --color-cream: #ffffff;
+  --color-gold: #8b5cf6;
+  --color-green: #8b5cf6;
+  --color-sand: #101017;
+  --color-night: #07080d;
+  --color-deep-surface: #101017;
+  --color-soft: #101017;
+  --background: #07080d;
+  --foreground: #ffffff;
+  --surface: #101017;
+  --card: #101017;
+  --border: rgba(139, 92, 246, 0.34);
+  --border-strong: rgba(167, 139, 250, 0.7);
+  --muted: rgba(255, 255, 255, 0.65);
+}
+
+.section-light {
+  background-color: var(--section-light);
+  border-color: var(--border);
+  color: var(--color-deep);
+  --color-deep: #09090b;
+  --color-cream: #ffffff;
+  --color-gold: #8b5cf6;
+  --color-green: #7c3aed;
+  --color-sand: #f8f7fc;
+  --color-night: #ffffff;
+  --color-deep-surface: #f8f7fc;
+  --color-soft: #f3efff;
+  --background: #ffffff;
+  --foreground: #09090b;
+  --surface: #ffffff;
+  --card: #ffffff;
+  --border: #e5e1f0;
+  --muted: #71717a;
+}
+
+.section-dark .text-muted {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.section-light .text-muted {
+  color: var(--muted);
+}
+
+.services-section {
+  background-color: var(--purple-soft) !important;
   color: var(--foreground);
+}
+
+.card-purple-border {
+  border-color: color-mix(in srgb, var(--accent) 48%, transparent) !important;
+}
+
+.card-purple-border:hover {
+  border-color: var(--accent-bright) !important;
+  box-shadow: 0 20px 60px color-mix(in srgb, var(--accent) 18%, transparent);
+}
+
+.section-dark .card-purple-border {
+  border-color: color-mix(in srgb, var(--accent-bright) 52%, transparent) !important;
+  background-color: var(--section-dark-surface) !important;
 }
 
 .footer-light {
@@ -134,18 +151,66 @@ html.dark body {
 }
 
 .footer-light h3 {
-  color: var(--accent);
+  color: #111116 !important;
+}
+
+.footer-light nav a {
+  color: #111116 !important;
+}
+
+.footer-light nav a:hover {
+  color: var(--accent) !important;
+}
+
+.footer-light .footer-explore-link,
+.footer-light .footer-explore-link:hover,
+.footer-light .footer-explore-link:focus-visible {
+  background: transparent !important;
+  color: #111116 !important;
+}
+
+.footer-light .footer-explore-link > span {
+  color: #111116 !important;
+}
+
+.footer-light .footer-explore-link:hover,
+.footer-light .footer-explore-link:focus-visible {
+  color: var(--accent) !important;
+}
+
+.footer-light .footer-explore-link:hover > span,
+.footer-light .footer-explore-link:focus-visible > span {
+  color: var(--accent) !important;
+}
+
+.footer-light .footer-explore-link:hover svg,
+.footer-light .footer-explore-link:focus-visible svg {
+  color: var(--accent) !important;
 }
 
 .footer-light a[aria-label] {
   background: transparent;
-  border-color: rgba(124, 58, 237, 0.22);
+  border-color: color-mix(in srgb, var(--accent) 35%, transparent);
+  color: var(--accent) !important;
 }
 
 .footer-light a.group > span {
   background: transparent;
-  border-color: rgba(124, 58, 237, 0.22);
+  border-color: color-mix(in srgb, var(--accent) 35%, transparent);
   color: var(--accent);
+}
+
+.footer-light span.h-9.w-9 {
+  border-color: color-mix(in srgb, var(--accent) 28%, transparent) !important;
+  color: var(--accent) !important;
+}
+
+.footer-light a[aria-label]:hover,
+.footer-light a.group:hover > span,
+.footer-light a:hover span.h-9.w-9 {
+  border-color: var(--accent-bright) !important;
+  background: transparent !important;
+  color: var(--accent-bright) !important;
 }
 
 .client-logo-heading h2 {
@@ -153,19 +218,22 @@ html.dark body {
 }
 
 .testimonial-card {
-  border: 1px solid transparent !important;
-  background:
-    linear-gradient(#ffffff, #ffffff) padding-box,
-    linear-gradient(135deg, #111116, var(--accent), var(--accent-bright)) border-box !important;
+  border: 1px solid color-mix(in srgb, var(--accent) 42%, transparent) !important;
+  background: var(--surface) !important;
+  color: var(--foreground);
 }
 
 .testimonial-slider {
-  background: #050507 !important;
-  color: #ffffff !important;
+  background: var(--purple-soft) !important;
+  color: var(--foreground) !important;
 }
 
 .testimonial-slider h2 {
-  color: #ffffff !important;
+  color: var(--foreground) !important;
+}
+
+.testimonial-card:hover {
+  border-color: var(--accent-bright) !important;
 }
 
 .why-center-card {
@@ -295,13 +363,6 @@ GRID BACKGROUNDS
     linear-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px),
     linear-gradient(90deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
   background-size: 52px 52px;
-}
-
-.dark .about-grid,
-.dark .grid-pattern {
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
 }
 
 .about-grid {

@@ -76,9 +76,12 @@ export default function ServicesSection() {
       id="services"
       className="
         services-section
+        section-light
         relative
         overflow-hidden
-        bg-white
+        border-y
+        border-[var(--accent)]/10
+        bg-[var(--purple-soft)]
         py-24
         sm:py-28
         lg:py-32
@@ -149,7 +152,7 @@ export default function ServicesSection() {
               font-bold
               leading-[1.04]
               tracking-[-0.05em]
-              text-black
+              text-[var(--foreground)]
               sm:text-5xl
               lg:text-6xl
             "
@@ -172,7 +175,7 @@ export default function ServicesSection() {
               max-w-2xl
               text-base
               leading-7
-              text-black/60
+              text-[var(--muted)]
               sm:text-lg
             "
           >
@@ -220,18 +223,21 @@ export default function ServicesSection() {
                 }}
                 className={`
                   group
+                  card-purple-border
+                  services-card
                   relative
                   min-h-[390px]
                   overflow-hidden
-                  rounded-[2rem]
+                  rounded-[1.75rem]
                   border
-                  border-black/15
-                  shadow-[0_20px_70px_rgba(17,17,22,0.16)]
+                  border-[var(--accent)]/35
+                  bg-[#111116]
+                  shadow-[0_16px_48px_rgba(76,29,149,0.14)]
                   transition-all
                   duration-500
-                  hover:-translate-y-2
+                  hover:-translate-y-1.5
                   hover:border-[var(--accent)]
-                  hover:shadow-[0_35px_90px_color-mix(in_srgb,var(--accent)_24%,transparent)]
+                  hover:shadow-[0_24px_70px_color-mix(in_srgb,var(--accent)_24%,transparent)]
                   ${service.size}
 
                   ${
@@ -270,11 +276,11 @@ export default function ServicesSection() {
                   className="
                     absolute
                     inset-0
-                    bg-black/[0.52]
-                    backdrop-blur-[3px]
+                    bg-[#09090b]/[0.48]
+                    backdrop-blur-[2px]
                     transition-all
                     duration-700
-                    group-hover:bg-[#171022]/[0.46]
+                    group-hover:bg-[#171022]/[0.36]
                   "
                 />
 
@@ -287,10 +293,10 @@ export default function ServicesSection() {
                     absolute
                     inset-0
                     bg-gradient-to-t
-                    from-black
-                    via-black/45
+                    from-[#09090b]
+                    via-[#09090b]/65
                     to-transparent
-                    opacity-95
+                    opacity-90
                   "
                 />
 
@@ -316,32 +322,6 @@ export default function ServicesSection() {
                         transparent 38%
                       )
                     `,
-                  }}
-                />
-
-                {/* =================================================
-                    LARGE BACKGROUND ICON
-                ================================================== */}
-
-                <Icon
-                  strokeWidth={1}
-                  className="
-                    pointer-events-none
-                    absolute
-                    -right-10
-                    -top-10
-                    h-56
-                    w-56
-                    opacity-[0.10]
-                    transition-all
-                    duration-700
-                    ease-out
-                    group-hover:scale-110
-                    group-hover:-rotate-6
-                    group-hover:opacity-[0.18]
-                  "
-                  style={{
-                    color: service.accent,
                   }}
                 />
 
@@ -384,7 +364,8 @@ export default function ServicesSection() {
                       justify-center
                       rounded-full
                       border
-                      bg-black/20
+                      bg-white
+                      text-[var(--accent)]
                       backdrop-blur-md
                       transition-all
                       duration-500
@@ -484,20 +465,14 @@ export default function ServicesSection() {
                     justify-center
                     rounded-full
                     border
-                    border-[var(--accent-bright)]/70
-                    bg-gradient-to-br
-                    from-black/90
-                    via-[#171022]/95
-                    to-[var(--accent-dark)]
-                    text-white
+                    border-white
+                    bg-white
+                    text-[var(--accent)]
                     backdrop-blur-md
                     transition-all
                     duration-500
-                    group-hover:w-28
                     group-hover:border-[var(--accent-bright)]
-                    group-hover:from-[var(--accent-dark)]
-                    group-hover:via-[var(--accent)]
-                    group-hover:to-[var(--accent-bright)]
+                    group-hover:bg-[var(--accent-bright)]
                     group-hover:text-white
                     sm:bottom-9
                     sm:right-9
@@ -509,7 +484,6 @@ export default function ServicesSection() {
                       whitespace-nowrap
                       text-xs
                       font-bold
-                      group-hover:block
                     "
                   >
                     Explore

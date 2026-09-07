@@ -39,11 +39,14 @@ export default function HomePopupModal() {
     -----------------------------------------
     */
 
-    const lastClosed = localStorage.getItem(STORAGE_KEY);
+    const autoOpenTimer = setTimeout(() => {
+      const lastClosed = localStorage.getItem(STORAGE_KEY);
 
-    if (!lastClosed) {
-      setIsOpen(true);
-    } else {
+      if (!lastClosed) {
+        setIsOpen(true);
+        return;
+      }
+
       const closedTime = Number(lastClosed);
       const currentTime = Date.now();
 
@@ -51,13 +54,14 @@ export default function HomePopupModal() {
         localStorage.removeItem(STORAGE_KEY);
         setIsOpen(true);
       }
-    }
+    }, 0);
 
     return () => {
       window.removeEventListener(
         "open-contact-modal",
         openModal
       );
+      clearTimeout(autoOpenTimer);
     };
   }, []);
 

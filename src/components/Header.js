@@ -317,29 +317,6 @@ export default function Header() {
               aria-label="MarkitMe Home"
             >
 
-              {/* Dark theme logo */}
-
-              <Image
-                src="/images/logo-light.png"
-                alt="MarkitMe"
-                width={190}
-                height={60}
-                priority
-                className="
-                  hidden
-                  h-auto
-                  w-[145px]
-                  object-contain
-
-                  dark:block
-
-                  sm:w-[170px]
-                "
-              />
-
-
-              {/* Light theme logo */}
-
               <Image
                 src="/images/logo-dark.png"
                 alt="MarkitMe"
@@ -351,8 +328,6 @@ export default function Header() {
                   h-auto
                   w-[145px]
                   object-contain
-
-                  dark:hidden
 
                   sm:w-[170px]
                 "

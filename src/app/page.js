@@ -63,8 +63,8 @@ export default function Home() {
        {/* STATS */}
 
       <CreativeSolutions />
-      <CaseStudies />
       <WhyMarkitMe />
+      <CaseStudies />
       <CTA />
       <TestimonialSlider />
     </main>

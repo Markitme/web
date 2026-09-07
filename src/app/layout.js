@@ -3,7 +3,6 @@ import "./globals.css";
 
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import ThemeProvider from "../components/ThemeProvider";
 import HomePopupModal from "@/components/HomePopupModal";
 
 const jakarta = Plus_Jakarta_Sans({
@@ -46,16 +45,14 @@ export default function RootLayout({ children }) {
           text-[var(--foreground)]
         "
       >
-        <ThemeProvider>
-          <Header />
+        <Header />
 
-          <main className="flex-1">
-            {children}
-            <HomePopupModal />
-          </main>
+        <main className="flex-1">
+          {children}
+          <HomePopupModal />
+        </main>
 
-          <Footer />
-        </ThemeProvider>
+        <Footer />
       </body>
     </html>
   );

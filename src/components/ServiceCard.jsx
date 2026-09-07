@@ -8,6 +8,7 @@ export default function ServiceCard({ service }) {
     <article
       className="
         group
+        card-purple-border
         relative
         flex
         min-h-[360px]
@@ -25,13 +26,13 @@ export default function ServiceCard({ service }) {
         duration-500
 
         hover:-translate-y-1
-        hover:border-[var(--color-green)]
+        hover:border-[var(--accent-bright)]
         hover:shadow-[0_20px_60px_rgba(12,59,46,0.10)]
 
-        dark:border-[var(--color-green)]/20
+        dark:border-[var(--accent)]/40
         dark:bg-[var(--color-deep)]
 
-        dark:hover:border-[var(--color-gold)]/60
+        dark:hover:border-[var(--accent-bright)]
         dark:hover:bg-[#104A3A]
         dark:hover:shadow-[0_20px_60px_rgba(0,0,0,0.30)]
 
