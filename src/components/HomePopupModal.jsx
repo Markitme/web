@@ -693,14 +693,14 @@ export default function HomePopupModal() {
 
                   rounded-full
 
-                  bg-[var(--color-light-purple)]
+                  bg-[var(--color-purple)]
 
                   px-5
 
                   text-[13px]
                   font-bold
 
-                  text-[var(--color-deep)]
+                  text-white
 
                   transition-all
 
@@ -709,9 +709,6 @@ export default function HomePopupModal() {
 
                   disabled:cursor-not-allowed
                   disabled:opacity-60
-
-                  dark:hover:bg-[var(--color-cream)]
-                  dark:hover:text-[var(--color-deep)]
                 "
               >
                 {isSubmitting

@@ -30,13 +30,6 @@ export default function ServiceCard({ service }) {
         hover:border-[var(--accent-bright)]
         hover:shadow-[0_20px_60px_rgba(12,59,46,0.10)]
 
-        dark:border-[var(--accent)]/40
-        dark:bg-[var(--color-deep)]
-
-        dark:hover:border-[var(--accent-bright)]
-        dark:hover:bg-[#104A3A]
-        dark:hover:shadow-[0_20px_60px_rgba(0,0,0,0.30)]
-
         sm:p-8
       "
     >
@@ -57,9 +50,6 @@ export default function ServiceCard({ service }) {
           duration-500
 
           group-hover:bg-[var(--color-light-purple)]/20
-
-          dark:bg-[var(--color-purple)]/10
-          dark:group-hover:bg-[var(--color-light-purple)]/10
         "
       />
 
@@ -76,7 +66,7 @@ export default function ServiceCard({ service }) {
           rounded-2xl
 
           bg-[var(--color-light-purple)]
-          text-[var(--color-deep)]
+          text-white
 
           transition-all
           duration-500
@@ -102,7 +92,6 @@ export default function ServiceCard({ service }) {
 
           text-[var(--color-purple)]
 
-          dark:text-[var(--color-light-purple)]
         "
       >
         {service.category}
@@ -118,8 +107,6 @@ export default function ServiceCard({ service }) {
           tracking-[-0.04em]
 
           text-[var(--color-deep)]
-
-          dark:text-[var(--color-cream)]
         "
       >
         {service.title}
@@ -132,8 +119,6 @@ export default function ServiceCard({ service }) {
           leading-7
 
           text-[var(--color-deep)]/60
-
-          dark:text-[var(--color-cream)]/65
         "
       >
         {service.description}
@@ -160,9 +145,6 @@ export default function ServiceCard({ service }) {
           duration-300
 
           hover:text-[var(--color-purple)]
-
-          dark:text-[var(--color-cream)]
-          dark:hover:text-[var(--color-light-purple)]
         "
       >
         Explore Service
@@ -184,9 +166,6 @@ export default function ServiceCard({ service }) {
 
             group-hover/link:translate-x-1
             group-hover/link:border-[var(--color-purple)]
-
-            dark:border-[var(--color-purple)]/30
-            dark:group-hover/link:border-[var(--color-light-purple)]
           "
         >
           <ArrowRight size={16} />

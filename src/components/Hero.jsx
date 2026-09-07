@@ -541,10 +541,6 @@ export default function Hero() {
           bg-[var(--color-deep)]
           shadow-[0_6px_20px_rgba(12,59,46,0.15)]
 
-          /* DARK MODE */
-          dark:border-[var(--color-purple)]/40
-          dark:bg-[var(--color-cream)]
-          dark:shadow-[0_6px_22px_rgba(0,0,0,0.3)]
 
           will-change-transform
         "
@@ -666,7 +662,6 @@ export default function Hero() {
               sm:mt-6
               sm:text-lg
               sm:leading-8
-              dark:text-[var(--muted)]
             "
           >
             We combine strategy, creative, technology, and performance
@@ -752,20 +747,14 @@ export default function Hero() {
               uppercase
               tracking-[0.2em]
               text-[var(--color-deep)]/45
-              dark:text-[var(--color-cream)]/40
             "
           >
             <span>Strategy</span>
 
-            <span className="h-1 w-1 rounded-full bg-[var(--color-light-purple)]" />
-
+           
             <span>Creative</span>
 
-            <span className="h-1 w-1 rounded-full bg-[var(--color-purple)]" />
-
             <span>Technology</span>
-
-            <span className="h-1 w-1 rounded-full bg-[var(--color-sand)]" />
 
             <span>Performance</span>
           </motion.div>
@@ -794,7 +783,6 @@ export default function Hero() {
               flex-col
               items-center
               text-[var(--color-deep)]/40
-              dark:text-[var(--color-cream)]/40
             "
           >
             <span
@@ -827,7 +815,7 @@ export default function Hero() {
             >
               <span
                 className="
-                  h-6
+                  h-6 
                   w-px
                   bg-gradient-to-b
                   from-[var(--color-light-purple)]

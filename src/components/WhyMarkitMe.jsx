@@ -194,7 +194,7 @@ export default function WhyMarkitMe() {
 
           <SectionHeading>
             Not an agency.{" "}
-            <span className="text-[var(--color-purple)] dark:text-[var(--color-light-purple)]">
+            <span className="text-[var(--color-purple)]">
               Not just a freelancer.
             </span>
           </SectionHeading>

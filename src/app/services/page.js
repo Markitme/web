@@ -30,8 +30,6 @@ export default function ServicesPage() {
     <main
       className="
         min-h-screen
-        bg-[var(--color-cream)]
-        text-[var(--color-deep)]
 
         transition-colors
         duration-300
@@ -87,7 +85,7 @@ export default function ServicesPage() {
             description="We combine strategy, design, technology, content, and marketing to create digital experiences that help businesses grow."
           >
             Strategy, creativity,{" "}
-            <span className="text-[var(--color-light-purple)]">
+            <span className="text-[var(--color-purple)]">
               and growth
             </span>{" "}
             — working together.
@@ -113,8 +111,6 @@ export default function ServicesPage() {
                 py-16
                 sm:py-20
                 lg:py-24
-
-                dark:border-[var(--color-purple)]/20
 
                 ${
                   isAlternate

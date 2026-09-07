@@ -158,15 +158,13 @@ export default async function BlogPage({ searchParams }) {
                 sm:text-5xl
                 md:text-6xl
                 lg:text-7xl
-
-                dark:text-[var(--color-cream)]
               "
             >
               Ideas worth putting
               into{" "}
 
               <span
-                className="text-[var(--color-light-purple)]
+                className="text-[var(--color-purple)]
                 "
               >
                 action.

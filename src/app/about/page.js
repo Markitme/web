@@ -129,7 +129,6 @@ export default function AboutPage() {
             rounded-full
             bg-[var(--color-purple)]/10
             blur-3xl
-            dark:bg-[var(--color-purple)]/10
           "
         />
 
@@ -184,7 +183,7 @@ export default function AboutPage() {
               "
             >
               We turn ideas into{" "}
-              <span className="text-[var(--color-light-purple)]">
+              <span className="text-[var(--color-purple)]">
                 meaningful growth.
               </span>
             </h1>
@@ -295,7 +294,7 @@ export default function AboutPage() {
               "
             >
               A digital partner built for{" "}
-              <span className="text-[var(--color-purple)] dark:text-[var(--color-light-purple)]">
+              <span className="text-[var(--color-purple)]">
                 ambitious brands.
               </span>
             </h2>
@@ -685,7 +684,7 @@ export default function AboutPage() {
               "
             >
               Good work starts with the{" "}
-              <span className="text-[var(--color-purple)] dark:text-[var(--color-light-purple)]">
+              <span className="text-[var(--color-purple)]">
                 right approach.
               </span>
             </h2>

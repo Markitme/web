@@ -133,7 +133,7 @@ export default function CreativeSolutions() {
           className="mb-11 md:mb-14"
         >
           All the creative solutions your{" "}
-          <span className="text-[var(--color-purple)] dark:text-[var(--color-light-purple)]">
+          <span className="text-[var(--color-purple)]">
             business needs.
           </span>
         </SectionHeading>

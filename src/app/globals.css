@@ -458,7 +458,24 @@ MAIN CONTAINER
   width: min(100% - 32px, 1280px);
   margin-inline: auto;
 }
-
+.custom-bg{
+  background: radial-gradient(
+            circle at 92% 4%,
+            color-mix(in srgb, var(--accent-bright) 52%, transparent),
+            transparent 34%
+          ),
+          radial-gradient(
+            circle at 10% 82%,
+            color-mix(in srgb, var(--accent) 42%, transparent),
+            transparent 38%
+          ),
+          linear-gradient(
+            135deg,
+            color-mix(in srgb, var(--section-dark) 86%, var(--accent-dark)),
+            var(--section-dark) 52%,
+            color-mix(in srgb, var(--section-dark) 76%, var(--accent) 24%)
+          );
+}
 /* ========================================
 GRID BACKGROUNDS
 ======================================== */

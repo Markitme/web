@@ -90,9 +90,16 @@ export default function ContactPage() {
   };
 
   return (
-    <main className="bg-[var(--color-cream)] text-[var(--color-deep)] transition-colors duration-300
+    <main className="bg-[var(--color-cream)] text-[var(--color-deep)] transition-colors duration-300  ">
+
+      {/* =====================================================
+          HERO / CONTACT
       ===================================================== */}
-      <section className="relative overflow-hidden border-b border-[var(--color-deep)]/10 bg-[var(--color-cream)]    <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+      <section className="relative overflow-hidden border-b border-[var(--color-deep)]/10 bg-[var(--color-cream)]  ">
+
+        <div className="container-custom relative px-5 py-16 sm:py-20 lg:py-24">
+
+          <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
 
             {/* =================================================
                 CONTACT INFORMATION
@@ -265,7 +272,7 @@ export default function ContactPage() {
                         onChange={handleChange}
                         placeholder="Your name"
                         required
-                        className="w-full rounded-xl border border-[var(--color-deep)]/10 bg-[var(--color-cream)] px-4 py-4 text-[var(--color-deep)] outline-none transition placeholder:text-[var(--color-deep)]/40 focus:border-[var(--color-purple)] "
+                        className="w-full rounded-xl border border-[var(--color-deep)]/10 bg-[var(--color-cream)] px-4 py-4 text-[var(--color-deep)] outline-none transition placeholder:text-[var(--color-deep)]/40 focus:border-[var(--color-purple)]    "
                       />
 
                     </div>
@@ -289,7 +296,7 @@ export default function ContactPage() {
                         onChange={handleChange}
                         placeholder="you@company.com"
                         required
-                        className="w-full rounded-xl border border-[var(--color-deep)]/10 bg-[var(--color-cream)] px-4 py-4 text-[var(--color-deep)] outline-none transition placeholder:text-[var(--color-deep)]/40 focus:border-[var(--color-purple)] "
+                        className="w-full rounded-xl border border-[var(--color-deep)]/10 bg-[var(--color-cream)] px-4 py-4 text-[var(--color-deep)] outline-none transition placeholder:text-[var(--color-deep)]/40 focus:border-[var(--color-purple)]    "
                       />
 
                     </div>
@@ -314,7 +321,7 @@ export default function ContactPage() {
                       value={formData.phone}
                       onChange={handleChange}
                       placeholder="+1 (613) 000-0000"
-                      className="w-full rounded-xl border border-[var(--color-deep)]/10 bg-[var(--color-cream)] px-4 py-4 text-[var(--color-deep)] outline-none transition placeholder:text-[var(--color-deep)]/40 focus:border-[var(--color-purple)] "
+                      className="w-full rounded-xl border border-[var(--color-deep)]/10 bg-[var(--color-cream)] px-4 py-4 text-[var(--color-deep)] outline-none transition placeholder:text-[var(--color-deep)]/40 focus:border-[var(--color-purple)]    "
                     />
 
                   </div>
@@ -336,7 +343,9 @@ export default function ContactPage() {
                       value={formData.service}
                       onChange={handleChange}
                       required
-                      className="w-full rounded-xl border border-[var(--color-deep)]/10 bg-[var(--color-cream)] px-4 py-4 text-[var(--color-deep)] outline-none transition focus:border-[var(--color-purple)] <option value="">
+                      className="w-full rounded-xl border border-[var(--color-deep)]/10 bg-[var(--color-cream)] px-4 py-4 text-[var(--color-deep)] outline-none transition focus:border-[var(--color-purple)]"
+                    >
+                      <option value="">
                         Select a service
                       </option>
 
@@ -390,7 +399,7 @@ export default function ContactPage() {
                       onChange={handleChange}
                       placeholder="What would you like to achieve?"
                       required
-                      className="w-full resize-none rounded-xl border border-[var(--color-deep)]/10 bg-[var(--color-cream)] px-4 py-4 text-[var(--color-deep)] outline-none transition placeholder:text-[var(--color-deep)]/40 focus:border-[var(--color-purple)] "
+                      className="w-full resize-none rounded-xl border border-[var(--color-deep)]/10 bg-[var(--color-cream)] px-4 py-4 text-[var(--color-deep)] outline-none transition placeholder:text-[var(--color-deep)]/40 focus:border-[var(--color-purple)]    "
                     />
 
                   </div>

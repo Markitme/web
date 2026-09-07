@@ -130,9 +130,8 @@ export default function Header() {
 
             border-b
             border-[var(--border)]
-
-            bg-[var(--accent)]
             text-white
+            custom-bg
           "
         >
 
@@ -191,7 +190,7 @@ export default function Header() {
                   justify-center
                   rounded-full
                   bg-[var(--foreground)]
-                  text-[var(--accent-bright)]
+                  text-white
                 "
               >
                 <Sparkles
@@ -199,17 +198,7 @@ export default function Header() {
                   strokeWidth={2.5}
                 />
 
-                <span
-                  className="
-                    absolute
-                    -right-0.5
-                    -top-0.5
-                    h-1.5
-                    w-1.5
-                    rounded-full
-                    bg-[var(--accent-bright)]
-                  "
-                />
+                
               </span>
 
 
@@ -237,17 +226,7 @@ export default function Header() {
 
               {/* Right decorative dot */}
 
-              <span
-                className="
-                  hidden
-                  h-1.5
-                  w-1.5
-                  rounded-full
-                  bg-[var(--color-purple)]
-
-                  sm:block
-                "
-              />
+             
 
             </div>
 

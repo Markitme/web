@@ -56,7 +56,7 @@ export default function WorkPage() {
             "
           >
             Ideas turned into{" "}
-            <span className="text-[var(--color-light-purple)]">
+            <span className="text-[var(--color-purple)]">
               measurable impact.
             </span>
           </h1>
