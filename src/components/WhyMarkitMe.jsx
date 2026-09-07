@@ -97,7 +97,7 @@ export default function WhyMarkitMe() {
 
             rounded-full
 
-            bg-[var(--color-gold)]/[0.055]
+            bg-[var(--color-light-purple)]/[0.055]
 
             blur-3xl
           "
@@ -116,7 +116,7 @@ export default function WhyMarkitMe() {
 
             rounded-full
 
-            bg-[var(--color-green)]/[0.08]
+            bg-[var(--color-purple)]/[0.08]
 
             blur-3xl
           "
@@ -138,7 +138,7 @@ export default function WhyMarkitMe() {
 
             rounded-full
 
-            bg-[var(--color-green)]/[0.025]
+            bg-[var(--color-purple)]/[0.025]
 
             blur-3xl
           "
@@ -176,15 +176,6 @@ export default function WhyMarkitMe() {
           {/* Eyebrow */}
 
           <div className="inline-flex items-center gap-2">
-            <span
-              className="
-                h-1.5
-                w-1.5
-                rounded-full
-                bg-[var(--color-gold)]
-              "
-            />
-
             <p
               className="
                 text-[9px]
@@ -192,31 +183,18 @@ export default function WhyMarkitMe() {
                 uppercase
                 tracking-[0.24em]
 
-                text-[var(--color-gold)]
+                text-[var(--color-light-purple)]
               "
             >
               A different way to work
             </p>
-
-            <span
-              className="
-                h-1.5
-                w-1.5
-                rounded-full
-                bg-[var(--color-green)]
-              "
-            />
           </div>
 
           {/* Heading */}
 
           <SectionHeading>
             Not an agency.{" "}
-            <span
-              className="
-                text-[var(--color-gold)]
-              "
-            >
+            <span className="text-[var(--color-purple)] dark:text-[var(--color-light-purple)]">
               Not just a freelancer.
             </span>
           </SectionHeading>
@@ -299,12 +277,11 @@ export default function WhyMarkitMe() {
                 border
                 border-[var(--accent-bright)]
 
-                bg-[var(--surface)]
+                bg-white
 
                 p-7
 
-                text-white
-
+                text-[var(--color-night)]
 
                 transition-all
                 duration-500
@@ -336,9 +313,9 @@ export default function WhyMarkitMe() {
                   rounded-full
 
                   border
-                  border-[var(--color-gold)]/20
+                  border-[var(--color-light-purple)]/20
 
-                  bg-[var(--color-gold)]/[0.06]
+                  bg-[var(--color-light-purple)]/[0.06]
 
                   transition-transform
                   duration-700
@@ -368,7 +345,7 @@ export default function WhyMarkitMe() {
                   rotate-12
 
                   border
-                  border-[var(--color-green)]/20
+                  border-[var(--color-purple)]/20
 
                   transition-transform
                   duration-700
@@ -399,9 +376,9 @@ export default function WhyMarkitMe() {
                     rounded-full
 
                     border
-                    border-[var(--color-cream)]/15
+                    border-[var(--color-night)]/10
 
-                    bg-[var(--color-cream)]/[0.05]
+                    bg-[var(--color-night)]/[0.035]
 
                     px-3
                     py-1.5
@@ -411,12 +388,12 @@ export default function WhyMarkitMe() {
                     uppercase
                     tracking-[0.18em]
 
-                    text-[var(--color-cream)]/60
+                    text-white
                   "
                 >
                   <Sparkles
                     size={12}
-                    className="text-[var(--color-gold)]"
+                    className="text-[var(--color-light-purple)]"
                   />
 
                   The sweet spot
@@ -428,7 +405,7 @@ export default function WhyMarkitMe() {
                     font-bold
                     tracking-[0.2em]
 
-                    text-[var(--color-cream)]/30
+                    text-white
                   "
                 >
                   03
@@ -447,7 +424,7 @@ export default function WhyMarkitMe() {
                     uppercase
                     tracking-[0.22em]
 
-                    text-[var(--color-gold)]
+                    text-white
                   "
                 >
                   MarkitMe
@@ -464,7 +441,7 @@ export default function WhyMarkitMe() {
 
                     tracking-[-0.05em]
 
-                    text-[var(--color-cream)]
+                    text-white
 
                     sm:text-5xl
                   "
@@ -472,7 +449,7 @@ export default function WhyMarkitMe() {
                   Built around
                   <br />
 
-                  <span className="text-[var(--color-gold)]">
+                  <span className="text-[var(--color-purple)] dark:text-[var(--color-light-purple)]">
                     your business.
                   </span>
                 </h3>
@@ -485,7 +462,7 @@ export default function WhyMarkitMe() {
                     text-sm
                     leading-7
 
-                    text-[var(--color-cream)]/60
+                    text-white/60
                   "
                 >
                   A flexible digital partner that brings strategy, creativity,
@@ -522,7 +499,7 @@ export default function WhyMarkitMe() {
                       gap-3
 
                       border-t
-                      border-[var(--color-cream)]/10
+                      border-[var(--color-night)]/10
 
                       pt-3
                     "
@@ -538,9 +515,9 @@ export default function WhyMarkitMe() {
 
                         rounded-full
 
-                        bg-[var(--color-gold)]
+                        bg-[var(--color-light-purple)]
 
-                        text-[var(--color-deep)]
+                        text-white
 
                         shadow-[0_0_15px_rgba(255,186,0,0.15)]
                       "
@@ -555,7 +532,7 @@ export default function WhyMarkitMe() {
                       className="
                         text-sm
 
-                        text-[var(--color-cream)]/80
+                        text-white
                       "
                     >
                       {point}
@@ -580,7 +557,7 @@ export default function WhyMarkitMe() {
                   justify-between
 
                   border-t
-                  border-[var(--color-cream)]/10
+                  border-[var(--color-night)]/10
 
                   pt-6
                 "
@@ -589,7 +566,7 @@ export default function WhyMarkitMe() {
                   className="
                     text-xs
 
-                    text-[var(--color-cream)]/40
+                    text-white/60
                   "
                 >
                   One partner. Full capability.
@@ -613,7 +590,7 @@ export default function WhyMarkitMe() {
 
                     rounded-full
 
-                    bg-[var(--color-gold)]
+                    bg-[var(--color-light-purple)]
 
                     text-[var(--color-deep)]
 
@@ -674,7 +651,7 @@ export default function WhyMarkitMe() {
               h-px
               w-16
 
-              bg-[var(--color-gold)]
+              bg-[var(--color-light-purple)]
             "
           />
 
@@ -704,7 +681,7 @@ export default function WhyMarkitMe() {
             <span
               className="
                 font-black
-                text-[var(--color-gold)]
+                text-[var(--color-light-purple)]
               "
             >
               More expertise.
@@ -737,7 +714,7 @@ export default function WhyMarkitMe() {
             <span
               className="
                 font-bold
-                text-[var(--color-green)]
+                text-[var(--color-purple)]
               "
             >
               {" "}
@@ -786,11 +763,11 @@ function ComparisonCard({ item, direction }) {
         border
         border-[var(--accent)]/35
 
-        bg-[#101017]
+        bg-[#F1F1F1]
 
         p-7
 
-        text-[var(--color-cream)]
+        text-[var(--color-night)]
 
         backdrop-blur-sm
 
@@ -801,7 +778,7 @@ function ComparisonCard({ item, direction }) {
 
         hover:border-[var(--accent-bright)]
 
-        hover:bg-[#15151e]
+        hover:bg-[#E9E9E9]
 
         hover:shadow-[0_25px_70px_color-mix(in_srgb,var(--accent)_22%,transparent)]
 
@@ -887,9 +864,9 @@ function ComparisonCard({ item, direction }) {
             rounded-2xl
 
             border
-            border-white/15
+            border-[var(--color-night)]/10
 
-            bg-white/[0.06]
+            bg-[var(--color-night)]/[0.04]
 
             text-[var(--accent-bright)]
 
@@ -897,7 +874,7 @@ function ComparisonCard({ item, direction }) {
             duration-300
 
             group-hover:border-[var(--accent-bright)]/60
-            group-hover:bg-[var(--accent)]/[0.18]
+            group-hover:bg-[var(--accent)]/[0.12]
           "
         >
           <Icon
@@ -915,7 +892,7 @@ function ComparisonCard({ item, direction }) {
             uppercase
             tracking-[0.18em]
 
-            text-white/40
+            text-[var(--color-night)]/40
 
             transition-colors
             duration-300
@@ -943,7 +920,7 @@ function ComparisonCard({ item, direction }) {
 
             tracking-[-0.04em]
 
-            text-white
+            text-[var(--color-night)]
           "
         >
           {item.title}
@@ -958,7 +935,7 @@ function ComparisonCard({ item, direction }) {
             text-sm
             leading-6
 
-            text-white/65
+            text-[var(--color-night)]/65
           "
         >
           {item.description}
@@ -979,7 +956,7 @@ function ComparisonCard({ item, direction }) {
 
                 text-sm
 
-                text-white/75
+                text-[var(--color-night)]/75
               "
             >
               <span
@@ -1013,7 +990,7 @@ function ComparisonCard({ item, direction }) {
           mt-10
 
           border-t
-            border-white/15
+          border-[var(--color-night)]/10
 
           pt-5
         "
@@ -1025,7 +1002,7 @@ function ComparisonCard({ item, direction }) {
             uppercase
             tracking-[0.18em]
 
-            text-white/40
+            text-[var(--color-night)]/40
           "
         >
           The usual route

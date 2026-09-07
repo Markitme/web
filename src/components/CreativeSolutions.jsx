@@ -92,11 +92,11 @@ export default function CreativeSolutions() {
 
             rounded-full
 
-            bg-[var(--color-green)]/[0.06]
+            bg-[var(--color-purple)]/[0.06]
 
             blur-[110px]
 
-            dark:bg-[var(--color-green)]/[0.055]
+            dark:bg-[var(--color-purple)]/[0.055]
           "
         />
 
@@ -113,11 +113,11 @@ export default function CreativeSolutions() {
 
             rounded-full
 
-            bg-[var(--color-gold)]/[0.045]
+            bg-[var(--color-light-purple)]/[0.045]
 
             blur-[110px]
 
-            dark:bg-[var(--color-gold)]/[0.025]
+            dark:bg-[var(--color-light-purple)]/[0.025]
           "
         />
       </div>
@@ -133,7 +133,7 @@ export default function CreativeSolutions() {
           className="mb-11 md:mb-14"
         >
           All the creative solutions your{" "}
-          <span className="text-[var(--color-green)] dark:text-[var(--color-gold)]">
+          <span className="text-[var(--color-purple)] dark:text-[var(--color-light-purple)]">
             business needs.
           </span>
         </SectionHeading>
@@ -301,7 +301,7 @@ export default function CreativeSolutions() {
 
                     rounded-full
 
-                    bg-[var(--color-gold)]/20
+                    bg-[var(--color-light-purple)]/20
 
                     opacity-0
 
@@ -439,8 +439,8 @@ export default function CreativeSolutions() {
                       transition-all
                       duration-300
 
-                      group-hover:border-[var(--color-gold)]
-                      group-hover:bg-[var(--color-gold)]
+                      group-hover:border-[var(--color-light-purple)]
+                      group-hover:bg-[var(--color-light-purple)]
                       group-hover:text-[var(--color-deep)]
                     "
                   >
@@ -461,7 +461,7 @@ export default function CreativeSolutions() {
                     h-[2px]
                     w-0
 
-                    bg-[var(--color-gold)]
+                    bg-[var(--color-light-purple)]
 
                     transition-all
                     duration-700

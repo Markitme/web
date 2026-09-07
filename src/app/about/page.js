@@ -32,14 +32,7 @@ const values = [
 function SectionLabel({ children, dark = false }) {
   return (
     <div className="flex items-center gap-2">
-      <span
-        className="
-          h-1.5
-          w-1.5
-          rounded-full
-          bg-[var(--color-gold)]
-        "
-      />
+      
 
       <p
         className="
@@ -47,23 +40,14 @@ function SectionLabel({ children, dark = false }) {
           font-black
           uppercase
           tracking-[0.22em]
-          text-[var(--color-green)]
+          text-[var(--color-purple)]
           sm:text-[9px]
-          dark:text-[#8FBF9A]
         "
       >
         {children}
       </p>
 
-      <span
-        className="
-          h-1.5
-          w-1.5
-          rounded-full
-          bg-[var(--color-green)]
-          dark:bg-[#8FBF9A]
-        "
-      />
+      
     </div>
   );
 }
@@ -87,15 +71,8 @@ function AboutCard({ children, className = "" }) {
         duration-300
 
         hover:-translate-y-1
-        hover:border-[var(--color-green)]
+        hover:border-[var(--color-purple)]
         hover:shadow-[0_20px_60px_rgba(12,59,46,0.10)]
-
-        dark:border-[var(--color-green)]/20
-        dark:bg-[var(--color-deep)]
-        dark:hover:border-[#8FBF9A]
-        dark:hover:bg-[#104A3A]
-        dark:hover:shadow-[0_20px_60px_rgba(0,0,0,0.28)]
-
         sm:p-11
 
         ${className}
@@ -136,7 +113,7 @@ export default function AboutPage() {
           overflow-hidden
           border-b
           border-[var(--color-deep)]/10
-          dark:border-[var(--color-green)]/20
+          dark:border-[var(--color-purple)]/20
         "
       >
         {/* Background glow */}
@@ -150,9 +127,9 @@ export default function AboutPage() {
             h-72
             w-72
             rounded-full
-            bg-[var(--color-green)]/10
+            bg-[var(--color-purple)]/10
             blur-3xl
-            dark:bg-[var(--color-green)]/10
+            dark:bg-[var(--color-purple)]/10
           "
         />
 
@@ -165,7 +142,7 @@ export default function AboutPage() {
             h-64
             w-64
             rounded-full
-            bg-[var(--color-green)]/5
+            bg-[var(--color-purple)]/5
             blur-3xl
             dark:bg-[#8FBF9A]/5
           "
@@ -207,7 +184,7 @@ export default function AboutPage() {
               "
             >
               We turn ideas into{" "}
-              <span className="text-[var(--color-green)] dark:text-[var(--color-gold)]">
+              <span className="text-[var(--color-light-purple)]">
                 meaningful growth.
               </span>
             </h1>
@@ -242,7 +219,7 @@ export default function AboutPage() {
               <div
                 className="
                   border-l
-                  border-[var(--color-green)]
+                  border-[var(--color-purple)]
                   pl-6
 
                   dark:border-[#8FBF9A]
@@ -278,7 +255,7 @@ export default function AboutPage() {
           bg-[var(--color-cream)]
           py-20
 
-          dark:border-[var(--color-green)]/20
+          dark:border-[var(--color-purple)]/20
           dark:bg-[var(--color-night)]
 
           sm:py-24
@@ -318,7 +295,7 @@ export default function AboutPage() {
               "
             >
               A digital partner built for{" "}
-              <span className="text-[var(--color-green)] dark:text-[var(--color-gold)]">
+              <span className="text-[var(--color-purple)] dark:text-[var(--color-light-purple)]">
                 ambitious brands.
               </span>
             </h2>
@@ -388,7 +365,7 @@ export default function AboutPage() {
           bg-[var(--color-soft)]
           py-20
 
-          dark:border-[var(--color-green)]/20
+          dark:border-[var(--color-purple)]/20
           dark:bg-[var(--color-deep-surface)]
 
           sm:py-24
@@ -432,7 +409,7 @@ export default function AboutPage() {
                 "
               >
                 Our impact in{" "}
-                <span className="text-[var(--color-green)] dark:text-[var(--color-gold)]">
+                <span className="text-[var(--color-purple)] dark:text-[var(--color-light-purple)]">
                   numbers.
                 </span>
               </h2>
@@ -479,7 +456,7 @@ export default function AboutPage() {
           bg-[var(--color-cream)]
           py-20
 
-          dark:border-[var(--color-green)]/20
+          dark:border-[var(--color-purple)]/20
           dark:bg-[var(--color-night)]
 
           sm:py-24
@@ -509,7 +486,7 @@ export default function AboutPage() {
               "
             >
               What guides our{" "}
-              <span className="text-[var(--color-green)] dark:text-[var(--color-gold)]">
+              <span className="text-[var(--color-purple)] dark:text-[var(--color-light-purple)]">
                 work.
               </span>
             </h2>
@@ -529,7 +506,7 @@ export default function AboutPage() {
                   items-center
                   justify-center
                   rounded-full
-                  bg-[var(--color-gold)]
+                  bg-[var(--color-light-purple)]
                   text-lg
                   font-black
                   text-[var(--color-deep)]
@@ -545,7 +522,7 @@ export default function AboutPage() {
                   font-bold
                   uppercase
                   tracking-[0.25em]
-                  text-[var(--color-green)]
+                  text-[var(--color-purple)]
 
                   dark:text-[#8FBF9A]
                 "
@@ -568,7 +545,7 @@ export default function AboutPage() {
                 "
               >
                 Make digital growth more{" "}
-                <span className="text-[var(--color-green)] dark:text-[#8FBF9A]">
+                <span className="text-[var(--color-purple)] dark:text-[#8FBF9A]">
                   meaningful.
                 </span>
               </h3>
@@ -601,10 +578,10 @@ export default function AboutPage() {
                   justify-center
                   rounded-full
                   border
-                  border-[var(--color-green)]
+                  border-[var(--color-purple)]
                   text-lg
                   font-black
-                  text-[var(--color-green)]
+                  text-[var(--color-purple)]
 
                   dark:border-[#8FBF9A]
                   dark:text-[#8FBF9A]
@@ -620,7 +597,7 @@ export default function AboutPage() {
                   font-bold
                   uppercase
                   tracking-[0.25em]
-                  text-[var(--color-green)]
+                  text-[var(--color-purple)]
 
                   dark:text-[#8FBF9A]
                 "
@@ -643,7 +620,7 @@ export default function AboutPage() {
                 "
               >
                 Build brands people{" "}
-                <span className="text-[var(--color-green)] dark:text-[#8FBF9A]">
+                <span className="text-[var(--color-purple)] dark:text-[#8FBF9A]">
                   remember.
                 </span>
               </h3>
@@ -678,7 +655,7 @@ export default function AboutPage() {
           bg-[var(--color-soft)]
           py-20
 
-          dark:border-[var(--color-green)]/20
+          dark:border-[var(--color-purple)]/20
           dark:bg-[var(--color-deep-surface)]
 
           sm:py-24
@@ -708,7 +685,7 @@ export default function AboutPage() {
               "
             >
               Good work starts with the{" "}
-              <span className="text-[var(--color-green)] dark:text-[var(--color-gold)]">
+              <span className="text-[var(--color-purple)] dark:text-[var(--color-light-purple)]">
                 right approach.
               </span>
             </h2>
@@ -734,7 +711,7 @@ export default function AboutPage() {
                   className="
                     text-sm
                     font-black
-                    text-[var(--color-green)]
+                    text-[var(--color-purple)]
 
                     dark:text-[#8FBF9A]
                   "

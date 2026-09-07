@@ -99,14 +99,7 @@ export default function TestimonialSlider() {
                 gap-2
               "
             >
-              <span
-                className="
-                  h-1.5
-                  w-1.5
-                  rounded-full
-                  bg-[var(--accent)]
-                "
-              />
+              
 
               <p
                 className="
@@ -120,14 +113,7 @@ export default function TestimonialSlider() {
                 Client Stories
               </p>
 
-              <span
-                className="
-                  h-1.5
-                  w-1.5
-                  rounded-full
-                  bg-[var(--accent)]
-                "
-              />
+              
             </div>
 
             {/* Heading */}

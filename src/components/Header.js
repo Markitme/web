@@ -243,7 +243,7 @@ export default function Header() {
                   h-1.5
                   w-1.5
                   rounded-full
-                  bg-[var(--color-green)]
+                  bg-[var(--color-purple)]
 
                   sm:block
                 "
@@ -370,10 +370,10 @@ export default function Header() {
                       transition-colors
                       duration-300
 
-                      hover:text-[var(--color-green)]
+                      hover:text-[var(--color-purple)]
 
                       dark:text-[var(--color-cream)]/65
-                      dark:hover:text-[var(--color-gold)]
+                      dark:hover:text-[var(--color-light-purple)]
                     "
                   >
                     {link.name}
@@ -457,10 +457,10 @@ export default function Header() {
                       transition-colors
                       duration-300
 
-                      hover:text-[var(--color-green)]
+                      hover:text-[var(--color-purple)]
 
                       dark:text-[var(--color-cream)]/65
-                      dark:hover:text-[var(--color-gold)]
+                      dark:hover:text-[var(--color-light-purple)]
                     "
                   >
                     {link.name}
@@ -549,17 +549,17 @@ export default function Header() {
                   transition-all
                   duration-300
 
-                  hover:border-[var(--color-green)]
-                  hover:bg-[var(--color-green)]/10
-                  hover:text-[var(--color-green)]
+                  hover:border-[var(--color-purple)]
+                  hover:bg-[var(--color-purple)]/10
+                  hover:text-[var(--color-purple)]
 
                   dark:border-[var(--color-cream)]/15
                   dark:bg-[var(--color-cream)]/5
                   dark:text-[var(--color-cream)]
 
-                  dark:hover:border-[var(--color-green)]
-                  dark:hover:bg-[var(--color-green)]/15
-                  dark:hover:text-[var(--color-gold)]
+                  dark:hover:border-[var(--color-purple)]
+                  dark:hover:bg-[var(--color-purple)]/15
+                  dark:hover:text-[var(--color-light-purple)]
                 "
                 aria-label={
                   menuOpen
@@ -654,9 +654,9 @@ export default function Header() {
                       uppercase
                       tracking-[0.2em]
 
-                      text-[var(--color-green)]
+                      text-[var(--color-purple)]
 
-                      dark:text-[var(--color-gold)]
+                      dark:text-[var(--color-light-purple)]
                     "
                   >
                     What we do
@@ -765,14 +765,14 @@ export default function Header() {
 
                             hover:-translate-y-0.5
 
-                            hover:border-[var(--color-green)]/40
-                            hover:bg-[var(--color-green)]/10
+                            hover:border-[var(--color-purple)]/40
+                            hover:bg-[var(--color-purple)]/10
 
                             dark:border-[var(--color-cream)]/10
                             dark:bg-[var(--surface)]
 
-                            dark:hover:border-[var(--color-green)]/50
-                            dark:hover:bg-[var(--color-green)]/10
+                            dark:hover:border-[var(--color-purple)]/50
+                            dark:hover:bg-[var(--color-purple)]/10
                           "
                         >
 
@@ -788,7 +788,7 @@ export default function Header() {
                               justify-center
                               rounded-xl
 
-                              bg-[var(--color-gold)]
+                              bg-[var(--color-light-purple)]
 
                               text-[var(--color-deep)]
                             "
@@ -813,10 +813,10 @@ export default function Header() {
 
                                 transition-colors
 
-                                group-hover:text-[var(--color-green)]
+                                group-hover:text-[var(--color-purple)]
 
                                 dark:text-[var(--color-cream)]
-                                dark:group-hover:text-[var(--color-gold)]
+                                dark:group-hover:text-[var(--color-light-purple)]
                               "
                             >
                               {service.title}
@@ -1039,7 +1039,7 @@ export default function Header() {
                         flex
                         rounded-xl
 
-                        bg-[var(--color-gold)]
+                        bg-[var(--color-light-purple)]
 
                         px-4
                         py-3
@@ -1086,20 +1086,20 @@ export default function Header() {
 
                               transition
 
-                              hover:bg-[var(--color-gold)]/15
-                              hover:text-[var(--color-green)]
+                              hover:bg-[var(--color-light-purple)]/15
+                              hover:text-[var(--color-purple)]
 
                               dark:text-[var(--color-cream)]/70
-                              dark:hover:text-[var(--color-gold)]
+                              dark:hover:text-[var(--color-light-purple)]
                             "
                           >
 
                             <Icon
                               size={17}
                               className="
-                                text-[var(--color-green)]
+                                text-[var(--color-purple)]
 
-                                dark:text-[var(--color-gold)]
+                                dark:text-[var(--color-light-purple)]
                               "
                             />
 

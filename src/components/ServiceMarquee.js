@@ -168,14 +168,14 @@ export default function ServiceMarquee() {
                     transition-all
                     duration-300
 
-                    group-hover:border-[var(--color-gold)]/60
-                    group-hover:bg-[var(--color-gold)]/10
+                    group-hover:border-[var(--color-light-purple)]/60
+                    group-hover:bg-[var(--color-light-purple)]/10
 
                     dark:border-[var(--color-cream)]/[0.10]
                     dark:bg-[var(--color-cream)]/[0.045]
 
-                    dark:group-hover:border-[var(--color-gold)]/50
-                    dark:group-hover:bg-[var(--color-gold)]/[0.08]
+                    dark:group-hover:border-[var(--color-light-purple)]/50
+                    dark:group-hover:bg-[var(--color-light-purple)]/[0.08]
                   "
                 >
                   <Icon
@@ -183,7 +183,7 @@ export default function ServiceMarquee() {
                     strokeWidth={1.8}
                     aria-hidden="true"
                     className="
-                      text-[var(--color-green)]
+                      text-[var(--color-purple)]
 
                       transition-all
                       duration-300
@@ -191,8 +191,8 @@ export default function ServiceMarquee() {
                       group-hover:scale-110
                       group-hover:text-[var(--color-deep)]
 
-                      dark:text-[var(--color-gold)]
-                      dark:group-hover:text-[var(--color-gold)]
+                      dark:text-[var(--color-light-purple)]
+                      dark:group-hover:text-[var(--color-light-purple)]
                     "
                   />
                 </span>
@@ -234,7 +234,7 @@ export default function ServiceMarquee() {
 
                     bg-[var(--color-sand)]/50
 
-                    dark:bg-[var(--color-gold)]/40
+                    dark:bg-[var(--color-light-purple)]/40
                   "
                 />
               </div>

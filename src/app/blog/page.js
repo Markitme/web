@@ -44,9 +44,6 @@ export default async function BlogPage({ searchParams }) {
         text-[var(--color-deep)]
         transition-colors
         duration-300
-
-        dark:bg-[var(--color-night)]
-        dark:text-[var(--color-cream)]
       "
     >
       {/* =====================================================
@@ -87,7 +84,7 @@ export default async function BlogPage({ searchParams }) {
             h-64
             w-64
             rounded-full
-            bg-[var(--color-gold)]/10
+            bg-[var(--color-light-purple)]/10
             blur-3xl
           "
         />
@@ -101,7 +98,7 @@ export default async function BlogPage({ searchParams }) {
             h-56
             w-56
             rounded-full
-            bg-[var(--color-green)]/10
+            bg-[var(--color-purple)]/10
             blur-3xl
           "
         />
@@ -123,14 +120,7 @@ export default async function BlogPage({ searchParams }) {
 
             <div className="flex items-center gap-2">
 
-              <span
-                className="
-                  h-1.5
-                  w-1.5
-                  rounded-full
-                  bg-[var(--color-gold)]
-                "
-              />
+             
 
               <p
                 className="
@@ -139,28 +129,15 @@ export default async function BlogPage({ searchParams }) {
                   uppercase
                   tracking-[0.22em]
 
-                  text-[var(--color-green)]
+                  text-[var(--color-purple)]
 
                   sm:text-[9px]
-
-                  dark:text-[var(--color-gold)]
                 "
               >
                 MarkitMe Insights
               </p>
 
-              <span
-                className="
-                  h-1.5
-                  w-1.5
-                  rounded-full
-
-                  bg-[var(--color-green)]
-
-                  dark:bg-[var(--color-gold)]
-                "
-              />
-
+              
             </div>
 
 
@@ -189,10 +166,7 @@ export default async function BlogPage({ searchParams }) {
               into{" "}
 
               <span
-                className="
-                  text-[var(--color-green)]
-
-                  dark:text-[var(--color-gold)]
+                className="text-[var(--color-light-purple)]
                 "
               >
                 action.
@@ -311,14 +285,14 @@ export default async function BlogPage({ searchParams }) {
 
                       hover:-translate-y-1.5
 
-                      hover:border-[var(--color-green)]/40
+                      hover:border-[var(--color-purple)]/40
 
                       hover:shadow-[0_20px_60px_rgba(12,59,46,0.08)]
 
                       dark:border-[var(--color-cream)]/10
                       dark:bg-[var(--color-cream)]/[0.035]
 
-                      dark:hover:border-[var(--color-gold)]/40
+                      dark:hover:border-[var(--color-light-purple)]/40
 
                       dark:hover:shadow-[0_20px_60px_rgba(0,0,0,0.15)]
                     "
@@ -425,11 +399,11 @@ export default async function BlogPage({ searchParams }) {
                           overflow-hidden
                           rounded-[20px]
 
-                          bg-[var(--color-green)]
+                          bg-[var(--color-purple)]
 
                           p-6
 
-                          dark:bg-[var(--color-gold)]
+                          dark:bg-[var(--color-light-purple)]
                         "
                       >
                         <div
@@ -441,9 +415,9 @@ export default async function BlogPage({ searchParams }) {
                             w-32
                             rounded-full
                             border-[20px]
-                            border-[var(--color-gold)]/30
+                            border-[var(--color-light-purple)]/30
 
-                            dark:border-[var(--color-green)]/30
+                            dark:border-[var(--color-purple)]/30
                           "
                         />
 
@@ -489,11 +463,11 @@ export default async function BlogPage({ searchParams }) {
                           uppercase
                           tracking-[0.22em]
 
-                          text-[var(--color-green)]
+                          text-[var(--color-purple)]
 
                           sm:text-[9px]
 
-                          dark:text-[var(--color-gold)]
+                          dark:text-[var(--color-light-purple)]
                         "
                       >
                         {post.category}
@@ -629,11 +603,11 @@ export default async function BlogPage({ searchParams }) {
 
                           group-hover:gap-3
 
-                          hover:text-[var(--color-green)]
+                          hover:text-[var(--color-purple)]
 
                           dark:text-[var(--color-cream)]
 
-                          dark:hover:text-[var(--color-gold)]
+                          dark:hover:text-[var(--color-light-purple)]
                         "
                       >
                         Read article
@@ -667,7 +641,7 @@ export default async function BlogPage({ searchParams }) {
                 <Link
                   href={`/blog?page=${currentPage - 1}`}
                   aria-label="Previous page"
-                  className="flex h-11 w-11 items-center justify-center rounded-full border border-[var(--color-deep)]/15 text-[var(--color-deep)] transition-colors hover:border-[var(--color-green)] hover:text-[var(--color-green)] dark:border-[var(--color-cream)]/15 dark:text-[var(--color-cream)] dark:hover:border-[var(--color-gold)] dark:hover:text-[var(--color-gold)]"
+                  className="flex h-11 w-11 items-center justify-center rounded-full border border-[var(--color-deep)]/15 text-[var(--color-deep)] transition-colors hover:border-[var(--color-purple)] hover:text-[var(--color-purple)] dark:border-[var(--color-cream)]/15 dark:text-[var(--color-cream)] dark:hover:border-[var(--color-light-purple)] dark:hover:text-[var(--color-light-purple)]"
                 >
                   <ChevronLeft size={18} />
                 </Link>
@@ -687,8 +661,8 @@ export default async function BlogPage({ searchParams }) {
                     }
                     className={`flex h-11 min-w-11 items-center justify-center rounded-full px-3 text-sm font-bold transition-colors ${
                       pageNumber === currentPage
-                        ? "bg-[var(--color-gold)] text-[var(--color-deep)]"
-                        : "border border-[var(--color-deep)]/15 text-[var(--color-deep)] hover:border-[var(--color-green)] hover:text-[var(--color-green)] dark:border-[var(--color-cream)]/15 dark:text-[var(--color-cream)] dark:hover:border-[var(--color-gold)] dark:hover:text-[var(--color-gold)]"
+                        ? "bg-[var(--color-light-purple)] text-[var(--color-deep)]"
+                        : "border border-[var(--color-deep)]/15 text-[var(--color-deep)] hover:border-[var(--color-purple)] hover:text-[var(--color-purple)] dark:border-[var(--color-cream)]/15 dark:text-[var(--color-cream)] dark:hover:border-[var(--color-light-purple)] dark:hover:text-[var(--color-light-purple)]"
                     }`}
                   >
                     {pageNumber}
@@ -700,7 +674,7 @@ export default async function BlogPage({ searchParams }) {
                 <Link
                   href={`/blog?page=${currentPage + 1}`}
                   aria-label="Next page"
-                  className="flex h-11 w-11 items-center justify-center rounded-full border border-[var(--color-deep)]/15 text-[var(--color-deep)] transition-colors hover:border-[var(--color-green)] hover:text-[var(--color-green)] dark:border-[var(--color-cream)]/15 dark:text-[var(--color-cream)] dark:hover:border-[var(--color-gold)] dark:hover:text-[var(--color-gold)]"
+                  className="flex h-11 w-11 items-center justify-center rounded-full border border-[var(--color-deep)]/15 text-[var(--color-deep)] transition-colors hover:border-[var(--color-purple)] hover:text-[var(--color-purple)] dark:border-[var(--color-cream)]/15 dark:text-[var(--color-cream)] dark:hover:border-[var(--color-light-purple)] dark:hover:text-[var(--color-light-purple)]"
                 >
                   <ChevronRight size={18} />
                 </Link>

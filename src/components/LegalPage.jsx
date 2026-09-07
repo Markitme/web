@@ -33,7 +33,7 @@ export default function LegalPage({
           border-b
           border-[var(--color-deep)]/10
 
-          dark:border-[var(--color-green)]/20
+          dark:border-[var(--color-purple)]/20
         "
       >
         {/* Decorative Glow */}
@@ -49,7 +49,7 @@ export default function LegalPage({
 
             rounded-full
 
-            bg-[var(--color-green)]/10
+            bg-[var(--color-purple)]/10
 
             blur-3xl
           "
@@ -85,14 +85,14 @@ export default function LegalPage({
                   rounded-full
 
                   border
-                  border-[var(--color-green)]/15
+                  border-[var(--color-purple)]/15
 
                   bg-[var(--color-soft)]
 
                   px-4
                   py-2
 
-                  dark:border-[var(--color-green)]/20
+                  dark:border-[var(--color-purple)]/20
                   dark:bg-[var(--color-deep-surface)]
                 "
               >
@@ -103,7 +103,7 @@ export default function LegalPage({
                     w-1.5
                     rounded-full
 
-                    bg-[var(--color-gold)]
+                    bg-[var(--color-light-purple)]
                   "
                 />
 
@@ -167,7 +167,7 @@ export default function LegalPage({
     lg:p-10
     xl:p-12
 
-    dark:border-[var(--color-green)]/20
+    dark:border-[var(--color-purple)]/20
     dark:bg-[var(--color-deep)]
     dark:shadow-[0_15px_50px_rgba(0,0,0,0.12)]
   "

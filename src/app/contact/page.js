@@ -90,16 +90,9 @@ export default function ContactPage() {
   };
 
   return (
-    <main className="bg-[var(--color-cream)] text-[var(--color-deep)] transition-colors duration-300 dark:bg-[var(--color-night)] dark:text-[var(--color-cream)]">
-
-      {/* =====================================================
-          HERO / CONTACT
+    <main className="bg-[var(--color-cream)] text-[var(--color-deep)] transition-colors duration-300
       ===================================================== */}
-      <section className="relative overflow-hidden border-b border-[var(--color-deep)]/10 bg-[var(--color-cream)] dark:border-[var(--color-cream)]/10 dark:bg-[var(--color-night)]">
-
-        <div className="container-custom relative px-5 py-16 sm:py-20 lg:py-24">
-
-          <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+      <section className="relative overflow-hidden border-b border-[var(--color-deep)]/10 bg-[var(--color-cream)]    <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
 
             {/* =================================================
                 CONTACT INFORMATION
@@ -111,24 +104,20 @@ export default function ContactPage() {
 
                 <div className="flex items-center gap-2">
 
-                  <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-gold)]" />
-
-                  <p className="text-[8px] font-black uppercase tracking-[0.22em] text-[var(--color-green)] dark:text-[var(--color-gold)] sm:text-[9px]">
+                  <p className="text-[8px] font-black uppercase tracking-[0.22em] text-[var(--color-purple)]  sm:text-[9px]">
                     Contact MarkitMe
                   </p>
 
-                  <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-green)] dark:bg-[var(--color-gold)]" />
-
                 </div>
 
-                <h1 className="mt-4 text-3xl font-black leading-[0.95] tracking-[-0.055em] text-[var(--color-deep)] sm:text-4xl md:text-5xl lg:text-6xl dark:text-[var(--color-cream)]">
+                <h1 className="mt-4 text-3xl font-black leading-[0.95] tracking-[-0.055em] text-[var(--color-deep)] sm:text-4xl md:text-5xl lg:text-6xl ">
                   Let&apos;s build something{" "}
-                  <span className="text-[var(--color-green)] dark:text-[var(--color-gold)]">
+                  <span className="text-[var(--color-purple)] ">
                     that matters.
                   </span>
                 </h1>
 
-                <p className="mt-6 max-w-2xl text-lg leading-8 text-[var(--color-deep)]/60 dark:text-[var(--color-cream)]/60 sm:text-xl">
+                <p className="mt-6 max-w-2xl text-lg leading-8 text-[var(--color-deep)]/60 /60 sm:text-xl">
                   Have a project, challenge, or growth goal in mind?
                   Tell us about it, and we&apos;ll explore how we can
                   help turn your ideas into meaningful digital growth.
@@ -142,18 +131,18 @@ export default function ContactPage() {
                 {/* Email */}
                 <div className="flex items-center gap-4">
 
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[var(--color-gold)] text-[var(--color-deep)]">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[var(--color-purple)] text-white">
                     <Mail size={20} />
                   </div>
 
                   <div>
-                    <p className="text-sm text-[var(--color-deep)]/50 dark:text-[var(--color-cream)]/50">
+                    <p className="text-sm text-white">
                       Email
                     </p>
 
                     <a
                       href="mailto:info@markitme.ca"
-                      className="font-bold transition hover:text-[var(--color-green)] dark:hover:text-[var(--color-gold)]"
+                      className="font-bold transition hover:text-[var(--color-purple)]"
                     >
                       info@markitme.ca
                     </a>
@@ -164,18 +153,18 @@ export default function ContactPage() {
                 {/* Phone */}
                 <div className="flex items-center gap-4">
 
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[var(--color-gold)] text-[var(--color-deep)]">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[var(--color-purple)] text-white">
                     <Phone size={20} />
                   </div>
 
                   <div>
-                    <p className="text-sm text-[var(--color-deep)]/50 dark:text-[var(--color-cream)]/50">
+                    <p className="text-sm text-white">
                       Phone
                     </p>
 
                     <a
                       href="tel:+16139814844"
-                      className="font-bold transition hover:text-[var(--color-green)] dark:hover:text-[var(--color-gold)]"
+                      className="font-bold transition hover:text-[var(--color-purple)]"
                     >
                       +1 (613)-981-4844
                     </a>
@@ -186,16 +175,16 @@ export default function ContactPage() {
                 {/* Location */}
                 <div className="flex items-center gap-4">
 
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[var(--color-gold)] text-[var(--color-deep)]">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[var(--color-purple)] text-white">
                     <MapPin size={20} />
                   </div>
 
                   <div>
-                    <p className="text-sm text-[var(--color-deep)]/50 dark:text-[var(--color-cream)]/50">
+                    <p className="text-sm text-white">
                       Location
                     </p>
 
-                    <p className="font-bold text-[var(--color-deep)] dark:text-[var(--color-cream)]">
+                    <p className="font-bold text-[var(--color-deep)] ">
                       34 Minowan Miikan Lane,
                       <br />
                       Toronto, M6J 0G3
@@ -214,14 +203,14 @@ export default function ContactPage() {
             ================================================= */}
             <form
               onSubmit={handleSubmit}
-              className="rounded-[28px] border border-[var(--color-deep)]/10 bg-[var(--color-deep)]/[0.025] p-6 shadow-sm transition-all duration-300 hover:border-[var(--color-green)] dark:border-[var(--color-cream)]/10 dark:bg-[var(--color-cream)]/[0.03] dark:hover:border-[var(--color-gold)] sm:p-9"
+              className="rounded-[28px] border border-[var(--color-deep)]/10 bg-[var(--color-deep)]/[0.025] p-6 shadow-sm transition-all duration-300 hover:border-[var(--color-purple)]    sm:p-9"
             >
 
               {/* Success Message */}
               {submitted ? (
                 <div className="flex min-h-[430px] flex-col items-center justify-center text-center">
 
-                  <div className="flex h-16 w-16 items-center justify-center rounded-full bg-[var(--color-gold)] text-[var(--color-deep)]">
+                  <div className="flex h-16 w-16 items-center justify-center rounded-full bg-[var(--color-purple)] text-white">
                     <CheckCircle2 size={30} />
                   </div>
 
@@ -229,7 +218,7 @@ export default function ContactPage() {
                     Message sent!
                   </h2>
 
-                  <p className="mt-3 max-w-md leading-7 text-[var(--color-deep)]/60 dark:text-[var(--color-cream)]/60">
+                  <p className="mt-3 max-w-md leading-7 text-[var(--color-deep)]/60 /60">
                     Thanks for reaching out. Your message has been
                     sent successfully. We&apos;ll get back to you soon.
                   </p>
@@ -237,7 +226,7 @@ export default function ContactPage() {
                   <button
                     type="button"
                     onClick={() => setSubmitted(false)}
-                    className="mt-7 text-sm font-bold text-[var(--color-green)] transition hover:opacity-70 dark:text-[var(--color-gold)]"
+                    className="mt-7 text-sm font-bold text-[var(--color-purple)] transition hover:opacity-70 "
                   >
                     Send another message
                   </button>
@@ -249,7 +238,7 @@ export default function ContactPage() {
 
                   {/* Error */}
                   {error && (
-                    <div className="mb-6 rounded-xl border border-red-500/20 bg-red-500/5 px-4 py-3 text-sm text-red-600 dark:text-red-400">
+                    <div className="mb-6 rounded-xl border border-red-500/20 bg-red-500/5 px-4 py-3 text-sm text-red-600 ">
                       {error}
                     </div>
                   )}
@@ -276,7 +265,7 @@ export default function ContactPage() {
                         onChange={handleChange}
                         placeholder="Your name"
                         required
-                        className="w-full rounded-xl border border-[var(--color-deep)]/10 bg-[var(--color-cream)] px-4 py-4 text-[var(--color-deep)] outline-none transition placeholder:text-[var(--color-deep)]/40 focus:border-[var(--color-green)] dark:border-[var(--color-cream)]/10 dark:bg-[var(--color-night)] dark:text-[var(--color-cream)] dark:placeholder:text-[var(--color-cream)]/35 dark:focus:border-[var(--color-gold)]"
+                        className="w-full rounded-xl border border-[var(--color-deep)]/10 bg-[var(--color-cream)] px-4 py-4 text-[var(--color-deep)] outline-none transition placeholder:text-[var(--color-deep)]/40 focus:border-[var(--color-purple)] "
                       />
 
                     </div>
@@ -300,7 +289,7 @@ export default function ContactPage() {
                         onChange={handleChange}
                         placeholder="you@company.com"
                         required
-                        className="w-full rounded-xl border border-[var(--color-deep)]/10 bg-[var(--color-cream)] px-4 py-4 text-[var(--color-deep)] outline-none transition placeholder:text-[var(--color-deep)]/40 focus:border-[var(--color-green)] dark:border-[var(--color-cream)]/10 dark:bg-[var(--color-night)] dark:text-[var(--color-cream)] dark:placeholder:text-[var(--color-cream)]/35 dark:focus:border-[var(--color-gold)]"
+                        className="w-full rounded-xl border border-[var(--color-deep)]/10 bg-[var(--color-cream)] px-4 py-4 text-[var(--color-deep)] outline-none transition placeholder:text-[var(--color-deep)]/40 focus:border-[var(--color-purple)] "
                       />
 
                     </div>
@@ -325,7 +314,7 @@ export default function ContactPage() {
                       value={formData.phone}
                       onChange={handleChange}
                       placeholder="+1 (613) 000-0000"
-                      className="w-full rounded-xl border border-[var(--color-deep)]/10 bg-[var(--color-cream)] px-4 py-4 text-[var(--color-deep)] outline-none transition placeholder:text-[var(--color-deep)]/40 focus:border-[var(--color-green)] dark:border-[var(--color-cream)]/10 dark:bg-[var(--color-night)] dark:text-[var(--color-cream)] dark:placeholder:text-[var(--color-cream)]/35 dark:focus:border-[var(--color-gold)]"
+                      className="w-full rounded-xl border border-[var(--color-deep)]/10 bg-[var(--color-cream)] px-4 py-4 text-[var(--color-deep)] outline-none transition placeholder:text-[var(--color-deep)]/40 focus:border-[var(--color-purple)] "
                     />
 
                   </div>
@@ -347,9 +336,7 @@ export default function ContactPage() {
                       value={formData.service}
                       onChange={handleChange}
                       required
-                      className="w-full rounded-xl border border-[var(--color-deep)]/10 bg-[var(--color-cream)] px-4 py-4 text-[var(--color-deep)] outline-none transition focus:border-[var(--color-green)] dark:border-[var(--color-cream)]/10 dark:bg-[var(--color-night)] dark:text-[var(--color-cream)] dark:focus:border-[var(--color-gold)]"
-                    >
-                      <option value="">
+                      className="w-full rounded-xl border border-[var(--color-deep)]/10 bg-[var(--color-cream)] px-4 py-4 text-[var(--color-deep)] outline-none transition focus:border-[var(--color-purple)] <option value="">
                         Select a service
                       </option>
 
@@ -403,7 +390,7 @@ export default function ContactPage() {
                       onChange={handleChange}
                       placeholder="What would you like to achieve?"
                       required
-                      className="w-full resize-none rounded-xl border border-[var(--color-deep)]/10 bg-[var(--color-cream)] px-4 py-4 text-[var(--color-deep)] outline-none transition placeholder:text-[var(--color-deep)]/40 focus:border-[var(--color-green)] dark:border-[var(--color-cream)]/10 dark:bg-[var(--color-night)] dark:text-[var(--color-cream)] dark:placeholder:text-[var(--color-cream)]/35 dark:focus:border-[var(--color-gold)]"
+                      className="w-full resize-none rounded-xl border border-[var(--color-deep)]/10 bg-[var(--color-cream)] px-4 py-4 text-[var(--color-deep)] outline-none transition placeholder:text-[var(--color-deep)]/40 focus:border-[var(--color-purple)] "
                     />
 
                   </div>

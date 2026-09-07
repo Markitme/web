@@ -289,7 +289,7 @@ export default function HomePopupModal() {
 
                 text-[var(--color-sand)]
 
-                dark:text-[var(--color-gold)]
+                dark:text-[var(--color-light-purple)]
 
                 sm:text-[11px]
               "
@@ -344,9 +344,9 @@ export default function HomePopupModal() {
                 rounded-2xl
 
                 border
-                border-[var(--color-gold)]/20
+                border-[var(--color-light-purple)]/20
 
-                bg-[var(--color-gold)]/5
+                bg-[var(--color-light-purple)]/5
 
                 p-5
 
@@ -365,7 +365,7 @@ export default function HomePopupModal() {
 
                   rounded-full
 
-                  bg-[var(--color-gold)]
+                  bg-[var(--color-light-purple)]
 
                   text-base
                   font-black
@@ -452,13 +452,13 @@ export default function HomePopupModal() {
 
                     placeholder:text-[var(--color-deep)]/35
 
-                    focus:border-[var(--color-gold)]
+                    focus:border-[var(--color-light-purple)]
 
                     dark:border-[var(--color-cream)]/10
                     dark:bg-[#123F32]
                     dark:text-[var(--color-cream)]
                     dark:placeholder:text-[var(--color-cream)]/35
-                    dark:focus:border-[var(--color-gold)]
+                    dark:focus:border-[var(--color-light-purple)]
                   "
                 />
               </div>
@@ -512,13 +512,13 @@ export default function HomePopupModal() {
 
                       placeholder:text-[var(--color-deep)]/35
 
-                      focus:border-[var(--color-gold)]
+                      focus:border-[var(--color-light-purple)]
 
                       dark:border-[var(--color-cream)]/10
                       dark:bg-[#123F32]
                       dark:text-[var(--color-cream)]
                       dark:placeholder:text-[var(--color-cream)]/35
-                      dark:focus:border-[var(--color-gold)]
+                      dark:focus:border-[var(--color-light-purple)]
                     "
                   />
                 </div>
@@ -566,13 +566,13 @@ export default function HomePopupModal() {
 
                       placeholder:text-[var(--color-deep)]/35
 
-                      focus:border-[var(--color-gold)]
+                      focus:border-[var(--color-light-purple)]
 
                       dark:border-[var(--color-cream)]/10
                       dark:bg-[#123F32]
                       dark:text-[var(--color-cream)]
                       dark:placeholder:text-[var(--color-cream)]/35
-                      dark:focus:border-[var(--color-gold)]
+                      dark:focus:border-[var(--color-light-purple)]
                     "
                   />
                 </div>
@@ -624,12 +624,12 @@ export default function HomePopupModal() {
 
                     outline-none
 
-                    focus:border-[var(--color-gold)]
+                    focus:border-[var(--color-light-purple)]
 
                     dark:border-[var(--color-cream)]/10
                     dark:bg-[#123F32]
                     dark:text-[var(--color-cream)]
-                    dark:focus:border-[var(--color-gold)]
+                    dark:focus:border-[var(--color-light-purple)]
                   "
                 >
                   <option value="" disabled>
@@ -693,7 +693,7 @@ export default function HomePopupModal() {
 
                   rounded-full
 
-                  bg-[var(--color-gold)]
+                  bg-[var(--color-light-purple)]
 
                   px-5
 

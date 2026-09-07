@@ -35,9 +35,6 @@ export default function ServicesPage() {
 
         transition-colors
         duration-300
-
-        dark:bg-[var(--color-night)]
-        dark:text-[var(--color-cream)]
       "
     >
       {/* =====================================================
@@ -53,8 +50,6 @@ export default function ServicesPage() {
 
           border-b
           border-[var(--color-deep)]/10
-
-          dark:border-[var(--color-green)]/20
         "
       >
         {/* Decorative Glow */}
@@ -70,11 +65,9 @@ export default function ServicesPage() {
 
             rounded-full
 
-            bg-[var(--color-green)]/10
+            bg-[var(--color-purple)]/10
 
             blur-3xl
-
-            dark:bg-[var(--color-green)]/10
           "
         />
 
@@ -94,7 +87,7 @@ export default function ServicesPage() {
             description="We combine strategy, design, technology, content, and marketing to create digital experiences that help businesses grow."
           >
             Strategy, creativity,{" "}
-            <span className="text-[var(--color-green)] dark:text-[var(--color-gold)]">
+            <span className="text-[var(--color-light-purple)]">
               and growth
             </span>{" "}
             — working together.
@@ -121,7 +114,7 @@ export default function ServicesPage() {
                 sm:py-20
                 lg:py-24
 
-                dark:border-[var(--color-green)]/20
+                dark:border-[var(--color-purple)]/20
 
                 ${
                   isAlternate

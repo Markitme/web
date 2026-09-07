@@ -23,16 +23,14 @@ export default function WorkPage() {
           {/* Eyebrow */}
 
           <div className="inline-flex items-center gap-3">
-            <span className="h-2 w-2 rounded-full bg-[var(--color-gold)]" />
-
             <p
               className="
                 text-xs
                 font-black
                 uppercase
                 tracking-[0.2em]
-                text-[var(--color-green)]
-                dark:text-[var(--color-gold)]
+                text-[var(--color-purple)]
+                dark:text-[var(--color-light-purple)]
               "
             >
               Case Studies
@@ -58,7 +56,7 @@ export default function WorkPage() {
             "
           >
             Ideas turned into{" "}
-            <span className="text-[var(--color-green)] dark:text-[var(--color-gold)]">
+            <span className="text-[var(--color-light-purple)]">
               measurable impact.
             </span>
           </h1>
@@ -101,14 +99,7 @@ export default function WorkPage() {
 
             <div className="inline-flex items-center gap-3">
 
-              <span
-                className="
-                  h-1.5
-                  w-1.5
-                  rounded-full
-                  bg-[var(--color-gold)]
-                "
-              />
+             
 
               <p
                 className="
@@ -116,22 +107,14 @@ export default function WorkPage() {
                   font-black
                   uppercase
                   tracking-[0.24em]
-                  text-[var(--color-green)]
-                  dark:text-[var(--color-gold)]
+                  text-[var(--color-purple)]
+                  dark:text-[var(--color-light-purple)]
                 "
               >
                 Our Latest Projects
               </p>
 
-              <span
-                className="
-                  h-1.5
-                  w-1.5
-                  rounded-full
-                  bg-[var(--color-green)]
-                  dark:bg-[var(--color-gold)]
-                "
-              />
+             
 
             </div>
 
@@ -154,7 +137,7 @@ export default function WorkPage() {
               "
             >
               Work built to move{" "}
-              <span className="text-[var(--color-green)] dark:text-[var(--color-gold)]">
+              <span className="text-[var(--color-purple)] dark:text-[var(--color-light-purple)]">
                 businesses forward.
               </span>
             </h2>
@@ -202,13 +185,13 @@ export default function WorkPage() {
                   duration-500
 
                   hover:-translate-y-1
-                  hover:border-[var(--color-green)]
+                  hover:border-[var(--color-purple)]
                   hover:shadow-xl
 
                   dark:border-[var(--color-cream)]/10
                   dark:bg-white/[0.03]
 
-                  dark:hover:border-[var(--color-gold)]
+                  dark:hover:border-[var(--color-light-purple)]
                 "
               >
 
@@ -309,8 +292,8 @@ export default function WorkPage() {
                       font-black
                       uppercase
                       tracking-[0.2em]
-                      text-[var(--color-green)]
-                      dark:text-[var(--color-gold)]
+                      text-[var(--color-purple)]
+                      dark:text-[var(--color-light-purple)]
                     "
                   >
                     {project.category}

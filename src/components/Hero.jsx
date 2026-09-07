@@ -130,11 +130,11 @@ const SvgMegaphone = ({ color }) => (
 const heroIcons = [
   {
     Icon: SvgDevelopment,
-    color: "var(--color-gold)",
+    color: "var(--color-light-purple)",
   },
   {
     Icon: SvgSearch,
-    color: "var(--color-green)",
+    color: "var(--color-purple)",
   },
   {
     Icon: SvgPalette,
@@ -142,11 +142,11 @@ const heroIcons = [
   },
   {
     Icon: SvgCamera,
-    color: "var(--color-gold)",
+    color: "var(--color-light-purple)",
   },
   {
     Icon: SvgMegaphone,
-    color: "var(--color-green)",
+    color: "var(--color-purple)",
   },
 ];
 
@@ -537,12 +537,12 @@ export default function Hero() {
 
           /* LIGHT MODE */
           border
-          border-[var(--color-green)]/25
+          border-[var(--color-purple)]/25
           bg-[var(--color-deep)]
           shadow-[0_6px_20px_rgba(12,59,46,0.15)]
 
           /* DARK MODE */
-          dark:border-[var(--color-green)]/40
+          dark:border-[var(--color-purple)]/40
           dark:bg-[var(--color-cream)]
           dark:shadow-[0_6px_22px_rgba(0,0,0,0.3)]
 
@@ -633,7 +633,7 @@ export default function Hero() {
                 w-[3px]
                 translate-y-[0.05em]
                 rounded-full
-                bg-[var(--color-gold)]
+                bg-[var(--color-light-purple)]
                 align-middle
               "
             />
@@ -757,11 +757,11 @@ export default function Hero() {
           >
             <span>Strategy</span>
 
-            <span className="h-1 w-1 rounded-full bg-[var(--color-gold)]" />
+            <span className="h-1 w-1 rounded-full bg-[var(--color-light-purple)]" />
 
             <span>Creative</span>
 
-            <span className="h-1 w-1 rounded-full bg-[var(--color-green)]" />
+            <span className="h-1 w-1 rounded-full bg-[var(--color-purple)]" />
 
             <span>Technology</span>
 
@@ -830,7 +830,7 @@ export default function Hero() {
                   h-6
                   w-px
                   bg-gradient-to-b
-                  from-[var(--color-gold)]
+                  from-[var(--color-light-purple)]
                   to-[var(--color-deep)]/20
                   dark:to-[var(--color-cream)]/20
                 "
@@ -844,7 +844,7 @@ export default function Hero() {
                   rotate-45
                   border-b
                   border-r
-                  border-[var(--color-gold)]
+                  border-[var(--color-light-purple)]
                 "
               />
             </motion.div>

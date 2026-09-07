@@ -343,7 +343,7 @@ export default function Footer() {
                     transition-all
                     duration-300
 
-                    group-hover:border-[var(--color-green)]
+                    group-hover:border-[var(--color-purple)]
                     group-hover:bg-transparent
                     group-hover:text-[var(--accent-bright)]
 
@@ -384,7 +384,7 @@ export default function Footer() {
                       transition-colors
                       duration-300
 
-                      group-hover:text-[var(--color-green)]
+                      group-hover:text-[var(--color-purple)]
 
                     "
                   >
@@ -426,7 +426,7 @@ export default function Footer() {
                     transition-all
                     duration-300
 
-                    group-hover:border-[var(--color-green)]
+                    group-hover:border-[var(--color-purple)]
                     group-hover:bg-transparent
                     group-hover:text-[var(--accent-bright)]
 
@@ -467,7 +467,7 @@ export default function Footer() {
                       transition-colors
                       duration-300
 
-                      group-hover:text-[var(--color-green)]
+                      group-hover:text-[var(--color-purple)]
 
                     "
                   >
@@ -602,7 +602,7 @@ export default function Footer() {
         text-[var(--color-deep)]/60
         transition-all duration-300
         hover:-translate-y-1
-        hover:border-[var(--color-gold)]
+        hover:border-[var(--color-light-purple)]
         hover:bg-transparent
         hover:text-[var(--accent-bright)]
 
@@ -655,7 +655,7 @@ export default function Footer() {
         text-[var(--color-deep)]/60
         transition-all duration-300
         hover:-translate-y-1
-        hover:border-[var(--color-green)]
+        hover:border-[var(--color-purple)]
         hover:bg-transparent
         hover:text-[var(--accent-bright)]
 
@@ -719,7 +719,7 @@ export default function Footer() {
             h-px
             bg-gradient-to-r
             from-transparent
-            via-[var(--color-green)]/30
+            via-[var(--color-purple)]/30
             to-transparent
 
             sm:block
@@ -770,7 +770,7 @@ export default function Footer() {
                 transition-colors
                 duration-300
 
-                hover:text-[var(--color-green)]
+                hover:text-[var(--color-purple)]
 
               "
             >
@@ -784,7 +784,7 @@ export default function Footer() {
                 transition-colors
                 duration-300
 
-                hover:text-[var(--color-green)]
+                hover:text-[var(--color-purple)]
 
               "
             >

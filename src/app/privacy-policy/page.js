@@ -13,7 +13,7 @@ export default function PrivacyPolicyPage() {
       title={
         <>
           Your privacy{" "}
-          <span className="text-[var(--color-green)] dark:text-[var(--color-gold)]">
+          <span className="text-[var(--color-purple)] dark:text-[var(--color-light-purple)]">
             matters.
           </span>
         </>

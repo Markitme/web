@@ -23,11 +23,9 @@ export default function SectionHeading({
     >
       {eyebrow && (
         <div className="inline-flex items-center gap-2">
-          <span className="h-1.5 w-1.5 rounded-full bg-[var(--accent)]" />
           <p className={`text-[9px] font-black uppercase tracking-[0.24em] ${isDark ? "text-[var(--accent)]" : "text-[var(--accent)] dark:text-[var(--accent-bright)]"}`}>
             {eyebrow}
           </p>
-          <span className={`h-1.5 w-1.5 rounded-full ${isDark ? "bg-[var(--accent-bright)]" : "bg-[var(--accent)] dark:bg-[var(--accent-bright)]"}`} />
         </div>
       )}
 

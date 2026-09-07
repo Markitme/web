@@ -92,9 +92,6 @@ export default async function BlogDetailPage({
 
         bg-[var(--color-cream)]
         text-[var(--color-deep)]
-
-        dark:bg-[var(--color-night)]
-        dark:text-[var(--color-cream)]
       "
     >
 
@@ -110,8 +107,6 @@ export default async function BlogDetailPage({
 
           border-b
           border-[var(--color-deep)]/10
-
-          dark:border-[var(--color-cream)]/10
         "
       >
 
@@ -137,7 +132,7 @@ export default async function BlogDetailPage({
             w-80
             rounded-full
 
-            bg-[var(--color-gold)]/10
+            bg-[var(--color-light-purple)]/10
 
             blur-3xl
           "
@@ -153,7 +148,7 @@ export default async function BlogDetailPage({
             w-80
             rounded-full
 
-            bg-[var(--color-green)]/10
+            bg-[var(--color-purple)]/10
 
             blur-3xl
           "
@@ -197,11 +192,8 @@ export default async function BlogDetailPage({
               transition-colors
               duration-300
 
-              hover:text-[var(--color-green)]
+              hover:text-[var(--color-purple)]
 
-              dark:text-[var(--color-cream)]/55
-
-              dark:hover:text-[var(--color-gold)]
             "
           >
             <ArrowLeft
@@ -229,16 +221,6 @@ export default async function BlogDetailPage({
             "
           >
 
-            <span
-              className="
-                h-1.5
-                w-1.5
-                rounded-full
-
-                bg-[var(--color-gold)]
-              "
-            />
-
             <p
               className="
                 text-[9px]
@@ -246,9 +228,7 @@ export default async function BlogDetailPage({
                 uppercase
                 tracking-[0.22em]
 
-                text-[var(--color-green)]
-
-                dark:text-[var(--color-gold)]
+                text-[var(--color-purple)]
               "
             >
               {blog.category}
@@ -274,8 +254,6 @@ export default async function BlogDetailPage({
               sm:text-5xl
               md:text-6xl
               lg:text-7xl
-
-              dark:text-[var(--color-cream)]
             "
             dangerouslySetInnerHTML={{
               __html: blog.title,
@@ -298,8 +276,6 @@ export default async function BlogDetailPage({
 
                 sm:text-lg
                 sm:leading-8
-
-                dark:text-[var(--color-cream)]/60
               "
               dangerouslySetInnerHTML={{
                 __html: blog.excerpt,
@@ -329,9 +305,7 @@ export default async function BlogDetailPage({
 
                 text-xs
 
-                text-[var(--color-deep)]/50
-
-                dark:text-[var(--color-cream)]/50
+                text-white
               "
             >
               <CalendarDays size={15} />
@@ -357,9 +331,7 @@ export default async function BlogDetailPage({
 
                 text-xs
 
-                text-[var(--color-deep)]/50
-
-                dark:text-[var(--color-cream)]/50
+                text-white
               "
             >
               <Clock3 size={15} />
@@ -376,9 +348,7 @@ export default async function BlogDetailPage({
 
                 text-xs
 
-                text-[var(--color-deep)]/50
-
-                dark:text-[var(--color-cream)]/50
+                text-white
               "
             >
               <UserRound size={15} />
@@ -422,9 +392,6 @@ export default async function BlogDetailPage({
                 bg-[var(--color-deep)]/[0.05]
 
                 shadow-[0_25px_80px_rgba(12,59,46,0.08)]
-
-                dark:shadow-[0_25px_80px_rgba(0,0,0,0.2)]
-
                 sm:rounded-[36px]
               "
             >
@@ -506,22 +473,14 @@ export default async function BlogDetailPage({
                 prose-p:leading-8
 
                 prose-a:font-semibold
-                prose-a:text-[var(--color-green)]
+                prose-a:text-[var(--color-purple)]
 
                 prose-strong:text-[var(--color-deep)]
 
-                prose-blockquote:border-[var(--color-gold)]
+                prose-blockquote:border-[var(--color-light-purple)]
 
                 prose-img:rounded-2xl
                 prose-img:shadow-lg
-
-                dark:prose-invert
-
-                dark:prose-a:text-[var(--color-gold)]
-
-                dark:prose-strong:text-[var(--color-cream)]
-
-                dark:prose-blockquote:border-[var(--color-gold)]
               "
               dangerouslySetInnerHTML={{
                 __html: blog.content,
@@ -550,9 +509,6 @@ export default async function BlogDetailPage({
 
                   p-6
 
-                  dark:border-[var(--color-cream)]/10
-
-                  dark:bg-[var(--color-cream)]/[0.035]
                 "
               >
 
@@ -563,9 +519,7 @@ export default async function BlogDetailPage({
                     uppercase
                     tracking-[0.22em]
 
-                    text-[var(--color-green)]
-
-                    dark:text-[var(--color-gold)]
+                    text-[var(--color-purple)]
                   "
                 >
                   About this article
@@ -592,8 +546,6 @@ export default async function BlogDetailPage({
                     leading-6
 
                     text-[var(--color-deep)]/55
-
-                    dark:text-[var(--color-cream)]/55
                   "
                 >
                   Discover more practical ideas
@@ -619,11 +571,7 @@ export default async function BlogDetailPage({
                     transition-colors
                     duration-300
 
-                    hover:text-[var(--color-green)]
-
-                    dark:text-[var(--color-cream)]
-
-                    dark:hover:text-[var(--color-gold)]
+                    hover:text-[var(--color-purple)]
                   "
                 >
                   View all articles
@@ -676,7 +624,7 @@ export default async function BlogDetailPage({
               overflow-hidden
               rounded-[32px]
 
-              bg-[var(--color-green)]
+              bg-[var(--color-purple)]
 
               px-7
               py-10
@@ -704,7 +652,7 @@ export default async function BlogDetailPage({
                 rounded-full
 
                 border-[30px]
-                border-[var(--color-gold)]/30
+                border-[var(--color-light-purple)]/30
               "
             />
 
@@ -735,7 +683,7 @@ export default async function BlogDetailPage({
                   uppercase
                   tracking-[0.2em]
 
-                  text-[var(--color-gold)]
+                  text-[var(--color-light-purple)]
                 "
               >
                 Have an idea?
@@ -775,7 +723,7 @@ export default async function BlogDetailPage({
 
                   rounded-full
 
-                  bg-[var(--color-gold)]
+                  bg-[var(--color-light-purple)]
 
                   px-6
                   py-3.5

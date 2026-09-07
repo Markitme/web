@@ -47,9 +47,9 @@ export default async function ProjectDetailsPage({ params }) {
               font-bold
               text-[var(--color-deep)]/60
               transition
-              hover:text-[var(--color-green)]
+              hover:text-[var(--color-purple)]
               dark:text-[var(--color-cream)]/60
-              dark:hover:text-[var(--color-gold)]
+              dark:hover:text-[var(--color-light-purple)]
             "
           >
             <ArrowLeft size={17} />
@@ -65,22 +65,20 @@ export default async function ProjectDetailsPage({ params }) {
               {/* Eyebrow */}
 
               <div className="inline-flex items-center gap-2">
-                <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-gold)]" />
-
                 <p
                   className="
                     text-[9px]
                     font-black
                     uppercase
                     tracking-[0.24em]
-                    text-[var(--color-green)]
-                    dark:text-[var(--color-gold)]
+                    text-[var(--color-purple)]
+                    dark:text-[var(--color-light-purple)]
                   "
                 >
                   Case Study — {project.number}
                 </p>
 
-                <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-green)] dark:bg-[var(--color-gold)]" />
+                
               </div>
 
               {/* Heading */}
@@ -107,13 +105,13 @@ export default async function ProjectDetailsPage({ params }) {
                 <span
                   className="
                     rounded-full
-                    bg-[var(--color-gold)]/15
+                    bg-[var(--color-light-purple)]/15
                     px-4
                     py-2
                     text-sm
                     font-bold
                     text-[var(--color-deep)]
-                    dark:text-[var(--color-gold)]
+                    dark:text-[var(--color-light-purple)]
                   "
                 >
                   {project.category}
@@ -240,23 +238,20 @@ export default async function ProjectDetailsPage({ params }) {
 
             <div className="inline-flex items-center gap-2">
 
-              <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-gold)]" />
-
               <p
                 className="
                   text-[9px]
                   font-black
                   uppercase
                   tracking-[0.24em]
-                  text-[var(--color-green)]
-                  dark:text-[var(--color-gold)]
+                  text-[var(--color-purple)]
+                  dark:text-[var(--color-light-purple)]
                 "
               >
                 {project.aboutTitle}
               </p>
 
-              <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-green)] dark:bg-[var(--color-gold)]" />
-
+              
             </div>
 
             <h2
@@ -270,7 +265,7 @@ export default async function ProjectDetailsPage({ params }) {
               "
             >
               The story
-              <span className="block text-[var(--color-green)] dark:text-[var(--color-gold)]">
+              <span className="block text-[var(--color-purple)] dark:text-[var(--color-light-purple)]">
                 behind the work.
               </span>
             </h2>
@@ -322,23 +317,19 @@ export default async function ProjectDetailsPage({ params }) {
 
             <div className="inline-flex items-center gap-2">
 
-              <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-gold)]" />
-
               <p
                 className="
                   text-[9px]
                   font-black
                   uppercase
                   tracking-[0.24em]
-                  text-[var(--color-green)]
-                  dark:text-[var(--color-gold)]
+                  text-[var(--color-purple)]
                 "
               >
                 The Challenge
               </p>
 
-              <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-green)] dark:bg-[var(--color-gold)]" />
-
+             
             </div>
 
             <h2
@@ -352,7 +343,7 @@ export default async function ProjectDetailsPage({ params }) {
               "
             >
               What needed
-              <span className="block text-[var(--color-green)] dark:text-[var(--color-gold)]">
+              <span className="block text-[var(--color-purple)]">
                 to change.
               </span>
             </h2>
@@ -365,7 +356,6 @@ export default async function ProjectDetailsPage({ params }) {
                   className="
                     leading-8
                     text-[var(--color-deep)]/65
-                    dark:text-[var(--color-cream)]/65
                   "
                 >
                   {paragraph}
@@ -392,14 +382,11 @@ export default async function ProjectDetailsPage({ params }) {
                   transition-all
                   duration-300
                   hover:-translate-y-1
-                  hover:border-[var(--color-green)]/40
-                  dark:border-[var(--color-cream)]/10
-                  dark:bg-[var(--color-night)]
-                  dark:hover:border-[var(--color-gold)]/40
+                  hover:border-[var(--color-purple)]/40
                 "
               >
 
-                <span className="text-4xl font-black text-[var(--color-gold)]">
+                <span className="text-4xl font-black text-white">
                   0{index + 1}
                 </span>
 
@@ -428,23 +415,20 @@ export default async function ProjectDetailsPage({ params }) {
 
             <div className="inline-flex items-center gap-2">
 
-              <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-gold)]" />
-
               <p
                 className="
                   text-[9px]
                   font-black
                   uppercase
                   tracking-[0.24em]
-                  text-[var(--color-green)]
-                  dark:text-[var(--color-gold)]
+                  text-[var(--color-purple)]
+                  dark:text-[var(--color-light-purple)]
                 "
               >
                 What MarkitMe Did
               </p>
 
-              <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-green)] dark:bg-[var(--color-gold)]" />
-
+             
             </div>
 
             <h2
@@ -458,7 +442,7 @@ export default async function ProjectDetailsPage({ params }) {
               "
             >
               Strategy turned
-              <span className="block text-[var(--color-green)] dark:text-[var(--color-gold)]">
+              <span className="block text-[var(--color-purple)] dark:text-[var(--color-light-purple)]">
                 into action.
               </span>
             </h2>
@@ -482,11 +466,11 @@ export default async function ProjectDetailsPage({ params }) {
                   transition-all
                   duration-300
                   hover:-translate-y-1
-                  hover:border-[var(--color-green)]/50
+                  hover:border-[var(--color-purple)]/50
                   hover:shadow-xl
                   dark:border-[var(--color-cream)]/10
                   dark:bg-[var(--color-deep)]/50
-                  dark:hover:border-[var(--color-gold)]/50
+                  dark:hover:border-[var(--color-light-purple)]/50
                   sm:p-9
                 "
               >
@@ -501,9 +485,9 @@ export default async function ProjectDetailsPage({ params }) {
                       items-center
                       justify-center
                       rounded-full
-                      bg-[var(--color-gold)]
+                      bg-[var(--color-light-purple)]
                       font-black
-                      text-[var(--color-deep)]
+                      text-white
                     "
                   >
                     0{index + 1}
@@ -511,7 +495,7 @@ export default async function ProjectDetailsPage({ params }) {
 
                   <Check
                     size={22}
-                    className="text-[var(--color-green)] dark:text-[var(--color-gold)]"
+                    className="text-[var(--color-purple)] dark:text-[var(--color-light-purple)]"
                   />
 
                 </div>
@@ -543,14 +527,11 @@ export default async function ProjectDetailsPage({ params }) {
 
           <div className="inline-flex items-center gap-2">
 
-            <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-gold)]" />
-
-            <p className="text-[9px] font-black uppercase tracking-[0.24em] text-[var(--color-gold)]">
+            <p className="text-[9px] font-black uppercase tracking-[0.24em] text-[var(--color-light-purple)]">
               The Outcome
             </p>
 
-            <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-green)]" />
-
+            
           </div>
 
           <h2
@@ -565,7 +546,7 @@ export default async function ProjectDetailsPage({ params }) {
             "
           >
             Results that
-            <span className="block text-[var(--color-gold)]">
+            <span className="block text-[var(--color-light-purple)]">
               moved the business.
             </span>
           </h2>
@@ -589,7 +570,7 @@ export default async function ProjectDetailsPage({ params }) {
                 "
               >
 
-                <p className="text-5xl font-black tracking-[-0.05em] text-[var(--color-gold)]">
+                <p className="text-3xl font-black tracking-[-0.05em] text-white">
                   {result.value}
                 </p>
 
@@ -618,23 +599,20 @@ export default async function ProjectDetailsPage({ params }) {
 
             <div className="inline-flex items-center gap-2">
 
-              <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-gold)]" />
-
               <p
                 className="
                   text-[9px]
                   font-black
                   uppercase
                   tracking-[0.24em]
-                  text-[var(--color-green)]
-                  dark:text-[var(--color-gold)]
+                  text-[var(--color-purple)]
+                  dark:text-[var(--color-light-purple)]
                 "
               >
                 What Changed
               </p>
 
-              <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-green)] dark:bg-[var(--color-gold)]" />
-
+             
             </div>
 
             <h2
@@ -648,7 +626,7 @@ export default async function ProjectDetailsPage({ params }) {
               "
             >
               A stronger
-              <span className="block text-[var(--color-green)] dark:text-[var(--color-gold)]">
+              <span className="block text-[var(--color-purple)] dark:text-[var(--color-light-purple)]">
                 digital presence.
               </span>
             </h2>
@@ -671,8 +649,7 @@ export default async function ProjectDetailsPage({ params }) {
                     border-[var(--color-deep)]/10
                     bg-[var(--surface)]
                     p-5
-                    dark:border-[var(--color-cream)]/10
-                    dark:bg-[var(--color-deep)]/40
+                    
                   "
                 >
 
@@ -685,8 +662,8 @@ export default async function ProjectDetailsPage({ params }) {
                       items-center
                       justify-center
                       rounded-full
-                      bg-[var(--color-gold)]
-                      text-[var(--color-deep)]
+                      bg-[var(--color-light-purple)]
+                     text-white
                     "
                   >
                     <Check size={17} />

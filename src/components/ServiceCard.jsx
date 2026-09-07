@@ -50,16 +50,16 @@ export default function ServiceCard({ service }) {
           h-32
           w-32
           rounded-full
-          bg-[var(--color-green)]/10
+          bg-[var(--color-purple)]/10
           blur-3xl
 
           transition-all
           duration-500
 
-          group-hover:bg-[var(--color-gold)]/20
+          group-hover:bg-[var(--color-light-purple)]/20
 
-          dark:bg-[var(--color-green)]/10
-          dark:group-hover:bg-[var(--color-gold)]/10
+          dark:bg-[var(--color-purple)]/10
+          dark:group-hover:bg-[var(--color-light-purple)]/10
         "
       />
 
@@ -75,7 +75,7 @@ export default function ServiceCard({ service }) {
           justify-center
           rounded-2xl
 
-          bg-[var(--color-gold)]
+          bg-[var(--color-light-purple)]
           text-[var(--color-deep)]
 
           transition-all
@@ -100,9 +100,9 @@ export default function ServiceCard({ service }) {
           uppercase
           tracking-[0.22em]
 
-          text-[var(--color-green)]
+          text-[var(--color-purple)]
 
-          dark:text-[var(--color-gold)]
+          dark:text-[var(--color-light-purple)]
         "
       >
         {service.category}
@@ -159,10 +159,10 @@ export default function ServiceCard({ service }) {
           transition-colors
           duration-300
 
-          hover:text-[var(--color-green)]
+          hover:text-[var(--color-purple)]
 
           dark:text-[var(--color-cream)]
-          dark:hover:text-[var(--color-gold)]
+          dark:hover:text-[var(--color-light-purple)]
         "
       >
         Explore Service
@@ -183,10 +183,10 @@ export default function ServiceCard({ service }) {
             duration-300
 
             group-hover/link:translate-x-1
-            group-hover/link:border-[var(--color-green)]
+            group-hover/link:border-[var(--color-purple)]
 
-            dark:border-[var(--color-green)]/30
-            dark:group-hover/link:border-[var(--color-gold)]
+            dark:border-[var(--color-purple)]/30
+            dark:group-hover/link:border-[var(--color-light-purple)]
           "
         >
           <ArrowRight size={16} />

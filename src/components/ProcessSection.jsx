@@ -55,23 +55,12 @@ export default function ProcessSection({
             >
               <span
                 className="
-                  h-2
-                  w-2
-                  rounded-full
-                  bg-[var(--color-gold)]
-                  shadow-[0_0_12px_rgba(255,186,0,0.40)]
-                  dark:bg-[var(--color-gold)]
-                "
-              />
-
-              <span
-                className="
                   text-[9px]
                   font-black
                   uppercase
                   tracking-[0.25em]
-                  text-[var(--color-green)]
-                  dark:text-[var(--color-gold)]
+                  text-[var(--color-purple)]
+                  dark:text-[var(--color-light-purple)]
                   sm:text-[10px]
                 "
               >
@@ -82,8 +71,8 @@ export default function ProcessSection({
                 className="
                   h-px
                   w-8
-                  bg-[var(--color-green)]/40
-                  dark:bg-[var(--color-gold)]/40
+                  bg-[var(--color-purple)]/40
+                  dark:bg-[var(--color-light-purple)]/40
                 "
               />
 
@@ -117,7 +106,7 @@ export default function ProcessSection({
                 h-[3px]
                 w-16
                 rounded-full
-                bg-[var(--color-gold)]
+                bg-[var(--color-light-purple)]
                 shadow-[0_0_12px_rgba(255,186,0,0.20)]
               "
             />
@@ -163,12 +152,12 @@ export default function ProcessSection({
               right-0
               h-px
               bg-gradient-to-r
-              from-[var(--color-green)]/25
-              via-[var(--color-green)]/5
+              from-[var(--color-purple)]/25
+              via-[var(--color-purple)]/5
               to-transparent
 
-              dark:from-[var(--color-gold)]/25
-              dark:via-[var(--color-gold)]/5
+              dark:from-[var(--color-light-purple)]/25
+              dark:via-[var(--color-light-purple)]/5
             "
           />
 
@@ -213,12 +202,12 @@ export default function ProcessSection({
                     hidden
                     h-px
                     bg-gradient-to-r
-                    from-[var(--color-green)]/30
-                    to-[var(--color-green)]/5
+                    from-[var(--color-purple)]/30
+                    to-[var(--color-purple)]/5
                     lg:block
 
-                    dark:from-[var(--color-gold)]/30
-                    dark:to-[var(--color-gold)]/5
+                    dark:from-[var(--color-light-purple)]/30
+                    dark:to-[var(--color-light-purple)]/5
                   "
                 />
               )}
@@ -242,7 +231,7 @@ export default function ProcessSection({
                   border-[5px]
                   border-[var(--color-cream)]
 
-                  bg-[var(--color-green)]
+                  bg-[var(--color-purple)]
                   text-base
                   font-black
                   text-[var(--color-cream)]
@@ -254,12 +243,12 @@ export default function ProcessSection({
 
                   group-hover:-translate-y-1
                   group-hover:scale-105
-                  group-hover:bg-[var(--color-gold)]
+                  group-hover:bg-[var(--color-light-purple)]
                   group-hover:text-[var(--color-deep)]
                   group-hover:shadow-[0_12px_35px_rgba(255,186,0,0.25)]
 
                   dark:border-[var(--color-deep)]
-                  dark:bg-[var(--color-gold)]
+                  dark:bg-[var(--color-light-purple)]
                   dark:text-[var(--color-deep)]
 
                   dark:shadow-[0_10px_30px_rgba(255,186,0,0.16)]
@@ -298,14 +287,14 @@ export default function ProcessSection({
                   duration-300
 
                   group-hover:-translate-y-1
-                  group-hover:border-[var(--color-green)]/50
+                  group-hover:border-[var(--color-purple)]/50
                   group-hover:bg-white
                   group-hover:shadow-[0_20px_50px_rgba(12,59,46,0.08)]
 
                   dark:border-[var(--color-cream)]/10
                   dark:bg-[var(--color-cream)]/[0.035]
 
-                  dark:group-hover:border-[var(--color-gold)]/40
+                  dark:group-hover:border-[var(--color-light-purple)]/40
                   dark:group-hover:bg-[var(--color-cream)]/[0.06]
                   dark:group-hover:shadow-[0_20px_50px_rgba(0,0,0,0.18)]
 
@@ -334,9 +323,9 @@ export default function ProcessSection({
                       font-black
                       uppercase
                       tracking-[0.16em]
-                      text-[var(--color-green)]
+                      text-[var(--color-purple)]
 
-                      dark:text-[var(--color-gold)]
+                      dark:text-[var(--color-light-purple)]
 
                       sm:text-xs
                     "
@@ -352,10 +341,10 @@ export default function ProcessSection({
                       h-1.5
                       w-1.5
                       rounded-full
-                      bg-[var(--color-gold)]
+                      bg-[var(--color-light-purple)]
                       opacity-60
 
-                      dark:bg-[var(--color-gold)]
+                      dark:bg-[var(--color-light-purple)]
                     "
                   />
 
@@ -414,16 +403,16 @@ export default function ProcessSection({
                     h-[2px]
                     w-8
                     rounded-full
-                    bg-[var(--color-green)]/50
+                    bg-[var(--color-purple)]/50
 
                     transition-all
                     duration-300
 
                     group-hover:w-14
-                    group-hover:bg-[var(--color-gold)]
+                    group-hover:bg-[var(--color-light-purple)]
 
-                    dark:bg-[var(--color-gold)]/40
-                    dark:group-hover:bg-[var(--color-gold)]
+                    dark:bg-[var(--color-light-purple)]/40
+                    dark:group-hover:bg-[var(--color-light-purple)]
                   "
                 />
 
