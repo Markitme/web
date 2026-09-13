@@ -8,10 +8,9 @@ import {
 import { motion } from "framer-motion";
 import { useRef } from "react";
 import "swiper/css";
-import CaseStudies from "../components/CaseStudies";
+import CaseStudies from "@/components/CaseStudies";
 import ClientLogoSlider from "../components/ClientLogoSlider";
 import TestimonialSlider from "../components/TestimonialSlider";
-import AnimatedCounter from "@/components/AnimatedCounter";
 import WhyMarkitMe from "@/components/WhyMarkitMe";
 import CreativeSolutions from "@/components/CreativeSolutions";
 import Hero from "@/components/Hero";

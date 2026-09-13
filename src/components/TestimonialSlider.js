@@ -13,40 +13,57 @@ import {
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+
 import SectionHeading from "./SectionHeading";
 
 const testimonials = [
   {
     quote:
-      "MarkitMe brought clarity to our brand and created a strategy that gave our marketing a stronger direction. The team was creative, collaborative, and focused on results.",
-    name: "Sarah Mitchell",
-    role: "Marketing Director",
-    company: "Northstar Group",
-    initials: "SM",
+      "A focused digital presence designed to communicate expertise clearly, build trust with potential clients, and create a stronger foundation for online growth.",
+    name: "Amit Khurana",
+    role: "Mortgage Broker",
+    company: "Mississauga, Ontario",
+    initials: "AK",
   },
   {
     quote:
-      "Our new website feels modern, professional, and much easier for customers to use. The entire process was organized, transparent, and enjoyable from start to finish.",
-    name: "Daniel Carter",
-    role: "Founder",
-    company: "Carter & Co.",
-    initials: "DC",
+      "A professional digital experience built to make legal services easier to understand, strengthen credibility, and help prospective clients find the right information.",
+    name: "Law Office of Karan Mahal",
+    role: "Immigration Attorney, Barrister & Solicitor",
+    company: "Brampton, Ontario",
+    initials: "KM",
   },
   {
     quote:
-      "MarkitMe helped us connect our brand, content, and digital marketing into one clear system. We now have a stronger online presence and a more consistent message.",
-    name: "Jessica Brown",
-    role: "Operations Manager",
-    company: "Elevate Solutions",
-    initials: "JB",
+      "A modern real estate presence created around the brokerage's brand, services, and audience, with a clear focus on presenting properties and building confidence online.",
+    name: "Infinite Real Estate",
+    role: "Real Estate Brokerage",
+    company: "Toronto, Ontario",
+    initials: "IR",
   },
   {
     quote:
-      "The team understood our goals quickly and turned them into creative work that actually supported business growth. Their strategic approach made a real difference.",
-    name: "Michael Wilson",
-    role: "CEO",
-    company: "Growth Partners",
-    initials: "MW",
+      "A clear and accessible digital experience designed to communicate settlement services effectively and connect newcomers with the information and support they need.",
+    name: "Navira Settlement Services",
+    role: "Newcomer Settlement Support",
+    company: "Toronto, Ontario",
+    initials: "NS",
+  },
+  {
+    quote:
+      "A welcoming digital presence created to communicate healthcare services clearly while making it easier for patients to understand the clinic and its approach to wellness.",
+    name: "Harmony Rehab",
+    role: "Health & Wellness Clinic",
+    company: "Brampton, Ontario",
+    initials: "HR",
+  },
+  {
+    quote:
+      "A digital commerce experience bringing mobility solutions, product information, and a stronger online customer journey together in one focused platform.",
+    name: "Medtrion",
+    role: "Mobility Solutions",
+    company: "E-commerce · Digital · Canada",
+    initials: "MT",
   },
 ];
 
@@ -58,19 +75,17 @@ export default function TestimonialSlider() {
         section-light
         relative
         overflow-hidden
-       
         bg-[var(--purple-soft)]
         py-20
         text-[var(--foreground)]
         transition-colors
         duration-300
-
         sm:py-24
         lg:py-28
       "
     >
-
       <div className="container-custom relative">
+
         {/* =====================================================
             HEADER
         ====================================================== */}
@@ -87,20 +102,10 @@ export default function TestimonialSlider() {
             md:justify-between
           "
         >
-          {/* Heading */}
-
           <div className="max-w-3xl">
+
             {/* Eyebrow */}
-
-            <div
-              className="
-                inline-flex
-                items-center
-                gap-2
-              "
-            >
-              
-
+            <div className="inline-flex items-center gap-2">
               <p
                 className="
                   text-[9px]
@@ -112,19 +117,12 @@ export default function TestimonialSlider() {
               >
                 Client Stories
               </p>
-
-              
             </div>
 
             {/* Heading */}
-
             <SectionHeading>
               Trusted by teams{" "}
-              <span
-                className="
-                  text-[var(--accent)]
-                "
-              >
+              <span className="text-[var(--accent)]">
                 ready to grow.
               </span>
             </SectionHeading>
@@ -136,12 +134,12 @@ export default function TestimonialSlider() {
                 text-sm
                 leading-7
                 text-[var(--muted)]
-
                 sm:text-base
               "
             >
-              Real partnerships, real collaboration, and digital work
-              designed to create meaningful business impact.
+              Explore selected client projects and the digital experiences
+              created to help ambitious businesses communicate, connect,
+              and grow online.
             </p>
           </div>
 
@@ -174,16 +172,14 @@ export default function TestimonialSlider() {
                 text-[var(--foreground)]
                 transition-all
                 duration-300
-
                 hover:-translate-x-0.5
                 hover:border-[var(--accent-bright)]
                 hover:bg-[var(--accent)]
                 hover:text-white
-
                 sm:h-12
                 sm:w-12
               "
-              aria-label="Previous testimonial"
+              aria-label="Previous client"
             >
               <ArrowLeft size={18} />
             </button>
@@ -203,16 +199,14 @@ export default function TestimonialSlider() {
                 shadow-[0_8px_25px_color-mix(in_srgb,var(--accent)_24%,transparent)]
                 transition-all
                 duration-300
-
                 hover:translate-x-0.5
                 hover:scale-105
                 hover:bg-[var(--accent-bright)]
                 hover:text-white
-
                 sm:h-12
                 sm:w-12
               "
-              aria-label="Next testimonial"
+              aria-label="Next client"
             >
               <ArrowRight size={18} />
             </button>
@@ -223,7 +217,16 @@ export default function TestimonialSlider() {
             SLIDER
         ====================================================== */}
 
-        <div className="testimonial-slider-wrapper overflow-x-hidden overflow-y-visible px-1 pt-2 sm:px-0">
+        <div
+          className="
+            testimonial-slider-wrapper
+            overflow-x-hidden
+            overflow-y-visible
+            px-1
+            pt-2
+            sm:px-0
+          "
+        >
           <Swiper
             modules={[
               Autoplay,
@@ -280,25 +283,25 @@ export default function TestimonialSlider() {
                     overflow-hidden
                     rounded-[26px]
                     border
-                      border-[var(--accent)]/50
-                      bg-white
+                    border-[var(--accent)]/50
+                    bg-white
                     p-6
-                      text-black
+                    text-black
                     transition-all
                     duration-500
-
                     hover:-translate-y-1
                     hover:border-[var(--accent-bright)]
                     sm:p-8
                   "
                 >
+
                   {/* =================================================
                       TOP
                   ================================================== */}
 
                   <div className="flex items-start justify-between">
-                    {/* Quote */}
 
+                    {/* Quote Icon */}
                     <div
                       className="
                         flex
@@ -313,9 +316,7 @@ export default function TestimonialSlider() {
                         text-[var(--accent-bright)]
                         transition-transform
                         duration-300
-
                         group-hover:scale-105
-
                       "
                     >
                       <Quote
@@ -325,7 +326,6 @@ export default function TestimonialSlider() {
                     </div>
 
                     {/* Number */}
-
                     <span
                       className="
                         text-[9px]
@@ -362,7 +362,7 @@ export default function TestimonialSlider() {
                   </div>
 
                   {/* =================================================
-                      QUOTE
+                      PROJECT DESCRIPTION
                   ================================================== */}
 
                   <blockquote
@@ -373,7 +373,6 @@ export default function TestimonialSlider() {
                       leading-7
                       tracking-[-0.02em]
                       text-black
-
                       sm:text-xl
                       sm:leading-8
                     "
@@ -394,11 +393,10 @@ export default function TestimonialSlider() {
                       border-t
                       border-black/10
                       pt-6
-
                     "
                   >
-                    {/* Initials */}
 
+                    {/* Initials */}
                     <div
                       className="
                         flex
@@ -414,14 +412,13 @@ export default function TestimonialSlider() {
                         text-white
                         transition-all
                         duration-300
-
                         group-hover:bg-[var(--accent-bright)]
-                        group-hover:text-white
                       "
                     >
                       {testimonial.initials}
                     </div>
 
+                    {/* Client Info */}
                     <div className="min-w-0">
                       <h3
                         className="
@@ -442,7 +439,18 @@ export default function TestimonialSlider() {
                           text-black/55
                         "
                       >
-                        {testimonial.role} ·{" "}
+                        {testimonial.role}
+                      </p>
+
+                      <p
+                        className="
+                          mt-0.5
+                          truncate
+                          text-[10px]
+                          font-medium
+                          text-black/40
+                        "
+                      >
                         {testimonial.company}
                       </p>
                     </div>
@@ -478,9 +486,7 @@ export default function TestimonialSlider() {
           width: 100%;
         }
 
-        /* =====================================================
-           PAGINATION
-        ====================================================== */
+        /* PAGINATION */
 
         .testimonial-swiper .swiper-pagination {
           bottom: 0 !important;
@@ -507,9 +513,7 @@ export default function TestimonialSlider() {
           background: var(--accent-bright);
         }
 
-        /* =====================================================
-           MOBILE
-        ====================================================== */
+        /* MOBILE */
 
         @media (max-width: 639px) {
           .testimonial-swiper {
@@ -527,9 +531,7 @@ export default function TestimonialSlider() {
           }
         }
 
-        /* =====================================================
-           REDUCED MOTION
-        ====================================================== */
+        /* REDUCED MOTION */
 
         @media (prefers-reduced-motion: reduce) {
           .testimonial-swiper {
@@ -540,3 +542,4 @@ export default function TestimonialSlider() {
     </section>
   );
 }
+

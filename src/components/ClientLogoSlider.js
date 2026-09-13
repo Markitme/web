@@ -1,380 +1,370 @@
 "use client";
 
-import Image from "next/image";
-import SectionHeading from "./SectionHeading";
-
-const clientLogos = [
+const categories = [
   {
-    name: "Navira Settlements",
-    logo: "/images/clients/navira.webp",
+    name: "Wellness & Medspa",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none">
+        <path
+          d="M12 21C12 21 4 16.5 4 10.5C4 7.5 6.2 5 9 5C10.5 5 11.5 5.7 12 6.8C12.5 5.7 13.5 5 15 5C17.8 5 20 7.5 20 10.5C20 16.5 12 21 12 21Z"
+          stroke="currentColor"
+          strokeWidth="1.5"
+        />
+        <path
+          d="M12 9V15M9 12H15"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+        />
+      </svg>
+    ),
   },
   {
-    name: "Harmony Rehab",
-    logo: "/images/clients/harmony.png",
+    name: "Real Estate",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none">
+        <path
+          d="M3 21H21M5 21V10L12 4L19 10V21M9 21V15H15V21"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinejoin="round"
+        />
+      </svg>
+    ),
   },
   {
-    name: "Medtrion",
-    logo: "/images/clients/medtrion.png",
+    name: "E-commerce",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none">
+        <path
+          d="M4 5H6L8.2 15.5C8.4 16.4 9.2 17 10.1 17H17.5C18.3 17 19 16.5 19.3 15.7L21 9H7"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+        />
+        <circle cx="10" cy="20" r="1" fill="currentColor" />
+        <circle cx="18" cy="20" r="1" fill="currentColor" />
+        <path
+          d="M15 4V9M12.5 6.5H17.5"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+        />
+      </svg>
+    ),
   },
   {
-    name: "Joincrescendo",
-    logo: "/images/clients/Joincrescendo.png",
+    name: "Restaurants",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none">
+        <path
+          d="M7 3V10C7 11.7 8.3 13 10 13C11.7 13 13 11.7 13 10V3M10 3V21M17 3V21M17 3C19 5 20 7 20 10H17"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    ),
   },
   {
-    name: "Infinite Real Estate",
-    logo: "/images/clients/infinite.png",
+    name: "Beauty Brands",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none">
+        <path
+          d="M8 3H16L15 7H9L8 3ZM9 7H15V20H9V7Z"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinejoin="round"
+        />
+      </svg>
+    ),
   },
   {
-    name: "New Construction",
-    logo: "/images/clients/new-const.webp",
+    name: "Insurance",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none">
+        <path
+          d="M12 3L19 6V11C19 15.8 16.1 19.5 12 21C7.9 19.5 5 15.8 5 11V6L12 3Z"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M9 12L11 14L15 10"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    ),
+  },
+  {
+    name: "Automotive Sales",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none">
+        <path
+          d="M5 15L7 9.5C7.3 8.6 8.1 8 9 8H15C15.9 8 16.7 8.6 17 9.5L19 15M4 14H20V19H4V14Z"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinejoin="round"
+        />
+        <circle cx="7" cy="18" r="1" fill="currentColor" />
+        <circle cx="17" cy="18" r="1" fill="currentColor" />
+      </svg>
+    ),
+  },
+  {
+    name: "Finance",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none">
+        <rect
+          x="4"
+          y="5"
+          width="16"
+          height="14"
+          rx="2"
+          stroke="currentColor"
+          strokeWidth="1.5"
+        />
+        <path d="M4 9H20" stroke="currentColor" strokeWidth="1.5" />
+        <path
+          d="M8 13H11M8 16H13"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+        />
+      </svg>
+    ),
+  },
+  {
+    name: "Dental Clinics",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none">
+        <path
+          d="M8 4C6 4 5 5.5 5 8C5 12 6.5 20 9 20C10.5 20 10.5 15 12 15C13.5 15 13.5 20 15 20C17.5 20 19 12 19 8C19 5.5 18 4 16 4C14.5 4 13.5 5 12 5C10.5 5 9.5 4 8 4Z"
+          stroke="currentColor"
+          strokeWidth="1.5"
+        />
+        <path
+          d="M12 7V11M10 9H14"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+        />
+      </svg>
+    ),
   },
 ];
 
 export default function ClientLogoSlider() {
-  const marqueeLogos = [...clientLogos, ...clientLogos];
+  // Duplicate for seamless marquee
+  const sliderItems = [...categories, ...categories];
 
   return (
     <section
       className="
         relative
         overflow-hidden
-
-        border-y
-        border-[var(--accent)]/25
-
         bg-white
-
-        py-14
-
-        transition-colors
-        duration-500
-
-        sm:py-16
-        lg:py-20
+        py-16
+        sm:py-20
+        lg:py-22
       "
     >
-      {/*           BACKGROUND
-       */}
+      <div className="relative z-10 mx-auto w-full max-w-[1500px]">
 
-      <div className="pointer-events-none absolute inset-0 hidden overflow-hidden">
-        <div
-          className="
-            absolute
-            -left-40
-            top-1/2
-
-            h-[420px]
-            w-[420px]
-
-            -translate-y-1/2
-
-            rounded-full
-
-            bg-[var(--purple-soft)]
-
-            blur-[120px]
-          "
-        />
-
-        <div
-          className="
-            absolute
-            -right-40
-            top-1/3
-
-            h-[380px]
-            w-[380px]
-
-            rounded-full
-
-            bg-[var(--accent)]/[0.06]
-
-            blur-[120px]
-          "
-        />
-
-        {/* Center glow */}
-
-        <div
-          className="
-            absolute
-            left-1/2
-            top-1/2
-
-            h-[260px]
-            w-[700px]
-
-            -translate-x-1/2
-            -translate-y-1/2
-
-            rounded-full
-
-            bg-[var(--accent)]/[0.04]
-
-            blur-[120px]
-          "
-        />
-      </div>
-
-      {/*           CONTENT
-       */}
-
-      <div
-        className="
-          relative
-          z-10
-
-          mx-auto
-          w-full
-
-          max-w-[1600px]
-        "
-      >
-        {/*  HEADING */}
-
-        <div className="px-5 text-center sm:px-8">
-          {/* Eyebrow */}
-
-          <div
+        {/* HEADING */}
+        <div className="px-6 text-center sm:px-10 lg:px-16">
+          <p
             className="
-              mb-3
-
-              inline-flex
-              items-center
-              gap-2
+              mb-4
+              text-[10px]
+              font-bold
+              uppercase
+              tracking-[0.25em]
+              text-purple-600
+              sm:text-xs
             "
           >
+            Industries We Serve
+          </p>
 
-            <p
-              className="
-                text-[8px]
-
-                font-black
-                uppercase
-
-                tracking-[0.24em]
-
-                text-[var(--accent)]
-
-                sm:text-[9px]
-              "
-            >
-              Trusted by ambitious brands
-            </p>
-
-          </div>
-
-          {/* Heading */}
-
-          <SectionHeading className="client-logo-heading mx-auto text-center">
-            Building growth{" "}
-            <span
-              className="
-                text-[var(--accent)]
-              "
-            >
-              together.
+          <h2
+            className="
+              text-[34px]
+              font-medium
+              leading-[1.08]
+              tracking-[-0.045em]
+              text-black
+              sm:text-[44px]
+              lg:text-[52px]
+            "
+          >
+            Creative support for{" "}
+            <span className="text-purple-600">
+              ambitious brands
             </span>
-          </SectionHeading>
-
-          {/* Description */}
+          </h2>
 
           <p
             className="
               mx-auto
-
-              mt-3
-
+              mt-4
               max-w-xl
-
-              text-xs
+              text-sm
               leading-6
-
-              text-black/60
-
-              sm:text-sm
-
+              text-black/50
+              sm:text-base
             "
           >
-            Trusted partnerships that turn ideas, strategy, and creativity into
-            measurable digital growth.
+            Helping businesses across industries build stronger brands
+            and better digital experiences.
           </p>
         </div>
 
-        {/*             LOGO MARQUEE
-         */}
-
+        {/* CATEGORY MARQUEE */}
         <div
           className="
             relative
-
-            mt-10
-
-            sm:mt-12
-
-            lg:mt-14
+            mt-14
+            overflow-hidden
+            py-7
+            sm:mt-16
+            sm:py-8
           "
         >
-          {/*               MARQUEE VIEWPORT
-           */}
 
+          {/* LEFT FADE */}
           <div
             className="
-              client-logo-marquee
+              pointer-events-none
+              absolute
+              left-0
+              top-0
+              z-20
+              h-full
+              w-16
+              bg-gradient-to-r
+              from-white
+              to-transparent
+              sm:w-24
+            "
+          />
 
-              relative
+          {/* RIGHT FADE */}
+          <div
+            className="
+              pointer-events-none
+              absolute
+              right-0
+              top-0
+              z-20
+              h-full
+              w-16
+              bg-gradient-to-l
+              from-white
+              to-transparent
+              sm:w-24
+            "
+          />
 
-              overflow-hidden
-
-              px-4 py-4
-
-              sm:px-6
-
-              lg:px-8
+          {/* TRACK */}
+          <div
+            className="
+              client-category-track
+              flex
+              w-max
+              items-center
             "
           >
-            {/* TRACK */}
+            {sliderItems.map((category, index) => (
+              <div
+                key={`${category.name}-${index}`}
+                className="
+                  group
+                  flex
+                  shrink-0
+                  items-center
+                  px-7
+                  sm:px-9
+                  lg:px-11
+                "
+              >
 
-            <div className="client-logo-track">
-              {marqueeLogos.map((client, index) => (
+                {/* ICON — BLACK */}
                 <div
-                  key={`${client.name}-${index}`}
                   className="
-                    client-logo-item
-
-                    group
-
-                    relative
-
+                    mr-3
                     flex
-                    h-[100px]
-
-                    w-[150px]
-
+                    h-8
+                    w-8
                     shrink-0
-
                     items-center
                     justify-center
+                    text-black
 
-                    overflow-hidden
+                    transition-transform
+                    duration-300
+                    group-hover:scale-110
 
-                    rounded-[22px]
-
-                    border
-                    border-[var(--accent)]/45
-
-                    bg-white
-
-                    px-5
-
-                    backdrop-blur-sm
-
-                    
-
-                    transition-all
-                    duration-500
-
-                    hover:-translate-y-1
-
-                    hover:border-[var(--accent-bright)]
-
-                    hover:bg-white
-
-
-                    sm:h-[96px]
-
-                    sm:w-[180px]
-
-                    sm:rounded-[24px]
-
-                    lg:h-[105px]
-
-                    lg:w-[200px]
+                    sm:h-9
+                    sm:w-9
                   "
                 >
-                  {/* INNER GLOW */}
-
-                  <span
-                    className="
-                      pointer-events-none
-
-                      absolute
-                      inset-0
-
-                      rounded-[22px]
-
-                      bg-[var(--accent)]/[20%]
-
-                      opacity-0
-
-                      transition-opacity
-                      duration-500
-
-                      group-hover:opacity-100
-                    "
-                  />
-
-                  {/* LOGO */}
-
-                  <div
-                    className="
-                      relative
-                      z-10
-
-                      flex
-                      h-full
-                      w-full
-
-                      items-center
-                      justify-center
-
-                      transition-transform
-                      duration-500
-
-                      group-hover:scale-[1.05]
-                    "
-                  >
-                    <Image
-                      src={client.logo}
-                      alt={client.name}
-                      width={160}
-                      height={60}
-                      className="
-                        h-auto
-
-                        max-h-[42px]
-
-                        w-auto
-
-                        max-w-[135px]
-
-                        object-contain
-
-                        brightness-0
-                        opacity-75
-
-                        transition-all
-                        duration-500
-
-                        group-hover:opacity-100
-
-                        sm:max-h-[46px]
-
-                        sm:max-w-[150px]
-
-                        lg:max-h-[50px]
-
-                        lg:max-w-[165px]
-
-                      "
-                    />
+                  <div className="h-full w-full">
+                    {category.icon}
                   </div>
                 </div>
-              ))}
-            </div>
+
+                {/* CATEGORY NAME — DARKER + BIGGER */}
+                <span
+                  className="
+                    whitespace-nowrap
+                    text-lg
+                    font-semibold
+                    tracking-[-0.025em]
+                    text-black
+
+                    transition-colors
+                    duration-300
+
+                    group-hover:text-purple-600
+
+                    sm:text-xl
+                    lg:text-2xl
+                  "
+                >
+                  {category.name}
+                </span>
+
+              </div>
+            ))}
           </div>
         </div>
       </div>
+
+      {/* MARQUEE ANIMATION */}
+      <style>{`
+        .client-category-track {
+          animation: category-marquee 35s linear infinite;
+        }
+
+        .client-category-track:hover {
+          animation-play-state: paused;
+        }
+
+        @keyframes category-marquee {
+          from {
+            transform: translateX(0);
+          }
+
+          to {
+            transform: translateX(-50%);
+          }
+        }
+      `}</style>
     </section>
   );
 }
