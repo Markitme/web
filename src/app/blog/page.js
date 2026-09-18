@@ -16,6 +16,9 @@ import {
 
 export const metadata = {
   title: "Blog | MarkitMe Insights",
+  alternates: {
+    canonical: "/blog",
+  },
   description:
     "Explore practical insights on brand strategy, websites, digital marketing, user experience, content, and business growth.",
 };

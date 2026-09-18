@@ -19,7 +19,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
+  metadataBase: new URL("https://www.markitme.ca"),
   title: "MarkitMe | Strategy, Creative & Digital Growth",
+  alternates: {
+    canonical: "/",
+  },
   description:
     "MarkitMe helps businesses grow through branding, website development, digital marketing, and strategy.",
   icons: {

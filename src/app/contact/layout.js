@@ -1,5 +1,8 @@
 export const metadata = {
-  title: "Contact MarkitMe | Start Your Digital Project",
+  title: "Contact MarkitMe | Start Your Digital Project",  
+  alternates: {
+    canonical: "/contact",
+  },
   description:
     "Tell MarkitMe about your goals and discover the right strategy, creative direction, and digital solution for your business.",
 };

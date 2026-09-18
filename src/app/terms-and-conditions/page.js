@@ -2,6 +2,9 @@ import LegalPage from "@/components/LegalPage";
 
 export const metadata = {
   title: "Terms & Conditions | MarkitMe",
+  alternates: {
+    canonical: "/terms-and-conditions",
+  },
   description:
     "Read the MarkitMe Terms & Conditions governing the use of our website and digital services.",
 };

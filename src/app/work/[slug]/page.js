@@ -717,6 +717,9 @@ export async function generateMetadata({ params }) {
 
   return {
     title: `${project.title} | MarkitMe Case Study`,
+    alternates: {
+      canonical: `/work/${project.slug}`,
+    },
     description: project.shortDescription || project.description,
   };
 }

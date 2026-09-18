@@ -2,6 +2,9 @@ import LegalPage from "@/components/LegalPage";
 
 export const metadata = {
   title: "Privacy Policy | MarkitMe",
+  alternates: {
+    canonical: "/privacy-policy",
+  },
   description:
     "Read the MarkitMe Privacy Policy to understand how we collect, use, protect, and manage your information.",
 };

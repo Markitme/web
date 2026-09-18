@@ -1006,6 +1006,9 @@ export async function generateMetadata({ params }) {
 
   return {
     title: `${service.title} | MarkitMe`,
+    alternates: {
+      canonical: `/services/${service.slug}`,
+    },
     description: service.heroDescription,
   };
 }

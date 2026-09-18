@@ -5,6 +5,9 @@ import Button from "@/components/ui/Button";
 
 export const metadata = {
   title: "Services | MarkitMe Digital Strategy & Creative",
+  alternates: {
+    canonical: "/services",
+  },
   description:
     "Explore MarkitMe services for branding, web design and development, digital marketing, SEO, and sustainable business growth.",
 };
