@@ -6,6 +6,6 @@ export default function robots() {
         allow: "/",
       },
     ],
-    sitemap: "https://markitme.ca/sitemap.xml",
+    sitemap: "https://www.markitme.ca/sitemap.xml",
   };
 }
