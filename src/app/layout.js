@@ -20,18 +20,49 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   metadataBase: new URL("https://www.markitme.ca"),
+
   title: "MarkitMe | Strategy, Creative & Digital Growth",
-  alternates: {
-    canonical: "/",
-  },
+
   description:
     "MarkitMe helps businesses grow through branding, website development, digital marketing, and strategy.",
+
+  alternates: {
+    canonical: "https://www.markitme.ca/",
+  },
+
+  openGraph: {
+    title: "MarkitMe | Strategy, Creative & Digital Growth",
+    description:
+      "MarkitMe helps businesses grow through branding, website development, digital marketing, and strategy.",
+    url: "https://www.markitme.ca/",
+    siteName: "MarkitMe",
+    type: "website",
+
+    images: [
+      {
+        url: "https://www.markitme.ca/images/markitme-og.jpg",
+        width: 1200,
+        height: 630,
+        alt: "MarkitMe - Strategy, Creative & Digital Growth",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "MarkitMe | Strategy, Creative & Digital Growth",
+    description:
+      "MarkitMe helps businesses grow through branding, website development, digital marketing, and strategy.",
+    images: ["https://www.markitme.ca/images/markitme-og.jpg"],
+  },
+
   icons: {
     icon: "/images/favicon.png",
     shortcut: "/images/favicon.png",
     apple: "/images/favicon.png",
   },
-   verification: {
+
+  verification: {
     google: "fHgQv9w7h3267LDpgZi8xnKm3LQqPBxkCKxC1pMJ_3U",
   },
 };
