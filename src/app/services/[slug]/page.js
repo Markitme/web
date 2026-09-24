@@ -37,6 +37,7 @@ const COLORS = {
 function getServiceImages(serviceTitle = "") {
   const title = serviceTitle.toLowerCase();
 
+  /* WEB DESIGN & DEVELOPMENT */
   if (
     title.includes("website") ||
     title.includes("web design") ||
@@ -45,74 +46,138 @@ function getServiceImages(serviceTitle = "") {
     title.includes("redesign")
   ) {
     return {
-      hero:
-        "https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&fit=crop&w=1600&q=85",
-      overview:
-        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1400&q=85",
-      challenge:
-        "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1400&q=85",
+      hero: "/images/services/web-design-and-development/hero.jpg",
+      overview: "/images/services/web-design-and-development/overview.jpg",
+      challenge: "/images/services/web-design-and-development/challenge.jpg",
     };
   }
 
-  if (title.includes("seo") || title.includes("search")) {
+  /* SEO & SEARCH */
+  if (
+    title.includes("seo") ||
+    title.includes("search")
+  ) {
     return {
-      hero:
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1600&q=85",
-      overview:
-        "https://images.unsplash.com/photo-1543286386-2e659306cd6c?auto=format&fit=crop&w=1400&q=85",
-      challenge:
-        "https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=1400&q=85",
+      hero: "/images/services/seo/hero.jpg",
+      overview: "/images/services/seo/overview.jpg",
+      challenge: "/images/services/seo/challenge.jpg",
     };
   }
 
-  if (title.includes("social")) {
+  /* SOCIAL MEDIA MARKETING */
+  if (
+    title.includes("social") ||
+    title.includes("social media")
+  ) {
     return {
-      hero:
-        "https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=1600&q=85",
-      overview:
-        "https://images.unsplash.com/photo-1533750349088-cd871a92f312?auto=format&fit=crop&w=1400&q=85",
-      challenge:
-        "https://images.unsplash.com/photo-1611926653458-09294b3142bf?auto=format&fit=crop&w=1400&q=85",
+      hero: "/images/services/social-media/hero.jpg",
+      overview: "/images/services/social-media/overview.jpg",
+      challenge: "/images/services/social-media/challenge.jpg",
     };
   }
 
+  /* PAID ADVERTISING */
   if (
     title.includes("advertising") ||
     title.includes("paid") ||
-    title.includes("ads")
+    title.includes("ads") ||
+    title.includes("ppc")
   ) {
     return {
-      hero:
-        "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1600&q=85",
-      overview:
-        "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1400&q=85",
-      challenge:
-        "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1400&q=85",
+      hero: "/images/services/paid-advertising/hero.jpg",
+      overview: "/images/services/paid-advertising/overview.jpg",
+      challenge: "/images/services/paid-advertising/challenge.jpg",
     };
   }
 
+  /* CONTENT MARKETING */
   if (
     title.includes("content") ||
     title.includes("copy") ||
-    title.includes("writing")
+    title.includes("writing") ||
+    title.includes("content marketing")
   ) {
     return {
-      hero:
-        "https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1600&q=85",
-      overview:
-        "https://images.unsplash.com/photo-1456324504439-367cee3b3c32?auto=format&fit=crop&w=1400&q=85",
-      challenge:
-        "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=1400&q=85",
+      hero: "/images/services/content-marketing/hero.jpg",
+      overview: "/images/services/content-marketing/overview.jpg",
+      challenge: "/images/services/content-marketing/challenge.jpg",
     };
   }
 
+  /* BRANDING */
+  if (
+    title.includes("branding") ||
+    title.includes("brand")
+  ) {
+    return {
+      hero: "/images/services/branding/hero.jpg",
+      overview: "/images/services/branding/overview.jpg",
+      challenge: "/images/services/branding/challenge.jpg",
+    };
+  }
+
+  /* EMAIL MARKETING */
+  if (
+    title.includes("email") ||
+    title.includes("email marketing")
+  ) {
+    return {
+      hero: "/images/services/email-marketing/hero.jpg",
+      overview: "/images/services/email-marketing/overview.jpg",
+      challenge: "/images/services/email-marketing/challenge.jpg",
+    };
+  }
+
+/* PHOTOGRAPHY */
+
+if (
+  title.includes("photography") ||
+  title.includes("photographer") ||
+  title.includes("photo") ||
+  title.includes("photoshoot") ||
+  title.includes("photo shoot")
+) {
   return {
-    hero:
-      "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1600&q=85",
-    overview:
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1400&q=85",
-    challenge:
-      "https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1400&q=85",
+    hero: "/images/services/photography/hero.jpg",
+    overview: "/images/services/photography/overview.jpg",
+    challenge: "/images/services/photography/challenge.jpg",
+  };
+}
+/* VIDEO PRODUCTION */
+
+if (
+  title.includes("video") ||
+  title.includes("video production") ||
+  title.includes("video marketing") ||
+  title.includes("video content") ||
+  title.includes("videography")
+) {
+  return {
+    hero: "/images/services/video-production/hero.jpg",
+    overview: "/images/services/video-production/overview.jpg",
+    challenge: "/images/services/video-production/challenge.jpg",
+  };
+}
+
+  /* UI/UX DESIGN */
+  if (
+    title.includes("ui/ux") ||
+    title.includes("ui ux") ||
+    title.includes("ux") ||
+    title.includes("ui design")
+  ) {
+    return {
+      hero: "/images/services/ui-ux-design/hero.jpg",
+      overview: "/images/services/ui-ux-design/overview.jpg",
+      challenge: "/images/services/ui-ux-design/challenge.jpg",
+    };
+  }
+
+  /* DEFAULT SERVICE IMAGES */
+  return {
+    hero: "/images/services/default/hero.jpg",
+    overview: "/images/services/default/overview.jpg",
+    challenge: "/images/services/default/challenge.jpg",
   };
 }
 
