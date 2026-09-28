@@ -1,5 +1,6 @@
 import { Geist_Mono, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
+import RecaptchaProvider from "./providers/RecaptchaProvider";
 
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -83,14 +84,18 @@ export default function RootLayout({ children }) {
           text-[var(--foreground)]
         "
       >
+        <RecaptchaProvider>
         <Header />
 
         <main className="flex-1">
+          
           {children}
+        
           <HomePopupModal />
         </main>
 
         <Footer />
+        </RecaptchaProvider>
       </body>
     </html>
   );

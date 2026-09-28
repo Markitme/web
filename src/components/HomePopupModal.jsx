@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { X, ArrowRight } from "lucide-react";
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 
 const STORAGE_KEY = "markitme_home_modal_closed";
 const HIDE_DURATION = 12 * 60 * 60 * 1000;
@@ -14,10 +15,14 @@ export default function HomePopupModal() {
     email: "",
     phone: "",
     service: "",
+    message: "",
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+
+  // Google reCAPTCHA v3
+  const { executeRecaptcha } = useGoogleReCaptcha();
 
   /*
   =====================================================
@@ -61,6 +66,7 @@ export default function HomePopupModal() {
         "open-contact-modal",
         openModal
       );
+
       clearTimeout(autoOpenTimer);
     };
   }, []);
@@ -100,66 +106,157 @@ export default function HomePopupModal() {
   SUBMIT
   =====================================================
   */
- const handleSubmit = async (e) => {
-  e.preventDefault();
 
-  setIsSubmitting(true);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-  try {
-    const response = await fetch("/api/contact", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        name: formData.name,
-        email: formData.email,
-        phone: formData.phone,
-        service: formData.service,
-        message: formData.message || "",
-      }),
-    });
+    /*
+    -----------------------------------------
+    CHECK reCAPTCHA
+    -----------------------------------------
+    */
 
-    const result = await response.json();
-
-    if (!response.ok || !result.success) {
-      throw new Error(
-        result.message || "Failed to send message."
+    if (!executeRecaptcha) {
+      alert(
+        "reCAPTCHA is still loading. Please try again."
       );
+      return;
     }
 
-    setSubmitted(true);
+    setIsSubmitting(true);
 
-    localStorage.setItem(
-      STORAGE_KEY,
-      Date.now().toString()
-    );
+    try {
+      /*
+      -----------------------------------------
+      GENERATE reCAPTCHA TOKEN
+      -----------------------------------------
+      */
 
-    setTimeout(() => {
-      setIsOpen(false);
+      const recaptchaToken = await executeRecaptcha(
+        "contact_form"
+      );
 
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        service: "",
-        message: "",
+      if (!recaptchaToken) {
+        throw new Error(
+          "reCAPTCHA verification failed. Please try again."
+        );
+      }
+
+      /*
+      -----------------------------------------
+      SEND FORM TO API
+      -----------------------------------------
+      */
+
+      const response = await fetch("/api/contact", {
+        method: "POST",
+
+        headers: {
+          "Content-Type": "application/json",
+        },
+
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          service: formData.service,
+          message: formData.message || "",
+
+          // Google reCAPTCHA token
+          recaptchaToken,
+        }),
       });
 
-      setSubmitted(false);
-    }, 2000);
+      /*
+      -----------------------------------------
+      CHECK RESPONSE TYPE
+      -----------------------------------------
+      */
 
-  } catch (error) {
-    console.error("Form submission failed:", error);
+      const contentType =
+        response.headers.get("content-type");
 
-    alert(
-      error.message ||
-        "Unable to send your enquiry. Please try again."
-    );
-  } finally {
-    setIsSubmitting(false);
-  }
-};
+      if (!contentType?.includes("application/json")) {
+        const text = await response.text();
+
+        console.error(
+          "Non-JSON response:",
+          text
+        );
+
+        throw new Error(
+          "Server returned an invalid response. Please try again."
+        );
+      }
+
+      /*
+      -----------------------------------------
+      PARSE RESPONSE
+      -----------------------------------------
+      */
+
+      const result = await response.json();
+
+      /*
+      -----------------------------------------
+      CHECK API RESPONSE
+      -----------------------------------------
+      */
+
+      if (!response.ok || !result.success) {
+        throw new Error(
+          result.message ||
+            "Failed to send message."
+        );
+      }
+
+      /*
+      -----------------------------------------
+      SUCCESS
+      -----------------------------------------
+      */
+
+      setSubmitted(true);
+
+      localStorage.setItem(
+        STORAGE_KEY,
+        Date.now().toString()
+      );
+
+      /*
+      -----------------------------------------
+      CLOSE AFTER SUCCESS
+      -----------------------------------------
+      */
+
+      setTimeout(() => {
+        setIsOpen(false);
+
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          service: "",
+          message: "",
+        });
+
+        setSubmitted(false);
+      }, 2000);
+
+    } catch (error) {
+      console.error(
+        "Form submission failed:",
+        error
+      );
+
+      alert(
+        error.message ||
+          "Unable to send your enquiry. Please try again."
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   /*
   =====================================================

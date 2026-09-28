@@ -10,6 +10,7 @@ export async function POST(request) {
       phone,
       service,
       message,
+      recaptchaToken,
     } = body;
 
     // ==========================================
@@ -23,6 +24,61 @@ export async function POST(request) {
           message: "Name and email are required.",
         },
         { status: 400 }
+      );
+    }
+
+    // ==========================================
+    // RECAPTCHA VALIDATION
+    // ==========================================
+
+    if (!recaptchaToken) {
+      return Response.json(
+        {
+          success: false,
+          message: "reCAPTCHA verification is required.",
+        },
+        { status: 400 }
+      );
+    }
+
+    // ==========================================
+    // VERIFY RECAPTCHA WITH GOOGLE
+    // ==========================================
+
+    const recaptchaResponse = await fetch(
+      "https://www.google.com/recaptcha/api/siteverify",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: new URLSearchParams({
+          secret: process.env.RECAPTCHA_SECRET_KEY,
+          response: recaptchaToken,
+        }),
+      }
+    );
+
+    const recaptchaResult = await recaptchaResponse.json();
+
+    console.log("reCAPTCHA verification:", recaptchaResult);
+
+    // ==========================================
+    // CHECK RECAPTCHA RESULT
+    // ==========================================
+
+    if (
+      !recaptchaResult.success ||
+      recaptchaResult.action !== "contact_form" ||
+      recaptchaResult.score < 0.5
+    ) {
+      return Response.json(
+        {
+          success: false,
+          message:
+            "reCAPTCHA verification failed. Please try again.",
+        },
+        { status: 403 }
       );
     }
 
@@ -74,7 +130,9 @@ export async function POST(request) {
     // ==========================================
 
     const safeName = String(name).trim();
+
     const safeEmail = String(email).trim();
+
     const safePhone = phone
       ? String(phone).trim()
       : "Not provided";
@@ -94,8 +152,10 @@ export async function POST(request) {
     const emailHtml = `
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
+
   <meta
     name="viewport"
     content="width=device-width, initial-scale=1.0"
@@ -148,9 +208,7 @@ export async function POST(request) {
           "
         >
 
-          <!-- =====================================
-               TOP ACCENT
-          ====================================== -->
+          <!-- TOP ACCENT -->
 
           <tr>
             <td
@@ -165,10 +223,7 @@ export async function POST(request) {
             </td>
           </tr>
 
-
-          <!-- =====================================
-               HEADER
-          ====================================== -->
+          <!-- HEADER -->
 
           <tr>
             <td
@@ -221,7 +276,6 @@ export async function POST(request) {
 
                   </td>
 
-
                   <!-- LABEL -->
 
                   <td
@@ -257,10 +311,7 @@ export async function POST(request) {
             </td>
           </tr>
 
-
-          <!-- =====================================
-               INTRO
-          ====================================== -->
+          <!-- INTRO -->
 
           <tr>
             <td
@@ -310,10 +361,7 @@ export async function POST(request) {
             </td>
           </tr>
 
-
-          <!-- =====================================
-               CONTACT DETAILS CARD
-          ====================================== -->
+          <!-- CONTACT DETAILS CARD -->
 
           <tr>
             <td
@@ -337,7 +385,6 @@ export async function POST(request) {
                 <!-- NAME -->
 
                 <tr>
-
                   <td
                     style="
                       padding:17px 18px;
@@ -370,14 +417,11 @@ export async function POST(request) {
                     </span>
 
                   </td>
-
                 </tr>
-
 
                 <!-- EMAIL -->
 
                 <tr>
-
                   <td
                     style="
                       padding:17px 18px;
@@ -412,14 +456,11 @@ export async function POST(request) {
                     </a>
 
                   </td>
-
                 </tr>
-
 
                 <!-- PHONE -->
 
                 <tr>
-
                   <td
                     style="
                       padding:17px 18px;
@@ -452,14 +493,11 @@ export async function POST(request) {
                     </span>
 
                   </td>
-
                 </tr>
-
 
                 <!-- SERVICE -->
 
                 <tr>
-
                   <td
                     style="
                       padding:17px 18px;
@@ -495,7 +533,6 @@ export async function POST(request) {
                     </span>
 
                   </td>
-
                 </tr>
 
               </table>
@@ -503,10 +540,7 @@ export async function POST(request) {
             </td>
           </tr>
 
-
-          <!-- =====================================
-               MESSAGE
-          ====================================== -->
+          <!-- MESSAGE -->
 
           <tr>
             <td
@@ -561,10 +595,7 @@ export async function POST(request) {
             </td>
           </tr>
 
-
-          <!-- =====================================
-               CTA
-          ====================================== -->
+          <!-- CTA -->
 
           <tr>
             <td
@@ -593,10 +624,7 @@ export async function POST(request) {
             </td>
           </tr>
 
-
-          <!-- =====================================
-               FOOTER
-          ====================================== -->
+          <!-- FOOTER -->
 
           <tr>
             <td
@@ -664,9 +692,7 @@ export async function POST(request) {
             </td>
           </tr>
 
-
         </table>
-
 
         <!-- DISCLAIMER -->
 

@@ -1,5 +1,5 @@
 "use client";
-
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import { useState } from "react";
 import {
   Mail,
@@ -24,7 +24,7 @@ export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
-
+    const { executeRecaptcha } = useGoogleReCaptcha();
   const handleChange = (event) => {
     const { name, value } = event.target;
 
@@ -38,56 +38,91 @@ export default function ContactPage() {
     }
   };
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
 
-    setError("");
-    setIsSubmitting(true);
+const handleSubmit = async (event) => {
+  event.preventDefault();
 
-    try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          phone: formData.phone,
-          service: formData.service,
-          message: formData.message,
-        }),
-      });
+  setError("");
+  setIsSubmitting(true);
 
-      const result = await response.json();
-
-      if (!response.ok || !result.success) {
-        throw new Error(
-          result.message || "Failed to send your message."
-        );
-      }
-
-      setSubmitted(true);
-
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        service: "",
-        message: "",
-      });
-
-    } catch (err) {
-      console.error("Contact form error:", err);
-
-      setError(
-        err?.message ||
-          "Something went wrong. Please try again."
-      );
-    } finally {
-      setIsSubmitting(false);
+  try {
+    // Check reCAPTCHA
+    if (!executeRecaptcha) {
+      throw new Error("reCAPTCHA is still loading. Please try again.");
     }
-  };
+
+    // Generate reCAPTCHA token
+    const recaptchaToken = await executeRecaptcha("contact_form");
+
+    if (!recaptchaToken) {
+      throw new Error("reCAPTCHA verification failed. Please try again.");
+    }
+
+    // Submit form
+    const response = await fetch("/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        service: formData.service,
+        message: formData.message,
+        recaptchaToken,
+      }),
+    });
+
+    // Get response content type
+    const contentType = response.headers.get("content-type");
+
+    console.log("API STATUS:", response.status);
+    console.log("API CONTENT TYPE:", contentType);
+
+    // Make sure server returned JSON
+    if (!contentType?.includes("application/json")) {
+      const text = await response.text();
+
+      console.error("NON-JSON API RESPONSE:", text);
+
+      throw new Error(
+        `Server returned ${response.status}. Please check the API route.`
+      );
+    }
+
+    const result = await response.json();
+
+    console.log("API RESULT:", result);
+
+    if (!response.ok || !result.success) {
+      throw new Error(
+        result.message || "Failed to send your message."
+      );
+    }
+
+    // Success
+    setSubmitted(true);
+
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      service: "",
+      message: "",
+    });
+
+  } catch (err) {
+    console.error("Contact form error:", err);
+
+    setError(
+      err?.message ||
+        "Something went wrong. Please try again."
+    );
+  } finally {
+    setIsSubmitting(false);
+  }
+};
 
   return (
     <main className="bg-[var(--color-cream)] text-[var(--color-deep)] transition-colors duration-300  ">
