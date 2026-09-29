@@ -10,23 +10,188 @@ export async function POST(request) {
       phone,
       service,
       message,
+      formType,
       recaptchaToken,
     } = body;
 
-    // ==========================================
-    // VALIDATION
-    // ==========================================
+  // ==========================================
+// VALIDATION
+// ==========================================
 
-    if (!name || !email) {
-      return Response.json(
-        {
-          success: false,
-          message: "Name and email are required.",
-        },
-        { status: 400 }
-      );
-    }
+const safeName = typeof name === "string" ? name.trim() : "";
+const safeEmail = typeof email === "string" ? email.trim() : "";
+const safePhone = typeof phone === "string" ? phone.trim() : "";
+const safeService = typeof service === "string" ? service.trim() : "";
+const safeMessage = typeof message === "string" ? message.trim() : "";
 
+// Name
+if (!safeName) {
+  return Response.json(
+    {
+      success: false,
+      message: "Name is required.",
+    },
+    { status: 400 }
+  );
+}
+
+if (safeName.length < 2) {
+  return Response.json(
+    {
+      success: false,
+      message: "Name must be at least 2 characters.",
+    },
+    { status: 400 }
+  );
+}
+
+if (safeName.length > 100) {
+  return Response.json(
+    {
+      success: false,
+      message: "Name is too long.",
+    },
+    { status: 400 }
+  );
+}
+
+if (!/^[a-zA-ZÀ-ÿ\s'-]+$/.test(safeName)) {
+  return Response.json(
+    {
+      success: false,
+      message: "Please enter a valid name.",
+    },
+    { status: 400 }
+  );
+}
+
+
+// Email
+if (!safeEmail) {
+  return Response.json(
+    {
+      success: false,
+      message: "Email is required.",
+    },
+    { status: 400 }
+  );
+}
+
+if (safeEmail.length > 254) {
+  return Response.json(
+    {
+      success: false,
+      message: "Email address is too long.",
+    },
+    { status: 400 }
+  );
+}
+
+const emailRegex =
+  /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+
+if (!emailRegex.test(safeEmail)) {
+  return Response.json(
+    {
+      success: false,
+      message: "Please enter a valid email address.",
+    },
+    { status: 400 }
+  );
+}
+
+
+// Phone
+if (!safePhone) {
+  return Response.json(
+    {
+      success: false,
+      message: "Phone number is required.",
+    },
+    { status: 400 }
+  );
+}
+
+if (!/^[+()\d\s-]+$/.test(safePhone)) {
+  return Response.json(
+    {
+      success: false,
+      message: "Please enter a valid phone number.",
+    },
+    { status: 400 }
+  );
+}
+
+const phoneDigits = safePhone.replace(/\D/g, "");
+
+if (phoneDigits.length < 7 || phoneDigits.length > 15) {
+  return Response.json(
+    {
+      success: false,
+      message: "Please enter a valid phone number.",
+    },
+    { status: 400 }
+  );
+}
+
+
+// Service
+if (!safeService) {
+  return Response.json(
+    {
+      success: false,
+      message: "Please select a service.",
+    },
+    { status: 400 }
+  );
+}
+const allowedServices = [
+  "Brand Strategy",
+  "Website Design & Development",
+  "Digital Marketing",
+  "SEO",
+  "Content Marketing",
+  "UI/UX Design",
+  "Other",
+];
+
+if (!allowedServices.includes(safeService)) {
+  return Response.json(
+    {
+      success: false,
+      message: "Please select a valid service.",
+    },
+    { status: 400 }
+  );
+}
+
+// Message
+
+
+if (safeMessage.length > 5000) {
+  return Response.json(
+    {
+      success: false,
+      message: "Message is too long.",
+    },
+    { status: 400 }
+  );
+}
+
+const escapeHtml = (value) => {
+  return String(value)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+};
+
+const emailName = escapeHtml(safeName);
+const emailEmail = escapeHtml(safeEmail);
+const emailPhone = escapeHtml(safePhone);
+const emailService = escapeHtml(safeService);
+const emailMessage = escapeHtml(safeMessage);
     // ==========================================
     // RECAPTCHA VALIDATION
     // ==========================================
@@ -125,25 +290,7 @@ export async function POST(request) {
 
     await transporter.verify();
 
-    // ==========================================
-    // SAFE CONTENT
-    // ==========================================
-
-    const safeName = String(name).trim();
-
-    const safeEmail = String(email).trim();
-
-    const safePhone = phone
-      ? String(phone).trim()
-      : "Not provided";
-
-    const safeService = service
-      ? String(service).trim()
-      : "Not provided";
-
-    const safeMessage = message
-      ? String(message).trim()
-      : "No message provided";
+    
 
     // ==========================================
     // EMAIL HTML
@@ -413,7 +560,7 @@ export async function POST(request) {
                         font-weight:bold;
                       "
                     >
-                      ${safeName}
+                      ${emailName}
                     </span>
 
                   </td>
@@ -444,7 +591,7 @@ export async function POST(request) {
                     </span>
 
                     <a
-                      href="mailto:${safeEmail}"
+                      href="mailto:${emailEmail}"
                       style="
                         color:#0c3b2e;
                         font-size:15px;
@@ -452,7 +599,7 @@ export async function POST(request) {
                         text-decoration:none;
                       "
                     >
-                      ${safeEmail}
+                      ${emailEmail}
                     </a>
 
                   </td>
@@ -489,7 +636,7 @@ export async function POST(request) {
                         font-weight:bold;
                       "
                     >
-                      ${safePhone}
+                      ${emailPhone}
                     </span>
 
                   </td>
@@ -529,7 +676,7 @@ export async function POST(request) {
                         font-weight:bold;
                       "
                     >
-                      ${safeService}
+                      ${emailService}
                     </span>
 
                   </td>
@@ -541,6 +688,9 @@ export async function POST(request) {
           </tr>
 
           <!-- MESSAGE -->
+          ${
+          formType !== "popup" && safeMessage
+            ? `
 
           <tr>
             <td
@@ -585,7 +735,7 @@ export async function POST(request) {
                       line-height:1.8;
                     "
                   >
-                    ${safeMessage}
+                    ${emailMessage}
                   </td>
 
                 </tr>
@@ -594,6 +744,9 @@ export async function POST(request) {
 
             </td>
           </tr>
+             `
+    : ""
+}
 
           <!-- CTA -->
 
@@ -606,7 +759,7 @@ export async function POST(request) {
             >
 
               <a
-                href="mailto:${safeEmail}"
+                href="mailto:${emailEmail}"
                 style="
                   display:inline-block;
                   padding:14px 25px;
@@ -618,7 +771,7 @@ export async function POST(request) {
                   text-decoration:none;
                 "
               >
-                Reply to ${safeName}
+                Reply to ${emailName}
               </a>
 
             </td>
@@ -752,7 +905,7 @@ https://markitme.ca
     });
 
     console.log(
-      `Contact email sent successfully from ${safeEmail}`
+      `Contact email sent successfully from ${emailEmail}`
     );
 
     return Response.json({

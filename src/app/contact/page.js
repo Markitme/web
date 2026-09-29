@@ -25,37 +25,113 @@ export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
     const { executeRecaptcha } = useGoogleReCaptcha();
-  const handleChange = (event) => {
-    const { name, value } = event.target;
 
-    setFormData((previous) => ({
-      ...previous,
-      [name]: value,
-    }));
 
-    if (error) {
-      setError("");
+
+const validateForm = () => {
+  const errors = {};
+
+  // Name validation
+  const name = formData.name.trim();
+
+  if (!name) {
+    errors.name = "Name is required.";
+  } else if (name.length < 2) {
+    errors.name = "Name must be at least 2 characters.";
+  } else if (!/^[a-zA-ZÀ-ÿ\s'-]+$/.test(name)) {
+    errors.name = "Please enter a valid name.";
+  }
+
+  // Email validation
+  const email = formData.email.trim();
+
+  if (!email) {
+    errors.email = "Email is required.";
+  } else if (
+    !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(email)
+  ) {
+    errors.email = "Please enter a valid email address.";
+  }
+
+  // Phone validation
+  const phone = formData.phone.trim();
+
+  if (!phone) {
+    errors.phone = "Phone number is required.";
+  } else {
+    const phoneDigits = phone.replace(/\D/g, "");
+
+    if (phoneDigits.length < 7 || phoneDigits.length > 15) {
+      errors.phone = "Please enter a valid phone number.";
+    } else if (!/^[+()\d\s-]+$/.test(phone)) {
+      errors.phone = "Please enter a valid phone number.";
     }
-  };
+  }
+
+  // Service validation
+  if (!formData.service) {
+    errors.service = "Please select a service.";
+  }
+
+  // Message validation
+  const message = formData.message.trim();
+
+  if (!message) {
+    errors.message = "Message is required.";
+  } else if (message.length < 10) {
+    errors.message = "Message must be at least 10 characters.";
+  }
+
+  return errors;
+};
+
+
+const handleChange = (event) => {
+  const { name, value } = event.target;
+
+  setFormData((previous) => ({
+    ...previous,
+    [name]: value,
+  }));
+
+  // Clear general error while typing
+  if (error) {
+    setError("");
+  }
+};
 
 
 const handleSubmit = async (event) => {
   event.preventDefault();
 
   setError("");
+
+  // Validate form before reCAPTCHA/API
+  const validationErrors = validateForm();
+
+  if (Object.keys(validationErrors).length > 0) {
+    const firstError = Object.values(validationErrors)[0];
+    setError(firstError);
+    return;
+  }
+
   setIsSubmitting(true);
 
   try {
     // Check reCAPTCHA
     if (!executeRecaptcha) {
-      throw new Error("reCAPTCHA is still loading. Please try again.");
+      throw new Error(
+        "reCAPTCHA is still loading. Please try again."
+      );
     }
 
     // Generate reCAPTCHA token
     const recaptchaToken = await executeRecaptcha("contact_form");
 
     if (!recaptchaToken) {
-      throw new Error("reCAPTCHA verification failed. Please try again.");
+      throw new Error(
+        "reCAPTCHA verification failed. Please try again."
+      );
     }
 
     // Submit form
@@ -65,16 +141,16 @@ const handleSubmit = async (event) => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        name: formData.name,
-        email: formData.email,
-        phone: formData.phone,
+        name: formData.name.trim(),
+        email: formData.email.trim(),
+        phone: formData.phone.trim(),
         service: formData.service,
-        message: formData.message,
+        message: formData.message.trim(),
+        formType: "contact",
         recaptchaToken,
       }),
     });
 
-    // Get response content type
     const contentType = response.headers.get("content-type");
 
     console.log("API STATUS:", response.status);
@@ -307,7 +383,10 @@ const handleSubmit = async (event) => {
                         onChange={handleChange}
                         placeholder="Your name"
                         required
-                        className="w-full rounded-xl border border-[var(--color-deep)]/10 bg-[var(--color-cream)] px-4 py-4 text-[var(--color-deep)] outline-none transition placeholder:text-[var(--color-deep)]/40 focus:border-[var(--color-purple)]    "
+                        minLength={2}
+                        maxLength={100}
+                        autoComplete="name"
+                        className="w-full rounded-xl border border-[var(--color-deep)]/10 bg-[var(--color-cream)] px-4 py-4 text-[var(--color-deep)] outline-none transition placeholder:text-[var(--color-deep)]/40 focus:border-[var(--color-purple)]"
                       />
 
                     </div>
@@ -324,15 +403,17 @@ const handleSubmit = async (event) => {
                       </label>
 
                       <input
-                        id="email"
-                        name="email"
-                        type="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        placeholder="you@company.com"
-                        required
-                        className="w-full rounded-xl border border-[var(--color-deep)]/10 bg-[var(--color-cream)] px-4 py-4 text-[var(--color-deep)] outline-none transition placeholder:text-[var(--color-deep)]/40 focus:border-[var(--color-purple)]    "
-                      />
+                          id="email"
+                          name="email"
+                          type="email"
+                          value={formData.email}
+                          onChange={handleChange}
+                          placeholder="you@company.com"
+                          required
+                          maxLength={254}
+                          autoComplete="email"
+                          className="w-full rounded-xl border border-[var(--color-deep)]/10 bg-[var(--color-cream)] px-4 py-4 text-[var(--color-deep)] outline-none transition placeholder:text-[var(--color-deep)]/40 focus:border-[var(--color-purple)]"
+                        />
 
                     </div>
 
@@ -356,7 +437,11 @@ const handleSubmit = async (event) => {
                       value={formData.phone}
                       onChange={handleChange}
                       placeholder="+1 (613) 000-0000"
-                      className="w-full rounded-xl border border-[var(--color-deep)]/10 bg-[var(--color-cream)] px-4 py-4 text-[var(--color-deep)] outline-none transition placeholder:text-[var(--color-deep)]/40 focus:border-[var(--color-purple)]    "
+                      required
+                      maxLength={20}
+                      autoComplete="tel"
+                      inputMode="tel"
+                      className="w-full rounded-xl border border-[var(--color-deep)]/10 bg-[var(--color-cream)] px-4 py-4 text-[var(--color-deep)] outline-none transition placeholder:text-[var(--color-deep)]/40 focus:border-[var(--color-purple)]"
                     />
 
                   </div>
@@ -372,14 +457,14 @@ const handleSubmit = async (event) => {
                       What can we help you with?
                     </label>
 
-                    <select
-                      id="service"
-                      name="service"
-                      value={formData.service}
-                      onChange={handleChange}
-                      required
-                      className="w-full rounded-xl border border-[var(--color-deep)]/10 bg-[var(--color-cream)] px-4 py-4 text-[var(--color-deep)] outline-none transition focus:border-[var(--color-purple)]"
-                    >
+                   <select
+  id="service"
+  name="service"
+  value={formData.service}
+  onChange={handleChange}
+  required
+  className="w-full rounded-xl border border-[var(--color-deep)]/10 bg-[var(--color-cream)] px-4 py-4 text-[var(--color-deep)] outline-none transition focus:border-[var(--color-purple)]"
+>
                       <option value="">
                         Select a service
                       </option>
@@ -427,15 +512,17 @@ const handleSubmit = async (event) => {
                     </label>
 
                     <textarea
-                      id="message"
-                      name="message"
-                      rows={6}
-                      value={formData.message}
-                      onChange={handleChange}
-                      placeholder="What would you like to achieve?"
-                      required
-                      className="w-full resize-none rounded-xl border border-[var(--color-deep)]/10 bg-[var(--color-cream)] px-4 py-4 text-[var(--color-deep)] outline-none transition placeholder:text-[var(--color-deep)]/40 focus:border-[var(--color-purple)]    "
-                    />
+  id="message"
+  name="message"
+  rows={6}
+  value={formData.message}
+  onChange={handleChange}
+  placeholder="What would you like to achieve?"
+  required
+  minLength={10}
+  maxLength={5000}
+  className="w-full resize-none rounded-xl border border-[var(--color-deep)]/10 bg-[var(--color-cream)] px-4 py-4 text-[var(--color-deep)] outline-none transition placeholder:text-[var(--color-deep)]/40 focus:border-[var(--color-purple)]"
+/>
 
                   </div>
 

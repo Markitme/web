@@ -7,19 +7,31 @@ import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 const STORAGE_KEY = "markitme_home_modal_closed";
 const HIDE_DURATION = 12 * 60 * 60 * 1000;
 
+const initialFormData = {
+  name: "",
+  email: "",
+  phone: "",
+  service: "",
+};
+
+const allowedServices = [
+  "Brand Strategy",
+  "Website Design & Development",
+  "Digital Marketing",
+  "SEO",
+  "Content Marketing",
+  "UI/UX Design",
+  "Other",
+];
+
 export default function HomePopupModal() {
   const [isOpen, setIsOpen] = useState(false);
 
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    service: "",
-    message: "",
-  });
+  const [formData, setFormData] = useState(initialFormData);
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState("");
 
   // Google reCAPTCHA v3
   const { executeRecaptcha } = useGoogleReCaptcha();
@@ -34,6 +46,7 @@ export default function HomePopupModal() {
     const openModal = () => {
       setIsOpen(true);
       setSubmitted(false);
+      setError("");
     };
 
     window.addEventListener("open-contact-modal", openModal);
@@ -84,6 +97,105 @@ export default function HomePopupModal() {
     );
 
     setIsOpen(false);
+    setError("");
+  };
+
+  /*
+  =====================================================
+  FORM VALIDATION
+  =====================================================
+  */
+
+  const validateForm = () => {
+    const errors = {};
+
+    /*
+    -----------------------------------------
+    NAME
+    -----------------------------------------
+    */
+
+    const name = formData.name.trim();
+
+    if (!name) {
+      errors.name = "Name is required.";
+    } else if (name.length < 2) {
+      errors.name =
+        "Name must be at least 2 characters.";
+    } else if (name.length > 100) {
+      errors.name = "Name is too long.";
+    } else if (
+      !/^[a-zA-ZÀ-ÿ\s'-]+$/.test(name)
+    ) {
+      errors.name = "Please enter a valid name.";
+    }
+
+    /*
+    -----------------------------------------
+    EMAIL
+    -----------------------------------------
+    */
+
+    const email = formData.email.trim();
+
+    if (!email) {
+      errors.email = "Email is required.";
+    } else if (email.length > 254) {
+      errors.email =
+        "Email address is too long.";
+    } else if (
+      !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(
+        email
+      )
+    ) {
+      errors.email =
+        "Please enter a valid email address.";
+    }
+
+    /*
+    -----------------------------------------
+    PHONE
+    -----------------------------------------
+    */
+
+    const phone = formData.phone.trim();
+
+    if (!phone) {
+      errors.phone = "Phone number is required.";
+    } else if (!/^[+()\d\s-]+$/.test(phone)) {
+      errors.phone =
+        "Please enter a valid phone number.";
+    } else {
+      const phoneDigits = phone.replace(/\D/g, "");
+
+      if (
+        phoneDigits.length < 7 ||
+        phoneDigits.length > 15
+      ) {
+        errors.phone =
+          "Please enter a valid phone number.";
+      }
+    }
+
+    /*
+    -----------------------------------------
+    SERVICE
+    -----------------------------------------
+    */
+
+    const service = formData.service.trim();
+
+    if (!service) {
+      errors.service =
+        "Please select a service.";
+    } else if (!allowedServices.includes(service)) {
+      errors.service =
+        "Please select a valid service.";
+    }
+
+    
+
+    return errors;
   };
 
   /*
@@ -99,6 +211,10 @@ export default function HomePopupModal() {
       ...prev,
       [name]: value,
     }));
+
+    if (error) {
+      setError("");
+    }
   };
 
   /*
@@ -110,6 +226,25 @@ export default function HomePopupModal() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    setError("");
+
+    /*
+    -----------------------------------------
+    FRONTEND VALIDATION
+    -----------------------------------------
+    */
+
+    const validationErrors = validateForm();
+
+    if (Object.keys(validationErrors).length > 0) {
+      const firstError =
+        Object.values(validationErrors)[0];
+
+      setError(firstError);
+
+      return;
+    }
+
     /*
     -----------------------------------------
     CHECK reCAPTCHA
@@ -117,9 +252,10 @@ export default function HomePopupModal() {
     */
 
     if (!executeRecaptcha) {
-      alert(
+      setError(
         "reCAPTCHA is still loading. Please try again."
       );
+
       return;
     }
 
@@ -132,9 +268,8 @@ export default function HomePopupModal() {
       -----------------------------------------
       */
 
-      const recaptchaToken = await executeRecaptcha(
-        "contact_form"
-      );
+      const recaptchaToken =
+        await executeRecaptcha("contact_form");
 
       if (!recaptchaToken) {
         throw new Error(
@@ -156,12 +291,12 @@ export default function HomePopupModal() {
         },
 
         body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          phone: formData.phone,
-          service: formData.service,
-          message: formData.message || "",
-
+          name: formData.name.trim(),
+          email: formData.email.trim(),
+          phone: formData.phone.trim(),
+          service: formData.service.trim(),
+          message: "",
+          formType: "popup",
           // Google reCAPTCHA token
           recaptchaToken,
         }),
@@ -232,15 +367,10 @@ export default function HomePopupModal() {
       setTimeout(() => {
         setIsOpen(false);
 
-        setFormData({
-          name: "",
-          email: "",
-          phone: "",
-          service: "",
-          message: "",
-        });
+        setFormData(initialFormData);
 
         setSubmitted(false);
+        setError("");
       }, 2000);
 
     } catch (error) {
@@ -249,8 +379,8 @@ export default function HomePopupModal() {
         error
       );
 
-      alert(
-        error.message ||
+      setError(
+        error?.message ||
           "Unable to send your enquiry. Please try again."
       );
     } finally {
@@ -430,6 +560,38 @@ export default function HomePopupModal() {
           </div>
 
           {/* =====================================================
+              ERROR
+          ===================================================== */}
+
+          {error && (
+            <div
+              role="alert"
+              className="
+                mt-4
+
+                rounded-xl
+
+                border
+                border-red-500/20
+
+                bg-red-500/5
+
+                px-3.5
+                py-2.5
+
+                text-xs
+                font-medium
+
+                text-red-600
+
+                dark:text-red-400
+              "
+            >
+              {error}
+            </div>
+          )}
+
+          {/* =====================================================
               SUCCESS
           ===================================================== */}
 
@@ -493,6 +655,7 @@ export default function HomePopupModal() {
           ) : (
             <form
               onSubmit={handleSubmit}
+              noValidate
               className="
                 mt-5
                 space-y-3.5
@@ -528,6 +691,9 @@ export default function HomePopupModal() {
                   onChange={handleChange}
                   placeholder="Your name"
                   required
+                  minLength={2}
+                  maxLength={100}
+                  autoComplete="name"
                   className="
                     h-[43px]
                     w-full
@@ -588,6 +754,9 @@ export default function HomePopupModal() {
                     onChange={handleChange}
                     placeholder="you@example.com"
                     required
+                    maxLength={254}
+                    autoComplete="email"
+                    inputMode="email"
                     className="
                       h-[43px]
                       w-full
@@ -642,6 +811,9 @@ export default function HomePopupModal() {
                     onChange={handleChange}
                     placeholder="+1 000 000 0000"
                     required
+                    maxLength={20}
+                    autoComplete="tel"
+                    inputMode="tel"
                     className="
                       h-[43px]
                       w-full
@@ -667,7 +839,7 @@ export default function HomePopupModal() {
 
                       dark:border-[var(--color-cream)]/10
                       dark:bg-[#123F32]
-                      dark:text-[var(--color-cream)]
+                      dark:text-[var(--color-cream)]/35
                       dark:placeholder:text-[var(--color-cream)]/35
                       dark:focus:border-[var(--color-light-purple)]
                     "
@@ -733,28 +905,24 @@ export default function HomePopupModal() {
                     Select a service
                   </option>
 
-                  <option value="Web Design">
-                    Web Design
+                  <option value="Brand Strategy">
+                    Brand Strategy
                   </option>
 
-                  <option value="Web Development">
-                    Web Development
-                  </option>
-
-                  <option value="WordPress Development">
-                    WordPress Development
-                  </option>
-
-                  <option value="SEO">
-                    SEO
+                  <option value="Website Design & Development">
+                    Website Design & Development
                   </option>
 
                   <option value="Digital Marketing">
                     Digital Marketing
                   </option>
 
-                  <option value="Branding">
-                    Branding
+                  <option value="SEO">
+                    SEO
+                  </option>
+
+                  <option value="Content Marketing">
+                    Content Marketing
                   </option>
 
                   <option value="UI/UX Design">
@@ -823,7 +991,9 @@ export default function HomePopupModal() {
                 )}
               </button>
 
-              {/* Maybe Later */}
+              {/* =================================================
+                  MAYBE LATER
+              ================================================= */}
 
               <button
                 type="button"
