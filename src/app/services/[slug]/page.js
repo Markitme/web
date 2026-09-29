@@ -367,13 +367,13 @@ function AnimatedServiceVisual({
         "
       />
 
-      <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-night)]/95 via-[var(--color-deep)]/65 to-[var(--color-deep)]/20" />
+      <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-night)]/15 via-[var(--color-deep)]/65 to-[var(--color-deep)]/20" />
 
       <div className="absolute -left-20 bottom-10 h-48 w-48 rounded-full bg-[var(--color-light-purple)]/10 blur-3xl transition-transform duration-700 group-hover:scale-125" />
 
       <div className="relative flex h-full min-h-[350px] flex-col justify-between p-5 sm:min-h-[410px] sm:p-8 lg:min-h-[460px]">
         <div>
-          <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-xl border border-[var(--color-light-purple)]/30 bg-[var(--color-light-purple)]/10 text-white sm:h-14 sm:w-14 sm:rounded-2xl">
+          <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-xl border border-[var(--color-light-purple)]/30  bg-[var(--color-light-purple)] p-3 backdrop-blur-xl text-white sm:h-14 sm:w-14 sm:rounded-2xl">
             {ServiceIcon && (
               <ServiceIcon
                 size={24}
@@ -382,9 +382,6 @@ function AnimatedServiceVisual({
             )}
           </div>
 
-          <p className="text-[8px] font-black uppercase tracking-[0.16em] text-[var(--color-light-purple)] sm:text-[9px]">
-            From challenge to growth
-          </p>
 
           <h3 className="mt-3 max-w-sm text-lg font-black leading-tight sm:text-3xl">
             Turning complex problems into clear opportunities.
@@ -392,23 +389,14 @@ function AnimatedServiceVisual({
         </div>
 
         <div className="flex items-end justify-between gap-3">
-          <div className="rounded-2xl border border-white/15 bg-[var(--color-night)]/50 p-3 backdrop-blur-xl sm:p-4">
-            <p className="text-[8px] font-black uppercase tracking-[0.14em] text-white/50">
+          <div className="rounded-2xl border border-white/15 bg-[var(--color-night)]/10 p-3 backdrop-blur-xl sm:p-4">
+            <p className="text-[8px] font-black uppercase tracking-[0.14em] text-[var(--color-light-purple)] sm:text-[9px]">
               Service
             </p>
 
-            <p className="mt-1 text-sm font-black text-[var(--color-light-purple)] sm:text-base">
+            <p className="mt-1 text-sm font-black text-white sm:text-base">
               {serviceTitle}
             </p>
-          </div>
-
-          <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-[var(--color-light-purple)] text-white shadow-[0_0_40px_rgba(255,186,0,0.30)] transition-transform duration-500 group-hover:rotate-6 group-hover:scale-110 sm:h-20 sm:w-20">
-            {ServiceIcon && (
-              <ServiceIcon
-                size={30}
-                strokeWidth={1.7}
-              />
-            )}
           </div>
         </div>
       </div>

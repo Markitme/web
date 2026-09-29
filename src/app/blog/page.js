@@ -662,7 +662,7 @@ export default async function BlogPage({ searchParams }) {
                     }
                     className={`flex h-11 min-w-11 items-center justify-center rounded-full px-3 text-sm font-bold transition-colors ${
                       pageNumber === currentPage
-                        ? "bg-[var(--color-light-purple)] text-[var(--color-deep)]"
+                        ? "bg-[var(--color-light-purple)] text-white"
                         : "border border-[var(--color-deep)]/15 text-[var(--color-deep)] hover:border-[var(--color-purple)] hover:text-[var(--color-purple)] dark:border-[var(--color-cream)]/15 dark:text-[var(--color-cream)] dark:hover:border-[var(--color-light-purple)] dark:hover:text-[var(--color-light-purple)]"
                     }`}
                   >
