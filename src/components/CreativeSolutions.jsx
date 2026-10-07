@@ -8,7 +8,7 @@ import SectionHeading from "./SectionHeading";
 import "swiper/css";
 
 const IMAGE_BASE_URL =
-  "https://cms.markitme.ca/wp-content/uploads/2026/08/";
+  "https://cms.markitme.ca/wp-content/uploads/2026/10/";
 
 const creativeSolutions = [
   {
