@@ -5,7 +5,7 @@ import RecaptchaProvider from "./providers/RecaptchaProvider";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import HomePopupModal from "@/components/HomePopupModal";
-
+import Script from "next/script";
 const jakarta = Plus_Jakarta_Sans({
   variable: "--font-jakarta",
   subsets: ["latin"],
@@ -84,6 +84,20 @@ export default function RootLayout({ children }) {
           text-[var(--foreground)]
         "
       >
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-4CJN3PLT5L"
+        strategy="afterInteractive"
+      />
+
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          window.gtag = gtag;
+          gtag('js', new Date());
+          gtag('config', 'G-4CJN3PLT5L');
+        `}
+      </Script>
         <RecaptchaProvider>
         <Header />
 
