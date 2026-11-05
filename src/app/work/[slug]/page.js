@@ -212,7 +212,7 @@ export default async function ProjectDetailsPage({ params }) {
                   font-black
                   uppercase
                   tracking-[0.15em]
-                  text-[var(--color-cream)]
+                  text-[var(--color-black)]
                   backdrop-blur
                 "
               >
