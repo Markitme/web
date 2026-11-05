@@ -383,12 +383,14 @@ export default function AnimatedCounter({
             leading-5
             tracking-[0.12em]
 
-            text-black/60
+            text-black/70
+            dark:text-white/75
 
             transition-colors
             duration-500
 
-            group-hover:text-black/80
+            group-hover:text-black/90
+            dark:group-hover:text-white
 
           "
         >

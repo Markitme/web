@@ -577,14 +577,14 @@ export default function AboutPage() {
                   items-center
                   justify-center
                   rounded-full
-                  border
+                  border-2
                   border-[var(--color-purple)]
                   text-lg
                   font-black
                   text-[var(--color-purple)]
 
-                  dark:border-[#8FBF9A]
-                  dark:text-[#8FBF9A]
+                  dark:border-[var(--color-light-purple)]
+                  dark:text-[var(--color-light-purple)]
                 "
               >
                 V

@@ -87,9 +87,10 @@ export default async function ProjectDetailsPage({ params }) {
                 className="
                   mt-5
                   max-w-4xl
+                  pb-1
                   text-4xl
                   font-black
-                  leading-[0.95]
+                  leading-[0.98]
                   tracking-[-0.06em]
                   sm:text-6xl
                   lg:text-7xl
@@ -355,7 +356,7 @@ export default async function ProjectDetailsPage({ params }) {
                   key={index}
                   className="
                     leading-8
-                    text-[var(--color-deep)]/65
+                    text-[var(--color-deep)]/80
                   "
                 >
                   {paragraph}
@@ -386,7 +387,7 @@ export default async function ProjectDetailsPage({ params }) {
                 "
               >
 
-                <span className="text-4xl font-black text-white">
+                <span className="text-4xl font-black text-[var(--color-light-purple)]">
                   0{index + 1}
                 </span>
 
@@ -425,7 +426,7 @@ export default async function ProjectDetailsPage({ params }) {
                   dark:text-[var(--color-light-purple)]
                 "
               >
-                What MarkitMe Did
+                What We Do
               </p>
 
              
@@ -574,7 +575,7 @@ export default async function ProjectDetailsPage({ params }) {
                   {result.value}
                 </p>
 
-                <p className="mt-4 font-bold leading-6 text-[var(--color-cream)]/65">
+                <p className="mt-4 font-bold leading-6 text-[var(--color-cream)]/75">
                   {result.label}
                 </p>
 
@@ -669,7 +670,7 @@ export default async function ProjectDetailsPage({ params }) {
                     <Check size={17} />
                   </span>
 
-                  <p className="font-semibold leading-7 text-[var(--color-deep)]/65 dark:text-[var(--color-cream)]/65">
+                  <p className="font-semibold leading-7 text-[var(--color-deep)]/80 dark:text-[var(--color-cream)]/75">
                     {item}
                   </p>
 
