@@ -19,41 +19,41 @@ const geistMono = Geist_Mono({
   display: "swap",
 });
 
+
 export const metadata = {
   metadataBase: new URL("https://www.markitme.ca"),
 
-  title: "MarkitMe | Strategy, Creative & Digital Growth",
+  title: "Web Design & Digital Marketing Agency in Canada | MarkitMe",
 
   description:
-    "MarkitMe helps businesses grow through branding, website development, digital marketing, and strategy.",
+    "MarkitMe helps businesses across Canada grow with strategic web design, SEO, branding and digital marketing that builds visibility and attracts customers.",
 
   alternates: {
     canonical: "https://www.markitme.ca/",
   },
 
   openGraph: {
-    title: "MarkitMe | Strategy, Creative & Digital Growth",
+    title: "Web Design & Digital Marketing Agency in Canada | MarkitMe",
     description:
-      "MarkitMe helps businesses grow through branding, website development, digital marketing, and strategy.",
+      "MarkitMe helps businesses across Canada grow with strategic web design, SEO, branding and digital marketing that builds visibility and attracts customers.",
     url: "https://www.markitme.ca/",
     siteName: "MarkitMe",
     type: "website",
-
     images: [
       {
         url: "https://www.markitme.ca/images/markitme-og.jpg",
         width: 1200,
         height: 630,
-        alt: "MarkitMe - Strategy, Creative & Digital Growth",
+        alt: "MarkitMe - Web Design and Digital Marketing Agency in Canada",
       },
     ],
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "MarkitMe | Strategy, Creative & Digital Growth",
+    title: "Web Design & Digital Marketing Agency in Canada | MarkitMe",
     description:
-      "MarkitMe helps businesses grow through branding, website development, digital marketing, and strategy.",
+      "MarkitMe helps businesses across Canada grow with strategic web design, SEO, branding and digital marketing that builds visibility and attracts customers.",
     images: ["https://www.markitme.ca/images/markitme-og.jpg"],
   },
 
@@ -67,6 +67,7 @@ export const metadata = {
     google: "fHgQv9w7h3267LDpgZi8xnKm3LQqPBxkCKxC1pMJ_3U",
   },
 };
+
 
 export default function RootLayout({ children }) {
   return (
