@@ -16,6 +16,17 @@ import {
   getReadingTime,
 } from "@/lib/wordpress";
 
+function cleanText(value = "") {
+  return value
+    .replace(/<[^>]*>/g, " ")
+    .replace(/&nbsp;/g, " ")
+    .replace(/&amp;/g, "&")
+    .replace(/&quot;/g, '"')
+    .replace(/&#039;/g, "'")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
 export const revalidate = 3600;
 
 export async function generateMetadata({ params }) {
@@ -31,34 +42,26 @@ export async function generateMetadata({ params }) {
 
   const blog = formatWordPressPost(post);
 
-  return {
-    title: `${blog.title.replace(
-      /<[^>]*>/g,
-      ""
-    )} | MarkitMe`,
+  const cleanTitle = cleanText(blog.title);
+  const description =
+  cleanText(blog.excerpt).slice(0, 160) ||
+  "Explore practical insights on web design, branding, digital marketing, and business growth from MarkitMe.";
+  const canonical = `https://markitme.ca/blog/${blog.slug || slug}`;
 
-    description: blog.excerpt
-      .replace(/<[^>]*>/g, "")
-      .slice(0, 160),
+  return {
+    title: `${title} | MarkitMe`,
+    description,
 
     alternates: {
-      canonical: `https://markitme.ca/blog/${blog.slug}`,
+      canonical,
     },
 
     openGraph: {
-      title: blog.title.replace(
-        /<[^>]*>/g,
-        ""
-      ),
-
-      description: blog.excerpt.replace(
-        /<[^>]*>/g,
-        ""
-      ),
-
-      images: blog.image
-        ? [blog.image]
-        : [],
+      title: `${title} | MarkitMe`,
+      description,
+      type: "article",
+      url: canonical,
+      images: blog.image ? [blog.image] : [],
     },
   };
 }
