@@ -6,6 +6,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import HomePopupModal from "@/components/HomePopupModal";
 import Script from "next/script";
+
 const jakarta = Plus_Jakarta_Sans({
   variable: "--font-jakarta",
   subsets: ["latin"],
@@ -18,7 +19,6 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
   display: "swap",
 });
-
 
 export const metadata = {
   metadataBase: new URL("https://www.markitme.ca"),
@@ -68,6 +68,45 @@ export const metadata = {
   },
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://www.markitme.ca/#organization",
+      name: "MarkitMe",
+      url: "https://www.markitme.ca",
+      logo: "https://www.markitme.ca/images/markitme-og.jpg",
+      image: "https://www.markitme.ca/images/markitme-og.jpg",
+      description:
+        "MarkitMe helps businesses across Canada grow with strategic web design, SEO, branding and digital marketing that builds visibility and attracts customers.",
+      telephone: "+1-613-981-4844",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "34 Minowan Miikan Lane",
+        addressLocality: "Toronto",
+        addressRegion: "ON",
+        postalCode: "M6J 0G3",
+        addressCountry: "CA",
+      },
+      areaServed: {
+        "@type": "Country",
+        name: "Canada",
+      },
+      // Agar social media links add karne ho toh neeche uncomment karke URLs daalein:
+      sameAs: ["https://www.instagram.com/markitme.ca/", "https://www.linkedin.com/company/markitme-ca/", "https://www.facebook.com/profile.php?id=61570996980204"],
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.markitme.ca/#website",
+      url: "https://www.markitme.ca",
+      name: "MarkitMe",
+      publisher: {
+        "@id": "https://www.markitme.ca/#organization",
+      },
+    },
+  ],
+};
 
 export default function RootLayout({ children }) {
   return (
@@ -85,31 +124,37 @@ export default function RootLayout({ children }) {
           text-[var(--foreground)]
         "
       >
-      <Script
-        src="https://www.googletagmanager.com/gtag/js?id=G-4CJN3PLT5L"
-        strategy="afterInteractive"
-      />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
+          }}
+        />
 
-      <Script id="google-analytics" strategy="afterInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          window.gtag = gtag;
-          gtag('js', new Date());
-          gtag('config', 'G-4CJN3PLT5L');
-        `}
-      </Script>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-4CJN3PLT5L"
+          strategy="afterInteractive"
+        />
+
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            window.gtag = gtag;
+            gtag('js', new Date());
+            gtag('config', 'G-4CJN3PLT5L');
+          `}
+        </Script>
+
         <RecaptchaProvider>
-        <Header />
+          <Header />
 
-        <main className="flex-1">
-          
-          {children}
-        
-          <HomePopupModal />
-        </main>
+          <main className="flex-1">
+            {children}
+            <HomePopupModal />
+          </main>
 
-        <Footer />
+          <Footer />
         </RecaptchaProvider>
       </body>
     </html>
