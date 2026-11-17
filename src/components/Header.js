@@ -399,7 +399,7 @@ export default function Header() {
                 aria-haspopup="true"
               >
 
-                Services
+                Our Products
 
                 <ChevronDown
                   size={16}
@@ -688,7 +688,7 @@ export default function Header() {
                     className="mt-7"
                     onClick={closeMenus}
                   >
-                    View All Services
+                    View All Products
                   </Button>
 
                 </div>

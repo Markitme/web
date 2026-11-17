@@ -664,8 +664,8 @@ export default function Hero() {
               sm:leading-8
             "
           >
-            We combine strategy, creative, technology, and performance
-            marketing to turn attention into measurable growth.
+Trusted by businesses across Canada
+
           </motion.p>
 
           {/* =================================================
@@ -749,14 +749,15 @@ export default function Hero() {
               text-[var(--color-deep)]/45
             "
           >
-            <span>Strategy</span>
+            <span>Real Estate</span>
 
            
-            <span>Creative</span>
+            <span>Mortgage</span>
 
-            <span>Technology</span>
+            <span>Professional Services</span>
 
-            <span>Performance</span>
+            <span>Healthcare</span>
+            <span>Hospitality</span>
           </motion.div>
 
           {/* =================================================
