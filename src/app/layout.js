@@ -72,11 +72,11 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "ProfessionalService",
+      "@type": "LocalBusiness",
       "@id": "https://www.markitme.ca/#organization",
       name: "MarkitMe",
       url: "https://www.markitme.ca",
-      logo: "https://www.markitme.ca/images/markitme-og.jpg",
+      logo: "https://www.markitme.ca/images/logo-dark.png",
       image: "https://www.markitme.ca/images/markitme-og.jpg",
       description:
         "MarkitMe helps businesses across Canada grow with strategic web design, SEO, branding and digital marketing that builds visibility and attracts customers.",
@@ -93,8 +93,18 @@ const jsonLd = {
         "@type": "Country",
         name: "Canada",
       },
-      // Agar social media links add karne ho toh neeche uncomment karke URLs daalein:
-      sameAs: ["https://www.instagram.com/markitme.ca/", "https://www.linkedin.com/company/markitme-ca/", "https://www.facebook.com/profile.php?id=61570996980204"],
+      contactPoint: {
+        "@type": "ContactPoint",
+        telephone: "+1-613-981-4844",
+        contactType: "customer service",
+        areaServed: "CA",
+        availableLanguage: ["English"],
+      },
+      sameAs: [
+        "https://www.instagram.com/markitme.ca/",
+        "https://www.linkedin.com/company/markitme-ca/",
+        "https://www.facebook.com/profile.php?id=61570996980204",
+      ],
     },
     {
       "@type": "WebSite",
