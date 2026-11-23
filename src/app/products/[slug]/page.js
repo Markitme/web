@@ -482,6 +482,17 @@ export default async function ServiceDetailsPage({ params }) {
   }
 
   const ServiceIcon = service.icon;
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `https://www.markitme.ca/products/${service.slug}`,
+    name: service.title,
+    description: service.heroDescription,
+    url: `https://www.markitme.ca/products/${service.slug}`,
+    provider: {
+      "@id": "https://www.markitme.ca/#organization",
+    },
+  };
 
   return (
     <main
@@ -494,6 +505,12 @@ export default async function ServiceDetailsPage({ params }) {
         transition-colors duration-300
       "
     >
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
+        }}
+      />
       {/* =====================================================
           HERO
       ===================================================== */}

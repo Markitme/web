@@ -29,6 +29,33 @@ export default function ProductsPage() {
     return groups;
   }, {});
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "@id": "https://www.markitme.ca/products",
+    name: "MarkitMe Products",
+    description:
+      "Branding, web design, digital marketing, SEO, content, photography, and video products.",
+    mainEntity: {
+      "@type": "ItemList",
+      name: "MarkitMe Products",
+      itemListElement: services.map((service, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        item: {
+          "@type": "Service",
+          "@id": `https://www.markitme.ca/products/${service.slug}`,
+          name: service.title,
+          description: service.description,
+          url: `https://www.markitme.ca/products/${service.slug}`,
+          provider: {
+            "@id": "https://www.markitme.ca/#organization",
+          },
+        },
+      })),
+    },
+  };
+
   return (
     <main
       className="
@@ -38,6 +65,12 @@ export default function ProductsPage() {
         duration-300
       "
     >
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
+        }}
+      />
       {/* =====================================================
           HERO
       ===================================================== */}

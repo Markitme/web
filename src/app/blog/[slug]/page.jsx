@@ -85,6 +85,40 @@ export default async function BlogDetailPage({
     ""
   );
 
+  const cleanExcerpt = blog.excerpt
+    .replace(/<[^>]*>/g, "")
+    .replace(/&nbsp;/g, " ")
+    .trim();
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: cleanTitle,
+    description: cleanExcerpt,
+    datePublished: blog.date,
+    dateModified: blog.modified || blog.date,
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `https://www.markitme.ca/blog/${blog.slug}`,
+    },
+    author: {
+      "@type": "Person",
+      name: blog.author,
+    },
+    publisher: {
+      "@id": "https://www.markitme.ca/#organization",
+    },
+    ...(blog.image
+      ? {
+          image: {
+            "@type": "ImageObject",
+            url: blog.image,
+            caption: blog.imageAlt,
+          },
+        }
+      : {}),
+  };
+
   return (
     <main
       className="
@@ -94,6 +128,12 @@ export default async function BlogDetailPage({
         text-[var(--color-deep)]
       "
     >
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
+        }}
+      />
 
       {/* =====================================================
           ARTICLE HERO

@@ -116,6 +116,102 @@ const jsonLd = {
         "@id": "https://www.markitme.ca/#organization",
       },
     },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.markitme.ca/#homepage",
+      url: "https://www.markitme.ca/",
+      name: "MarkitMe Digital Strategy & Creative",
+      isPartOf: {
+        "@id": "https://www.markitme.ca/#website",
+      },
+      about: {
+        "@id": "https://www.markitme.ca/#organization",
+      },
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://www.markitme.ca/#services",
+      name: "MarkitMe Products and Services",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          item: {
+            "@type": "Service",
+            "@id": "https://www.markitme.ca/products/web-design-development",
+            name: "Web Design & Development",
+            url: "https://www.markitme.ca/products/web-design-development",
+            provider: { "@id": "https://www.markitme.ca/#organization" },
+          },
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          item: {
+            "@type": "Service",
+            "@id": "https://www.markitme.ca/products/seo-services",
+            name: "SEO Services",
+            url: "https://www.markitme.ca/products/seo-services",
+            provider: { "@id": "https://www.markitme.ca/#organization" },
+          },
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          item: {
+            "@type": "Service",
+            "@id": "https://www.markitme.ca/products/social-media-marketing",
+            name: "Social Media Marketing",
+            url: "https://www.markitme.ca/products/social-media-marketing",
+            provider: { "@id": "https://www.markitme.ca/#organization" },
+          },
+        },
+        {
+          "@type": "ListItem",
+          position: 4,
+          item: {
+            "@type": "Service",
+            "@id": "https://www.markitme.ca/products/brand-marketing",
+            name: "Brand Marketing",
+            url: "https://www.markitme.ca/products/brand-marketing",
+            provider: { "@id": "https://www.markitme.ca/#organization" },
+          },
+        },
+        {
+          "@type": "ListItem",
+          position: 5,
+          item: {
+            "@type": "Service",
+            "@id": "https://www.markitme.ca/products/video-production",
+            name: "Video Production",
+            url: "https://www.markitme.ca/products/video-production",
+            provider: { "@id": "https://www.markitme.ca/#organization" },
+          },
+        },
+        {
+          "@type": "ListItem",
+          position: 6,
+          item: {
+            "@type": "Service",
+            "@id": "https://www.markitme.ca/products/content-marketing",
+            name: "Content Marketing",
+            url: "https://www.markitme.ca/products/content-marketing",
+            provider: { "@id": "https://www.markitme.ca/#organization" },
+          },
+        },
+        {
+          "@type": "ListItem",
+          position: 7,
+          item: {
+            "@type": "Service",
+            "@id": "https://www.markitme.ca/products/photography",
+            name: "Photography Services",
+            url: "https://www.markitme.ca/products/photography",
+            provider: { "@id": "https://www.markitme.ca/#organization" },
+          },
+        },
+      ],
+    },
   ],
 };
 
