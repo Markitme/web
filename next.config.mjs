@@ -25,11 +25,43 @@ const nextConfig = {
       },
     ];
   },
+  async rewrites() {
+    return {
+      beforeFiles: [
+        {
+          source: "/",
+          destination: "/llms.md",
+          has: [
+            {
+              type: "header",
+              key: "accept",
+              value: ".*text/markdown.*",
+            },
+          ],
+        },
+        {
+          source: "/",
+          destination: "/llms.md",
+          has: [
+            {
+              type: "header",
+              key: "accept",
+              value: ".*text/x-markdown.*",
+            },
+          ],
+        },
+      ],
+    };
+  },
   async headers() {
     return [
       {
         source: "/",
         headers: [
+          {
+            key: "Vary",
+            value: "Accept",
+          },
           {
             key: "Link",
             value:
