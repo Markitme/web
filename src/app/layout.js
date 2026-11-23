@@ -5,6 +5,7 @@ import RecaptchaProvider from "./providers/RecaptchaProvider";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import HomePopupModal from "@/components/HomePopupModal";
+import WebMCPTools from "@/components/WebMCPTools";
 import Script from "next/script";
 
 const jakarta = Plus_Jakarta_Sans({
@@ -254,6 +255,7 @@ export default function RootLayout({ children }) {
         </Script>
 
         <RecaptchaProvider>
+          <WebMCPTools />
           <Header />
 
           <main className="flex-1">
