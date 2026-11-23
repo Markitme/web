@@ -682,7 +682,7 @@ export default function Header() {
 
 
                   <Button
-                    href="/services"
+                    href="/products"
                     variant="primary"
                     size="md"
                     className="mt-7"
@@ -721,7 +721,7 @@ export default function Header() {
                           key={
                             service.slug
                           }
-                          href={`/services/${service.slug}`}
+                          href={`/products/${service.slug}`}
                           onClick={
                             closeMenus
                           }
@@ -958,7 +958,7 @@ export default function Header() {
                   }
                 >
 
-                  Services
+                  Products
 
                   <ChevronDown
                     size={20}
@@ -1011,7 +1011,7 @@ export default function Header() {
                     {/* View All */}
 
                     <Link
-                      href="/services"
+                      href="/products"
                       onClick={closeMenus}
                       className="
                         mb-2
@@ -1029,7 +1029,7 @@ export default function Header() {
                         text-[var(--color-deep)]
                       "
                     >
-                      View All Services
+                      View All Products
                     </Link>
 
 
@@ -1045,7 +1045,7 @@ export default function Header() {
                             key={
                               service.slug
                             }
-                            href={`/services/${service.slug}`}
+                            href={`/products/${service.slug}`}
                             onClick={
                               closeMenus
                             }

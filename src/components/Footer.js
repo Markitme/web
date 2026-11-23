@@ -219,8 +219,8 @@ export default function Footer() {
                   href: "/about",
                 },
                 {
-                  label: "Services",
-                  href: "/services",
+                  label: "Products",
+                  href: "/products",
                 },
                 {
                   label: "Work",

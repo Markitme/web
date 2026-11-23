@@ -4,15 +4,15 @@ import SectionHeading from "@/components/SectionHeading";
 import Button from "@/components/ui/Button";
 
 export const metadata = {
-  title: "Services | MarkitMe Digital Strategy & Creative",
+  title: "Products | MarkitMe Digital Strategy & Creative",
   alternates: {
-    canonical: "/services",
+    canonical: "/products",
   },
   description:
-    "Explore MarkitMe services for branding, web design and development, digital marketing, SEO, and sustainable business growth.",
+    "Explore MarkitMe products for branding, web design and development, digital marketing, SEO, and sustainable business growth.",
 };
 
-export default function ServicesPage() {
+export default function ProductsPage() {
   /* =========================================================
      GROUP SERVICES BY CATEGORY
   ========================================================= */
@@ -130,7 +130,7 @@ export default function ServicesPage() {
                 <div className="mb-10 sm:mb-12">
                   <SectionHeading
                     eyebrow={String(categoryIndex + 1).padStart(2, "0")}
-                    description="Explore specialized services designed around your brand, audience, and long-term business goals."
+                    description="Explore specialized products designed around your brand, audience, and long-term business goals."
                   >
                     {category}
                   </SectionHeading>

@@ -709,7 +709,7 @@ Trusted by businesses across Canada
             </Button>
 
             <Button
-              href="/services"
+              href="/products"
               variant="outline"
               size="lg"
               className="min-w-[190px]"
@@ -754,7 +754,7 @@ Trusted by businesses across Canada
            
             <span>Mortgage</span>
 
-            <span>Professional Services</span>
+            <span>Professional Products</span>
 
             <span>Healthcare</span>
             <span>Hospitality</span>

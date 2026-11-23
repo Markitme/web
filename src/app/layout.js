@@ -100,6 +100,7 @@ const jsonLd = {
         areaServed: "CA",
         availableLanguage: ["English"],
       },
+      email: "info@markitme.ca",
       sameAs: [
         "https://www.instagram.com/markitme.ca/",
         "https://www.linkedin.com/company/markitme-ca/",

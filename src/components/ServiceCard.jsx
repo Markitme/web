@@ -126,7 +126,7 @@ export default function ServiceCard({ service }) {
 
       {/* Link */}
       <Link
-        href={`/services/${service.slug}`}
+        href={`/products/${service.slug}`}
         className="
           group/link
           mt-auto
@@ -147,7 +147,7 @@ export default function ServiceCard({ service }) {
           hover:text-[var(--color-purple)]
         "
       >
-        Explore Service
+        Explore Product
 
         <span
           className="

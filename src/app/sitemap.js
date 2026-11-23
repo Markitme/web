@@ -16,7 +16,7 @@ export default function sitemap() {
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/services`,
+      url: `${baseUrl}/products`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.9,
@@ -40,45 +40,45 @@ export default function sitemap() {
       priority: 0.7,
     },
 
-    // Service Pages
+    // Product Pages
     {
-      url: `${baseUrl}/services/web-design-development`,
+      url: `${baseUrl}/products/web-design-development`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/services/seo-services`,
+      url: `${baseUrl}/products/seo-services`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/services/social-media-marketing`,
+      url: `${baseUrl}/products/social-media-marketing`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/services/brand-marketing`,
+      url: `${baseUrl}/products/brand-marketing`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/services/video-production`,
+      url: `${baseUrl}/products/video-production`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/services/content-marketing`,
+      url: `${baseUrl}/products/content-marketing`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/services/photography`,
+      url: `${baseUrl}/products/photography`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,

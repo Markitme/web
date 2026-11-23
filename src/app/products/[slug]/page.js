@@ -259,7 +259,7 @@ function AnimatedServiceVisual({
 
               <div className="min-w-0">
                 <p className="text-[8px] font-black uppercase tracking-[0.15em] text-[var(--color-light-purple)] sm:text-[9px]">
-                  Digital Service
+                  Digital Product
                 </p>
 
                 <p className="mt-1 truncate text-sm font-black text-white sm:text-base">
@@ -391,7 +391,7 @@ function AnimatedServiceVisual({
         <div className="flex items-end justify-between gap-3">
           <div className="rounded-2xl border border-white/15 bg-[var(--color-night)]/10 p-3 backdrop-blur-xl sm:p-4">
             <p className="text-[8px] font-black uppercase tracking-[0.14em] text-[var(--color-light-purple)] sm:text-[9px]">
-              Service
+              Product
             </p>
 
             <p className="mt-1 text-sm font-black text-white sm:text-base">
@@ -527,7 +527,7 @@ export default async function ServiceDetailsPage({ params }) {
           {/* Back */}
 
           <Link
-            href="/services"
+            href="/products"
             className="
               group mb-6 inline-flex items-center gap-2
 
@@ -546,7 +546,7 @@ export default async function ServiceDetailsPage({ params }) {
               className="transition-transform duration-300 group-hover:-translate-x-1"
             />
 
-            Back to Services
+            Back to Products
           </Link>
 
           <div
@@ -578,7 +578,7 @@ export default async function ServiceDetailsPage({ params }) {
                 </Button>
 
                 <Button href="#services" variant="outline" size="lg" className="w-full sm:w-auto">
-                  Explore Services
+                  Explore Products
                 </Button>
               </div>
             </div>
@@ -1033,8 +1033,8 @@ export default async function ServiceDetailsPage({ params }) {
               Start Your Project
             </Button>
 
-            <Button href="/services" variant="outline" size="lg" className="w-full sm:w-auto">
-              View All Services
+            <Button href="/products" variant="outline" size="lg" className="w-full sm:w-auto">
+              View All Products
             </Button>
           </div>
         </div>
@@ -1052,15 +1052,15 @@ export async function generateMetadata({ params }) {
 
   if (!service) {
     return {
-      title: "Service Not Found | MarkitMe",
-      description: "The requested MarkitMe service could not be found.",
+      title: "Product Not Found | MarkitMe",
+      description: "The requested MarkitMe product could not be found.",
     };
   }
 
   return {
     title: `${service.title} | MarkitMe`,
     alternates: {
-      canonical: `/services/${service.slug}`,
+      canonical: `/products/${service.slug}`,
     },
     description: service.heroDescription,
   };

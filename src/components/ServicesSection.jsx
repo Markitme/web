@@ -450,7 +450,7 @@ export default function ServicesSection() {
                 ================================================== */}
 
                 <Link
-                  href="/services"
+                  href="/products"
                   aria-label={`Explore ${service.title}`}
                   className="
                     service-explore-button
