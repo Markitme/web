@@ -33,7 +33,7 @@ const nextConfig = {
           {
             key: "Link",
             value:
-              '</llms.md>; rel="alternate"; type="text/markdown"; title="Markdown", </llms.txt>; rel="alternate"; type="text/plain"; title="LLMs.txt"',
+              '</llms.md>; rel="alternate"; type="text/markdown", </llms.txt>; rel="alternate"; type="text/plain"',
           },
         ],
       },
